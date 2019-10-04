@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  ui:
+    build:
+      context: .
+      target: development
+    container_name: berth-reservation-admin
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
