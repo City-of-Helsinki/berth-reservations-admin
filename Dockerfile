@@ -1,5 +1,5 @@
 # ===============================================
-FROM helsinkitest/node:10-slim as appbase
+FROM helsinkitest/node:12-slim as appbase
 # ===============================================
 
 COPY yarn.lock /app/yarn.lock
