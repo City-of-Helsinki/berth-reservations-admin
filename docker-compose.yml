@@ -1,12 +1,14 @@
 version: "3.7"
 services:
-  ui:
-    build:
-      context: .
-      target: development
+  app:
     container_name: berth-reservation-admin
+    build: .
     volumes:
       - .:/app
       - /app/node_modules
+    working_dir: /app
+    environment:
+      NODE_ENV: development
     ports:
-      - "3000:3000"
+      - 3000:3000
+    command: yarn start
