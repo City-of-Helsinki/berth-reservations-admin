@@ -10,8 +10,8 @@ ARG NODE_ENV=development
 ENV NODE_ENV $NODE_ENV
 
 # Global npm deps in a non-root user directory
-ENV NPM_CONFIG_PREFIX=/home/appuser/.npm-global
-ENV PATH=$PATH:/home/appuser/.npm-global/bin
+ENV NPM_CONFIG_PREFIX=/app/.npm-global
+ENV PATH=$PATH:/app/.npm-global/bin
 
 # Yarn
 ENV YARN_VERSION 1.19.1
