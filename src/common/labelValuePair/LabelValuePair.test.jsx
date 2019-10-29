@@ -1,25 +1,14 @@
-import { shallow } from 'enzyme';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { shallow } from 'enzyme';
 
 import LabelValuePair from './LabelValuePair';
 
-const dummyProps = { label: 'dummyLabel', value: 'bar' };
-
 describe('LabelValuePair', () => {
-  const getWrapper = () => shallow(<LabelValuePair {...dummyProps} />);
+  const getWrapper = () => shallow(<LabelValuePair label="foo" value="bar" />);
 
-  test('should render a wrapper with a className of "vene-label-value-pair"', () => {
-    expect(getWrapper().find('div.vene-label-value-pair')).toHaveLength(1);
-  });
+  it('renders normally', () => {
+    const wrapper = getWrapper();
 
-  test('should pass the label to FormattedMessage', () => {
-    const label = 'dummyLabel';
-
-    expect(
-      getWrapper({ label })
-        .find(FormattedMessage)
-        .prop('id')
-    ).toBe(label);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
