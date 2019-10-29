@@ -35,7 +35,9 @@ USER appuser
 RUN yarn && yarn cache clean --force
 
 USER root
-RUN apt-cleanup.sh build-essential
+RUN apt-install.sh build-essential && \
+    su - appuser -c "yarn && yarn cache clean --force" && \
+    apt-cleanup.sh build-essential
 
 USER appuser
 
