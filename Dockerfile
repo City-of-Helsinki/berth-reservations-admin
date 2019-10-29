@@ -43,6 +43,10 @@ USER appuser
 FROM appbase as development
 # =============================
 
+# Set NODE_ENV to development in the development container
+ARG NODE_ENV=development
+ENV NODE_ENV $NODE_ENV
+
 # copy in our source code last, as it changes the most
 COPY --chown=appuser:appuser . .
 
