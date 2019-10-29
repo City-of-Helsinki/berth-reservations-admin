@@ -1,5 +1,4 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
 
 import LabelValuePair from './LabelValuePair';
 
@@ -10,8 +9,4 @@ export default {
 
 const dummyProps = { label: 'foo', value: 'bar' };
 
-export const plain = () => (
-  <IntlProvider locale="fi">
-    <LabelValuePair {...dummyProps} />
-  </IntlProvider>
-);
+export const plain = () => <LabelValuePair {...dummyProps} />;

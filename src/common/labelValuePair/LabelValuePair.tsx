@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import styles from './labelValuePair.module.scss';
 
@@ -10,10 +9,7 @@ interface Props {
 
 const LabelValuePair = ({ label, value = '-' }: Props) => (
   <div>
-    <FormattedMessage id={label}>
-      {(lbl: string) => <span className={styles.label}>{lbl}</span>}
-    </FormattedMessage>
-    <span className={styles.label}>:</span>
+    <span className={styles.label}>{label}:</span>
     <span className={styles.labelValue}>{value}</span>
   </div>
 );

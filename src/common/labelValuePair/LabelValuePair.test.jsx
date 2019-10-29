@@ -15,7 +15,6 @@ describe('LabelValuePair', () => {
 
   test('should pass the label to FormattedMessage', () => {
     const label = 'dummyLabel';
-    const value = 'bar';
 
     expect(
       getWrapper({ label })
