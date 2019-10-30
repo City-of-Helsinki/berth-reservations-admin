@@ -1,20 +1,18 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import styles from './paragraph.module.scss';
+import Title from '../title/Title';
 
-const Header = ({ children }: { children: React.ReactNode }) => (
-  <header className={styles.header}>{children}</header>
-);
-
-const Paragraph = ({
-  title,
-  children,
-}: {
+interface Props {
   title?: string;
   children?: React.ReactNode;
-}) => (
-  <article className={styles.paragraph}>
-    {title && <Header>{title}</Header>}
+  className?: string;
+}
+
+const Paragraph = ({ title, children, className }: Props) => (
+  <article className={classNames(styles.paragraph, className)}>
+    {title && <Title>{title}</Title>}
 
     <p>{children}</p>
   </article>
