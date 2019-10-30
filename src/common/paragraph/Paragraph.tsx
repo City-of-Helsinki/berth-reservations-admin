@@ -6,7 +6,7 @@ import Title from '../title/Title';
 
 interface Props {
   title?: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 
