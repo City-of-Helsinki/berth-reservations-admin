@@ -31,11 +31,7 @@ USER root
 RUN apt-install.sh build-essential
 
 USER root
-RUN apt-install.sh build-essential && \
-    su - appuser -c "yarn && yarn cache clean --force" && \
-    apt-cleanup.sh build-essential
-
-USER appuser
+RUN apt-cleanup.sh build-essential
 
 # =============================
 FROM appbase as development
