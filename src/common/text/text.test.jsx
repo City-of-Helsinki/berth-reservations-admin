@@ -28,8 +28,13 @@ describe('Text', () => {
     expect(wrapper.hasClass(size)).toBe(true);
   });
 
-  it('should add bold as className if the supplied bold prop is true', () => {
+  it('should add bold as a className if the supplied bold prop is true', () => {
     const wrapper = getWrapper({ bold: true, children: 'test' });
     expect(wrapper.hasClass('bold')).toBe(true);
+  });
+
+  it('should add italic as a className if the supplied italic prop is true', () => {
+    const wrapper = getWrapper({ children: 'test', italic: true });
+    expect(wrapper.hasClass('italic')).toBe(true);
   });
 });
