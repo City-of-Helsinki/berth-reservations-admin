@@ -9,13 +9,9 @@ export default {
 };
 
 export const simpleHeader = () => (
-  <Header
-    brand={<h3>Asiakastiedot</h3>}
-  ></Header>
+  <Header brand={<h3>Asiakastiedot</h3>}></Header>
 );
 
 export const sampleHeader = () => (
-  <Header
-    brand={<Icon name="helsinkiLogo"  />}
-  />
+  <Header brand={<Icon name="helsinkiLogo" />} />
 );

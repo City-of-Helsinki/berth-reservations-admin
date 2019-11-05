@@ -10,9 +10,7 @@ interface Props {
 }
 
 const Header = ({ brand, className }: Props) => (
-  <header className={classNames(styles.header, className)}>
-    {brand}
-  </header>
+  <header className={classNames(styles.header, className)}>{brand}</header>
 );
 
 export default Header;
