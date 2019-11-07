@@ -1,0 +1,7 @@
+@import 'spacings';
+@import 'breakpoints';
+
+.box {
+  display: flex;
+  flex-flow: row wrap;
+}

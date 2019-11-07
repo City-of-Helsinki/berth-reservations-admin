@@ -9,6 +9,12 @@ export const HARBORS_QUERY = gql`
           properties {
             name
             numberOfPlaces
+            streetAddress
+            zipCode
+            municipality
+            wwwUrl
+            imageFile
+            servicemapId
             piers {
               edges {
                 node {

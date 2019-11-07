@@ -8,6 +8,12 @@ export interface HarborData {
   water: number;
   name: string;
   numberOfPlaces: number;
+  streetAddress: string | null;
+  zipCode: string | null;
+  municipality: string | null;
+  wwwUrl: string | null;
+  imageFile: string | null;
+  servicemapId: string | null;
 }
 
 export const getHarborsData = (data: HARBORS | undefined) => {
@@ -50,8 +56,14 @@ export const getHarborsData = (data: HARBORS | undefined) => {
         return [
           ...acc,
           {
+            imageFile: harbor.node.properties.imageFile,
+            municipality: harbor.node.properties.municipality,
             name: harbor.node.properties.name || '-',
             numberOfPlaces: harbor.node.properties.numberOfPlaces || 0,
+            servicemapId: harbor.node.properties.servicemapId,
+            streetAddress: harbor.node.properties.streetAddress,
+            wwwUrl: harbor.node.properties.wwwUrl,
+            zipCode: harbor.node.properties.zipCode,
             ...properties,
           },
         ];
