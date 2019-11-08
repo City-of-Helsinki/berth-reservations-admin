@@ -11,7 +11,7 @@ build-review:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-review"
-    DOCKER_BUILD_ARG_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
+    K8S_SECRET_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
   only:
     refs:
       - external_pull_requests
@@ -20,7 +20,7 @@ build-staging:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-staging"
-    DOCKER_BUILD_ARG_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
+    K8S_SECRET_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
   only:
     refs:
       - develop
@@ -29,7 +29,7 @@ build-production:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-production"
-    DOCKER_BUILD_ARG_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
+    K8S_SECRET_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
   only:
     refs:
       - master
@@ -37,6 +37,7 @@ build-production:
 review:
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-review"
+    K8S_SECRET_REACT_APP_API_URI: "https://venepaikka-api.test.hel.ninja/graphql_v2/"
 
 # This will enable staging ci-pipeline
 staging:
