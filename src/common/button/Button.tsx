@@ -1,13 +1,36 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import styles from './button.module.scss';
 
-type Props = React.PropsWithChildren<{}>;
+export interface Props {
+  color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
+  variant?: 'contained' | 'outlined' | 'text';
+  size?: 'small' | 'standard' | 'large';
+  icon?: JSX.Element;
+}
 
-export default ({ children }: Props) => {
+const Button: React.SFC<Props> = ({
+  children,
+  color = 'standard',
+  variant = 'contained',
+  size = 'standard',
+  icon,
+}) => {
   return (
-    <button type="button" className={styles.button}>
+    <button
+      type="button"
+      className={classNames(
+        styles.button,
+        styles[color],
+        size && styles[size],
+        variant && styles[variant]
+      )}
+    >
+      {icon}
       {children}
     </button>
   );
 };
+
+export default Button;
