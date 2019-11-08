@@ -3,12 +3,12 @@ import classNames from 'classnames';
 
 import styles from './button.module.scss';
 
-export interface Props {
+export type Props = {
   color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
   variant?: 'contained' | 'outlined' | 'text';
   size?: 'small' | 'standard' | 'large';
   icon?: JSX.Element;
-}
+} & React.DOMAttributes<HTMLButtonElement>;
 
 const Button: React.SFC<Props> = ({
   children,
@@ -16,15 +16,18 @@ const Button: React.SFC<Props> = ({
   variant = 'contained',
   size = 'standard',
   icon,
+  onClick,
 }) => {
   return (
     <button
       type="button"
+      onClick={onClick}
       className={classNames(
         styles.button,
         styles[color],
         size && styles[size],
-        variant && styles[variant]
+        variant && styles[variant],
+        icon && styles.hasIcon
       )}
     >
       {icon}

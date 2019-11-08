@@ -57,3 +57,12 @@
   font-size: font-size(14);
   padding: units(0.25) units(0.25);
 }
+
+.hasIcon {
+  display: flex;
+  align-items: center;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
