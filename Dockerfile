@@ -54,6 +54,9 @@ CMD ["react-scripts", "start"]
 FROM appbase as staticbuilder
 # ===================================
 
+ARG REACT_APP_API_URI
+ENV REACT_APP_API_URI $REACT_APP_API_URI
+
 COPY . /app
 RUN yarn build
 
