@@ -10,7 +10,11 @@ import './locales/i18n';
 
 import './assets/styles/main.scss';
 
-const { REACT_APP_API_URI, REACT_APP_SENTRY_DSN, NODE_ENV } = process.env;
+const {
+  REACT_APP_API_URI,
+  REACT_APP_SENTRY_DSN,
+  REACT_APP_SENTRY_ENVIRONMENT,
+} = process.env;
 
 const client = new ApolloClient({
   uri: REACT_APP_API_URI,
@@ -18,7 +22,7 @@ const client = new ApolloClient({
 
 Sentry.init({
   dsn: REACT_APP_SENTRY_DSN,
-  environment: NODE_ENV,
+  environment: REACT_APP_SENTRY_ENVIRONMENT,
 });
 
 ReactDOM.render(

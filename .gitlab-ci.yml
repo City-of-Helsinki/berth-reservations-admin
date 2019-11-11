@@ -42,6 +42,8 @@ review:
 staging:
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-staging"
+    DOCKER_BUILD_ARG_REACT_APP_SENTRY_DSN: "https://id1@sentry.io/id2"
+    DOCKER_BUILD_ARG_REACT_APP_SENTRY_ENVIRONMENT: Staging
   only:
     refs:
       - develop
