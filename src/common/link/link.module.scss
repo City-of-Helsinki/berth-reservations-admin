@@ -1,8 +1,31 @@
 @import 'spacings';
 @import 'colours';
 
+.default {
+  color: inherit;
+}
+
+.error {
+  color: $red-500;
+}
+
+.primary {
+  color: $blue-500;
+}
+
+.textPrimary {
+  color: $gray-200;
+}
+.textSecondary {
+  color: $gray-100;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .underlineNone {
-  text-decoration: 'none';
+  text-decoration: none;
 }
 
 .underlineHover {

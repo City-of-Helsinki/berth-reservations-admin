@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Icon from '../icon/Icon';
 import Link from './Link';
 
 export default {
@@ -10,29 +9,48 @@ export default {
 
 export const all = () => (
   <div>
-    <Link href="https://github.com/City-of-Helsinki/berth-reservations-admin/">
-      Default
-    </Link>
-    <br />
-    <Link href="https://github.com/City-of-Helsinki/berth-reservations-admin/">
-      <Icon name="arrowRight" aria-hidden />
-      With icon in front
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      linkColor="primary"
+    >
+      primary
     </Link>
     <br />
     <Link
-      containsIcon
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      aria-label="Toggle side bar"
+      linkColor="textPrimary"
     >
-      <Icon name="arrowRight" aria-hidden />
+      textPrimary
     </Link>
     <br />
     <Link
-      containsIcon
-      withArrow
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      linkColor="textSecondary"
     >
-      With arrow behind
+      textSecondary
+    </Link>
+    <br />
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      linkColor="error"
+    >
+      error
+    </Link>
+    <br />
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      linkColor="error"
+      underline="always"
+    >
+      error underline always
+    </Link>
+    <br />
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      linkColor="error"
+      underline="always"
+    >
+      error underline on hover
     </Link>
     <br />
   </div>
