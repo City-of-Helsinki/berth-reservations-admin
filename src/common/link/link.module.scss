@@ -1,16 +1,12 @@
 @import 'spacings';
 @import 'colours';
 
-.default {
-  color: inherit;
+.primary {
+  color: $blue-500;
 }
 
 .error {
   color: $red-500;
-}
-
-.primary {
-  color: $blue-500;
 }
 
 .textPrimary {
@@ -26,20 +22,23 @@
 
 .underlineNone {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .underlineHover {
-  text-decoration: 'none';
+  text-decoration: none;
   &:hover {
-    text-decoration: 'underline';
+    text-decoration: underline;
   }
 }
 
 .underlineAlways {
-  text-decoration: 'underline';
+  text-decoration: underline;
 }
 
-button {
+.button {
   position: 'relative';
   -webkit-tap-highlight-color: 'transparent';
   background-color: 'transparent';
@@ -53,10 +52,20 @@ button {
   vertical-align: 'middle';
   -moz-appearance: 'none';
   -webkit-appearance: 'none';
+  text-decoration: 'none';
   &::-moz-focus-inner {
     border-style: 'none';
   }
   &:focusVisible {
     outline: 'auto';
   }
+
+  &:hover {
+    filter: brightness(150%);
+  }
 }
+
+.withArrow::after {
+  content: "  →"
+}
+

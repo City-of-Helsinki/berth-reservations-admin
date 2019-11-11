@@ -6,7 +6,7 @@ export interface Props {
   href: string;
   linkColor?: 'default' | 'error' | 'primary' | 'textPrimary' | 'textSecondary';
   underline?: 'none' | 'hover' | 'always';
-  variant?: string;
+  variant?: 'default' | 'withArrow';
   children: React.ReactNode;
 }
 

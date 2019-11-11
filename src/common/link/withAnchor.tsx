@@ -6,33 +6,27 @@ import styles from './link.module.scss';
 
 export interface WithAnchorProps {
   linkColor?:
-    | 'default'
+    | 'primary'
     | 'error'
     | 'inherit'
-    | 'primary'
     | 'secondary'
     | 'textPrimary'
     | 'textSecondary';
   underline?: 'none' | 'hover' | 'always';
   component?: HTMLAnchorElement;
-  variant?: string;
+  variant?: 'default' | 'withArrow';
   href: string;
   children: React.ReactNode;
-  onBlur?: Function;
-  onFocus?: Function;
 }
 
 const withAnchor = <P extends object>(Component: React.ComponentType<P>) =>
   class WithAnchor extends React.Component<WithAnchorProps & P> {
     render() {
       const {
-        linkColor = 'textPrimary',
-        underline,
-        variant,
-        onFocus,
-        onBlur,
+        linkColor = 'primary',
+        underline = 'hover',
+        variant = 'default',
         href,
-        ...passThroughProps
       } = this.props;
 
       const underlineStyle = (function() {
@@ -45,16 +39,26 @@ const withAnchor = <P extends object>(Component: React.ComponentType<P>) =>
         return 'underlineHover';
       })();
 
+      const classes = classNames(
+        styles.button,
+        styles[linkColor],
+        styles[underlineStyle],
+        styles[variant]
+      );
+
       return (
         <a
           className={classNames(
             styles.button,
+            styles[linkColor],
             styles[underlineStyle],
-            styles[linkColor]
+            styles[variant]
           )}
           href={href}
         >
-          <Text {...{ passThroughProps }}>{this.props.children}</Text>
+          <Text {...this.props} className={classes}>
+            {this.props.children}
+          </Text>
         </a>
       );
     }

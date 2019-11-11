@@ -13,23 +13,17 @@ export const all = () => (
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       linkColor="primary"
     >
-      primary
+      link
     </Link>
     <br />
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       linkColor="textPrimary"
     >
-      textPrimary
+      visited
     </Link>
     <br />
-    <Link
-      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      linkColor="textSecondary"
-    >
-      textSecondary
-    </Link>
-    <br />
+
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       linkColor="error"
@@ -37,25 +31,34 @@ export const all = () => (
       error
     </Link>
     <br />
-    <Link
-      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      underline="always"
-    >
-      error underline always
-    </Link>
-    <br />
+
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       underline="none"
     >
-      error underline on hover
+      no underline
+    </Link>
+    <br />
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      underline="always"
+    >
+      always underline
     </Link>
     <br />
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       underline="hover"
     >
-      error underline on hover
+      underline on hover
+    </Link>
+    <br />
+
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      variant="withArrow"
+    >
+      with arrow
     </Link>
     <br />
   </div>
