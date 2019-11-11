@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ClassAttributes } from 'react';
 import classNames from 'classnames';
 
 import Text from '../text/Text';
@@ -21,7 +21,7 @@ export interface Props {
   onBlur?: Function;
   onFocus?: Function;
   children: React.ReactNode;
-  [x: string]: React.Props;
+  [x: string]: ClassAttributes<T>;
 }
 const Link: React.SFC<Props> = ({
   linkColor = 'default',
