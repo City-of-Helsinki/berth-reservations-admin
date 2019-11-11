@@ -39,7 +39,6 @@ export const all = () => (
     <br />
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      linkColor="error"
       underline="always"
     >
       error underline always
@@ -47,8 +46,14 @@ export const all = () => (
     <br />
     <Link
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      linkColor="error"
-      underline="always"
+      underline="none"
+    >
+      error underline on hover
+    </Link>
+    <br />
+    <Link
+      href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
+      underline="hover"
     >
       error underline on hover
     </Link>
