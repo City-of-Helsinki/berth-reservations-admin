@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link renders noramlly 1`] = `"<a class=\\"button underlineHover textPrimary\\"><span class=\\"text standard span\\">test</span></a>"`;
+
+exports[`Link renders normally 1`] = `"<a class=\\"button underlineHover textPrimary\\"><span class=\\"text standard span\\">test</span></a>"`;
