@@ -11,9 +11,4 @@ describe('Link', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('should add the supplied color prop as a className', () => {
-    const linkColor = 'primary';
-    const wrapper = getWrapper({ children: 'test', linkColor });
-    expect(wrapper.hasClass(linkColor)).toBe(true);
-  });
 });
