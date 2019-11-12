@@ -30,7 +30,7 @@ interface Props {
   data: Props2;
 }
 
-const HarborDetails = ({ data }: Props) => {
+export const HarborDetails = ({ data }: Props) => {
   const address = `${data.streetAddress} ${data.zipCode} ${data.municipality}`;
   const servicemapUrl = `http://palvelukartta.hel.fi/unit/${data.servicemapId}`;
 
