@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import styles from './link.module.scss';
+import styles from './external-link.module.scss';
 
 export type WithAnchorProps = {
   variant?: 'default' | 'withArrow';

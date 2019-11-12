@@ -1,28 +1,28 @@
 import React from 'react';
 
-import Link from './Link';
+import ExternalLink from './ExternalLink';
 
 export default {
-  component: Link,
-  title: 'Link',
+  component: ExternalLink,
+  title: 'ExternalLink',
 };
 
 export const all = () => (
   <div>
-    <Link
+    <ExternalLink
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
-      color="standard"
+      variant="default"
     >
       link
-    </Link>
+    </ExternalLink>
     <br />
 
-    <Link
+    <ExternalLink
       href="https://github.com/City-of-Helsinki/berth-reservations-admin/"
       variant="withArrow"
     >
       with arrow
-    </Link>
+    </ExternalLink>
     <br />
   </div>
 );

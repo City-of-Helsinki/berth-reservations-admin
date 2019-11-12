@@ -10,12 +10,12 @@ export interface Props {
   children: React.ReactNode;
 }
 
-const Link = ({ href, underline, variant, children }: Props) => (
-  <Link href={href} underline={underline} variant={variant}>
+const ExternalLink = ({ href, underline, variant, children }: Props) => (
+  <ExternalLink href={href} underline={underline} variant={variant}>
     {children}
-  </Link>
+  </ExternalLink>
 );
 
-const WrappedComponent = withAnchor(Link);
+const WrappedComponent = withAnchor(ExternalLink);
 
 export default WrappedComponent;
