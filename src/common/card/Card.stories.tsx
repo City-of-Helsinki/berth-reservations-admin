@@ -4,7 +4,6 @@ import Card from './Card';
 import Text from '../text/Text';
 import Paragraph from '../paragraph/Paragraph';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
-import Box from '../box/Box';
 
 export default {
   component: Card,
@@ -63,12 +62,4 @@ export const Harbor3 = () => (
       </Text>
     </Paragraph>
   </Card>
-);
-
-export const sampleCards = () => (
-  <Box>
-    <Harbor1 />
-    <Harbor2 />
-    <Harbor3 />
-  </Box>
 );
