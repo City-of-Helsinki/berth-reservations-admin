@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Box renders normally 1`] = `"<div class=\\"box\\">Content</div>"`;
