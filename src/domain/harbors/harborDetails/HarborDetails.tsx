@@ -1,12 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import Grid from '../../../common/grid/Grid';
 import ExternalLink from '../../../common/externalLink/ExternalLink';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
-import Text from '../../../common/text/Text';
 import { HarborData } from '../utils';
 import styles from './harborDetails.module.scss';
+import Paragraph from '../../../common/paragraph/Paragraph';
 
 type Props = {
   imageFile: HarborData['imageFile'];
@@ -15,6 +16,7 @@ type Props = {
   municipality: HarborData['municipality'];
   wwwUrl: HarborData['wwwUrl'];
   servicemapId: HarborData['servicemapId'];
+  maximumWidth: HarborData['maximumWidth'];
 };
 
 const HarborDetails: React.SFC<Props> = ({
@@ -24,42 +26,56 @@ const HarborDetails: React.SFC<Props> = ({
   municipality,
   wwwUrl,
   servicemapId,
+  maximumWidth,
 }) => {
+  const { t } = useTranslation();
   const address = `${streetAddress} ${zipCode} ${municipality}`;
   const imageSrc = imageFile ? imageFile : '';
   const url = wwwUrl ? wwwUrl : '';
-  const serviceMapUrl = `http://palvelukartta.hel.fi/unit/${servicemapId}`;
+  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URI}${servicemapId}`;
 
   return (
     <Grid>
       <div className={classNames(styles.section, styles.harborAddress)}>
         <img className={styles.image} src={imageSrc} alt="map" />
         <div className={classNames(styles.address)}>
-          <ExternalLink href="https://www.google.com">{address}</ExternalLink>
-          <ExternalLink href={url}>{address}</ExternalLink>
-          <ExternalLink href="">Satamakartta (PDF)</ExternalLink>
-          <ExternalLink href={serviceMapUrl}>Palvelukartta</ExternalLink>
+          <Paragraph title={t('harbors.details.address')}>
+            <ExternalLink href={url} variant="withArrow">
+              {address}
+            </ExternalLink>
+            <ExternalLink href="">{t('harbors.details.portMap')}</ExternalLink>
+            <ExternalLink href={serviceMapUrl}>
+              {t('harbors.details.serviceMap')}
+            </ExternalLink>
+          </Paragraph>
         </div>
       </div>
       <div className={classNames(styles.section)}>
-        <LabelValuePair label="Max leveys" value="2.5m - 4m" />
-        <LabelValuePair
-          label="Kiinnitys"
-          value="Aisa-, Kävelyaisa- ja Peräpoijupaikkoja"
-        />
-        <LabelValuePair
-          label="Päällikkö"
-          value="Mikko Mallikas +358 00 000 000"
-        />
-        <LabelValuePair label="Huoltotiimi" value="Itäinen veneilytiimi" />
+        <Paragraph>
+          <LabelValuePair
+            label={t('harbors.details.maximumWidth')}
+            labelColor="brand"
+            value={maximumWidth ? `${maximumWidth}m` : '-'}
+          />
+          <LabelValuePair
+            label={t('harbors.details.mooring')}
+            labelColor="brand"
+            value="-"
+          />
+          <LabelValuePair
+            label={t('harbors.details.chief')}
+            labelColor="brand"
+            value="-"
+          />
+          <LabelValuePair
+            label={t('harbors.details.maintenanceTeam')}
+            labelColor="brand"
+            value="-"
+          />
+        </Paragraph>
       </div>
       <div className={classNames(styles.section)}>
-        <Text color="brand" as="h3">
-          Viimeaikainen toiminta
-        </Text>
-        <Text color="brand" size="xs">
-          Ei mitään
-        </Text>
+        <Paragraph title={t('harbors.details.recentActivities')}>-</Paragraph>
       </div>
     </Grid>
   );
