@@ -17,7 +17,7 @@ const Paragraph = ({ title, children, className }: Props) => (
         {title}
       </Text>
     )}
-    <section>{children}</section>
+    <section className={styles.body}>{children}</section>
   </article>
 );
 
