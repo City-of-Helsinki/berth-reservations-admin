@@ -15,6 +15,7 @@ export const HARBORS_QUERY = gql`
             wwwUrl
             imageFile
             servicemapId
+            maximumWidth
             piers {
               edges {
                 node {

@@ -49,6 +49,7 @@ export interface HARBORS_harbors_edges_node_properties {
    * ID in the Servicemap system
    */
   servicemapId: string | null;
+  maximumWidth: number | null;
   piers: HARBORS_harbors_edges_node_properties_piers;
 }
 
