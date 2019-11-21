@@ -25,5 +25,8 @@ yarn-error.log*
 storybook-static
 
 /__generated__/
+<<<<<<< HEAD
 
 .vscode/
+=======
+>>>>>>> 8c054c9... Fix .gitignore
