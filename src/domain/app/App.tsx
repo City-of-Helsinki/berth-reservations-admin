@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Page from '../page/Page';
+import DebugPage from '../debugPage/DebugPage';
 import HarborsPage from '../harbors/HarborsPageContainer';
 import IndividualHarborPage from '../individualHarbor/IndividualHarborPageContainer';
 import CustomersPage from '../customers/CustomerPageContainer';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <PrivateRoute path="/harbors/:id" component={IndividualHarborPage} />
           <PrivateRoute path="/harbors" component={HarborsPage} />
           <PrivateRoute path="/customers" component={CustomersPage} />
+          <Route path="/debug" component={DebugPage} />
         </Page>
       </Switch>
     </Router>

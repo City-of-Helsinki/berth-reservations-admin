@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
 
 import { HARBORS_QUERY } from './harborsQuery';
@@ -10,11 +10,14 @@ import Icon from '../../common/icon/Icon';
 import HarborDetails from './harborDetails/HarborDetails';
 import HarborsPage from './HarborsPage';
 import InternalLink from '../../common/internalLink/InternalLink';
+import { TOGGLE_CART } from '../../apollo/resolvers';
+import { GET_LOCAL_STATE } from '../debugPage/DebugPage';
 
 type ColumnType = Column<HarborData> & { accessor: keyof HarborData };
 
 const HarborsContainer: React.FC = () => {
   const { loading, error, data } = useQuery<HARBORS>(HARBORS_QUERY);
+
   const { t } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -29,6 +32,20 @@ const HarborsContainer: React.FC = () => {
     {
       Header: t('harbors.tableHeaders.places'),
       accessor: 'numberOfPlaces',
+
+      Cell: ({ cell }) => {
+        const [mutate, { data }] = useMutation(TOGGLE_CART, {
+          variables: { launchId: cell.row.original.id },
+          refetchQueries: [
+            {
+              query: GET_LOCAL_STATE,
+              variables: { launchId: cell.row.original.id },
+            },
+          ],
+        });
+
+        return <button onClick={() => mutate()}>select</button>;
+      },
     },
     {
       Cell: ({ cell }) => (

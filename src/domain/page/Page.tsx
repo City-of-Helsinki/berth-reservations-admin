@@ -58,6 +58,19 @@ const Page: React.SFC = ({ children }) => {
                 </InternalLink>
               }
             ></Expandable>,
+            <Expandable
+              key="debug"
+              label={
+                <InternalLink to="debug">
+                  <Button
+                    variant="text"
+                    icon={<Icon name="individual" color="standard" />}
+                  >
+                    <Text bold>DEBUG</Text>
+                  </Button>
+                </InternalLink>
+              }
+            ></Expandable>,
           ]}
         </Sidebar>
       }

@@ -1,29 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import * as Sentry from '@sentry/browser';
 
 import App from './domain/app/App';
+import { createClient } from './apollo/index';
 import * as serviceWorker from './serviceWorker';
 import './locales/i18n';
-
 import './assets/styles/main.scss';
 
-const {
-  REACT_APP_API_URI,
-  REACT_APP_SENTRY_DSN,
-  REACT_APP_SENTRY_ENVIRONMENT,
-} = process.env;
-
-const client = new ApolloClient({
-  uri: REACT_APP_API_URI,
-});
+const { REACT_APP_SENTRY_DSN, REACT_APP_SENTRY_ENVIRONMENT } = process.env;
 
 Sentry.init({
   dsn: REACT_APP_SENTRY_DSN,
   environment: REACT_APP_SENTRY_ENVIRONMENT,
 });
+
+const client = createClient();
 
 ReactDOM.render(
   <ApolloProvider client={client}>
