@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import Grid from '../../common/grid/Grid';
-import ExternalLink from '../../common/externalLink/ExternalLink';
-import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import styles from './customerList.module.scss';
 import Paragraph from '../../common/paragraph/Paragraph';
 
@@ -22,11 +20,7 @@ export interface CustomerData {
   phone?: string;
 }
 
-interface Props {
-  data: any;
-}
-
-const CustomerDetails: React.SFC<Props> = ({ data }) => {
+const CustomerDetails: React.SFC<CustomerData | any> = ({ data }: any) => {
   const { t } = useTranslation();
 
   return (

@@ -25,3 +25,5 @@ yarn-error.log*
 storybook-static
 
 /__generated__/
+
+.vscode/

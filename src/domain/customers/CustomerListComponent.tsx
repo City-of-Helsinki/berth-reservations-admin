@@ -8,7 +8,7 @@ export interface CustomerData {
   contactMethod?: string;
   email?: string;
   firstName?: string;
-  id: string;
+  id?: string;
   image?: string;
   invoicingType?: string;
   language?: string;
@@ -17,8 +17,18 @@ export interface CustomerData {
   phone?: string;
 }
 
+interface TableData {
+  goToDetails: string;
+  group: string;
+  invoice: string;
+  name: string;
+  queue: string;
+  startDate: string;
+  thing: string;
+}
+
 interface Props {
-  data: CustomerData | any;
+  data: CustomerData | null | any;
 }
 
 const HarborsListComponent = ({ data }: Props) => {
