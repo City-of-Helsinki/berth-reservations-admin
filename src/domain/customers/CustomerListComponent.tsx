@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Table from '../../common/table/Table';
 import CustomerDetails from './CustomerDetailsComponent';
@@ -32,33 +33,35 @@ interface Props {
 }
 
 const HarborsListComponent = ({ data }: Props) => {
+  const { t } = useTranslation();
+
   const columns = [
     {
-      Header: 'Jono',
+      Header: t('harbors.tableHeaders.queue'),
       accessor: 'queue',
     },
     {
-      Header: 'Asiakas',
+      Header: t('harbors.tableHeaders.name'),
       accessor: 'name',
     },
     {
-      Header: 'Liittynyt',
+      Header: t('harbors.tableHeaders.startDate'),
       accessor: 'startDate',
     },
     {
-      Header: 'Asiakasryhmä',
+      Header: t('harbors.tableHeaders.group'),
       accessor: 'group',
     },
     {
-      Header: 'Asia',
+      Header: t('harbors.tableHeaders.thing'),
       accessor: 'thing',
     },
     {
-      Header: 'Laskuja',
+      Header: t('harbors.tableHeaders.invoice'),
       accessor: 'invoice',
     },
     {
-      Header: 'Avaa',
+      Header: t('harbors.tableHeaders.goToDetails'),
       accessor: 'goToDetails',
     },
   ];
