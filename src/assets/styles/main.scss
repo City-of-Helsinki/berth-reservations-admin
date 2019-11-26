@@ -2,6 +2,74 @@
 @import 'boxSizing';
 @import 'colours';
 
+:root {
+  --hds-brand-color-coat-of-arms-blue: #0072c6;
+  --hds-brand-color-coat-of-arms-blue-light-20: #cce2f3;
+  --hds-brand-color-coat-of-arms-blue-light-50: #80b8e2;
+  --hds-brand-color-coat-of-arms-blue-dark-50: #000098;
+
+  /* UI HELPER COLORS */
+  --hds-ui-color-error: #c4123e;
+  --hds-ui-color-error-light: #f6e2e6;
+  --hds-ui-color-success: #007a64;
+  --hds-ui-color-success-light: #e2f5f3;
+  --hds-ui-color-alert: #ffda07;
+  --hds-ui-color-alert-light: #fff4b4;
+  --hds-ui-color-alert-dark: #986700;
+  --hds-ui-color-info: #007293;
+  --hds-ui-color-info-light: #dcf1f5;
+
+  /* GRAY SHADES FOR UI COMPONENTS */
+  --hds-ui-color-black: #000000;
+  --hds-ui-color-white: #ffffff;
+  --hds-ui-color-black-5: #f1f1f1;
+  --hds-ui-color-black-10: #e5e5e5;
+  --hds-ui-color-black-20: #cccccc;
+  --hds-ui-color-black-30: #b2b2b2;
+  --hds-ui-color-black-40: #999898;
+  --hds-ui-color-black-50: #808080;
+  --hds-ui-color-black-60: #666666;
+  --hds-ui-color-black-70: #4c4c4c;
+  --hds-ui-color-black-80: #333333;
+  --hds-ui-color-black-90: #1a1a1a;
+
+  /* Theme */
+
+  /* COLORS */
+  --hds-theme-color-body: var(--hds-ui-color-black-90);
+
+  /* primary color */
+  --hds-theme-color-primary: var(--hds-brand-color-coat-of-arms-blue);
+  --hds-theme-color-primary-light: var(
+    --hds-brand-color-coat-of-arms-blue-light-50
+  );
+  --hds-theme-color-primary-extra-light: var(
+    --hds-brand-color-coat-of-arms-blue-light-20
+  );
+  --hds-theme-color-primary-dark: var(
+    --hds-brand-color-coat-of-arms-blue-dark-50
+  );
+  --hds-theme-color-primary-heading: var(--hds-ui-color-white);
+
+  /* secondary color */
+  --hds-theme-color-secondary: var(--hds-brand-color-fog);
+  --hds-theme-color-secondary-light: var(--hds-brand-color-fog-light-50);
+  --hds-theme-color-secondary-extra-light: var(--hds-brand-color-fog-light-20);
+  --hds-theme-color-secondary-dark: var(--hds-brand-color-fog-dark-50);
+  --hds-theme-color-secondary-heading: var(--hds-ui-color-black);
+
+  /* tertiary color */
+  --hds-theme-color-tertiary: var(--hds-brand-color-suomenlinna);
+  --hds-theme-color-tertiary-light: var(--hds-brand-color-suomenlinna-light-50);
+  --hds-theme-color-tertiary-extra-light: var(
+    --hds-brand-color-suomenlinna-light-20
+  );
+  --hds-theme-color-tertiary-dark: var(--hds-brand-color-suomenlinna-dark-50);
+  --hds-theme-color-tertiary-heading: var(--hds-ui-color-black);
+
+  
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

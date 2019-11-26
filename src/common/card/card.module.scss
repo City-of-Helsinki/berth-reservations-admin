@@ -7,11 +7,11 @@
   width: auto;
   margin: units(0.5) units(1);
 
-  background-color: $gray-100;
+  background-color: var(--hds-ui-color-black-10);;
 
   header {
     width: auto;
-    background-color: $blue-500;
+    background-color: var(--hds-brand-color-primary);;
     padding: units(0.5) units(1);
     margin: 0;
     font-size: calc(10px + 2vmin);
@@ -26,15 +26,15 @@
 }
 
 .brand {
-  background-color: $blue-500;
+  background-color: var(--hds-brand-color-primary);;
 }
 
 .primary {
-  background-color: $gray-100;
+  background-color: var(--hds-ui-color-black-10);;
 }
 
 .secondary {
-  background-color: $gray-200;
+  background-color: var(--hds-ui-color-black-20);;
 }
 /*
 @media (min-width: 768px) {

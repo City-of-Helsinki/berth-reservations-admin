@@ -1,22 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+// For some reason eslint import plugin is unable to detect the following type
+// eslint-disable-next-line
+import { Column } from 'react-table';
 
 import Table from '../../common/table/Table';
 import CustomerDetails from './CustomerDetailsComponent';
-
-export interface CustomerData {
-  comment?: string;
-  contactMethod?: string;
-  email?: string;
-  firstName?: string;
-  id?: string;
-  image?: string;
-  invoicingType?: string;
-  language?: string;
-  lastName?: string;
-  nickname?: string;
-  phone?: string;
-}
+import { CustomerData } from './utils';
 
 interface TableData {
   goToDetails: string;
@@ -29,13 +19,15 @@ interface TableData {
 }
 
 interface Props {
-  data: CustomerData | null | any;
+  data: CustomerData | null;
 }
+
+type ColumnType = Column<TableData> & { accessor: keyof TableData };
 
 const HarborsListComponent = ({ data }: Props) => {
   const { t } = useTranslation();
 
-  const columns = [
+  const columns: ColumnType[] = [
     {
       Header: t('customers.tableHeaders.queue'),
       accessor: 'queue',
@@ -66,23 +58,15 @@ const HarborsListComponent = ({ data }: Props) => {
     },
   ];
 
-  const createTableData = ({ data }: any) => {
-    const edges = data && data.profiles && data.profiles.edges;
-    const customers: Array<CustomerData> = edges.map((edge: any) => edge.node);
-
-    const tableData = customers.map(customer => ({
-      goToDetails: 'Avaa',
-      group: 'yksityinen',
-      invoice: 'laskuja',
-      name: `${customer.lastName} ${customer.firstName}`,
-      queue: 'foo',
-      startDate: '1.1.2019',
-      thing: 'Sisältö',
-    }));
-    return tableData;
-  };
-
-  const tableData = createTableData(data);
+  const tableData: Array<TableData> = data.map(customer => ({
+    goToDetails: 'Avaa',
+    group: 'yksityinen',
+    invoice: 'laskuja',
+    name: `${customer.lastName} ${customer.firstName}`,
+    queue: '-',
+    startDate: '1.1.2019',
+    thing: 'Sisältö',
+  }));
 
   return (
     <Table

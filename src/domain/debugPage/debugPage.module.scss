@@ -1,8 +1,8 @@
 @import 'colours';
 @import 'spacings';
 
-.harborsPage {
+.individualHarborPage {
   height: 100%;
   padding: units(2);
-  background-color: var(--hds-theme-color-secondary);
+  background-color: $gray-100;
 }

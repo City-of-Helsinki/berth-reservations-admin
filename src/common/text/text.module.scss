@@ -6,15 +6,15 @@
 }
 
 .brand {
-  color: $blue-500;
+  color: var(--hds-theme-color-primary);
 }
 
 .critical {
-  color: $red-500;
+  color: var(--hds-ui-color-error);
 }
 
 .secondary {
-  color: $gray-200;
+  color: var(---hds-brand-color-coat-of-arms-blue-light-20);
 }
 
 .bold {

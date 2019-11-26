@@ -112,7 +112,7 @@ const Table = <D extends object>({
   );
 
   const renderTableHead = (headerGroup: HeaderGroup<D>) => (
-    <tr {...headerGroup.getHeaderGroupProps()}>
+    <tr className={styles.tableHeader} {...headerGroup.getHeaderGroupProps()}>
       {headerGroup.headers.map(column => (
         <th
           {...column.getHeaderProps(column.getSortByToggleProps())}

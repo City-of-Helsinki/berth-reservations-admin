@@ -7,16 +7,19 @@ $rows-spacing: units(0.25);
   border-collapse: separate;
   border-spacing: 0 $rows-spacing;
   width: 100%;
+  color: var(--hds-ui-color-black-90);
 
   .tableHeader {
     text-align: left;
     padding: units(0.5) units(1);
     font-weight: normal;
     position: relative;
+    background-color: var( --hds-ui-color-black-5);
+    color: var(--hds-theme-color-primary);
   }
 
   .mainHeader {
-    background-color: $blue-500;
+    background-color: var(--hds-theme-color-primary);
     padding-top: units(1);
     padding-bottom: units(1);
     color: $white;
@@ -38,15 +41,15 @@ $rows-spacing: units(0.25);
   }
 
   .tableRow {
-    background-color: $white;
+    background-color: var(--hds-ui-color-white);
   }
 
   .expandedRow {
-    box-shadow: 0px -#{$rows-spacing} 0px 0px $white;
+    box-shadow: 0px -#{$rows-spacing} 0px 0px var(--hds-ui-color-white);
   }
 
   .selected {
-    box-shadow: 0px 0px 0px 1px $blue-500;
+    box-shadow: 0px 0px 0px 1px var(--hds-ui-color-white);
   }
 
   .tableCell {
@@ -78,7 +81,7 @@ $rows-spacing: units(0.25);
       display: block;
       content: '';
       width: 1px;
-      background-color: $gray-200;
+      background-color: var(--hds-ui-color-black-20);
       top: units(1);
       bottom: units(0.75);
       right: 0;

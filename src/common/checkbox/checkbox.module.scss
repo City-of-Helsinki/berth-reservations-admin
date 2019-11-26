@@ -8,10 +8,10 @@
   display: inline-block;
   width: $checkbox-dimension;
   height: $checkbox-dimension;
-  border: solid $gray-200 2px;
+  border: solid var(--hds-ui-color-black-20) 2px;
   vertical-align: top;
   cursor: pointer;
-  fill: $white;
+  fill: var(--hds-ui-color-black-90);
 }
 
 .input {
@@ -19,8 +19,8 @@
 }
 
 .checked {
-  border-color: $blue-500;
-  background-color: $blue-500;
+  border-color: var(--hds-brand-color-primary);
+  background-color: var(--hds-brand-color-primary);
 }
 
 .disabled {

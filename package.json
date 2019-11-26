@@ -16,6 +16,8 @@
     "apollo-boost": "^0.4.4",
     "classnames": "^2.2.6",
     "graphql": "^14.5.8",
+    "hds-core": "^0.3.0",
+    "hds-react": "^0.3.1",
     "i18next": "^17.0.18",
     "node-sass": "^4.13.0",
     "react": "^16.10.1",
@@ -35,7 +37,7 @@
     "lint": "eslint --ext js,ts,tsx src",
     "ci": "CI=true yarn test --verbose --runInBand --coverage",
     "types:generate": "apollo codegen:generate --localSchemaFile=schema.json --target=typescript --includes=\"./src/**/*.ts\" --tagName=gql",
-    "schema:download": "apollo service:download --endpoint=https://venepaikka-api.test.hel.ninja/graphql_v2/",
+    "schema:download": "apollo service:download --endpoint=http://localhost:3000/",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
@@ -57,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/typescript": "^1.9.0",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-docs": "^5.2.5",
@@ -74,6 +77,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "graphiql": "^0.17.0",
     "husky": "^3.0.9",
     "prettier": "^1.18.2"
   }

@@ -35,7 +35,7 @@ const Expandable: React.SFC<Props> = ({ label, onClick, children }) => {
           >
             <Button
               variant="text"
-              color="secondary"
+              color="standard"
               onClick={() => setExpanded(!expanded)}
             >
               <Icon name="angleDown" />

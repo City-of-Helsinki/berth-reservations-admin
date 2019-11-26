@@ -20,13 +20,13 @@
 }
 
 .brand {
-  --vene-label-color: #{$blue-500};
+  --vene-label-color: var(--hds-theme-color-primary);
 }
 
 .critical {
-  --vene-label-color: #{$red-500};
+  --vene-label-color: var(--hds-ui-color-error);
 }
 
 .secondary {
-  --vene-label-color: #{$gray-200};
+  --vene-label-color: var(--hds-ui-color-black-20);
 }
