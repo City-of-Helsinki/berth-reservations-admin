@@ -34,6 +34,21 @@ const Page: React.SFC = ({ children }) => {
                 </InternalLink>
               }
             ></Expandable>,
+            <Expandable
+              key="customers"
+              onClick={() => history.push('/customers')}
+              label={
+                <InternalLink to="customers">
+                  <Button
+                    variant="text"
+                    icon={<Icon name="individual" color="standard" />}
+                    onClick={() => {}}
+                  >
+                    <Text bold>Asiakkaat</Text>
+                  </Button>
+                </InternalLink>
+              }
+            ></Expandable>,
           ]}
         </Sidebar>
       }
