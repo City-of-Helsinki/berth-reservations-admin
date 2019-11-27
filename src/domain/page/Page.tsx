@@ -4,10 +4,10 @@ import { useHistory } from 'react-router-dom';
 import Layout from '../../common/layout/Layout';
 import Sidebar from '../../common/sidebar/Sidebar';
 import Expandable from '../../common/expandable/Expandable';
-import InternalNavLink from '../../common/internalNavLink/InternalNavLink';
-import Icon from '../../common/icon/Icon';
+import InternalLink from '../../common/internalLink/InternalLink';
 import Text from '../../common/text/Text';
 import Header from '../../common/header/Header';
+import Button from '../../common/button/Button';
 
 const Page: React.SFC = ({ children }) => {
   const history = useHistory();
@@ -22,12 +22,11 @@ const Page: React.SFC = ({ children }) => {
               key="harbors"
               onClick={() => history.push('/harbors')}
               label={
-                <InternalNavLink
-                  to="harbors"
-                  icon={<Icon name="fence" color="standard" />}
-                >
-                  <Text bold>Venepaikat</Text>
-                </InternalNavLink>
+                <InternalLink to="harbors">
+                  <Button variant="text" onClick={() => {}}>
+                    <Text bold>Venepaikat</Text>
+                  </Button>
+                </InternalLink>
               }
             ></Expandable>,
           ]}

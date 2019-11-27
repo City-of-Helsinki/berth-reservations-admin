@@ -7,10 +7,12 @@ import styles from './internalLink.module.scss';
 type Props = {
   color?: 'standard' | 'critical' | 'brand';
   underlined?: boolean;
+  icon?: JSX.Element;
 } & LinkProps;
 
 const InternalLink: React.SFC<Props> = ({
   color = 'brand',
+  icon,
   children,
   underlined,
   ...props
