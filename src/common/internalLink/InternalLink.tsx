@@ -2,14 +2,12 @@ import React from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { Props as ButtonProps } from '../button/Button';
 import styles from './internalLink.module.scss';
 
 type Props = {
   color?: 'standard' | 'critical' | 'brand';
   underlined?: boolean;
-} & LinkProps &
-  ButtonProps;
+} & LinkProps;
 
 const InternalLink: React.SFC<Props> = ({
   color = 'brand',
