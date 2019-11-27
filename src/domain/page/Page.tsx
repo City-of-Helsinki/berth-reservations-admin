@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../../common/layout/Layout';
 import Sidebar from '../../common/sidebar/Sidebar';
@@ -12,6 +13,7 @@ import Icon from '../../common/icon/Icon';
 
 const Page: React.SFC = ({ children }) => {
   const history = useHistory();
+  const { t } = useTranslation();
 
   return (
     <Layout
@@ -28,7 +30,7 @@ const Page: React.SFC = ({ children }) => {
                     variant="text"
                     icon={<Icon name="fence" color="standard" />}
                   >
-                    <Text bold>Venepaikat</Text>
+                    <Text bold>{t('common.sidebar.harbors')}</Text>
                   </Button>
                 </InternalLink>
               }
@@ -42,7 +44,7 @@ const Page: React.SFC = ({ children }) => {
                     variant="text"
                     icon={<Icon name="individual" color="standard" />}
                   >
-                    <Text bold>Asiakkaat</Text>
+                    <Text bold>{t('common.sidebar.customers')}</Text>
                   </Button>
                 </InternalLink>
               }
