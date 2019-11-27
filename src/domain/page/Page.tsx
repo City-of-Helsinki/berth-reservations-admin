@@ -8,6 +8,7 @@ import InternalLink from '../../common/internalLink/InternalLink';
 import Text from '../../common/text/Text';
 import Header from '../../common/header/Header';
 import Button from '../../common/button/Button';
+import Icon from '../../common/icon/Icon';
 
 const Page: React.SFC = ({ children }) => {
   const history = useHistory();
@@ -23,7 +24,11 @@ const Page: React.SFC = ({ children }) => {
               onClick={() => history.push('/harbors')}
               label={
                 <InternalLink to="harbors">
-                  <Button variant="text" onClick={() => {}}>
+                  <Button
+                    variant="text"
+                    icon={<Icon name="fence" color="standard" />}
+                    onClick={() => {}}
+                  >
                     <Text bold>Venepaikat</Text>
                   </Button>
                 </InternalLink>
