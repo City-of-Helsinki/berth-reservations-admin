@@ -27,7 +27,6 @@ const Page: React.SFC = ({ children }) => {
                   <Button
                     variant="text"
                     icon={<Icon name="fence" color="standard" />}
-                    onClick={() => {}}
                   >
                     <Text bold>Venepaikat</Text>
                   </Button>
@@ -42,7 +41,6 @@ const Page: React.SFC = ({ children }) => {
                   <Button
                     variant="text"
                     icon={<Icon name="individual" color="standard" />}
-                    onClick={() => {}}
                   >
                     <Text bold>Asiakkaat</Text>
                   </Button>
