@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import Layout from '../../common/layout/Layout';
@@ -15,9 +15,17 @@ const Page: React.SFC = ({ children }) => {
   const history = useHistory();
   const { t } = useTranslation();
 
+  const PageHeader = () => (
+    <Header>
+      <Link to="/">
+        <Icon name="helsinkiLogo" size="large" rectangle={true} color="white" />
+      </Link>
+    </Header>
+  );
+
   return (
     <Layout
-      header={<Header href="/" />}
+      header={<PageHeader />}
       sidebar={
         <Sidebar>
           {[

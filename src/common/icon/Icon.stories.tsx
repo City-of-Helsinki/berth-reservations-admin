@@ -13,10 +13,22 @@ icon.story = {
   name: 'Default',
 };
 
+export const small = () => <Icon name="fence" size="small" />;
+
 export const large = () => <Icon name="fence" size="large" />;
 
-export const small = () => <Icon name="fence" size="small" />;
+export const xlarge = () => <Icon name="fence" size="xlarge" />;
+
+export const xxlarge = () => <Icon name="fence" size="xxlarge" />;
+
+export const outlined = () => <Icon name="fence" outlined />;
+
+export const brand = () => <Icon name="fence" color="brand" />;
+
+export const secondary = () => <Icon name="fence" color="secondary" />;
 
 export const critical = () => <Icon name="fence" color="critical" />;
 
-export const outlined = () => <Icon name="fence" outlined />;
+export const helsinki = () => (
+  <Icon name="helsinkiLogo" size="large" rectangle={true} color="brand" />
+);

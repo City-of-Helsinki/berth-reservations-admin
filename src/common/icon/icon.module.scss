@@ -3,35 +3,48 @@
 
 .icon {
   --icon-stroke-color: #{$black};
-  --icon-dimension: #{units(1.5)};
-
-  display: inline-block;
-  vertical-align: top;
   box-sizing: content-box;
+  fill: var(--icon-stroke-color);
+  display: inline-block;
+  vertical-align: middle;
+  shape-rendering: inherit;
+  transform: translate3d(0, 0, 0);
+
   width: var(--icon-dimension);
   height: var(--icon-dimension);
-  fill: var(--icon-stroke-color);
 }
 
-.shape {
-  width: 100%;
-  height: 100%;
+.rectangle {
+  width: calc(var(--icon-dimension) * 2);
 }
 
 .standard {
   --icon-stroke-color: inherit;
+  --icon-dimension: 2.25rem;
 }
 
 .small {
-  --icon-dimension: #{units(1)};
+  --icon-dimension: 1.5rem;
 }
 
 .large {
-  --icon-dimension: #{units(2)};
+  --icon-dimension: 3rem;
+}
+
+.xlarge {
+  --icon-dimension: 6rem;
+}
+
+.xxlarge {
+  --icon-dimension: 12rem;
 }
 
 .brand {
   --icon-stroke-color: #{$blue-500};
+}
+
+.white {
+  --icon-stroke-color: white;
 }
 
 .secondary {
