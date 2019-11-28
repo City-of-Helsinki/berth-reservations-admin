@@ -17,7 +17,7 @@ const Page: React.SFC = ({ children }) => {
 
   return (
     <Layout
-      header={<Header />}
+      header={<Header href="/" />}
       sidebar={
         <Sidebar>
           {[

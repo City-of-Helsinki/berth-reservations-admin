@@ -7,7 +7,7 @@ export interface Props {
   to?: string;
   underline?: 'none' | 'hover' | 'always';
   variant?: 'default' | 'withArrow';
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const ExternalLink = ({ href, underline, variant, children }: Props) => (
