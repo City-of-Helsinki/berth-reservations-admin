@@ -12,7 +12,7 @@ const CustomersPageContainer: React.FC = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
-  const tableData = getCustomersData(data);
+  const tableData: [any] = getCustomersData(data);
 
   return <CustomerList data={tableData} />;
 };

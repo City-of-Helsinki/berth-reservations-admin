@@ -9,7 +9,7 @@ export interface CustomerData {
   phone: string | false | null;
 }
 
-export const getCustomersData = (data: CUSTOMERS | undefined) => {
+export const getCustomersData = (data: CUSTOMERS | undefined | any) => {
   if (data && data.profiles && data.profiles.edges) {
     return data.profiles.edges.map(profile => {
       if (profile && profile.node && profile.node) {
@@ -29,7 +29,7 @@ export const getCustomersData = (data: CUSTOMERS | undefined) => {
         };
         return profileData;
       }
-      return {};
+      return [];
     });
   }
   return [];

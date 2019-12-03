@@ -5,24 +5,23 @@ import { useTranslation } from 'react-i18next';
 import { Column } from 'react-table';
 
 import Table from '../../common/table/Table';
-import CustomerDetails from './CustomerDetailsComponent';
 import { CustomerData } from './utils';
 
-interface TableData {
-  goToDetails: string;
-  group: string;
-  invoice: string;
-  name: string;
-  queue: string;
-  startDate: string;
-  thing: string;
+export interface TableData {
+  goToDetails?: string;
+  group?: string;
+  invoice?: string;
+  name?: string;
+  queue?: string;
+  startDate?: string;
+  thing?: string;
 }
 
 interface Props {
-  data: CustomerData | null;
+  data: [any] | null;
 }
 
-type ColumnType = Column<TableData> & { accessor: keyof TableData };
+type ColumnType = Column<any> & { accessor: keyof TableData };
 
 const HarborsListComponent = ({ data }: Props) => {
   const { t } = useTranslation();
@@ -58,22 +57,24 @@ const HarborsListComponent = ({ data }: Props) => {
     },
   ];
 
-  const tableData: Array<TableData> = data.map(customer => ({
-    goToDetails: 'Avaa',
-    group: 'yksityinen',
-    invoice: 'laskuja',
-    name: `${customer.lastName} ${customer.firstName}`,
-    queue: '-',
-    startDate: '1.1.2019',
-    thing: 'Sisältö',
-  }));
+  const tableData: TableData[] = data
+    ? data.map(customer => ({
+        goToDetails: 'Avaa',
+        group: 'yksityinen',
+        invoice: 'laskuja',
+        name: `${customer.lastName} ${customer.firstName}`,
+        queue: '-',
+        startDate: '1.1.2019',
+        thing: 'Sisältö',
+      }))
+    : [];
 
   return (
     <Table
       data={tableData}
       columns={columns}
-      renderSubComponent={row => {
-        return <CustomerDetails data={row.values} />;
+      renderSubComponent={_ => {
+        return <div>placeholder</div>;
       }}
       renderMainHeader={() => 'Asiakkaat'}
       canSelectRows
