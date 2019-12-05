@@ -63,21 +63,17 @@ const icons = {
 };
 
 export type IconNames = keyof typeof icons;
-
 export interface IconProps {
   outlined?: boolean;
-  rectangle?: boolean;
   name: IconNames;
   width?: string;
   height?: string;
-  size?: 'small' | 'standard' | 'large' | 'xlarge' | 'xxlarge';
-  color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info' | 'white';
-  shape?: 'square' | 'rectangle';
+  size?: 'small' | 'standard' | 'large';
+  color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
 }
 
 const Icon: React.SFC<IconProps> = ({
   outlined,
-  rectangle,
   name,
   color = 'standard',
   size = 'standard',
@@ -85,12 +81,13 @@ const Icon: React.SFC<IconProps> = ({
   const SvgIcon = icons[name];
 
   return (
-    <SvgIcon
+    <div
       className={classNames(styles.icon, styles[size], styles[color], {
         [styles.outlined]: outlined,
-        [styles.rectangle]: rectangle,
       })}
-    />
+    >
+      <SvgIcon className={styles.shape} />
+    </div>
   );
 };
 
