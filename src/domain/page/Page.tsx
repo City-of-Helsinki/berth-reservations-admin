@@ -10,6 +10,7 @@ import Text from '../../common/text/Text';
 import Header from '../../common/header/Header';
 import Button from '../../common/button/Button';
 import Icon from '../../common/icon/Icon';
+import HelsinkiLogo from '../../common/helsinkiLogo/HelsinkiLogo';
 
 const Page: React.SFC = ({ children }) => {
   const history = useHistory();
@@ -18,7 +19,7 @@ const Page: React.SFC = ({ children }) => {
   const PageHeader = () => (
     <Header>
       <Link to="/">
-        <Icon name="helsinkiLogo" size="large" rectangle={true} color="white" />
+        <HelsinkiLogo size="large" color="white" />
       </Link>
     </Header>
   );
