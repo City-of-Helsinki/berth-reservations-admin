@@ -13,6 +13,7 @@
     "@types/react": "16.9.4",
     "@types/react-dom": "16.9.1",
     "@types/react-router-dom": "^5.1.0",
+    "@types/react-table": "^6.8.5",
     "apollo-boost": "^0.4.4",
     "classnames": "^2.2.6",
     "graphql": "^14.5.8",
@@ -23,7 +24,7 @@
     "react-i18next": "^10.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
-    "react-table": "^7.0.0-beta.12",
+    "react-table": "^7.0.0-beta.20",
     "typescript": "3.6.3"
   },
   "scripts": {
