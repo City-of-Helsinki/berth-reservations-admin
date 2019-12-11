@@ -21,6 +21,13 @@ const Page: React.SFC = ({ children }) => {
       <Link to="/">
         <HelsinkiLogo size="large" color="white" />
       </Link>
+      <div>
+        <Expandable
+          label={<Button icon={<Icon name="user" />}>Nizar Rahme</Button>}
+        >
+          <div style={{ position: 'absolute' }}>Log out</div>
+        </Expandable>
+      </div>
     </Header>
   );
 

@@ -1,6 +1,8 @@
 @import 'spacings';
 @import 'breakpoints';
 
+$grid-template-no-sidebar: 'header   header' 'content content' 'footer   footer';
+
 .layout {
   display: grid;
   grid-template-columns: minmax(units(16), max-content) 4fr;
@@ -30,13 +32,14 @@
   }
 
   @include for-size(tablet-portrait-down) {
-    grid-template-areas:
-      'header   header'
-      'content content'
-      'footer   footer';
+    grid-template-areas: $grid-template-no-sidebar;
 
     .sidebar {
       display: none;
     }
+  }
+
+  &.noSidebar {
+    grid-template-areas: $grid-template-no-sidebar;
   }
 }
