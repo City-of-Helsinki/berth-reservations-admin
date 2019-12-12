@@ -27,7 +27,11 @@ const App: React.FC = () => {
       <ApolloProvider client={client}>
         <Router>
           <Switch>
-            <Route path="/login" component={LoginPage} />
+            <Route
+              path="/login"
+              component={() => <LoginPage isAuthenticated={true} />}
+            />
+            {/*
             <Route
               exact
               path="/silent_renew"
@@ -36,9 +40,9 @@ const App: React.FC = () => {
                 return null;
               }}
             />
-            <Route exact path="/callback" component={OidcCallback} />
+          */}
+            <Route path="/callback" component={OidcCallback} />
             <Page>
-              <PrivateRoute exact path="/" component={HarborsPage} />
               <PrivateRoute
                 path="/harbors/:id"
                 component={IndividualHarborPage}
@@ -49,7 +53,7 @@ const App: React.FC = () => {
           </Switch>
         </Router>
       </ApolloProvider>
-    </OidcProvider >
+    </OidcProvider>
   );
 };
 

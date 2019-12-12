@@ -17,7 +17,20 @@ export const loginTunnistamo = (path?: string) => {
 };
 
 export const logoutTunnistamo = (path?: string) => {
-  userManager.signoutRedirect(path ? { data: { path: path } } : {});
+  console.log('logout: ', path);
+  userManager.getUser().then(result => {
+    console.log('logout result: ', result);
+    if (result) {
+      userManager.signoutRedirect(
+        path ? { data: { path: path } } : { data: { path: '/' } }
+      );
+    }
+  });
+  /*
+    userManager.signoutRedirect(
+      { data: { path: '/' } }
+    );
+    */
 };
 
 export const authenticateWithBackend = (

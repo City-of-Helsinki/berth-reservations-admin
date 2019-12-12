@@ -10,11 +10,10 @@ import Header from '../../common/header/Header';
 import Layout from '../../common/layout/Layout';
 import { loginTunnistamo, logoutTunnistamo } from '../auth/authenticate';
 
-const LoginPage: React.SFC<RouteComponentProps> = props => {
+const LoginPage: React.SFC<RouteComponentProps & any> = props => {
   const { t } = useTranslation();
   const login = () => loginTunnistamo();
   const logout = () => logoutTunnistamo();
-
   return (
     <Layout
       header={
@@ -28,12 +27,16 @@ const LoginPage: React.SFC<RouteComponentProps> = props => {
         <div className={styles.contentWrapper}>
           <Text as="h3">{t('login.heading')}</Text>
         </div>
-        <Button size="large" onClick={login}>
-          {t('login.loginButton')}
-        </Button>
-        <Button size="large" color="critical" onClick={logout}>
-          {`Kirjaudu ulos`}
-        </Button>
+        {(!props.isAuthenticated || true) && (
+          <Button size="large" onClick={login}>
+            {t('login.loginButton')}
+          </Button>
+        )}
+        {(props.isAuthenticated || true) && (
+          <Button size="large" color="critical" onClick={logout}>
+            {`Kirjaudu ulos`}
+          </Button>
+        )}
       </div>
     </Layout>
   );

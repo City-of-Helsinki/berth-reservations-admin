@@ -9,13 +9,19 @@ import userManager from './userManager';
 function OidcCallback(props: RouteChildrenProps) {
   const { t } = useTranslation();
 
+  console.log('props: ', props);
+
   const onSuccess = (user: User) => {
+    console.log('onSuccess: ', user);
+    // props.history.push('/');
     if (user.state.path) props.history.push(user.state.path);
-    else props.history.push('/profile');
+    else props.history.push('/');
   };
   const onError = (error: object) => {
     // TODO: do something about errors
-    props.history.push('/');
+    // alert('error!');
+    console.log('error: ', error);
+    // props.history.push('/');
   };
   return (
     <CallbackComponent
