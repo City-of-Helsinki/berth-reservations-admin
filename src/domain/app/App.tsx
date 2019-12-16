@@ -13,12 +13,25 @@ import LoginPage from '../login/LoginPage';
 import Page from '../page/Page';
 import PrivateRoute from '../privateRoute/PrivateRoute';
 import { store } from './state/AppStore';
-
-const { REACT_APP_API_URI } = process.env;
-const api = REACT_APP_API_URI || 'meh';
+import { apiTokenSelector } from '../auth/state/AuthenticationSelectors';
 
 const client = new ApolloClient({
-  uri: api,
+  request: async operation => {
+    try {
+      const token = apiTokenSelector(store.getState());
+      operation.setContext({
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } catch (e) {
+      // User not authenticated
+      // eslint-disable-next-line no-console
+      console.error(e);
+      // TODO: add error-handler
+    }
+  },
+  uri: process.env.REACT_APP_API_URI,
 });
 
 const App: React.FC = () => {
@@ -31,7 +44,6 @@ const App: React.FC = () => {
               path="/login"
               component={() => <LoginPage isAuthenticated={true} />}
             />
-            {/*
             <Route
               exact
               path="/silent_renew"
@@ -40,7 +52,6 @@ const App: React.FC = () => {
                 return null;
               }}
             />
-          */}
             <Route path="/callback" component={OidcCallback} />
             <Page>
               <PrivateRoute
