@@ -6,6 +6,13 @@
 // START Enums and Input Objects
 //==============================================================
 
+export enum AddressAddressType {
+  A_ = "A_",
+  HOME = "HOME",
+  OTHER = "OTHER",
+  WORK = "WORK",
+}
+
 export enum BerthMooringType {
   DINGHY_PLACE = "DINGHY_PLACE",
   NO_STERN_TO_MOORING = "NO_STERN_TO_MOORING",
@@ -16,6 +23,11 @@ export enum BerthMooringType {
   STERN_BUOY_PLACE = "STERN_BUOY_PLACE",
   STERN_POLE_MOORING = "STERN_POLE_MOORING",
   TRAWLER_PLACE = "TRAWLER_PLACE",
+}
+
+export enum ContactMethod {
+  EMAIL = "EMAIL",
+  SMS = "SMS",
 }
 
 //==============================================================
