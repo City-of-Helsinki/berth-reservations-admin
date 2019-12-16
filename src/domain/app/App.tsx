@@ -16,14 +16,17 @@ import Page from '../page/Page';
 import { store } from './state/AppStore';
 import { BackendTokenResponse } from '../auth/types/BackendAuthenticationTypes';
 
-const { REACT_APP_TUNNISTAMO_URI, REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT } = process.env;
+const {
+  REACT_APP_TUNNISTAMO_URI,
+  REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT,
+} = process.env;
 
 const client = new ApolloClient({
   request: async operation => {
     try {
-      console.log("store.getState(): ", store.getState());
-      const accessToken = store.getState().authentication.tunnistamo.user.access_token;
-
+      console.log('store.getState(): ', store.getState());
+      const accessToken = store.getState().authentication.tunnistamo.user
+        .access_token;
 
       const res: AxiosResponse<BackendTokenResponse> = await axios.post(
         `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT}/`,
@@ -50,11 +53,11 @@ const client = new ApolloClient({
       );
       */
 
-      console.log("tokensResponse: ", res);
+      console.log('tokensResponse: ', res);
 
       operation.setContext({
         headers: {
-          "Api-Tokens": JSON.stringify(apiTokens),
+          'Api-Tokens': JSON.stringify(apiTokens),
         },
       });
     } catch (e) {
