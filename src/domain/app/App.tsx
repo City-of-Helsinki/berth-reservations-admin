@@ -11,7 +11,6 @@ import HarborsPage from '../harbors/HarborsPageContainer';
 import IndividualHarborPage from '../individualHarbor/IndividualHarborPageContainer';
 import LoginPage from '../login/LoginPage';
 import Page from '../page/Page';
-import PrivateRoute from '../privateRoute/PrivateRoute';
 import { store } from './state/AppStore';
 import { apiTokenSelector } from '../auth/state/AuthenticationSelectors';
 
@@ -54,12 +53,9 @@ const App: React.FC = () => {
             />
             <Route path="/callback" component={OidcCallback} />
             <Page>
-              <PrivateRoute
-                path="/harbors/:id"
-                component={IndividualHarborPage}
-              />
-              <PrivateRoute path="/harbors" component={HarborsPage} />
-              <PrivateRoute path="/customers" component={CustomersPage} />
+              <Route path="/harbors/:id" component={IndividualHarborPage} />
+              <Route path="/harbors" component={HarborsPage} />
+              <Route path="/customers" component={CustomersPage} />
             </Page>
           </Switch>
         </Router>
