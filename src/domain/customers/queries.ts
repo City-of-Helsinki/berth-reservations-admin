@@ -27,17 +27,6 @@ export const CUSTOMER_QUERY = gql`
           }
           contactMethod
           image
-          addresses {
-            primary
-            addressType
-          }
-          emails {
-            email
-            primary
-          }
-          phones {
-            phone
-          }
         }
       }
     }
