@@ -42,7 +42,7 @@
     "lint": "eslint --ext js,ts,tsx src",
     "ci": "CI=true yarn test --verbose --runInBand --coverage",
     "types:generate": "apollo codegen:generate --localSchemaFile=schema.json --target=typescript --includes=\"./src/**/*.ts\" --tagName=gql",
-    "schema:download": "apollo service:download --endpoint=https://venepaikka-api.test.hel.ninja/graphql_v2/",
+    "schema:download": "apollo service:download --endpoint=https://venepaikka-federation.test.kuva.hel.ninja/",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
