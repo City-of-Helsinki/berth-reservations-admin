@@ -13,9 +13,9 @@ function OidcCallback(props: RouteChildrenProps) {
 
   const onSuccess = (user: User) => {
     console.log('onSuccess: ', user);
-    // props.history.push('/');
-    if (user.state.path) props.history.push(user.state.path);
-    else props.history.push('/');
+    props.history.push('/harbors');
+    // if (user.state.path) props.history.push(user.state.path);
+    // else props.history.push('/');
   };
   const onError = (error: object) => {
     // TODO: do something about errors
