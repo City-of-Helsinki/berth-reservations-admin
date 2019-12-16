@@ -9,10 +9,7 @@ import userManager from './userManager';
 function OidcCallback(props: RouteChildrenProps) {
   const { t } = useTranslation();
 
-  console.log('props: ', props);
-
   const onSuccess = (user: User) => {
-    console.log('onSuccess: ', user);
     props.history.push('/harbors');
     // if (user.state.path) props.history.push(user.state.path);
     // else props.history.push('/');
@@ -20,7 +17,6 @@ function OidcCallback(props: RouteChildrenProps) {
   const onError = (error: object) => {
     // TODO: do something about errors
     // alert('error!');
-    console.log('error: ', error);
     // props.history.push('/');
   };
   return (
