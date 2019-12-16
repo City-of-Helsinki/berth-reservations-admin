@@ -10,7 +10,7 @@ function OidcCallback(props: RouteChildrenProps) {
   const { t } = useTranslation();
 
   const onSuccess = (user: User) => {
-    props.history.push('/harbors');
+    props.history.push('/customers');
     // if (user.state.path) props.history.push(user.state.path);
     // else props.history.push('/');
   };
