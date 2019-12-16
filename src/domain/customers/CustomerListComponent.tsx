@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { Column } from 'react-table';
 
 import Table from '../../common/table/Table';
-import { CustomerData } from './utils';
 
 export interface TableData {
   goToDetails?: string;
