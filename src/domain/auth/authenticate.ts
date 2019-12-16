@@ -7,8 +7,13 @@ import {
   fetchTokenSuccess,
   fetchTokenError,
 } from './state/BackendAuthenticationActions';
-import { TUNNISTAMO_API_TOKEN_ENDPOINT } from '../api/constants/ApiConstants';
 import { BackendTokenResponse } from './types/BackendAuthenticationTypes';
+
+const {
+  REACT_APP_TUNNISTAMO_URI,
+  REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT,
+  REACT_APP_TUNNISTAMO_LOGOUT_ENDPOINT,
+} = process.env;
 
 export const loginTunnistamo = (path?: string) => {
   userManager.signinRedirect(
@@ -17,20 +22,13 @@ export const loginTunnistamo = (path?: string) => {
 };
 
 export const logoutTunnistamo = (path?: string) => {
-  console.log('logout: ', path);
   userManager.getUser().then(result => {
-    console.log('logout result: ', result);
     if (result) {
-      userManager.signoutRedirect(
-        path ? { data: { path: path } } : { data: { path: '/' } }
+      userManager.signoutRedirectCallback(
+        `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_LOGOUT_ENDPOINT}/`
       );
     }
   });
-  /*
-    userManager.signoutRedirect(
-      { data: { path: '/' } }
-    );
-    */
 };
 
 export const authenticateWithBackend = (
@@ -38,9 +36,8 @@ export const authenticateWithBackend = (
 ): StoreThunk => async dispatch => {
   try {
     dispatch(startFetchingToken());
-
     const res: AxiosResponse<BackendTokenResponse> = await axios.post(
-      TUNNISTAMO_API_TOKEN_ENDPOINT,
+      `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT}/`,
       {},
       {
         headers: {
@@ -52,6 +49,5 @@ export const authenticateWithBackend = (
     dispatch(fetchTokenSuccess(res.data));
   } catch (error) {
     dispatch(fetchTokenError(error));
-    // TODO: add error-handler
   }
 };
