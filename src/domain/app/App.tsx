@@ -1,8 +1,10 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { OidcProvider } from 'redux-oidc';
+import axios, { AxiosResponse } from 'axios';
 
 import OidcCallback from '../auth/OidcCallback';
 import userManager from '../auth/userManager';
@@ -12,15 +14,47 @@ import IndividualHarborPage from '../individualHarbor/IndividualHarborPageContai
 import LoginPage from '../login/LoginPage';
 import Page from '../page/Page';
 import { store } from './state/AppStore';
-import { apiTokenSelector } from '../auth/state/AuthenticationSelectors';
+import { BackendTokenResponse } from '../auth/types/BackendAuthenticationTypes';
+
+const { REACT_APP_TUNNISTAMO_URI, REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT } = process.env;
 
 const client = new ApolloClient({
   request: async operation => {
     try {
-      const token = apiTokenSelector(store.getState());
+      console.log("store.getState(): ", store.getState());
+      const accessToken = store.getState().authentication.tunnistamo.user.access_token;
+
+
+      const res: AxiosResponse<BackendTokenResponse> = await axios.post(
+        `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT}/`,
+        {},
+        {
+          headers: {
+            Authorization: `bearer ${accessToken}`,
+          },
+        }
+      );
+
+      const apiTokens = res.data;
+
+      /*
+      const tokensResponse = await fetch(
+        `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT}/`,
+        {
+          method: 'POST',
+          headers: {
+            'Authentication': `Bearer ${accessToken}`,
+          },
+          credentials: "cross-origin"
+        }
+      );
+      */
+
+      console.log("tokensResponse: ", res);
+
       operation.setContext({
         headers: {
-          Authorization: `Bearer ${token}`,
+          "Api-Tokens": JSON.stringify(apiTokens),
         },
       });
     } catch (e) {
@@ -35,32 +69,34 @@ const client = new ApolloClient({
 
 const App: React.FC = () => {
   return (
-    <OidcProvider store={store} userManager={userManager}>
-      <ApolloProvider client={client}>
-        <Router>
-          <Switch>
-            <Route
-              path="/login"
-              component={() => <LoginPage isAuthenticated={true} />}
-            />
-            <Route
-              exact
-              path="/silent_renew"
-              render={() => {
-                userManager.signinSilentCallback();
-                return null;
-              }}
-            />
-            <Route path="/callback" component={OidcCallback} />
-            <Page>
-              <Route path="/harbors/:id" component={IndividualHarborPage} />
-              <Route path="/harbors" component={HarborsPage} />
-              <Route path="/customers" component={CustomersPage} />
-            </Page>
-          </Switch>
-        </Router>
-      </ApolloProvider>
-    </OidcProvider>
+    <Provider store={store}>
+      <OidcProvider store={store} userManager={userManager}>
+        <ApolloProvider client={client}>
+          <Router>
+            <Switch>
+              <Route
+                path="/login"
+                component={() => <LoginPage isAuthenticated={true} />}
+              />
+              <Route
+                exact
+                path="/silent_renew"
+                render={() => {
+                  userManager.signinSilentCallback();
+                  return null;
+                }}
+              />
+              <Route path="/callback" component={OidcCallback} />
+              <Page>
+                <Route path="/harbors/:id" component={IndividualHarborPage} />
+                <Route path="/harbors" component={HarborsPage} />
+                <Route path="/customers" component={CustomersPage} />
+              </Page>
+            </Switch>
+          </Router>
+        </ApolloProvider>
+      </OidcProvider>
+    </Provider>
   );
 };
 
