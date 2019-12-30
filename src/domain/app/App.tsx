@@ -43,11 +43,16 @@ const client = new ApolloClient({
         }
       );
 
+      // token format: "key value;key value"
       const serializeTokens = (tokens: object) => {
-        const entries = Object.entries(tokens);
+        const entries = Object.entries(tokens); // object to array of tuples
+
+        // tuples to strings
         const serializedTokens = entries.map(
-          ([key, value]) => `${key}=${value}`
+          ([key, value]) => `${key} ${value}`
         );
+
+        // concatenate strings
         const result = serializedTokens.join(';');
         return result;
       };
