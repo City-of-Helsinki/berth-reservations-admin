@@ -43,11 +43,20 @@ const client = new ApolloClient({
         }
       );
 
+      const serializeTokens = (tokens: object) => {
+        const entries = Object.entries(tokens);
+        const serializedTokens = entries.map(
+          ([key, value]) => `${key}=${value}`
+        );
+        const result = serializedTokens.join(';');
+        return result;
+      };
+
       const apiTokens = res.data;
 
       operation.setContext({
         headers: {
-          'Api-Tokens': JSON.stringify(apiTokens),
+          'Api-Tokens': serializeTokens(apiTokens),
         },
       });
     } catch (e) {
