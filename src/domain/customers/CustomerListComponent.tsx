@@ -18,7 +18,7 @@ export interface TableData {
 
 type ColumnType = Column<Array<TableData>>;
 
-const CustomersListComponent = ({ data }: Column<Array<TableData>>) => {
+const CustomersListComponent = ({ data }: ColumnType) => {
   const { t } = useTranslation();
   const columns: ColumnType[] = [
     {
