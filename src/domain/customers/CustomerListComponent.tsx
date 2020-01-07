@@ -16,15 +16,10 @@ export interface TableData {
   thing?: string;
 }
 
-interface Props {
-  data: [any] | null;
-}
+type ColumnType = Column<Array<TableData>>;
 
-type ColumnType = Column<any> & { accessor: keyof TableData };
-
-const HarborsListComponent = ({ data }: Props) => {
+const CustomersListComponent = ({ data }: Column<Array<TableData>>) => {
   const { t } = useTranslation();
-
   const columns: ColumnType[] = [
     {
       Header: t('customers.tableHeaders.queue'),
@@ -56,17 +51,15 @@ const HarborsListComponent = ({ data }: Props) => {
     },
   ];
 
-  const tableData: TableData[] = data
-    ? data.map(customer => ({
-        goToDetails: 'Avaa',
-        group: 'yksityinen',
-        invoice: 'laskuja',
-        name: `${customer.lastName} ${customer.firstName}`,
-        queue: '-',
-        startDate: '1.1.2019',
-        thing: 'Sisältö',
-      }))
-    : [];
+  const tableData: TableData[] = data?.map(customer => ({
+    queue: '-',
+    startDate: '1.1.2019',
+    thing: 'Sisältö',
+    goToDetails: 'Avaa',
+    group: 'yksityinen',
+    invoice: 'laskuja',
+    name: `${customer.lastName} ${customer.firstName}`,
+  }));
 
   return (
     <Table
@@ -81,4 +74,4 @@ const HarborsListComponent = ({ data }: Props) => {
   );
 };
 
-export default HarborsListComponent;
+export default CustomersListComponent;
