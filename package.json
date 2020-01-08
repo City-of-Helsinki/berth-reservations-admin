@@ -50,7 +50,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "pre-commit": "yarn lint && yarn codegen"
+    "pre-commit": "yarn codegen && yarn lint"
   },
   "eslintConfig": {
     "extends": "react-app"
