@@ -13,7 +13,7 @@ import axios, { AxiosResponse } from 'axios';
 
 import OidcCallback from '../auth/OidcCallback';
 import userManager from '../auth/userManager';
-import CustomersPage from '../customers/CustomerPageContainer';
+import CustomersPage from '../customers/CustomersPageContainer';
 import HarborsPage from '../harbors/HarborsPageContainer';
 import IndividualHarborPage from '../individualHarbor/IndividualHarborPageContainer';
 import LoginPage from '../login/LoginPage';

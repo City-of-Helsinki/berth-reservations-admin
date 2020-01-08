@@ -1,10 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-// For some reason eslint import plugin is unable to detect the following type
-// eslint-disable-next-line
+import { useQuery } from '@apollo/react-hooks';
 import { Column } from 'react-table';
+import { useTranslation } from 'react-i18next';
 
+import { CUSTOMER_QUERY } from './queries';
+import { getCustomersData, CustomerData } from './utils';
+import { CUSTOMERS } from './__generated__/CUSTOMERS';
+import CustomersPage from './CustomersPage';
 import Table from '../../common/table/Table';
+
+type ColumnType = Column<CustomerData> & { accessor: keyof TableData };
 
 export interface TableData {
   goToDetails?: string;
@@ -16,14 +21,14 @@ export interface TableData {
   thing?: string;
 }
 
-interface Props {
-  data: [any] | null;
-}
-
-type ColumnType = Column<any> & { accessor: keyof TableData };
-
-const HarborsListComponent = ({ data }: Props) => {
+const CustomersPageContainer: React.FC = () => {
+  const { loading, error, data } = useQuery<CUSTOMERS>(CUSTOMER_QUERY);
   const { t } = useTranslation();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error</p>;
+
+  const tableData = getCustomersData(data);
 
   const columns: ColumnType[] = [
     {
@@ -56,29 +61,17 @@ const HarborsListComponent = ({ data }: Props) => {
     },
   ];
 
-  const tableData: TableData[] = data
-    ? data.map(customer => ({
-        goToDetails: 'Avaa',
-        group: 'yksityinen',
-        invoice: 'laskuja',
-        name: `${customer.lastName} ${customer.firstName}`,
-        queue: '-',
-        startDate: '1.1.2019',
-        thing: 'Sisältö',
-      }))
-    : [];
-
   return (
-    <Table
-      data={tableData}
-      columns={columns}
-      renderSubComponent={_ => {
-        return <div>placeholder</div>;
-      }}
-      renderMainHeader={() => 'Asiakkaat'}
-      canSelectRows
-    />
+    <CustomersPage>
+      <Table
+        data={tableData}
+        columns={columns}
+        renderSubComponent={() => <div>placeholder</div>}
+        renderMainHeader={() => t('customers.tableHeaders.mainHeader')}
+        canSelectRows
+      />
+    </CustomersPage>
   );
 };
 
-export default HarborsListComponent;
+export default CustomersPageContainer;
