@@ -8,7 +8,6 @@ export const CUSTOMER_QUERY = gql`
           id
           firstName
           lastName
-          nickname
           divisionsOfInterest {
             ocdId
             type
