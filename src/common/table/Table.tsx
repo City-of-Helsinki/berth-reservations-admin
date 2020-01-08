@@ -49,13 +49,15 @@ const Table = <D extends object>({
 
   const expanderCol: Column<D> = {
     Cell: ({ row }) => (
-      <div {...row.getExpandedToggleProps()} className={styles.expander}>
+      <div
+        {...row.getExpandedToggleProps()}
+        className={styles.expandArrowWrapper}
+      >
         <Icon name={row.isExpanded ? 'angleDown' : 'angleLeft'} />
       </div>
     ),
     Header: ({ state, toggleExpanded }) => (
-      <div
-        className={styles.expanderHeader}
+      <span
         onClick={() =>
           Object.keys(state.expanded).forEach(path =>
             toggleExpanded([path], false)
@@ -63,7 +65,7 @@ const Table = <D extends object>({
         }
       >
         {t('common.table.minimizeAll')}
-      </div>
+      </span>
     ),
     id: EXPANDER,
   };
@@ -119,6 +121,8 @@ const Table = <D extends object>({
           {...column.getHeaderProps(column.getSortByToggleProps())}
           className={classNames(styles.tableHeader, {
             [styles.mainHeader]: renderMainHeader && column.depth === 0,
+            [styles.selector]: column.id === SELECTOR,
+            [styles.expander]: column.id === EXPANDER,
           })}
         >
           {column.render('Header')}
