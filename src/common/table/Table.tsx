@@ -6,14 +6,11 @@ import {
   useExpanded,
   useSortBy,
   useRowSelect,
-  /* eslint-disable */
-  // For some reason eslint import plugin is unable to detect the following types
   TableOptions,
   HeaderProps,
   Row,
   HeaderGroup,
   Column as ColumnType,
-  /* eslint-enable */
 } from 'react-table';
 
 import Icon from '../../common/icon/Icon';
@@ -56,11 +53,13 @@ const Table = <D extends object>({
         <Icon name={row.isExpanded ? 'angleDown' : 'angleLeft'} />
       </div>
     ),
-    Header: ({ state, toggleExpandedByPath }) => (
+    Header: ({ state, toggleExpanded }) => (
       <div
         className={styles.expanderHeader}
         onClick={() =>
-          state.expanded.forEach(path => toggleExpandedByPath([path], false))
+          Object.keys(state.expanded).forEach(path =>
+            toggleExpanded([path], false)
+          )
         }
       >
         {t('common.table.minimizeAll')}
