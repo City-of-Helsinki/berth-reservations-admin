@@ -42,7 +42,6 @@ export interface CUSTOMERS_profiles_edges_node {
   id: string;
   firstName: string;
   lastName: string;
-  nickname: string | null;
   divisionsOfInterest: (CUSTOMERS_profiles_edges_node_divisionsOfInterest | null)[] | null;
   serviceConnections: CUSTOMERS_profiles_edges_node_serviceConnections | null;
   contactMethod: ContactMethod | null;
