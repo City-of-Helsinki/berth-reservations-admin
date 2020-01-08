@@ -25,8 +25,18 @@ const CustomersPageContainer: React.FC = () => {
   const { loading, error, data } = useQuery<CUSTOMERS>(CUSTOMER_QUERY);
   const { t } = useTranslation();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
+  if (loading)
+    return (
+      <CustomersPage>
+        <p>Loading...</p>
+      </CustomersPage>
+    );
+  if (error)
+    return (
+      <CustomersPage>
+        <p>Error</p>
+      </CustomersPage>
+    );
 
   const tableData = getCustomersData(data);
 
