@@ -7,21 +7,19 @@ export interface CustomerData {
   nickname?: string;
 }
 
-export const getCustomersData = (
-  data: CUSTOMERS | undefined
-): Array<CustomerData> => {
-  if (data?.profiles?.edges?.length) {
-    const profileData: Array<CustomerData> = data?.profiles?.edges?.map(
-      profile => {
-        return {
+export const getCustomersData = (data: CUSTOMERS | undefined) => {
+  return (
+    data?.profiles?.edges.reduce<CustomerData[]>((acc, profile) => {
+      if (profile?.node) {
+        const profileData = {
           id: profile?.node?.id,
           firstName: profile?.node?.firstName,
           lastName: profile?.node?.lastName,
           nickname: profile?.node?.nickname || undefined,
         };
+        return [...acc, profileData];
       }
-    );
-    return profileData;
-  }
-  return [];
+      return acc;
+    }, []) ?? []
+  );
 };
