@@ -1,21 +1,19 @@
 import { CUSTOMERS } from './__generated__/CUSTOMERS';
+import { TableData } from './CustomerListComponent';
 
-export interface CustomerData {
-  id?: string;
-  firstName?: string;
-  lastName?: string;
-  nickname?: string;
-}
-
-export const getCustomersData = (data: CUSTOMERS | undefined) => {
+export const getCustomersData = (data: CUSTOMERS | undefined): TableData[] => {
   return (
-    data?.profiles?.edges.reduce<CustomerData[]>((acc, profile) => {
+    data?.profiles?.edges.reduce<TableData[]>((acc, profile) => {
       if (profile?.node) {
         const profileData = {
-          id: profile?.node?.id,
-          firstName: profile?.node?.firstName,
-          lastName: profile?.node?.lastName,
-          nickname: profile?.node?.nickname || undefined,
+          id: profile.node.id,
+          queue: '',
+          startDate: '',
+          thing: '',
+          goToDetails: '',
+          group: '',
+          invoice: '',
+          name: `${profile.node.lastName} ${profile.node.firstName}`,
         };
         return [...acc, profileData];
       }

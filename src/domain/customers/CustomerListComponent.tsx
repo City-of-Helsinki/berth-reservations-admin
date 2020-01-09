@@ -51,19 +51,9 @@ const CustomersListComponent = ({ data }: ColumnType) => {
     },
   ];
 
-  const tableData: TableData[] = data?.map(customer => ({
-    queue: '-',
-    startDate: '1.1.2019',
-    thing: 'Sisältö',
-    goToDetails: 'Avaa',
-    group: 'yksityinen',
-    invoice: 'laskuja',
-    name: `${customer.lastName} ${customer.firstName}`,
-  }));
-
   return (
     <Table
-      data={tableData}
+      data={data}
       columns={columns}
       renderSubComponent={_ => {
         return <div>placeholder</div>;
