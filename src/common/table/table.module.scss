@@ -1,5 +1,5 @@
-@import 'colours';
-@import 'spacings';
+@import "colours";
+@import "spacings";
 
 $rows-spacing: units(0.25);
 
@@ -75,7 +75,7 @@ $rows-spacing: units(0.25);
     &:not(:last-of-type)::after {
       position: absolute;
       display: block;
-      content: '';
+      content: "";
       width: 1px;
       background-color: $gray-200;
       top: units(1);
