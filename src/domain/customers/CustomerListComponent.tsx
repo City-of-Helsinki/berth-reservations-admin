@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// For some reason eslint import plugin is unable to detect the following type
-// eslint-disable-next-line
 import { Column } from 'react-table';
 
 import Table from '../../common/table/Table';
@@ -16,9 +14,12 @@ export interface TableData {
   thing?: string;
 }
 
-type ColumnType = Column<Array<TableData>>;
+type ColumnType = Column<TableData> & { accessor: keyof TableData };
+interface Props {
+  data: TableData[];
+}
 
-const CustomersListComponent = ({ data }: ColumnType) => {
+const CustomersListComponent = ({ data }: Props) => {
   const { t } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -55,10 +56,8 @@ const CustomersListComponent = ({ data }: ColumnType) => {
     <Table
       data={data}
       columns={columns}
-      renderSubComponent={_ => {
-        return <div>placeholder</div>;
-      }}
-      renderMainHeader={() => 'Asiakkaat'}
+      renderSubComponent={() => <div>placeholder</div>}
+      renderMainHeader={() => t('customers.tableHeaders.mainHeader')}
       canSelectRows
     />
   );
