@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
 
+import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { HARBORS_QUERY } from './harborsQuery';
 import Table, { Column } from '../../common/table/Table';
 import { getHarborsData, HarborData } from './utils';
@@ -87,7 +88,13 @@ const HarborsContainer: React.FC = () => {
     },
   ];
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <LoadingSpinner isLoading={true}>
+        <p>Loading...</p>
+      </LoadingSpinner>
+    );
+  }
   if (error) return <p>Error</p>;
 
   const tableData = getHarborsData(data);

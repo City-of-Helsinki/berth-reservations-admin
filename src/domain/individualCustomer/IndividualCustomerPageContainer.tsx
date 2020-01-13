@@ -10,6 +10,7 @@ import Card from '../../common/card/Card';
 import Paragraph from '../../common/paragraph/Paragraph';
 import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import Text from '../../common/text/Text';
+import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 
 const IndividualHarborPageContainer: React.SFC = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,9 @@ const IndividualHarborPageContainer: React.SFC = () => {
   if (loading)
     return (
       <IndividualCustomerPage>
-        <p>Loading...</p>
+        <LoadingSpinner isLoading={true}>
+          <p>Loading...</p>
+        </LoadingSpinner>
       </IndividualCustomerPage>
     );
   if (error || !data?.profile)

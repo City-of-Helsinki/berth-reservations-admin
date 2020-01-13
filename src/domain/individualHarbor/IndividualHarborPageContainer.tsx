@@ -9,6 +9,7 @@ import { INDIVIDUAL_HARBOR } from './__generated__/INDIVIDUAL_HARBOR';
 import { getIndividualHarborData, getBerths, Berth } from './utils/utils';
 import IndividualHarborPage from './individualHarborPage/IndividualHarborPage';
 import HarborProperties from './harborProperties/HarborProperties';
+import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 
 const IndividualHarborPageContainer: React.SFC = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,8 +18,12 @@ const IndividualHarborPageContainer: React.SFC = () => {
     { variables: { id } }
   );
   const { t } = useTranslation();
-
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <LoadingSpinner isLoading={true}>
+        <p>Loading...</p>
+      </LoadingSpinner>
+    );
   if (error) return <p>Error</p>;
 
   const harbor = getIndividualHarborData(data);
