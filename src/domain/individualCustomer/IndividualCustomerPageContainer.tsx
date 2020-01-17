@@ -1,15 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
-import { useTranslation } from 'react-i18next';
 
 import IndividualCustomerPage from './individualCustomerPage/IndividualCustomerPage';
 import { INDIVIDUAL_CUSTOMER_QUERY } from './queries';
 import { INDIVIDUAL_CUSTOMER } from './__generated__/INDIVIDUAL_CUSTOMER';
 import Card from '../../common/card/Card';
-import Paragraph from '../../common/paragraph/Paragraph';
-import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
-import Text from '../../common/text/Text';
+import BillsCard from './billsCard/BillsCard';
+import CustomerInfoCard from './customerInfoCard/CustomerInfoCard';
 
 const IndividualHarborPageContainer: React.SFC = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +15,6 @@ const IndividualHarborPageContainer: React.SFC = () => {
     INDIVIDUAL_CUSTOMER_QUERY,
     { variables: { id } }
   );
-  const { t } = useTranslation();
 
   if (loading)
     return (
@@ -43,51 +40,29 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   return (
     <IndividualCustomerPage>
-      <Card title={t('individualCustomer.customerInformation.title')}>
-        <Text as="h4" size="m">
-          {t('individualCustomer.customerInformation.applicantPersonalInfo')}
-        </Text>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.firstNames')}
-            value={firstName}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.lastName')}
-            value={lastName}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.address')}
-            value={primaryAddress?.address}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.postalCode')}
-            value={primaryAddress?.postalCode}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.city')}
-            value={primaryAddress?.city}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.phone')}
-            value={primaryPhone?.phone}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.email')}
-            value={primaryEmail?.email}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.remarks')}
-            value={comment}
-          />
-        </Paragraph>
-      </Card>
+      <CustomerInfoCard
+        firstName={firstName}
+        lastName={lastName}
+        primaryAddress={primaryAddress}
+        phone={primaryPhone?.phone}
+        email={primaryEmail?.email}
+        comment={comment}
+      />
+      <Card title="VIIMEAIKAINEN TOIMINTA">Placeholder</Card>
+      <BillsCard
+        berthPlace="Pursilahdenranta B 31"
+        contractPeriod="14.9.2019 - 10.6.2019"
+        dueDate="1.4.2019"
+        basicFee={284}
+        mooringFee={['28%', 79.52]}
+        electricityFee={['12%', 34.08]}
+        waterFee={['2%', 5.68]}
+        wasteFee={['8%', 22.72]}
+        gateFee={4}
+        lightingFee={10}
+        total={440}
+        handleShowBill={() => alert("Here's your bill!")}
+      />
     </IndividualCustomerPage>
   );
 };
