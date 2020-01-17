@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import BillsCard from './BillsCard';
+import Button from '../../../common/button/Button';
 
 const mockProps = {
   berthPlace: 'Pursilahdenranta B 31',
@@ -28,5 +29,12 @@ describe('BillsCard', () => {
     const wrapper = getWrapper(mockProps);
 
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('invokes handleShowBill method when the user clicks on the Show Invoice button', () => {
+    const wrapper = getWrapper(mockProps);
+    wrapper.find(Button).simulate('click');
+
+    expect(mockProps.handleShowBill).toHaveBeenCalledTimes(1);
   });
 });
