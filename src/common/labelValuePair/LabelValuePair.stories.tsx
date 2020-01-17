@@ -18,3 +18,16 @@ labelValuePair.story = {
 export const branded = () => (
   <LabelValuePair {...dummyProps} labelColor="brand" />
 );
+
+export const multiValues = () => (
+  <LabelValuePair label="foo" value={['bar', 'baz']} labelColor="brand" />
+);
+
+export const rightAligned = () => (
+  <LabelValuePair
+    label="foo"
+    align="right"
+    value={['bar', 'baz']}
+    labelColor="brand"
+  />
+);
