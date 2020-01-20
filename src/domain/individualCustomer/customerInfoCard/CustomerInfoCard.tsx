@@ -6,7 +6,7 @@ import Text from '../../../common/text/Text';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Paragraph from '../../../common/paragraph/Paragraph';
 
-export interface ComponentProps {
+export interface CustomerInfoCardProps {
   firstName: string;
   lastName: string;
   primaryAddress?: {
@@ -19,7 +19,7 @@ export interface ComponentProps {
   comment?: string | null;
 }
 
-const CustomerInfoCard: React.SFC<ComponentProps> = ({
+const CustomerInfoCard: React.SFC<CustomerInfoCardProps> = ({
   firstName,
   lastName,
   primaryAddress,
