@@ -13,10 +13,10 @@ export interface ComponentProps {
   contractPeriod: string;
   dueDate: string;
   basicFee: number;
-  mooringFee: [string, number];
-  electricityFee: [string, number];
-  waterFee: [string, number];
-  wasteFee: [string, number];
+  mooringFee: [number, string];
+  electricityFee: [number, string];
+  waterFee: [number, string];
+  wasteFee: [number, string];
   gateFee: number;
   lightingFee: number;
   total: number;
@@ -39,11 +39,15 @@ const BillsCard: React.SFC<ComponentProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
 
-  const formatter = new Intl.NumberFormat(i18n.language || 'fi-FI', {
-    style: 'currency',
-    currency: 'EUR',
-    minimumIntegerDigits: 2,
-  });
+  const formatPrice = (fee: number, percentage?: string) => {
+    const formatter = new Intl.NumberFormat(i18n.language || 'fi-FI', {
+      style: 'currency',
+      currency: 'EUR',
+      minimumIntegerDigits: 2,
+    });
+
+    return `${percentage}\u00A0\u00A0${formatter.format(fee)}`;
+  };
 
   return (
     <Card title={t('individualCustomer.customerBill.title')}>
@@ -73,48 +77,44 @@ const BillsCard: React.SFC<ComponentProps> = ({
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.basicFee')}
-          value={formatter.format(basicFee)}
+          value={formatPrice(basicFee)}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.mooring')}
-          value={`${mooringFee[0]}\u00A0\u00A0${formatter.format(
-            mooringFee[1]
-          )}`}
+          value={formatPrice(mooringFee[0], mooringFee[1])}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.electricity')}
-          value={`${electricityFee[0]}\u00A0\u00A0${formatter.format(
-            electricityFee[1]
-          )}`}
+          value={formatPrice(electricityFee[0], electricityFee[1])}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.water')}
-          value={`${waterFee[0]}\u00A0\u00A0${formatter.format(waterFee[1])}`}
+          value={formatPrice(waterFee[0], waterFee[1])}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.waste')}
-          value={`${wasteFee[0]}\u00A0\u00A0${formatter.format(wasteFee[1])}`}
+          value={formatPrice(wasteFee[0], wasteFee[1])}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.gate')}
-          value={formatter.format(gateFee)}
+          value={formatPrice(gateFee)}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.lighting')}
-          value={formatter.format(lightingFee)}
+          value={formatPrice(lightingFee)}
         />
       </Paragraph>
       <Paragraph className={styles.feesSection}>
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.total')}
-          value={formatter.format(total)}
+          value={formatPrice(total)}
         />
       </Paragraph>
     </Card>
