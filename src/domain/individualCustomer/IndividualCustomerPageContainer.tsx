@@ -20,14 +20,6 @@ const IndividualHarborPageContainer: React.SFC = () => {
   );
   const { t } = useTranslation();
 
-  if (loading)
-    return (
-      <IndividualCustomerPage>
-        <LoadingSpinner isLoading={true}>
-          <p>Loading...</p>
-        </LoadingSpinner>
-      </IndividualCustomerPage>
-    );
   if (error || !data?.profile)
     return (
       <IndividualCustomerPage>
@@ -45,53 +37,55 @@ const IndividualHarborPageContainer: React.SFC = () => {
   } = data.profile;
 
   return (
-    <IndividualCustomerPage>
-      <Card title={t('individualCustomer.customerInformation.title')}>
-        <Text as="h4" size="m">
-          {t('individualCustomer.customerInformation.applicantPersonalInfo')}
-        </Text>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.firstNames')}
-            value={firstName}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.lastName')}
-            value={lastName}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.address')}
-            value={primaryAddress?.address}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.postalCode')}
-            value={primaryAddress?.postalCode}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.city')}
-            value={primaryAddress?.city}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.phone')}
-            value={primaryPhone?.phone}
-          />
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.email')}
-            value={primaryEmail?.email}
-          />
-        </Paragraph>
-        <Paragraph>
-          <LabelValuePair
-            label={t('individualCustomer.customerInformation.remarks')}
-            value={comment}
-          />
-        </Paragraph>
-      </Card>
-    </IndividualCustomerPage>
+    <LoadingSpinner isLoading={loading}>
+      <IndividualCustomerPage>
+        <Card title={t('individualCustomer.customerInformation.title')}>
+          <Text as="h4" size="m">
+            {t('individualCustomer.customerInformation.applicantPersonalInfo')}
+          </Text>
+          <Paragraph>
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.firstNames')}
+              value={firstName}
+            />
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.lastName')}
+              value={lastName}
+            />
+          </Paragraph>
+          <Paragraph>
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.address')}
+              value={primaryAddress?.address}
+            />
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.postalCode')}
+              value={primaryAddress?.postalCode}
+            />
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.city')}
+              value={primaryAddress?.city}
+            />
+          </Paragraph>
+          <Paragraph>
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.phone')}
+              value={primaryPhone?.phone}
+            />
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.email')}
+              value={primaryEmail?.email}
+            />
+          </Paragraph>
+          <Paragraph>
+            <LabelValuePair
+              label={t('individualCustomer.customerInformation.remarks')}
+              value={comment}
+            />
+          </Paragraph>
+        </Card>
+      </IndividualCustomerPage>
+    </LoadingSpinner>
   );
 };
 

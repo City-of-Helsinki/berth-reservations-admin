@@ -18,12 +18,7 @@ const IndividualHarborPageContainer: React.SFC = () => {
     { variables: { id } }
   );
   const { t } = useTranslation();
-  if (loading)
-    return (
-      <LoadingSpinner isLoading={true}>
-        <p>Loading...</p>
-      </LoadingSpinner>
-    );
+
   if (error) return <p>Error</p>;
 
   const harbor = getIndividualHarborData(data);
@@ -59,27 +54,29 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   return (
     <IndividualHarborPage>
-      <HarborProperties
-        name={harbor.name || ''}
-        imageUrl={harbor.imageFile || ''}
-        servicemapId={harbor.servicemapId || ''}
-        address={`${harbor.streetAddress} ${harbor.zipCode} ${harbor.municipality}`}
-        properties={{
-          electricity: harbor.electricity,
-          gate: harbor.gate,
-          lighting: harbor.lighting,
-          maximumWidth: harbor.maximumWidth || 0,
-          numberOfPlaces: harbor.numberOfPlaces || 0,
-          wasteCollection: harbor.wasteCollection,
-          water: harbor.water,
-        }}
-      />
-      <Table
-        data={berths}
-        columns={columns}
-        renderMainHeader={() => t('individualHarbor.tableHeaders.mainHeader')}
-        canSelectRows
-      />
+      <LoadingSpinner isLoading={loading}>
+        <HarborProperties
+          name={harbor.name || ''}
+          imageUrl={harbor.imageFile || ''}
+          servicemapId={harbor.servicemapId || ''}
+          address={`${harbor.streetAddress} ${harbor.zipCode} ${harbor.municipality}`}
+          properties={{
+            electricity: harbor.electricity,
+            gate: harbor.gate,
+            lighting: harbor.lighting,
+            maximumWidth: harbor.maximumWidth || 0,
+            numberOfPlaces: harbor.numberOfPlaces || 0,
+            wasteCollection: harbor.wasteCollection,
+            water: harbor.water,
+          }}
+        />
+        <Table
+          data={berths}
+          columns={columns}
+          renderMainHeader={() => t('individualHarbor.tableHeaders.mainHeader')}
+          canSelectRows
+        />
+      </LoadingSpinner>
     </IndividualHarborPage>
   );
 };

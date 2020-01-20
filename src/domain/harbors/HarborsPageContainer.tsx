@@ -88,27 +88,22 @@ const HarborsContainer: React.FC = () => {
     },
   ];
 
-  if (loading) {
-    return (
-      <LoadingSpinner isLoading={true}>
-        <p>Loading...</p>
-      </LoadingSpinner>
-    );
-  }
   if (error) return <p>Error</p>;
 
   const tableData = getHarborsData(data);
 
   return (
-    <HarborsPage>
-      <Table
-        data={tableData}
-        columns={columns}
-        renderSubComponent={row => <HarborDetails {...row.original} />}
-        renderMainHeader={() => t('harbors.tableHeaders.mainHeader')}
-        canSelectRows
-      />
-    </HarborsPage>
+    <LoadingSpinner isLoading={loading}>
+      <HarborsPage>
+        <Table
+          data={tableData}
+          columns={columns}
+          renderSubComponent={row => <HarborDetails {...row.original} />}
+          renderMainHeader={() => t('harbors.tableHeaders.mainHeader')}
+          canSelectRows
+        />
+      </HarborsPage>
+    </LoadingSpinner>
   );
 };
 
