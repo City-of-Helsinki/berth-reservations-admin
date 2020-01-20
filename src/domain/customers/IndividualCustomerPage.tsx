@@ -20,7 +20,7 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   return (
     <LoadingSpinner isLoading={loading}>
-      <IndividualCustomerPage data={data} t={t} />
+      <IndividualCustomerPage data={data as any} t={t} />
     </LoadingSpinner>
   );
 };

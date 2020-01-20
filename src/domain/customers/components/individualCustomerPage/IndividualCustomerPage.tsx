@@ -28,10 +28,12 @@ interface DataProps {
 
 export interface IndividualHarborPageProps {
   data: DataProps | undefined;
+  t: Function;
 }
 
 const IndividualHarborPage: React.SFC<IndividualHarborPageProps> = ({
   data,
+  t,
 }) => {
   if (data === undefined) {
     return <p>error</p>;
