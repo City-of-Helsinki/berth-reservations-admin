@@ -36,7 +36,7 @@ const CustomerInfoCard: React.SFC<ComponentProps> = ({
       </Text>
       <Paragraph>
         <LabelValuePair
-          label={t('individualCustomer.customerInformation.firstNames')}
+          label={t('individualCustomer.customerInformation.firstName')}
           value={firstName}
         />
         <LabelValuePair

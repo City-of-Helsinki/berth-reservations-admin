@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'hds-react';
 
 import Card from '../../../common/card/Card';
 import Text from '../../../common/text/Text';
-import Button from '../../../common/button/Button';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Paragraph from '../../../common/paragraph/Paragraph';
 import styles from './billsCard.module.scss';
@@ -47,8 +47,7 @@ const BillsCard: React.SFC<ComponentProps> = ({
   return (
     <Card title={t('individualCustomer.customerBill.title')}>
       <Button
-        variant="outlined"
-        size="large"
+        color="supplementary"
         onClick={handleShowBill}
         className={styles.button}
       >

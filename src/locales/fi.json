@@ -84,7 +84,7 @@
     "customerInformation": {
       "title": "ASIAKASTIEDOT",
       "applicantPersonalInfo": "HAKIJAN HENKILÖTIEDOT",
-      "firstNames": "Etunimet",
+      "firstName": "Etunimet",
       "lastName": "Sukunimi",
       "address": "Jakeluosoite",
       "postalCode": "Postinumero",
