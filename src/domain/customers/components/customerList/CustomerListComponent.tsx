@@ -19,7 +19,7 @@ export interface TableData {
 type ColumnType = Column<TableData> & { accessor: keyof TableData };
 export interface CustomerListComponentProps {
   data: TableData[];
-  t?: TFunction;
+  t: TFunction;
 }
 
 const CustomerListComponent = ({ data, t }: CustomerListComponentProps) => {

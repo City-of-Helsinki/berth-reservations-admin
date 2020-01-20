@@ -11,5 +11,5 @@ export default {
 
 export const customerList = () => {
   const data = getCustomersData(dummyCustomers);
-  return <CustomerListComponent data={data} />;
+  return <CustomerListComponent data={data} t={() => ({})} />;
 };
