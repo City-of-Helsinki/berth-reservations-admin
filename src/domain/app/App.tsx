@@ -11,17 +11,17 @@ import { OidcProvider } from 'redux-oidc';
 import { Provider } from 'react-redux';
 import axios, { AxiosResponse } from 'axios';
 
-import OidcCallback from '../auth/OidcCallback';
-import userManager from '../auth/userManager';
+import OidcCallback from '../../auth/OidcCallback';
+import userManager from '../../auth/userManager';
 import CustomersPage from '../customers/CustomerPageContainer';
-import HarborsPage from '../harbors/HarborsPageContainer';
-import IndividualHarborPage from '../individualHarbor/IndividualHarborPageContainer';
-import IndividualCustomerPage from '../individualCustomer/IndividualCustomerPageContainer';
-import LoginPage from '../login/LoginPage';
-import Page from '../page/Page';
-import PrivateRoute from '../privateRoute/PrivateRoute';
-import { store } from './state/AppStore';
-import { BackendTokenResponse } from '../auth/types/BackendAuthenticationTypes';
+import HarborsPage from '../harbors/HarborsListPage';
+import IndividualHarborPage from '../harbors/HarborPage';
+import IndividualCustomerPage from '../customers/individualCustomer/IndividualCustomerPageContainer';
+import LoginPage from './login/LoginPage';
+import Page from './page/Page';
+import PrivateRoute from './privateRoute/PrivateRoute';
+import { store } from '../../auth/state/AppStore';
+import { BackendTokenResponse } from '../../auth/types/BackendAuthenticationTypes';
 import i18n from '../../locales/i18n';
 
 const {
