@@ -39,7 +39,7 @@ const BillsCard: React.SFC<ComponentProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
 
-  const formatPrice = (fee: number, percentage?: string) => {
+  const formatPrice = (fee: number, percentage = '') => {
     const formatter = new Intl.NumberFormat(i18n.language || 'fi-FI', {
       style: 'currency',
       currency: 'EUR',
@@ -58,7 +58,9 @@ const BillsCard: React.SFC<ComponentProps> = ({
       >
         {t('individualCustomer.customerBill.showInvoice')}
       </Button>
-      <Text as="h3">{t('individualCustomer.customerBill.berthRental')}</Text>
+      <Text as="h4" size="m">
+        {t('individualCustomer.customerBill.berthRental')}
+      </Text>
       <Paragraph>
         <LabelValuePair
           label={t('individualCustomer.customerBill.berthPlace')}
