@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Button } from 'hds-react';
 
 import BillsCard from './BillsCard';
-import Button from '../../../common/button/Button';
 
 const mockProps = {
   berthPlace: 'Pursilahdenranta B 31',
