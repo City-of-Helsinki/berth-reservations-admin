@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import * as Sentry from '@sentry/browser';
 
 import userManager from './userManager';
 import { StoreThunk } from './types/AppTypes';
@@ -21,18 +22,13 @@ const {
   REACT_APP_TUNNISTAMO_LOGOUT_ENDPOINT,
 } = process.env;
 
-export const logoutTunnistamo = (path?: string) => {
-  //TODO: Fix the logout with Tunnistamo
-  userManager.signoutRedirect(path ? { data: { path } } : {});
-  userManager.getUser().then(result => {
-    if (result) {
-      userManager.signoutRedirectCallback(
-        `${REACT_APP_TUNNISTAMO_URI}/${REACT_APP_TUNNISTAMO_LOGOUT_ENDPOINT}/`
-      );
-    }
-  });
+export const logoutTunnistamo = async () => {
+  try {
+    await userManager.signoutPopup();
+  } catch (e) {
+    Sentry.captureException(e);
+  }
 };
-
 export const authenticateWithBackend = (
   accessToken: string
 ): StoreThunk => async dispatch => {
