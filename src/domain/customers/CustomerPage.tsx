@@ -2,11 +2,15 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
-import { CUSTOMER_QUERY } from './queries';
-import { getCustomersData } from './utils';
+import { CUSTOMER_QUERY } from './customerQueries';
+import { getCustomersData } from './customerUtils';
 import { CUSTOMERS } from './__generated__/CUSTOMERS';
-import CustomerList from './CustomerListComponent';
-import CustomersPage from './CustomersPage';
+import CustomerList from './components/customerList/CustomerListComponent';
+import styles from './customersPage.module.scss';
+
+export const CustomersPage: React.SFC = ({ children }) => {
+  return <div className={styles.customersPage}>{children}</div>;
+};
 
 const CustomersPageContainer: React.FC = () => {
   const { loading, error, data } = useQuery<CUSTOMERS>(CUSTOMER_QUERY);

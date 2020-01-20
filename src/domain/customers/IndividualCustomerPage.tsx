@@ -2,13 +2,17 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
-import IndividualCustomerPage from './individualCustomerPage/IndividualCustomerPage';
-import { INDIVIDUAL_CUSTOMER_QUERY } from './queries';
+import styles from './customersPage.module.scss';
+import { INDIVIDUAL_CUSTOMER_QUERY } from './customerQueries';
 import { INDIVIDUAL_CUSTOMER } from './__generated__/INDIVIDUAL_CUSTOMER';
-import Card from '../../../common/card/Card';
-import BillsCard from './billsCard/BillsCard';
-import CustomerInfoCard from './customerInfoCard/CustomerInfoCard';
-import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
+import Card from '../../common/card/Card';
+import BillsCard from './components/billsCard/BillsCard';
+import CustomerInfoCard from './components/customerInfoCard/CustomerInfoCard';
+import LoadingSpinner from '../../common/spinner/LoadingSpinner';
+
+export const IndividualCustomerPage: React.SFC = ({ children }) => {
+  return <div className={styles.individualCustomerPage}>{children}</div>;
+};
 
 const IndividualHarborPageContainer: React.SFC = () => {
   const { id } = useParams<{ id: string }>();

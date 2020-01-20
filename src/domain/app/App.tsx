@@ -13,10 +13,10 @@ import axios, { AxiosResponse } from 'axios';
 
 import OidcCallback from '../../auth/OidcCallback';
 import userManager from '../../auth/userManager';
-import CustomersPage from '../customers/CustomerPageContainer';
+import { CustomersPage } from '../customers/CustomerPage';
 import HarborsPage from '../harbors/HarborsListPage';
 import IndividualHarborPage from '../harbors/HarborPage';
-import IndividualCustomerPage from '../customers/individualCustomer/IndividualCustomerPageContainer';
+import { IndividualCustomerPage } from '../customers/IndividualCustomerPage';
 import LoginPage from './login/LoginPage';
 import Page from './page/Page';
 import PrivateRoute from './privateRoute/PrivateRoute';

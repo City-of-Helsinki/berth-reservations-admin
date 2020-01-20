@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import Grid from '../../common/grid/Grid';
-import styles from './customerList.module.scss';
-import Paragraph from '../../common/paragraph/Paragraph';
+import Grid from '../../../../common/grid/Grid';
+import styles from './customerDetails.module.scss';
+import Paragraph from '../../../../common/paragraph/Paragraph';
 
 const CustomerDetails = () => {
   const { t } = useTranslation();

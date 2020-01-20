@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Column } from 'react-table';
 
-import Table from '../../common/table/Table';
-import InternalLink from '../../common/internalLink/InternalLink';
+import Table from '../../../../common/table/Table';
+import InternalLink from '../../../../common/internalLink/InternalLink';
 
 export interface TableData {
   id: string;

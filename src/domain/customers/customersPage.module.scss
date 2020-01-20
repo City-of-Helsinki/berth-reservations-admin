@@ -1,7 +1,17 @@
-@import 'colours';
-@import 'spacings';
+@import "colours";
+@import "spacings";
 
 .customersPage {
+  min-height: 100%;
+  padding: units(2);
+  background-color: $gray-100;
+}
+
+.individualCustomerPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: max-content;
+  grid-gap: units(1.5);
   min-height: 100%;
   padding: units(2);
   background-color: $gray-100;

@@ -1,5 +1,5 @@
 import { CUSTOMERS } from './__generated__/CUSTOMERS';
-import { TableData } from './CustomerListComponent';
+import { TableData } from './components/customerList/CustomerListComponent';
 
 export const getCustomersData = (data: CUSTOMERS | undefined): TableData[] => {
   return (

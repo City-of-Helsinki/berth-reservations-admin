@@ -1,8 +1,8 @@
 import React from 'react';
 
 import CustomerListComponent from './CustomerListComponent';
-import CustomersPage from './CustomersPage';
-import { getCustomersData } from './utils';
+import { CustomersPage } from '../../CustomerPage';
+import { getCustomersData } from '../../customerUtils';
 import dummyCustomers from './__mocks__/data.json';
 
 export default {

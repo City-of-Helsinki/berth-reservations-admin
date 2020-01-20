@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { HARBORS_QUERY } from './harborQueries';
@@ -14,13 +15,12 @@ import styles from './harbor.module.scss';
 
 type ColumnType = Column<HarborData> & { accessor: keyof HarborData };
 
-const HarborsPage: React.SFC = ({ children }) => {
-  return <div className={styles.harborsPage}>{children}</div>;
-};
+interface Props {
+  tableData: HarborData[];
+  t: TFunction;
+}
 
-const HarborsContainer: React.FC = () => {
-  const { loading, error, data } = useQuery<HARBORS>(HARBORS_QUERY);
-  const { t } = useTranslation();
+const HarborsList: React.SFC<Props> = ({ tableData, t }) => {
   const columns: ColumnType[] = [
     {
       Cell: ({ cell }) => (
@@ -92,21 +92,28 @@ const HarborsContainer: React.FC = () => {
     },
   ];
 
-  if (error) return <p>Error</p>;
+  return (
+    <div className={styles.harborsPage}>
+      <Table
+        data={tableData}
+        columns={columns}
+        renderSubComponent={row => <HarborDetails {...row.original} />}
+        renderMainHeader={() => t('harbors.tableHeaders.mainHeader')}
+        canSelectRows
+      />
+    </div>
+  );
+};
 
+const HarborsContainer: React.FC = () => {
+  const { loading, error, data } = useQuery<HARBORS>(HARBORS_QUERY);
+  const { t } = useTranslation();
+  if (error) return <p>Error</p>;
   const tableData = getHarborsData(data);
 
   return (
     <LoadingSpinner isLoading={loading}>
-      <HarborsPage>
-        <Table
-          data={tableData}
-          columns={columns}
-          renderSubComponent={row => <HarborDetails {...row.original} />}
-          renderMainHeader={() => t('harbors.tableHeaders.mainHeader')}
-          canSelectRows
-        />
-      </HarborsPage>
+      <HarborsList tableData={tableData} t={t} />
     </LoadingSpinner>
   );
 };
