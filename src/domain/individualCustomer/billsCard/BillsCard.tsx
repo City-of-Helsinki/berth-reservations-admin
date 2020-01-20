@@ -8,7 +8,7 @@ import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Paragraph from '../../../common/paragraph/Paragraph';
 import styles from './billsCard.module.scss';
 
-export interface ComponentProps {
+export interface BillsCardProps {
   berthPlace: string;
   contractPeriod: string;
   dueDate: string;
@@ -23,7 +23,7 @@ export interface ComponentProps {
   handleShowBill(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const BillsCard: React.SFC<ComponentProps> = ({
+const BillsCard: React.SFC<BillsCardProps> = ({
   basicFee,
   berthPlace,
   contractPeriod,
