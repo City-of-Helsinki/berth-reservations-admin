@@ -18,22 +18,11 @@
 .value {
   text-align: left;
   margin-right: units(1);
-
-  &:last-of-type {
-    flex-grow: 1;
-    margin-right: 0;
-  }
+  flex-grow: 1;
+  margin-right: 0;
 
   &.right {
     text-align: right;
-
-    &:last-of-type {
-      flex-grow: 0;
-    }
-
-    &:nth-child(2) {
-      flex-grow: 1;
-    }
   }
 }
 

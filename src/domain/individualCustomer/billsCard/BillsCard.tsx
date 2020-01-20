@@ -42,6 +42,7 @@ const BillsCard: React.SFC<ComponentProps> = ({
   const formatter = new Intl.NumberFormat(i18n.language || 'fi-FI', {
     style: 'currency',
     currency: 'EUR',
+    minimumIntegerDigits: 2,
   });
 
   return (
@@ -77,22 +78,26 @@ const BillsCard: React.SFC<ComponentProps> = ({
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.mooring')}
-          value={[mooringFee[0], formatter.format(mooringFee[1])]}
+          value={`${mooringFee[0]}\u00A0\u00A0${formatter.format(
+            mooringFee[1]
+          )}`}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.electricity')}
-          value={[electricityFee[0], formatter.format(electricityFee[1])]}
+          value={`${electricityFee[0]}\u00A0\u00A0${formatter.format(
+            electricityFee[1]
+          )}`}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.water')}
-          value={[waterFee[0], formatter.format(waterFee[1])]}
+          value={`${waterFee[0]}\u00A0\u00A0${formatter.format(waterFee[1])}`}
         />
         <LabelValuePair
           align="right"
           label={t('individualCustomer.customerBill.waste')}
-          value={[wasteFee[0], formatter.format(wasteFee[1])]}
+          value={`${wasteFee[0]}\u00A0\u00A0${formatter.format(wasteFee[1])}`}
         />
         <LabelValuePair
           align="right"
