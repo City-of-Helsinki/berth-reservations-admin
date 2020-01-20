@@ -5,7 +5,7 @@ import styles from './labelValuePair.module.scss';
 
 interface Props {
   label: string;
-  value?: string | null | React.ReactElement;
+  value?: string | null;
   labelColor?: 'standard' | 'brand' | 'critical' | 'secondary';
   align?: 'left' | 'center' | 'right';
 }
@@ -15,17 +15,13 @@ const LabelValuePair = ({
   value,
   labelColor = 'standard',
   align = 'left',
-}: Props) => {
-  return (
-    <div className={styles.labelValuePair}>
-      <span className={classNames(styles.label, styles[labelColor])}>
-        {label}:
-      </span>
-      <span key="value" className={classNames(styles.value, styles[align])}>
-        {value}
-      </span>
-    </div>
-  );
-};
+}: Props) => (
+  <div className={styles.labelValuePair}>
+    <span className={classNames(styles.label, styles[labelColor])}>
+      {label}:
+    </span>
+    <span className={classNames(styles.value, styles[align])}>{value}</span>
+  </div>
+);
 
 export default LabelValuePair;
