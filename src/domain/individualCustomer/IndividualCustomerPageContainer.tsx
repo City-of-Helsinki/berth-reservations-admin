@@ -19,11 +19,9 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   if (error || !data?.profile)
     return (
-      <LoadingSpinner isLoading={loading}>
-        <IndividualCustomerPage>
-          <p>Error</p>
-        </IndividualCustomerPage>
-      </LoadingSpinner>
+      <IndividualCustomerPage>
+        <p>Error</p>
+      </IndividualCustomerPage>
     );
 
   const {

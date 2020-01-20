@@ -22,12 +22,7 @@ const IndividualHarborPageContainer: React.SFC = () => {
   if (error) return <p>Error</p>;
 
   const harbor = getIndividualHarborData(data);
-  if (!harbor)
-    return (
-      <LoadingSpinner isLoading={loading}>
-        <p>No data...</p>
-      </LoadingSpinner>
-    );
+  if (!harbor) return <p>No data...</p>;
 
   type ColumnType = Column<Berth> & {
     accessor: keyof Berth;
