@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Property from './Property';
-import Text from '../../../common/text/Text';
+import Text from '../../../../common/text/Text';
 
 describe('Property', () => {
   const getWrapper = (props = { iconName: 'fence', label: 'Test' }) =>
