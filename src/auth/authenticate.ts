@@ -19,7 +19,6 @@ export const loginTunnistamo = (path?: string) => {
 const {
   REACT_APP_TUNNISTAMO_URI,
   REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT,
-  REACT_APP_TUNNISTAMO_LOGOUT_ENDPOINT,
 } = process.env;
 
 export const logoutTunnistamo = async () => {
