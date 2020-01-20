@@ -22,7 +22,7 @@ type ColumnType = Column<Berth> & {
 interface Props {
   tableData: Berth[];
   t: TFunction;
-  harbor: IndividualHarborData;
+  harbor?: IndividualHarborData;
 }
 
 const IndividualHarborPage: React.SFC<Props> = ({ tableData, t, harbor }) => {
@@ -53,18 +53,18 @@ const IndividualHarborPage: React.SFC<Props> = ({ tableData, t, harbor }) => {
     <div className={styles.individualHarborPage}>
       <div className={styles.harborsPage}>
         <HarborProperties
-          name={harbor.name || ''}
-          imageUrl={harbor.imageFile || ''}
-          servicemapId={harbor.servicemapId || ''}
-          address={`${harbor.streetAddress} ${harbor.zipCode} ${harbor.municipality}`}
+          name={harbor?.name || ''}
+          imageUrl={harbor?.imageFile || ''}
+          servicemapId={harbor?.servicemapId || ''}
+          address={`${harbor?.streetAddress} ${harbor?.zipCode} ${harbor?.municipality}`}
           properties={{
-            electricity: harbor.electricity !== undefined,
-            gate: harbor.gate !== undefined,
-            lighting: harbor.lighting !== undefined,
-            maximumWidth: harbor.maximumWidth || 0,
-            numberOfPlaces: harbor.numberOfPlaces || 0,
-            wasteCollection: harbor.wasteCollection !== undefined,
-            water: harbor.water !== undefined,
+            electricity: harbor?.electricity !== undefined,
+            gate: harbor?.gate !== undefined,
+            lighting: harbor?.lighting !== undefined,
+            maximumWidth: harbor?.maximumWidth || 0,
+            numberOfPlaces: harbor?.numberOfPlaces || 0,
+            wasteCollection: harbor?.wasteCollection !== undefined,
+            water: harbor?.water !== undefined,
           }}
         />
         <Table

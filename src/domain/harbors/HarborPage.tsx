@@ -19,13 +19,12 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   if (error) return <p>Error</p>;
 
-  const harbor = getIndividualHarborData(data);
-  if (!harbor) return <p>No data...</p>;
+  const harbor = getIndividualHarborData(data) ?? undefined;
 
   const berths = getBerths(data);
 
   return (
-    <LoadingSpinner isLoading={loading}>
+    <LoadingSpinner isLoading={loading && harbor !== null}>
       <IndividualHarborPage tableData={berths} harbor={harbor} t={t} />
     </LoadingSpinner>
   );

@@ -13,10 +13,10 @@ import axios, { AxiosResponse } from 'axios';
 
 import OidcCallback from '../../auth/OidcCallback';
 import userManager from '../../auth/userManager';
-import { CustomersPage } from '../customers/CustomerPage';
+import CustomersPage from '../customers/CustomerPage';
 import HarborsPage from '../harbors/HarborsListPage';
-import IndividualHarborPage from '../harbors/HarborPage';
-import { IndividualCustomerPage } from '../customers/IndividualCustomerPage';
+import HarborDetailsPage from '../harbors/HarborPage';
+import CustomerDetailsPage from '../customers/IndividualCustomerPage';
 import LoginPage from './login/LoginPage';
 import Page from './page/Page';
 import PrivateRoute from './privateRoute/PrivateRoute';
@@ -89,13 +89,13 @@ const App: React.FC = () => {
                 <PrivateRoute
                   exact
                   path="/harbors/:id"
-                  component={IndividualHarborPage}
+                  component={HarborDetailsPage}
                 />
                 <PrivateRoute exact path="/harbors" component={HarborsPage} />
                 <PrivateRoute
                   exact
                   path="/customers/:id"
-                  component={IndividualCustomerPage}
+                  component={CustomerDetailsPage}
                 />
                 <PrivateRoute
                   exact

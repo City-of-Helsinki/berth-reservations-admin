@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CustomerListComponent from './CustomerListComponent';
-import { CustomersPage } from '../../CustomerPage';
 import { getCustomersData } from '../../customerUtils';
 import dummyCustomers from './__mocks__/data.json';
 
@@ -12,9 +11,5 @@ export default {
 
 export const customerList = () => {
   const data = getCustomersData(dummyCustomers);
-  return (
-    <CustomersPage>
-      <CustomerListComponent data={data} />
-    </CustomersPage>
-  );
+  return <CustomerListComponent data={data} />;
 };

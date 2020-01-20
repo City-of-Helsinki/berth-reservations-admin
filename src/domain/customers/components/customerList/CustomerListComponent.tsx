@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Column } from 'react-table';
+import { TFunction } from 'i18next';
 
 import Table from '../../../../common/table/Table';
 import InternalLink from '../../../../common/internalLink/InternalLink';
@@ -19,21 +19,23 @@ export interface TableData {
 type ColumnType = Column<TableData> & { accessor: keyof TableData };
 export interface CustomerListComponentProps {
   data: TableData[];
+  t?: TFunction;
 }
 
-const CustomerListComponent = ({ data }: CustomerListComponentProps) => {
-  const { t } = useTranslation();
+const CustomerListComponent = ({ data, t }: CustomerListComponentProps) => {
   const columns: ColumnType[] = [
     {
       Header: t('customers.tableHeaders.queue'),
       accessor: 'queue',
     },
     {
-      Cell: ({ cell }) => (
-        <InternalLink to={`/customers/${cell.row.original.id}}`}>
-          {cell.value}
-        </InternalLink>
-      ),
+      Cell: ({ cell }) => {
+        return (
+          <InternalLink to={`/customers/${cell.row.original.id}}`}>
+            {cell.value}
+          </InternalLink>
+        );
+      },
       Header: t('customers.tableHeaders.name'),
       accessor: 'name',
     },
