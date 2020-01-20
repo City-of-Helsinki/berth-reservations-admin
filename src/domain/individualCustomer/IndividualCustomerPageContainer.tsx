@@ -19,11 +19,11 @@ const IndividualHarborPageContainer: React.SFC = () => {
 
   if (error || !data?.profile)
     return (
-      <IndividualCustomerPage>
-        <LoadingSpinner isLoading={loading}>
+      <LoadingSpinner isLoading={loading}>
+        <IndividualCustomerPage>
           <p>Error</p>
-        </LoadingSpinner>
-      </IndividualCustomerPage>
+        </IndividualCustomerPage>
+      </LoadingSpinner>
     );
 
   const {
@@ -36,8 +36,8 @@ const IndividualHarborPageContainer: React.SFC = () => {
   } = data.profile;
 
   return (
-    <IndividualCustomerPage>
-      <LoadingSpinner isLoading={loading}>
+    <LoadingSpinner isLoading={loading}>
+      <IndividualCustomerPage>
         <CustomerInfoCard
           firstName={firstName}
           lastName={lastName}
@@ -61,8 +61,8 @@ const IndividualHarborPageContainer: React.SFC = () => {
           total={440}
           handleShowBill={() => alert("Here's your bill!")}
         />
-      </LoadingSpinner>
-    </IndividualCustomerPage>
+      </IndividualCustomerPage>
+    </LoadingSpinner>
   );
 };
 

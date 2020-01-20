@@ -22,7 +22,12 @@ const IndividualHarborPageContainer: React.SFC = () => {
   if (error) return <p>Error</p>;
 
   const harbor = getIndividualHarborData(data);
-  if (!harbor) return <p>No data...</p>;
+  if (!harbor)
+    return (
+      <LoadingSpinner isLoading={loading}>
+        <p>No data...</p>
+      </LoadingSpinner>
+    );
 
   type ColumnType = Column<Berth> & {
     accessor: keyof Berth;
@@ -53,8 +58,8 @@ const IndividualHarborPageContainer: React.SFC = () => {
   const berths = getBerths(data);
 
   return (
-    <IndividualHarborPage>
-      <LoadingSpinner isLoading={loading}>
+    <LoadingSpinner isLoading={loading}>
+      <IndividualHarborPage>
         <HarborProperties
           name={harbor.name || ''}
           imageUrl={harbor.imageFile || ''}
@@ -76,8 +81,8 @@ const IndividualHarborPageContainer: React.SFC = () => {
           renderMainHeader={() => t('individualHarbor.tableHeaders.mainHeader')}
           canSelectRows
         />
-      </LoadingSpinner>
-    </IndividualHarborPage>
+      </IndividualHarborPage>
+    </LoadingSpinner>
   );
 };
 
