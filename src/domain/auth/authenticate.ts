@@ -52,7 +52,7 @@ export const authenticateWithBackend = (
       type: toast.TYPE.ERROR,
     });
     try {
-      // This is a workaround that can save us until we can fix silentRenew().
+      // VEN-378: This is a workaround that can save us until we can fix silentRenew().
       loginTunnistamo();
       Sentry.captureMessage(
         'authenticateWithBackend() failed - running loggingTunnistamo()'
