@@ -40,11 +40,7 @@ const BoatCard: React.SFC<BoatCardProps> = ({ boat }) => {
     (boat as LargeBoat).boatPower !== undefined;
 
   return (
-    <Card
-      className={styles.boatsCard}
-      key={boat.id}
-      title={t('individualCustomer.customerBoats.title')}
-    >
+    <Card className={styles.boatsCard} key={boat.id}>
       <Paragraph>
         <LabelValuePair
           label={t('individualCustomer.customerBoats.boatWidth')}
@@ -114,12 +110,16 @@ const BoatCard: React.SFC<BoatCardProps> = ({ boat }) => {
 };
 
 const BoatsCard: React.SFC<BoatsCardProps> = ({ boats }) => {
+  const { t } = useTranslation();
   return (
-    <div>
-      {boats.map((boat, i) => (
+    <Card
+      className={styles.boatsCard}
+      title={t('individualCustomer.customerBoats.title')}
+    >
+      {boats.map(boat => (
         <BoatCard boat={boat} />
       ))}
-    </div>
+    </Card>
   );
 };
 
