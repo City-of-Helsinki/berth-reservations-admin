@@ -1,7 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { userSignedOut } from 'redux-oidc';
 import { useTranslation } from 'react-i18next';
 
 import Header from '../../common/header/Header';
