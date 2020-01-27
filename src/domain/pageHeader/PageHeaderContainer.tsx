@@ -12,7 +12,6 @@ import List from '../../common/list/List';
 import ListItem from '../../common/list/ListItem';
 import { StoreState } from '../app/types/AppTypes';
 import { logoutTunnistamo } from '../auth/authenticate';
-import { persistor } from '../app/state/AppStore';
 
 const PageHeaderContainer: React.SFC = () => {
   const { t } = useTranslation();
@@ -32,8 +31,6 @@ const PageHeaderContainer: React.SFC = () => {
             <Button
               variant="text"
               onClick={() => {
-                // Flush data in redux store and localStorage
-                persistor.flush();
                 // Log out
                 logoutTunnistamo();
               }}
