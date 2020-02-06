@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 import Layout from '../../common/layout/Layout';
 import Sidebar from '../../common/sidebar/Sidebar';
-import Icon from '../../common/icon/Icon';
+import { IconApplications, IconBoat, IconFemale } from '../../common/icons';
 import InternalLink from '../../common/internalLink/NavLink';
 import PageHeader from '../pageHeader/PageHeaderContainer';
+import styles from '../../common/icons/icon.module.scss';
 
 const Page: React.SFC = ({ children }) => {
   const history = useHistory();
@@ -21,21 +22,21 @@ const Page: React.SFC = ({ children }) => {
             <InternalLink
               to="/harbors"
               onClick={() => history.push('/harbors')}
-              icon={<Icon name="fence" color="standard" />}
+              icon={<IconBoat className={styles.icon} />}
             >
               {t('common.sidebar.harbors')}
             </InternalLink>,
             <InternalLink
               to="/customers"
               onClick={() => history.push('/customers')}
-              icon={<Icon name="fence" color="standard" />}
+              icon={<IconFemale className={styles.icon} />}
             >
               {t('common.sidebar.customers')}
             </InternalLink>,
             <InternalLink
               to="/applications"
               onClick={() => history.push('/applications')}
-              icon={<Icon name="applications" color="standard" />}
+              icon={<IconApplications className={styles.icon} />}
             >
               {t('common.sidebar.applications')}
             </InternalLink>,
