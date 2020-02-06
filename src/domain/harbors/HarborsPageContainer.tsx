@@ -8,9 +8,11 @@ import Table, { Column } from '../../common/table/Table';
 import { getHarborsData, HarborData } from './utils';
 import { HARBORS } from './__generated__/HARBORS';
 import Icon from '../../common/icon/Icon';
+import { IconPole } from '../../common/icons';
 import HarborDetails from './harborDetails/HarborDetails';
 import HarborsPage from './HarborsPage';
 import InternalLink from '../../common/internalLink/InternalLink';
+import styles from '../../common/icons/icon.module.scss';
 
 type ColumnType = Column<HarborData> & { accessor: keyof HarborData };
 
@@ -39,7 +41,7 @@ const HarborsContainer: React.FC = () => {
           color={!cell.value ? 'secondary' : 'standard'}
         />
       ),
-      Header: () => <Icon name="plug" outlined />,
+      Header: () => <IconPole className={styles.icon} />,
       accessor: 'electricity',
     },
     {
@@ -50,7 +52,7 @@ const HarborsContainer: React.FC = () => {
           color={!cell.value ? 'secondary' : 'standard'}
         />
       ),
-      Header: () => <Icon name="fence" outlined />,
+      Header: () => <IconPole className={styles.icon} />,
       accessor: 'gate',
     },
     {
@@ -72,7 +74,7 @@ const HarborsContainer: React.FC = () => {
           color={!cell.value ? 'secondary' : 'standard'}
         />
       ),
-      Header: () => <Icon name="waterTap" outlined />,
+      Header: () => <IconPole className={styles.icon} />,
       accessor: 'water',
     },
     {
@@ -83,7 +85,7 @@ const HarborsContainer: React.FC = () => {
           color={!cell.value ? 'secondary' : 'standard'}
         />
       ),
-      Header: () => <Icon name="trash" outlined />,
+      Header: () => <IconPole className={styles.icon} />,
       accessor: 'wasteCollection',
     },
   ];

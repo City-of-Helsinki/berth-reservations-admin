@@ -13,9 +13,10 @@ import {
   Column as ColumnType,
 } from 'react-table';
 
-import Icon from '../../common/icon/Icon';
+import { IconAngleDown, IconAngleUp } from '../../common/icons';
 import Checkbox from '../checkbox/Checkbox';
 import styles from './table.module.scss';
+import iconsSyles from '../icons/icon.module.scss';
 
 export type Column<D extends object> = ColumnType<D>;
 
@@ -29,6 +30,20 @@ type Props<D extends object> = {
 const EXPANDER = 'EXPANDER';
 const MAIN_HEADER = 'MAIN_HEADER';
 const SELECTOR = 'SELECTOR';
+
+export interface IconProps {
+  outlined?: boolean;
+  width?: string;
+  height?: string;
+  size?: 'small' | 'standard' | 'large';
+  color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
+}
+
+const IconOutline: React.SFC<IconProps> = ({ children }) => {
+  return (
+    <div className={classNames(iconsSyles.icon, iconsSyles.outlined)}>{children}</div>
+  );
+};
 
 const Table = <D extends object>({
   columns,
@@ -49,12 +64,18 @@ const Table = <D extends object>({
 
   const expanderCol: Column<D> = {
     Cell: ({ row }) => (
+
       <div
         {...row.getExpandedToggleProps()}
         className={styles.expandArrowWrapper}
       >
-        <Icon name={row.isExpanded ? 'angleDown' : 'angleLeft'} />
+        {row.isExpanded ? (
+          <IconAngleDown className={classNames(iconsSyles.icon)} />
+        ) : (
+            <IconAngleUp className={classNames(iconsSyles.icon)} />
+          )}
       </div>
+
     ),
     Header: ({ state, toggleExpanded }) => (
       <span
@@ -128,7 +149,7 @@ const Table = <D extends object>({
           {column.render('Header')}
           {column.isSorted && (
             <div className={styles.arrow}>
-              <Icon name={column.isSortedDesc ? 'arrowDown' : 'arrowUp'} />
+              {column.isSortedDesc ? <IconAngleDown /> : <IconAngleDown />}
             </div>
           )}
         </th>
