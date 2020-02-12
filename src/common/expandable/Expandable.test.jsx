@@ -18,11 +18,9 @@ describe('Expandable', () => {
       </Expandable>
     );
 
-  /*
-it('renders normally', () => {
-  expect(getWrapper().html()).toMatchSnapshot();
-});
-*/
+  it('renders normally', () => {
+    expect(getWrapper().html()).toMatchSnapshot();
+  });
 
   it('calls the supplied onClick when the label button is clicked', () => {
     const labelContainer = getWrapper().find('.label');
