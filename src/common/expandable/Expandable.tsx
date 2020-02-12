@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Button } from 'hds-react';
-import { IconAngleDown } from 'hds-react/lib/icons';
 
+import { IconAngleDown } from '../icons';
 import styles from './expandable.module.scss';
 
 export interface ExpandableProps {
