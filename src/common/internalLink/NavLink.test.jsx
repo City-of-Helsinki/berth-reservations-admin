@@ -1,14 +1,32 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { HashRouter, Link } from 'react-router-dom';
 
-import Button from './NavLink';
+import NavLink from './NavLink';
 
-describe('Button', () => {
-  const getWrapper = props => shallow(<Button {...props}>Button</Button>);
+describe('InternalLink', () => {
+  const getWrapper = ({ children = 'Home Page', ...props } = {}) =>
+    shallow(
+      <HashRouter>
+        <NavLink to="/" {...props}>
+          {children}
+        </NavLink>
+      </HashRouter>
+    );
 
-  test('renders normally', () => {
+  it('renders normally', () => {
     const wrapper = getWrapper();
 
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('renders Link component', () => {
+    const wrapper = mount(
+      <HashRouter>
+        <NavLink to="/">foo</NavLink>
+      </HashRouter>
+    );
+
+    expect(wrapper.find(Link)).toHaveLength(1);
   });
 });
