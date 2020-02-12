@@ -24,6 +24,14 @@
   height: 100%;
 }
 
+.arrow {
+  display: inline-flex;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+
 .standard {
   --icon-stroke-color: inherit;
 }
@@ -57,4 +65,8 @@
   border-radius: 50%;
   border-color: var(--icon-stroke-color);
   padding: units(0.5);
+}
+
+.hidden {
+  border-color: transparent;
 }
