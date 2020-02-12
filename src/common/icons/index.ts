@@ -1,6 +1,7 @@
 export { default as IconHelsinkiLogo } from './IconHelsinkiLogo';
 export { default as IconApplications } from './IconApplications';
 export { default as IconBoat } from './IconBoat';
+export { default as IconPlug } from './IconPlug';
 export { default as IconBusiness } from './IconBusiness';
 export { default as IconCommunications } from './IconCommunications';
 export { default as IconContracts } from './IconContracts';
