@@ -2,22 +2,26 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
+import { IconPole, IconFence, IconTrash, IconWaterTap } from 'hds-react/lib-esm/icons';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { HARBORS_QUERY } from './harborsQuery';
 import Table, { Column } from '../../common/table/Table';
 import { getHarborsData, HarborData } from './utils';
 import { HARBORS } from './__generated__/HARBORS';
+import HarborDetails from './harborDetails/HarborDetails';
+import HarborsPage from './HarborsPage';
+import InternalLink from '../../common/internalLink/InternalLink';
+import styles from '../../common/icons/icon.module.scss';
+
+/*
 import {
   IconPole,
   IconFence,
   IconTrash,
   IconWaterTap,
 } from '../../common/icons';
-import HarborDetails from './harborDetails/HarborDetails';
-import HarborsPage from './HarborsPage';
-import InternalLink from '../../common/internalLink/InternalLink';
-import styles from '../../common/icons/icon.module.scss';
+*/
 
 export interface IconProps {
   disabled?: boolean;
