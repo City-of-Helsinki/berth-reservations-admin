@@ -28,6 +28,8 @@ export { default as IconWaterTap } from './IconWaterTap';
 export { default as IconWinter } from './IconWinter';
 export { default as IconAngleLeft } from './IconAngleLeft';
 export { default as IconAngleUp } from './IconAngleUp';
+export { default as IconAngleDown } from './IconAngleDown';
+export { default as IconAngleRight } from './IconAngleRight';
 export { default as IconArrowLeft } from './IconArrowLeft';
 export { default as IconArrowRight } from './IconArrowRight';
 export { default as IconCalendar } from './IconCalendar';
