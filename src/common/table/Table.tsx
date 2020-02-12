@@ -55,9 +55,13 @@ const Table = <D extends object>({
         className={styles.expandArrowWrapper}
       >
         {row.isExpanded ? (
-          <IconAngleDown className={classNames(iconStyles.icon)} />
+          <IconAngleDown
+            className={classNames(iconStyles.icon, iconStyles.small)}
+          />
         ) : (
-          <IconAngleUp className={classNames(iconStyles.icon)} />
+          <IconAngleUp
+            className={classNames(iconStyles.icon, iconStyles.small)}
+          />
         )}
       </div>
     ),
