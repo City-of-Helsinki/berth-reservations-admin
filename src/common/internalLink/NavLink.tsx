@@ -4,17 +4,6 @@ import classNames from 'classnames';
 
 import styles from './internalLink.module.scss';
 
-/*
-    <Link
-      {...props}
-      className={classNames(styles.internalLink, styles[color], {
-        [styles.underlined]: underlined,
-      })}
-    >
-      {children}
-    </Link>
-*/
-
 export type Props = {
   underlined?: boolean;
   color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
@@ -25,7 +14,7 @@ export type Props = {
 } & React.DOMAttributes<HTMLButtonElement> &
   LinkProps;
 
-const Button: React.SFC<Props> = ({
+const NavLink: React.SFC<Props> = ({
   children,
   color = 'standard',
   variant = 'text',
@@ -43,23 +32,12 @@ const Button: React.SFC<Props> = ({
         [styles.underlined]: underlined,
       })}
     >
-      <button
-        type="button"
-        onClick={onClick}
-        className={classNames(
-          styles.button,
-          styles[color],
-          styles.hasIcon,
-          className
-        )}
-      >
-        <span>
-          {icon}
-          {children}
-        </span>
-      </button>
+      <span>
+        {icon}
+        {children}
+      </span>
     </Link>
   );
 };
 
-export default Button;
+export default NavLink;
