@@ -23,7 +23,6 @@ import {
 
 export interface IconProps {
   disabled?: boolean;
-  hidden?: boolean;
   outlined?: boolean;
   width?: string;
   height?: string;
