@@ -49,10 +49,10 @@ const Property: React.SFC<PropertyProps> = ({
           />
         </IconOutline>
       ) : (
-          <Text as="h3" size="xxxl" color={active ? 'standard' : 'secondary'}>
-            {counter}
-          </Text>
-        )}
+        <Text as="h3" size="xxxl" color={active ? 'standard' : 'secondary'}>
+          {counter}
+        </Text>
+      )}
 
       <Text as="strong" size="s" color={active ? 'standard' : 'secondary'}>
         {label}
