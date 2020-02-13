@@ -36,6 +36,14 @@
   --icon-stroke-color: inherit;
 }
 
+.left {
+  transform: rotate(270deg);
+}
+
+.right {
+  transform: rotate(90deg);
+}
+
 .small {
   --icon-dimension: #{units(1)};
 }
