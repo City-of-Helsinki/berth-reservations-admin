@@ -3,27 +3,7 @@ import classNames from 'classnames';
 
 import Text from '../../../common/text/Text';
 import styles from './property.module.scss';
-
-export interface IconProps {
-  disabled?: boolean;
-  outlined?: boolean;
-  width?: string;
-  height?: string;
-  size?: 'small' | 'standard' | 'large';
-  color?: 'standard' | 'brand' | 'critical' | 'secondary' | 'info';
-}
-
-const IconOutline: React.SFC<IconProps> = ({ children, disabled }) => {
-  return (
-    <div
-      className={classNames(styles.icon, styles.outlined, {
-        [styles.disabled]: disabled,
-      })}
-    >
-      {children}
-    </div>
-  );
-};
+import IconOutline from './IconOutline';
 
 interface PropertyProps {
   active?: boolean;
@@ -43,7 +23,7 @@ const Property: React.SFC<PropertyProps> = ({
       {Icon ? (
         <IconOutline>
           <Icon
-            className={classNames(styles.icon, styles.outline, {
+            className={classNames(styles.icon, {
               [styles.disabled]: false,
             })}
           />
