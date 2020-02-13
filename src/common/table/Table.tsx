@@ -59,10 +59,10 @@ const Table = <D extends object>({
             className={classNames(iconStyles.icon, iconStyles.small)}
           />
         ) : (
-            <IconAngleDown
-              className={classNames(iconStyles.icon, iconStyles.small)}
-            />
-          )}
+          <IconAngleDown
+            className={classNames(iconStyles.icon, iconStyles.small)}
+          />
+        )}
       </div>
     ),
     Header: ({ state, toggleExpanded }) => (
@@ -146,14 +146,14 @@ const Table = <D extends object>({
                   )}
                 />
               ) : (
-                  <IconArrowLeft
-                    className={classNames(
-                      iconStyles.icon,
-                      iconStyles.small,
-                      iconStyles.right
-                    )}
-                  />
-                )}
+                <IconArrowLeft
+                  className={classNames(
+                    iconStyles.icon,
+                    iconStyles.small,
+                    iconStyles.right
+                  )}
+                />
+              )}
             </div>
           )}
         </th>
