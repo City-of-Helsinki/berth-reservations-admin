@@ -21,8 +21,8 @@ export interface INDIVIDUAL_HARBOR___type {
 
 export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_berthType {
   __typename: "BerthTypeNode";
-  width: number;
-  length: number;
+  width: number | null;
+  length: number | null;
   mooringType: BerthMooringType;
 }
 
