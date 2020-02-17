@@ -5,10 +5,12 @@ import { useTranslation } from 'react-i18next';
 import Table, { Column } from '../../common/table/Table';
 import { HarborData } from './utils';
 import {
-  IconPole,
   IconFence,
   IconTrash,
   IconWaterTap,
+  IconPlug,
+  IconExclamationCircle,
+  IconStreetLight,
 } from '../../common/icons';
 import HarborDetails from './harborDetails/HarborDetails';
 import InternalLink from '../../common/internalLink/InternalLink';
@@ -61,14 +63,18 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
     {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
-          <IconPole
+          <IconPlug
             className={classNames(styles.icon, styles.outline, {
               [styles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
-      Header: () => <IconPole className={styles.icon} />,
+      Header: () => (
+        <IconOutline disabled={false}>
+          <IconPlug className={classNames(styles.icon, styles.outline)} />
+        </IconOutline>
+      ),
       accessor: 'electricity',
     },
     {
@@ -81,46 +87,62 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
           />
         </IconOutline>
       ),
-      Header: () => <IconPole className={styles.icon} />,
+      Header: () => (
+        <IconOutline disabled={false}>
+          <IconFence className={classNames(styles.icon, styles.outline)} />
+        </IconOutline>
+      ),
       accessor: 'gate',
     },
     {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
-          <IconFence
+          <IconStreetLight
             className={classNames(styles.icon, styles.outline, {
               [styles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
-      Header: () => <IconPole className={styles.icon} />,
+      Header: () => (
+        <IconOutline disabled={false}>
+          <IconStreetLight className={classNames(styles.icon, styles.outline)} />
+        </IconOutline>
+      ),
       accessor: 'lighting',
     },
     {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
-          <IconFence
+          <IconWaterTap
             className={classNames(styles.icon, styles.outline, {
               [styles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
-      Header: () => <IconWaterTap className={styles.icon} />,
+      Header: () => (
+        <IconOutline disabled={false}>
+          <IconWaterTap className={classNames(styles.icon, styles.outline)} />
+        </IconOutline>
+      ),
       accessor: 'water',
     },
     {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
-          <IconFence
+          <IconTrash
             className={classNames(styles.icon, styles.outline, {
               [styles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
-      Header: () => <IconTrash className={styles.icon} />,
+      Header: () => (
+        <IconOutline disabled={false}>
+          <IconTrash className={classNames(styles.icon, styles.outline)} />
+        </IconOutline>
+      ),
       accessor: 'wasteCollection',
     },
   ];
