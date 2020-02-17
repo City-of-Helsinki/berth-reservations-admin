@@ -13,7 +13,8 @@ import {
 } from '../../common/icons';
 import HarborDetails from './harborDetails/HarborDetails';
 import InternalLink from '../../common/internalLink/InternalLink';
-import styles from '../../common/icons/icon.module.scss';
+import styles from './harborsPage.module.scss';
+import iconStyles from '../../common/icons/icon.module.scss';
 
 export interface IconProps {
   disabled?: boolean;
@@ -27,8 +28,8 @@ export interface IconProps {
 const IconOutline: React.SFC<IconProps> = ({ children, disabled }) => {
   return (
     <div
-      className={classNames(styles.icon, styles.outlined, {
-        [styles.disabled]: disabled,
+      className={classNames(iconStyles.icon, iconStyles.outlined, {
+        [iconStyles.disabled]: disabled,
       })}
     >
       {children}
@@ -63,15 +64,17 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
           <IconPlug
-            className={classNames(styles.icon, styles.outline, {
-              [styles.disabled]: !cell.value,
+            className={classNames(iconStyles.icon, iconStyles.outline, {
+              [iconStyles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
       Header: () => (
         <IconOutline disabled={false}>
-          <IconPlug className={classNames(styles.icon, styles.outline)} />
+          <IconPlug
+            className={classNames(iconStyles.icon, iconStyles.outline)}
+          />
         </IconOutline>
       ),
       accessor: 'electricity',
@@ -80,15 +83,17 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
           <IconFence
-            className={classNames(styles.icon, styles.outline, {
-              [styles.disabled]: !cell.value,
+            className={classNames(iconStyles.icon, iconStyles.outline, {
+              [iconStyles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
       Header: () => (
         <IconOutline disabled={false}>
-          <IconFence className={classNames(styles.icon, styles.outline)} />
+          <IconFence
+            className={classNames(iconStyles.icon, iconStyles.outline)}
+          />
         </IconOutline>
       ),
       accessor: 'gate',
@@ -97,8 +102,8 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
           <IconStreetLight
-            className={classNames(styles.icon, styles.outline, {
-              [styles.disabled]: !cell.value,
+            className={classNames(iconStyles.icon, iconStyles.outline, {
+              [iconStyles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
@@ -106,7 +111,7 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Header: () => (
         <IconOutline disabled={false}>
           <IconStreetLight
-            className={classNames(styles.icon, styles.outline)}
+            className={classNames(iconStyles.icon, iconStyles.outline)}
           />
         </IconOutline>
       ),
@@ -116,15 +121,17 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
           <IconWaterTap
-            className={classNames(styles.icon, styles.outline, {
-              [styles.disabled]: !cell.value,
+            className={classNames(iconStyles.icon, iconStyles.outline, {
+              [iconStyles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
       Header: () => (
         <IconOutline disabled={false}>
-          <IconWaterTap className={classNames(styles.icon, styles.outline)} />
+          <IconWaterTap
+            className={classNames(iconStyles.icon, iconStyles.outline)}
+          />
         </IconOutline>
       ),
       accessor: 'water',
@@ -133,15 +140,17 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       Cell: ({ cell }) => (
         <IconOutline disabled={!cell.value}>
           <IconTrash
-            className={classNames(styles.icon, styles.outline, {
-              [styles.disabled]: !cell.value,
+            className={classNames(iconStyles.icon, iconStyles.outline, {
+              [iconStyles.disabled]: !cell.value,
             })}
           />
         </IconOutline>
       ),
       Header: () => (
         <IconOutline disabled={false}>
-          <IconTrash className={classNames(styles.icon, styles.outline)} />
+          <IconTrash
+            className={classNames(iconStyles.icon, iconStyles.outline)}
+          />
         </IconOutline>
       ),
       accessor: 'wasteCollection',
