@@ -106,7 +106,9 @@ const HarborsList: React.FC<HarborsPageProps> = ({ data = [] }) => {
       ),
       Header: () => (
         <IconOutline disabled={false}>
-          <IconStreetLight className={classNames(styles.icon, styles.outline)} />
+          <IconStreetLight
+            className={classNames(styles.icon, styles.outline)}
+          />
         </IconOutline>
       ),
       accessor: 'lighting',
