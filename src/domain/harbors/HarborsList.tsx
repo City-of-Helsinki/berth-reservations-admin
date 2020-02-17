@@ -9,7 +9,6 @@ import {
   IconTrash,
   IconWaterTap,
   IconPlug,
-  IconExclamationCircle,
   IconStreetLight,
 } from '../../common/icons';
 import HarborDetails from './harborDetails/HarborDetails';
