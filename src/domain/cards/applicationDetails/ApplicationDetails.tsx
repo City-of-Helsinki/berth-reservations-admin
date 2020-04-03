@@ -5,7 +5,6 @@ import { useLocation } from 'react-router';
 import Section from '../../../common/section/Section';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Grid from '../../../common/grid/Grid';
-import Checkbox from '../../../common/checkbox/Checkbox';
 import styles from './applicationDetails.module.scss';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import Text from '../../../common/text/Text';
@@ -179,12 +178,9 @@ const ApplicationDetails: React.SFC<ApplicationDetailsProps> = ({
           </Section>
         )}
         <Section>
-          <Checkbox
-            label={t('applications.applicationDetails.accessible')}
-            checked={accessibilityRequired}
-            size="large"
-            readOnly
-          />
+          <Text>
+            {t('applications.applicationDetails.noAccessibleBerthsNotice')}
+          </Text>
         </Section>
       </div>
     </Grid>

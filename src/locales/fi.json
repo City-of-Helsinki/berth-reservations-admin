@@ -152,7 +152,8 @@
       "choice": "Toive",
       "connectedLease": "Liitetty satamapaikka",
       "deleteLease": "Poista ehdotettu paikka",
-      "accessible": "Tarvitsen esteettömän paikan"
+      "accessible": "Tarvitsen esteettömän paikan",
+      "noAccessibleBerthsNotice": "Venesatamissamme ei ole tällä hetkellä esteettömiä venepaikkoja."
     }
   },
   "individualApplication": {
