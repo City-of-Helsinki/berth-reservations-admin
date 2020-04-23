@@ -18,6 +18,7 @@ import HarborProperties from './harborProperties/HarborProperties';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { formatDimension } from '../../common/utils/format';
 import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
+import BerthDetails from '../offer/berthDetails/BerthDetails';
 
 const IndividualHarborPageContainer: React.SFC = () => {
   const { id } = useParams<{ id: string }>();
@@ -100,6 +101,12 @@ const IndividualHarborPageContainer: React.SFC = () => {
               setSelectedPier(pier);
               props.setFilter('identifier', pier?.identifier);
             }}
+          />
+        )}
+        renderSubComponent={row => (
+          <BerthDetails
+            leases={row.original.leases ? row.original.leases : []}
+            comment={row.original.comment}
           />
         )}
       />

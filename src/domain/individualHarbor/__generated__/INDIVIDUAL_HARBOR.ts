@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthMooringType } from "./../../../@types/__generated__/globalTypes";
+import { BerthMooringType, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_HARBOR
@@ -21,10 +21,42 @@ export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties
   mooringType: BerthMooringType;
 }
 
+export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_application_customer {
+  __typename: "ProfileNode";
+  id: string;
+  firstName: string;
+  lastName: string;
+}
+
+export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_application {
+  __typename: "BerthApplicationNode";
+  customer: INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_application_customer | null;
+}
+
+export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node {
+  __typename: "BerthLeaseNode";
+  application: INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_application | null;
+  status: LeaseStatus;
+  startDate: any;
+  endDate: any;
+}
+
+export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges {
+  __typename: "BerthLeaseNodeEdge";
+  node: INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node | null;
+}
+
+export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases {
+  __typename: "BerthLeaseNodeConnection";
+  edges: (INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges | null)[];
+}
+
 export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node {
   __typename: "BerthNode";
   number: number;
   berthType: INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_berthType;
+  comment: string;
+  leases: INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases | null;
 }
 
 export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges {

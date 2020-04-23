@@ -7,6 +7,7 @@ interface Lease {
     firstName: string;
     lastName: string;
   };
+  status: string;
   startDate: string;
   endDate: string;
 }
@@ -58,6 +59,7 @@ export const getOfferData = (data: OFFER_PAGE | undefined): BerthData[] => {
               {
                 startDate: edge.node.startDate,
                 endDate: edge.node.endDate,
+                status: edge.node.status,
                 customer: {
                   id: edge.node.customer.id,
                   firstName: edge.node.customer.firstName,
