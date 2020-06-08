@@ -9,7 +9,7 @@ export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 's
   size?: 'small' | 'medium' | 'large';
 };
 
-const Checkbox: React.SFC<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   checked,
   defaultChecked,
   disabled,

@@ -16,7 +16,7 @@ export interface BoatsCardProps {
   boats: (Boat | LargeBoat)[];
 }
 
-const BoatsCard: React.SFC<BoatsCardProps> = ({ boats }) => {
+const BoatsCard: React.FC<BoatsCardProps> = ({ boats }) => {
   const { t, i18n } = useTranslation();
 
   return (

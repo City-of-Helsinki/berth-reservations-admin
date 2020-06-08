@@ -24,7 +24,7 @@ export interface BillsCardProps {
   handleShowBill(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const BillsCard: React.SFC<BillsCardProps> = ({
+const BillsCard: React.FC<BillsCardProps> = ({
   basicFee,
   berthPlace,
   contractPeriod,

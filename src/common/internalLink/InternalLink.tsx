@@ -9,7 +9,7 @@ type Props = {
   underlined?: boolean;
 } & LinkProps;
 
-const InternalLink: React.SFC<Props> = ({ color = 'brand', children, underlined, ...props }) => {
+const InternalLink: React.FC<Props> = ({ color = 'brand', children, underlined, ...props }) => {
   return (
     <Link
       {...props}

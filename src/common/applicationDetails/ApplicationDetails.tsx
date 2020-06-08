@@ -63,7 +63,7 @@ export interface ApplicationDetailsProps {
   handleDeleteLease?: (id: string) => void;
 }
 
-const ApplicationDetails: React.SFC<ApplicationDetailsProps> = ({
+const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
   id,
   customerId,
   applicant,

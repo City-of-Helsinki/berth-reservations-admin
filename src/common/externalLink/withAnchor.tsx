@@ -11,7 +11,7 @@ export type WithAnchorProps = {
 };
 
 const withAnchor = <P extends object>(Component: React.ComponentType<P>) => {
-  const Wrapper: React.SFC<P & WithAnchorProps> = ({ variant = 'default', href, children }) => {
+  const Wrapper: React.FC<P & WithAnchorProps> = ({ variant = 'default', href, children }) => {
     return (
       <a className={classNames(styles.link, styles[variant])} href={href} target="_blank" rel="noopener noreferrer">
         {children}

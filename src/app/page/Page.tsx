@@ -7,7 +7,7 @@ import InternalNavLink from '../../common/internalNavLink/InternalNavLink';
 import PageHeader from './pageHeader/PageHeader';
 import Icon from '../../common/icons/Icon';
 
-const Page: React.SFC = ({ children }) => {
+const Page: React.FC = ({ children }) => {
   const { t } = useTranslation();
 
   return (

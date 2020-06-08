@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './cardBody.module.scss';
 
-const CardBody: React.SFC = ({ children }) => {
+const CardBody: React.FC = ({ children }) => {
   return <div className={styles.cardBody}>{children}</div>;
 };
 

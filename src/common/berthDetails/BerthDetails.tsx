@@ -33,7 +33,7 @@ export interface BerthDetailsProps {
   onEdit?(): void;
 }
 
-const BerthDetails: React.SFC<BerthDetailsProps> = ({
+const BerthDetails: React.FC<BerthDetailsProps> = ({
   leases,
   gate,
   electricity,

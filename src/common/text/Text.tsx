@@ -12,7 +12,7 @@ export interface TextProps {
   italic?: boolean;
 }
 
-const Text: React.SFC<TextProps> = ({
+const Text: React.FC<TextProps> = ({
   className,
   color = 'standard',
   size,

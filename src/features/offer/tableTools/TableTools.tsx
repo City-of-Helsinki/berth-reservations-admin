@@ -18,7 +18,7 @@ export interface TableToolsProps {
   handleSubmit(): void;
 }
 
-const TableTools: React.SFC<TableToolsProps> = ({
+const TableTools: React.FC<TableToolsProps> = ({
   applicationDate,
   applicationType,
   applicationStatus,

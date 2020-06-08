@@ -11,7 +11,7 @@ export type Props = {
   className?: string;
 } & NavLinkProps;
 
-const InternalNavLink: React.SFC<Props> = ({ children, color = 'standard', icon, className, ...props }) => {
+const InternalNavLink: React.FC<Props> = ({ children, color = 'standard', icon, className, ...props }) => {
   return (
     <NavLink {...props} activeClassName={styles.isActive} className={classNames(styles.internalNavLink, styles[color])}>
       {icon && <div className={styles.icon}>{icon}</div>}

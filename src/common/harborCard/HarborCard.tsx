@@ -38,7 +38,7 @@ export interface HarborCardProps {
   editHarbor?: () => void;
 }
 
-const HarborCard: React.SFC<HarborCardProps> = ({
+const HarborCard: React.FC<HarborCardProps> = ({
   className,
   name,
   address,

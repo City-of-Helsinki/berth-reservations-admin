@@ -30,7 +30,7 @@ export interface CustomerDetailsProps {
   organizationType?: OrganizationType;
 }
 
-const CustomerDetails: React.SFC<CustomerDetailsProps> = ({
+const CustomerDetails: React.FC<CustomerDetailsProps> = ({
   name,
   address,
   postalCode,

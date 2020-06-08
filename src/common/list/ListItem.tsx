@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem: React.SFC = ({ children }) => {
+const ListItem: React.FC = ({ children }) => {
   return <li>{children}</li>;
 };
 

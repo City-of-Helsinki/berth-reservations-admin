@@ -14,7 +14,7 @@ export interface PierProperties {
   pier: Pier;
 }
 
-const PierProperties: React.SFC<PierProperties> = ({ pier }) => {
+const PierProperties: React.FC<PierProperties> = ({ pier }) => {
   const { t } = useTranslation();
 
   return (

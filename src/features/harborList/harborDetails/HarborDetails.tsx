@@ -20,7 +20,7 @@ export type HarborDetailsProps = {
   zipCode: HarborData['zipCode'];
 };
 
-const HarborDetails: React.SFC<HarborDetailsProps> = ({
+const HarborDetails: React.FC<HarborDetailsProps> = ({
   maps,
   imageFile,
   streetAddress,

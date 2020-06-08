@@ -9,7 +9,7 @@ export interface SectionProps {
   className?: string;
 }
 
-const Section: React.SFC<SectionProps> = ({ title, children, className }) => (
+const Section: React.FC<SectionProps> = ({ title, children, className }) => (
   <article className={classNames(styles.section, className)}>
     {title && (
       <Text as="h4" size="m" className={styles.title}>

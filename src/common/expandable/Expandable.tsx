@@ -10,7 +10,7 @@ export interface ExpandableProps {
   onClick?: Function;
 }
 
-const Expandable: React.SFC<ExpandableProps> = ({ label, onClick, children }) => {
+const Expandable: React.FC<ExpandableProps> = ({ label, onClick, children }) => {
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => {
     setExpanded(!expanded);

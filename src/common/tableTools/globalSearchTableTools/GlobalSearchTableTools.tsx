@@ -8,7 +8,7 @@ export interface GlobalSearchTableToolsProps {
   handleGlobalFilter(value?: string): void;
 }
 
-const GlobalSearchTableTools: React.SFC<GlobalSearchTableToolsProps> = ({ handleGlobalFilter }) => {
+const GlobalSearchTableTools: React.FC<GlobalSearchTableToolsProps> = ({ handleGlobalFilter }) => {
   const { t } = useTranslation();
 
   return (

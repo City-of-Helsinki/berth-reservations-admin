@@ -13,7 +13,7 @@ export interface PropertyProps {
   className?: string;
 }
 
-const Property: React.SFC<PropertyProps> = ({ active = true, counter = 0, label, iconShape, className }) => {
+const Property: React.FC<PropertyProps> = ({ active = true, counter = 0, label, iconShape, className }) => {
   return (
     <div className={classNames(styles.property, className)}>
       {iconShape ? (

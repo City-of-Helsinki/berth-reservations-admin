@@ -14,7 +14,7 @@ export interface IconProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const Icon: React.SFC<IconProps> = ({ className, shape, outlined, color = 'standard', size = 'medium' }) => {
+const Icon: React.FC<IconProps> = ({ className, shape, outlined, color = 'standard', size = 'medium' }) => {
   const SVGIcon = Icons[shape];
 
   return (

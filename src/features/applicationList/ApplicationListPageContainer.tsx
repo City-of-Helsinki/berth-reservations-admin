@@ -25,7 +25,7 @@ import { useBackendSorting } from '../../common/utils/useBackendSorting';
 
 type ColumnType = Column<ApplicationData>;
 
-const ApplicationListPageContainer: React.SFC = () => {
+const ApplicationListPageContainer: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [onlySwitchApps, setOnlySwitchApps] = useState<boolean>();
 

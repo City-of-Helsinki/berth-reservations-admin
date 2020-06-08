@@ -8,7 +8,7 @@ export interface GridProps {
   className?: string;
 }
 
-const Grid: React.SFC<GridProps> = ({ colsCount = 3, children, className }) => {
+const Grid: React.FC<GridProps> = ({ colsCount = 3, children, className }) => {
   return <div className={classNames(styles.grid, styles[`cols${colsCount}`], className)}>{children}</div>;
 };
 

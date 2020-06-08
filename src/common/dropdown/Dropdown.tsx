@@ -6,7 +6,7 @@ export interface DropdownProps {
   label: React.ReactNode;
 }
 
-const Dropdown: React.SFC<DropdownProps> = ({ label, children }) => {
+const Dropdown: React.FC<DropdownProps> = ({ label, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
