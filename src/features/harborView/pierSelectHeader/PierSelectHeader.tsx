@@ -3,15 +3,15 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import styles from './pierSelectHeader.module.scss';
-import { Pier } from '../types';
 import PierProperties from './pierProperties/PierProperties';
+import { PierProperties as PierPropertiesT } from '../../../generated/types.d';
 
 interface PierSelectHeaderProps {
   readonly className?: string;
-  readonly piers: Pier[];
-  readonly selectedPier?: Pier | null;
-  onPierSelect(pier: Pier | null): void;
-  onEdit?(pier: Pier): void;
+  readonly piers: PierPropertiesT[];
+  readonly selectedPier?: PierPropertiesT | null;
+  onPierSelect(pier: PierPropertiesT | null): void;
+  onEdit?(pier: PierPropertiesT): void;
 }
 
 const PierSelectHeader = ({ className, piers, selectedPier, onPierSelect, onEdit }: PierSelectHeaderProps) => {
@@ -30,7 +30,7 @@ const PierSelectHeader = ({ className, piers, selectedPier, onPierSelect, onEdit
           </button>
           {piers.map((pier) => (
             <button
-              key={pier.id}
+              key={pier.identifier}
               onClick={() => onPierSelect(pier)}
               className={classNames(styles.pierButton, {
                 [styles.pierButtonSelected]: selectedPier && selectedPier.identifier === pier.identifier,

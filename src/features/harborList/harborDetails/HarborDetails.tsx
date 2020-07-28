@@ -7,14 +7,10 @@ import styles from './harborDetails.module.scss';
 import Section from '../../../common/section/Section';
 import Text from '../../../common/text/Text';
 import { formatAddress, formatDimension } from '../../../common/utils/format';
-import { HarborData } from '../types';
 import MapLinks from '../../../common/mapLinks/MapLinks';
 import placeholderImage from '../../../common/placeholderImage.svg';
-
-export type HarborDetailsProps = Pick<
-  HarborData,
-  'imageFile' | 'maps' | 'maxWidth' | 'municipality' | 'servicemapId' | 'streetAddress' | 'zipCode'
->;
+import { HarborProperties } from '../../../generated/types.d';
+import { maybeArrToArr } from '../../../generated/utils';
 
 const HarborDetails = ({
   maps,
@@ -24,7 +20,7 @@ const HarborDetails = ({
   municipality,
   servicemapId,
   maxWidth,
-}: HarborDetailsProps) => {
+}: HarborProperties) => {
   const { t, i18n } = useTranslation();
   const imageSrc = imageFile ? imageFile : placeholderImage;
   const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URI}${servicemapId}`;
@@ -43,7 +39,7 @@ const HarborDetails = ({
             {t('common.terminology.serviceMap')}
           </ExternalLink>
         </Section>
-        <MapLinks maps={maps} />
+        <MapLinks maps={maybeArrToArr(maps)} />
       </div>
       <div className={styles.column}>
         <Section title={t('common.terminology.maxWidth').toUpperCase()}>

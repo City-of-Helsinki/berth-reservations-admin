@@ -8,13 +8,11 @@ import HarborCard from '../../common/harborCard/HarborCard';
 import ContactInformationCard from '../../common/contactInformationCard/ContactInformationCard';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 import HarborViewTable from './HarborViewTable';
-import { Berth, IndividualHarborData, Map, Pier } from './types';
+import { BerthNode, HarborProperties } from '../../generated/types.d';
+import { edgesToArr, propertiesArr } from '../../generated/utils';
 
 export type HarborViewProps = {
-  berths: Berth[];
-  harbor: IndividualHarborData;
-  maps: Map[];
-  piers: Pier[];
+  harbor: HarborProperties;
   setBerthToEdit: (berthToEdit: string | null) => void;
   setCreatingBerth: (creatingBerth: boolean) => void;
   setCreatingPier: (creatingPier: boolean) => void;
@@ -23,10 +21,7 @@ export type HarborViewProps = {
 };
 
 const HarborView = ({
-  berths,
   harbor,
-  maps,
-  piers,
   setBerthToEdit,
   setCreatingBerth,
   setCreatingPier,
@@ -35,32 +30,16 @@ const HarborView = ({
 }: HarborViewProps) => {
   const { t } = useTranslation();
 
+  const piers = propertiesArr(edgesToArr(harbor.piers));
+  const berths = piers.reduce<BerthNode[]>((acc, pierProperties) => {
+    return [...acc, ...edgesToArr(pierProperties.berths)];
+  }, []);
+
   return (
     <PageContent className={styles.harborView}>
       <PageTitle title={t('harborView.title')} />
       <div className={styles.grid}>
-        <HarborCard
-          className={styles.fullWidth}
-          name={harbor.name || ''}
-          imageUrl={harbor.imageFile}
-          maps={maps}
-          servicemapId={harbor.servicemapId || ''}
-          streetAddress={harbor.streetAddress}
-          zipCode={harbor.zipCode}
-          municipality={harbor.municipality}
-          properties={{
-            electricity: harbor.electricity,
-            gate: harbor.gate,
-            lighting: harbor.lighting,
-            maxWidth: harbor.maxWidth || 0,
-            numberOfPlaces: harbor.numberOfPlaces || 0,
-            numberOfFreePlaces: harbor.numberOfFreePlaces || 0,
-            queue: harbor.numberOfPlaces || 0,
-            wasteCollection: harbor.wasteCollection,
-            water: harbor.water,
-          }}
-          editHarbor={() => setEditingHarbor(true)}
-        />
+        <HarborCard className={styles.fullWidth} editHarbor={() => setEditingHarbor(true)} {...harbor} />
         <ContactInformationCard
           name={harbor.name}
           streetAddress={harbor.streetAddress}
@@ -76,7 +55,7 @@ const HarborView = ({
         onAddPier={() => setCreatingPier(true)}
         onAddBerth={() => setCreatingBerth(true)}
         onEditBerth={(berth) => setBerthToEdit(berth.id)}
-        onEditPier={(pier) => setPierToEdit(pier.id)}
+        onEditPier={(pier) => setPierToEdit(pier.identifier)}
       />
     </PageContent>
   );

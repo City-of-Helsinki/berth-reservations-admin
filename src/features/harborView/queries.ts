@@ -44,6 +44,12 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
                       depth
                       mooringType
                       comment
+                      pier {
+                        id
+                        properties {
+                          identifier
+                        }
+                      }
                       leases {
                         edges {
                           node {

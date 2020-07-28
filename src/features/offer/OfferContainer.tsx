@@ -5,7 +5,6 @@ import { useLocation, useParams, useHistory } from 'react-router-dom';
 import { Notification } from 'hds-react';
 import { getOperationName } from 'apollo-link';
 
-import styles from './offer.module.scss';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { OFFER_QUERY } from './queries';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
@@ -20,7 +19,6 @@ import TableTools from './tableTools/TableTools';
 import BerthDetails from '../../common/berthDetails/BerthDetails';
 import TableFilters from '../../common/tableFilters/TableFilters';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
-import HarborCard from '../../common/harborCard/HarborCard';
 import BoatCard from '../../common/boatCard/BoatCard';
 import Button from '../../common/button/Button';
 
@@ -147,7 +145,7 @@ const OfferContainer = () => {
 
   return (
     <Offer>
-      {harbor && <HarborCard {...harbor} className={styles.card} />}
+      {/* FIXME harbor && <HarborCard {...harbor} className={styles.card} /> */}
       {boat && <BoatCard boat={boat} />}
       <Table
         data={tableData}

@@ -1,6 +1,5 @@
 import { WinterStorageAreaData } from './types';
 import { WINTER_STORAGE_AREAS } from './__generated__/WINTER_STORAGE_AREAS';
-import { Map } from '../harborList/types';
 
 interface WinterStorageProperties {
   electricity: number;
@@ -41,7 +40,7 @@ export const getWinterStorageAreasData = (data: WINTER_STORAGE_AREAS | undefined
       }
     );
 
-    const maps: Map[] = winterStorageArea.node.properties.maps.reduce<Map[]>((acc, map) => {
+    const maps = winterStorageArea.node.properties.maps.reduce<{id: string, url: string}[]>((acc, map) => {
       if (map !== null) {
         return acc.concat({
           id: map.id,

@@ -11,17 +11,17 @@ import { BerthMooringType } from '../../../../@types/__generated__/globalTypes';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';
 import styles from './berthForm.module.scss';
-import { Pier } from '../../types';
 import FormHeader from '../../../../common/formHeader/FormHeader';
 import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
 import { isNumber, isPositive, replaceCommaWithDot, replaceDotWithComma } from '../../../../common/utils/forms';
 import Checkbox from '../../../../common/checkbox/Checkbox';
 import Button from '../../../../common/button/Button';
+import { PierNode } from '../../../../generated/types.d';
 
 interface BerthFormProps extends FormProps<Berth> {
   isEditing?: boolean;
   onSubmitText?: string;
-  pierOptions: Pier[];
+  pierOptions: PierNode[];
 }
 
 interface BerthFormValues extends Omit<Berth, 'width' | 'length' | 'depth'> {
@@ -30,7 +30,7 @@ interface BerthFormValues extends Omit<Berth, 'width' | 'length' | 'depth'> {
   depth?: string;
 }
 
-const getBerthValidationSchema = (t: TFunction, pierOptions: Pier[]): ObjectSchema => {
+const getBerthValidationSchema = (t: TFunction, pierOptions: PierNode[]): ObjectSchema => {
   return Yup.object().shape({
     pierId: Yup.string()
       .oneOf(pierOptions.map((pier) => pier.id))
@@ -116,7 +116,7 @@ const BerthForm = ({
               value={values.pierId}
               options={pierOptions.map((pier) => {
                 return {
-                  label: pier.identifier,
+                  label: pier.properties?.identifier ?? '',
                   value: pier.id,
                 };
               })}

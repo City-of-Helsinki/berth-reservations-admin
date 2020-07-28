@@ -1,5 +1,5 @@
-export const formatDimension = (value: number | null, locale: string) => {
-  if (!value) return '-';
+export const formatDimension = (value?: number | null, locale?: string) => {
+  if (!value || !locale) return '-';
 
   const localizedValues = new Intl.NumberFormat(locale, {
     style: 'decimal',

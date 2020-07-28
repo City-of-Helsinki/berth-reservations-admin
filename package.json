@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/react-components": "^4.0.0",
     "@apollo/react-hooks": "^3.1.5",
+    "@graphql-codegen/typescript-react-apollo": "^1.17.4",
     "@sentry/browser": "^5.7.1",
     "@types/apollo-upload-client": "^8.1.3",
     "@types/classnames": "^2.2.9",
@@ -69,7 +71,8 @@
     "browser-test:ci": "testcafe \"chrome:headless --disable-gpu --window-size='1920,1080'\" browser-tests/ -s takeOnFails=true",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
-    "prettier": "prettier --write \"./src/**/*.{js,ts,jsx,tsx}\""
+    "prettier": "prettier --write \"./src/**/*.{js,ts,jsx,tsx}\"",
+    "generate": "graphql-codegen"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -88,6 +91,10 @@
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.4",
+    "@graphql-codegen/add": "^1.17.4",
+    "@graphql-codegen/cli": "^1.17.4",
+    "@graphql-codegen/typescript": "^1.17.4",
+    "@graphql-codegen/typescript-operations": "^1.17.4",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-docs": "^5.3.13",

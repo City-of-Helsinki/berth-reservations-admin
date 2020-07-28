@@ -1,0 +1,15 @@
+schema:
+  - https://venepaikka-federation.test.kuva.hel.ninja/
+documents: ./src/**/(queries|mutations|fragments).(graphql|ts|tsx)
+generates:
+  ./src/generated/types.d.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - add: '/* eslint-disable */'
+    config:
+      scalars:
+        DateTime: Date
+      withHOC: false
+      withHooks: true

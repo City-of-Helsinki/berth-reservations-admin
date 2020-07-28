@@ -9,7 +9,7 @@ import { IconProps } from '../icons';
 export interface PropertyProps {
   active?: boolean;
   icon?: (props: IconProps) => React.ReactElement | null;
-  counter?: number;
+  counter?: number | null;
   label: string;
   className?: string;
 }

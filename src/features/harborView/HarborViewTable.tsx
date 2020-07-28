@@ -6,24 +6,25 @@ import HarborViewTableTools from './harborViewTableTools/HarborViewTableTools';
 import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
 import BerthDetails from '../../common/berthDetails/BerthDetails';
 import Table, { Column } from '../../common/table/Table';
-import { Berth, Pier } from './types';
 import Chip from '../../common/chip/Chip';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDimension } from '../../common/utils/format';
 import Pagination from '../../common/pagination/Pagination';
+import { BerthNode, PierProperties } from '../../generated/types.d';
+import { edgesToArr } from '../../generated/utils';
 
 interface Props {
-  berths: Berth[];
-  piers: Pier[];
+  berths: BerthNode[];
+  piers: PierProperties[];
   onAddBerth(): void;
   onAddPier(): void;
-  onEditBerth(berth: Berth): void;
-  onEditPier(pier: Pier): void;
+  onEditBerth(berth: BerthNode): void;
+  onEditPier(pier: PierProperties): void;
 }
 
 const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, onEditPier }: Props) => {
   const { t, i18n } = useTranslation();
-  const columns: Column<Berth>[] = [
+  const columns: Column<BerthNode>[] = [
     {
       Header: t('harborView.tableHeaders.number') || '',
       accessor: 'number',
@@ -31,16 +32,17 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
     },
     {
       Header: t('harborView.tableHeaders.identifier') || '',
-      accessor: 'identifier',
+      id: 'identifier',
+      accessor: ({ pier }) => pier.properties?.identifier,
       filter: 'exact',
     },
     {
-      Cell: ({ cell }: { cell: Cell<Berth> }) => {
+      Cell: ({ cell }: { cell: Cell<BerthNode> }) => {
         const isBerthActive = cell.row.original.isActive;
         if (!isBerthActive) {
           return <Chip color="red" label={t('harborView.berthProperties.inactive')} />;
         }
-        const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
+        const activeLease = edgesToArr(cell.row.original.leases).find((lease) => lease.isActive);
         if (!activeLease) {
           return cell.value;
         }
@@ -48,7 +50,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       },
       Header: t('harborView.tableHeaders.customer') || '',
       accessor: ({ leases }) => {
-        const activeLease = leases?.find((lease) => lease.isActive);
+        const activeLease = edgesToArr(leases).find((lease) => lease.isActive);
         if (!activeLease) return '';
         return `${activeLease.customer.firstName} ${activeLease.customer.lastName}`;
       },
@@ -105,13 +107,16 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
             piers={piers}
             onEdit={onEditPier}
             selectedPier={selectedPier}
-            onPierSelect={(pier) => props.setFilter('identifier', pier?.identifier)}
+            onPierSelect={(pier) => {
+              console.log(pier);
+              props.setFilter('identifier', pier?.identifier);
+            }}
           />
         );
       }}
       renderSubComponent={(row) => (
         <BerthDetails
-          leases={row.original.leases ?? []}
+          leases={edgesToArr(row.original.leases) ?? []}
           comment={row.original.comment}
           onEdit={() => onEditBerth(row.original)}
         />

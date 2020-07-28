@@ -6,11 +6,11 @@ import { CREATE_BERTH, CREATE_BERTHVariables as CREATE_BERTH_VARS } from './__ge
 import { CREATE_BERTH_MUTATION } from './mutations';
 import { Berth, FormProps } from '../types';
 import BerthForm from './BerthForm';
-import { Pier } from '../../types';
 import { CreateBerthMutationInput } from '../../../../@types/__generated__/globalTypes';
+import { PierNode } from '../../../../generated/types.d';
 
 interface BerthCreateFormProps extends Omit<FormProps<Berth>, 'initialValues' | 'onDelete'> {
-  pierOptions: Pier[];
+  pierOptions: PierNode[];
 }
 
 const BerthCreateForm = ({ onCancel, onSubmit, refetchQueries, pierOptions }: BerthCreateFormProps) => {

@@ -171,8 +171,10 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
   }, []);
 
   const { properties } = data.harborByServicemapId;
+
+  /* FIXME
   return {
-    imageUrl: properties.imageFile,
+    imageLink: properties.imageFile,
     maps,
     name: properties.name || '',
     streetAddress: properties.streetAddress,
@@ -187,6 +189,8 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
       maxWidth: properties.maxWidth || 0,
     },
   };
+   */
+  return null;
 };
 
 export const getBoat = (data: OFFER | undefined): Boat | null => {

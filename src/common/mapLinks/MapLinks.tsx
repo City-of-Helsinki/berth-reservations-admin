@@ -3,14 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import Section from '../section/Section';
 import ExternalLink from '../externalLink/ExternalLink';
+import { HarborMapType } from '../../generated/types.d';
 
-type Map = {
-  id: string;
-  url: string;
-};
-
-export interface MapLinksProps {
-  maps: Map[];
+interface MapLinksProps {
+  maps: HarborMapType[];
 }
 
 const MapLinks = ({ maps }: MapLinksProps) => {

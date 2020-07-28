@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
 
 import { INDIVIDUAL_HARBOR_QUERY } from './queries';
-import { INDIVIDUAL_HARBOR } from './__generated__/INDIVIDUAL_HARBOR';
-import { getIndividualHarborData, getBerths, getPiers, getMaps } from './utils';
 import HarborView from './HarborView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import Modal from '../../common/modal/Modal';
@@ -13,6 +10,9 @@ import BerthCreateForm from './forms/berthForm/BerthCreateForm';
 import PierCreateForm from './forms/pierForm/PierCreateForm';
 import PierEditForm from './forms/pierForm/PierEditForm';
 import HarborEditForm from './forms/harborForm/HarborEditForm';
+// eslint-disable-next-line @typescript-eslint/camelcase
+import { HarborProperties, useIndividual_HarborQuery } from '../../generated/types.d';
+import { edgesToArr } from '../../generated/utils';
 
 const HarborViewContainer = () => {
   const [editingHarbor, setEditingHarbor] = useState<boolean>(false);
@@ -21,23 +21,17 @@ const HarborViewContainer = () => {
   const [pierToEdit, setPierToEdit] = useState<string | null>(null);
   const [creatingPier, setCreatingPier] = useState<boolean>(false);
   const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_HARBOR>(INDIVIDUAL_HARBOR_QUERY, { variables: { id } });
+  const { loading, data } = useIndividual_HarborQuery({ variables: { id } });
 
-  const harbor = getIndividualHarborData(data);
+  const harbor = data?.harbor?.properties as HarborProperties;
+  const piers = edgesToArr(data?.harbor?.properties?.piers);
 
   if (loading || !harbor) return <LoadingSpinner isLoading={true} />;
-
-  const piers = getPiers(data);
-  const berths = getBerths(data);
-  const maps = getMaps(data);
 
   return (
     <>
       <HarborView
-        berths={berths}
         harbor={harbor}
-        maps={maps}
-        piers={piers}
         setBerthToEdit={setBerthToEdit}
         setCreatingBerth={setCreatingBerth}
         setCreatingPier={setCreatingPier}

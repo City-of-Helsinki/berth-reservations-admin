@@ -8,6 +8,7 @@ import { CustomerProfileCardProps } from '../../common/customerProfileCard/Custo
 import { CustomerData } from './ApplicationView';
 import { BerthApplicationLanguage, Language } from '../../@types/__generated__/globalTypes';
 import { FILTERED_CUSTOMERS } from './__generated__/FILTERED_CUSTOMERS';
+import {edgesToArr, propertiesArr} from "../../generated/utils";
 
 export const getCustomerProfile = (profile: CUSTOMER_PROFILE): CustomerProfileCardProps => {
   return {

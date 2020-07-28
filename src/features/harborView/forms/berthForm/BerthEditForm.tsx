@@ -11,11 +11,11 @@ import { Berth, FormProps } from '../types';
 import { DELETE_BERTH, DELETE_BERTHVariables as DELETE_BERTH_VARS } from './__generated__/DELETE_BERTH';
 import { getBerth } from '../utils';
 import BerthForm from './BerthForm';
-import { Pier } from '../../types';
+import { PierNode } from '../../../../generated/types.d';
 
 interface BerthEditFormProps extends Omit<FormProps<Berth>, 'initialValues' | 'onCreate'> {
   berthId: string;
-  pierOptions: Pier[];
+  pierOptions: PierNode[];
 }
 
 const BerthEditForm = ({ berthId, onCancel, onSubmit, onDelete, refetchQueries, pierOptions }: BerthEditFormProps) => {
