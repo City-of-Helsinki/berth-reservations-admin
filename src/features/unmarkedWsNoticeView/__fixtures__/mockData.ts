@@ -48,7 +48,6 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
         __typename: 'WinterStorageAreaChoiceType',
       },
     ],
-    applicationCode: '1234',
     __typename: 'WinterStorageApplicationNode',
   },
   boatTypes: [

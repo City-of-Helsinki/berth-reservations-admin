@@ -59,7 +59,7 @@ const UnmarkedWsNoticeView = ({
         <Card className={styles.fullWidth}>
           <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
           <CardBody>
-            <UnmarkedWsNoticeDetails {...noticeDetails} queue={null} />
+            <UnmarkedWsNoticeDetails {...noticeDetails} />
           </CardBody>
         </Card>
       )}

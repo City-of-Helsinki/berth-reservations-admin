@@ -13,7 +13,7 @@ import {
   UPDATE_UNMARKED_WINTER_STORAGE_NOTICE,
   UPDATE_UNMARKED_WINTER_STORAGE_NOTICEVariables as UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_VARS,
 } from './__generated__/UPDATE_UNMARKED_WINTER_STORAGE_NOTICE';
-import { getWinterStorageNoticeDetailsData } from './utils';
+import { getNoticeDetailsData } from './utils';
 import {
   UNMARKED_WINTER_STORAGE_NOTICE,
   UNMARKED_WINTER_STORAGE_NOTICEVariables as UNMARKED_WINTER_STORAGE_NOTICE_VARS,
@@ -69,7 +69,7 @@ const UnmarkedWsNoticeViewContainer = () => {
   const customer = data?.winterStorageNotice?.customer;
   const customerProfile = customer ? getCustomerProfile(customer) : null;
 
-  const noticeDetails = getWinterStorageNoticeDetailsData(data.winterStorageNotice, data.boatTypes || []);
+  const noticeDetails = getNoticeDetailsData(data.winterStorageNotice, data.boatTypes || []);
 
   const handleDeleteNotice = () =>
     deleteNotice({

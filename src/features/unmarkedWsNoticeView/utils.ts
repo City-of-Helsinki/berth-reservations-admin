@@ -10,7 +10,7 @@ interface UnmarkedWinterStorageChoice {
   winterStorageArea: string;
 }
 
-export const getWinterStorageNoticeDetailsData = (
+export const getNoticeDetailsData = (
   winterStorageNotice: WINTER_STORAGE_NOTICE,
   boatTypes: BOAT_TYPES[]
 ): UnmarkedWsNoticeDetailsProps & Required<Pick<UnmarkedWsNoticeDetailsProps, 'applicant'>> => {
@@ -29,12 +29,10 @@ export const getWinterStorageNoticeDetailsData = (
   return {
     ...winterStorageNotice,
     customerId: winterStorageNotice.customer?.id,
-    applicant: getApplicantDetails(winterStorageNotice),
-    queue: null,
+    applicant: getApplicantDetails({ ...winterStorageNotice, applicationCode: '' }),
     choice,
     boatType: boatTypes.find(({ id }) => id === winterStorageNotice.boatType)?.name,
     summaryInformation: {
-      applicationCode: winterStorageNotice.applicationCode,
       acceptBoatingNewsletter: winterStorageNotice.acceptBoatingNewsletter,
       acceptFitnessNews: winterStorageNotice.acceptFitnessNews,
       acceptLibraryNews: winterStorageNotice.acceptLibraryNews,

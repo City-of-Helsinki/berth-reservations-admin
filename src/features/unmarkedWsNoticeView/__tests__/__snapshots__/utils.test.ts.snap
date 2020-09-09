@@ -21,7 +21,6 @@ Object {
     "primaryEmail": "test@test.com",
     "primaryPhone": "555555",
   },
-  "applicationCode": "1234",
   "boatLength": 1,
   "boatModel": "test",
   "boatName": "test",
@@ -44,14 +43,12 @@ Object {
   "lastName": "test",
   "municipality": "helsinki",
   "phoneNumber": "555555",
-  "queue": null,
   "status": "PENDING",
   "summaryInformation": Object {
     "acceptBoatingNewsletter": true,
     "acceptFitnessNews": true,
     "acceptLibraryNews": true,
     "acceptOtherCultureNews": true,
-    "applicationCode": "1234",
   },
   "winterStorageAreaChoices": Array [
     Object {

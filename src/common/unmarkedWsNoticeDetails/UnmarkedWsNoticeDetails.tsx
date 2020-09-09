@@ -30,7 +30,6 @@ interface BerthSwitch {
 }
 
 interface SummaryInformation {
-  applicationCode: string;
   acceptBoatingNewsletter: boolean;
   acceptFitnessNews: boolean;
   acceptLibraryNews: boolean;
@@ -58,7 +57,6 @@ export interface UnmarkedWsNoticeDetailsProps {
   };
   id: string;
   lease?: Lease | null;
-  queue: number | null;
   status: ApplicationStatus;
   summaryInformation?: SummaryInformation;
 }

@@ -85,7 +85,6 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice {
   acceptOtherCultureNews: boolean;
   status: ApplicationStatus;
   winterStorageAreaChoices: (UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices | null)[] | null;
-  applicationCode: string;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_boatTypes {

@@ -60,7 +60,6 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
         priority
         winterStorageAreaName
       }
-      applicationCode
     }
     boatTypes {
       id
