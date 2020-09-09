@@ -29,6 +29,7 @@
     "select": "Valitse",
     "save": "Tallenna",
     "cancel": "Peruuta",
+    "name": "Nimi",
     "firstName": "Etunimi",
     "lastName": "Sukunimi",
     "email": "Sähköposti",
@@ -123,6 +124,7 @@
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
       "width": "Leveys",
+      "winterStorageArea": "Talvisäilytysalue",
       "winterStoragePlaces": "Talvisäilytyspaikat"
     },
     "notification": {
