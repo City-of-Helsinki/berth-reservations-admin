@@ -3,6 +3,13 @@ import { shallow } from 'enzyme';
 
 import ExpandableNavItem, { ExpandableProps } from '../ExpandableNavItem';
 
+jest.mock('react-router-dom', () => ({
+  __esModule: true,
+  useLocation: () => ({
+    pathname: '',
+  }),
+}));
+
 describe('ExpandableNavItem', () => {
   const onClick = jest.fn();
 
