@@ -275,7 +275,6 @@
   "applicationList": {
     "title": "Venepaikkahakemukset",
     "winterStorageTitle": "Talvisäilytyspaikkahakemukset",
-    "unmarkedWsTitle": "Nostojärjestysilmoitukset",
     "tableHeaders": {
       "switchFilter": "Vaihtohakemukset",
       "newApplicationFilter": "Uudet hakemukset",
@@ -620,6 +619,10 @@
         "label": "Virhe",
         "description": "Tapahtui odottamaton virhe."
       }
+    },
+    "noticeDeleted": {
+      "label": "Ilmoitus poistettu",
+      "description": "Ilmoitus on poistettu"
     }
   },
   "winterStorageAreaList": {
@@ -648,5 +651,19 @@
     "title": "Toimintahistoria",
     "recentActions": "Viimeaikainen toiminta",
     "showFullHistory": "Näytä koko historia"
+  },
+  "unmarkedWsNotices": {
+    "view": {
+      "title": "Nostojärjestysilmoitus"
+    },
+    "list": {
+      "title": "Nostojärjestysilmoitukset"
+    },
+    "noticeDetails": {
+      "title": "Nostojärjestysilmoitus",
+      "notice": "Ilmoitus",
+      "ownerInformation": "Omistajan tiedot"
+    },
+    "deleteNotice": "Poista ilmoitus"
   }
 }
