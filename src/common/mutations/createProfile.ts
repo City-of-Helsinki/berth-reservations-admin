@@ -14,7 +14,7 @@ export const CREATE_NEW_PROFILE_MUTATION = gql`
         profile: {
           firstName: $firstName
           lastName: $lastName
-          addAddresses: { address: $address, postalCode: $postalCode, city: $city, primary: true, addressType: NONE }
+          addAddresses: $addresses
           addEmails: { email: $email, emailType: NONE, primary: true }
           addPhones: { phone: $phone, phoneType: NONE, primary: true }
         }

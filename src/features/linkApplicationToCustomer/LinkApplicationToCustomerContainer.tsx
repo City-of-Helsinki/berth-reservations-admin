@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLazyQuery, useMutation } from '@apollo/react-hooks';
+import { useLazyQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 
 import { getFilteredCustomersData } from './utils';
@@ -14,19 +14,7 @@ import { usePrevious } from '../../common/utils/usePrevious';
 import { usePagination } from '../../common/utils/usePagination';
 import { useBackendSorting } from '../../common/utils/useBackendSorting';
 import LinkApplicationToCustomer from './LinkApplicationToCustomer';
-import {
-  CREATE_BERTH_SERVICE_PROFILE_MUTATION,
-  CREATE_NEW_PROFILE_MUTATION,
-} from '../../common/mutations/createProfile';
-import {
-  CREATE_NEW_PROFILE,
-  CREATE_NEW_PROFILEVariables as CREATE_NEW_PROFILE_VARS,
-} from '../../common/mutations/__generated__/CREATE_NEW_PROFILE';
-import {
-  CREATE_BERTH_SERVICE_PROFILE,
-  CREATE_BERTH_SERVICE_PROFILEVariables as CREATE_BERTH_SERVICE_PROFILE_VARS,
-} from '../../common/mutations/__generated__/CREATE_BERTH_SERVICE_PROFILE';
-import { AddressType, OrganizationType } from '../../@types/__generated__/globalTypes';
+import useCreateNewCustomer from '../../common/hooks/useCreateNewCustomer';
 
 export interface LinkApplicationToCustomerContainerProps {
   application: {
@@ -73,26 +61,12 @@ const LinkApplicationToCustomerContainer = ({
     variables: filteredCustomersVars,
   });
 
-  const [createNewCustomer] = useMutation<CREATE_NEW_PROFILE, CREATE_NEW_PROFILE_VARS>(CREATE_NEW_PROFILE_MUTATION, {
-    refetchQueries: [
-      {
-        query: FILTERED_CUSTOMERS_QUERY,
-        variables: filteredCustomersVars,
-      },
-    ],
-  });
-
-  const [createNewBerthProfile] = useMutation<CREATE_BERTH_SERVICE_PROFILE, CREATE_BERTH_SERVICE_PROFILE_VARS>(
-    CREATE_BERTH_SERVICE_PROFILE_MUTATION,
+  const createNewCustomer = useCreateNewCustomer([
     {
-      refetchQueries: [
-        {
-          query: FILTERED_CUSTOMERS_QUERY,
-          variables: filteredCustomersVars,
-        },
-      ],
-    }
-  );
+      query: FILTERED_CUSTOMERS_QUERY,
+      variables: filteredCustomersVars,
+    },
+  ]);
 
   useEffect(() => {
     setSearchVal(application[searchBy]);
@@ -112,66 +86,7 @@ const LinkApplicationToCustomerContainer = ({
   const filteredCustomersData = getFilteredCustomersData(customersData);
 
   const handleCreateCustomer = () => {
-    const {
-      firstName,
-      lastName,
-      address,
-      email,
-      phoneNumber,
-      zipCode,
-      municipality,
-      businessId,
-      companyName,
-    } = application;
-
-    if (businessId === '') {
-      createNewCustomer({
-        variables: {
-          firstName: firstName,
-          lastName: lastName,
-          addresses: [
-            { address, postalCode: zipCode, city: municipality, primary: true, addressType: AddressType.NONE },
-          ],
-          phone: phoneNumber,
-          email: email,
-        },
-      }).then(({ data }) => {
-        if (!data?.createProfile?.profile?.id) {
-          return;
-        }
-        return createNewBerthProfile({
-          variables: { input: { id: data.createProfile.profile.id } },
-        });
-      });
-    } else {
-      createNewCustomer({
-        variables: {
-          firstName: firstName,
-          lastName: lastName,
-          phone: phoneNumber,
-          email: email,
-        },
-      }).then(({ data }) => {
-        if (!data?.createProfile?.profile?.id) {
-          return;
-        }
-        return createNewBerthProfile({
-          variables: {
-            input: {
-              id: data.createProfile.profile.id,
-              organization: {
-                businessId,
-                name: companyName,
-                organizationType: OrganizationType.COMPANY,
-                address,
-                postalCode: zipCode,
-                city: municipality,
-              },
-            },
-          },
-        });
-      });
-    }
+    createNewCustomer(application);
   };
 
   return (
