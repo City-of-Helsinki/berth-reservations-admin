@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './selectHeader.module.scss';
 
-interface SelectHeaderProps<T> {
+export interface SelectHeaderProps<T> {
   allLabel: string;
   className?: string;
   editLabel: string;
