@@ -48,7 +48,7 @@ const UnmarkedWsNoticeList = ({
           </InternalLink>
         );
       },
-      Header: t('common.name') || '',
+      Header: t('common.name') as string,
       accessor: 'id',
       filter: 'exact',
       disableSortBy: true,
@@ -56,12 +56,12 @@ const UnmarkedWsNoticeList = ({
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
-      Header: t('applicationList.tableHeaders.pvm') || '',
+      Header: t('applicationList.tableHeaders.pvm') as string,
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
     },
     {
-      Header: t('common.terminology.winterStorageArea') || '',
+      Header: t('common.terminology.winterStorageArea') as string,
       accessor: ({ choice }) => choice.winterStorageAreaName,
       id: 'choice',
       disableSortBy: true,
@@ -74,7 +74,7 @@ const UnmarkedWsNoticeList = ({
           label={t(APPLICATION_STATUS[value as ApplicationStatus].label)}
         />
       ),
-      Header: t('applicationList.tableHeaders.status') || '',
+      Header: t('applicationList.tableHeaders.status') as string,
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,

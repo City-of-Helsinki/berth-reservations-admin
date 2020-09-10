@@ -1,5 +1,9 @@
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import { UNMARKED_WINTER_STORAGE_NOTICES } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
+import {
+  UNMARKED_WINTER_STORAGE_NOTICES,
+  UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges as UNMARKED_WINTER_STORAGE_NOTICES_EDGE,
+  UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node as UNMARKED_WINTER_STORAGE_NOTICES_NODE,
+} from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 
 interface UnmarkedWinterStorageChoice {
   winterStorageAreaName: string;
@@ -22,45 +26,53 @@ export type UnmarkedWinterStorageNotice = {
   status: ApplicationStatus;
 };
 
-export const getUnmarkedWinterStorageNotice = (
+export const getUnmarkedWinterStorageNotices = (
   data: UNMARKED_WINTER_STORAGE_NOTICES | undefined
 ): UnmarkedWinterStorageNotice[] => {
-  if (!data || !data.winterStorageNotices) {
-    return [];
-  }
+  return (
+    data?.winterStorageNotices?.edges.reduce<UnmarkedWinterStorageNotice[]>((acc, edge) => {
+      const {
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
+        boatType,
+        boatWidth,
+        createdAt,
+        firstName,
+        id,
+        lastName,
+        status,
+        winterStorageAreaChoices: choices,
+      } = (edge as UNMARKED_WINTER_STORAGE_NOTICES_EDGE).node as UNMARKED_WINTER_STORAGE_NOTICES_NODE;
 
-  return data.winterStorageNotices.edges.reduce<UnmarkedWinterStorageNotice[]>((acc, edge) => {
-    if (!edge || !edge.node) {
-      return acc;
-    }
-    const application = edge.node;
+      const choice: UnmarkedWinterStorageChoice =
+        choices !== null && choices.length > 0 && choices[0] !== null
+          ? {
+              winterStorageArea: choices[0].winterStorageAreaName,
+              winterStorageAreaName: choices[0].winterStorageAreaName,
+            }
+          : {
+              winterStorageArea: '',
+              winterStorageAreaName: '',
+            };
 
-    const choices = application.winterStorageAreaChoices;
-    const choice: UnmarkedWinterStorageChoice =
-      choices !== null && choices.length > 0 && choices[0] !== null && choices[0].winterStorageAreaName !== null
-        ? {
-            winterStorageArea: choices[0].winterStorageAreaName,
-            winterStorageAreaName: choices[0].winterStorageAreaName,
-          }
-        : {
-            winterStorageArea: '',
-            winterStorageAreaName: '',
-          };
+      const applicationData: UnmarkedWinterStorageNotice = {
+        boatLength: boatLength,
+        boatModel: boatModel,
+        boatName: boatName,
+        boatRegistrationNumber: boatRegistrationNumber,
+        boatType: data.boatTypes?.find(({ id }) => id === boatType)?.name,
+        boatWidth: boatWidth,
+        choice,
+        createdAt: createdAt,
+        firstName: firstName,
+        id: id,
+        lastName: lastName,
+        status: status,
+      };
 
-    const applicationData: UnmarkedWinterStorageNotice = {
-      boatLength: application.boatLength,
-      boatModel: application.boatModel,
-      boatName: application.boatName,
-      boatRegistrationNumber: application.boatRegistrationNumber,
-      boatType: data.boatTypes?.find(({ id }) => id === application.boatType)?.name,
-      boatWidth: application.boatWidth,
-      choice,
-      createdAt: application.createdAt,
-      firstName: application.firstName,
-      id: application.id,
-      lastName: application.lastName,
-      status: application.status,
-    };
-    return [...acc, applicationData];
-  }, []);
+      return [...acc, applicationData];
+    }, []) ?? []
+  );
 };

@@ -9,7 +9,7 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICESVariables as UNMARKED_WINTER_STORAGE_NOTICES_VARS,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
-import { getUnmarkedWinterStorageNotice } from './utils';
+import { getUnmarkedWinterStorageNotices } from './utils';
 
 const UnmarkedWsNoticeListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
@@ -24,7 +24,7 @@ const UnmarkedWsNoticeListContainer = () => {
       },
     }
   );
-  const notices = getUnmarkedWinterStorageNotice(data);
+  const notices = getUnmarkedWinterStorageNotices(data);
   const pageCount = getPageCount(data?.winterStorageNotices?.count);
 
   return (
