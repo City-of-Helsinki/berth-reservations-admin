@@ -13,22 +13,6 @@ import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
 } from '../organizationCustomerDetails/OrganizationCustomerDetails';
 
-interface Lease {
-  berthNum: string | number;
-  harborId: string;
-  harborName: string;
-  id: string;
-  pierIdentifier: string;
-}
-
-interface BerthSwitch {
-  berthNum: string | number;
-  harborId: string;
-  harborName: string;
-  pierIdentifier: string;
-  reason: string | null;
-}
-
 interface SummaryInformation {
   acceptBoatingNewsletter: boolean;
   acceptFitnessNews: boolean;
@@ -39,7 +23,6 @@ interface SummaryInformation {
 export interface UnmarkedWsNoticeDetailsProps {
   accessibilityRequired?: boolean;
   applicant?: PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps;
-  berthSwitch?: BerthSwitch | null;
   boatDraught?: number | null;
   boatLength: number;
   boatModel: string;
@@ -56,14 +39,12 @@ export interface UnmarkedWsNoticeDetailsProps {
     winterStorageArea: string;
   };
   id: string;
-  lease?: Lease | null;
   status: ApplicationStatus;
   summaryInformation?: SummaryInformation;
 }
 
 const UnmarkedWsNoticeDetails = ({
   applicant,
-  berthSwitch,
   createdAt,
   status,
   boatType,
@@ -93,17 +74,6 @@ const UnmarkedWsNoticeDetails = ({
             value={t(APPLICATION_STATUS[status]?.label)}
           />
         </Section>
-        {berthSwitch && (
-          <Section title={t('applicationList.applicationDetails.currentBerth')}>
-            <LabelValuePair
-              label={t('applicationList.applicationDetails.portAndBerth')}
-              value={`${berthSwitch.harborName} ${berthSwitch.pierIdentifier} ${berthSwitch.berthNum}`}
-            />
-            {berthSwitch.reason !== null && (
-              <LabelValuePair label={t('applicationList.applicationDetails.reason')} value={`${berthSwitch.reason}`} />
-            )}
-          </Section>
-        )}
         {applicant &&
           ('organization' in applicant ? (
             <OrganizationCustomerDetails
@@ -147,34 +117,30 @@ const UnmarkedWsNoticeDetails = ({
           <LabelValuePair label={t('applicationList.applicationDetails.boatName')} value={boatName} />
           <LabelValuePair label={t('applicationList.applicationDetails.boatBrand')} value={boatModel} />
         </Section>
-        {summaryInformation &&
-          (summaryInformation.acceptBoatingNewsletter ||
-            summaryInformation.acceptFitnessNews ||
-            summaryInformation.acceptLibraryNews ||
-            summaryInformation.acceptOtherCultureNews) && (
-            <Section title={t('applicationList.applicationDetails.winterStorageApplicationSummary')}>
-              {summaryInformation.acceptBoatingNewsletter && (
-                <div>
-                  <Text>{t('applicationList.applicationDetails.acceptBoatingNewsletter')}</Text>
-                </div>
-              )}
-              {summaryInformation.acceptFitnessNews && (
-                <div>
-                  <Text>{t('applicationList.applicationDetails.acceptFitnessNews')}</Text>
-                </div>
-              )}
-              {summaryInformation.acceptLibraryNews && (
-                <div>
-                  <Text>{t('applicationList.applicationDetails.acceptLibraryNews')}</Text>
-                </div>
-              )}
-              {summaryInformation.acceptOtherCultureNews && (
-                <div>
-                  <Text>{t('applicationList.applicationDetails.acceptOtherCultureNews')}</Text>
-                </div>
-              )}
-            </Section>
-          )}
+        {summaryInformation && Object.values(summaryInformation).some((value) => value) && (
+          <Section title={t('applicationList.applicationDetails.winterStorageApplicationSummary')}>
+            {summaryInformation.acceptBoatingNewsletter && (
+              <div>
+                <Text>{t('applicationList.applicationDetails.acceptBoatingNewsletter')}</Text>
+              </div>
+            )}
+            {summaryInformation.acceptFitnessNews && (
+              <div>
+                <Text>{t('applicationList.applicationDetails.acceptFitnessNews')}</Text>
+              </div>
+            )}
+            {summaryInformation.acceptLibraryNews && (
+              <div>
+                <Text>{t('applicationList.applicationDetails.acceptLibraryNews')}</Text>
+              </div>
+            )}
+            {summaryInformation.acceptOtherCultureNews && (
+              <div>
+                <Text>{t('applicationList.applicationDetails.acceptOtherCultureNews')}</Text>
+              </div>
+            )}
+          </Section>
+        )}
       </div>
     </Grid>
   );
