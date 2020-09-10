@@ -31,6 +31,10 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
         return 'red';
       case OrderStatus.REJECTED:
         return 'grey';
+      case OrderStatus.CANCELLED:
+        return 'grey';
+      default:
+        return 'grey';
     }
   };
 

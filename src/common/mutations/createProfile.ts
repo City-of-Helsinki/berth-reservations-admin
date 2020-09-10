@@ -4,9 +4,7 @@ export const CREATE_NEW_PROFILE_MUTATION = gql`
   mutation CREATE_NEW_PROFILE(
     $firstName: String!
     $lastName: String!
-    $address: String!
-    $postalCode: String!
-    $city: String!
+    $addresses: [CreateAddressInput]
     $email: String!
     $phone: String!
   ) {
@@ -29,6 +27,24 @@ export const CREATE_NEW_PROFILE_MUTATION = gql`
         primaryAddress {
           address
           city
+        }
+      }
+    }
+  }
+`;
+
+export const CREATE_BERTH_SERVICE_PROFILE_MUTATION = gql`
+  mutation CREATE_BERTH_SERVICE_PROFILE($input: CreateBerthServicesProfileMutationInput!) {
+    createBerthServicesProfile(input: $input) {
+      profile {
+        id
+        invoicingType
+        comment
+        organization {
+          id
+          organizationType
+          businessId
+          name
         }
       }
     }
