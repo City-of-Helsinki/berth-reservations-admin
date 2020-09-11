@@ -14,7 +14,7 @@ export interface ExpandableProps {
 }
 
 const ExpandableNavItem = ({ label, onClick, children, icon, openOn }: ExpandableProps) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState<boolean>(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -35,25 +35,21 @@ const ExpandableNavItem = ({ label, onClick, children, icon, openOn }: Expandabl
           {icon && <div className={styles.icon}>{icon}</div>}
           <div className={styles.label}>{label}</div>
         </div>
-        {children && (
-          <div
-            className={classNames(styles.headerBtn, styles.arrow, {
-              [styles.up]: expanded,
-            })}
-          >
-            <IconAngleDown />
-          </div>
-        )}
-      </div>
-      {children && (
         <div
-          className={classNames(styles.children, {
-            [styles.expanded]: expanded,
+          className={classNames(styles.headerBtn, styles.arrow, {
+            [styles.up]: expanded,
           })}
         >
-          {children}
+          <IconAngleDown />
         </div>
-      )}
+      </div>
+      <div
+        className={classNames(styles.children, {
+          [styles.expanded]: expanded,
+        })}
+      >
+        {children}
+      </div>
     </>
   );
 };
