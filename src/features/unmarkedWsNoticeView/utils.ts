@@ -10,33 +10,58 @@ interface UnmarkedWinterStorageChoice {
   winterStorageArea: string;
 }
 
+type Choices = ({ winterStorageAreaName: string } | null | undefined)[] | null;
+export const getChoiceFromWinterStorageAreaChoices = (choices: Choices): UnmarkedWinterStorageChoice => {
+  return Array.isArray(choices) && choices[0] !== null && choices[0] !== undefined
+    ? {
+        winterStorageArea: choices[0].winterStorageAreaName,
+        winterStorageAreaName: choices[0].winterStorageAreaName,
+      }
+    : {
+        winterStorageArea: '',
+        winterStorageAreaName: '',
+      };
+};
+
 export const getNoticeDetailsData = (
   winterStorageNotice: WINTER_STORAGE_NOTICE,
   boatTypes: BOAT_TYPES[]
 ): UnmarkedWsNoticeDetailsProps & Required<Pick<UnmarkedWsNoticeDetailsProps, 'applicant'>> => {
-  const choices = winterStorageNotice.winterStorageAreaChoices;
-  const choice: UnmarkedWinterStorageChoice =
-    choices !== null && choices.length > 0 && choices[0] !== null
-      ? {
-          winterStorageArea: choices[0].winterStorageAreaName,
-          winterStorageAreaName: choices[0].winterStorageAreaName,
-        }
-      : {
-          winterStorageArea: '',
-          winterStorageAreaName: '',
-        };
+  const {
+    acceptBoatingNewsletter,
+    acceptFitnessNews,
+    acceptLibraryNews,
+    acceptOtherCultureNews,
+    boatLength,
+    boatModel,
+    boatName,
+    boatRegistrationNumber,
+    boatType,
+    boatWidth,
+    createdAt,
+    customer,
+    id,
+    status,
+  } = winterStorageNotice;
 
   return {
-    ...winterStorageNotice,
-    customerId: winterStorageNotice.customer?.id,
     applicant: getApplicantDetails({ ...winterStorageNotice, applicationCode: '' }),
-    choice,
-    boatType: boatTypes.find(({ id }) => id === winterStorageNotice.boatType)?.name,
+    boatLength,
+    boatModel,
+    boatName,
+    boatRegistrationNumber,
+    boatType: boatTypes.find(({ id }) => id === boatType)?.name,
+    boatWidth,
+    choice: getChoiceFromWinterStorageAreaChoices(winterStorageNotice.winterStorageAreaChoices),
+    createdAt,
+    customerId: customer?.id,
+    id,
+    status,
     summaryInformation: {
-      acceptBoatingNewsletter: winterStorageNotice.acceptBoatingNewsletter,
-      acceptFitnessNews: winterStorageNotice.acceptFitnessNews,
-      acceptLibraryNews: winterStorageNotice.acceptLibraryNews,
-      acceptOtherCultureNews: winterStorageNotice.acceptOtherCultureNews,
+      acceptBoatingNewsletter: acceptBoatingNewsletter,
+      acceptFitnessNews: acceptFitnessNews,
+      acceptLibraryNews: acceptLibraryNews,
+      acceptOtherCultureNews: acceptOtherCultureNews,
     },
   };
 };

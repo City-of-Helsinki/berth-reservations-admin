@@ -2,12 +2,6 @@
 
 exports[`unmarkedWsNoticeView utils getWinterStorageNoticeDetailsData parses data correctly 1`] = `
 Object {
-  "__typename": "WinterStorageApplicationNode",
-  "acceptBoatingNewsletter": true,
-  "acceptFitnessNews": true,
-  "acceptLibraryNews": true,
-  "acceptOtherCultureNews": true,
-  "address": "test",
   "applicant": Object {
     "customerGroup": "PRIVATE",
     "firstName": "test",
@@ -27,22 +21,13 @@ Object {
   "boatRegistrationNumber": "test",
   "boatType": "Perämoottorivene",
   "boatWidth": 1,
-  "businessId": "",
   "choice": Object {
     "winterStorageArea": "Iso-Sarvasto",
     "winterStorageAreaName": "Iso-Sarvasto",
   },
-  "companyName": "",
   "createdAt": "2019-05-06T10:54:21.746387+00:00",
-  "customer": null,
   "customerId": undefined,
-  "email": "test@test.com",
-  "firstName": "test",
   "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
-  "language": "EN",
-  "lastName": "test",
-  "municipality": "helsinki",
-  "phoneNumber": "555555",
   "status": "PENDING",
   "summaryInformation": Object {
     "acceptBoatingNewsletter": true,
@@ -50,20 +35,5 @@ Object {
     "acceptLibraryNews": true,
     "acceptOtherCultureNews": true,
   },
-  "winterStorageAreaChoices": Array [
-    Object {
-      "__typename": "WinterStorageAreaChoiceType",
-      "priority": 1,
-      "winterStorageArea": null,
-      "winterStorageAreaName": "Iso-Sarvasto",
-    },
-    Object {
-      "__typename": "WinterStorageAreaChoiceType",
-      "priority": 2,
-      "winterStorageArea": null,
-      "winterStorageAreaName": "Rajasaari",
-    },
-  ],
-  "zipCode": "00100",
 }
 `;

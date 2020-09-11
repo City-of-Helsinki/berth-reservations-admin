@@ -4,6 +4,7 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges as UNMARKED_WINTER_STORAGE_NOTICES_EDGE,
   UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node as UNMARKED_WINTER_STORAGE_NOTICES_NODE,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
+import { getChoiceFromWinterStorageAreaChoices } from '../unmarkedWsNoticeView/utils';
 
 interface UnmarkedWinterStorageChoice {
   winterStorageAreaName: string;
@@ -43,19 +44,8 @@ export const getUnmarkedWinterStorageNotices = (
         id,
         lastName,
         status,
-        winterStorageAreaChoices: choices,
+        winterStorageAreaChoices,
       } = (edge as UNMARKED_WINTER_STORAGE_NOTICES_EDGE).node as UNMARKED_WINTER_STORAGE_NOTICES_NODE;
-
-      const choice: UnmarkedWinterStorageChoice =
-        choices !== null && choices.length > 0 && choices[0] !== null
-          ? {
-              winterStorageArea: choices[0].winterStorageAreaName,
-              winterStorageAreaName: choices[0].winterStorageAreaName,
-            }
-          : {
-              winterStorageArea: '',
-              winterStorageAreaName: '',
-            };
 
       const applicationData: UnmarkedWinterStorageNotice = {
         boatLength: boatLength,
@@ -64,7 +54,7 @@ export const getUnmarkedWinterStorageNotices = (
         boatRegistrationNumber: boatRegistrationNumber,
         boatType: data.boatTypes?.find(({ id }) => id === boatType)?.name,
         boatWidth: boatWidth,
-        choice,
+        choice: getChoiceFromWinterStorageAreaChoices(winterStorageAreaChoices),
         createdAt: createdAt,
         firstName: firstName,
         id: id,
