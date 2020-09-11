@@ -16,7 +16,7 @@ export const getNoticeDetailsData = (
 ): UnmarkedWsNoticeDetailsProps & Required<Pick<UnmarkedWsNoticeDetailsProps, 'applicant'>> => {
   const choices = winterStorageNotice.winterStorageAreaChoices;
   const choice: UnmarkedWinterStorageChoice =
-    choices !== null && choices.length > 0 && choices[0] !== null && choices[0].winterStorageAreaName !== null
+    choices !== null && choices.length > 0 && choices[0] !== null
       ? {
           winterStorageArea: choices[0].winterStorageAreaName,
           winterStorageAreaName: choices[0].winterStorageAreaName,

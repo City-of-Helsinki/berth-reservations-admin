@@ -17,7 +17,7 @@ import UnmarkedWsNoticeDetails, {
 } from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 
-export interface ApplicationViewProps {
+export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
@@ -31,7 +31,7 @@ const UnmarkedWsNoticeView = ({
   winterStorageNotice,
   handleLinkCustomer,
   handleDeleteNotice,
-}: ApplicationViewProps) => {
+}: UnmarkedWsNoticeViewProps) => {
   const { t } = useTranslation();
 
   return (

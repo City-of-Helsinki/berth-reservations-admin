@@ -2,8 +2,15 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICE,
   UNMARKED_WINTER_STORAGE_NOTICE_boatTypes as BOAT_TYPES,
   UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice as WINTER_STORAGE_NOTICE,
+  UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer as CUSTOMER,
 } from '../__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
-import { ApplicationStatus, BerthApplicationLanguage } from '../../../@types/__generated__/globalTypes';
+import {
+  ApplicationStatus,
+  BerthApplicationLanguage,
+  CustomerGroup,
+  InvoicingType,
+  Language,
+} from '../../../@types/__generated__/globalTypes';
 
 export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
   winterStorageNotice: WINTER_STORAGE_NOTICE;
@@ -92,4 +99,24 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
       __typename: 'BoatTypeType',
     },
   ],
+};
+
+export const mockCustomer: CUSTOMER = {
+  __typename: 'ProfileNode',
+  comment: '',
+  customerGroup: CustomerGroup.PRIVATE,
+  firstName: 'Hessu',
+  id: '1',
+  invoicingType: InvoicingType.DIGITAL_INVOICE,
+  language: Language.FINNISH,
+  lastName: 'Hopo',
+  organization: null,
+  primaryAddress: {
+    __typename: 'AddressNode',
+    address: 'Paratiisitie 13',
+    city: 'Ankkalinna',
+    postalCode: '00313',
+  },
+  primaryEmail: { __typename: 'EmailNode', email: 'hessu@hopo.fi' },
+  primaryPhone: { __typename: 'PhoneNode', phone: '0' },
 };
