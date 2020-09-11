@@ -2,6 +2,7 @@ import {
   FILTERED_CUSTOMERS,
   FILTERED_CUSTOMERS_profiles_edges as PROFILE_EDGE,
   FILTERED_CUSTOMERS_profiles_edges_node as PROFILE_NODE,
+  FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases as LEASES,
 } from './__generated__/FILTERED_CUSTOMERS';
 import { CustomerGroup } from '../../@types/__generated__/globalTypes';
 
@@ -14,6 +15,21 @@ export interface CustomerData {
   winterStoragePlaces?: string | null;
   customerGroup: CustomerGroup | null;
 }
+
+export const getWinterStoragePlaces = (leases: LEASES | null): string | undefined =>
+  leases?.edges
+    .reduce<(string | null | undefined)[]>((acc, edge) => {
+      if (edge?.node?.isActive) {
+        return [
+          ...acc,
+          edge?.node?.place?.winterStorageSection.properties?.area.properties?.name,
+          edge?.node?.section?.properties?.area.properties?.name,
+        ];
+      }
+      return acc;
+    }, [])
+    .filter(Boolean)
+    .join(', ');
 
 export const getFilteredCustomersData = (data?: FILTERED_CUSTOMERS): CustomerData[] => {
   if (!data?.profiles) return [];
@@ -33,18 +49,7 @@ export const getFilteredCustomersData = (data?: FILTERED_CUSTOMERS): CustomerDat
       .map((edge) => edge?.node?.berth?.pier.properties?.harbor.properties?.name)
       .join(', ');
 
-    const winterStoragePlaces = winterStorageLeases?.edges
-      .reduce<string[]>((acc, edge) => {
-        if (edge?.node?.isActive) {
-          const markedAreaName = edge?.node?.place?.winterStorageSection.properties?.area.properties?.name;
-          const unmarkedAreaName = edge?.node?.section?.properties?.area.properties?.name;
-
-          if (markedAreaName) return [...acc, markedAreaName];
-          if (unmarkedAreaName) return [...acc, unmarkedAreaName];
-        }
-        return acc;
-      }, [])
-      .join(', ');
+    const winterStoragePlaces = getWinterStoragePlaces(winterStorageLeases);
 
     return [
       ...acc,
