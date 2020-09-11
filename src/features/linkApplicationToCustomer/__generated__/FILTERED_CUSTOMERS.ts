@@ -64,9 +64,57 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_berthLeases {
   edges: (FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges | null)[];
 }
 
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area {
+  __typename: "WinterStorageAreaNode";
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area_properties | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties {
+  __typename: "WinterStorageSectionProperties";
+  area: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection {
+  __typename: "WinterStorageSectionNode";
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place {
+  __typename: "WinterStoragePlaceNode";
+  winterStorageSection: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area {
+  __typename: "WinterStorageAreaNode";
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area_properties | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties {
+  __typename: "WinterStorageSectionProperties";
+  area: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section {
+  __typename: "WinterStorageSectionNode";
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties | null;
+}
+
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node {
   __typename: "WinterStorageLeaseNode";
   id: string;
+  isActive: boolean;
+  place: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place | null;
+  section: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section | null;
 }
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges {

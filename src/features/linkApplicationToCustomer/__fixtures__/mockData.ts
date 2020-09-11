@@ -63,6 +63,65 @@ const winterStorageLeases: WINTER_STORAGE_LEASES = {
       node: {
         __typename: 'WinterStorageLeaseNode',
         id: '123',
+        isActive: false,
+        place: {
+          __typename: 'WinterStoragePlaceNode',
+          winterStorageSection: {
+            __typename: 'WinterStorageSectionNode',
+            properties: {
+              __typename: 'WinterStorageSectionProperties',
+              area: {
+                __typename: 'WinterStorageAreaNode',
+                properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue 0' },
+              },
+            },
+          },
+        },
+        section: null,
+      },
+    },
+    {
+      __typename: 'WinterStorageLeaseNodeEdge',
+      node: {
+        __typename: 'WinterStorageLeaseNode',
+        id: '124',
+        isActive: true,
+        place: null,
+        section: {
+          __typename: 'WinterStorageSectionNode',
+          properties: {
+            __typename: 'WinterStorageSectionProperties',
+            area: {
+              __typename: 'WinterStorageAreaNode',
+              properties: {
+                __typename: 'WinterStorageAreaProperties',
+                name: 'Nostojärjestysalue',
+              },
+            },
+          },
+        },
+      },
+    },
+    {
+      __typename: 'WinterStorageLeaseNodeEdge',
+      node: {
+        __typename: 'WinterStorageLeaseNode',
+        id: '125',
+        isActive: true,
+        place: {
+          __typename: 'WinterStoragePlaceNode',
+          winterStorageSection: {
+            __typename: 'WinterStorageSectionNode',
+            properties: {
+              __typename: 'WinterStorageSectionProperties',
+              area: {
+                __typename: 'WinterStorageAreaNode',
+                properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue' },
+              },
+            },
+          },
+        },
+        section: null,
       },
     },
   ],
