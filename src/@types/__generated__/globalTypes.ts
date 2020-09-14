@@ -17,6 +17,13 @@ export enum AdditionalProductType {
   OPTIONAL_SERVICE = "OPTIONAL_SERVICE",
 }
 
+export enum AddressType {
+  HOME = "HOME",
+  NONE = "NONE",
+  OTHER = "OTHER",
+  WORK = "WORK",
+}
+
 export enum ApplicationStatus {
   EXPIRED = "EXPIRED",
   HANDLED = "HANDLED",
@@ -90,6 +97,7 @@ export enum NotificationTemplateLanguage {
 }
 
 export enum OrderStatus {
+  CANCELLED = "CANCELLED",
   EXPIRED = "EXPIRED",
   PAID = "PAID",
   REJECTED = "REJECTED",
@@ -146,6 +154,15 @@ export interface AddBoatCertificateInput {
   checkedBy?: string | null;
 }
 
+export interface CreateAddressInput {
+  countryCode?: string | null;
+  primary?: boolean | null;
+  address: string;
+  postalCode: string;
+  city: string;
+  addressType: AddressType;
+}
+
 export interface CreateBerthLeaseMutationInput {
   boatId?: string | null;
   startDate?: any | null;
@@ -173,6 +190,14 @@ export interface CreateBerthProductMutationInput {
   priceValue: any;
   priceGroupId: string;
   harborId?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface CreateBerthServicesProfileMutationInput {
+  invoicingType?: InvoicingType | null;
+  comment?: string | null;
+  id: string;
+  organization?: OrganizationInput | null;
   clientMutationId?: string | null;
 }
 
@@ -249,6 +274,15 @@ export interface DeletePierMutationInput {
 export interface DeleteWinterStorageLeaseMutationInput {
   id: string;
   clientMutationId?: string | null;
+}
+
+export interface OrganizationInput {
+  organizationType: OrganizationType;
+  businessId?: string | null;
+  name?: string | null;
+  address?: string | null;
+  postalCode?: string | null;
+  city?: string | null;
 }
 
 export interface UpdateAdditionalProductMutationInput {

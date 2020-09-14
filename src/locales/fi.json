@@ -137,7 +137,8 @@
       "waiting": "Odottaa maksua",
       "expired": "Erääntynyt",
       "rejected": "Hylätty",
-      "paid": "Maksettu"
+      "paid": "Maksettu",
+      "cancelled": "Peruttu"
     }
   },
   "login": {
