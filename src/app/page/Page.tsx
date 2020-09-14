@@ -33,7 +33,7 @@ const Page = ({ children }: PageProps) => {
               key="applications"
               label={t('common.sidebar.applications')}
               icon={<IconApplications />}
-              openOn={['/applications', '/winter-storage-applications', '/unmarked-ws-notices']}
+              openOn={['/']}
             >
               <InternalNavLink key="berthApplications" to="/applications">
                 {t('common.sidebar.berthApplications')}
