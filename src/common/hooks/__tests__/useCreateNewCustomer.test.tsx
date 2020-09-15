@@ -17,6 +17,7 @@ import { OrganizationType } from '../../../@types/__generated__/globalTypes';
 
 const CallsCreateUser = ({ customerInfo }: { customerInfo: CustomerInfo }) => {
   const createNewCustomer = useCreateNewCustomer();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => createNewCustomer(customerInfo), []);
   return null;
 };

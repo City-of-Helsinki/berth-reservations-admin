@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, ReactWrapper, shallow } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
