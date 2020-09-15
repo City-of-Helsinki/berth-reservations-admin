@@ -55,14 +55,95 @@ const berthLeases: BERTH_LEASES = {
   ],
 };
 
-const winterStorageLeases: WINTER_STORAGE_LEASES = {
+export const mockWinterStorageLeases: WINTER_STORAGE_LEASES = {
   __typename: 'WinterStorageLeaseNodeConnection',
   edges: [
     {
       __typename: 'WinterStorageLeaseNodeEdge',
       node: {
         __typename: 'WinterStorageLeaseNode',
+        id: '122',
+        isActive: false,
+        place: null,
+        section: {
+          __typename: 'WinterStorageSectionNode',
+          properties: {
+            __typename: 'WinterStorageSectionProperties',
+            area: {
+              __typename: 'WinterStorageAreaNode',
+              properties: {
+                __typename: 'WinterStorageAreaProperties',
+                name: 'Nostojärjestysalue 0',
+              },
+            },
+          },
+        },
+      },
+    },
+    {
+      __typename: 'WinterStorageLeaseNodeEdge',
+      node: {
+        __typename: 'WinterStorageLeaseNode',
         id: '123',
+        isActive: false,
+        place: {
+          __typename: 'WinterStoragePlaceNode',
+          winterStorageSection: {
+            __typename: 'WinterStorageSectionNode',
+            properties: {
+              __typename: 'WinterStorageSectionProperties',
+              area: {
+                __typename: 'WinterStorageAreaNode',
+                properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue 0' },
+              },
+            },
+          },
+        },
+        section: null,
+      },
+    },
+    {
+      __typename: 'WinterStorageLeaseNodeEdge',
+      node: {
+        __typename: 'WinterStorageLeaseNode',
+        id: '124',
+        isActive: true,
+        place: null,
+        section: {
+          __typename: 'WinterStorageSectionNode',
+          properties: {
+            __typename: 'WinterStorageSectionProperties',
+            area: {
+              __typename: 'WinterStorageAreaNode',
+              properties: {
+                __typename: 'WinterStorageAreaProperties',
+                name: 'Nostojärjestysalue',
+              },
+            },
+          },
+        },
+      },
+    },
+    {
+      __typename: 'WinterStorageLeaseNodeEdge',
+      node: {
+        __typename: 'WinterStorageLeaseNode',
+        id: '125',
+        isActive: true,
+        place: {
+          __typename: 'WinterStoragePlaceNode',
+          winterStorageSection: {
+            __typename: 'WinterStorageSectionNode',
+            properties: {
+              __typename: 'WinterStorageSectionProperties',
+              area: {
+                __typename: 'WinterStorageAreaNode',
+                properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue' },
+              },
+            },
+          },
+        },
+        section: null,
       },
     },
   ],
@@ -72,7 +153,7 @@ const mockProfile: PROFILE_NODE = {
   __typename: 'ProfileNode',
   berthApplications: berthApplications,
   berthLeases: berthLeases,
-  winterStorageLeases: winterStorageLeases,
+  winterStorageLeases: mockWinterStorageLeases,
   firstName: 'Testi',
   id: 'MOCK-PROFILE',
   lastName: 'Testinen',

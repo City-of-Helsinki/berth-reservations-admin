@@ -2,6 +2,7 @@ import {
   FILTERED_CUSTOMERS,
   FILTERED_CUSTOMERS_profiles_edges as PROFILE_EDGE,
   FILTERED_CUSTOMERS_profiles_edges_node as PROFILE_NODE,
+  FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases as LEASES,
 } from './__generated__/FILTERED_CUSTOMERS';
 import { CustomerGroup } from '../../@types/__generated__/globalTypes';
 
@@ -15,19 +16,40 @@ export interface CustomerData {
   customerGroup: CustomerGroup | null;
 }
 
+export const getWinterStoragePlaces = (leases: LEASES | null): string | undefined =>
+  leases?.edges
+    .reduce<(string | null | undefined)[]>((acc, edge) => {
+      if (edge?.node?.isActive) {
+        return [
+          ...acc,
+          edge?.node?.place?.winterStorageSection.properties?.area.properties?.name,
+          edge?.node?.section?.properties?.area.properties?.name,
+        ];
+      }
+      return acc;
+    }, [])
+    .filter(Boolean)
+    .join(', ');
+
 export const getFilteredCustomersData = (data?: FILTERED_CUSTOMERS): CustomerData[] => {
   if (!data?.profiles) return [];
 
   return data.profiles.edges.reduce<CustomerData[]>((acc, edge) => {
-    const { id, firstName, lastName, primaryAddress, berthLeases, customerGroup } = (edge as PROFILE_EDGE)
-      .node as PROFILE_NODE;
+    const {
+      id,
+      firstName,
+      lastName,
+      primaryAddress,
+      berthLeases,
+      customerGroup,
+      winterStorageLeases,
+    } = (edge as PROFILE_EDGE).node as PROFILE_NODE;
 
     const berths = berthLeases?.edges
       .map((edge) => edge?.node?.berth?.pier.properties?.harbor.properties?.name)
       .join(', ');
 
-    // TODO resolve place names
-    const winterStoragePlaces = '';
+    const winterStoragePlaces = getWinterStoragePlaces(winterStorageLeases);
 
     return [
       ...acc,
