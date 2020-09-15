@@ -1,0 +1,1220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnmarkedWsNoticeView renders normally 1`] = `
+<div
+  class="pageContent applicationView"
+>
+  <div
+    class="fullWidth"
+  >
+    <h2
+      class="text standard h2 xl normalWeight pageTitle"
+    >
+      NOSTOJÄRJESTYSILMOITUS
+    </h2>
+  </div>
+  <div
+    class="buttons"
+  >
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      type="button"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Poista ilmoitus
+      </span>
+    </button>
+  </div>
+  <div>
+    LinkApplicationToCustomerContainer
+  </div>
+  <div
+    class="card fullWidth"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        NOSTOJÄRJESTYSILMOITUS
+      </span>
+    </div>
+    <div
+      class="cardBody"
+    >
+      <div
+        class="grid cols3"
+      >
+        <div>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              ILMOITUS
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Alue:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Iso-Sarvasto
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Vastaanotettu:
+                </span>
+                <span
+                  class="value left"
+                >
+                  06.05.2019 klo 10.54
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Status:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Odottaa käsittelyä
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              OMISTAJAN TIEDOT
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Etunimet:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Sukunimi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Jakeluosoite:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Postinumero:
+                </span>
+                <span
+                  class="value left"
+                >
+                  00100
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Postitoimipaikka:
+                </span>
+                <span
+                  class="value left"
+                >
+                  helsinki
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Matkapuhelin:
+                </span>
+                <span
+                  class="value left"
+                >
+                  555555
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Sähköpostiosoite:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test@test.com
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Asiakasryhmä:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Yksityinen
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Asiointikieli:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Englanti
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Huomiot:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+            </section>
+          </article>
+        </div>
+        <div>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              VENEEN TIEDOT
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen tyyppi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Perämoottorivene
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Rekisterinumero:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen leveys:
+                </span>
+                <span
+                  class="value left"
+                >
+                  1,0 m
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen pituus:
+                </span>
+                <span
+                  class="value left"
+                >
+                  1,0 m
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen syväys:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen paino:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Nimi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Merkki:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              YHTEENVETO
+            </h4>
+            <section
+              class="body"
+            >
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan uutiskirjeen
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa liikuntapalveluista
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa kirjastopalveluista
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa muista kulttuuripalveluista
+                </span>
+              </div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </div>
+     
+  </div>
+</div>
+`;
+
+exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
+<div
+  class="pageContent applicationView"
+>
+  <div
+    class="fullWidth"
+  >
+    <h2
+      class="text standard h2 xl normalWeight pageTitle"
+    >
+      NOSTOJÄRJESTYSILMOITUS
+    </h2>
+  </div>
+  <div
+    class="buttons"
+  >
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      type="button"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Poista ilmoitus
+      </span>
+    </button>
+  </div>
+  <div
+    class="card"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        ASIAKASTIEDOT
+      </span>
+    </div>
+    <div
+      class="cardBody"
+    >
+      <article
+        class="section"
+      >
+        <h4
+          class="text standard h4 m title"
+        >
+          HENKILÖTIEDOT
+        </h4>
+        <section
+          class="body"
+        >
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Etunimet:
+            </span>
+            <span
+              class="value left"
+            >
+              Hessu
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Sukunimi:
+            </span>
+            <span
+              class="value left"
+            >
+              Hopo
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Henkilötunnus:
+            </span>
+            <span
+              class="value left"
+            >
+              -
+            </span>
+          </div>
+        </section>
+      </article>
+      <article
+        class="section"
+      >
+        <section
+          class="body"
+        >
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Jakeluosoite:
+            </span>
+            <span
+              class="value left"
+            >
+              Paratiisitie 13
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Postinumero:
+            </span>
+            <span
+              class="value left"
+            >
+              00313
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Postitoimipaikka:
+            </span>
+            <span
+              class="value left"
+            >
+              Ankkalinna
+            </span>
+          </div>
+        </section>
+      </article>
+      <article
+        class="section"
+      >
+        <section
+          class="body"
+        >
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Matkapuhelin:
+            </span>
+            <span
+              class="value left"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Sähköpostiosoite:
+            </span>
+            <span
+              class="value left"
+            >
+              hessu@hopo.fi
+            </span>
+          </div>
+        </section>
+      </article>
+      <article
+        class="section"
+      >
+        <section
+          class="body"
+        >
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Asiakasryhmä:
+            </span>
+            <span
+              class="value left"
+            >
+              Yksityinen
+            </span>
+          </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Asiointikieli:
+            </span>
+            <span
+              class="value left"
+            >
+              Suomi
+            </span>
+          </div>
+        </section>
+      </article>
+      <article
+        class="section"
+      >
+        <section
+          class="body"
+        >
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            >
+              Huomiot:
+            </span>
+            <span
+              class="value left"
+            >
+              -
+            </span>
+          </div>
+        </section>
+      </article>
+    </div>
+     
+  </div>
+  <div
+    class="card card"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        TOIMINTAHISTORIA
+      </span>
+    </div>
+    <div
+      class="cardBody cardBody"
+    >
+      <article
+        class="section section"
+      >
+        <h4
+          class="text standard h4 m title"
+        >
+          VIIMEAIKAINEN TOIMINTA
+        </h4>
+        <section
+          class="body"
+        >
+          Placeholder
+        </section>
+      </article>
+      <div
+        class="linkRow"
+      >
+        <a
+          class="internalLink brand"
+          href="#/"
+          title="Näytä koko historia"
+        >
+          Näytä koko historia
+        </a>
+      </div>
+    </div>
+     
+  </div>
+  <div
+    class="card fullWidth"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        NOSTOJÄRJESTYSILMOITUS
+      </span>
+    </div>
+    <div
+      class="cardBody"
+    >
+      <div
+        class="grid cols3"
+      >
+        <div>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              ILMOITUS
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Alue:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Iso-Sarvasto
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Vastaanotettu:
+                </span>
+                <span
+                  class="value left"
+                >
+                  06.05.2019 klo 10.54
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Status:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Odottaa käsittelyä
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              OMISTAJAN TIEDOT
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Etunimet:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Sukunimi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Jakeluosoite:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Postinumero:
+                </span>
+                <span
+                  class="value left"
+                >
+                  00100
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Postitoimipaikka:
+                </span>
+                <span
+                  class="value left"
+                >
+                  helsinki
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Matkapuhelin:
+                </span>
+                <span
+                  class="value left"
+                >
+                  555555
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Sähköpostiosoite:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test@test.com
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Asiakasryhmä:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Yksityinen
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Asiointikieli:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Englanti
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Huomiot:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+            </section>
+          </article>
+        </div>
+        <div>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              VENEEN TIEDOT
+            </h4>
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen tyyppi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  Perämoottorivene
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Rekisterinumero:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen leveys:
+                </span>
+                <span
+                  class="value left"
+                >
+                  1,0 m
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen pituus:
+                </span>
+                <span
+                  class="value left"
+                >
+                  1,0 m
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen syväys:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Veneen paino:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Nimi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Merkki:
+                </span>
+                <span
+                  class="value left"
+                >
+                  test
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <h4
+              class="text standard h4 m title"
+            >
+              YHTEENVETO
+            </h4>
+            <section
+              class="body"
+            >
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan uutiskirjeen
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa liikuntapalveluista
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa kirjastopalveluista
+                </span>
+              </div>
+              <div>
+                <span
+                  class="text standard span"
+                >
+                  Tilaan tietoa muista kulttuuripalveluista
+                </span>
+              </div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </div>
+     
+  </div>
+</div>
+`;

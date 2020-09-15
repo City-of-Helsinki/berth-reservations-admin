@@ -15,6 +15,7 @@ test('Navigate and view basic data', async (t) => {
 
   // Applications
   await t
+    .click(navigation.applicationsExpandable)
     .click(navigation.applications)
     .click(applications.applicationList.firstApplicationLink)
     .expect(applications.applicationView.firstName.filter(hasLength).exists)
