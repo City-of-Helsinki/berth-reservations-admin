@@ -22,9 +22,11 @@ import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import BillModal from './billModal/BillModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
+import CustomerEditForm from '../customerForm/CustomerEditForm';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
+  const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
   const [openBill, setOpenBill] = useState<Bill>();
   const { t } = useTranslation();
@@ -60,12 +62,17 @@ const CustomerViewContainer = () => {
         bills={bills}
         boats={boats}
         customerProfile={customerProfile}
+        handleEditCustomer={() => setEditCustomer(true)}
         leases={leases}
+        onClickCreateBoat={() => setCreatingBoat(true)}
         openBills={openBills}
         setBoatToEdit={setBoatToEdit}
         setOpenBill={setOpenBill}
-        onClickCreateBoat={() => setCreatingBoat(true)}
       />
+
+      <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
+        <CustomerEditForm customerId={id} />
+      </Modal>
 
       {boatToEdit && (
         <Modal isOpen={true} toggleModal={() => setBoatToEdit(null)}>

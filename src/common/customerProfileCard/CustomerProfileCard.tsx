@@ -8,9 +8,11 @@ import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateC
 import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
 } from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import Text from '../text/Text';
 
 export type CustomerProfileCardProps = {
   className?: string;
+  handleEditCustomer?: () => void;
 } & (PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps);
 
 const renderDetails = (props: CustomerProfileCardProps) => {
@@ -21,14 +23,19 @@ const renderDetails = (props: CustomerProfileCardProps) => {
   }
 };
 
-const CustomerProfileCard = (props: CustomerProfileCardProps) => {
-  const { className } = props;
+const CustomerProfileCard = ({ className, handleEditCustomer, ...rest }: CustomerProfileCardProps) => {
   const { t } = useTranslation();
 
   return (
     <Card className={className}>
-      <CardHeader title={t('customerProfile.title').toUpperCase()} />
-      <CardBody>{renderDetails(props)}</CardBody>
+      <CardHeader title={t('customerProfile.title').toUpperCase()}>
+        {handleEditCustomer && (
+          <button onClick={handleEditCustomer}>
+            <Text weight="normalWeight">{t('common.edit')}</Text>
+          </button>
+        )}
+      </CardHeader>
+      <CardBody>{renderDetails(rest)}</CardBody>
     </Card>
   );
 };
