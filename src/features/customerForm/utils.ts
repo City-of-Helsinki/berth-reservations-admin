@@ -1,5 +1,6 @@
 import { CUSTOMER_FORM } from './__generated__/CUSTOMER_FORM';
 import { Customer } from './types';
+import { CustomerGroup } from '../../@types/__generated__/globalTypes';
 
 export const getCustomer = (customerData: CUSTOMER_FORM): Customer | undefined => {
   if (!customerData?.profile) return undefined;
@@ -9,23 +10,38 @@ export const getCustomer = (customerData: CUSTOMER_FORM): Customer | undefined =
     firstName,
     lastName,
     customerGroup,
-    // organization, TODO
+    organization,
     primaryAddress,
     primaryEmail,
     primaryPhone,
   } = customerData.profile;
-  return {
-    address: primaryAddress?.address || '',
-    city: primaryAddress?.city || '',
+
+  const common = {
     comment,
     customerGroup,
     email: primaryEmail?.email,
     firstName,
     id,
     lastName,
-    // organization, TODO
     phone: primaryPhone?.phone,
-    postalCode: primaryAddress?.postalCode || '',
     ssn: '', // TODO
+  };
+
+  if (customerGroup === CustomerGroup.PRIVATE) {
+    return {
+      ...common,
+      address: primaryAddress?.address || '',
+      city: primaryAddress?.city || '',
+      postalCode: primaryAddress?.postalCode || '',
+    };
+  }
+
+  return {
+    ...common,
+    address: organization?.address || '',
+    city: organization?.city || '',
+    postalCode: organization?.postalCode || '',
+    organizationName: organization?.name,
+    businessId: organization?.businessId,
   };
 };

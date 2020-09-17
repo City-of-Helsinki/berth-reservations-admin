@@ -33,7 +33,6 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
     customerGroup: CustomerGroup.PRIVATE,
     firstName: '',
     lastName: '',
-    organization: undefined,
     postalCode: '',
   };
 
@@ -82,6 +81,29 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               invalid={!!errors.ssn}
               helperText={errors.ssn}
               disabled // TODO
+            />
+
+            <hr className={styles.divider} />
+
+            <TextInput
+              id="organizationName"
+              value={values.organizationName}
+              onChange={handleChange}
+              label={t('forms.customer.organizationName')}
+              invalid={!!errors.organizationName}
+              helperText={errors.organizationName}
+              disabled={values.customerGroup === CustomerGroup.PRIVATE}
+              required={values.customerGroup !== CustomerGroup.PRIVATE}
+            />
+            <TextInput
+              id="businessId"
+              value={values.businessId}
+              onChange={handleChange}
+              label={t('forms.customer.businessId')}
+              invalid={!!errors.businessId}
+              helperText={errors.businessId}
+              disabled={values.customerGroup === CustomerGroup.PRIVATE}
+              required={values.customerGroup !== CustomerGroup.PRIVATE}
             />
 
             <hr className={styles.divider} />

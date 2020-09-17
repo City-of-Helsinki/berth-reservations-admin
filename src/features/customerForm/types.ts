@@ -13,14 +13,6 @@ export interface FormProps<T> {
   onSubmit?(updated: T): void;
 }
 
-type Organization = {
-  address: string;
-  businessId: string;
-  city: string;
-  name: string;
-  postalCode: string;
-};
-
 export type Customer = {
   address: string;
   city: string;
@@ -30,7 +22,8 @@ export type Customer = {
   firstName: string;
   id?: string;
   lastName: string;
-  organization?: Organization;
+  organizationName?: string;
+  businessId?: string;
   phone?: string | null;
   postalCode: string;
   ssn?: string;
