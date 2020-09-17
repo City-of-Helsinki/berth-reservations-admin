@@ -1,56 +1,76 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import CustomerForm from './CustomerForm';
-import { Customer, FormProps } from './types';
+import { CustomerFormValues, FormProps } from './types';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { CUSTOMER_FORM_QUERY } from './queries';
 import { CUSTOMER_FORM } from './__generated__/CUSTOMER_FORM';
-import { getCustomer } from './utils';
+import { createUpdateInputs, getCustomerFormValues, getIdentifiers } from './utils';
+import { UPDATE_PROFILE_MUTATION } from './mutations';
+import { UPDATE_PROFILE, UPDATE_PROFILEVariables as UPDATE_PROFILE_VARS } from './__generated__/UPDATE_PROFILE';
+import {
+  UPDATE_BERTH_SERVICES_PROFILE,
+  UPDATE_BERTH_SERVICES_PROFILEVariables as UPDATE_BERTH_SERVICES_PROFILE_VARS,
+} from './__generated__/UPDATE_BERTH_SERVICES_PROFILE';
 
-export interface CustomerEditFormProps extends Omit<FormProps<Customer>, 'initialValues' | 'onCreate' | 'onDelete'> {
+export interface CustomerEditFormProps
+  extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete'> {
   customerId: string;
 }
 
 const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
+  const { t } = useTranslation();
+
   const { loading, error, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
     variables: { id: customerId },
   });
 
-  // TODO
-  const [updateCustomer, { loading: isSubmitting }] = [
-    (options: any) => {
-      console.log(options);
-      console.log({
-        refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
-      });
-      return Promise.resolve();
-    },
-    { loading: false },
-  ];
+  const [updateProfile, { loading: updateProfileLoading }] = useMutation<UPDATE_PROFILE, UPDATE_PROFILE_VARS>(
+    UPDATE_PROFILE_MUTATION,
+    {
+      refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
+    }
+  );
 
-  const { t } = useTranslation();
+  const [updateBerthServicesProfile, { loading: updateBerthServicesLoading }] = useMutation<
+    UPDATE_BERTH_SERVICES_PROFILE,
+    UPDATE_BERTH_SERVICES_PROFILE_VARS
+  >(UPDATE_PROFILE_MUTATION, {
+    refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
+  });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (error || !data?.profile) return <div>{t('forms.common.error')}</div>;
 
-  const initialValues = getCustomer(data);
+  const initialValues = getCustomerFormValues(data.profile);
+  const identifiers = getIdentifiers(data.profile);
+
+  const handleSubmit = (values: CustomerFormValues) => {
+    const [profileInput, berthServicesProfileInput] = createUpdateInputs(values, identifiers);
+
+    console.log(profileInput, berthServicesProfileInput);
+
+    // updateProfile({
+    //   variables: {
+    //     input: profileInput,
+    //   },
+    // }).then(() =>
+    //   updateBerthServicesProfile({
+    //     variables: {
+    //       input: berthServicesProfileInput,
+    //     },
+    //   }).then(() => onSubmit?.(values))
+    // );
+  };
 
   return (
     <CustomerForm
       initialValues={initialValues}
       onCancel={onCancel}
-      onSubmit={(values) => {
-        updateCustomer({
-          variables: {
-            input: {
-              id: customerId,
-            },
-          },
-        }).then(() => onSubmit?.(values));
-      }}
-      isSubmitting={isSubmitting}
+      onSubmit={handleSubmit}
+      isSubmitting={updateProfileLoading || updateBerthServicesLoading}
     />
   );
 };

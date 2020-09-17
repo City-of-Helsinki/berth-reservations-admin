@@ -13,18 +13,25 @@ export interface FormProps<T> {
   onSubmit?(updated: T): void;
 }
 
-export type Customer = {
+export type CustomerFormIdentifiers = {
+  id: string;
+  primaryAddressId?: string;
+  primaryPhoneId?: string;
+  primaryEmailId?: string;
+  initialCustomerGroup: CustomerGroup | null;
+};
+
+export type CustomerFormValues = {
   address: string;
   city: string;
-  comment?: string | null;
-  customerGroup: CustomerGroup | null;
-  email?: string;
+  comment: string;
+  customerGroup: CustomerGroup;
+  email: string;
   firstName: string;
-  id?: string;
   lastName: string;
-  organizationName?: string;
-  businessId?: string;
-  phone?: string | null;
+  organizationName: string;
+  businessId: string;
+  phone: string;
   postalCode: string;
-  ssn?: string;
+  ssn: string;
 };

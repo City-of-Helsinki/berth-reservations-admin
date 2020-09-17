@@ -20,6 +20,7 @@ export interface CUSTOMER_FORM_profile_organization {
 
 export interface CUSTOMER_FORM_profile_primaryAddress {
   __typename: "AddressNode";
+  id: string;
   address: string;
   postalCode: string;
   city: string;
@@ -27,11 +28,13 @@ export interface CUSTOMER_FORM_profile_primaryAddress {
 
 export interface CUSTOMER_FORM_profile_primaryEmail {
   __typename: "EmailNode";
+  id: string;
   email: string;
 }
 
 export interface CUSTOMER_FORM_profile_primaryPhone {
   __typename: "PhoneNode";
+  id: string;
   phone: string | null;
 }
 

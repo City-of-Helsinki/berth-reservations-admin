@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { TFunction } from 'i18next';
 import { TextArea, TextInput } from 'hds-react';
 
-import { Customer, FormProps } from './types';
+import { CustomerFormValues, FormProps } from './types';
 import { CustomerGroup } from '../../@types/__generated__/globalTypes';
 import Grid from '../../common/grid/Grid';
 import Select from '../../common/select/Select';
@@ -14,9 +14,7 @@ import Button from '../../common/button/Button';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import Text from '../../common/text/Text';
 
-export type CustomerFormProps = FormProps<Customer>;
-
-type CustomerFormValues = Customer;
+export type CustomerFormProps = FormProps<CustomerFormValues>;
 
 const getValidationSchema = (t: TFunction) => {
   Yup.object<CustomerFormValues>().shape({});
@@ -28,12 +26,17 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
 
   const initial: CustomerFormValues = initialValues ?? {
     address: '',
+    businessId: '',
     city: '',
     comment: '',
     customerGroup: CustomerGroup.PRIVATE,
+    email: '',
     firstName: '',
     lastName: '',
+    organizationName: '',
+    phone: '',
     postalCode: '',
+    ssn: '',
   };
 
   const customerGroupOptions = Object.keys(CustomerGroup).map((group) => ({
