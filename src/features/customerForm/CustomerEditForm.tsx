@@ -8,7 +8,7 @@ import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { CUSTOMER_FORM_QUERY } from './queries';
 import { CUSTOMER_FORM } from './__generated__/CUSTOMER_FORM';
 import { createUpdateInputs, getCustomerFormValues, getIdentifiers } from './utils';
-import { UPDATE_PROFILE_MUTATION } from './mutations';
+import { UPDATE_BERTH_SERVICES_PROFILE_MUTATION, UPDATE_PROFILE_MUTATION } from './mutations';
 import { UPDATE_PROFILE, UPDATE_PROFILEVariables as UPDATE_PROFILE_VARS } from './__generated__/UPDATE_PROFILE';
 import {
   UPDATE_BERTH_SERVICES_PROFILE,
@@ -28,16 +28,12 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
   });
 
   const [updateProfile, { loading: updateProfileLoading }] = useMutation<UPDATE_PROFILE, UPDATE_PROFILE_VARS>(
-    UPDATE_PROFILE_MUTATION,
-    {
-      refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
-    }
+    UPDATE_PROFILE_MUTATION
   );
-
   const [updateBerthServicesProfile, { loading: updateBerthServicesLoading }] = useMutation<
     UPDATE_BERTH_SERVICES_PROFILE,
     UPDATE_BERTH_SERVICES_PROFILE_VARS
-  >(UPDATE_PROFILE_MUTATION, {
+  >(UPDATE_BERTH_SERVICES_PROFILE_MUTATION, {
     refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
   });
 
@@ -52,17 +48,19 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
 
     console.log(profileInput, berthServicesProfileInput);
 
-    // updateProfile({
-    //   variables: {
-    //     input: profileInput,
-    //   },
-    // }).then(() =>
-    //   updateBerthServicesProfile({
-    //     variables: {
-    //       input: berthServicesProfileInput,
-    //     },
-    //   }).then(() => onSubmit?.(values))
-    // );
+    updateProfile({
+      variables: {
+        input: profileInput,
+      },
+    })
+      .then(() =>
+        updateBerthServicesProfile({
+          variables: {
+            input: berthServicesProfileInput,
+          },
+        })
+      )
+      .then(() => onSubmit?.(values));
   };
 
   return (

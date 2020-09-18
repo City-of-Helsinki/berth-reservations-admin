@@ -71,7 +71,11 @@ const CustomerViewContainer = () => {
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-        <CustomerEditForm customerId={id} />
+        <CustomerEditForm
+          customerId={id}
+          onSubmit={() => setEditCustomer(false)}
+          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+        />
       </Modal>
 
       {boatToEdit && (
