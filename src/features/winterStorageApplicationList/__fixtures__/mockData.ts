@@ -1,5 +1,5 @@
 import { WINTER_STORAGE_APPLICATIONS } from '../__generated__/WINTER_STORAGE_APPLICATIONS';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, WinterStorageApplicationAreaType } from '../../../@types/__generated__/globalTypes';
 
 export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
   winterStorageApplications: {
@@ -18,6 +18,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -49,6 +50,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -74,6 +76,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -99,6 +102,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -117,6 +121,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -135,6 +140,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -153,6 +159,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -171,6 +178,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -189,6 +197,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },
@@ -207,6 +216,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
           boatLength: 1,
           boatName: 'test',
           boatModel: 'test',
+          areaType: WinterStorageApplicationAreaType.MARKED,
           winterStorageAreaChoices: null,
           __typename: 'WinterStorageApplicationNode',
         },

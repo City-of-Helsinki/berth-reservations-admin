@@ -146,6 +146,11 @@ export enum ServiceType {
   YOUTH_MEMBERSHIP = "YOUTH_MEMBERSHIP",
 }
 
+export enum WinterStorageApplicationAreaType {
+  MARKED = "MARKED",
+  UNMARKED = "UNMARKED",
+}
+
 export interface AddBoatCertificateInput {
   file?: any | null;
   certificateType: BoatCertificateType;
