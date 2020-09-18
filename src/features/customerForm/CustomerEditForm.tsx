@@ -34,7 +34,7 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
     UPDATE_BERTH_SERVICES_PROFILE,
     UPDATE_BERTH_SERVICES_PROFILE_VARS
   >(UPDATE_BERTH_SERVICES_PROFILE_MUTATION, {
-    refetchQueries: [...(refetchQueries ?? []), { query: CUSTOMER_FORM_QUERY, variables: { id: customerId } }],
+    refetchQueries: refetchQueries ?? [],
   });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
