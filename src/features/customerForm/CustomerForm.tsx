@@ -17,7 +17,23 @@ import Text from '../../common/text/Text';
 export type CustomerFormProps = FormProps<CustomerFormValues>;
 
 const getValidationSchema = (t: TFunction) => {
-  Yup.object<CustomerFormValues>().shape({});
+  return Yup.object<CustomerFormValues>().shape({
+    address: Yup.string().required(t('forms.common.errors.required')),
+    businessId: Yup.string().when('customerGroup', {
+      is: (customerGroup) => customerGroup !== CustomerGroup.PRIVATE,
+      then: (businessId: Yup.StringSchema) => businessId.required(t('forms.common.errors.required')),
+    }),
+    city: Yup.string().required(t('forms.common.errors.required')),
+    customerGroup: Yup.string().oneOf(Object.values(CustomerGroup), t('forms.common.errors.required')),
+    email: Yup.string().email(t('forms.common.errors.email')),
+    firstName: Yup.string().required(t('forms.common.errors.required')),
+    lastName: Yup.string().required(t('forms.common.errors.required')),
+    organizationName: Yup.string().when('customerGroup', {
+      is: (customerGroup) => customerGroup !== CustomerGroup.PRIVATE,
+      then: (organizationName: Yup.StringSchema) => organizationName.required(t('forms.common.errors.required')),
+    }),
+    postalCode: Yup.string().required(t('forms.common.errors.required')).length(5, t('forms.common.errors.postalCode')),
+  });
 };
 
 const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: CustomerFormProps) => {
@@ -67,6 +83,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               label={t('forms.customer.firstName')}
               invalid={!!errors.firstName}
               helperText={errors.firstName}
+              required
             />
             <TextInput
               id="lastName"
@@ -75,6 +92,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               label={t('forms.customer.lastName')}
               invalid={!!errors.lastName}
               helperText={errors.lastName}
+              required
             />
             <TextInput
               id="ssn"
@@ -118,6 +136,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               onChange={handleChange}
               invalid={!!errors.address}
               helperText={errors.address}
+              required
             />
             <Grid colsCount={2} className={styles.grid}>
               <TextInput
@@ -127,6 +146,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
                 onChange={handleChange}
                 invalid={!!errors.postalCode}
                 helperText={errors.postalCode}
+                required
               />
               <TextInput
                 id="city"
@@ -135,6 +155,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
                 onChange={handleChange}
                 invalid={!!errors.city}
                 helperText={errors.city}
+                required
               />
             </Grid>
 

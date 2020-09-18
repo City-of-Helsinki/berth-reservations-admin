@@ -157,6 +157,8 @@
       "edit": "Muokkaa",
       "errors": {
         "required": "Tämä kenttä on pakollinen.",
+        "email": "Kentän pitää olla sähköpostiosoite.",
+        "postalCode": "Kentän pitää olla postinumero.",
         "numberType": "Kentän pitää olla numero.",
         "integer": "Kentän pitää olla kokonaisluku.",
         "positive": "Kentän pitää olla positiivinen luku.",
