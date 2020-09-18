@@ -46,8 +46,6 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
   const handleSubmit = (values: CustomerFormValues) => {
     const [profileInput, berthServicesProfileInput] = createUpdateInputs(values, identifiers);
 
-    console.log(profileInput, berthServicesProfileInput);
-
     updateProfile({
       variables: {
         input: profileInput,
