@@ -62,6 +62,7 @@ Object {
 
 exports[`utils getCustomerProfile should get customer profile card props from profile data 1`] = `
 Object {
+  "comment": "Comment",
   "customerGroup": "PRIVATE",
   "customerId": "MOCK-CUSTOMER",
   "firstName": "Testi",

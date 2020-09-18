@@ -32,6 +32,7 @@ export const getCustomerProfile = (
       language: profile.language,
       ssn: '-', // TODO,
       customerGroup: profile.customerGroup,
+      comment: profile.comment,
     },
     ...(profile.organization && {
       organization: profile.organization,

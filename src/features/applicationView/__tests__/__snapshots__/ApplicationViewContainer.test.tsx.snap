@@ -232,7 +232,7 @@ exports[`ApplicationViewContainer renders normally 1`] = `
             <span
               class="value left"
             >
-              -
+              Comment
             </span>
           </div>
         </section>
