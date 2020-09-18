@@ -22,6 +22,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
         lastName
         id
         organization {
+          id
           address
           businessId
           city
@@ -30,14 +31,17 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
           postalCode
         }
         primaryAddress {
+          id
           address
           postalCode
           city
         }
         primaryEmail {
+          id
           email
         }
         primaryPhone {
+          id
           phone
         }
         language

@@ -73,6 +73,7 @@ Object {
     "__typename": "AddressNode",
     "address": "Testikatu 1",
     "city": "Helsinki",
+    "id": "MOCK-ADDRESS",
     "postalCode": "00100",
   },
   "primaryEmail": "test@example.com",

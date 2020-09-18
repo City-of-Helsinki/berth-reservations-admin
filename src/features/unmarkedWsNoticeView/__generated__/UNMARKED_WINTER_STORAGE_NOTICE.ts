@@ -11,6 +11,7 @@ import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationTyp
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_organization {
   __typename: "OrganizationNode";
+  id: string;
   address: string;
   businessId: string;
   city: string;
@@ -21,6 +22,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_org
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_primaryAddress {
   __typename: "AddressNode";
+  id: string;
   address: string;
   postalCode: string;
   city: string;
@@ -28,11 +30,13 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_pri
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_primaryEmail {
   __typename: "EmailNode";
+  id: string;
   email: string;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_primaryPhone {
   __typename: "PhoneNode";
+  id: string;
   phone: string | null;
 }
 

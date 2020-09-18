@@ -113,10 +113,11 @@ export const mockCustomer: CUSTOMER = {
   organization: null,
   primaryAddress: {
     __typename: 'AddressNode',
+    id: 'MOCK-ADDRESS',
     address: 'Paratiisitie 13',
     city: 'Ankkalinna',
     postalCode: '00313',
   },
-  primaryEmail: { __typename: 'EmailNode', email: 'hessu@hopo.fi' },
-  primaryPhone: { __typename: 'PhoneNode', phone: '0' },
+  primaryEmail: { __typename: 'EmailNode', id: 'MOCK-EMAIL', email: 'hessu@hopo.fi' },
+  primaryPhone: { __typename: 'PhoneNode', id: 'MOCK-PHONE', phone: '0' },
 };

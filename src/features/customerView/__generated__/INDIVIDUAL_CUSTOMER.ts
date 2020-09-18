@@ -11,6 +11,7 @@ import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatu
 
 export interface INDIVIDUAL_CUSTOMER_profile_organization {
   __typename: "OrganizationNode";
+  id: string;
   address: string;
   businessId: string;
   city: string;
@@ -20,6 +21,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_organization {
 
 export interface INDIVIDUAL_CUSTOMER_profile_primaryAddress {
   __typename: "AddressNode";
+  id: string;
   address: string;
   postalCode: string;
   city: string;
@@ -27,11 +29,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_primaryAddress {
 
 export interface INDIVIDUAL_CUSTOMER_profile_primaryEmail {
   __typename: "EmailNode";
+  id: string;
   email: string;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_primaryPhone {
   __typename: "PhoneNode";
+  id: string;
   phone: string | null;
 }
 
