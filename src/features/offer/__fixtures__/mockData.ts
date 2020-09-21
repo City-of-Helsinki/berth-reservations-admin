@@ -73,7 +73,7 @@ export const OfferQueryData: OFFER = {
                       node: {
                         __typename: 'BerthNode',
                         id: '1',
-                        number: 1,
+                        number: '1',
                         width: 5,
                         length: 10,
                         depth: 5,

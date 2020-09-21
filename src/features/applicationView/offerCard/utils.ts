@@ -46,7 +46,7 @@ export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | nu
     berthIsAccessible: lease.berth?.isAccessible ?? false,
     berthLength: lease.berth?.length ?? null,
     berthMooringType: lease.berth?.mooringType ?? null,
-    berthNum: lease.berth?.number.toString(10) ?? '',
+    berthNum: lease.berth?.number ?? '',
     berthWidth: lease.berth?.width ?? null,
     electricity: lease.berth?.pier.properties?.electricity ?? false,
     gate: lease.berth?.pier.properties?.gate ?? false,

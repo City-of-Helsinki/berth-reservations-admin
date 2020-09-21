@@ -26,7 +26,7 @@ export const mockBills: (BerthBill | WinterStorageBill)[] = [
   {
     status: OrderStatus.WAITING,
     berthInformation: {
-      number: 1,
+      number: '1',
       pierIdentifier: 'C',
       harborName: 'Aurinkolahden venesatama (Aurinkoranta)',
     },

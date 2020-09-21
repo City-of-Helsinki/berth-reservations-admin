@@ -21,7 +21,7 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
       endDate: '2019-09-14',
       berth: {
         __typename: 'BerthNode',
-        number: 30,
+        number: '30',
         pier: {
           __typename: 'PierNode',
           properties: {
@@ -50,7 +50,7 @@ const mockWinterStorageLeases: WINTER_STORAGE_LEASE_EDGE[] = [
       startDate: '2020-09-15',
       endDate: '2021-06-10',
       place: {
-        number: 1,
+        number: '1',
         winterStorageSection: {
           properties: {
             identifier: '-',

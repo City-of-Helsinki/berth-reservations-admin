@@ -45,7 +45,7 @@ export interface BerthLease_lease_berth {
   width: number;
   comment: string;
   isAccessible: boolean | null;
-  number: number;
+  number: string;
   pier: BerthLease_lease_berth_pier;
 }
 

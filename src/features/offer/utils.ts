@@ -43,7 +43,7 @@ export const getOfferData = (data: OFFER | undefined): BerthData[] => {
           harborId,
           harbor,
           pier: properties.identifier,
-          berth: berth.node.number.toString(10),
+          berth: berth.node.number,
           berthId: berth.node.id,
           width: berth.node.width,
           length: berth.node.length,
