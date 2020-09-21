@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unmarkedWsNoticeView utils getWinterStorageNoticeDetailsData parses data correctly 1`] = `
+Object {
+  "applicant": Object {
+    "customerGroup": "PRIVATE",
+    "firstName": "test",
+    "language": "ENGLISH",
+    "lastName": "test",
+    "primaryAddress": Object {
+      "address": "test",
+      "city": "helsinki",
+      "postalCode": "00100",
+    },
+    "primaryEmail": "test@test.com",
+    "primaryPhone": "555555",
+  },
+  "boatLength": 1,
+  "boatModel": "test",
+  "boatName": "test",
+  "boatRegistrationNumber": "test",
+  "boatType": "Perämoottorivene",
+  "boatWidth": 1,
+  "choice": Object {
+    "winterStorageArea": "Iso-Sarvasto",
+    "winterStorageAreaName": "Iso-Sarvasto",
+  },
+  "createdAt": "2019-05-06T10:54:21.746387+00:00",
+  "customerId": undefined,
+  "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
+  "status": "PENDING",
+  "summaryInformation": Object {
+    "acceptBoatingNewsletter": true,
+    "acceptFitnessNews": true,
+    "acceptLibraryNews": true,
+    "acceptOtherCultureNews": true,
+  },
+}
+`;

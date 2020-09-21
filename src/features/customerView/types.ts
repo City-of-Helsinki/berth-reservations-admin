@@ -117,7 +117,7 @@ export type Bill = {
 
 export type BerthBill = Bill & {
   berthInformation: {
-    number: number;
+    number: string;
     pierIdentifier: string;
     harborName: string;
   };

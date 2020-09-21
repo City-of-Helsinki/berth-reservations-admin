@@ -54,7 +54,7 @@ export const mockLease: LEASE = {
     isAccessible: null,
     length: 5,
     mooringType: BerthMooringType.DINGHY_PLACE,
-    number: 1,
+    number: '1',
     pier: {
       __typename: 'PierNode',
       properties: {

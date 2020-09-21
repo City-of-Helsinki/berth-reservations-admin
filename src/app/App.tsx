@@ -21,6 +21,8 @@ import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStora
 import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
 import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
 import WinterStorageApplicationView from '../features/winterStorageApplicationView/WinterStorageApplicationViewContainer';
+import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
+import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
 
 const App = () => {
   return (
@@ -47,6 +49,8 @@ const App = () => {
                     component={WinterStorageApplicationView}
                   />
                   <PrivateRoute exact path="/winter-storage-applications" component={WinterStorageApplicationList} />
+                  <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
+                  <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
                   <PrivateRoute exact path="/offer/:applicationId" component={Offer} />
                   <PrivateRoute exact path="/pricing" component={Pricing} />
                   <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />

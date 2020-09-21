@@ -69,7 +69,7 @@ export const customersResponse: CUSTOMERS = {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6YThhNGNkOGEtMDcxYy00ZGU3LThkMGYtYTE5NmIyMDVmMWZi',
                   berth: {
-                    number: 37,
+                    number: '37',
                     pier: {
                       properties: {
                         identifier: 'A',
@@ -91,7 +91,7 @@ export const customersResponse: CUSTOMERS = {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6MWE1ZTRkOGItNDQ2Yy00NTA1LThiMDgtNDc4NTkxYTFmZTQ3',
                   berth: {
-                    number: 6,
+                    number: '6',
                     pier: {
                       properties: {
                         identifier: '63',

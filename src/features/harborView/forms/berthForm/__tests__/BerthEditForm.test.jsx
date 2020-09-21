@@ -15,7 +15,7 @@ const queryMock = {
   result: {
     data: {
       berth: {
-        number: 2,
+        number: '2',
         comment: '',
         isActive: true,
         pier: {
@@ -75,7 +75,7 @@ describe('features/harborView/BerthEditForm', () => {
         variables: {
           input: {
             id: 'a',
-            number: 2,
+            number: '2',
             pierId: pierOptions[0].id,
             width: 2.25,
             length: 5,

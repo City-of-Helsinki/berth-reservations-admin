@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLazyQuery, useMutation } from '@apollo/react-hooks';
+import { useLazyQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 
 import { getFilteredCustomersData } from './utils';
@@ -14,11 +14,7 @@ import { usePrevious } from '../../common/utils/usePrevious';
 import { usePagination } from '../../common/utils/usePagination';
 import { useBackendSorting } from '../../common/utils/useBackendSorting';
 import LinkApplicationToCustomer from './LinkApplicationToCustomer';
-import { CREATE_NEW_PROFILE_MUTATION } from '../../common/mutations/createProfile';
-import {
-  CREATE_NEW_PROFILE,
-  CREATE_NEW_PROFILEVariables as CREATE_NEW_PROFILE_VARS,
-} from '../../common/mutations/__generated__/CREATE_NEW_PROFILE';
+import useCreateNewCustomer from '../../common/hooks/useCreateNewCustomer';
 
 export interface LinkApplicationToCustomerContainerProps {
   application: {
@@ -30,6 +26,8 @@ export interface LinkApplicationToCustomerContainerProps {
     phoneNumber: string;
     zipCode: string;
     municipality: string;
+    businessId: string;
+    companyName: string;
   };
   handleLinkCustomer(customerId: string): void;
 }
@@ -63,14 +61,12 @@ const LinkApplicationToCustomerContainer = ({
     variables: filteredCustomersVars,
   });
 
-  const [createNewCustomer] = useMutation<CREATE_NEW_PROFILE, CREATE_NEW_PROFILE_VARS>(CREATE_NEW_PROFILE_MUTATION, {
-    refetchQueries: [
-      {
-        query: FILTERED_CUSTOMERS_QUERY,
-        variables: filteredCustomersVars,
-      },
-    ],
-  });
+  const createNewCustomer = useCreateNewCustomer([
+    {
+      query: FILTERED_CUSTOMERS_QUERY,
+      variables: filteredCustomersVars,
+    },
+  ]);
 
   useEffect(() => {
     setSearchVal(application[searchBy]);
@@ -90,19 +86,7 @@ const LinkApplicationToCustomerContainer = ({
   const filteredCustomersData = getFilteredCustomersData(customersData);
 
   const handleCreateCustomer = () => {
-    const { firstName, lastName, address, email, phoneNumber, zipCode, municipality } = application;
-
-    createNewCustomer({
-      variables: {
-        firstName: firstName,
-        lastName: lastName,
-        address: address,
-        postalCode: zipCode,
-        city: municipality,
-        phone: phoneNumber,
-        email: email,
-      },
-    });
+    createNewCustomer(application);
   };
 
   return (

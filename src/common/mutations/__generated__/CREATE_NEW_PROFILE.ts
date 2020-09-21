@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { CreateAddressInput } from "./../../../@types/__generated__/globalTypes";
+
 // ====================================================
 // GraphQL mutation operation: CREATE_NEW_PROFILE
 // ====================================================
@@ -33,9 +35,7 @@ export interface CREATE_NEW_PROFILE {
 export interface CREATE_NEW_PROFILEVariables {
   firstName: string;
   lastName: string;
-  address: string;
-  postalCode: string;
-  city: string;
+  addresses?: (CreateAddressInput | null)[] | null;
   email: string;
   phone: string;
 }

@@ -59,6 +59,27 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
             edges {
               node {
                 id
+                isActive
+                place {
+                  winterStorageSection {
+                    properties {
+                      area {
+                        properties {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+                section {
+                  properties {
+                    area {
+                      properties {
+                        name
+                      }
+                    }
+                  }
+                }
               }
             }
           }

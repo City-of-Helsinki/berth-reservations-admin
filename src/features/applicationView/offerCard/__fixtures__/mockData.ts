@@ -14,7 +14,7 @@ export const lease: BerthLease = {
     width: 2.5,
     comment: '',
     isAccessible: null,
-    number: 1,
+    number: '1',
     pier: {
       properties: {
         identifier: 'C',

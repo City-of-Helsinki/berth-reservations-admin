@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectHeader renders normally with all props 1`] = `
+<div
+  class="container test"
+>
+  <div
+    class="selectContainer"
+  >
+    <div>
+      <button
+        class="button"
+      >
+        All
+      </button>
+      <button
+        class="button buttonSelected"
+      >
+        floof bark
+      </button>
+      <button
+        class="button"
+      >
+        fun bartender
+      </button>
+    </div>
+    <button
+      class="editButton"
+    >
+      Edit
+    </button>
+  </div>
+  <div>
+    floof bark
+  </div>
+</div>
+`;
+
+exports[`SelectHeader renders normally with minimum props 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="selectContainer"
+  >
+    <div>
+      <button
+        class="button buttonSelected"
+      >
+        All
+      </button>
+      <button
+        class="button"
+      >
+        floof bark
+      </button>
+      <button
+        class="button"
+      >
+        fun bartender
+      </button>
+    </div>
+  </div>
+</div>
+`;

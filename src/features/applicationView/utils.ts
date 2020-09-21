@@ -111,7 +111,7 @@ export const getApplicationDetailsData = (
         harborId: berthApplication.lease.berth.pier.properties?.harbor.id || '',
         harborName: berthApplication.lease.berth.pier.properties?.harbor.properties?.name || '',
         id: berthApplication.lease.id,
-        berthNum: berthApplication.lease.berth.number.toString(10),
+        berthNum: berthApplication.lease.berth.number,
         pierIdentifier: berthApplication.lease.berth.pier.properties?.identifier || '',
       }
     : null;
