@@ -37,7 +37,7 @@ describe('CustomerEditForm', () => {
       </MockedProvider>
     );
     expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBe(true);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('renders content after loading', async () => {
@@ -47,7 +47,7 @@ describe('CustomerEditForm', () => {
       </MockedProvider>
     );
     await waitForContent(wrapper);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('calls update mutations on save', async () => {
