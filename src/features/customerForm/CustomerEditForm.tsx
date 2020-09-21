@@ -23,7 +23,7 @@ export interface CustomerEditFormProps
 const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
   const { t } = useTranslation();
 
-  const { loading, error, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
+  const { loading, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
     variables: { id: customerId },
   });
 
@@ -38,7 +38,7 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
   });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
-  if (error || !data?.profile) return <div>{t('forms.common.error')}</div>;
+  if (!data?.profile) return <div>{t('forms.common.error')}</div>;
 
   const initialValues = getCustomerFormValues(data.profile);
   const identifiers = getIdentifiers(data.profile);

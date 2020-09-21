@@ -11,6 +11,7 @@ import { CustomerGroup, Language } from "./../../../@types/__generated__/globalT
 
 export interface CUSTOMER_FORM_profile_organization {
   __typename: "OrganizationNode";
+  id: string;
   address: string;
   businessId: string;
   city: string;

@@ -43,6 +43,7 @@ export const mockOrganizationCustomerProfile: PROFILE = {
     address: 'Mariankatu 2',
     businessId: '1234567-8',
     city: 'Helsinki',
+    id: 'MOCK-ORGANIZATION',
     name: 'Suomi Oy',
     postalCode: '00170',
   },

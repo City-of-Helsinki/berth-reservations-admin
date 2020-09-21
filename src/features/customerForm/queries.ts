@@ -9,6 +9,7 @@ export const CUSTOMER_FORM_QUERY = gql`
       lastName
       customerGroup
       organization {
+        id
         address
         businessId
         city
