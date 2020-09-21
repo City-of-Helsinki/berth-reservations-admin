@@ -22,7 +22,7 @@ import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import BillModal from './billModal/BillModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
-import CustomerEditForm from '../customerForm/CustomerEditForm';
+import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();

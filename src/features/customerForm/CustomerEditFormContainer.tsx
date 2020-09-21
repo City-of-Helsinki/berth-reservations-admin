@@ -20,7 +20,7 @@ export interface CustomerEditFormProps
   customerId: string;
 }
 
-const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
+const CustomerEditFormContainer = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
   const { t } = useTranslation();
 
   const { loading, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
@@ -72,4 +72,4 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
   );
 };
 
-export default CustomerEditForm;
+export default CustomerEditFormContainer;
