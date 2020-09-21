@@ -2,7 +2,7 @@ import { login } from './utils/login';
 import { envUrl } from './utils/settings';
 import { navigation } from './pages/navigation';
 import { customers } from './pages/customers';
-import { hasLength } from './utils/valueUtils';
+import { inputHasLength } from './utils/valueUtils';
 
 fixture('Customer list view').page(envUrl());
 
@@ -34,6 +34,6 @@ test('Editing customers', async (t) => {
     .click(navigation.customers)
     .click(customers.customerList.firstCustomerLink)
     .click(customers.customerView.editButton)
-    .expect(customers.customerView.editForm.firstNameField.exists)
+    .expect(customers.customerView.editForm.firstNameField.filter(inputHasLength).exists)
     .ok();
 });
