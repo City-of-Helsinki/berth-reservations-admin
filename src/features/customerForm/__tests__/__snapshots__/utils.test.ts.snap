@@ -16,7 +16,6 @@ Array [
       "firstName": "Pehr Evind",
       "id": "MOCK-PROFILE",
       "lastName": "Svinhufvud",
-      "sensitivedata": null,
       "updateEmails": Array [
         Object {
           "email": "test@example.com",
@@ -52,7 +51,6 @@ Array [
       "removeAddresses": Array [
         "MOCK-ADDRESS",
       ],
-      "sensitivedata": null,
       "updateEmails": Array [
         Object {
           "email": "test@example.com",
@@ -92,7 +90,6 @@ Array [
       "firstName": "Pehr Evind",
       "id": "MOCK-PROFILE",
       "lastName": "Svinhufvud",
-      "sensitivedata": null,
       "updateAddresses": Array [
         Object {
           "address": "Mariankatu 2",
@@ -132,7 +129,6 @@ Array [
       "firstName": "Lauri Kristian",
       "id": "MOCK-PROFILE",
       "lastName": "Relander",
-      "sensitivedata": null,
       "updateEmails": Array [
         Object {
           "email": "test@example.com",
@@ -178,7 +174,7 @@ Object {
   "organizationName": "",
   "phone": "+358 00 000 0000",
   "postalCode": "00170",
-  "ssn": "0",
+  "ssn": "000000-0000",
 }
 `;
 
@@ -195,7 +191,7 @@ Object {
   "organizationName": "",
   "phone": "",
   "postalCode": "",
-  "ssn": "0",
+  "ssn": "",
 }
 `;
 
@@ -212,7 +208,7 @@ Object {
   "organizationName": "Suomi Oy",
   "phone": "+358 00 000 0000",
   "postalCode": "00170",
-  "ssn": "0",
+  "ssn": "000000-0000",
 }
 `;
 
@@ -229,12 +225,13 @@ Object {
   "organizationName": "Suomi Oy",
   "phone": "",
   "postalCode": "00170",
-  "ssn": "0",
+  "ssn": "000000-0000",
 }
 `;
 
 exports[`utils getIdentifiers maps a private customer correctly 1`] = `
 Object {
+  "hadSensitivedata": true,
   "id": "MOCK-PROFILE",
   "initialCustomerGroup": "PRIVATE",
   "primaryAddressId": "MOCK-ADDRESS",
@@ -245,6 +242,7 @@ Object {
 
 exports[`utils getIdentifiers maps an organization customer correctly 1`] = `
 Object {
+  "hadSensitivedata": true,
   "id": "MOCK-PROFILE",
   "initialCustomerGroup": "COMPANY",
   "primaryAddressId": undefined,

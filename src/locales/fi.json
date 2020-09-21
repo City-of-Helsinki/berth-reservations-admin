@@ -236,7 +236,7 @@
       "firstName": "Etunimet",
       "lastName": "Sukunimi",
       "ssn": "Henkilötunnus",
-      "organizationName": "Yritys / Yhteisö",
+      "organizationName": "Yrityksen tai yhteisön nimi",
       "businessId": "Y-tunnus",
       "address": "Jakeluosoite",
       "postalCode": "Postinumero",

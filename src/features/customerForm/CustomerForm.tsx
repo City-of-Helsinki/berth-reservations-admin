@@ -7,12 +7,13 @@ import { TextArea, TextInput } from 'hds-react';
 
 import { CustomerFormValues, FormProps } from './types';
 import { CustomerGroup } from '../../@types/__generated__/globalTypes';
-import Grid from '../../common/grid/Grid';
 import Select from '../../common/select/Select';
 import styles from './customerForm.module.scss';
 import Button from '../../common/button/Button';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import Text from '../../common/text/Text';
+import PrivateCustomerFields from './PrivateCustomerFields';
+import OrganizationCustomerFields from './OrganizationCustomerFields';
 
 export type CustomerFormProps = FormProps<CustomerFormValues>;
 
@@ -76,89 +77,12 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               label={t('forms.customer.customerGroup')}
               required
             />
-            <TextInput
-              id="firstName"
-              value={values.firstName}
-              onChange={handleChange}
-              label={t('forms.customer.firstName')}
-              invalid={!!errors.firstName}
-              helperText={errors.firstName}
-              required
-            />
-            <TextInput
-              id="lastName"
-              value={values.lastName}
-              onChange={handleChange}
-              label={t('forms.customer.lastName')}
-              invalid={!!errors.lastName}
-              helperText={errors.lastName}
-              required
-            />
-            <TextInput
-              id="ssn"
-              value={values.ssn}
-              onChange={handleChange}
-              label={t('forms.customer.ssn')}
-              invalid={!!errors.ssn}
-              helperText={errors.ssn}
-            />
 
-            <hr className={styles.divider} />
-
-            <TextInput
-              id="organizationName"
-              value={values.organizationName}
-              onChange={handleChange}
-              label={t('forms.customer.organizationName')}
-              invalid={!!errors.organizationName}
-              helperText={errors.organizationName}
-              disabled={values.customerGroup === CustomerGroup.PRIVATE}
-              required={values.customerGroup !== CustomerGroup.PRIVATE}
-            />
-            <TextInput
-              id="businessId"
-              value={values.businessId}
-              onChange={handleChange}
-              label={t('forms.customer.businessId')}
-              invalid={!!errors.businessId}
-              helperText={errors.businessId}
-              disabled={values.customerGroup === CustomerGroup.PRIVATE}
-              required={values.customerGroup !== CustomerGroup.PRIVATE}
-            />
-
-            <hr className={styles.divider} />
-
-            <TextInput
-              id="address"
-              label={t('forms.customer.address')}
-              value={values.address}
-              onChange={handleChange}
-              invalid={!!errors.address}
-              helperText={errors.address}
-              required
-            />
-            <Grid colsCount={2} className={styles.grid}>
-              <TextInput
-                id="postalCode"
-                label={t('forms.customer.postalCode')}
-                value={values.postalCode}
-                onChange={handleChange}
-                invalid={!!errors.postalCode}
-                helperText={errors.postalCode}
-                required
-              />
-              <TextInput
-                id="city"
-                label={t('forms.customer.city')}
-                value={values.city}
-                onChange={handleChange}
-                invalid={!!errors.city}
-                helperText={errors.city}
-                required
-              />
-            </Grid>
-
-            <hr className={styles.divider} />
+            {values.customerGroup === CustomerGroup.PRIVATE ? (
+              <PrivateCustomerFields values={values} handleChange={handleChange} errors={errors} />
+            ) : (
+              <OrganizationCustomerFields values={values} handleChange={handleChange} errors={errors} />
+            )}
 
             <TextInput
               id="phone"

@@ -31,7 +31,7 @@ export const mockPrivateCustomerProfile: PROFILE = {
   sensitivedata: {
     __typename: 'SensitiveDataNode',
     id: 'MOCK-SENSITIVE-DATA',
-    ssn: '0',
+    ssn: '000000-0000',
   },
 };
 
@@ -66,7 +66,7 @@ export const mockOrganizationCustomerProfile: PROFILE = {
   sensitivedata: {
     __typename: 'SensitiveDataNode',
     id: 'MOCK-SENSITIVE-DATA',
-    ssn: '0',
+    ssn: '000000-0000',
   },
 };
 
@@ -91,6 +91,7 @@ export const mockPrivateCustomerFormIdentifiers: CustomerFormIdentifiers = {
   primaryAddressId: 'MOCK-ADDRESS',
   primaryEmailId: 'MOCK-EMAIL',
   primaryPhoneId: 'MOCK-PHONE',
+  hadSensitivedata: false,
 };
 
 export const mockOrganizationCustomerFormValues: CustomerFormValues = {
@@ -114,4 +115,5 @@ export const mockOrganizationCustomerFormIdentifiers: CustomerFormIdentifiers = 
   primaryAddressId: 'MOCK-ADDRESS',
   primaryEmailId: 'MOCK-EMAIL',
   primaryPhoneId: 'MOCK-PHONE',
+  hadSensitivedata: false,
 };
