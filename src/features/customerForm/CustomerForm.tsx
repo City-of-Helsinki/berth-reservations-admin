@@ -101,7 +101,6 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               label={t('forms.customer.ssn')}
               invalid={!!errors.ssn}
               helperText={errors.ssn}
-              disabled // TODO
             />
 
             <hr className={styles.divider} />

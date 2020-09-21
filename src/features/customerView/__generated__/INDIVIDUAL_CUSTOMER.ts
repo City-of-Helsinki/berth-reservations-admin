@@ -39,6 +39,12 @@ export interface INDIVIDUAL_CUSTOMER_profile_primaryPhone {
   phone: string | null;
 }
 
+export interface INDIVIDUAL_CUSTOMER_profile_sensitivedata {
+  __typename: "SensitiveDataNode";
+  id: string;
+  ssn: string;
+}
+
 export interface INDIVIDUAL_CUSTOMER_profile_boats_edges_node_boatType {
   __typename: "BoatTypeType";
   id: string;
@@ -384,6 +390,7 @@ export interface INDIVIDUAL_CUSTOMER_profile {
   primaryAddress: INDIVIDUAL_CUSTOMER_profile_primaryAddress | null;
   primaryEmail: INDIVIDUAL_CUSTOMER_profile_primaryEmail | null;
   primaryPhone: INDIVIDUAL_CUSTOMER_profile_primaryPhone | null;
+  sensitivedata: INDIVIDUAL_CUSTOMER_profile_sensitivedata | null;
   language: Language | null;
   boats: INDIVIDUAL_CUSTOMER_profile_boats | null;
   berthLeases: INDIVIDUAL_CUSTOMER_profile_berthLeases | null;

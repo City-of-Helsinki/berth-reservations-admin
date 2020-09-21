@@ -137,7 +137,6 @@ Array [
       >
         <input
           class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
-          disabled=""
           id="ssn"
           type="text"
           value=""
@@ -511,7 +510,6 @@ Array [
       >
         <input
           class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
-          disabled=""
           id="ssn"
           type="text"
           value=""

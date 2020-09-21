@@ -45,7 +45,9 @@ const authLink = setContext((_, { headers }) => {
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    hdsToast.graphQLErrors(graphQLErrors);
+    // Error handler for Helsinki-profiili 'sensitivedata' field
+    const filteredErrors = graphQLErrors.filter((error) => error.message !== 'Profile has no sensitivedata.');
+    hdsToast.graphQLErrors(filteredErrors);
   }
   if (networkError && networkError.name !== 'ServerError') {
     // An explicit id is passed here to the toast,

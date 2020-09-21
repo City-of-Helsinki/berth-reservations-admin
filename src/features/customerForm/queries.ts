@@ -31,6 +31,10 @@ export const CUSTOMER_FORM_QUERY = gql`
         phone
       }
       language
+      sensitivedata {
+        id
+        ssn
+      }
     }
   }
 `;

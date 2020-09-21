@@ -25,6 +25,7 @@ const CustomerEditForm = ({ customerId, onCancel, onSubmit, refetchQueries }: Cu
 
   const { loading, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
     variables: { id: customerId },
+    errorPolicy: 'all',
   });
 
   const [updateProfile, { loading: updateProfileLoading }] = useMutation<UPDATE_PROFILE, UPDATE_PROFILE_VARS>(

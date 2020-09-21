@@ -28,6 +28,11 @@ export const mockPrivateCustomerProfile: PROFILE = {
     id: 'MOCK-PHONE',
     phone: '+358 00 000 0000',
   },
+  sensitivedata: {
+    __typename: 'SensitiveDataNode',
+    id: 'MOCK-SENSITIVE-DATA',
+    ssn: '0',
+  },
 };
 
 export const mockOrganizationCustomerProfile: PROFILE = {
@@ -57,6 +62,11 @@ export const mockOrganizationCustomerProfile: PROFILE = {
     __typename: 'PhoneNode',
     id: 'MOCK-PHONE',
     phone: '+358 00 000 0000',
+  },
+  sensitivedata: {
+    __typename: 'SensitiveDataNode',
+    id: 'MOCK-SENSITIVE-DATA',
+    ssn: '0',
   },
 };
 

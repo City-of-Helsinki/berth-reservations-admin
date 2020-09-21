@@ -39,6 +39,12 @@ export interface CUSTOMER_FORM_profile_primaryPhone {
   phone: string | null;
 }
 
+export interface CUSTOMER_FORM_profile_sensitivedata {
+  __typename: "SensitiveDataNode";
+  id: string;
+  ssn: string;
+}
+
 export interface CUSTOMER_FORM_profile {
   __typename: "ProfileNode";
   id: string;
@@ -51,6 +57,7 @@ export interface CUSTOMER_FORM_profile {
   primaryEmail: CUSTOMER_FORM_profile_primaryEmail | null;
   primaryPhone: CUSTOMER_FORM_profile_primaryPhone | null;
   language: Language | null;
+  sensitivedata: CUSTOMER_FORM_profile_sensitivedata | null;
 }
 
 export interface CUSTOMER_FORM {

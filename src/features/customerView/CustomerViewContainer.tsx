@@ -31,19 +31,16 @@ const CustomerViewContainer = () => {
   const [openBill, setOpenBill] = useState<Bill>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { loading, error, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
+  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
+    variables: { id },
+    errorPolicy: 'all',
+  });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
     return (
       <Notification labelText={t('common.notification.noData.label')}>
         {t('common.notification.noData.description')}
-      </Notification>
-    );
-  if (error)
-    return (
-      <Notification labelText={t('common.notification.error.label')} type="error">
-        {t('common.notification.error.description')}
       </Notification>
     );
 
