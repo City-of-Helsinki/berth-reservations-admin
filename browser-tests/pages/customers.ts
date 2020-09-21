@@ -15,7 +15,7 @@ export const customers = {
     ).nth(0),
     editButton: Selector('div[class^="customerView"] div[class^="cardHeader_widgets_"] > button:nth-child(1)'),
     editForm: {
-      firstNameField: Selector('form[class^="customerForm_form_"] #firstName'),
+      firstNameField: Selector('form[class^="customerForm_form_"] #firstName').nth(0),
     },
   },
 };

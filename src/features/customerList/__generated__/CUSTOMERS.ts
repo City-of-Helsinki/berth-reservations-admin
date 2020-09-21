@@ -11,6 +11,7 @@ import { CustomerGroup, ServiceType, ContactMethod } from "./../../../@types/__g
 
 export interface CUSTOMERS_profiles_edges_node_organization {
   __typename: "OrganizationNode";
+  id: string;
   name: string;
   address: string;
   postalCode: string;
@@ -20,6 +21,7 @@ export interface CUSTOMERS_profiles_edges_node_organization {
 
 export interface CUSTOMERS_profiles_edges_node_primaryAddress {
   __typename: "AddressNode";
+  id: string;
   address: string;
   city: string;
   postalCode: string;
@@ -27,11 +29,13 @@ export interface CUSTOMERS_profiles_edges_node_primaryAddress {
 
 export interface CUSTOMERS_profiles_edges_node_primaryPhone {
   __typename: "PhoneNode";
+  id: string;
   phone: string | null;
 }
 
 export interface CUSTOMERS_profiles_edges_node_primaryEmail {
   __typename: "EmailNode";
+  id: string;
   email: string;
 }
 
