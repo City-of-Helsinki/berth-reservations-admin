@@ -25,3 +25,14 @@ test('Selection of customers', async (t) => {
   // Unselect all customers
   await t.click(customers.customerList.deselectAll).expect(customers.customerList.selectedCount.exists).notOk();
 });
+
+test('Editing customers', async (t) => {
+  await login(t);
+
+  await t
+    .click(navigation.customers)
+    .click(customers.customerList.firstCustomerLink)
+    .click(customers.customerView.editButton)
+    .expect(customers.customerView.editForm.firstNameField.value)
+    .contains('Joonas');
+});

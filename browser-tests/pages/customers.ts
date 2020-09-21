@@ -13,5 +13,9 @@ export const customers = {
     firstDataLabel: Selector(
       'div[class^="customerView"] div[class^="labelValuePair_"]:first-of-type span:nth-of-type(2)'
     ).nth(0),
+    editButton: Selector('div[class^="customerView"] div[class^="cardHeader_widgets_"] > button:nth-child(1)'),
+    editForm: {
+      firstNameField: Selector('form[class^="customerForm_form_"] #firstName'),
+    },
   },
 };
