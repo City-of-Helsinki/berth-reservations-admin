@@ -35,11 +35,7 @@ const getBerthValidationSchema = (t: TFunction, pierOptions: Pier[]): ObjectSche
     pierId: Yup.string()
       .oneOf(pierOptions.map((pier) => pier.id))
       .required(t('forms.common.errors.required')),
-    number: Yup.number()
-      .typeError(t('forms.common.errors.numberType'))
-      .min(0, t('forms.common.errors.nonNegative'))
-      .integer(t('forms.common.errors.integer'))
-      .required(t('forms.common.errors.required')),
+    number: Yup.string().required(t('forms.common.errors.required')),
     width: Yup.string()
       .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
       .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val))

@@ -112,7 +112,7 @@ export interface CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth_pier
 
 export interface CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth {
   __typename: "BerthNode";
-  number: number;
+  number: string;
   pier: CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth_pier;
 }
 

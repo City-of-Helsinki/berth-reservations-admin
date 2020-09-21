@@ -38,7 +38,7 @@ export const mockData: BERTH_APPLICATIONS = {
             __typename: 'BerthLeaseNode',
             berth: {
               __typename: 'BerthNode',
-              number: 7,
+              number: '7',
               pier: {
                 __typename: 'PierNode',
                 properties: {
@@ -90,7 +90,7 @@ export const mockData: BERTH_APPLICATIONS = {
             id: 'MOCK-LEASE-1',
             berth: {
               __typename: 'BerthNode',
-              number: 7,
+              number: '7',
               pier: {
                 __typename: 'PierNode',
                 properties: {

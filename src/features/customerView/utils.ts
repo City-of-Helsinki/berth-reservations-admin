@@ -45,7 +45,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
   return profile.berthLeases.edges.reduce<Lease[]>((acc, edge) => {
     if (!edge?.node || edge?.node?.status !== 'PAID') return acc;
 
-    const berthNum = edge.node.berth.number.toString(10);
+    const berthNum = edge.node.berth.number;
     const pierIdentifier = edge.node.berth.pier.properties?.identifier || null;
     const harbor = edge.node.berth.pier.properties?.harbor;
 
@@ -138,7 +138,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
 
         if (lease?.berth?.pier.properties?.harbor) {
           leaseProps = {
-            berthNum: lease.berth.number.toString(10),
+            berthNum: lease.berth.number,
             harborId: lease.berth.pier.properties.harbor.id,
             harborName: lease.berth.pier.properties.harbor.properties?.name || '',
             id: lease.id,

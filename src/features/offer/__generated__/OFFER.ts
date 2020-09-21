@@ -77,7 +77,7 @@ export interface OFFER_harborByServicemapId_properties_piers_edges_node_properti
 export interface OFFER_harborByServicemapId_properties_piers_edges_node_properties_berths_edges_node {
   __typename: "BerthNode";
   id: string;
-  number: number;
+  number: string;
   width: number;
   length: number;
   depth: number | null;

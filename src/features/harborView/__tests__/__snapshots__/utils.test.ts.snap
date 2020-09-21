@@ -11,7 +11,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 1,
+    "number": "1",
     "width": 2.5,
   },
   Object {
@@ -23,7 +23,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 2,
+    "number": "2",
     "width": 3.5,
   },
   Object {
@@ -35,7 +35,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 3,
+    "number": "3",
     "width": 2.5,
   },
   Object {
@@ -47,7 +47,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 4,
+    "number": "4",
     "width": 3.5,
   },
   Object {
@@ -59,7 +59,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 5,
+    "number": "5",
     "width": 2.5,
   },
   Object {
@@ -71,7 +71,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 6,
+    "number": "6",
     "width": 3.5,
   },
   Object {
@@ -83,7 +83,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 7,
+    "number": "7",
     "width": 2.5,
   },
   Object {
@@ -95,7 +95,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 8,
+    "number": "8",
     "width": 3.5,
   },
   Object {
@@ -107,7 +107,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 9,
+    "number": "9",
     "width": 2.75,
   },
   Object {
@@ -119,7 +119,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 10,
+    "number": "10",
     "width": 3.5,
   },
   Object {
@@ -131,7 +131,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 11,
+    "number": "11",
     "width": 2.75,
   },
   Object {
@@ -143,7 +143,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 12,
+    "number": "12",
     "width": 3.5,
   },
   Object {
@@ -155,7 +155,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 13,
+    "number": "13",
     "width": 3,
   },
   Object {
@@ -167,7 +167,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 14,
+    "number": "14",
     "width": 3.5,
   },
   Object {
@@ -179,7 +179,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 15,
+    "number": "15",
     "width": 3,
   },
   Object {
@@ -191,7 +191,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 16,
+    "number": "16",
     "width": 3.5,
   },
   Object {
@@ -203,7 +203,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 17,
+    "number": "17",
     "width": 2.75,
   },
   Object {
@@ -215,7 +215,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 18,
+    "number": "18",
     "width": 3.5,
   },
   Object {
@@ -227,7 +227,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 19,
+    "number": "19",
     "width": 2.75,
   },
   Object {
@@ -239,7 +239,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 20,
+    "number": "20",
     "width": 3.5,
   },
   Object {
@@ -251,7 +251,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 21,
+    "number": "21",
     "width": 3,
   },
   Object {
@@ -263,7 +263,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 22,
+    "number": "22",
     "width": 3.5,
   },
   Object {
@@ -275,7 +275,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 23,
+    "number": "23",
     "width": 3,
   },
   Object {
@@ -287,7 +287,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 24,
+    "number": "24",
     "width": 3.5,
   },
   Object {
@@ -299,7 +299,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 25,
+    "number": "25",
     "width": 3,
   },
   Object {
@@ -311,7 +311,7 @@ Array [
     "leases": Array [],
     "length": 17,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 26,
+    "number": "26",
     "width": 4,
   },
   Object {
@@ -323,7 +323,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 27,
+    "number": "27",
     "width": 3,
   },
   Object {
@@ -335,7 +335,7 @@ Array [
     "leases": Array [],
     "length": 17,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 28,
+    "number": "28",
     "width": 4,
   },
   Object {
@@ -347,7 +347,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 1,
+    "number": "1",
     "width": 2.5,
   },
   Object {
@@ -359,7 +359,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 2,
+    "number": "2",
     "width": 2.5,
   },
   Object {
@@ -371,7 +371,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 3,
+    "number": "3",
     "width": 2.5,
   },
   Object {
@@ -383,7 +383,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 4,
+    "number": "4",
     "width": 2.5,
   },
   Object {
@@ -395,7 +395,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 5,
+    "number": "5",
     "width": 2.5,
   },
   Object {
@@ -407,7 +407,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 6,
+    "number": "6",
     "width": 2.5,
   },
   Object {
@@ -419,7 +419,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 7,
+    "number": "7",
     "width": 2.5,
   },
   Object {
@@ -431,7 +431,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 8,
+    "number": "8",
     "width": 2.5,
   },
   Object {
@@ -443,7 +443,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 9,
+    "number": "9",
     "width": 2.5,
   },
   Object {
@@ -455,7 +455,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 10,
+    "number": "10",
     "width": 2.5,
   },
   Object {
@@ -467,7 +467,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 11,
+    "number": "11",
     "width": 2.5,
   },
   Object {
@@ -479,7 +479,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 12,
+    "number": "12",
     "width": 2.5,
   },
   Object {
@@ -491,7 +491,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 13,
+    "number": "13",
     "width": 2.5,
   },
   Object {
@@ -503,7 +503,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 14,
+    "number": "14",
     "width": 2.5,
   },
   Object {
@@ -515,7 +515,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 15,
+    "number": "15",
     "width": 2.5,
   },
   Object {
@@ -527,7 +527,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 16,
+    "number": "16",
     "width": 2.5,
   },
   Object {
@@ -539,7 +539,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 17,
+    "number": "17",
     "width": 2.5,
   },
   Object {
@@ -551,7 +551,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 18,
+    "number": "18",
     "width": 2.5,
   },
   Object {
@@ -563,7 +563,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 19,
+    "number": "19",
     "width": 2.5,
   },
   Object {
@@ -575,7 +575,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 20,
+    "number": "20",
     "width": 2.5,
   },
   Object {
@@ -587,7 +587,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 21,
+    "number": "21",
     "width": 2.5,
   },
   Object {
@@ -599,7 +599,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 22,
+    "number": "22",
     "width": 3,
   },
   Object {
@@ -611,7 +611,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 23,
+    "number": "23",
     "width": 2.5,
   },
   Object {
@@ -623,7 +623,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 24,
+    "number": "24",
     "width": 3,
   },
   Object {
@@ -635,7 +635,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 25,
+    "number": "25",
     "width": 2.5,
   },
   Object {
@@ -647,7 +647,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 26,
+    "number": "26",
     "width": 3,
   },
   Object {
@@ -659,7 +659,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 27,
+    "number": "27",
     "width": 2.5,
   },
   Object {
@@ -671,7 +671,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 28,
+    "number": "28",
     "width": 3,
   },
   Object {
@@ -683,7 +683,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 29,
+    "number": "29",
     "width": 2.5,
   },
   Object {
@@ -695,7 +695,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 30,
+    "number": "30",
     "width": 3,
   },
   Object {
@@ -707,7 +707,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 31,
+    "number": "31",
     "width": 2.5,
   },
   Object {
@@ -719,7 +719,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 32,
+    "number": "32",
     "width": 3,
   },
   Object {
@@ -731,7 +731,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 33,
+    "number": "33",
     "width": 2.5,
   },
   Object {
@@ -743,7 +743,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 34,
+    "number": "34",
     "width": 3,
   },
   Object {
@@ -755,7 +755,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 35,
+    "number": "35",
     "width": 2.5,
   },
   Object {
@@ -767,7 +767,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 36,
+    "number": "36",
     "width": 3,
   },
   Object {
@@ -779,7 +779,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 37,
+    "number": "37",
     "width": 2.5,
   },
   Object {
@@ -791,7 +791,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 38,
+    "number": "38",
     "width": 3,
   },
   Object {
@@ -803,7 +803,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 39,
+    "number": "39",
     "width": 2.5,
   },
   Object {
@@ -815,7 +815,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 40,
+    "number": "40",
     "width": 3,
   },
   Object {
@@ -827,7 +827,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 41,
+    "number": "41",
     "width": 3,
   },
   Object {
@@ -839,7 +839,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 42,
+    "number": "42",
     "width": 3,
   },
   Object {
@@ -851,7 +851,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 43,
+    "number": "43",
     "width": 3,
   },
   Object {
@@ -863,7 +863,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 44,
+    "number": "44",
     "width": 3,
   },
   Object {
@@ -875,7 +875,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 45,
+    "number": "45",
     "width": 3,
   },
   Object {
@@ -887,7 +887,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 46,
+    "number": "46",
     "width": 3,
   },
   Object {
@@ -899,7 +899,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 47,
+    "number": "47",
     "width": 3,
   },
   Object {
@@ -911,7 +911,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 48,
+    "number": "48",
     "width": 3,
   },
   Object {
@@ -923,7 +923,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 49,
+    "number": "49",
     "width": 3,
   },
   Object {
@@ -935,7 +935,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 50,
+    "number": "50",
     "width": 3,
   },
   Object {
@@ -947,7 +947,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 51,
+    "number": "51",
     "width": 3,
   },
   Object {
@@ -959,7 +959,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 52,
+    "number": "52",
     "width": 3,
   },
   Object {
@@ -971,7 +971,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 53,
+    "number": "53",
     "width": 3,
   },
   Object {
@@ -983,7 +983,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 54,
+    "number": "54",
     "width": 3,
   },
   Object {
@@ -995,7 +995,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 55,
+    "number": "55",
     "width": 3,
   },
   Object {
@@ -1007,7 +1007,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 56,
+    "number": "56",
     "width": 3,
   },
   Object {
@@ -1019,7 +1019,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 57,
+    "number": "57",
     "width": 3,
   },
   Object {
@@ -1031,7 +1031,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 58,
+    "number": "58",
     "width": 3,
   },
   Object {
@@ -1043,7 +1043,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 59,
+    "number": "59",
     "width": 3,
   },
   Object {
@@ -1055,7 +1055,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 60,
+    "number": "60",
     "width": 3,
   },
   Object {
@@ -1067,7 +1067,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 61,
+    "number": "61",
     "width": 3,
   },
   Object {
@@ -1079,7 +1079,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 62,
+    "number": "62",
     "width": 3,
   },
   Object {
@@ -1091,7 +1091,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 63,
+    "number": "63",
     "width": 3.5,
   },
   Object {
@@ -1103,7 +1103,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 64,
+    "number": "64",
     "width": 3,
   },
   Object {
@@ -1115,7 +1115,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 65,
+    "number": "65",
     "width": 3.5,
   },
   Object {
@@ -1127,7 +1127,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 66,
+    "number": "66",
     "width": 4,
   },
   Object {
@@ -1139,7 +1139,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 67,
+    "number": "67",
     "width": 3.5,
   },
   Object {
@@ -1151,7 +1151,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 68,
+    "number": "68",
     "width": 3,
   },
   Object {
@@ -1163,7 +1163,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 69,
+    "number": "69",
     "width": 3.5,
   },
   Object {
@@ -1175,7 +1175,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 70,
+    "number": "70",
     "width": 3,
   },
   Object {
@@ -1187,7 +1187,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 71,
+    "number": "71",
     "width": 3,
   },
   Object {
@@ -1199,7 +1199,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 72,
+    "number": "72",
     "width": 3,
   },
   Object {
@@ -1211,7 +1211,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 73,
+    "number": "73",
     "width": 3,
   },
   Object {
@@ -1223,7 +1223,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 74,
+    "number": "74",
     "width": 3,
   },
   Object {
@@ -1235,7 +1235,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 75,
+    "number": "75",
     "width": 3,
   },
   Object {
@@ -1247,7 +1247,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 76,
+    "number": "76",
     "width": 3,
   },
   Object {
@@ -1259,7 +1259,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 77,
+    "number": "77",
     "width": 3,
   },
   Object {
@@ -1271,7 +1271,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 78,
+    "number": "78",
     "width": 3,
   },
   Object {
@@ -1283,7 +1283,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 79,
+    "number": "79",
     "width": 3,
   },
   Object {
@@ -1295,7 +1295,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 81,
+    "number": "81",
     "width": 3,
   },
   Object {
@@ -1307,7 +1307,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 1,
+    "number": "1",
     "width": 2.5,
   },
   Object {
@@ -1319,7 +1319,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 2,
+    "number": "2",
     "width": 2.5,
   },
   Object {
@@ -1331,7 +1331,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 3,
+    "number": "3",
     "width": 2.5,
   },
   Object {
@@ -1343,7 +1343,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 4,
+    "number": "4",
     "width": 2.5,
   },
   Object {
@@ -1355,7 +1355,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 5,
+    "number": "5",
     "width": 2.5,
   },
   Object {
@@ -1367,7 +1367,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 6,
+    "number": "6",
     "width": 2.5,
   },
   Object {
@@ -1379,7 +1379,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 7,
+    "number": "7",
     "width": 2.5,
   },
   Object {
@@ -1391,7 +1391,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 8,
+    "number": "8",
     "width": 2.5,
   },
   Object {
@@ -1403,7 +1403,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 9,
+    "number": "9",
     "width": 2.5,
   },
   Object {
@@ -1415,7 +1415,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 10,
+    "number": "10",
     "width": 2.5,
   },
   Object {
@@ -1427,7 +1427,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 11,
+    "number": "11",
     "width": 2.5,
   },
   Object {
@@ -1439,7 +1439,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 12,
+    "number": "12",
     "width": 2.5,
   },
   Object {
@@ -1451,7 +1451,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 13,
+    "number": "13",
     "width": 2.5,
   },
   Object {
@@ -1463,7 +1463,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 14,
+    "number": "14",
     "width": 2.5,
   },
   Object {
@@ -1475,7 +1475,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 15,
+    "number": "15",
     "width": 2.5,
   },
   Object {
@@ -1487,7 +1487,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 16,
+    "number": "16",
     "width": 2.5,
   },
   Object {
@@ -1499,7 +1499,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 17,
+    "number": "17",
     "width": 2.5,
   },
   Object {
@@ -1511,7 +1511,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 18,
+    "number": "18",
     "width": 2.5,
   },
   Object {
@@ -1523,7 +1523,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 19,
+    "number": "19",
     "width": 2.5,
   },
   Object {
@@ -1535,7 +1535,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 20,
+    "number": "20",
     "width": 2.5,
   },
   Object {
@@ -1547,7 +1547,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 21,
+    "number": "21",
     "width": 2.5,
   },
   Object {
@@ -1559,7 +1559,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 22,
+    "number": "22",
     "width": 2.5,
   },
   Object {
@@ -1571,7 +1571,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 23,
+    "number": "23",
     "width": 2.5,
   },
   Object {
@@ -1583,7 +1583,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 24,
+    "number": "24",
     "width": 2.5,
   },
   Object {
@@ -1595,7 +1595,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 25,
+    "number": "25",
     "width": 2.5,
   },
   Object {
@@ -1607,7 +1607,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 26,
+    "number": "26",
     "width": 2.5,
   },
   Object {
@@ -1619,7 +1619,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 27,
+    "number": "27",
     "width": 2.5,
   },
   Object {
@@ -1631,7 +1631,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 28,
+    "number": "28",
     "width": 2.5,
   },
   Object {
@@ -1643,7 +1643,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 29,
+    "number": "29",
     "width": 2.5,
   },
   Object {
@@ -1655,7 +1655,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 30,
+    "number": "30",
     "width": 2.5,
   },
   Object {
@@ -1667,7 +1667,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 31,
+    "number": "31",
     "width": 2.5,
   },
   Object {
@@ -1679,7 +1679,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 32,
+    "number": "32",
     "width": 2.5,
   },
   Object {
@@ -1691,7 +1691,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 33,
+    "number": "33",
     "width": 2.5,
   },
   Object {
@@ -1703,7 +1703,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 34,
+    "number": "34",
     "width": 2.5,
   },
   Object {
@@ -1715,7 +1715,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 35,
+    "number": "35",
     "width": 2.5,
   },
   Object {
@@ -1727,7 +1727,7 @@ Array [
     "leases": Array [],
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 36,
+    "number": "36",
     "width": 2.5,
   },
   Object {
@@ -1739,7 +1739,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 1,
+    "number": "1",
     "width": 2.5,
   },
   Object {
@@ -1751,7 +1751,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 2,
+    "number": "2",
     "width": 2.5,
   },
   Object {
@@ -1763,7 +1763,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 3,
+    "number": "3",
     "width": 2.5,
   },
   Object {
@@ -1775,7 +1775,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 4,
+    "number": "4",
     "width": 2.5,
   },
   Object {
@@ -1787,7 +1787,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 5,
+    "number": "5",
     "width": 3,
   },
   Object {
@@ -1799,7 +1799,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 6,
+    "number": "6",
     "width": 3,
   },
   Object {
@@ -1811,7 +1811,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 7,
+    "number": "7",
     "width": 3,
   },
   Object {
@@ -1823,7 +1823,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 8,
+    "number": "8",
     "width": 3,
   },
   Object {
@@ -1835,7 +1835,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 9,
+    "number": "9",
     "width": 3,
   },
   Object {
@@ -1847,7 +1847,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 10,
+    "number": "10",
     "width": 3,
   },
   Object {
@@ -1859,7 +1859,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 11,
+    "number": "11",
     "width": 3,
   },
   Object {
@@ -1871,7 +1871,7 @@ Array [
     "leases": Array [],
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
-    "number": 12,
+    "number": "12",
     "width": 3,
   },
   Object {
@@ -1883,7 +1883,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 13,
+    "number": "13",
     "width": 3,
   },
   Object {
@@ -1895,7 +1895,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 14,
+    "number": "14",
     "width": 3,
   },
   Object {
@@ -1907,7 +1907,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 15,
+    "number": "15",
     "width": 3,
   },
   Object {
@@ -1919,7 +1919,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 16,
+    "number": "16",
     "width": 3,
   },
   Object {
@@ -1931,7 +1931,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 17,
+    "number": "17",
     "width": 3,
   },
   Object {
@@ -1943,7 +1943,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 18,
+    "number": "18",
     "width": 3,
   },
   Object {
@@ -1955,7 +1955,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 19,
+    "number": "19",
     "width": 3.5,
   },
   Object {
@@ -1967,7 +1967,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 20,
+    "number": "20",
     "width": 3.5,
   },
   Object {
@@ -1979,7 +1979,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 21,
+    "number": "21",
     "width": 3.5,
   },
   Object {
@@ -1991,7 +1991,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 22,
+    "number": "22",
     "width": 3.5,
   },
   Object {
@@ -2003,7 +2003,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 23,
+    "number": "23",
     "width": 3.5,
   },
   Object {
@@ -2015,7 +2015,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 24,
+    "number": "24",
     "width": 3.5,
   },
   Object {
@@ -2027,7 +2027,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 25,
+    "number": "25",
     "width": 3.5,
   },
   Object {
@@ -2039,7 +2039,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 26,
+    "number": "26",
     "width": 3.5,
   },
   Object {
@@ -2051,7 +2051,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 27,
+    "number": "27",
     "width": 3.5,
   },
   Object {
@@ -2063,7 +2063,7 @@ Array [
     "leases": Array [],
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
-    "number": 28,
+    "number": "28",
     "width": 3.5,
   },
   Object {
@@ -2075,7 +2075,7 @@ Array [
     "leases": Array [],
     "length": 12,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 29,
+    "number": "29",
     "width": 3.5,
   },
   Object {
@@ -2087,7 +2087,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 1,
+    "number": "1",
     "width": 2.5,
   },
   Object {
@@ -2099,7 +2099,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 2,
+    "number": "2",
     "width": 3,
   },
   Object {
@@ -2111,7 +2111,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 3,
+    "number": "3",
     "width": 3,
   },
   Object {
@@ -2123,7 +2123,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 4,
+    "number": "4",
     "width": 3,
   },
   Object {
@@ -2135,7 +2135,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 5,
+    "number": "5",
     "width": 3,
   },
   Object {
@@ -2147,7 +2147,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 6,
+    "number": "6",
     "width": 3,
   },
   Object {
@@ -2159,7 +2159,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 7,
+    "number": "7",
     "width": 3,
   },
   Object {
@@ -2171,7 +2171,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 8,
+    "number": "8",
     "width": 3,
   },
   Object {
@@ -2183,7 +2183,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 9,
+    "number": "9",
     "width": 3,
   },
   Object {
@@ -2195,7 +2195,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 10,
+    "number": "10",
     "width": 3,
   },
   Object {
@@ -2207,7 +2207,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 11,
+    "number": "11",
     "width": 3,
   },
   Object {
@@ -2219,7 +2219,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 12,
+    "number": "12",
     "width": 3,
   },
   Object {
@@ -2231,7 +2231,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 13,
+    "number": "13",
     "width": 3,
   },
   Object {
@@ -2243,7 +2243,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 14,
+    "number": "14",
     "width": 3,
   },
   Object {
@@ -2255,7 +2255,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 15,
+    "number": "15",
     "width": 3,
   },
   Object {
@@ -2267,7 +2267,7 @@ Array [
     "leases": Array [],
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
-    "number": 16,
+    "number": "16",
     "width": 3,
   },
 ]

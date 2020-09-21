@@ -32,7 +32,7 @@ const berthLeases: BERTH_LEASES = {
         __typename: 'BerthLeaseNode',
         berth: {
           __typename: 'BerthNode',
-          number: 1,
+          number: '1',
           pier: {
             __typename: 'PierNode',
             properties: {

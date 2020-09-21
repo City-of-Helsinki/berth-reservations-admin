@@ -15,7 +15,7 @@ export interface FormProps<T> {
 }
 
 export type Berth = {
-  number?: number;
+  number?: string;
   comment?: string;
   isActive?: boolean;
   mooringType?: BerthMooringType;

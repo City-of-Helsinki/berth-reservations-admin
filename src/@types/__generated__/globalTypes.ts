@@ -179,8 +179,8 @@ export interface CreateBerthLeaseMutationInput {
 }
 
 export interface CreateBerthMutationInput {
-  number: number;
   isActive?: boolean | null;
+  number: string;
   pierId: string;
   comment?: string | null;
   isAccessible?: boolean | null;
@@ -312,8 +312,8 @@ export interface UpdateBerthApplicationInput {
 }
 
 export interface UpdateBerthMutationInput {
-  number?: number | null;
   isActive?: boolean | null;
+  number?: string | null;
   pierId?: string | null;
   comment?: string | null;
   isAccessible?: boolean | null;

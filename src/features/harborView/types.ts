@@ -40,7 +40,7 @@ export type Lease = {
 export type Berth = {
   id: string;
   isActive: boolean;
-  number: number;
+  number: string;
   identifier: string;
   length: number;
   width: number;

@@ -50,7 +50,7 @@ export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties
   __typename: "BerthNode";
   id: string;
   isActive: boolean;
-  number: number;
+  number: string;
   width: number;
   length: number;
   depth: number | null;

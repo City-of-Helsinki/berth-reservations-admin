@@ -8,7 +8,7 @@ interface HarborChoice {
 }
 
 interface Lease {
-  berthNum: string | number;
+  berthNum: string;
   harborId: string;
   harborName: string;
   id: string;
@@ -82,7 +82,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         let leaseProps: Lease | null = null;
         if (lease?.berth?.pier.properties?.harbor) {
           leaseProps = {
-            berthNum: lease.berth.number.toString(10) || '',
+            berthNum: lease.berth.number || '',
             harborId: lease.berth.pier.properties.harbor.id,
             harborName: lease.berth.pier.properties.harbor.properties?.name || '',
             id: lease.id,
