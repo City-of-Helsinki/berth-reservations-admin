@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { WinterStorageApplicationAreaType, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICES
@@ -18,6 +18,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node {
   __typename: "WinterStorageApplicationNode";
+  areaType: WinterStorageApplicationAreaType | null;
   boatLength: number;
   boatModel: string;
   boatName: string;
