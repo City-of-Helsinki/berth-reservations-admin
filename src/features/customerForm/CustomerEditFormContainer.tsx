@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
+import { PureQueryOptions } from 'apollo-client';
 
 import CustomerForm from './CustomerForm';
 import { CustomerFormValues, FormProps } from './types';
@@ -16,8 +17,9 @@ import {
 } from './__generated__/UPDATE_BERTH_SERVICES_PROFILE';
 
 export interface CustomerEditFormProps
-  extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete'> {
+  extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete' | 'refetchQueries'> {
   customerId: string;
+  refetchQueries: PureQueryOptions[] | string[];
 }
 
 const CustomerEditFormContainer = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {

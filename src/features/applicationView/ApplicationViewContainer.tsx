@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
@@ -19,6 +19,8 @@ import {
   UPDATE_BERTH_APPLICATIONVariables as UPDATE_BERTH_APPLICATION_VARS,
 } from '../linkApplicationToCustomer/__generated__/UPDATE_BERTH_APPLICATION';
 import { UPDATE_BERTH_APPLICATION_MUTATION } from '../linkApplicationToCustomer/mutations';
+import Modal from '../../common/modal/Modal';
+import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
 
 const ApplicationViewContainer = () => {
   const { id } = useParams<{ id: string }>();
@@ -53,6 +55,7 @@ const ApplicationViewContainer = () => {
       },
     });
 
+  const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [deleteDraftedApplication] = useDeleteBerthApplication();
 
   const customer = data?.berthApplication?.customer;
@@ -75,15 +78,29 @@ const ApplicationViewContainer = () => {
   };
 
   return (
-    <ApplicationView
-      applicationDetails={applicationDetails}
-      berthApplication={data.berthApplication}
-      customerProfile={customerProfile}
-      handleDeleteLease={handleDeleteLease}
-      handleLinkCustomer={handleLinkCustomer}
-      leaseDetails={leaseDetails}
-      refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
-    />
+    <>
+      <ApplicationView
+        applicationDetails={applicationDetails}
+        berthApplication={data.berthApplication}
+        customerProfile={customerProfile}
+        handleDeleteLease={handleDeleteLease}
+        handleEditCustomer={() => setEditCustomer(true)}
+        handleLinkCustomer={handleLinkCustomer}
+        leaseDetails={leaseDetails}
+        refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
+      />
+
+      {customerProfile && (
+        <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
+          <CustomerEditForm
+            customerId={customerProfile.customerId as string}
+            onCancel={() => setEditCustomer(false)}
+            onSubmit={() => setEditCustomer(false)}
+            refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
+          />
+        </Modal>
+      )}
+    </>
   );
 };
 
