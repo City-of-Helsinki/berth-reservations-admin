@@ -81,6 +81,15 @@ export const mockLease: LEASE = {
     },
     width: 0,
   },
+  customer: {
+    __typename: 'ProfileNode',
+    id: 'MOCK-CUSTOMER',
+    primaryEmail: {
+      __typename: 'EmailNode',
+      id: 'MOCK-EMAIL',
+      email: 'test@example.com',
+    },
+  },
   id: 'MOCK-LEASE',
   order: null,
 };

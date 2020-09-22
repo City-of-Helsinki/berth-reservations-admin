@@ -20,6 +20,7 @@ import { getProductServiceTKey } from '../../../common/utils/translations';
 import Text from '../../../common/text/Text';
 import Modal from '../../../common/modal/Modal';
 import EditForm from './editForm/EditForm';
+import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 
 export interface Product {
   id: string;
@@ -46,6 +47,7 @@ export interface LeaseDetails {
   berthMooringType: BerthMooringType | null;
   berthNum: number | string;
   berthWidth: number | null;
+  customerEmail: string | null;
   electricity: boolean;
   gate: boolean;
   harborName: string;
@@ -72,6 +74,7 @@ const OfferCard = ({
     berthMooringType,
     berthNum,
     berthWidth,
+    customerEmail,
     electricity,
     gate,
     harborName,
@@ -98,6 +101,7 @@ const OfferCard = ({
     { prop: water, key: 'water', icon: IconWaterTap },
   ];
   const [isEditing, setIsEditing] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const selectedProducts =
     order?.optionalProducts.reduce<{ productId: string; orderId: string }[]>((acc, product) => {
@@ -217,7 +221,12 @@ const OfferCard = ({
           <hr />
           <div className={styles.buttonRow}>
             <div>
-              <Button className={styles.alignLeft} theme="coat" disabled>
+              <Button
+                className={styles.alignLeft}
+                theme="coat"
+                onClick={() => setIsSending(true)}
+                disabled={order === null}
+              >
                 {t('offer.billing.acceptAndSend')}
               </Button>
             </div>
@@ -235,16 +244,27 @@ const OfferCard = ({
           </div>
         </CardBody>
       </Card>
+
       {order && (
-        <Modal isOpen={isEditing}>
-          <EditForm
-            orderId={order.id}
-            selectedProducts={selectedProducts}
-            refetchQueries={refetchQueries}
-            handleCancel={() => setIsEditing(false)}
-            handleSubmit={() => setIsEditing(false)}
-          />
-        </Modal>
+        <>
+          <Modal isOpen={isSending}>
+            <SendInvoiceForm
+              orderId={order.id}
+              email={customerEmail}
+              onSubmit={() => setIsSending(false)}
+              onCancel={() => setIsSending(false)}
+            />
+          </Modal>
+          <Modal isOpen={isEditing}>
+            <EditForm
+              orderId={order.id}
+              selectedProducts={selectedProducts}
+              refetchQueries={refetchQueries}
+              handleCancel={() => setIsEditing(false)}
+              handleSubmit={() => setIsEditing(false)}
+            />
+          </Modal>
+        </>
       )}
     </>
   );

@@ -49,6 +49,18 @@ export interface BerthLease_lease_berth {
   pier: BerthLease_lease_berth_pier;
 }
 
+export interface BerthLease_lease_customer_primaryEmail {
+  __typename: "EmailNode";
+  id: string;
+  email: string;
+}
+
+export interface BerthLease_lease_customer {
+  __typename: "ProfileNode";
+  id: string;
+  primaryEmail: BerthLease_lease_customer_primaryEmail | null;
+}
+
 export interface BerthLease_lease_order_orderLines_edges_node_product {
   __typename: "AdditionalProductNode";
   id: string;
@@ -86,6 +98,7 @@ export interface BerthLease_lease {
   __typename: "BerthLeaseNode";
   id: string;
   berth: BerthLease_lease_berth;
+  customer: BerthLease_lease_customer;
   order: BerthLease_lease_order | null;
 }
 

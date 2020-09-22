@@ -30,6 +30,13 @@ export const BERTH_LEASE_FRAGMENT = gql`
           }
         }
       }
+      customer {
+        id
+        primaryEmail {
+          id
+          email
+        }
+      }
       order {
         id
         orderNumber

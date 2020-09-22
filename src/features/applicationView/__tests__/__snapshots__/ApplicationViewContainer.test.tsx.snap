@@ -1150,18 +1150,6 @@ exports[`ApplicationViewContainer renders normally 1`] = `
             </article>
           </section>
         </article>
-        <article
-          class="section"
-        >
-          <h4
-            class="text standard h4 m title"
-          >
-            LASKU
-          </h4>
-          <section
-            class="body"
-          />
-        </article>
       </div>
       <hr />
       <div

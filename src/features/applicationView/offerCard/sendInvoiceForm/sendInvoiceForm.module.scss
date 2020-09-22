@@ -1,0 +1,21 @@
+@import 'containers';
+@import 'spacings';
+@import 'form';
+
+.instructions {
+  line-height: units(1.5);
+  margin-top: units(2);
+  margin-bottom: units(2);
+}
+
+.dueDate {
+  width: 50%;
+  margin: auto;
+}
+
+.missingEmail {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+  display: block;
+}

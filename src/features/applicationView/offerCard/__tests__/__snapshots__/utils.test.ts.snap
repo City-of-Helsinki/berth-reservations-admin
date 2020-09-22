@@ -9,6 +9,7 @@ Object {
   "berthMooringType": "SINGLE_SLIP_PLACE",
   "berthNum": "1",
   "berthWidth": 2.5,
+  "customerEmail": "test@example.com",
   "electricity": true,
   "gate": true,
   "harborName": "Aurinkolahden venesatama (Aurinkoranta)",
