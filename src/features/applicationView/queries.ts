@@ -24,6 +24,7 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
         id
         customerGroup
         organization {
+          id
           address
           businessId
           city
@@ -31,14 +32,17 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
           postalCode
         }
         primaryAddress {
+          id
           address
           postalCode
           city
         }
         primaryEmail {
+          id
           email
         }
         primaryPhone {
+          id
           phone
         }
         language

@@ -77,20 +77,6 @@ exports[`ApplicationViewContainer renders normally 1`] = `
               Testinen
             </span>
           </div>
-          <div
-            class="labelValuePair"
-          >
-            <span
-              class="label standard"
-            >
-              Henkilötunnus:
-            </span>
-            <span
-              class="value left"
-            >
-              -
-            </span>
-          </div>
         </section>
       </article>
       <article
@@ -232,7 +218,7 @@ exports[`ApplicationViewContainer renders normally 1`] = `
             <span
               class="value left"
             >
-              -
+              Comment
             </span>
           </div>
         </section>

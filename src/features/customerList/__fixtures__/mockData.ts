@@ -17,6 +17,7 @@ export const dummyCustomers: CUSTOMERS = {
           organization: null,
           primaryAddress: {
             __typename: 'AddressNode',
+            id: 'MOCK-ADDRESS',
             address: 'Virtasentie 1',
             city: 'Helsinki',
             postalCode: '00100',
@@ -24,6 +25,7 @@ export const dummyCustomers: CUSTOMERS = {
           primaryPhone: null,
           primaryEmail: {
             __typename: 'EmailNode',
+            id: 'MOCK-EMAIL',
             email: 'test@example.com',
           },
           serviceConnections: null,
@@ -55,6 +57,7 @@ export const dummyCustomers: CUSTOMERS = {
           nickname: 'virtajussi',
           organization: {
             __typename: 'OrganizationNode',
+            id: 'MOCK-ORGANIZATION',
             businessId: '1234567-8',
             name: 'Virtanen Oy',
             address: 'Virtasentie 1',
@@ -63,6 +66,7 @@ export const dummyCustomers: CUSTOMERS = {
           },
           primaryAddress: {
             __typename: 'AddressNode',
+            id: 'MOCK-ADDRESS',
             address: 'Virtasentie 1',
             city: 'Helsinki',
             postalCode: '00100',
@@ -70,6 +74,7 @@ export const dummyCustomers: CUSTOMERS = {
           primaryPhone: null,
           primaryEmail: {
             __typename: 'EmailNode',
+            id: 'MOCK-EMAIL',
             email: 'test@example.com',
           },
           serviceConnections: null,

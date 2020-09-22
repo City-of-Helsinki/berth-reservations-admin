@@ -562,20 +562,6 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
               Hopo
             </span>
           </div>
-          <div
-            class="labelValuePair"
-          >
-            <span
-              class="label standard"
-            >
-              Henkilötunnus:
-            </span>
-            <span
-              class="value left"
-            >
-              -
-            </span>
-          </div>
         </section>
       </article>
       <article

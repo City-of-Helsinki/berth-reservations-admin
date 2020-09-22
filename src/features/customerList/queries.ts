@@ -30,6 +30,7 @@ export const CUSTOMERS_QUERY = gql`
           comment
           customerGroup
           organization {
+            id
             name
             address
             postalCode
@@ -37,14 +38,17 @@ export const CUSTOMERS_QUERY = gql`
             businessId
           }
           primaryAddress {
+            id
             address
             city
             postalCode
           }
           primaryPhone {
+            id
             phone
           }
           primaryEmail {
+            id
             email
           }
           serviceConnections {

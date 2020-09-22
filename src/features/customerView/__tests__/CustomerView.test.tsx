@@ -9,6 +9,7 @@ const mockProps: CustomerViewProps = {
   bills: [],
   boats: [],
   customerProfile: privateCustomerProfile,
+  handleEditCustomer: jest.fn(),
   leases: [],
   openBills: [],
   setBoatToEdit: jest.fn(),

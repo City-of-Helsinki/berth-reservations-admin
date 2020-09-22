@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomerEditForm initially renders loading spinner 1`] = `
+<div
+  class="spinnerWrapper"
+>
+  <div
+    class="spinner"
+  />
+</div>
+`;
+
+exports[`CustomerEditForm renders content after loading 1`] = `
+Array [
+  <h4
+    class="text brand h4"
+  >
+    ASIAKKAAN TIEDOT
+  </h4>,
+  <form
+    action="#"
+    class="form"
+  >
+    <div
+      class="Dropdown-module_root__2LI4- select"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="customerGroup-toggle-button"
+        id="customerGroup-label"
+      >
+        Asiakasryhmä
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="Dropdown-module_wrapper__1oIw5"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="customerGroup-label customerGroup-toggle-button"
+          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          id="customerGroup-toggle-button"
+          type="button"
+        >
+          <span
+            class="Dropdown-module_buttonLabel__2jVRU"
+          >
+            Yksityinen
+          </span>
+          <svg
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <path
+                d="M0 0h24v24H0z"
+              />
+              <path
+                d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                fill="currentColor"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <ul
+        aria-labelledby="customerGroup-label"
+        class="Dropdown-module_menu__3rei6"
+        id="customerGroup-menu"
+        role="listbox"
+        style="max-height: calc(var(--dropdown-height) * 5);"
+        tabindex="-1"
+      />
+    </div>
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="firstName"
+      >
+        Etunimet
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="firstName"
+          required=""
+          type="text"
+          value="Risto Heikki"
+        />
+      </div>
+    </div>
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="lastName"
+      >
+        Sukunimi
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="lastName"
+          required=""
+          type="text"
+          value="Ryti"
+        />
+      </div>
+    </div>
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="ssn"
+      >
+        Henkilötunnus
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="ssn"
+          type="text"
+          value="000000-0000"
+        />
+      </div>
+    </div>
+    <hr
+      class="divider"
+    />
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="address"
+      >
+        Jakeluosoite
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="address"
+          required=""
+          type="text"
+          value="Mariankatu 2"
+        />
+      </div>
+    </div>
+    <div
+      class="grid cols2 grid"
+    >
+      <div
+        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      >
+        <label
+          class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+          for="postalCode"
+        >
+          Postinumero
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX"
+          >
+            *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        >
+          <input
+            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            id="postalCode"
+            required=""
+            type="text"
+            value="00170"
+          />
+        </div>
+      </div>
+      <div
+        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      >
+        <label
+          class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+          for="city"
+        >
+          Toimipaikka
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX"
+          >
+            *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        >
+          <input
+            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            id="city"
+            required=""
+            type="text"
+            value="Helsinki"
+          />
+        </div>
+      </div>
+    </div>
+    <hr
+      class="divider"
+    />
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="phone"
+      >
+        Puhelinnumero
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="phone"
+          type="text"
+          value="+358 00 000 0000"
+        />
+      </div>
+    </div>
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="email"
+      >
+        Sähköpostiosoite
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <input
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="email"
+          type="text"
+          value="test@example.com"
+        />
+      </div>
+    </div>
+    <div
+      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="comment"
+      >
+        Huomiot
+      </label>
+      <div
+        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+      >
+        <textarea
+          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          id="comment"
+        />
+      </div>
+    </div>
+    <div
+      class="formActionButtons"
+    >
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        color="supplementary"
+        type="button"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Peruuta
+        </span>
+      </button>
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        type="submit"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Tallenna
+        </span>
+      </button>
+    </div>
+  </form>,
+]
+`;

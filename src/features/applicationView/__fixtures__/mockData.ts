@@ -29,9 +29,15 @@ export const mockCustomer: CUSTOMER = {
   language: Language.FINNISH,
   lastName: 'Testinen',
   organization: null,
-  primaryAddress: { __typename: 'AddressNode', address: 'Testikatu 1', city: 'Helsinki', postalCode: '00100' },
-  primaryEmail: { __typename: 'EmailNode', email: 'test@example.com' },
-  primaryPhone: { __typename: 'PhoneNode', phone: '+358 00 000 0000' },
+  primaryAddress: {
+    __typename: 'AddressNode',
+    id: 'MOCK-ADDRESS',
+    address: 'Testikatu 1',
+    city: 'Helsinki',
+    postalCode: '00100',
+  },
+  primaryEmail: { __typename: 'EmailNode', id: 'MOCK-EMAIL', email: 'test@example.com' },
+  primaryPhone: { __typename: 'PhoneNode', id: 'MOCK-PHONE', phone: '+358 00 000 0000' },
   customerGroup: CustomerGroup.PRIVATE,
 };
 

@@ -22,11 +22,12 @@ export interface CustomerViewProps {
   bills: Bill[];
   boats: Boat[];
   customerProfile: CustomerProfileCardProps;
+  handleEditCustomer: () => void;
   leases: Lease[];
+  onClickCreateBoat: () => void;
   openBills: Bill[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenBill: (bill: Bill | undefined) => void;
-  onClickCreateBoat: () => void;
 }
 
 const CustomerView = ({
@@ -34,18 +35,19 @@ const CustomerView = ({
   bills,
   boats,
   customerProfile,
+  handleEditCustomer,
   leases,
+  onClickCreateBoat,
   openBills,
   setBoatToEdit,
   setOpenBill,
-  onClickCreateBoat,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   return (
     <PageContent>
       <PageTitle title={t('customerView.title')} />
       <div className={styles.grid}>
-        <CustomerProfileCard {...customerProfile} />
+        <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
 
         <Card>
           <CardHeader title="VIIMEAIKAINEN TOIMINTA" />

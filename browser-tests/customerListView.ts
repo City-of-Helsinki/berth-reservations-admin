@@ -2,6 +2,7 @@ import { login } from './utils/login';
 import { envUrl } from './utils/settings';
 import { navigation } from './pages/navigation';
 import { customers } from './pages/customers';
+import { inputHasLength } from './utils/valueUtils';
 
 fixture('Customer list view').page(envUrl());
 
@@ -24,4 +25,15 @@ test('Selection of customers', async (t) => {
 
   // Unselect all customers
   await t.click(customers.customerList.deselectAll).expect(customers.customerList.selectedCount.exists).notOk();
+});
+
+test('Editing customers', async (t) => {
+  await login(t);
+
+  await t
+    .click(navigation.customers)
+    .click(customers.customerList.firstCustomerLink)
+    .click(customers.customerView.editButton)
+    .expect(customers.customerView.editForm.firstNameField.filter(inputHasLength).exists)
+    .ok();
 });

@@ -31,6 +31,8 @@ const mockProps: ApplicationViewProps = {
     municipality: 'Helsinki',
     phoneNumber: '0500000000',
     zipCode: '00100',
+    businessId: '',
+    companyName: '',
   },
   customerProfile: null,
   leaseDetails: null,

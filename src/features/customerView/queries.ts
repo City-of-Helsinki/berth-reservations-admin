@@ -10,6 +10,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
       id
       customerGroup
       organization {
+        id
         address
         businessId
         city
@@ -17,15 +18,22 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
         postalCode
       }
       primaryAddress {
+        id
         address
         postalCode
         city
       }
       primaryEmail {
+        id
         email
       }
       primaryPhone {
+        id
         phone
+      }
+      sensitivedata {
+        id
+        ssn
       }
       language
       boats {

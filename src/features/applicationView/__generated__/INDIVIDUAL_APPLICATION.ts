@@ -11,6 +11,7 @@ import { BerthApplicationLanguage, InvoicingType, CustomerGroup, Language, Appli
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_organization {
   __typename: "OrganizationNode";
+  id: string;
   address: string;
   businessId: string;
   city: string;
@@ -20,6 +21,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer_organization {
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryAddress {
   __typename: "AddressNode";
+  id: string;
   address: string;
   postalCode: string;
   city: string;
@@ -27,11 +29,13 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryAddress
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryEmail {
   __typename: "EmailNode";
+  id: string;
   email: string;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryPhone {
   __typename: "PhoneNode";
+  id: string;
   phone: string | null;
 }
 
