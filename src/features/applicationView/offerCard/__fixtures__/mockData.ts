@@ -40,6 +40,7 @@ export const lease: BerthLease = {
   },
   order: {
     id: '07f65f54-4a25-47fd-9eea-d9fdddfa46f9',
+    orderNumber: '123456',
     price: '96.67',
     totalPrice: '256.70',
     orderLines: {

@@ -62,6 +62,7 @@ Object {
         "price": "65.00",
       },
     ],
+    "orderNumber": "123456",
     "price": "96.67",
     "totalPrice": "256.70",
   },

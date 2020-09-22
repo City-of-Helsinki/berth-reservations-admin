@@ -76,6 +76,7 @@ export interface BerthLease_lease_order_orderLines {
 export interface BerthLease_lease_order {
   __typename: "OrderNode";
   id: string;
+  orderNumber: string;
   price: any;
   totalPrice: any;
   orderLines: BerthLease_lease_order_orderLines;

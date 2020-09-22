@@ -32,6 +32,7 @@ export const BERTH_LEASE_FRAGMENT = gql`
       }
       order {
         id
+        orderNumber
         price
         totalPrice
         orderLines {

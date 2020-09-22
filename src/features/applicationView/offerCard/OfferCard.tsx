@@ -30,6 +30,7 @@ export interface Product {
 
 export interface Order {
   id: string;
+  orderNumber: string;
   price: number;
   totalPrice: number;
   fixedProducts: Product[];
@@ -171,49 +172,47 @@ const OfferCard = ({
                 <LabelValuePair label={t('offer.berthDetails.comment')} value={berthComment} />
               </Section>
             </Section>
-            <Section title={t('offer.billing.title').toUpperCase()}>
-              {order && (
-                <>
-                  <Section>
+            {order && (
+              <Section title={`${t('offer.billing.title').toUpperCase()} nro: ${order.orderNumber}`}>
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.basePrice')}
+                    value={formatPrice(order.price, i18n.language)}
+                  />
+                  {order.fixedProducts.map((product, i) => (
                     <LabelValuePair
-                      label={t('offer.billing.basePrice')}
-                      value={formatPrice(order.price, i18n.language)}
+                      key={i}
+                      label={t(getProductServiceTKey(product.name))}
+                      value={formatPrice(product.price, i18n.language)}
                     />
-                    {order.fixedProducts.map((product, i) => (
-                      <LabelValuePair
-                        key={i}
-                        label={t(getProductServiceTKey(product.name))}
-                        value={formatPrice(product.price, i18n.language)}
-                      />
-                    ))}
-                  </Section>
-                  <Section>
+                  ))}
+                </Section>
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.additionalServices')}
+                    value={
+                      <button onClick={() => setIsEditing(true)}>
+                        <Text color="brand">{t('common.edit')}</Text>
+                      </button>
+                    }
+                  />
+                  {order.optionalProducts.map((product, i) => (
                     <LabelValuePair
-                      label={t('offer.billing.additionalServices')}
-                      value={
-                        <button onClick={() => setIsEditing(true)}>
-                          <Text color="brand">{t('common.edit')}</Text>
-                        </button>
-                      }
+                      key={i}
+                      label={t(getProductServiceTKey(product.name))}
+                      value={formatPrice(product.price, i18n.language)}
                     />
-                    {order.optionalProducts.map((product, i) => (
-                      <LabelValuePair
-                        key={i}
-                        label={t(getProductServiceTKey(product.name))}
-                        value={formatPrice(product.price, i18n.language)}
-                      />
-                    ))}
-                  </Section>
-                  <hr />
-                  <Section>
-                    <LabelValuePair
-                      label={t('offer.billing.total').toUpperCase()}
-                      value={formatPrice(order.totalPrice, i18n.language)}
-                    />
-                  </Section>
-                </>
-              )}
-            </Section>
+                  ))}
+                </Section>
+                <hr />
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.total').toUpperCase()}
+                    value={formatPrice(order.totalPrice, i18n.language)}
+                  />
+                </Section>
+              </Section>
+            )}
           </Grid>
           <hr />
           <div className={styles.buttonRow}>

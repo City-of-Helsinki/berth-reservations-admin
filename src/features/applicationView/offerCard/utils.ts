@@ -33,6 +33,7 @@ export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | nu
 
     order = {
       id: lease.order.id || '',
+      orderNumber: lease.order.orderNumber,
       price: lease.order.price,
       totalPrice: lease.order.totalPrice,
       ...products,

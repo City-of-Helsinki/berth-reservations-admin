@@ -143,6 +143,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order_orderLines 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order {
   __typename: "OrderNode";
   id: string;
+  orderNumber: string;
   price: any;
   totalPrice: any;
   orderLines: INDIVIDUAL_APPLICATION_berthApplication_lease_order_orderLines;
