@@ -10,6 +10,7 @@ import { APPROVE_ORDERS_MUTATION } from '../mutations';
 const mockDate = new Date('2020-09-23T00:00:00.000Z');
 const mockProps: SendInvoiceFormContainerProps = {
   email: 'test@example.com',
+  refetchQueries: [],
   onCancel: jest.fn(),
   onSubmit: jest.fn(),
   orderId: 'MOCK-ORDER',

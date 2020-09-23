@@ -251,6 +251,7 @@ const OfferCard = ({
             <SendInvoiceForm
               orderId={order.id}
               email={customerEmail}
+              refetchQueries={refetchQueries}
               onSubmit={() => setIsSending(false)}
               onCancel={() => setIsSending(false)}
             />
