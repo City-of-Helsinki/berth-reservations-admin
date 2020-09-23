@@ -18,7 +18,7 @@ const SendInvoiceFormContainer = ({ orderId, email, onSubmit, onCancel }: SendIn
   );
 
   const handleSubmit = async (values: { dueDate: Date }) => {
-    if (!email) return false;
+    if (email === null) return false;
     await approveOrder({
       variables: {
         input: {

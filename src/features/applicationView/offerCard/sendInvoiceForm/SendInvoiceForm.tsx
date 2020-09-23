@@ -39,7 +39,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
       validateOnChange={false}
       validationSchema={validationSchema}
     >
-      {({ values, errors, handleChange, handleSubmit }) => (
+      {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
           <FormHeader title={t('forms.sendInvoice.title').toUpperCase()} />
 
