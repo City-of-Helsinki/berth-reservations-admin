@@ -19,7 +19,7 @@ import {
 export interface CustomerEditFormProps
   extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete' | 'refetchQueries'> {
   customerId: string;
-  refetchQueries: PureQueryOptions[] | string[];
+  refetchQueries?: PureQueryOptions[] | string[];
 }
 
 const CustomerEditFormContainer = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
