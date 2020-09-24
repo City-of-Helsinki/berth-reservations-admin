@@ -20,6 +20,7 @@ import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
 import { APPLICATION_STATUS } from '../../common/utils/consonants';
+import Grid from '../../common/grid/Grid';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -79,7 +80,12 @@ const UnmarkedWsNoticeView = ({
         <Card className={styles.fullWidth}>
           <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
           <CardBody>
-            <UnmarkedWsNoticeDetails {...noticeDetails} />
+            <Grid colsCount={3}>
+              <UnmarkedWsNoticeDetails {...noticeDetails} />
+              <div className={styles.detailsActions}>
+                <Button>{t('unmarkedWsNotices.createInvoice')}</Button>
+              </div>
+            </Grid>
           </CardBody>
         </Card>
       )}

@@ -695,6 +695,7 @@
       "notice": "Ilmoitus",
       "ownerInformation": "Omistajan tiedot"
     },
+    "createInvoice": "Luo lasku",
     "deleteNotice": "Poista ilmoitus"
   }
 }

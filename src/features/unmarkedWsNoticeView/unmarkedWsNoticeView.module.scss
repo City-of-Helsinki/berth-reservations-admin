@@ -13,7 +13,7 @@
 
 .actions {
   grid-column: 1 / -1;
-  grid-template-areas: "l status r";
+  grid-template-areas: 'l status r';
   grid-template-columns: 3fr 6fr 3fr;
   display: grid;
   width: 100%;
@@ -33,4 +33,8 @@
 .actionsRight {
   text-align: right;
   grid-area: r;
+}
+
+.detailsActions {
+  text-align: right;
 }

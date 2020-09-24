@@ -12,6 +12,7 @@ import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateC
 import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
 } from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import Button from '../button/Button';
 
 interface SummaryInformation {
   acceptBoatingNewsletter: boolean;
@@ -61,7 +62,7 @@ const UnmarkedWsNoticeDetails = ({
   const { t, i18n } = useTranslation();
 
   return (
-    <Grid colsCount={3}>
+    <>
       <div>
         <Section title={t('unmarkedWsNotices.noticeDetails.notice').toUpperCase()}>
           <LabelValuePair label={'Alue'} value={choice.winterStorageArea} />
@@ -142,7 +143,7 @@ const UnmarkedWsNoticeDetails = ({
           </Section>
         )}
       </div>
-    </Grid>
+    </>
   );
 };
 

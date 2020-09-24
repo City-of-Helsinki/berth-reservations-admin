@@ -847,6 +847,20 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
             </section>
           </article>
         </div>
+        <div
+          class="detailsActions"
+        >
+          <button
+            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+            type="button"
+          >
+            <span
+              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            >
+              Luo lasku
+            </span>
+          </button>
+        </div>
       </div>
     </div>
      
