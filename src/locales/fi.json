@@ -326,7 +326,8 @@
     },
     "applicationType": {
       "newApplication": "Uusi hakemus",
-      "switchApplication": "Vaihtohakemus"
+      "switchApplication": "Vaihtohakemus",
+      "notice": "Ilmoitus"
     },
     "applicationDetails": {
       "title": "HAKEMUKSET",

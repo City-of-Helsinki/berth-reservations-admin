@@ -16,6 +16,10 @@ import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
 } from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
+import Text from '../../common/text/Text';
+import { formatDate } from '../../common/utils/format';
+import Chip from '../../common/chip/Chip';
+import { APPLICATION_STATUS } from '../../common/utils/consonants';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -34,18 +38,32 @@ const UnmarkedWsNoticeView = ({
   handleEditCustomer,
   handleLinkCustomer,
 }: UnmarkedWsNoticeViewProps) => {
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   return (
-    <PageContent className={styles.applicationView}>
+    <PageContent className={styles.noticeView}>
       <div className={styles.fullWidth}>
         <PageTitle title={t('unmarkedWsNotices.view.title')} />
       </div>
 
-      <div className={styles.buttons}>
-        <Button onClick={handleDeleteNotice} variant="secondary">
-          {t('unmarkedWsNotices.deleteNotice')}
-        </Button>
+      <div className={styles.actions}>
+        <div className={styles.noticeStatus}>
+          <Text as="h2" size="xl" weight="normalWeight">
+            {t('applicationList.applicationType.notice')} {formatDate(noticeDetails.createdAt, language)}
+          </Text>
+          <Chip
+            color={APPLICATION_STATUS[noticeDetails.status].color}
+            label={t(APPLICATION_STATUS[noticeDetails.status].label)}
+          />
+        </div>
+        <div className={styles.actionsRight}>
+          <Button onClick={handleDeleteNotice} variant="secondary">
+            {t('unmarkedWsNotices.deleteNotice')}
+          </Button>
+        </div>
       </div>
 
       {customerProfile ? (
