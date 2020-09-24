@@ -3,40 +3,19 @@ import { IconTrash } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
 
-import Card from '../../../common/card/Card';
-import CardHeader from '../../../common/cardHeader/CardHeader';
-import CardBody from '../../../common/cardBody/CardBody';
-import Grid from '../../../common/grid/Grid';
 import Section from '../../../common/section/Section';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
-import styles from './offerCard.module.scss';
 import InternalLink from '../../../common/internalLink/InternalLink';
-import { formatDimension, formatPrice } from '../../../common/utils/format';
-import { BerthMooringType, ProductServiceType } from '../../../@types/__generated__/globalTypes';
-import Property from '../../../common/property/Property';
-import { IconFence, IconPlug, IconProps, IconStreetLight, IconWaterTap } from '../../../common/icons';
+import { formatDimension } from '../../../common/utils/format';
+import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
+import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import Button from '../../../common/button/Button';
-import { getProductServiceTKey } from '../../../common/utils/translations';
-import Text from '../../../common/text/Text';
 import Modal from '../../../common/modal/Modal';
 import EditForm from './editForm/EditForm';
 import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
+import InvoiceCard, { InvoiceCardProps } from '../../../common/invoiceCard/InvoiceCard';
 
-export interface Product {
-  id: string;
-  name: ProductServiceType;
-  price: number;
-  orderId: string;
-}
-
-export interface Order {
-  id: string;
-  orderNumber: string;
-  price: number;
-  totalPrice: number;
-  fixedProducts: Product[];
-  optionalProducts: Product[];
-}
+export type { Product } from '../../../common/invoiceCard/InvoiceCard';
 
 export interface LeaseDetails {
   id: string;
@@ -55,16 +34,18 @@ export interface LeaseDetails {
   pierIdentifier: string;
   wasteCollection: boolean;
   water: boolean;
-  order: Order | null;
+  order: InvoiceCardProps['order'];
 }
 
 export interface OfferCardProps {
+  className?: string;
   leaseDetails: LeaseDetails;
   refetchQueries: PureQueryOptions[] | string[];
   handleDeleteLease: (id: string) => void;
 }
 
 const OfferCard = ({
+  className,
   leaseDetails: {
     id,
     berthComment,
@@ -87,163 +68,95 @@ const OfferCard = ({
   refetchQueries,
   handleDeleteLease,
 }: OfferCardProps) => {
-  const { t, i18n } = useTranslation();
-  const isNotNull = (property: boolean | null): property is boolean => property !== null;
-  const properties: {
-    prop: boolean | null;
-    key: string;
-    icon: (props: IconProps) => React.ReactElement | null;
-  }[] = [
-    { prop: wasteCollection, key: 'waste', icon: IconTrash },
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+  const [isEditing, setIsEditing] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  const properties: InvoiceCardProps['placeProperties'] = [
+    { prop: wasteCollection, key: 'wasteCollection', icon: IconTrash },
     { prop: electricity, key: 'electricity', icon: IconPlug },
     { prop: lighting, key: 'lighting', icon: IconStreetLight },
     { prop: gate, key: 'gate', icon: IconFence },
     { prop: water, key: 'water', icon: IconWaterTap },
   ];
-  const [isEditing, setIsEditing] = useState(false);
-  const [isSending, setIsSending] = useState(false);
 
   const selectedProducts =
     order?.optionalProducts.reduce<{ productId: string; orderId: string }[]>((acc, product) => {
       return acc.concat({ productId: product.id, orderId: product.orderId });
     }, []) ?? [];
 
+  const renderPlaceDetails = () => {
+    return (
+      <>
+        <Section>
+          <LabelValuePair
+            label={t('common.terminology.mooringType')}
+            value={t([`common.mooringTypes.${berthMooringType}`])}
+          />
+          <LabelValuePair label={t('common.terminology.width')} value={formatDimension(berthWidth, language)} />
+          <LabelValuePair label={t('common.terminology.length')} value={formatDimension(berthLength, language)} />
+          <LabelValuePair label={t('common.terminology.depth')} value={formatDimension(berthDepth, language)} />
+        </Section>
+        {berthIsAccessible && (
+          <Section>
+            <span>{t('common.terminology.accessiblePlace')}</span>
+          </Section>
+        )}
+        <Section>
+          <LabelValuePair
+            label={t('invoiceCard.placeDetails.maintenanceDetails')}
+            value={
+              <>
+                {/* TODO */}
+                <InternalLink to="/">123</InternalLink>
+                <br />
+                <InternalLink to="/">456</InternalLink>
+              </>
+            }
+          />
+          <LabelValuePair label={t('common.terminology.comments')} value={berthComment} />
+        </Section>
+      </>
+    );
+  };
+
   return (
     <>
-      <Card className={styles.offerCard}>
-        <CardHeader title={t('offer.title').toUpperCase()} />
-        <CardBody>
-          <Grid colsCount={3}>
-            <Section title={t('common.terminology.berth').toUpperCase()}>
-              <Section>
-                <InternalLink to="/" underlined>
-                  {[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}
-                </InternalLink>
-              </Section>
-              <Section>
-                <div className={styles.berthProperties}>
-                  {properties.map(
-                    ({ prop, key, icon }) =>
-                      isNotNull(prop) && (
-                        <Property
-                          className={styles.property}
-                          key={key}
-                          active={prop}
-                          icon={icon}
-                          label={t(`offer.berthDetails.${key}`)}
-                        />
-                      )
-                  )}
-                </div>
-              </Section>
-            </Section>
-            <Section title={t('offer.berthDetails.title').toUpperCase()}>
-              <Section>
-                <LabelValuePair
-                  label={t('offer.berthDetails.mooringType')}
-                  value={t([`common.mooringTypes.${berthMooringType}`])}
-                />
-                <LabelValuePair
-                  label={t('common.terminology.width')}
-                  value={formatDimension(berthWidth, i18n.language)}
-                />
-                <LabelValuePair
-                  label={t('common.terminology.length')}
-                  value={formatDimension(berthLength, i18n.language)}
-                />
-                <LabelValuePair
-                  label={t('common.terminology.depth')}
-                  value={formatDimension(berthDepth, i18n.language)}
-                />
-              </Section>
-              {berthIsAccessible && (
-                <Section>
-                  <span>{t('offer.berthDetails.accessible')}</span>
-                </Section>
-              )}
-              <Section>
-                <LabelValuePair
-                  label={t('offer.berthDetails.maintenanceDetails')}
-                  value={
-                    <>
-                      {/* TODO */}
-                      <InternalLink to="/">123</InternalLink>
-                      <br />
-                      <InternalLink to="/">456</InternalLink>
-                    </>
-                  }
-                />
-                <LabelValuePair label={t('offer.berthDetails.comment')} value={berthComment} />
-              </Section>
-            </Section>
-            {order && (
-              <Section title={`${t('offer.billing.title').toUpperCase()} nro: ${order.orderNumber}`}>
-                <Section>
-                  <LabelValuePair
-                    label={t('offer.billing.basePrice')}
-                    value={formatPrice(order.price, i18n.language)}
-                  />
-                  {order.fixedProducts.map((product) => (
-                    <LabelValuePair
-                      key={product.id}
-                      label={t(getProductServiceTKey(product.name))}
-                      value={formatPrice(product.price, i18n.language)}
-                    />
-                  ))}
-                </Section>
-                <Section>
-                  <LabelValuePair
-                    label={t('offer.billing.additionalServices')}
-                    value={
-                      <button onClick={() => setIsEditing(true)}>
-                        <Text color="brand">{t('common.edit')}</Text>
-                      </button>
-                    }
-                  />
-                  {order.optionalProducts.map((product) => (
-                    <LabelValuePair
-                      key={product.id}
-                      label={t(getProductServiceTKey(product.name))}
-                      value={formatPrice(product.price, i18n.language)}
-                    />
-                  ))}
-                </Section>
-                <hr />
-                <Section>
-                  <LabelValuePair
-                    label={t('offer.billing.total').toUpperCase()}
-                    value={formatPrice(order.totalPrice, i18n.language)}
-                  />
-                </Section>
-              </Section>
-            )}
-          </Grid>
-          <hr />
-          <div className={styles.buttonRow}>
-            <div>
-              <Button
-                className={styles.alignLeft}
-                theme="coat"
-                onClick={() => setIsSending(true)}
-                disabled={order === null}
-              >
-                {t('offer.billing.acceptAndSend')}
-              </Button>
-            </div>
-            <div>
-              <Button variant="supplementary" className={styles.button} disabled>
-                {t('offer.billing.showBill')}
-              </Button>
-              <Button variant="supplementary" className={styles.button} disabled>
-                {t('offer.billing.showContract')}
-              </Button>
-              <Button variant="secondary" theme="coat" className={styles.button} onClick={() => handleDeleteLease(id)}>
-                {t('offer.billing.removeOffer')}
-              </Button>
-            </div>
-          </div>
-        </CardBody>
-      </Card>
+      <InvoiceCard
+        title={t('offer.title').toUpperCase()}
+        className={className}
+        buttonsLeft={
+          <Button theme="coat" onClick={() => setIsSending(true)} disabled={order === null}>
+            {t('offer.billing.acceptAndSend')}
+          </Button>
+        }
+        buttonsRight={
+          <>
+            <Button variant="supplementary" disabled>
+              {t('offer.billing.showBill')}
+            </Button>
+            <Button variant="supplementary" disabled>
+              {t('offer.billing.showContract')}
+            </Button>
+            <Button variant="secondary" theme="coat" onClick={() => handleDeleteLease(id)}>
+              {t('offer.billing.removeOffer')}
+            </Button>
+          </>
+        }
+        editAdditionalServices={() => setIsEditing(true)}
+        order={order}
+        placeType={t('common.terminology.berth').toUpperCase()}
+        placeProperties={properties}
+        placeName={
+          <InternalLink to="/" underlined>
+            {[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}
+          </InternalLink>
+        }
+        placeDetails={renderPlaceDetails()}
+      />
 
       {order && (
         <>

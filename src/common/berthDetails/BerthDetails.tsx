@@ -75,13 +75,13 @@ const BerthDetails = ({
       {displayProperties && (
         <div className={styles.berthProperties}>
           {isDefined(gate) && (
-            <Property className={styles.property} icon={IconFence} label={t('offer.berthDetails.gate')} active={gate} />
+            <Property className={styles.property} icon={IconFence} label={t('common.terminology.gate')} active={gate} />
           )}
           {isDefined(electricity) && (
             <Property
               className={styles.property}
               icon={IconPlug}
-              label={t('offer.berthDetails.electricity')}
+              label={t('common.terminology.electricity')}
               active={electricity}
             />
           )}
@@ -89,7 +89,7 @@ const BerthDetails = ({
             <Property
               className={styles.property}
               icon={IconWaterTap}
-              label={t('offer.berthDetails.water')}
+              label={t('common.terminology.water')}
               active={water}
             />
           )}
@@ -97,7 +97,7 @@ const BerthDetails = ({
             <Property
               className={styles.property}
               icon={IconStreetLight}
-              label={t('offer.berthDetails.lighting')}
+              label={t('common.terminology.lighting')}
               active={lighting}
             />
           )}
@@ -105,7 +105,7 @@ const BerthDetails = ({
             <Property
               className={styles.property}
               icon={IconTrash}
-              label={t('offer.berthDetails.waste')}
+              label={t('common.terminology.waste')}
               active={wasteCollection}
             />
           )}
@@ -113,7 +113,7 @@ const BerthDetails = ({
             <Property
               className={styles.property}
               icon={IconAccessibility}
-              label={t('offer.berthDetails.accessible')}
+              label={t('common.terminology.accessiblePlace')}
               active={isAccessible}
             />
           )}
@@ -123,7 +123,7 @@ const BerthDetails = ({
         <Section title={t('offer.berthDetails.previousLeases').toUpperCase()}>
           {expiredLeasesElements.length ? expiredLeasesElements : '-'}
         </Section>
-        <Section title={t('offer.berthDetails.comment').toUpperCase()} className={styles.comment}>
+        <Section title={t('common.terminology.comments').toUpperCase()} className={styles.comment}>
           <Text>{comment || '-'}</Text>
         </Section>
         {onEdit && (

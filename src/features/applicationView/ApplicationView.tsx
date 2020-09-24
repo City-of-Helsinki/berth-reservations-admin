@@ -86,7 +86,12 @@ const ApplicationView = ({
       </Card>
 
       {leaseDetails && (
-        <OfferCard leaseDetails={leaseDetails} handleDeleteLease={handleDeleteLease} refetchQueries={refetchQueries} />
+        <OfferCard
+          className={styles.fullWidth}
+          leaseDetails={leaseDetails}
+          handleDeleteLease={handleDeleteLease}
+          refetchQueries={refetchQueries}
+        />
       )}
     </PageContent>
   );

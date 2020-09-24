@@ -91,6 +91,7 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
       "berth": "Venepaikka",
@@ -116,7 +117,9 @@
       "maintenance": "Kunnossapito",
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
+      "mooringType": "Kiinnitystapa",
       "parkingPermit": "Pysäköintilupa",
+      "pier": "Laituri",
       "serviceMap": "Palvelukartta",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unnamedBoat": "Nimetön vene",
@@ -391,17 +394,6 @@
   },
   "offer": {
     "title": "Tarjous",
-    "tableHeaders": {
-      "pierFilterBtn": "Laituri",
-      "harbor": "Satama",
-      "pier": "Laituri",
-      "berth": "Paikka",
-      "width": "Leveys",
-      "length": "Pituus",
-      "draught": "Syvyys",
-      "mooringType": "Kiinnitys",
-      "selection": "Valinta"
-    },
     "tableCells": {
       "select": "Valitse"
     },
@@ -410,17 +402,7 @@
       "return": "Palaa valitsematta"
     },
     "berthDetails": {
-      "title": "Paikan tiedot",
-      "mooringType": "Kiinnitystyyppi",
-      "maintenanceDetails": "Huoltotiedot",
-      "gate": "Portti",
-      "electricity": "Sähkö",
-      "water": "Vesi",
-      "lighting": "Valaistus",
-      "waste": "Roskat",
-      "accessible": "Esteetön paikka",
       "previousLeases": "Edelliset vuokralaiset",
-      "comment": "Huomiot",
       "emptyName": "Ei nimeä"
     },
     "billing": {
@@ -697,5 +679,11 @@
     },
     "createInvoice": "Luo lasku",
     "deleteNotice": "Poista ilmoitus"
+  },
+  "invoiceCard": {
+    "placeDetails": {
+      "title": "Paikan tiedot",
+      "maintenanceDetails": "Huoltotiedot"
+    }
   }
 }

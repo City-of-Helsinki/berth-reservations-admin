@@ -9,7 +9,7 @@ export default {
   component: OfferCard,
   title: 'OfferCard',
   decorators: [
-    (storyFn) => (
+    (storyFn: Function) => (
       <div
         style={{
           padding: '20px',
@@ -26,7 +26,6 @@ export default {
 export const offerCard = () => (
   <OfferCard
     leaseDetails={{
-      id: '123456',
       berthComment: 'Testi',
       berthDepth: 3,
       berthIsAccessible: true,
@@ -34,15 +33,19 @@ export const offerCard = () => (
       berthMooringType: BerthMooringType.DINGHY_PLACE,
       berthNum: '1',
       berthWidth: 4,
+      customerEmail: 'test@example.com',
       electricity: true,
       gate: true,
       harborName: 'Testisatama',
+      id: '123456',
       lighting: true,
+      order: null,
       pierIdentifier: 'Testilaituri',
       wasteCollection: true,
       water: true,
     }}
     handleDeleteLease={action('lease deleted')}
+    refetchQueries={[]}
   />
 );
 
