@@ -163,7 +163,8 @@
         "integer": "Kentän pitää olla kokonaisluku.",
         "positive": "Kentän pitää olla positiivinen luku.",
         "maxFileSize": "Tiedosto on liian suuri.",
-        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua."
+        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua.",
+        "date": "Tarkista päivämäärä"
       },
       "error": "Tapahtui virhe. Yritä uudestaan.",
       "create": "Luo",

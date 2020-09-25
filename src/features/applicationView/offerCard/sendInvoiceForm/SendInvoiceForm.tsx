@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
-import { TFunction } from 'i18next';
 
 import styles from './sendInvoiceForm.module.scss';
 import FormHeader from '../../../../common/formHeader/FormHeader';
@@ -21,22 +20,26 @@ export type SendInvoiceFormProps = {
   onSubmit: (data: FormValues) => void;
 };
 
-const getValidationSchema = (t: TFunction) =>
-  Yup.object<FormValues>().shape({
-    dueDate: Yup.date().required(t('forms.common.errors.required')),
-  });
-
 const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoiceFormProps) => {
   const { t } = useTranslation();
 
-  const validationSchema = getValidationSchema(t);
-
+  const getToday = () => new Date(Date.now());
   const mapDateToDateInputValue = (date: Date): string => {
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getDate()}`;
   };
 
+  const validationSchema = useMemo(
+    () =>
+      Yup.object<FormValues>().shape({
+        dueDate: Yup.date()
+          .min(new Date(getToday().toDateString()), t('forms.common.errors.date'))
+          .required(t('forms.common.errors.required')),
+      }),
+    [t]
+  );
+
   const initial: FormValues = {
-    dueDate: mapDateToDateInputValue(new Date(Date.now())),
+    dueDate: mapDateToDateInputValue(getToday()),
   };
 
   return (
