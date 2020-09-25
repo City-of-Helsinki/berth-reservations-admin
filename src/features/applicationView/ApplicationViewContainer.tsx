@@ -93,7 +93,7 @@ const ApplicationViewContainer = () => {
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
           <CustomerEditForm
-            customerId={customerProfile.customerId as string}
+            customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}
             refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}

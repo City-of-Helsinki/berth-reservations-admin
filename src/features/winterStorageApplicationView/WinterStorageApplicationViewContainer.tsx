@@ -90,7 +90,7 @@ const WinterStorageApplicationViewContainer = () => {
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
           <CustomerEditForm
-            customerId={customerProfile.customerId as string}
+            customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}
             refetchQueries={[
