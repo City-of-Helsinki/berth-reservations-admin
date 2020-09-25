@@ -183,9 +183,9 @@ const OfferCard = ({
                     label={t('offer.billing.basePrice')}
                     value={formatPrice(order.price, i18n.language)}
                   />
-                  {order.fixedProducts.map((product, i) => (
+                  {order.fixedProducts.map((product) => (
                     <LabelValuePair
-                      key={i}
+                      key={product.id}
                       label={t(getProductServiceTKey(product.name))}
                       value={formatPrice(product.price, i18n.language)}
                     />
@@ -200,9 +200,9 @@ const OfferCard = ({
                       </button>
                     }
                   />
-                  {order.optionalProducts.map((product, i) => (
+                  {order.optionalProducts.map((product) => (
                     <LabelValuePair
-                      key={i}
+                      key={product.id}
                       label={t(getProductServiceTKey(product.name))}
                       value={formatPrice(product.price, i18n.language)}
                     />
