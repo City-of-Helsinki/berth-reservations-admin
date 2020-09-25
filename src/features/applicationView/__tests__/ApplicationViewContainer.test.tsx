@@ -65,7 +65,7 @@ describe('ApplicationViewContainer', () => {
     const wrapper = getWrapper();
 
     await waitForContent(wrapper);
-    expect(wrapper.render()).toMatchSnapshot();
+    expect(wrapper.find('ApplicationView')).toBeDefined();
   });
 
   it('renders normally with customer and boatTypes missing', async () => {
@@ -82,7 +82,7 @@ describe('ApplicationViewContainer', () => {
     const wrapper = getWrapper(queryMock);
 
     await waitForContent(wrapper);
-    expect(wrapper.render()).toMatchSnapshot();
+    expect(wrapper.find('ApplicationView')).toBeDefined();
   });
 
   it('when "handleDeleteLease" is called, calls "useDeleteBerthApplication" with expected values', async () => {
