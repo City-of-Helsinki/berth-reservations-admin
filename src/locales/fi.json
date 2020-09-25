@@ -163,10 +163,12 @@
         "integer": "Kentän pitää olla kokonaisluku.",
         "positive": "Kentän pitää olla positiivinen luku.",
         "maxFileSize": "Tiedosto on liian suuri.",
-        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua."
+        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua.",
+        "date": "Tarkista päivämäärä"
       },
       "error": "Tapahtui virhe. Yritä uudestaan.",
       "create": "Luo",
+      "send": "Lähetä",
       "update": "Tallenna",
       "delete": "Poista",
       "cancel": "Peruuta"
@@ -244,6 +246,15 @@
       "phone": "Puhelinnumero",
       "email": "Sähköpostiosoite",
       "comment": "Huomiot"
+    },
+    "sendInvoice": {
+      "title": "Lähetä lasku",
+      "instructions": {
+        "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
+        "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
+      },
+      "missingEmail": "Sähköpostiosoite puuttuu",
+      "dueDate": "Laskun eräpäivä"
     }
   },
   "harborList": {

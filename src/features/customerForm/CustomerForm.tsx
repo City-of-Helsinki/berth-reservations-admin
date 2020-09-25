@@ -26,7 +26,7 @@ const getValidationSchema = (t: TFunction) => {
     }),
     city: Yup.string().required(t('forms.common.errors.required')),
     customerGroup: Yup.string().oneOf(Object.values(CustomerGroup), t('forms.common.errors.required')),
-    email: Yup.string().email(t('forms.common.errors.email')),
+    email: Yup.string().email(t('forms.common.errors.email')).required(t('forms.common.errors.required')),
     firstName: Yup.string().required(t('forms.common.errors.required')),
     lastName: Yup.string().required(t('forms.common.errors.required')),
     organizationName: Yup.string().when('customerGroup', {
@@ -99,6 +99,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               onChange={handleChange}
               invalid={!!errors.email}
               helperText={errors.email}
+              required
             />
             <TextArea
               id="comment"

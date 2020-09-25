@@ -38,8 +38,18 @@ export const lease: BerthLease = {
     },
     __typename: 'BerthNode',
   },
+  customer: {
+    __typename: 'ProfileNode',
+    id: 'MOCK-CUSTOMER',
+    primaryEmail: {
+      __typename: 'EmailNode',
+      id: 'MOCK-EMAIL',
+      email: 'test@example.com',
+    },
+  },
   order: {
     id: '07f65f54-4a25-47fd-9eea-d9fdddfa46f9',
+    orderNumber: '123456',
     price: '96.67',
     totalPrice: '256.70',
     orderLines: {

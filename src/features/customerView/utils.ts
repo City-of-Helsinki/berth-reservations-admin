@@ -24,7 +24,7 @@ export const getCustomerProfile = (
   > & {
     sensitivedata?: CUSTOMER_PROFILE['sensitivedata'];
   }
-): CustomerProfileCardProps => {
+): CustomerProfileCardProps & { customerId: string } => {
   return {
     ...{
       customerId: profile.id,

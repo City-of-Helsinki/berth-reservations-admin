@@ -21,16 +21,18 @@ export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
-  handleLinkCustomer(customerId: string): void;
   handleDeleteNotice(): void;
+  handleEditCustomer(): void;
+  handleLinkCustomer(customerId: string): void;
 }
 
 const UnmarkedWsNoticeView = ({
   customerProfile,
   noticeDetails,
   winterStorageNotice,
-  handleLinkCustomer,
   handleDeleteNotice,
+  handleEditCustomer,
+  handleLinkCustomer,
 }: UnmarkedWsNoticeViewProps) => {
   const { t } = useTranslation();
 
@@ -48,7 +50,7 @@ const UnmarkedWsNoticeView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
           <ActionHistoryCard />
         </>
       ) : (

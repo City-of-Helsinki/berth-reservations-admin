@@ -184,6 +184,12 @@ export interface AddBoatCertificateInput {
   checkedBy?: string | null;
 }
 
+export interface ApproveOrderMutationInput {
+  orders: (OrderApprovalInput | null)[];
+  dueDate?: any | null;
+  clientMutationId?: string | null;
+}
+
 export interface CreateAdditionalContactPersonInput {
   firstName: string;
   lastName: string;
@@ -328,6 +334,11 @@ export interface DeleteWinterStorageApplicationMutationInput {
 export interface DeleteWinterStorageLeaseMutationInput {
   id: string;
   clientMutationId?: string | null;
+}
+
+export interface OrderApprovalInput {
+  orderId: string;
+  email: string;
 }
 
 export interface OrganizationInput {

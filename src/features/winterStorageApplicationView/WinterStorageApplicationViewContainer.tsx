@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
 
@@ -17,9 +17,12 @@ import {
   INDIVIDUAL_WINTER_STORAGE_APPLICATIONVariables as INDIVIDUAL_WINTER_STORAGE_APPLICATION_VARS,
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { getCustomerProfile } from '../customerView/utils';
+import Modal from '../../common/modal/Modal';
+import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
 
 const WinterStorageApplicationViewContainer = () => {
   const { id } = useParams<{ id: string }>();
+  const [editCustomer, setEditCustomer] = useState<boolean>(false);
 
   const { loading, data } = useQuery<INDIVIDUAL_WINTER_STORAGE_APPLICATION, INDIVIDUAL_WINTER_STORAGE_APPLICATION_VARS>(
     INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY,
@@ -74,13 +77,34 @@ const WinterStorageApplicationViewContainer = () => {
   );
 
   return (
-    <WinterStorageApplicationView
-      customerProfile={customerProfile}
-      applicationDetails={applicationDetails}
-      winterStorageApplication={data.winterStorageApplication}
-      handleDeleteLease={handleDeleteLease}
-      handleLinkCustomer={handleLinkCustomer}
-    />
+    <>
+      <WinterStorageApplicationView
+        customerProfile={customerProfile}
+        applicationDetails={applicationDetails}
+        winterStorageApplication={data.winterStorageApplication}
+        handleDeleteLease={handleDeleteLease}
+        handleEditCustomer={() => setEditCustomer(true)}
+        handleLinkCustomer={handleLinkCustomer}
+      />
+
+      {customerProfile && (
+        <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
+          <CustomerEditForm
+            customerId={customerProfile.customerId}
+            onCancel={() => setEditCustomer(false)}
+            onSubmit={() => setEditCustomer(false)}
+            refetchQueries={[
+              {
+                query: INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY,
+                variables: {
+                  id,
+                },
+              },
+            ]}
+          />
+        </Modal>
+      )}
+    </>
   );
 };
 

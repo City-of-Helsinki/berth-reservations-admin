@@ -116,6 +116,18 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth {
   pier: INDIVIDUAL_APPLICATION_berthApplication_lease_berth_pier;
 }
 
+export interface INDIVIDUAL_APPLICATION_berthApplication_lease_customer_primaryEmail {
+  __typename: "EmailNode";
+  id: string;
+  email: string;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_lease_customer {
+  __typename: "ProfileNode";
+  id: string;
+  primaryEmail: INDIVIDUAL_APPLICATION_berthApplication_lease_customer_primaryEmail | null;
+}
+
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order_orderLines_edges_node_product {
   __typename: "AdditionalProductNode";
   id: string;
@@ -143,6 +155,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order_orderLines 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order {
   __typename: "OrderNode";
   id: string;
+  orderNumber: string;
   price: any;
   totalPrice: any;
   orderLines: INDIVIDUAL_APPLICATION_berthApplication_lease_order_orderLines;
@@ -152,6 +165,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease {
   __typename: "BerthLeaseNode";
   id: string;
   berth: INDIVIDUAL_APPLICATION_berthApplication_lease_berth;
+  customer: INDIVIDUAL_APPLICATION_berthApplication_lease_customer;
   order: INDIVIDUAL_APPLICATION_berthApplication_lease_order | null;
 }
 

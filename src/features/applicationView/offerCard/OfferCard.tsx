@@ -20,6 +20,7 @@ import { getProductServiceTKey } from '../../../common/utils/translations';
 import Text from '../../../common/text/Text';
 import Modal from '../../../common/modal/Modal';
 import EditForm from './editForm/EditForm';
+import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 
 export interface Product {
   id: string;
@@ -30,6 +31,7 @@ export interface Product {
 
 export interface Order {
   id: string;
+  orderNumber: string;
   price: number;
   totalPrice: number;
   fixedProducts: Product[];
@@ -45,6 +47,7 @@ export interface LeaseDetails {
   berthMooringType: BerthMooringType | null;
   berthNum: number | string;
   berthWidth: number | null;
+  customerEmail: string | null;
   electricity: boolean;
   gate: boolean;
   harborName: string;
@@ -71,6 +74,7 @@ const OfferCard = ({
     berthMooringType,
     berthNum,
     berthWidth,
+    customerEmail,
     electricity,
     gate,
     harborName,
@@ -97,6 +101,7 @@ const OfferCard = ({
     { prop: water, key: 'water', icon: IconWaterTap },
   ];
   const [isEditing, setIsEditing] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const selectedProducts =
     order?.optionalProducts.reduce<{ productId: string; orderId: string }[]>((acc, product) => {
@@ -171,54 +176,57 @@ const OfferCard = ({
                 <LabelValuePair label={t('offer.berthDetails.comment')} value={berthComment} />
               </Section>
             </Section>
-            <Section title={t('offer.billing.title').toUpperCase()}>
-              {order && (
-                <>
-                  <Section>
+            {order && (
+              <Section title={`${t('offer.billing.title').toUpperCase()} nro: ${order.orderNumber}`}>
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.basePrice')}
+                    value={formatPrice(order.price, i18n.language)}
+                  />
+                  {order.fixedProducts.map((product) => (
                     <LabelValuePair
-                      label={t('offer.billing.basePrice')}
-                      value={formatPrice(order.price, i18n.language)}
+                      key={product.id}
+                      label={t(getProductServiceTKey(product.name))}
+                      value={formatPrice(product.price, i18n.language)}
                     />
-                    {order.fixedProducts.map((product, i) => (
-                      <LabelValuePair
-                        key={i}
-                        label={t(getProductServiceTKey(product.name))}
-                        value={formatPrice(product.price, i18n.language)}
-                      />
-                    ))}
-                  </Section>
-                  <Section>
+                  ))}
+                </Section>
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.additionalServices')}
+                    value={
+                      <button onClick={() => setIsEditing(true)}>
+                        <Text color="brand">{t('common.edit')}</Text>
+                      </button>
+                    }
+                  />
+                  {order.optionalProducts.map((product) => (
                     <LabelValuePair
-                      label={t('offer.billing.additionalServices')}
-                      value={
-                        <button onClick={() => setIsEditing(true)}>
-                          <Text color="brand">{t('common.edit')}</Text>
-                        </button>
-                      }
+                      key={product.id}
+                      label={t(getProductServiceTKey(product.name))}
+                      value={formatPrice(product.price, i18n.language)}
                     />
-                    {order.optionalProducts.map((product, i) => (
-                      <LabelValuePair
-                        key={i}
-                        label={t(getProductServiceTKey(product.name))}
-                        value={formatPrice(product.price, i18n.language)}
-                      />
-                    ))}
-                  </Section>
-                  <hr />
-                  <Section>
-                    <LabelValuePair
-                      label={t('offer.billing.total').toUpperCase()}
-                      value={formatPrice(order.totalPrice, i18n.language)}
-                    />
-                  </Section>
-                </>
-              )}
-            </Section>
+                  ))}
+                </Section>
+                <hr />
+                <Section>
+                  <LabelValuePair
+                    label={t('offer.billing.total').toUpperCase()}
+                    value={formatPrice(order.totalPrice, i18n.language)}
+                  />
+                </Section>
+              </Section>
+            )}
           </Grid>
           <hr />
           <div className={styles.buttonRow}>
             <div>
-              <Button className={styles.alignLeft} theme="coat" disabled>
+              <Button
+                className={styles.alignLeft}
+                theme="coat"
+                onClick={() => setIsSending(true)}
+                disabled={order === null}
+              >
                 {t('offer.billing.acceptAndSend')}
               </Button>
             </div>
@@ -236,16 +244,28 @@ const OfferCard = ({
           </div>
         </CardBody>
       </Card>
+
       {order && (
-        <Modal isOpen={isEditing}>
-          <EditForm
-            orderId={order.id}
-            selectedProducts={selectedProducts}
-            refetchQueries={refetchQueries}
-            handleCancel={() => setIsEditing(false)}
-            handleSubmit={() => setIsEditing(false)}
-          />
-        </Modal>
+        <>
+          <Modal isOpen={isSending}>
+            <SendInvoiceForm
+              orderId={order.id}
+              email={customerEmail}
+              refetchQueries={refetchQueries}
+              onSubmit={() => setIsSending(false)}
+              onCancel={() => setIsSending(false)}
+            />
+          </Modal>
+          <Modal isOpen={isEditing}>
+            <EditForm
+              orderId={order.id}
+              selectedProducts={selectedProducts}
+              refetchQueries={refetchQueries}
+              handleCancel={() => setIsEditing(false)}
+              handleSubmit={() => setIsEditing(false)}
+            />
+          </Modal>
+        </>
       )}
     </>
   );

@@ -35,6 +35,7 @@ export interface ApplicationViewProps {
   leaseDetails: OfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
   handleDeleteLease(id: string): void;
+  handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
 }
 
@@ -45,6 +46,7 @@ const ApplicationView = ({
   leaseDetails,
   refetchQueries,
   handleDeleteLease,
+  handleEditCustomer,
   handleLinkCustomer,
 }: ApplicationViewProps) => {
   const { t, i18n } = useTranslation();
@@ -69,7 +71,7 @@ const ApplicationView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
           <ActionHistoryCard />
         </>
       ) : (
