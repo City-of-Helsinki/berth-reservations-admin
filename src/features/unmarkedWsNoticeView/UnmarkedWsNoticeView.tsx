@@ -21,11 +21,16 @@ import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
 import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import Grid from '../../common/grid/Grid';
+import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
+import { Order } from '../invoiceCard/types';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
+  order: Order | null;
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
+  handleCreateLease(): void;
+  handleDeleteLease(): void;
   handleDeleteNotice(): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
@@ -34,8 +39,11 @@ export interface UnmarkedWsNoticeViewProps {
 const UnmarkedWsNoticeView = ({
   customerProfile,
   noticeDetails,
+  order,
   winterStorageNotice,
+  handleCreateLease,
   handleDeleteNotice,
+  handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
 }: UnmarkedWsNoticeViewProps) => {
@@ -62,7 +70,7 @@ const UnmarkedWsNoticeView = ({
         </div>
         <div className={styles.actionsRight}>
           <Button onClick={handleDeleteNotice} variant="secondary">
-            {t('unmarkedWsNotices.deleteNotice')}
+            {t('unmarkedWsNotices.view.deleteNotice')}
           </Button>
         </div>
       </div>
@@ -76,18 +84,39 @@ const UnmarkedWsNoticeView = ({
         <LinkApplicationToCustomerContainer application={winterStorageNotice} handleLinkCustomer={handleLinkCustomer} />
       )}
 
-      {noticeDetails && (
-        <Card className={styles.fullWidth}>
-          <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
-          <CardBody>
-            <Grid colsCount={3}>
-              <UnmarkedWsNoticeDetails {...noticeDetails} />
-              <div className={styles.detailsActions}>
-                <Button>{t('unmarkedWsNotices.createInvoice')}</Button>
-              </div>
-            </Grid>
-          </CardBody>
-        </Card>
+      <Card className={styles.fullWidth}>
+        <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
+        <CardBody>
+          <Grid colsCount={3}>
+            <UnmarkedWsNoticeDetails {...noticeDetails} />
+            <div className={styles.detailsActions}>
+              {order ? (
+                <Chip color={'green'} label="Lasku luotu" />
+              ) : (
+                <Button onClick={handleCreateLease}>{t('unmarkedWsNotices.view.createInvoice')}</Button>
+              )}
+            </div>
+          </Grid>
+        </CardBody>
+      </Card>
+
+      {order && (
+        <InvoiceCard
+          buttonsRight={
+            <Button variant="secondary" theme="coat" onClick={handleDeleteLease}>
+              {t('unmarkedWsNotices.view.deleteInvoice')}
+            </Button>
+          }
+          className={styles.fullWidth}
+          customerEmail={null}
+          order={order as Order}
+          placeDetails={<p>{t('common.terminology.unmarkedWinterStoragePlace')}</p>}
+          placeName={noticeDetails.choice.winterStorageAreaName}
+          placeProperties={[]}
+          placeType={t('common.terminology.unmarkedWinterStoragePlace').toUpperCase()}
+          refetchQueries={[]}
+          title={t('common.terminology.invoice').toUpperCase()}
+        />
       )}
     </PageContent>
   );

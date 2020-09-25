@@ -6,6 +6,7 @@ import UnmarkedWsNoticeView from './UnmarkedWsNoticeView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { UNMARKED_WINTER_STORAGE_NOTICE_QUERY } from './queries';
 import {
+  CREATE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
   DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
   UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
 } from './mutations';
@@ -26,6 +27,15 @@ import {
 import hdsToast from '../../common/toast/hdsToast';
 import Modal from '../../common/modal/Modal';
 import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import {
+  CREATE_UNMARKED_WINTER_STORAGE_LEASE,
+  CREATE_UNMARKED_WINTER_STORAGE_LEASEVariables as CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS,
+} from './__generated__/CREATE_UNMARKED_WINTER_STORAGE_LEASE';
+import {
+  DELETE_UNMARKED_WINTER_STORAGE_LEASE,
+  DELETE_UNMARKED_WINTER_STORAGE_LEASEVariables as DELETE_UNMARKED_WINTER_STORAGE_LEASE_VARS,
+} from './__generated__/DELETE_UNMARKED_WINTER_STORAGE_LEASE';
+import { getOrder } from '../invoiceCard/utils';
 
 const UnmarkedWsNoticeViewContainer = () => {
   const { id } = useParams<{ id: string }>();
@@ -40,30 +50,37 @@ const UnmarkedWsNoticeViewContainer = () => {
       },
     }
   );
+  const refetchQueries = [
+    {
+      query: UNMARKED_WINTER_STORAGE_NOTICE_QUERY,
+      variables: {
+        id,
+      },
+    },
+  ];
+
   const [deleteNotice] = useMutation<DELETE_UNMARKED_WINTER_STORAGE_NOTICE, DELETE_UNMARKED_WINTER_STORAGE_NOTICE_VARS>(
     DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
     {
-      refetchQueries: [
-        {
-          query: UNMARKED_WINTER_STORAGE_NOTICE_QUERY,
-          variables: {
-            id,
-          },
-        },
-      ],
+      refetchQueries,
     }
   );
   const [linkCustomer] = useMutation<UPDATE_UNMARKED_WINTER_STORAGE_NOTICE, UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_VARS>(
     UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
     {
-      refetchQueries: [
-        {
-          query: UNMARKED_WINTER_STORAGE_NOTICE_QUERY,
-          variables: {
-            id,
-          },
-        },
-      ],
+      refetchQueries,
+    }
+  );
+  const [createLease] = useMutation<CREATE_UNMARKED_WINTER_STORAGE_LEASE, CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS>(
+    CREATE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
+    {
+      refetchQueries,
+    }
+  );
+  const [deleteLease] = useMutation<DELETE_UNMARKED_WINTER_STORAGE_LEASE, DELETE_UNMARKED_WINTER_STORAGE_LEASE_VARS>(
+    DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
+    {
+      refetchQueries,
     }
   );
 
@@ -73,6 +90,7 @@ const UnmarkedWsNoticeViewContainer = () => {
   const customerProfile = customer ? getCustomerProfile(customer) : null;
 
   const noticeDetails = getNoticeDetailsData(data.winterStorageNotice, data.boatTypes || []);
+  const order = data.winterStorageNotice?.lease?.order ? getOrder(data.winterStorageNotice.lease.order) : null;
 
   const handleDeleteNotice = () =>
     deleteNotice({
@@ -96,16 +114,39 @@ const UnmarkedWsNoticeViewContainer = () => {
         input: { id, customerId },
       },
     });
+  const handleCreateLease = () => {
+    // FIXME: This is not working
+    const options = {
+      variables: {
+        input: {
+          applicationId: noticeDetails.id,
+          sectionId: noticeDetails.choice.winterStorageArea,
+        },
+      },
+    };
+    return createLease(options);
+  };
+  const handleDeleteLease = () =>
+    deleteLease({
+      variables: {
+        input: {
+          id,
+        },
+      },
+    });
 
   return (
     <>
       <UnmarkedWsNoticeView
         customerProfile={customerProfile}
-        noticeDetails={noticeDetails}
-        winterStorageNotice={data.winterStorageNotice}
+        handleCreateLease={handleCreateLease}
         handleDeleteNotice={handleDeleteNotice}
+        handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
+        noticeDetails={noticeDetails}
+        order={order}
+        winterStorageNotice={data.winterStorageNotice}
       />
 
       {customerProfile && (

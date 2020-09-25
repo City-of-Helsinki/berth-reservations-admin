@@ -569,6 +569,17 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
       >
         ASIAKASTIEDOT
       </span>
+      <div
+        class="widgets"
+      >
+        <button>
+          <span
+            class="text standard span normalWeight"
+          >
+            Muokkaa
+          </span>
+        </button>
+      </div>
     </div>
     <div
       class="cardBody"

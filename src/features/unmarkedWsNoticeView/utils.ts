@@ -1,6 +1,7 @@
 import {
-  UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice as WINTER_STORAGE_NOTICE,
   UNMARKED_WINTER_STORAGE_NOTICE_boatTypes as BOAT_TYPES,
+  UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice as WINTER_STORAGE_NOTICE,
+  UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices as WINTER_STORAGE_CHOICES,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
 import { getApplicantDetails } from '../applicationView/utils';
 import { UnmarkedWsNoticeDetailsProps } from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
@@ -10,17 +11,25 @@ interface UnmarkedWinterStorageChoice {
   winterStorageArea: string;
 }
 
-type Choices = ({ winterStorageAreaName: string } | null | undefined)[] | null;
+type Choices = (WINTER_STORAGE_CHOICES | null | undefined)[] | null;
 export const getChoiceFromWinterStorageAreaChoices = (choices: Choices): UnmarkedWinterStorageChoice => {
-  return Array.isArray(choices) && choices[0] !== null && choices[0] !== undefined
-    ? {
-        winterStorageArea: choices[0].winterStorageAreaName,
-        winterStorageAreaName: choices[0].winterStorageAreaName,
-      }
-    : {
-        winterStorageArea: '',
-        winterStorageAreaName: '',
-      };
+  if (
+    Array.isArray(choices) &&
+    choices[0] !== null &&
+    choices[0] !== undefined &&
+    choices[0].winterStorageAreaName !== null &&
+    choices[0].winterStorageSectionIds !== null &&
+    choices[0].winterStorageSectionIds[0] !== null
+  ) {
+    return {
+      winterStorageArea: choices[0].winterStorageSectionIds[0],
+      winterStorageAreaName: choices[0].winterStorageAreaName,
+    };
+  }
+  return {
+    winterStorageArea: '',
+    winterStorageAreaName: '',
+  };
 };
 
 export const getNoticeDetailsData = (

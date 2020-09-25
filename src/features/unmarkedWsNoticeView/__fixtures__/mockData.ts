@@ -46,15 +46,18 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
         winterStorageArea: null,
         priority: 1,
         winterStorageAreaName: 'Iso-Sarvasto',
+        winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
       {
         winterStorageArea: null,
         priority: 2,
         winterStorageAreaName: 'Rajasaari',
+        winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
     ],
+    lease: null,
     __typename: 'WinterStorageApplicationNode',
   },
   boatTypes: [

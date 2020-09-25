@@ -11,9 +11,13 @@ const mockNoticeDetails = getNoticeDetailsData(mockData.winterStorageNotice, moc
 
 const mockProps: UnmarkedWsNoticeViewProps = {
   customerProfile: null,
+  order: null,
   noticeDetails: mockNoticeDetails,
   winterStorageNotice: mockData.winterStorageNotice,
+  handleCreateLease: jest.fn(),
   handleDeleteNotice: jest.fn(),
+  handleDeleteLease: jest.fn(),
+  handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
 };
 

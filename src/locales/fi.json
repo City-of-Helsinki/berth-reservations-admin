@@ -111,6 +111,7 @@
       "gate": "Portti",
       "harborChief": "Satamapäällikkö",
       "harborMap": "Satamakartta",
+      "invoice": "Lasku",
       "inQueue": "Jonossa",
       "length": "Pituus",
       "lighting": "Valaistus",
@@ -123,6 +124,7 @@
       "serviceMap": "Palvelukartta",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unnamedBoat": "Nimetön vene",
+      "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "waste": "Jäte",
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
@@ -658,7 +660,10 @@
   },
   "unmarkedWsNotices": {
     "view": {
-      "title": "Nostojärjestysilmoitus"
+      "title": "Nostojärjestysilmoitus",
+      "createInvoice": "Luo lasku",
+      "deleteNotice": "Poista ilmoitus",
+      "deleteInvoice": "Poista lasku"
     },
     "list": {
       "title": "Nostojärjestysilmoitukset"
@@ -667,9 +672,7 @@
       "title": "Nostojärjestysilmoitus",
       "notice": "Ilmoitus",
       "ownerInformation": "Omistajan tiedot"
-    },
-    "createInvoice": "Luo lasku",
-    "deleteNotice": "Poista ilmoitus"
+    }
   },
   "invoiceCard": {
     "placeDetails": {

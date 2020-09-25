@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import Section from '../section/Section';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
-import Grid from '../grid/Grid';
 import Text from '../text/Text';
 import { formatDimension, formatWeight, formatDate } from '../utils/format';
 import { APPLICATION_STATUS } from '../utils/consonants';
@@ -12,7 +11,6 @@ import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateC
 import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
 } from '../organizationCustomerDetails/OrganizationCustomerDetails';
-import Button from '../button/Button';
 
 interface SummaryInformation {
   acceptBoatingNewsletter: boolean;
@@ -65,7 +63,7 @@ const UnmarkedWsNoticeDetails = ({
     <>
       <div>
         <Section title={t('unmarkedWsNotices.noticeDetails.notice').toUpperCase()}>
-          <LabelValuePair label={'Alue'} value={choice.winterStorageArea} />
+          <LabelValuePair label={'Alue'} value={choice.winterStorageAreaName} />
           <LabelValuePair
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}

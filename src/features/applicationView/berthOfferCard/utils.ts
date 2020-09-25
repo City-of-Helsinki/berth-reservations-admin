@@ -1,44 +1,11 @@
-import { AdditionalProductType } from '../../../@types/__generated__/globalTypes';
 import { BerthLease_lease as BerthLease } from './__generated__/BerthLease';
-import { LeaseDetails, Product } from './types';
+import { LeaseDetails } from './types';
+import { getOrder } from '../../invoiceCard/utils';
 
 export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | null => {
   if (!lease) return null;
 
-  let order: LeaseDetails['order'] = null;
-
-  if (lease.order) {
-    const products = lease.order.orderLines.edges.reduce<{ fixedProducts: Product[]; optionalProducts: Product[] }>(
-      (acc, edge) => {
-        if (!edge?.node?.product) return acc;
-
-        const product: Product = {
-          id: edge.node.product.id,
-          name: edge.node.product.service,
-          price: edge.node.price,
-          orderId: edge.node.id,
-        };
-
-        switch (edge.node.product.productType) {
-          case AdditionalProductType.FIXED_SERVICE:
-            return { ...acc, fixedProducts: [...acc.fixedProducts, product] };
-          case AdditionalProductType.OPTIONAL_SERVICE:
-            return { ...acc, optionalProducts: [...acc.optionalProducts, product] };
-          default:
-            return acc;
-        }
-      },
-      { fixedProducts: [], optionalProducts: [] }
-    ) ?? { fixedProducts: [], optionalProducts: [] };
-
-    order = {
-      id: lease.order.id || '',
-      orderNumber: lease.order.orderNumber,
-      price: lease.order.price,
-      totalPrice: lease.order.totalPrice,
-      ...products,
-    };
-  }
+  const order: LeaseDetails['order'] = lease.order ? getOrder(lease.order) : null;
 
   return {
     id: lease.id,
