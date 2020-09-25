@@ -38,6 +38,7 @@ const mockProps: ApplicationViewProps = {
   leaseDetails: null,
   refetchQueries: [],
   handleDeleteLease: jest.fn(),
+  handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
 };
 
@@ -116,6 +117,7 @@ describe('ApplicationView', () => {
         berthMooringType: null,
         berthNum: 0,
         berthWidth: null,
+        customerEmail: null,
         electricity: false,
         gate: false,
         harborName: '',
@@ -128,6 +130,6 @@ describe('ApplicationView', () => {
       },
     });
 
-    expect(wrapper.find('OfferCard')).toHaveLength(1);
+    expect(wrapper.find('BerthOfferCard')).toHaveLength(1);
   });
 });

@@ -5,9 +5,9 @@ import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
 
 import styles from './sendInvoiceForm.module.scss';
-import FormHeader from '../../../../common/formHeader/FormHeader';
-import Button from '../../../../common/button/Button';
-import Text from '../../../../common/text/Text';
+import FormHeader from '../../../common/formHeader/FormHeader';
+import Button from '../../../common/button/Button';
+import Text from '../../../common/text/Text';
 
 type FormValues = {
   dueDate: string;
@@ -52,14 +52,14 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
     >
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
-          <FormHeader title={t('forms.sendInvoice.title').toUpperCase()} />
+          <FormHeader title={t('invoiceCard.sendInvoice.title').toUpperCase()} />
 
           <p className={styles.instructions}>
-            {t('forms.sendInvoice.instructions.paragraph1', {
+            {t('invoiceCard.sendInvoice.instructions.paragraph1', {
               email: email,
             })}
           </p>
-          <p className={styles.instructions}>{t('forms.sendInvoice.instructions.paragraph2')}</p>
+          <p className={styles.instructions}>{t('invoiceCard.sendInvoice.instructions.paragraph2')}</p>
 
           <div className={styles.dueDate}>
             <TextInput
@@ -67,7 +67,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
               type="date"
               value={values.dueDate}
               onChange={handleChange}
-              label={t('forms.sendInvoice.dueDate')}
+              label={t('invoiceCard.sendInvoice.dueDate')}
               invalid={!!errors.dueDate}
               helperText={errors.dueDate}
               required
@@ -84,7 +84,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
           </div>
           {!email && (
             <Text color="critical" className={styles.missingEmail}>
-              {t('forms.sendInvoice.missingEmail')}
+              {t('invoiceCard.sendInvoice.missingEmail')}
             </Text>
           )}
         </Form>

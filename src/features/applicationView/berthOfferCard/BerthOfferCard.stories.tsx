@@ -2,11 +2,11 @@ import React from 'react';
 import { HashRouter } from 'react-router-dom';
 import { action } from '@storybook/addon-actions';
 
-import OfferCard from './OfferCard';
+import BerthOfferCard from './BerthOfferCard';
 import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
 
 export default {
-  component: OfferCard,
+  component: BerthOfferCard,
   title: 'OfferCard',
   decorators: [
     (storyFn: Function) => (
@@ -24,7 +24,7 @@ export default {
 };
 
 export const offerCard = () => (
-  <OfferCard
+  <BerthOfferCard
     leaseDetails={{
       berthComment: 'Testi',
       berthDepth: 3,

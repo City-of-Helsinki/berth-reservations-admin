@@ -12,7 +12,7 @@ import {
 } from './__generated__/INDIVIDUAL_APPLICATION';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 import { getApplicationDetailsData } from './utils';
-import { getOfferDetailsData } from './offerCard/utils';
+import { getOfferDetailsData } from './berthOfferCard/utils';
 import { getCustomerProfile } from '../customerView/utils';
 import {
   UPDATE_BERTH_APPLICATION,

@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 
 import EditForm, { EditFormProps } from '../EditForm';
-import LoadingSpinner from '../../../../../common/spinner/LoadingSpinner';
+import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
 import { ORDER_OPTIONAL_PRODUCTS_QUERY } from '../queries';
 import { ORDER_OPTIONAL_PRODUCTS } from '../__generated__/ORDER_OPTIONAL_PRODUCTS';
 import {
@@ -13,7 +13,7 @@ import {
   PeriodType,
   PriceUnits,
   ProductServiceType,
-} from '../../../../../@types/__generated__/globalTypes';
+} from '../../../../@types/__generated__/globalTypes';
 
 const mockProps: EditFormProps = {
   orderId: '',

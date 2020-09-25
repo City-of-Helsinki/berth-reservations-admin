@@ -1,6 +1,6 @@
 import { AdditionalProductType } from '../../../@types/__generated__/globalTypes';
 import { BerthLease_lease as BerthLease } from './__generated__/BerthLease';
-import { LeaseDetails, Product } from './OfferCard';
+import { LeaseDetails, Product } from './types';
 
 export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | null => {
   if (!lease) return null;
