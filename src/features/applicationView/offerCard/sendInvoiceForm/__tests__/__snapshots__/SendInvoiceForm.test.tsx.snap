@@ -49,7 +49,7 @@ exports[`SendInvoiceForm renders normally 1`] = `
           id="dueDate"
           required=""
           type="date"
-          value="Wed Sep 23 2020 00:00:00 GMT+0000 (Coordinated Universal Time)"
+          value="2020-09-23"
         />
       </div>
     </div>

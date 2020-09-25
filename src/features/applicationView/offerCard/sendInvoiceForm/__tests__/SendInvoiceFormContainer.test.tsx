@@ -7,7 +7,6 @@ import { MockedProvider, MockedResponse } from '@apollo/react-testing';
 import SendInvoiceFormContainer, { SendInvoiceFormContainerProps } from '../SendInvoiceFormContainer';
 import { APPROVE_ORDERS_MUTATION } from '../mutations';
 
-const mockDate = new Date('2020-09-23T00:00:00.000Z');
 const mockProps: SendInvoiceFormContainerProps = {
   email: 'test@example.com',
   refetchQueries: [],
@@ -16,17 +15,10 @@ const mockProps: SendInvoiceFormContainerProps = {
   orderId: 'MOCK-ORDER',
 };
 
-const realDateNow = Date.now.bind(global.Date);
-
-beforeAll(() => {
-  global.Date.now = jest.fn(() => mockDate.valueOf());
-});
-
-afterAll(() => {
-  global.Date.now = realDateNow;
-});
-
 describe('SendInvoiceFormContainer', () => {
+  const mockDate: Date = new Date('2020-09-23T00:00:00.000Z');
+  const dateSpy = jest.spyOn(global.Date, 'now').mockImplementation(() => mockDate.valueOf());
+
   const getWrapper = (props?: Partial<SendInvoiceFormContainerProps>, queryMocks?: ReadonlyArray<MockedResponse>) => {
     return mount(
       <MockedProvider mocks={queryMocks ?? []}>
@@ -34,6 +26,10 @@ describe('SendInvoiceFormContainer', () => {
       </MockedProvider>
     );
   };
+
+  afterAll(() => {
+    dateSpy.mockRestore();
+  });
 
   it('renders normally', async () => {
     const wrapper = getWrapper();
@@ -47,7 +43,7 @@ describe('SendInvoiceFormContainer', () => {
         query: APPROVE_ORDERS_MUTATION,
         variables: {
           input: {
-            dueDate: mockDate,
+            dueDate: '2020-09-23',
             orders: [
               {
                 email: mockProps.email,
@@ -90,7 +86,7 @@ describe('SendInvoiceFormContainer', () => {
         query: APPROVE_ORDERS_MUTATION,
         variables: {
           input: {
-            dueDate: mockDate,
+            dueDate: '2020-09-23',
             orders: [
               {
                 email: null,
