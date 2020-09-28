@@ -17,6 +17,7 @@ describe('BerthOfferCard', () => {
         berthMooringType: BerthMooringType.DINGHY_PLACE,
         berthNum: '1',
         berthWidth: 4,
+        customerEmail: 'test@example.com',
         electricity: true,
         gate: true,
         harborName: 'Testisatama',
