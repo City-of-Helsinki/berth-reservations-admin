@@ -11,6 +11,7 @@ import {
   InvoicingType,
   Language,
 } from '../../../@types/__generated__/globalTypes';
+import { Order } from '../../invoiceCard/types';
 
 export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
   winterStorageNotice: WINTER_STORAGE_NOTICE;
@@ -123,4 +124,13 @@ export const mockCustomer: CUSTOMER = {
   },
   primaryEmail: { __typename: 'EmailNode', id: 'MOCK-EMAIL', email: 'hessu@hopo.fi' },
   primaryPhone: { __typename: 'PhoneNode', id: 'MOCK-PHONE', phone: '0' },
+};
+
+export const mockOrder: Order = {
+  fixedProducts: [],
+  id: 'MOCK-ORDER',
+  optionalProducts: [],
+  orderNumber: '1',
+  price: 100,
+  totalPrice: 100,
 };

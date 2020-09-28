@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import UnmarkedWsNoticeView, { UnmarkedWsNoticeViewProps } from '../UnmarkedWsNoticeView';
-import { mockData, mockCustomer } from '../__fixtures__/mockData';
+import { mockData, mockCustomer, mockOrder } from '../__fixtures__/mockData';
 import { getNoticeDetailsData } from '../utils';
 import { getCustomerProfile } from '../../customerView/utils';
 
@@ -50,5 +50,12 @@ describe('UnmarkedWsNoticeView', () => {
     const wrapper = getWrapper({ customerProfile });
 
     expect(wrapper.render()).toMatchSnapshot();
+  });
+
+  it('renders invoice card correctly if a lease has been created', () => {
+    const wrapper = getWrapper({ customerProfile: getCustomerProfile(mockCustomer), order: mockOrder });
+
+    expect(wrapper.find('Chip')).toBeDefined();
+    expect(wrapper.find('InvoiceCard')).toBeDefined();
   });
 });
