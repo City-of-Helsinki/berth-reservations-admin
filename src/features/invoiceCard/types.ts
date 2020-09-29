@@ -3,6 +3,11 @@ import React from 'react';
 import { ProductServiceType } from '../../@types/__generated__/globalTypes';
 import { IconProps } from '../../common/icons';
 
+export interface SelectedProduct {
+  productId: string;
+  orderId: string;
+}
+
 export interface Product {
   id: string;
   name: ProductServiceType;

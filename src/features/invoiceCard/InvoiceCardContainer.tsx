@@ -5,6 +5,7 @@ import Modal from '../../common/modal/Modal';
 import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 import EditForm from './editForm/EditForm';
 import InvoiceCard, { InvoiceCardProps } from './InvoiceCard';
+import { SelectedProduct } from './types';
 
 export interface InvoiceCardContainerProps extends Omit<InvoiceCardProps, 'sendInvoice' | 'editAdditionalServices'> {
   customerEmail: string | null;
@@ -21,9 +22,9 @@ const InvoiceCardContainer = ({
   const [isSending, setIsSending] = useState(false);
 
   const selectedProducts =
-    order?.optionalProducts.reduce<{ productId: string; orderId: string }[]>((acc, product) => {
-      return acc.concat({ productId: product.id, orderId: product.orderId });
-    }, []) ?? [];
+    order?.optionalProducts.map<SelectedProduct>((product) => {
+      return { productId: product.id, orderId: product.orderId };
+    }) ?? [];
 
   return (
     <>
