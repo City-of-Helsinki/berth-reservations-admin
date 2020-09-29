@@ -145,6 +145,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         handleLinkCustomer={handleLinkCustomer}
         noticeDetails={noticeDetails}
         order={order}
+        refetchQueries={refetchQueries}
         winterStorageNotice={data.winterStorageNotice}
       />
 
@@ -154,14 +155,7 @@ const UnmarkedWsNoticeViewContainer = () => {
             customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}
-            refetchQueries={[
-              {
-                query: UNMARKED_WINTER_STORAGE_NOTICE_QUERY,
-                variables: {
-                  id,
-                },
-              },
-            ]}
+            refetchQueries={refetchQueries}
           />
         </Modal>
       )}

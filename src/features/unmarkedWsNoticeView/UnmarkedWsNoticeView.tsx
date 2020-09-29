@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { PureQueryOptions } from 'apollo-client';
 
 import styles from './unmarkedWsNoticeView.module.scss';
 import Card from '../../common/card/Card';
@@ -28,6 +29,7 @@ export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
   order: Order | null;
+  refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
   handleCreateLease(): void;
   handleDeleteLease(): void;
@@ -40,6 +42,7 @@ const UnmarkedWsNoticeView = ({
   customerProfile,
   noticeDetails,
   order,
+  refetchQueries,
   winterStorageNotice,
   handleCreateLease,
   handleDeleteNotice,
@@ -115,7 +118,7 @@ const UnmarkedWsNoticeView = ({
           placeName={noticeDetails.choice.winterStorageAreaName}
           placeProperties={[]}
           placeType={t('common.terminology.unmarkedWinterStoragePlace').toUpperCase()}
-          refetchQueries={[]}
+          refetchQueries={refetchQueries}
           title={t('common.terminology.invoice').toUpperCase()}
         />
       )}
