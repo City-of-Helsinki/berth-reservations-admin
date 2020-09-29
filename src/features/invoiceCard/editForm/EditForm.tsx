@@ -24,10 +24,11 @@ import {
 import { formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
 import Text from '../../../common/text/Text';
+import { SelectedProduct } from '../types';
 
 export interface EditFormProps {
   orderId: string;
-  selectedProducts: { productId: string; orderId: string }[];
+  selectedProducts: SelectedProduct[];
   refetchQueries?: PureQueryOptions[] | string[];
   handleCancel(): void;
   handleSubmit(): void;
