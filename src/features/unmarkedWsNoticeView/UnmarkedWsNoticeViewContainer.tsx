@@ -115,7 +115,6 @@ const UnmarkedWsNoticeViewContainer = () => {
       },
     });
   const handleCreateLease = () => {
-    // FIXME: This is not working
     const options = {
       variables: {
         input: {
