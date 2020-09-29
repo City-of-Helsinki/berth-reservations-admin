@@ -90,11 +90,12 @@ const UnmarkedWsNoticeView = ({
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...noticeDetails} />
             <div className={styles.detailsActions}>
-              {order ? (
-                <Chip color={'green'} label="Lasku luotu" />
-              ) : (
-                <Button onClick={handleCreateLease}>{t('unmarkedWsNotices.view.createInvoice')}</Button>
-              )}
+              {customerProfile &&
+                (order ? (
+                  <Chip color={'green'} label="Lasku luotu" />
+                ) : (
+                  <Button onClick={handleCreateLease}>{t('unmarkedWsNotices.view.createInvoice')}</Button>
+                ))}
             </div>
           </Grid>
         </CardBody>
