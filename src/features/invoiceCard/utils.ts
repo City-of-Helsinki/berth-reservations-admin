@@ -28,7 +28,7 @@ export const getOrder = (order: BERTH_LEASE_ORDER | UNMARKED_WINTER_STORAGE_LEAS
   ) ?? { fixedProducts: [], optionalProducts: [] };
 
   return {
-    id: order.id || '',
+    id: order.id,
     orderNumber: order.orderNumber,
     price: order.price,
     totalPrice: order.totalPrice,

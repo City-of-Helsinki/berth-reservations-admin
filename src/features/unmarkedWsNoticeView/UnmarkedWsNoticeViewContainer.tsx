@@ -7,6 +7,7 @@ import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { UNMARKED_WINTER_STORAGE_NOTICE_QUERY } from './queries';
 import {
   CREATE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
+  DELETE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
   DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
   UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
 } from './mutations';
@@ -78,7 +79,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     }
   );
   const [deleteLease] = useMutation<DELETE_UNMARKED_WINTER_STORAGE_LEASE, DELETE_UNMARKED_WINTER_STORAGE_LEASE_VARS>(
-    DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
+    DELETE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
     {
       refetchQueries,
     }
@@ -125,14 +126,17 @@ const UnmarkedWsNoticeViewContainer = () => {
     };
     return createLease(options);
   };
-  const handleDeleteLease = () =>
-    deleteLease({
-      variables: {
-        input: {
-          id,
+  const handleDeleteLease = () => {
+    if (data.winterStorageNotice?.lease) {
+      return deleteLease({
+        variables: {
+          input: {
+            id: data.winterStorageNotice?.lease.id,
+          },
         },
-      },
-    });
+      });
+    }
+  };
 
   return (
     <>
