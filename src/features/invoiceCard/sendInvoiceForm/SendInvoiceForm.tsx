@@ -82,7 +82,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
               {t('forms.common.send')}
             </Button>
           </div>
-          {!email && (
+          {email === null && (
             <Text color="critical" className={styles.missingEmail}>
               {t('invoiceCard.sendInvoice.missingEmail')}
             </Text>
