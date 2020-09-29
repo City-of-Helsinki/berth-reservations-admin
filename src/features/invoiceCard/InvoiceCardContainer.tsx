@@ -18,8 +18,8 @@ const InvoiceCardContainer = ({
   order,
   ...invoiceCardProps
 }: InvoiceCardContainerProps) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [isSending, setIsSending] = useState(false);
+  const [editProductsModalOpen, setEditProductsModalOpen] = useState(false);
+  const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
   const selectedProducts =
     order?.optionalProducts.map<SelectedProduct>((product) => {
@@ -29,30 +29,30 @@ const InvoiceCardContainer = ({
   return (
     <>
       <InvoiceCard
-        editAdditionalServices={() => setIsEditing(true)}
-        sendInvoice={() => setIsSending(true)}
+        editAdditionalServices={() => setEditProductsModalOpen(true)}
+        sendInvoice={() => setSendInvoiceModalOpen(true)}
         order={order}
         {...invoiceCardProps}
       />
 
       {order && (
         <>
-          <Modal isOpen={isSending}>
+          <Modal isOpen={sendInvoiceModalOpen}>
             <SendInvoiceForm
               orderId={order.id}
               email={customerEmail}
               refetchQueries={refetchQueries}
-              onSubmit={() => setIsSending(false)}
-              onCancel={() => setIsSending(false)}
+              onSubmit={() => setSendInvoiceModalOpen(false)}
+              onCancel={() => setSendInvoiceModalOpen(false)}
             />
           </Modal>
-          <Modal isOpen={isEditing}>
+          <Modal isOpen={editProductsModalOpen}>
             <EditForm
               orderId={order.id}
               selectedProducts={selectedProducts}
               refetchQueries={refetchQueries}
-              handleCancel={() => setIsEditing(false)}
-              handleSubmit={() => setIsEditing(false)}
+              handleCancel={() => setEditProductsModalOpen(false)}
+              handleSubmit={() => setEditProductsModalOpen(false)}
             />
           </Modal>
         </>
