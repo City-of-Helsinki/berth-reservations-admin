@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ProductServiceType, PriceUnits, PeriodType, AdditionalProductType } from "./../../../../../@types/__generated__/globalTypes";
+import { ProductServiceType, PriceUnits, PeriodType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: ORDER_OPTIONAL_PRODUCTS

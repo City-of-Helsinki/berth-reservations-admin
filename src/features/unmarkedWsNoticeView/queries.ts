@@ -60,9 +60,39 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
       acceptOtherCultureNews
       status
       winterStorageAreaChoices {
-        winterStorageArea
         priority
+        winterStorageArea
         winterStorageAreaName
+        winterStorageSectionIds
+      }
+      lease {
+        id
+        customer {
+          id
+          primaryEmail {
+            id
+            email
+          }
+        }
+        order {
+          id
+          orderNumber
+          price
+          totalPrice
+          orderLines {
+            edges {
+              node {
+                id
+                price
+                product {
+                  id
+                  service
+                  productType
+                }
+              }
+            }
+          }
+        }
       }
     }
     boatTypes {

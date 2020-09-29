@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CreateOrderLineMutationInput, ProductServiceType, AdditionalProductType } from "./../../../../../@types/__generated__/globalTypes";
+import { CreateOrderLineMutationInput, ProductServiceType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: CREATE_ORDER_LINE

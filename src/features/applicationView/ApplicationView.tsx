@@ -13,7 +13,7 @@ import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
 import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import OfferCard, { OfferCardProps } from './offerCard/OfferCard';
+import BerthOfferCard, { BerthOfferCardProps } from './berthOfferCard/BerthOfferCard';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
@@ -32,7 +32,7 @@ export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   berthApplication: LinkApplicationToCustomerContainerProps['application'];
   customerProfile: CustomerProfileCardProps | null;
-  leaseDetails: OfferCardProps['leaseDetails'] | null;
+  leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
@@ -86,7 +86,12 @@ const ApplicationView = ({
       </Card>
 
       {leaseDetails && (
-        <OfferCard leaseDetails={leaseDetails} handleDeleteLease={handleDeleteLease} refetchQueries={refetchQueries} />
+        <BerthOfferCard
+          className={styles.fullWidth}
+          leaseDetails={leaseDetails}
+          handleDeleteLease={handleDeleteLease}
+          refetchQueries={refetchQueries}
+        />
       )}
     </PageContent>
   );

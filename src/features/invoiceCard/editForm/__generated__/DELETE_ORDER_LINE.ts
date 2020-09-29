@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { DeleteOrderLineMutationInput } from "./../../../../../@types/__generated__/globalTypes";
+import { DeleteOrderLineMutationInput } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: DELETE_ORDER_LINE

@@ -295,6 +295,17 @@ export interface CreatePierMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface CreateWinterStorageLeaseMutationInput {
+  boatId?: string | null;
+  startDate?: any | null;
+  endDate?: any | null;
+  comment?: string | null;
+  applicationId: string;
+  placeId?: string | null;
+  sectionId?: string | null;
+  clientMutationId?: string | null;
+}
+
 export interface CreateWinterStorageProductMutationInput {
   priceValue: any;
   winterStorageAreaId?: string | null;

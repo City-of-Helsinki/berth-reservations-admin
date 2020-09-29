@@ -91,6 +91,7 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
       "berth": "Venepaikka",
@@ -110,16 +111,20 @@
       "gate": "Portti",
       "harborChief": "Satamapäällikkö",
       "harborMap": "Satamakartta",
+      "invoice": "Lasku",
       "inQueue": "Jonossa",
       "length": "Pituus",
       "lighting": "Valaistus",
       "maintenance": "Kunnossapito",
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
+      "mooringType": "Kiinnitystapa",
       "parkingPermit": "Pysäköintilupa",
+      "pier": "Laituri",
       "serviceMap": "Palvelukartta",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unnamedBoat": "Nimetön vene",
+      "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "waste": "Jäte",
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
@@ -246,15 +251,6 @@
       "phone": "Puhelinnumero",
       "email": "Sähköpostiosoite",
       "comment": "Huomiot"
-    },
-    "sendInvoice": {
-      "title": "Lähetä lasku",
-      "instructions": {
-        "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
-        "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
-      },
-      "missingEmail": "Sähköpostiosoite puuttuu",
-      "dueDate": "Laskun eräpäivä"
     }
   },
   "harborList": {
@@ -326,7 +322,8 @@
     },
     "applicationType": {
       "newApplication": "Uusi hakemus",
-      "switchApplication": "Vaihtohakemus"
+      "switchApplication": "Vaihtohakemus",
+      "notice": "Ilmoitus"
     },
     "applicationDetails": {
       "title": "HAKEMUKSET",
@@ -390,17 +387,6 @@
   },
   "offer": {
     "title": "Tarjous",
-    "tableHeaders": {
-      "pierFilterBtn": "Laituri",
-      "harbor": "Satama",
-      "pier": "Laituri",
-      "berth": "Paikka",
-      "width": "Leveys",
-      "length": "Pituus",
-      "draught": "Syvyys",
-      "mooringType": "Kiinnitys",
-      "selection": "Valinta"
-    },
     "tableCells": {
       "select": "Valitse"
     },
@@ -409,17 +395,7 @@
       "return": "Palaa valitsematta"
     },
     "berthDetails": {
-      "title": "Paikan tiedot",
-      "mooringType": "Kiinnitystyyppi",
-      "maintenanceDetails": "Huoltotiedot",
-      "gate": "Portti",
-      "electricity": "Sähkö",
-      "water": "Vesi",
-      "lighting": "Valaistus",
-      "waste": "Roskat",
-      "accessible": "Esteetön paikka",
       "previousLeases": "Edelliset vuokralaiset",
-      "comment": "Huomiot",
       "emptyName": "Ei nimeä"
     },
     "billing": {
@@ -684,7 +660,10 @@
   },
   "unmarkedWsNotices": {
     "view": {
-      "title": "Nostojärjestysilmoitus"
+      "title": "Nostojärjestysilmoitus",
+      "createInvoice": "Luo lasku",
+      "deleteNotice": "Poista ilmoitus",
+      "deleteInvoice": "Poista lasku"
     },
     "list": {
       "title": "Nostojärjestysilmoitukset"
@@ -693,7 +672,21 @@
       "title": "Nostojärjestysilmoitus",
       "notice": "Ilmoitus",
       "ownerInformation": "Omistajan tiedot"
+    }
+  },
+  "invoiceCard": {
+    "placeDetails": {
+      "title": "Paikan tiedot",
+      "maintenanceDetails": "Huoltotiedot"
     },
-    "deleteNotice": "Poista ilmoitus"
+    "sendInvoice": {
+      "title": "Lähetä lasku",
+      "instructions": {
+        "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
+        "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
+      },
+      "missingEmail": "Sähköpostiosoite puuttuu",
+      "dueDate": "Laskun eräpäivä"
+    }
   }
 }

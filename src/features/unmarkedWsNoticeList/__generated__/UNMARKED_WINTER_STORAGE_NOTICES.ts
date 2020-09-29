@@ -12,8 +12,9 @@ import { WinterStorageApplicationAreaType, ApplicationStatus } from "./../../../
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices {
   __typename: "WinterStorageAreaChoiceType";
   priority: number;
-  winterStorageAreaName: string;
   winterStorageArea: string | null;
+  winterStorageAreaName: string;
+  winterStorageSectionIds: (string | null)[] | null;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node {

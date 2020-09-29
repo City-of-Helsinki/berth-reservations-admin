@@ -53,7 +53,7 @@ const Offer = ({
           {t('offer.tableCells.select')}
         </Button>
       ),
-      Header: t('offer.tableHeaders.selection') || '',
+      Header: t('common.terminology.selection') || '',
       accessor: 'berthId',
       width: COLUMN_WIDTH.S,
       disableFilters: true,
@@ -61,42 +61,42 @@ const Offer = ({
     },
     {
       Cell: ({ cell }) => <InternalLink to={`/harbors/${cell.row.original.harborId}}`}>{cell.value}</InternalLink>,
-      Header: t('offer.tableHeaders.harbor') || '',
+      Header: t('common.terminology.harbor') || '',
       accessor: 'harbor',
       width: COLUMN_WIDTH.XL,
     },
     {
-      Header: t('offer.tableHeaders.pier') || '',
+      Header: t('common.terminology.pier') || '',
       accessor: 'pier',
       filter: 'exactText',
       width: COLUMN_WIDTH.S,
     },
     {
-      Header: t('offer.tableHeaders.berth') || '',
+      Header: t('common.terminology.berth') || '',
       accessor: 'berth',
       width: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('offer.tableHeaders.width') || '',
+      Header: t('common.terminology.width') || '',
       accessor: 'width',
       width: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('offer.tableHeaders.length') || '',
+      Header: t('common.terminology.length') || '',
       accessor: 'length',
       width: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('offer.tableHeaders.draught') || '',
+      Header: t('common.terminology.draught') || '',
       accessor: 'draught',
       width: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => t([`common.mooringTypes.${cell.value}`, cell.value]),
-      Header: t('offer.tableHeaders.mooringType') || '',
+      Header: t('common.terminology.mooringType') || '',
       accessor: 'mooringType',
       width: COLUMN_WIDTH.S,
     },
@@ -119,7 +119,7 @@ const Offer = ({
             activeFilters={props.state.filters.map((filter) => filter.value)}
             filters={piersIdentifiers}
             handleSetFilter={(filter) => props.setFilter('pier', filter)}
-            filterPrefix={t('offer.tableHeaders.pierFilterBtn')}
+            filterPrefix={t('common.terminology.pier')}
           />
         )}
         renderTableToolsTop={() => (

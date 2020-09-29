@@ -2,10 +2,10 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
-import OfferCard from '../OfferCard';
+import BerthOfferCard from '../BerthOfferCard';
 import { BerthMooringType } from '../../../../@types/__generated__/globalTypes';
 
-describe('OfferCard', () => {
+describe('BerthOfferCard', () => {
   const getWrapper = (
     props = {
       leaseDetails: {
@@ -17,6 +17,7 @@ describe('OfferCard', () => {
         berthMooringType: BerthMooringType.DINGHY_PLACE,
         berthNum: '1',
         berthWidth: 4,
+        customerEmail: 'test@example.com',
         electricity: true,
         gate: true,
         harborName: 'Testisatama',
@@ -32,7 +33,7 @@ describe('OfferCard', () => {
   ) =>
     mount(
       <HashRouter>
-        <OfferCard {...props} />
+        <BerthOfferCard {...props} />
       </HashRouter>
     );
 

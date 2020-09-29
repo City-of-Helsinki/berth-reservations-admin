@@ -8,10 +8,10 @@ import { PureQueryOptions } from 'apollo-client';
 import styles from './editForm.module.scss';
 import { ORDER_OPTIONAL_PRODUCTS_QUERY } from './queries';
 import { ORDER_OPTIONAL_PRODUCTS } from './__generated__/ORDER_OPTIONAL_PRODUCTS';
-import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
-import List from '../../../../common/list/List';
-import ListItem from '../../../../common/list/ListItem';
-import { getProductServiceTKey, getPeriodTKey } from '../../../../common/utils/translations';
+import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
+import List from '../../../common/list/List';
+import ListItem from '../../../common/list/ListItem';
+import { getProductServiceTKey, getPeriodTKey } from '../../../common/utils/translations';
 import {
   CREATE_ORDER_LINE,
   CREATE_ORDER_LINEVariables as CREATE_ORDER_LINE_VARS,
@@ -21,14 +21,15 @@ import {
   DELETE_ORDER_LINE,
   DELETE_ORDER_LINEVariables as DELETE_ORDER_LINE_VARS,
 } from './__generated__/DELETE_ORDER_LINE';
-import { formatPrice } from '../../../../common/utils/format';
-import Button from '../../../../common/button/Button';
-import Text from '../../../../common/text/Text';
+import { formatPrice } from '../../../common/utils/format';
+import Button from '../../../common/button/Button';
+import Text from '../../../common/text/Text';
+import { SelectedProduct } from '../types';
 
 export interface EditFormProps {
   orderId: string;
-  selectedProducts: { productId: string; orderId: string }[];
-  refetchQueries: PureQueryOptions[] | string[];
+  selectedProducts: SelectedProduct[];
+  refetchQueries?: PureQueryOptions[] | string[];
   handleCancel(): void;
   handleSubmit(): void;
 }
@@ -54,7 +55,7 @@ const EditForm: React.FC<EditFormProps> = ({
   const { data, loading } = useQuery<ORDER_OPTIONAL_PRODUCTS>(ORDER_OPTIONAL_PRODUCTS_QUERY);
   const [createOrderLine] = useMutation<CREATE_ORDER_LINE, CREATE_ORDER_LINE_VARS>(CREATE_ORDER_LINE_MUTATION);
   const [deleteOrderLine] = useMutation<DELETE_ORDER_LINE, DELETE_ORDER_LINE_VARS>(DELETE_ORDER_LINE_MUTATION, {
-    refetchQueries,
+    refetchQueries: refetchQueries ?? [],
   });
 
   if (loading)

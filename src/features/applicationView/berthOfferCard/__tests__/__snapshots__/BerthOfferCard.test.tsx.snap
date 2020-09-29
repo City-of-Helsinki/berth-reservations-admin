@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OfferCard renders normally 1`] = `
+exports[`BerthOfferCard renders normally 1`] = `
 <div
   class="card offerCard"
 >
@@ -52,7 +52,7 @@ exports[`OfferCard renders normally 1`] = `
               class="body"
             >
               <div
-                class="berthProperties"
+                class="properties"
               >
                 <div
                   class="property property"
@@ -82,7 +82,7 @@ exports[`OfferCard renders normally 1`] = `
                   <span
                     class="text standard span s bold label"
                   >
-                    Roskat
+                    Jätehuolto
                   </span>
                 </div>
                 <div
@@ -212,7 +212,7 @@ exports[`OfferCard renders normally 1`] = `
                 <span
                   class="label standard"
                 >
-                  Kiinnitystyyppi:
+                  Kiinnitystapa:
                 </span>
                 <span
                   class="value left"
@@ -334,7 +334,7 @@ exports[`OfferCard renders normally 1`] = `
     >
       <div>
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 alignLeft"
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
           disabled=""
           type="button"
         >
@@ -347,7 +347,7 @@ exports[`OfferCard renders normally 1`] = `
       </div>
       <div>
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
           disabled=""
           type="button"
         >
@@ -358,7 +358,7 @@ exports[`OfferCard renders normally 1`] = `
           </span>
         </button>
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
           disabled=""
           type="button"
         >
@@ -369,7 +369,7 @@ exports[`OfferCard renders normally 1`] = `
           </span>
         </button>
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
           type="button"
         >
           <span

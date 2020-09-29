@@ -1,11 +1,11 @@
 @import 'colours';
 @import 'spacings';
 
-.offerCard {
+.invoiceCard {
   grid-column: 1 / -1;
 }
 
-.berthProperties {
+.properties {
   display: grid;
   margin-right: units(0.5);
   grid-row-gap: units(0.5);
