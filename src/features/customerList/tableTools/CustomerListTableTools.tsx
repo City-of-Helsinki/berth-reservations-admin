@@ -54,7 +54,7 @@ const CustomerListTableTools = <T extends string>({
               </button>
             </>
           )}
-          <Button onClick={() => setAddCustomerModalOpen(true)}>Lisää uusi asiakas</Button>
+          <Button onClick={() => setAddCustomerModalOpen(true)}>{t('customerList.addNewCustomer')}</Button>
         </div>
         <div className={styles.tableToolsRight}>
           <Select
