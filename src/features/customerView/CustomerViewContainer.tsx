@@ -22,7 +22,7 @@ import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import BillModal from './billModal/BillModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
@@ -68,7 +68,7 @@ const CustomerViewContainer = () => {
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-        <CustomerEditForm
+        <EditCustomerForm
           customerId={id}
           onCancel={() => setEditCustomer(false)}
           onSubmit={() => setEditCustomer(false)}
