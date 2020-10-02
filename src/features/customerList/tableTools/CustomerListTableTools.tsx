@@ -9,6 +9,7 @@ import Modal from '../../../common/modal/Modal';
 import Text from '../../../common/text/Text';
 import Button from '../../../common/button/Button';
 import CustomerMessageFormContainer from '../../customerMessageForm/CustomerMessageFormContainer';
+import AddCustomerFormContainer from '../../customerForm/AddCustomerFormContainer';
 
 export interface CustomerListTableToolsProps<T> {
   className?: string;
@@ -16,6 +17,7 @@ export interface CustomerListTableToolsProps<T> {
   searchBy: T;
   searchByOptions: Array<{ value: T; label: string }>;
   selectedCustomerIds: string[];
+  refetch(): void;
   setSearchVal(val: string): void;
   setSearchBy(val: T): void;
   clearSelectedRows(): void;
@@ -23,6 +25,7 @@ export interface CustomerListTableToolsProps<T> {
 
 const CustomerListTableTools = <T extends string>({
   className,
+  refetch,
   searchVal,
   searchBy,
   searchByOptions,
@@ -33,38 +36,43 @@ const CustomerListTableTools = <T extends string>({
 }: CustomerListTableToolsProps<T>) => {
   const { t } = useTranslation();
   const [messageModalOpen, setMessageModalOpen] = useState<boolean>(false);
+  const [addCustomerModalOpen, setAddCustomerModalOpen] = useState<boolean>(false);
   const selectedRowsCount = selectedCustomerIds.length;
 
   return (
-    <div className={classNames(styles.tableTools, className)}>
-      <div className={styles.tableToolsLeft}>
-        <Button onClick={() => setMessageModalOpen(true)} variant="secondary" disabled={selectedRowsCount <= 0}>
-          {selectedRowsCount <= 0 ? t('customerList.message.selectRows') : t('customerList.message.new')}
-        </Button>
-        {selectedRowsCount > 0 && (
-          <>
-            <Text color="gray">{t('customerList.message.selectedRow', { count: selectedRowsCount })}</Text>
-            <button onClick={clearSelectedRows}>
-              <Text color="brand">{t('customerList.message.clearSelectedRows')}</Text>
-            </button>
-          </>
-        )}
+    <>
+      <div className={classNames(styles.tableTools, className)}>
+        <div className={styles.tableToolsLeft}>
+          <Button onClick={() => setMessageModalOpen(true)} variant="secondary" disabled={selectedRowsCount <= 0}>
+            {selectedRowsCount <= 0 ? t('customerList.message.selectRows') : t('customerList.message.new')}
+          </Button>
+          {selectedRowsCount > 0 && (
+            <>
+              <Text color="gray">{t('customerList.message.selectedRow', { count: selectedRowsCount })}</Text>
+              <button onClick={clearSelectedRows}>
+                <Text color="brand">{t('customerList.message.clearSelectedRows')}</Text>
+              </button>
+            </>
+          )}
+          <Button onClick={() => setAddCustomerModalOpen(true)}>Lisää uusi asiakas</Button>
+        </div>
+        <div className={styles.tableToolsRight}>
+          <Select
+            className={styles.select}
+            onChange={(e) => setSearchBy(e.target.value as T)}
+            value={searchBy}
+            options={searchByOptions}
+            required
+          />
+          <TextInput
+            className={styles.searchInput}
+            id="searchSimilarCustomers"
+            value={searchVal}
+            onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
+          />
+        </div>
       </div>
-      <div className={styles.tableToolsRight}>
-        <Select
-          className={styles.select}
-          onChange={(e) => setSearchBy(e.target.value as T)}
-          value={searchBy}
-          options={searchByOptions}
-          required
-        />
-        <TextInput
-          className={styles.searchInput}
-          id="searchSimilarCustomers"
-          value={searchVal}
-          onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
-        />
-      </div>
+
       <Modal isOpen={messageModalOpen} toggleModal={() => setMessageModalOpen(false)}>
         <CustomerMessageFormContainer
           closeModal={() => setMessageModalOpen(false)}
@@ -72,7 +80,17 @@ const CustomerListTableTools = <T extends string>({
           selectedCustomerIds={selectedCustomerIds}
         />
       </Modal>
-    </div>
+
+      <Modal isOpen={addCustomerModalOpen} toggleModal={() => setAddCustomerModalOpen(true)}>
+        <AddCustomerFormContainer
+          onCancel={() => setAddCustomerModalOpen(false)}
+          onSubmit={() => {
+            setAddCustomerModalOpen(false);
+            refetch();
+          }}
+        />
+      </Modal>
+    </>
   );
 };
 

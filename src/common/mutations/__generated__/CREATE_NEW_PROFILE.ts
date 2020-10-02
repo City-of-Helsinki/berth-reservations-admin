@@ -35,7 +35,7 @@ export interface CREATE_NEW_PROFILE {
 export interface CREATE_NEW_PROFILEVariables {
   firstName: string;
   lastName: string;
-  addresses?: (CreateAddressInput | null)[] | null;
+  addresses: (CreateAddressInput | null)[];
   email: string;
   phone: string;
 }

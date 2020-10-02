@@ -4,7 +4,7 @@ export const CREATE_NEW_PROFILE_MUTATION = gql`
   mutation CREATE_NEW_PROFILE(
     $firstName: String!
     $lastName: String!
-    $addresses: [CreateAddressInput]
+    $addresses: [CreateAddressInput]!
     $email: String!
     $phone: String!
   ) {
