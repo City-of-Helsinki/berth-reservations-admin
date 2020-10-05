@@ -43,7 +43,7 @@ describe('SendInvoiceFormContainer', () => {
         query: APPROVE_ORDERS_MUTATION,
         variables: {
           input: {
-            dueDate: '2020-09-23',
+            dueDate: '2020-10-07',
             orders: [
               {
                 email: mockProps.email,

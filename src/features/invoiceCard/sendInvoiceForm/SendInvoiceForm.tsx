@@ -8,6 +8,7 @@ import styles from './sendInvoiceForm.module.scss';
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 import Text from '../../../common/text/Text';
+import { addDaysToDate, getToday, mapDateToDateInputValue } from './utils';
 
 type FormValues = {
   dueDate: string;
@@ -23,11 +24,6 @@ export type SendInvoiceFormProps = {
 const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoiceFormProps) => {
   const { t } = useTranslation();
 
-  const getToday = () => new Date(Date.now());
-  const mapDateToDateInputValue = (date: Date): string => {
-    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getDate()}`;
-  };
-
   const validationSchema = useMemo(
     () =>
       Yup.object<FormValues>().shape({
@@ -39,7 +35,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
   );
 
   const initial: FormValues = {
-    dueDate: mapDateToDateInputValue(getToday()),
+    dueDate: mapDateToDateInputValue(addDaysToDate(getToday(), 14)),
   };
 
   return (
