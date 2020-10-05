@@ -28,11 +28,6 @@ export const mockPrivateCustomerProfile: PROFILE = {
     id: 'MOCK-PHONE',
     phone: '+358 00 000 0000',
   },
-  sensitivedata: {
-    __typename: 'SensitiveDataNode',
-    id: 'MOCK-SENSITIVE-DATA',
-    ssn: '000000-0000',
-  },
 };
 
 export const mockOrganizationCustomerProfile: PROFILE = {
@@ -63,11 +58,6 @@ export const mockOrganizationCustomerProfile: PROFILE = {
     id: 'MOCK-PHONE',
     phone: '+358 00 000 0000',
   },
-  sensitivedata: {
-    __typename: 'SensitiveDataNode',
-    id: 'MOCK-SENSITIVE-DATA',
-    ssn: '000000-0000',
-  },
 };
 
 export const mockPrivateCustomerFormValues: CustomerFormValues = {
@@ -82,7 +72,6 @@ export const mockPrivateCustomerFormValues: CustomerFormValues = {
   organizationName: '',
   phone: '+358 00 000 0000',
   postalCode: '00170',
-  ssn: '',
 };
 
 export const mockPrivateCustomerFormIdentifiers: CustomerFormIdentifiers = {
@@ -91,7 +80,6 @@ export const mockPrivateCustomerFormIdentifiers: CustomerFormIdentifiers = {
   primaryAddressId: 'MOCK-ADDRESS',
   primaryEmailId: 'MOCK-EMAIL',
   primaryPhoneId: 'MOCK-PHONE',
-  hadSensitivedata: false,
 };
 
 export const mockOrganizationCustomerFormValues: CustomerFormValues = {
@@ -106,7 +94,6 @@ export const mockOrganizationCustomerFormValues: CustomerFormValues = {
   organizationName: 'Suomi Oy',
   phone: '+358 00 000 0000',
   postalCode: '00170',
-  ssn: '',
 };
 
 export const mockOrganizationCustomerFormIdentifiers: CustomerFormIdentifiers = {
@@ -115,5 +102,4 @@ export const mockOrganizationCustomerFormIdentifiers: CustomerFormIdentifiers = 
   primaryAddressId: 'MOCK-ADDRESS',
   primaryEmailId: 'MOCK-EMAIL',
   primaryPhoneId: 'MOCK-PHONE',
-  hadSensitivedata: false,
 };

@@ -77,20 +77,6 @@ exports[`CustomerView renders normally 1`] = `
                 Käyttäjä
               </span>
             </div>
-            <div
-              class="labelValuePair"
-            >
-              <span
-                class="label standard"
-              >
-                Henkilötunnus:
-              </span>
-              <span
-                class="value left"
-              >
-                010101A1234
-              </span>
-            </div>
           </section>
         </article>
         <article

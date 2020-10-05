@@ -18,12 +18,7 @@ import {
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 
 export const getCustomerProfile = (
-  profile: Omit<
-    CUSTOMER_PROFILE,
-    'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders' | 'sensitivedata'
-  > & {
-    sensitivedata?: CUSTOMER_PROFILE['sensitivedata'];
-  }
+  profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
 ): CustomerProfileCardProps & { customerId: string } => {
   return {
     ...{
@@ -38,9 +33,6 @@ export const getCustomerProfile = (
       customerGroup: profile.customerGroup,
       comment: profile.comment,
     },
-    ...(profile.sensitivedata && {
-      ssn: profile.sensitivedata.ssn,
-    }),
     ...(profile.organization && {
       organization: profile.organization,
     }),

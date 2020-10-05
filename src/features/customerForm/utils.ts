@@ -29,7 +29,6 @@ export const getCustomerFormValues = (profile: PROFILE): CustomerFormValues => {
     primaryAddress,
     primaryEmail,
     primaryPhone,
-    sensitivedata,
   } = profile;
 
   const common = {
@@ -38,7 +37,6 @@ export const getCustomerFormValues = (profile: PROFILE): CustomerFormValues => {
     firstName,
     lastName,
     phone: primaryPhone?.phone || '',
-    ssn: sensitivedata?.ssn || '',
   };
 
   if (customerGroup === null || customerGroup === CustomerGroup.PRIVATE) {
@@ -65,7 +63,7 @@ export const getCustomerFormValues = (profile: PROFILE): CustomerFormValues => {
 };
 
 export const getIdentifiers = (profile: PROFILE): CustomerFormIdentifiers => {
-  const { id, customerGroup, primaryAddress, primaryEmail, primaryPhone, sensitivedata } = profile;
+  const { id, customerGroup, primaryAddress, primaryEmail, primaryPhone } = profile;
 
   return {
     id,
@@ -73,7 +71,6 @@ export const getIdentifiers = (profile: PROFILE): CustomerFormIdentifiers => {
     primaryEmailId: primaryEmail?.id,
     primaryPhoneId: primaryPhone?.id,
     initialCustomerGroup: customerGroup,
-    hadSensitivedata: sensitivedata !== null,
   };
 };
 
@@ -265,36 +262,16 @@ export const createAddressAndOrganizationProperties = (
   ];
 };
 
-export const createSensitivedataInputs = (customerGroup: CustomerGroup, ssn: string, hadSensitivedata: boolean) => {
-  if (customerGroup === CustomerGroup.PRIVATE) {
-    if (ssn.length > 0 || hadSensitivedata) {
-      return {
-        sensitivedata: {
-          ssn,
-        },
-      };
-    }
-  }
-  if (hadSensitivedata) {
-    return {
-      sensitivedata: {
-        ssn: '',
-      },
-    };
-  }
-};
-
 export const createUpdateInputs = (
   values: CustomerFormValues,
   identifiers: CustomerFormIdentifiers
 ): [UpdateProfileMutationInput, UpdateBerthServicesProfileMutationInput] => {
-  const { comment, customerGroup, email, firstName, lastName, phone, ssn } = values;
-  const { hadSensitivedata, id, primaryEmailId, primaryPhoneId } = identifiers;
+  const { comment, email, firstName, lastName, phone } = values;
+  const { id, primaryEmailId, primaryPhoneId } = identifiers;
 
   const emailProperties = createEmailProperties(email, primaryEmailId);
   const phoneProperties = createPhoneProperties(phone, primaryPhoneId);
   const [addressProperties, organizationProperties] = createAddressAndOrganizationProperties(values, identifiers);
-  const sensitivedataInputs = createSensitivedataInputs(customerGroup, ssn, hadSensitivedata);
 
   return [
     {
@@ -305,7 +282,6 @@ export const createUpdateInputs = (
         ...phoneProperties,
         ...emailProperties,
         ...addressProperties,
-        ...sensitivedataInputs,
       },
       serviceType: ServiceType.BERTH,
     },

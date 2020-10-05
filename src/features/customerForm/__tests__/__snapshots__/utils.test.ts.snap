@@ -174,7 +174,6 @@ Object {
   "organizationName": "",
   "phone": "+358 00 000 0000",
   "postalCode": "00170",
-  "ssn": "000000-0000",
 }
 `;
 
@@ -191,7 +190,6 @@ Object {
   "organizationName": "",
   "phone": "",
   "postalCode": "",
-  "ssn": "",
 }
 `;
 
@@ -208,7 +206,6 @@ Object {
   "organizationName": "Suomi Oy",
   "phone": "+358 00 000 0000",
   "postalCode": "00170",
-  "ssn": "000000-0000",
 }
 `;
 
@@ -225,13 +222,11 @@ Object {
   "organizationName": "Suomi Oy",
   "phone": "",
   "postalCode": "00170",
-  "ssn": "000000-0000",
 }
 `;
 
 exports[`utils getIdentifiers maps a private customer correctly 1`] = `
 Object {
-  "hadSensitivedata": true,
   "id": "MOCK-PROFILE",
   "initialCustomerGroup": "PRIVATE",
   "primaryAddressId": "MOCK-ADDRESS",
@@ -242,7 +237,6 @@ Object {
 
 exports[`utils getIdentifiers maps an organization customer correctly 1`] = `
 Object {
-  "hadSensitivedata": true,
   "id": "MOCK-PROFILE",
   "initialCustomerGroup": "COMPANY",
   "primaryAddressId": undefined,

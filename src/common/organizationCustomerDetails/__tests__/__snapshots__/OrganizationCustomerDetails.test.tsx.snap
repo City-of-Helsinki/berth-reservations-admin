@@ -167,26 +167,6 @@ Array [
           </a>
         </span>
       </div>
-      <div
-        class="labelValuePair"
-      >
-        <span
-          class="label standard"
-        >
-          Henkilötunnus:
-        </span>
-        <span
-          class="value left"
-        >
-          <a
-            class="internalLink brand"
-            href="#/customers/0"
-            title="010101A1234"
-          >
-            010101A1234
-          </a>
-        </span>
-      </div>
     </section>
   </article>,
   <article
