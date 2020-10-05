@@ -341,7 +341,7 @@ exports[`BerthOfferCard renders normally 1`] = `
           <span
             class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
           >
-            Hyväksy ja lähetä tarjous
+            Lähetä lasku
           </span>
         </button>
       </div>

@@ -405,7 +405,6 @@
       "lighting": "Valaistus",
       "additionalServices": "Lisäpalvelut",
       "total": "Yhteensä",
-      "acceptAndSend": "Hyväksy ja lähetä tarjous",
       "showBill": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"
@@ -629,6 +628,10 @@
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
+    },
+    "invoiceSent": {
+      "label": "Tarjous on lähetetty asiakkaalle",
+      "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
     }
   },
   "winterStorageAreaList": {
@@ -679,6 +682,7 @@
       "title": "Paikan tiedot",
       "maintenanceDetails": "Huoltotiedot"
     },
+    "invoiceSent": "Tarjous lähetetty",
     "sendInvoice": {
       "title": "Lähetä lasku",
       "instructions": {

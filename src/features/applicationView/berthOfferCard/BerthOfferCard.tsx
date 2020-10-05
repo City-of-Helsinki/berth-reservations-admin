@@ -10,9 +10,11 @@ import InvoiceCard from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
 import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
+import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface BerthOfferCardProps {
   className?: string;
+  applicationStatus: ApplicationStatus;
   leaseDetails: LeaseDetails;
   refetchQueries: PureQueryOptions[] | string[];
   handleDeleteLease: (id: string) => void;
@@ -20,6 +22,7 @@ export interface BerthOfferCardProps {
 
 const BerthOfferCard = ({
   className,
+  applicationStatus,
   leaseDetails: {
     id,
     berthComment,
@@ -55,6 +58,7 @@ const BerthOfferCard = ({
   return (
     <>
       <InvoiceCard
+        applicationStatus={applicationStatus}
         buttonsRight={
           <>
             <Button variant="supplementary" disabled>
@@ -89,7 +93,6 @@ const BerthOfferCard = ({
         placeProperties={properties}
         placeType={t('common.terminology.berth').toUpperCase()}
         refetchQueries={refetchQueries}
-        sendButtonLabel={t('offer.billing.acceptAndSend')}
         title={t('offer.title').toUpperCase()}
       />
     </>

@@ -12,19 +12,20 @@ import Property from '../../common/property/Property';
 import OrderSection from './OrderSection';
 import { Order, PlaceProperty } from './types';
 import Button from '../../common/button/Button';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 export interface InvoiceCardProps {
   buttonsRight?: React.ReactNode;
   className?: string;
   editAdditionalServices: () => void;
   sendInvoice: () => void;
-  sendButtonLabel?: string;
   order: Order | null;
   placeType: string;
   placeName: React.ReactNode;
   placeDetails?: React.ReactNode;
   placeProperties: PlaceProperty[];
   title: string;
+  applicationStatus: ApplicationStatus;
 }
 
 const InvoiceCard = ({
@@ -32,13 +33,13 @@ const InvoiceCard = ({
   className,
   editAdditionalServices,
   sendInvoice,
-  sendButtonLabel,
   order,
   placeDetails,
   placeName,
   placeProperties,
   placeType,
   title,
+  applicationStatus,
 }: InvoiceCardProps) => {
   const { t } = useTranslation();
 
@@ -56,6 +57,23 @@ const InvoiceCard = ({
           />
         )
     );
+
+  const getSendButton = () => {
+    if (applicationStatus !== ApplicationStatus.OFFER_GENERATED && applicationStatus !== ApplicationStatus.OFFER_SENT) {
+      return null;
+    }
+    return (
+      <Button
+        theme="coat"
+        onClick={sendInvoice}
+        disabled={order === null || applicationStatus !== ApplicationStatus.OFFER_GENERATED}
+      >
+        {applicationStatus === ApplicationStatus.OFFER_GENERATED
+          ? t('invoiceCard.sendInvoice.title')
+          : t('invoiceCard.invoiceSent')}
+      </Button>
+    );
+  };
 
   return (
     <Card className={classNames(styles.offerCard, className)}>
@@ -77,11 +95,7 @@ const InvoiceCard = ({
         </Grid>
         <hr />
         <div className={styles.buttonRow}>
-          <div>
-            <Button theme="coat" onClick={sendInvoice} disabled={order === null}>
-              {sendButtonLabel ?? t('invoiceCard.sendInvoice.title')}
-            </Button>
-          </div>
+          <div>{getSendButton()}</div>
           <div>{buttonsRight}</div>
         </div>
       </CardBody>

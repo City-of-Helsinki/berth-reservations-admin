@@ -5,6 +5,7 @@ import { PureQueryOptions } from 'apollo-client';
 import SendInvoiceForm from './SendInvoiceForm';
 import { APPROVE_ORDERS, APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS } from './__generated__/APPROVE_ORDERS';
 import { APPROVE_ORDERS_MUTATION } from './mutations';
+import hdsToast from '../../../common/toast/hdsToast';
 
 export type SendInvoiceFormContainerProps = {
   orderId: string;
@@ -42,6 +43,15 @@ const SendInvoiceFormContainer = ({
           ],
         },
       },
+    }).then(res => {
+      if (!res.errors) {
+        hdsToast({
+          type: 'success',
+          labelText: 'toast.invoiceSent.label',
+          text: 'toast.invoiceSent.description',
+          translated: true,
+        });
+      }
     });
     onSubmit();
   };

@@ -31,6 +31,9 @@ export interface UnmarkedWsNoticeViewProps {
   order: Order | null;
   refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
+  isDeleteNoticeLoading: boolean;
+  isCreateLeaseLoading: boolean;
+  isDeleteLeaseLoading: boolean;
   handleCreateLease(): void;
   handleDeleteLease(): void;
   handleDeleteNotice(): void;
@@ -49,6 +52,9 @@ const UnmarkedWsNoticeView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
+  isDeleteNoticeLoading,
+  isCreateLeaseLoading,
+  isDeleteLeaseLoading,
 }: UnmarkedWsNoticeViewProps) => {
   const {
     t,
@@ -72,7 +78,7 @@ const UnmarkedWsNoticeView = ({
           />
         </div>
         <div className={styles.actionsRight}>
-          <Button onClick={handleDeleteNotice} variant="secondary">
+          <Button onClick={handleDeleteNotice} variant="secondary" disabled={isDeleteNoticeLoading}>
             {t('unmarkedWsNotices.view.deleteNotice')}
           </Button>
         </div>
@@ -97,7 +103,9 @@ const UnmarkedWsNoticeView = ({
                 (order ? (
                   <Chip color={'green'} label="Lasku luotu" />
                 ) : (
-                  <Button onClick={handleCreateLease}>{t('unmarkedWsNotices.view.createInvoice')}</Button>
+                  <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
+                    {t('unmarkedWsNotices.view.createInvoice')}
+                  </Button>
                 ))}
             </div>
           </Grid>
@@ -106,14 +114,15 @@ const UnmarkedWsNoticeView = ({
 
       {order && (
         <InvoiceCard
+          applicationStatus={noticeDetails.status}
           buttonsRight={
-            <Button variant="secondary" theme="coat" onClick={handleDeleteLease}>
+            <Button variant="secondary" theme="coat" onClick={handleDeleteLease} disabled={isDeleteLeaseLoading}>
               {t('unmarkedWsNotices.view.deleteInvoice')}
             </Button>
           }
           className={styles.fullWidth}
           customerEmail={customerProfile?.primaryEmail ?? null}
-          order={order as Order}
+          order={order}
           placeDetails={<p>{t('common.terminology.unmarkedWinterStoragePlace')}</p>}
           placeName={noticeDetails.choice.winterStorageAreaName}
           placeProperties={[]}
