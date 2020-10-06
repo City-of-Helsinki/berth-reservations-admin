@@ -28,7 +28,7 @@ Object {
   "createdAt": "2019-05-06T10:54:21.746387+00:00",
   "customerId": undefined,
   "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
-  "status": "PENDING",
+  "status": "OFFER_GENERATED",
   "summaryInformation": Object {
     "acceptBoatingNewsletter": true,
     "acceptFitnessNews": true,

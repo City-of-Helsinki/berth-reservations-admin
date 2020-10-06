@@ -6,6 +6,7 @@ import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetai
 import { ApplicationStatus, CustomerGroup, Language } from '../../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
+import { handleDelete } from '../../deleteButton/testUtils';
 
 const minimumProps: ApplicationDetailsProps = {
   accessibilityRequired: false,
@@ -130,6 +131,9 @@ describe('ApplicationDetails', () => {
   });
 
   it('renders delete lease button if handleDeleteLease prop is provided', () => {
+    // Using a component with react-modal. Silence error output.
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const handleDeleteLease = jest.fn();
     const wrapper = getWrapper({
       applicant: privateCustomerProfile,
@@ -137,7 +141,7 @@ describe('ApplicationDetails', () => {
       handleDeleteLease: handleDeleteLease,
     });
 
-    wrapper.find('button.deleteButton').simulate('click');
+    handleDelete(wrapper);
 
     expect(handleDeleteLease).toHaveBeenCalled();
   });
