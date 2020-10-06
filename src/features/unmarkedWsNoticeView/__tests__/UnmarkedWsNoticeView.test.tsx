@@ -6,6 +6,9 @@ import UnmarkedWsNoticeView, { UnmarkedWsNoticeViewProps } from '../UnmarkedWsNo
 import { mockData, mockCustomer, mockOrder } from '../__fixtures__/mockData';
 import { getNoticeDetailsData } from '../utils';
 import { getCustomerProfile } from '../../customerView/utils';
+import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import DeleteButton from '../../../common/deleteButton/DeleteButton';
+import InvoiceCard from '../../invoiceCard/InvoiceCard';
 
 const mockNoticeDetails = getNoticeDetailsData(mockData.winterStorageNotice, mockData.boatTypes);
 
@@ -57,5 +60,39 @@ describe('UnmarkedWsNoticeView', () => {
 
     expect(wrapper.find('Chip')).toBeDefined();
     expect(wrapper.find('InvoiceCard')).toBeDefined();
+  });
+
+  it('renders delete notice button for application status pending or offer_generated', () => {
+    [ApplicationStatus.PENDING, ApplicationStatus.OFFER_GENERATED].forEach((status) => {
+      const wrapper = getWrapper({ ...mockProps, noticeDetails: { ...mockNoticeDetails, status } });
+      expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(1);
+    });
+  });
+
+  it('does not render delete notice button for application status other than pending or offer_generated', () => {
+    Object.values(ApplicationStatus)
+      .filter((status) => status !== ApplicationStatus.OFFER_GENERATED && status !== ApplicationStatus.PENDING)
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, noticeDetails: { ...mockNoticeDetails, status } });
+        expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(0);
+      });
+  });
+
+  it('renders delete lease button for application status offer_generated', () => {
+    const wrapper = getWrapper({
+      ...mockProps,
+      order: mockOrder,
+      noticeDetails: { ...mockNoticeDetails, status: ApplicationStatus.OFFER_GENERATED },
+    });
+    expect(wrapper.find(InvoiceCard).find(DeleteButton).length).toBe(1);
+  });
+
+  it('does not render delete lease button for application status other than offer_generated', () => {
+    Object.values(ApplicationStatus)
+      .filter((status) => status !== ApplicationStatus.OFFER_GENERATED)
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, order: mockOrder, noticeDetails: { ...mockNoticeDetails, status } });
+        expect(wrapper.find(InvoiceCard).find(DeleteButton).length).toBe(0);
+      });
   });
 });
