@@ -15,33 +15,14 @@ const AddCustomerFormContainer = ({ onCancel, onSubmit, refetchQueries }: AddCus
   const createNewCustomer = useCreateNewCustomer(refetchQueries);
 
   const handleSubmit = (values: CustomerFormValues) => {
-    const {
-      address,
-      businessId,
-      city,
-      customerGroup,
-      email,
-      firstName,
-      lastName,
-      organizationName,
-      phone,
-      postalCode,
-    } = values;
-
-    const customerInfo = {
-      address: address,
-      businessId: businessId,
-      companyName: organizationName,
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-      municipality: city,
-      organizationType: mapCustomerGroupAsOrganizationType(customerGroup),
-      phoneNumber: phone,
-      zipCode: postalCode,
-    };
-
-    createNewCustomer(customerInfo);
+    createNewCustomer({
+      ...values,
+      companyName: values.organizationName,
+      municipality: values.city,
+      organizationType: mapCustomerGroupAsOrganizationType(values.customerGroup),
+      phoneNumber: values.phone,
+      zipCode: values.postalCode,
+    });
     onSubmit?.(values);
   };
 
