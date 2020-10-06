@@ -32,7 +32,7 @@ describe('CustomerProfileCard', () => {
       expect(wrapper.render()).toMatchSnapshot();
     });
 
-    it('does not show the customer names and ssn as links if not specified', () => {
+    it('does not show the customer name as link if not specified', () => {
       const wrapper = getWrapper({
         ...privateCustomerProfile,
         showCustomerNameAsLink: false,
@@ -40,13 +40,13 @@ describe('CustomerProfileCard', () => {
       expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(0);
     });
 
-    it('shows the customer names and ssn as links if specified', () => {
+    it('shows the customer name as link if specified', () => {
       const wrapper = getWrapper({
         ...privateCustomerProfile,
         showCustomerNameAsLink: true,
       });
-      // 3: firstName, lastName, ssn
-      expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(3);
+      // 3: firstName, lastName
+      expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(2);
     });
   });
 
@@ -69,7 +69,7 @@ describe('CustomerProfileCard', () => {
       expect(wrapper.render()).toMatchSnapshot();
     });
 
-    it('does not show the customer names and ssn as links if not specified', () => {
+    it('does not show the customer name as link if not specified', () => {
       const wrapper = getWrapper({
         ...organizationCustomerProfile,
         showCustomerNameAsLink: false,
@@ -77,13 +77,13 @@ describe('CustomerProfileCard', () => {
       expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(0);
     });
 
-    it('shows the customer names and ssn as links if specified', () => {
+    it('shows the customer name as link if specified', () => {
       const wrapper = getWrapper({
         ...organizationCustomerProfile,
         showCustomerNameAsLink: true,
       });
       // 3: firstName, lastName, ssn
-      expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(3);
+      expect(wrapper.render().find('a.internalLink[href="#/customers/0"]').length).toEqual(2);
     });
   });
 });

@@ -2,7 +2,6 @@ import {
   createAddressAndOrganizationProperties,
   createEmailProperties,
   createPhoneProperties,
-  createSensitivedataInputs,
   createUpdateInputs,
   getCustomerFormValues,
   getIdentifiers,
@@ -32,7 +31,6 @@ describe('utils', () => {
           primaryAddress: null,
           primaryPhone: null,
           primaryEmail: null,
-          sensitivedata: null,
         })
       ).toMatchSnapshot();
     });
@@ -235,58 +233,6 @@ describe('utils', () => {
       expect(addressProperties.removeAddresses).toBeUndefined();
       expect(addressProperties.updateAddresses).toBeUndefined();
       expect(organizationProperties.deleteOrganization).toBeUndefined();
-    });
-  });
-
-  describe('createSensitivedataInputs', () => {
-    describe('for private customers', () => {
-      it('should set sensitivedata.ssn if ssn is filled and sensitivedata exists', () => {
-        expect(createSensitivedataInputs(CustomerGroup.PRIVATE, '000000-0000', true)).toEqual({
-          sensitivedata: {
-            ssn: '000000-0000',
-          },
-        });
-      });
-
-      it('should set sensitivedata.ssn if ssn is filled and sensitivedata does not exist', () => {
-        expect(createSensitivedataInputs(CustomerGroup.PRIVATE, '000000-0000', false)).toEqual({
-          sensitivedata: {
-            ssn: '000000-0000',
-          },
-        });
-      });
-
-      it('should set empty sensitivedata.ssn if ssn is empty sensitivedata exists', () => {
-        expect(createSensitivedataInputs(CustomerGroup.PRIVATE, '', true)).toEqual({
-          sensitivedata: {
-            ssn: '',
-          },
-        });
-      });
-
-      it('should not set sensitivedata if ssn is empty and sensitivedata does not exist', () => {
-        expect(createSensitivedataInputs(CustomerGroup.PRIVATE, '', false)).toBeUndefined();
-      });
-    });
-
-    describe('for organization customers', () => {
-      it('should set empty sensitivedata.ssn if sensitivedata exists', () => {
-        expect(createSensitivedataInputs(CustomerGroup.COMPANY, '000000-0000', true)).toEqual({
-          sensitivedata: {
-            ssn: '',
-          },
-        });
-        expect(createSensitivedataInputs(CustomerGroup.COMPANY, '', true)).toEqual({
-          sensitivedata: {
-            ssn: '',
-          },
-        });
-      });
-
-      it('should not set sensitivedata if sensitivedata does not exist', () => {
-        expect(createSensitivedataInputs(CustomerGroup.COMPANY, '000000-0000', false)).toBeUndefined();
-        expect(createSensitivedataInputs(CustomerGroup.COMPANY, '', false)).toBeUndefined();
-      });
     });
   });
 

@@ -31,10 +31,7 @@ const CustomerViewContainer = () => {
   const [openBill, setOpenBill] = useState<Bill>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
-    variables: { id },
-    errorPolicy: 'all',
-  });
+  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)

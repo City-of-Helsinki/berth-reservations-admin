@@ -53,7 +53,6 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
     organizationName: '',
     phone: '',
     postalCode: '',
-    ssn: '',
   };
 
   const customerGroupOptions = Object.keys(CustomerGroup).map((group) => ({

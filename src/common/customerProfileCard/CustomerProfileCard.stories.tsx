@@ -29,7 +29,6 @@ const baseCustomerProps = {
   firstName: 'Matti Antero',
   invoicingType: InvoicingType.PAPER_INVOICE,
   lastName: 'Meri',
-  ssn: '010101A1234',
   primaryAddress: {
     address: 'Telakkakatu 1 A 10',
     postalCode: '00100',
