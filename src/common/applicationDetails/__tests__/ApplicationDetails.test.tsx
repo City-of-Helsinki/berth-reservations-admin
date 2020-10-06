@@ -132,7 +132,9 @@ describe('ApplicationDetails', () => {
 
   it('renders delete lease button if handleDeleteLease prop is provided', () => {
     // Using a component with react-modal. Silence error output.
-    jest.spyOn(console, 'error').mockImplementation(() => {/* NO-OP */});
+    jest.spyOn(console, 'error').mockImplementation(() => {
+      /* NO-OP */
+    });
 
     const handleDeleteLease = jest.fn();
     const wrapper = getWrapper({

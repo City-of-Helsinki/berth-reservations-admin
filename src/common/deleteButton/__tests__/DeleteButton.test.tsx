@@ -8,7 +8,9 @@ import Button from '../../button/Button';
 describe('DeleteButton', () => {
   // Silence react-modal errors
   beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {/* NO-OP */});
+    jest.spyOn(console, 'error').mockImplementation(() => {
+      /* NO-OP */
+    });
   });
 
   const defaultProps = {
