@@ -5,9 +5,6 @@ import styles from './customerView.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import Card from '../../common/card/Card';
-import CardHeader from '../../common/cardHeader/CardHeader';
-import CardBody from '../../common/cardBody/CardBody';
 import ApplicationsCard from './applicationsCard/ApplicationsCard';
 import BillsCard from './billsCard/BillsCard';
 import BillingHistoryCard from './billingHistoryCard/BillingHistoryCard';
@@ -16,6 +13,7 @@ import { Application, Bill, Boat, Lease } from './types';
 import BerthLeasesCard from './leasesCard/BerthLeasesCard';
 import WinterStorageLeasesCard from './leasesCard/WinterStorageLeasesCard';
 import { isBerthLease, isWinterStorageLease } from './utils';
+import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 
 export interface CustomerViewProps {
   applications: Application[];
@@ -49,10 +47,7 @@ const CustomerView = ({
       <div className={styles.grid}>
         <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
 
-        <Card>
-          <CardHeader title="VIIMEAIKAINEN TOIMINTA" />
-          <CardBody>Placeholder</CardBody>
-        </Card>
+        <ActionHistoryCard />
 
         <ApplicationsCard applications={applications} />
 
