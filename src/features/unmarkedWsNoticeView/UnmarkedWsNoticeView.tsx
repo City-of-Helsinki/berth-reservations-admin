@@ -24,6 +24,7 @@ import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
+import DeleteButton from '../../common/deleteButton/DeleteButton';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -116,9 +117,11 @@ const UnmarkedWsNoticeView = ({
         <InvoiceCard
           applicationStatus={noticeDetails.status}
           buttonsRight={
-            <Button variant="secondary" theme="coat" onClick={handleDeleteLease} disabled={isDeleteLeaseLoading}>
-              {t('unmarkedWsNotices.view.deleteInvoice')}
-            </Button>
+            <DeleteButton
+              buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
+              onConfirm={handleDeleteLease}
+              disabled={isDeleteLeaseLoading}
+            />
           }
           className={styles.fullWidth}
           customerEmail={customerProfile?.primaryEmail ?? null}

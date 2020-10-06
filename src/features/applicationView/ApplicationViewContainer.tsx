@@ -56,7 +56,7 @@ const ApplicationViewContainer = () => {
     });
 
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
-  const [deleteDraftedApplication] = useDeleteBerthApplication();
+  const [deleteDraftedApplication, { loading: isDeletingLease }] = useDeleteBerthApplication();
 
   const customer = data?.berthApplication?.customer;
 
@@ -83,6 +83,7 @@ const ApplicationViewContainer = () => {
         applicationDetails={applicationDetails}
         berthApplication={data.berthApplication}
         customerProfile={customerProfile}
+        isDeletingLease={isDeletingLease}
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}

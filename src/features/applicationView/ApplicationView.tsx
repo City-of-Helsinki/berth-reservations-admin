@@ -34,6 +34,7 @@ export interface ApplicationViewProps {
   customerProfile: CustomerProfileCardProps | null;
   leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
+  isDeletingLease: boolean;
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
@@ -45,6 +46,7 @@ const ApplicationView = ({
   customerProfile,
   leaseDetails,
   refetchQueries,
+  isDeletingLease,
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
@@ -91,6 +93,7 @@ const ApplicationView = ({
           applicationStatus={applicationDetails.status}
           leaseDetails={leaseDetails}
           handleDeleteLease={handleDeleteLease}
+          isDeletingLease={isDeletingLease}
           refetchQueries={refetchQueries}
         />
       )}

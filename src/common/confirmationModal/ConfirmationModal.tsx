@@ -5,7 +5,7 @@ import Text from '../text/Text';
 import styles from './confirmationModal.module.scss';
 import Button from '../button/Button';
 
-interface ConfirmationModalProps {
+export interface ConfirmationModalProps {
   isOpen: boolean;
   title: string;
   infoText: string;

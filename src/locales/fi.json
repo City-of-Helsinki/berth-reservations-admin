@@ -692,5 +692,12 @@
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
+  },
+  "deleteButton": {
+    "modalTitle": "Vahvistus",
+    "infoText": "Haluatko varmasti poistaa kyseisen kohteen?",
+    "warningText": "Tätä toimenpidettä ei voi perua.",
+    "onCancelText": "Hylkää",
+    "onConfirmText": "Vahvista"
   }
 }
