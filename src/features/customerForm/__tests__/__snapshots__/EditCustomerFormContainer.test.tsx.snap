@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomerEditForm initially renders loading spinner 1`] = `
+exports[`EditCustomerForm initially renders loading spinner 1`] = `
 <div
   class="spinnerWrapper"
 >
@@ -10,7 +10,7 @@ exports[`CustomerEditForm initially renders loading spinner 1`] = `
 </div>
 `;
 
-exports[`CustomerEditForm renders content after loading 1`] = `
+exports[`EditCustomerForm renders content after loading 1`] = `
 Array [
   <h4
     class="text brand h4"

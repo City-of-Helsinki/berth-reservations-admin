@@ -7,7 +7,7 @@ import { MockedProvider } from '@apollo/react-testing';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import { CUSTOMER_FORM_QUERY } from '../queries';
 import { mockPrivateCustomerProfile } from '../__fixtures__/mockData';
-import CustomerEditFormContainer from '../CustomerEditFormContainer';
+import EditCustomerFormContainer from '../EditCustomerFormContainer';
 import { UPDATE_BERTH_SERVICES_PROFILE_MUTATION, UPDATE_PROFILE_MUTATION } from '../mutations';
 import { createUpdateInputs, getCustomerFormValues, getIdentifiers } from '../utils';
 
@@ -20,7 +20,7 @@ const queryMock = {
   },
 };
 
-describe('CustomerEditForm', () => {
+describe('EditCustomerForm', () => {
   const waitForContent = async (wrapper: ReactWrapper) => {
     await act(async () => {
       await waitForExpect(() => {
@@ -33,7 +33,7 @@ describe('CustomerEditForm', () => {
   it('initially renders loading spinner', () => {
     const wrapper = mount(
       <MockedProvider mocks={[queryMock]}>
-        <CustomerEditFormContainer customerId={'MOCK-PROFILE'} />
+        <EditCustomerFormContainer customerId={'MOCK-PROFILE'} />
       </MockedProvider>
     );
     expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBe(true);
@@ -43,7 +43,7 @@ describe('CustomerEditForm', () => {
   it('renders content after loading', async () => {
     const wrapper = mount(
       <MockedProvider mocks={[queryMock]}>
-        <CustomerEditFormContainer customerId={'MOCK-PROFILE'} onSubmit={jest.fn()} onCancel={jest.fn()} />
+        <EditCustomerFormContainer customerId={'MOCK-PROFILE'} onSubmit={jest.fn()} onCancel={jest.fn()} />
       </MockedProvider>
     );
     await waitForContent(wrapper);
@@ -98,7 +98,7 @@ describe('CustomerEditForm', () => {
       // We need queryMock twice here, because MockedProvider requires an
       // instance for each query made and the original query is refetched after updates.
       <MockedProvider mocks={[queryMock, queryMock, updateProfileMock, updateBerthServicesProfileMock]}>
-        <CustomerEditFormContainer customerId={'MOCK-PROFILE'} onSubmit={onSubmit} onCancel={jest.fn()} />
+        <EditCustomerFormContainer customerId={'MOCK-PROFILE'} onSubmit={onSubmit} onCancel={jest.fn()} />
       </MockedProvider>
     );
 

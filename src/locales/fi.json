@@ -424,6 +424,7 @@
   },
   "customerList": {
     "title": "Asiakkaat",
+    "addNewCustomer": "Lisää uusi asiakas",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",

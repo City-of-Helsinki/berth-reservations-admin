@@ -70,6 +70,7 @@ export const createOrganizationProfileMutationMock = {
   request: {
     query: CREATE_NEW_PROFILE_MUTATION,
     variables: {
+      addresses: [],
       firstName: organizationCustomerInfoMock.firstName,
       lastName: organizationCustomerInfoMock.lastName,
       phone: organizationCustomerInfoMock.phoneNumber,

@@ -14,21 +14,21 @@ import {
 import { AddressType, OrganizationType } from '../../@types/__generated__/globalTypes';
 
 export type CustomerInfo = {
+  address: string;
+  businessId: string;
+  comment?: string;
+  companyName: string;
+  email: string;
   firstName: string;
   lastName: string;
-  address: string;
-  email: string;
+  municipality: string;
+  organizationType?: OrganizationType;
   phoneNumber: string;
   zipCode: string;
-  municipality: string;
-  businessId: string;
-  companyName: string;
 };
 
 const useCreateNewCustomer = (refetchQueries?: Array<string | PureQueryOptions> | RefetchQueriesFunction) => {
-  const [createNewCustomer] = useMutation<CREATE_NEW_PROFILE, CREATE_NEW_PROFILE_VARS>(CREATE_NEW_PROFILE_MUTATION, {
-    refetchQueries,
-  });
+  const [createNewCustomer] = useMutation<CREATE_NEW_PROFILE, CREATE_NEW_PROFILE_VARS>(CREATE_NEW_PROFILE_MUTATION);
 
   const [createNewBerthProfile] = useMutation<CREATE_BERTH_SERVICE_PROFILE, CREATE_BERTH_SERVICE_PROFILE_VARS>(
     CREATE_BERTH_SERVICE_PROFILE_MUTATION,
@@ -37,43 +37,30 @@ const useCreateNewCustomer = (refetchQueries?: Array<string | PureQueryOptions> 
 
   return (customerInfo: CustomerInfo) => {
     const {
-      firstName,
-      lastName,
       address,
-      email,
-      phoneNumber,
-      zipCode,
-      municipality,
       businessId,
       companyName,
+      comment,
+      email,
+      firstName,
+      lastName,
+      municipality,
+      organizationType,
+      phoneNumber,
+      zipCode,
     } = customerInfo;
 
+    // Private customer
     if (businessId === '') {
       createNewCustomer({
         variables: {
-          firstName: firstName,
-          lastName: lastName,
           addresses: [
             { address, postalCode: zipCode, city: municipality, primary: true, addressType: AddressType.NONE },
           ],
-          phone: phoneNumber,
           email: email,
-        },
-      }).then(({ data }) => {
-        if (!data?.createProfile?.profile?.id) {
-          return;
-        }
-        return createNewBerthProfile({
-          variables: { input: { id: data.createProfile.profile.id } },
-        });
-      });
-    } else {
-      createNewCustomer({
-        variables: {
           firstName: firstName,
           lastName: lastName,
           phone: phoneNumber,
-          email: email,
         },
       }).then(({ data }) => {
         if (!data?.createProfile?.profile?.id) {
@@ -83,19 +70,44 @@ const useCreateNewCustomer = (refetchQueries?: Array<string | PureQueryOptions> 
           variables: {
             input: {
               id: data.createProfile.profile.id,
-              organization: {
-                businessId,
-                name: companyName,
-                organizationType: OrganizationType.COMPANY,
-                address,
-                postalCode: zipCode,
-                city: municipality,
-              },
+              comment: comment || undefined,
             },
           },
         });
       });
+      return;
     }
+
+    // Organization customer
+    createNewCustomer({
+      variables: {
+        addresses: [],
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phoneNumber,
+      },
+    }).then(({ data }) => {
+      if (!data?.createProfile?.profile?.id) {
+        return;
+      }
+      return createNewBerthProfile({
+        variables: {
+          input: {
+            id: data.createProfile.profile.id,
+            comment: comment || undefined,
+            organization: {
+              businessId,
+              name: companyName,
+              organizationType: organizationType ?? OrganizationType.COMPANY,
+              address,
+              postalCode: zipCode,
+              city: municipality,
+            },
+          },
+        },
+      });
+    });
   };
 };
 
