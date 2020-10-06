@@ -12,7 +12,7 @@ const ActionHistoryCard = () => {
   const { t } = useTranslation();
 
   return (
-    <Card className={styles.card}>
+    <Card className={styles.actionHistoryCard}>
       <CardHeader title={t('actionHistoryCard.title').toUpperCase()} />
       <CardBody className={styles.cardBody}>
         <Section title={t('actionHistoryCard.recentActions').toUpperCase()} className={styles.section}>
