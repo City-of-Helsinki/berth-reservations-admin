@@ -62,9 +62,8 @@ const UnmarkedWsNoticeView = ({
     t,
     i18n: { language },
   } = useTranslation();
-
   const canDeleteLease = noticeDetails.status === ApplicationStatus.OFFER_GENERATED;
-  const canDeleteNotice = canDeleteLease;
+  const canDeleteNotice = canDeleteLease || noticeDetails.status === ApplicationStatus.PENDING;
 
   return (
     <PageContent className={styles.noticeView}>
