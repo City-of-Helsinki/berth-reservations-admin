@@ -93,6 +93,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         data={data}
         loading={loading}
         columns={columns}
+        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
         renderSubComponent={(row) => {
           return (
             <CustomerDetails

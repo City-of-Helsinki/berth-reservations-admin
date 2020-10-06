@@ -90,6 +90,7 @@ const HarborList = ({ data, loading }: HarborListProps) => {
         data={data}
         loading={loading}
         columns={columns}
+        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
         renderTableToolsTop={(_, setters) => <GlobalSearchTableTools handleGlobalFilter={setters.setGlobalFilter} />}
         renderSubComponent={(row) => <HarborDetails {...row.original} />}
         renderMainHeader={() => t('harborList.tableHeaders.mainHeader')}
