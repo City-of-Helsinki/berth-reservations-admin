@@ -79,9 +79,11 @@ const UnmarkedWsNoticeView = ({
           />
         </div>
         <div className={styles.actionsRight}>
-          <Button onClick={handleDeleteNotice} variant="secondary" disabled={isDeleteNoticeLoading}>
-            {t('unmarkedWsNotices.view.deleteNotice')}
-          </Button>
+          <DeleteButton
+            buttonText={t('unmarkedWsNotices.view.deleteNotice')}
+            onConfirm={handleDeleteNotice}
+            disabled={isDeleteNoticeLoading}
+          />
         </div>
       </div>
 
