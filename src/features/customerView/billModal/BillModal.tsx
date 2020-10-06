@@ -52,7 +52,7 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
             }
           />
         ) : (
-          'Placeholder'
+          'PLACEHOLDER' // TODO
         )}
         <LabelValuePair
           label={t('customerView.customerBill.contractPeriod')}
