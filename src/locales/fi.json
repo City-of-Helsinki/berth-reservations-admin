@@ -676,8 +676,7 @@
   },
   "invoiceCard": {
     "placeDetails": {
-      "title": "Paikan tiedot",
-      "maintenanceDetails": "Huoltotiedot"
+      "title": "Paikan tiedot"
     },
     "sendInvoice": {
       "title": "Lähetä lasku",
