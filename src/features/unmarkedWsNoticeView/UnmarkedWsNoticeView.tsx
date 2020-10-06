@@ -25,7 +25,7 @@ import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
 import DeleteButton from '../../common/deleteButton/DeleteButton';
-import {ApplicationStatus} from "../../@types/__generated__/globalTypes";
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;

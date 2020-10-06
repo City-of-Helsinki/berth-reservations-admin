@@ -43,7 +43,7 @@ const SendInvoiceFormContainer = ({
           ],
         },
       },
-    }).then(res => {
+    }).then((res) => {
       if (!res.errors) {
         hdsToast({
           type: 'success',
