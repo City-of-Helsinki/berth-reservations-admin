@@ -25,6 +25,7 @@ import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
 import DeleteButton from '../../common/deleteButton/DeleteButton';
+import {ApplicationStatus} from "../../@types/__generated__/globalTypes";
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -62,6 +63,9 @@ const UnmarkedWsNoticeView = ({
     i18n: { language },
   } = useTranslation();
 
+  const canDeleteLease = noticeDetails.status === ApplicationStatus.OFFER_GENERATED;
+  const canDeleteNotice = canDeleteLease;
+
   return (
     <PageContent className={styles.noticeView}>
       <div className={styles.fullWidth}>
@@ -79,11 +83,13 @@ const UnmarkedWsNoticeView = ({
           />
         </div>
         <div className={styles.actionsRight}>
-          <DeleteButton
-            buttonText={t('unmarkedWsNotices.view.deleteNotice')}
-            onConfirm={handleDeleteNotice}
-            disabled={isDeleteNoticeLoading}
-          />
+          {canDeleteNotice && (
+            <DeleteButton
+              buttonText={t('unmarkedWsNotices.view.deleteNotice')}
+              onConfirm={handleDeleteNotice}
+              disabled={isDeleteNoticeLoading}
+            />
+          )}
         </div>
       </div>
 
@@ -119,11 +125,13 @@ const UnmarkedWsNoticeView = ({
         <InvoiceCard
           applicationStatus={noticeDetails.status}
           buttonsRight={
-            <DeleteButton
-              buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
-              onConfirm={handleDeleteLease}
-              disabled={isDeleteLeaseLoading}
-            />
+            canDeleteLease && (
+              <DeleteButton
+                buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
+                onConfirm={handleDeleteLease}
+                disabled={isDeleteLeaseLoading}
+              />
+            )
           }
           className={styles.fullWidth}
           customerEmail={customerProfile?.primaryEmail ?? null}
