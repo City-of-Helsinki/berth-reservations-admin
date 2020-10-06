@@ -401,12 +401,13 @@
       "emptyName": "Ei nimeä"
     },
     "billing": {
-      "title": "Lasku",
+      "title": "Tilaustunnus",
       "basePrice": "Perushinta",
       "gate": "Portti",
       "lighting": "Valaistus",
       "additionalServices": "Lisäpalvelut",
       "total": "Yhteensä",
+      "acceptAndSend": "Hyväksy ja lähetä tarjous",
       "showBill": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"

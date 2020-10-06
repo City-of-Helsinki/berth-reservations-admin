@@ -59,7 +59,7 @@ exports[`InvoiceCard renders normally 1`] = `
         <h4
           class="text standard h4 m title"
         >
-          LASKU nro: 1234
+          TILAUSTUNNUS: 1234
         </h4>
         <section
           class="body"

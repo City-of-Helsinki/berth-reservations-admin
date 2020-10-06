@@ -20,7 +20,7 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
   } = useTranslation();
 
   return (
-    <Section title={`${t('offer.billing.title').toUpperCase()} nro: ${order.orderNumber}`}>
+    <Section title={`${t('offer.billing.title').toUpperCase()}: ${order.orderNumber}`}>
       <Section>
         <LabelValuePair
           label={t('offer.billing.basePrice')}

@@ -18,6 +18,7 @@ export interface InvoiceCardProps {
   buttonsRight?: React.ReactNode;
   className?: string;
   editAdditionalServices: () => void;
+  sendButtonLabel?: string;
   sendInvoice: () => void;
   order: Order | null;
   placeType: string;
@@ -32,6 +33,7 @@ const InvoiceCard = ({
   buttonsRight,
   className,
   editAdditionalServices,
+  sendButtonLabel,
   sendInvoice,
   order,
   placeDetails,
@@ -69,7 +71,7 @@ const InvoiceCard = ({
         disabled={order === null || applicationStatus !== ApplicationStatus.OFFER_GENERATED}
       >
         {applicationStatus === ApplicationStatus.OFFER_GENERATED
-          ? t('invoiceCard.sendInvoice.title')
+          ? sendButtonLabel ?? t('invoiceCard.sendInvoice.title')
           : t('invoiceCard.invoiceSent')}
       </Button>
     );

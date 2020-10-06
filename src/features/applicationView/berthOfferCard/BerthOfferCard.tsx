@@ -98,6 +98,7 @@ const BerthOfferCard = ({
         placeProperties={properties}
         placeType={t('common.terminology.berth').toUpperCase()}
         refetchQueries={refetchQueries}
+        sendButtonLabel={t('offer.billing.acceptAndSend')}
         title={t('offer.title').toUpperCase()}
       />
     </>
