@@ -95,7 +95,7 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
                 <span
                   class="value left"
                 >
-                  -
+                  0
                 </span>
               </div>
               <div

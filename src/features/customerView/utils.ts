@@ -159,7 +159,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
           id,
           customerId: profile.id,
           berthSwitch: berthSwitchProps,
-          queue: null,
+          queue: 0, // TODO
           createdAt,
           status,
           lease: leaseProps,

@@ -48,7 +48,7 @@ Object {
     "id": "MOCK-LEASE",
     "pierIdentifier": "A",
   },
-  "queue": null,
+  "queue": 0,
   "status": "PENDING",
   "summaryInformation": Object {
     "acceptBoatingNewsletter": true,

@@ -38,7 +38,7 @@ Array [
       "pierIdentifier": "G",
     },
     "municipality": "Helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -71,7 +71,7 @@ Array [
       "pierIdentifier": "Pier Brosnan",
     },
     "municipality": "Helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -98,7 +98,7 @@ Array [
     "isSwitch": false,
     "lease": null,
     "municipality": "Helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
 ]

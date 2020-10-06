@@ -19,7 +19,7 @@ const mockProps: ApplicationViewProps = {
     createdAt: '2020-08-04',
     choices: [],
     id: 'X',
-    queue: null,
+    queue: 0,
     status: ApplicationStatus.PENDING,
   },
   berthApplication: {

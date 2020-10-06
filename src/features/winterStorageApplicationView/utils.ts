@@ -22,7 +22,7 @@ export const getWinterStorageApplicationDetailsData = (
     ...winterStorageApplication,
     customerId: winterStorageApplication.customer?.id,
     applicant: getApplicantDetails(winterStorageApplication),
-    queue: null,
+    queue: 0, // TODO
     choices,
     boatType: boatTypes.find(({ id }) => id === winterStorageApplication.boatType)?.name,
     summaryInformation: {
