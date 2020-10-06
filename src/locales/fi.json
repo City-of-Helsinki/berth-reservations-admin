@@ -91,6 +91,8 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "harbor": "Satama",
+      "selection": "Valinta",
       "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
