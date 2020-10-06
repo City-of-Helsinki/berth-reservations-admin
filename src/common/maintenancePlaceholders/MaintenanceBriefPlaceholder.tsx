@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import InternalLink from '../internalLink/InternalLink';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
+import { maintenanceFeatureFlag } from '../utils/featureFlags';
 
 export interface MaintenanceInformationPlaceholderProps {
   placeholder?: null;
@@ -12,7 +13,7 @@ export interface MaintenanceInformationPlaceholderProps {
 const MaintenanceBriefPlaceholder = (props: MaintenanceInformationPlaceholderProps) => {
   const { t } = useTranslation();
 
-  return (
+  return maintenanceFeatureFlag() ? (
     <LabelValuePair
       label={t('common.terminology.maintenanceDetails') + ' (PLACEHOLDER)'}
       value={
@@ -23,7 +24,7 @@ const MaintenanceBriefPlaceholder = (props: MaintenanceInformationPlaceholderPro
         </>
       }
     />
-  );
+  ) : null;
 };
 
 export default MaintenanceBriefPlaceholder;
