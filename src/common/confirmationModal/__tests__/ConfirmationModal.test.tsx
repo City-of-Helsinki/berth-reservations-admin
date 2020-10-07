@@ -9,7 +9,7 @@ describe('ConfirmationModal', () => {
     ReactModal.setAppElement('body');
     const wrapper = mount(
       <ConfirmationModal
-        isOpen={true}
+        isOpen
         title={'title'}
         infoText={'info text'}
         warningText={'warning text'}

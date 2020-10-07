@@ -74,7 +74,7 @@ const CustomerViewContainer = () => {
       </Modal>
 
       {boatToEdit && (
-        <Modal isOpen={true} toggleModal={() => setBoatToEdit(null)}>
+        <Modal isOpen toggleModal={() => setBoatToEdit(null)}>
           <BoatEditForm
             boatTypes={boatTypes}
             initialValues={boatToEdit}
@@ -96,7 +96,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      <BillModal bill={openBill} toggleModal={() => setOpenBill(undefined)} />
+      {openBill && <BillModal isOpen bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
     </>
   );
 };

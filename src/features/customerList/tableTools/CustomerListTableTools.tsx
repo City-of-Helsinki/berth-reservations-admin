@@ -81,7 +81,7 @@ const CustomerListTableTools = <T extends string>({
         />
       </Modal>
 
-      <Modal isOpen={addCustomerModalOpen} toggleModal={() => setAddCustomerModalOpen(true)}>
+      <Modal isOpen={addCustomerModalOpen} toggleModal={() => setAddCustomerModalOpen(false)}>
         <AddCustomerFormContainer
           onCancel={() => setAddCustomerModalOpen(false)}
           onSubmit={() => {

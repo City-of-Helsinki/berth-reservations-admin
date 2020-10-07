@@ -8,7 +8,7 @@ describe('Modal', () => {
   ReactModal.setAppElement('body');
   const getWrapper = (props?: Partial<ModalProps>) =>
     mount(
-      <Modal isOpen={true} {...props}>
+      <Modal isOpen {...props}>
         <p>Content</p>
       </Modal>
     );
