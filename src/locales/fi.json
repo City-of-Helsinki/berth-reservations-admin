@@ -91,6 +91,8 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "harbor": "Satama",
+      "selection": "Valinta",
       "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
@@ -399,7 +401,7 @@
       "emptyName": "Ei nimeä"
     },
     "billing": {
-      "title": "Lasku",
+      "title": "Tilaustunnus",
       "basePrice": "Perushinta",
       "gate": "Portti",
       "lighting": "Valaistus",
@@ -629,6 +631,10 @@
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
+    },
+    "invoiceSent": {
+      "label": "Tarjous on lähetetty asiakkaalle",
+      "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
     }
   },
   "winterStorageAreaList": {
@@ -678,6 +684,7 @@
     "placeDetails": {
       "title": "Paikan tiedot"
     },
+    "invoiceSent": "Tarjous lähetetty",
     "sendInvoice": {
       "title": "Lähetä lasku",
       "instructions": {
@@ -687,5 +694,12 @@
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
+  },
+  "deleteButton": {
+    "modalTitle": "Vahvistus",
+    "infoText": "Haluatko varmasti poistaa kyseisen kohteen?",
+    "warningText": "Tätä toimenpidettä ei voi perua.",
+    "onCancelText": "Hylkää",
+    "onConfirmText": "Vahvista"
   }
 }
