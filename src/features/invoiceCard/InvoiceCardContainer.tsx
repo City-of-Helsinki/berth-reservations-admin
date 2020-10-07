@@ -37,7 +37,7 @@ const InvoiceCardContainer = ({
 
       {order && (
         <>
-          <Modal isOpen={sendInvoiceModalOpen}>
+          <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
             <SendInvoiceForm
               orderId={order.id}
               email={customerEmail}
@@ -46,7 +46,7 @@ const InvoiceCardContainer = ({
               onCancel={() => setSendInvoiceModalOpen(false)}
             />
           </Modal>
-          <Modal isOpen={editProductsModalOpen}>
+          <Modal isOpen={editProductsModalOpen} toggleModal={() => setEditProductsModalOpen(false)}>
             <EditForm
               orderId={order.id}
               selectedProducts={selectedProducts}

@@ -110,16 +110,16 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
           />
         </CardBody>
       </Card>
-      <Modal isOpen={!!editRowValues} label={t('pricing.editModalHeading').toUpperCase()}>
-        {editRowValues && (
+      {editRowValues && (
+        <Modal isOpen={true} label={t('pricing.editModalHeading').toUpperCase()} toggleModal={handleClose}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.HARBOR_SERVICES}
             initialValues={editRowValues}
             onSubmit={handleSubmit}
           />
-        )}
-      </Modal>
+        </Modal>
+      )}
     </>
   );
 };

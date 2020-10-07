@@ -26,7 +26,7 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
 
   const { contractPeriod } = bill;
   return (
-    <Modal isOpen={true} {...modalProps}>
+    <Modal isOpen toggleModal={() => toggleModal?.(false)} {...modalProps}>
       <Text as="h4" color="brand" className={styles.heading}>
         {t('customerView.customerBill.bill')}
       </Text>

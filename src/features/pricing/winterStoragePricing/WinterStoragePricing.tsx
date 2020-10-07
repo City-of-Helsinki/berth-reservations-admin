@@ -123,16 +123,16 @@ const WinterStoragePricing = ({ data, loading, className, refetchQueries }: Wint
           />
         </CardBody>
       </Card>
-      <Modal isOpen={!!editRowValues} label={t('pricing.editModalHeading').toUpperCase()}>
-        {editRowValues && (
+      {editRowValues && (
+        <Modal isOpen={true} label={t('pricing.editModalHeading').toUpperCase()} toggleModal={handleClose}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.WINTER_STORAGE}
             initialValues={editRowValues}
             onSubmit={handleSubmit}
           />
-        )}
-      </Modal>
+        </Modal>
+      )}
     </>
   );
 };
