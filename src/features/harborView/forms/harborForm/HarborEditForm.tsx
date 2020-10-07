@@ -8,7 +8,6 @@ import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import styles from './harborEditForm.module.scss';
 import Section from '../../../../common/section/Section';
-import FileUpload from '../../../../common/fileUpload/FileUpload';
 import Text from '../../../../common/text/Text';
 import { HARBOR_FORM_QUERY } from './queries';
 import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
@@ -17,14 +16,11 @@ import { getHarbor, mapValuesToMutation } from './utils/utils';
 import { UPDATE_HARBOR_MUTATION } from './mutations';
 import { UPDATE_HARBOR, UPDATE_HARBORVariables as UPDATE_HARBOR_VARS } from './__generated__/UPDATE_HARBOR';
 import { HARBOR_FORM } from './__generated__/HARBOR_FORM';
-import FileList, { PersistedFile } from '../../../../common/fileList/FileList';
 import Button from '../../../../common/button/Button';
 
 export interface Props extends FormProps<Harbor> {
   harborId: string;
 }
-
-const imageFileMaxSize = 500 * 1000;
 
 const getValidationSchema = (t: TFunction) =>
   Yup.object<Harbor>().shape({
@@ -33,14 +29,6 @@ const getValidationSchema = (t: TFunction) =>
     zipCode: Yup.string().required(t('forms.common.errors.required')),
     municipality: Yup.string().required(t('forms.common.errors.required')),
     wwwUrl: Yup.string().required(t('forms.common.errors.required')),
-    addedImageFile: Yup.mixed()
-      .test('maxFileSize', t('forms.common.errors.maxFileSize'), (value) => !value || value.size <= imageFileMaxSize)
-      .test('fileRequired', t('forms.common.errors.required'), function (value) {
-        const { existingImageFile }: { existingImageFile: PersistedFile } = this.parent;
-        if (!existingImageFile) return value !== undefined;
-        return true;
-      }),
-    addedMaps: Yup.array<File[]>(),
   });
 
 const HarborEditForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props) => {
@@ -66,10 +54,6 @@ const HarborEditForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
     zipCode: '',
     municipality: 'Helsinki',
     wwwUrl: '',
-    existingImageFile: undefined,
-    addedImageFile: undefined,
-    existingMaps: [],
-    addedMaps: [],
   };
 
   const handleSubmit = (values: Harbor) =>
@@ -138,57 +122,6 @@ const HarborEditForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
               label={t('forms.harbor.wwwUrl')}
               invalid={!!errors.wwwUrl}
               helperText={errors.wwwUrl}
-            />
-          </Section>
-
-          <Section>
-            <Field
-              as={FileList}
-              allowDelete={false}
-              name="existingImageFile"
-              label={t('forms.harbor.imageFile')}
-              onChange={(value: undefined | PersistedFile) => {
-                setFieldValue('existingImageFile', value);
-              }}
-              invalid={!!errors.existingImageFile}
-              helperText={errors.existingImageFile}
-              willBeOverwritten={!!values.addedImageFile}
-            />
-            <Field
-              as={FileUpload}
-              name="addedImageFile"
-              maxSize={imageFileMaxSize}
-              accept="image/png, image/jpeg"
-              required
-              onChange={(value: undefined | File) => {
-                setFieldValue('addedImageFile', value);
-              }}
-              invalid={!!errors.addedImageFile}
-              helperText={errors.addedImageFile}
-            />
-          </Section>
-
-          <Section>
-            <Field
-              as={FileList}
-              name="existingMaps"
-              multiple
-              label={t('forms.harbor.maps')}
-              onChange={(value: PersistedFile[]) => {
-                setFieldValue('existingMaps', value);
-              }}
-              invalid={!!errors.existingMaps}
-              helperText={errors.existingMaps}
-            />
-            <Field
-              as={FileUpload}
-              name="addedMaps"
-              multiple
-              onChange={(value: File[]) => {
-                setFieldValue('addedMaps', value);
-              }}
-              invalid={!!errors.addedMaps}
-              helperText={errors.addedMaps}
             />
           </Section>
 
