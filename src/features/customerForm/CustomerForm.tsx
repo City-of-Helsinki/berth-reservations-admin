@@ -65,8 +65,13 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
       <Text as="h4" color="brand">
         {t('forms.customer.title').toUpperCase()}
       </Text>
-      <Formik initialValues={initial} onSubmit={(values) => onSubmit?.(values)} validationSchema={validationSchema}>
-        {({ errors, handleChange, values }) => (
+      <Formik
+        initialValues={initial}
+        onSubmit={(values) => onSubmit?.(values)}
+        validationSchema={validationSchema}
+        validateOnChange={false}
+      >
+        {({ errors, handleChange, values, validateForm }) => (
           <Form className={styles.form}>
             <Select
               id="customerGroup"
@@ -113,7 +118,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               <Button variant="secondary" disabled={isSubmitting} color={'supplementary'} onClick={onCancel}>
                 {t('forms.common.cancel')}
               </Button>
-              <Button type="submit" disabled={isSubmitting}>
+              <Button type="submit" disabled={isSubmitting} onClick={() => validateForm(values)}>
                 {t('common.save')}
               </Button>
             </div>
