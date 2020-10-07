@@ -96,7 +96,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      <BillModal bill={openBill} toggleModal={() => setOpenBill(undefined)} />
+      {openBill && <BillModal isOpen={true} bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
     </>
   );
 };
