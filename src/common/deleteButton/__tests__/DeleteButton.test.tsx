@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
+import ReactModal from 'react-modal';
 
 import DeleteButton, { DeleteButtonProps } from '../DeleteButton';
 import ConfirmationModal from '../../confirmationModal/ConfirmationModal';
@@ -8,9 +9,7 @@ import Button from '../../button/Button';
 describe('DeleteButton', () => {
   // Silence react-modal errors
   beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {
-      /* NO-OP */
-    });
+    ReactModal.setAppElement('body');
   });
 
   const defaultProps = {

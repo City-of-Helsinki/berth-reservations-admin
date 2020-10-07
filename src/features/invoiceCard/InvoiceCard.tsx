@@ -60,7 +60,7 @@ const InvoiceCard = ({
         )
     );
 
-  const getSendButton = () => {
+  const renderSendButton = () => {
     if (applicationStatus !== ApplicationStatus.OFFER_GENERATED && applicationStatus !== ApplicationStatus.OFFER_SENT) {
       return null;
     }
@@ -97,7 +97,7 @@ const InvoiceCard = ({
         </Grid>
         <hr />
         <div className={styles.buttonRow}>
-          <div>{getSendButton()}</div>
+          <div>{renderSendButton()}</div>
           <div>{buttonsRight}</div>
         </div>
       </CardBody>

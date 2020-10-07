@@ -1,12 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
+import ReactModal from 'react-modal';
 
 import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetails';
 import { ApplicationStatus, CustomerGroup, Language } from '../../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
-import { handleDelete } from '../../deleteButton/testUtils';
+import DeleteButton from '../../deleteButton/DeleteButton';
+import Button from '../../button/Button';
+import ConfirmationModal from '../../confirmationModal/ConfirmationModal';
 
 const minimumProps: ApplicationDetailsProps = {
   accessibilityRequired: false,
@@ -132,9 +135,7 @@ describe('ApplicationDetails', () => {
 
   it('renders delete lease button if handleDeleteLease prop is provided', () => {
     // Using a component with react-modal. Silence error output.
-    jest.spyOn(console, 'error').mockImplementation(() => {
-      /* NO-OP */
-    });
+    ReactModal.setAppElement('body');
 
     const handleDeleteLease = jest.fn();
     const wrapper = getWrapper({
@@ -142,8 +143,8 @@ describe('ApplicationDetails', () => {
       lease: lease,
       handleDeleteLease: handleDeleteLease,
     });
-
-    handleDelete(wrapper);
+    wrapper.find(DeleteButton).find(Button).simulate('click');
+    wrapper.find(ConfirmationModal).find(Button).last().simulate('click');
 
     expect(handleDeleteLease).toHaveBeenCalled();
   });
