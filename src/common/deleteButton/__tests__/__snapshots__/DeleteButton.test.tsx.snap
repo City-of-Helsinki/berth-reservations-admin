@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteButton renders correctly when modal open 1`] = `
+Array [
+  <button
+    class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+    type="button"
+  >
+    <span
+      class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+    >
+      button
+    </span>
+  </button>,
+  <div
+    class="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
+  >
+    <div
+      class="ReactModal__Content ReactModal__Content--after-open modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <h4
+        class="text brand h4 uppercase"
+      >
+        Vahvistus
+      </h4>
+      <div
+        class="infoTexts"
+      >
+        <span
+          class="text standard span"
+        >
+          Haluatko varmasti poistaa kyseisen kohteen?
+        </span>
+        <strong
+          class="text critical strong warningText"
+        >
+          Tätä toimenpidettä ei voi perua.
+        </strong>
+      </div>
+      <div
+        class="actionButtons"
+      >
+        <button
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+          type="button"
+        >
+          <span
+            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          >
+            Hylkää
+          </span>
+        </button>
+        <button
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_danger__aFUe2 button_hds-button--danger__dEREN Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+          type="button"
+        >
+          <span
+            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          >
+            Vahvista
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`DeleteButton renders normally 1`] = `
+<button
+  class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+  type="button"
+>
+  <span
+    class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+  >
+    button
+  </span>
+</button>
+`;

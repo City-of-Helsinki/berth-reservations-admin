@@ -41,7 +41,7 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
     acceptFitnessNews: true,
     acceptLibraryNews: true,
     acceptOtherCultureNews: true,
-    status: ApplicationStatus.PENDING,
+    status: ApplicationStatus.OFFER_GENERATED,
     winterStorageAreaChoices: [
       {
         winterStorageArea: null,

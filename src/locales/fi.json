@@ -91,6 +91,8 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "harbor": "Satama",
+      "selection": "Valinta",
       "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
@@ -115,7 +117,8 @@
       "inQueue": "Jonossa",
       "length": "Pituus",
       "lighting": "Valaistus",
-      "maintenance": "Kunnossapito",
+      "maintenanceTeam": "Kunnossapito",
+      "maintenanceDetails": "Huoltotiedot",
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
       "mooringType": "Kiinnitystapa",
@@ -242,7 +245,6 @@
       "customerGroup": "Asiakasryhmä",
       "firstName": "Etunimet",
       "lastName": "Sukunimi",
-      "ssn": "Henkilötunnus",
       "organizationName": "Yrityksen tai yhteisön nimi",
       "businessId": "Y-tunnus",
       "address": "Jakeluosoite",
@@ -399,7 +401,7 @@
       "emptyName": "Ei nimeä"
     },
     "billing": {
-      "title": "Lasku",
+      "title": "Tilaustunnus",
       "basePrice": "Perushinta",
       "gate": "Portti",
       "lighting": "Valaistus",
@@ -424,6 +426,7 @@
   },
   "customerList": {
     "title": "Asiakkaat",
+    "addNewCustomer": "Lisää uusi asiakas",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",
@@ -584,7 +587,6 @@
     "name": "Nimi",
     "firstName": "Etunimet",
     "lastName": "Sukunimi",
-    "ssn": "Henkilötunnus",
     "businessId": "Y-tunnus",
     "address": "Jakeluosoite",
     "postalCode": "Postinumero",
@@ -629,6 +631,10 @@
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
+    },
+    "invoiceSent": {
+      "label": "Tarjous on lähetetty asiakkaalle",
+      "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
     }
   },
   "winterStorageAreaList": {
@@ -676,9 +682,9 @@
   },
   "invoiceCard": {
     "placeDetails": {
-      "title": "Paikan tiedot",
-      "maintenanceDetails": "Huoltotiedot"
+      "title": "Paikan tiedot"
     },
+    "invoiceSent": "Tarjous lähetetty",
     "sendInvoice": {
       "title": "Lähetä lasku",
       "instructions": {
@@ -688,5 +694,12 @@
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
+  },
+  "deleteButton": {
+    "modalTitle": "Vahvistus",
+    "infoText": "Haluatko varmasti poistaa kyseisen kohteen?",
+    "warningText": "Tätä toimenpidettä ei voi perua.",
+    "onCancelText": "Hylkää",
+    "onConfirmText": "Vahvista"
   }
 }

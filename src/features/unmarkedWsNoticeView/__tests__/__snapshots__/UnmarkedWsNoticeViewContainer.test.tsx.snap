@@ -25,9 +25,9 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip yellow"
+        class="chip blue"
       >
-        Odottaa käsittelyä
+        Käsitelty
       </span>
     </div>
     <div
@@ -472,7 +472,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
                 <span
                   class="value left"
                 >
-                  Odottaa käsittelyä
+                  Käsitelty
                 </span>
               </div>
             </section>

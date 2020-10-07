@@ -211,20 +211,6 @@ Array [
             Virtanen
           </span>
         </div>
-        <div
-          class="labelValuePair"
-        >
-          <span
-            class="label standard"
-          >
-            Henkilötunnus:
-          </span>
-          <span
-            class="value left"
-          >
-            -
-          </span>
-        </div>
       </section>
     </article>
     <article
@@ -602,20 +588,6 @@ Array [
             class="value left"
           >
             Virtanen
-          </span>
-        </div>
-        <div
-          class="labelValuePair"
-        >
-          <span
-            class="label standard"
-          >
-            Henkilötunnus:
-          </span>
-          <span
-            class="value left"
-          >
-            -
           </span>
         </div>
       </section>

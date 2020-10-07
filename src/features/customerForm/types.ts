@@ -19,7 +19,6 @@ export type CustomerFormIdentifiers = {
   primaryPhoneId?: string;
   primaryEmailId?: string;
   initialCustomerGroup: CustomerGroup | null;
-  hadSensitivedata: boolean;
 };
 
 export type CustomerFormValues = {
@@ -34,5 +33,4 @@ export type CustomerFormValues = {
   businessId: string;
   phone: string;
   postalCode: string;
-  ssn: string;
 };

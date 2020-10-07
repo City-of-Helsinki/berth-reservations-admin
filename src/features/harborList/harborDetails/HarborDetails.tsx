@@ -10,6 +10,8 @@ import { formatAddress, formatDimension } from '../../../common/utils/format';
 import { HarborData } from '../types';
 import MapLinks from '../../../common/mapLinks/MapLinks';
 import placeholderImage from '../../../common/placeholderImage.svg';
+import ContactInformationDetails from '../../../common/contactInformationCard/ContactInformationDetails';
+import { harborMooringFeatureFlag } from '../../../common/utils/featureFlags';
 
 export type HarborDetailsProps = Pick<
   HarborData,
@@ -49,11 +51,12 @@ const HarborDetails = ({
         <Section title={t('common.terminology.maxWidth').toUpperCase()}>
           <Text>{formatDimension(maxWidth, i18n.language)}</Text>
         </Section>
-        <Section title={t('common.terminology.mooring').toUpperCase()}>-{/* TODO */}</Section>
+        {harborMooringFeatureFlag() ? (
+          <Section title={t('common.terminology.mooring').toUpperCase()}>PLACEHOLDER</Section>
+        ) : null}
       </div>
       <div className={styles.column}>
-        <Section title={t('common.terminology.maintenance').toUpperCase()}>-{/* TODO */}</Section>
-        <Section title={t('common.terminology.harborChief').toUpperCase()}>-{/* TODO */}</Section>
+        <ContactInformationDetails />
       </div>
     </Grid>
   );

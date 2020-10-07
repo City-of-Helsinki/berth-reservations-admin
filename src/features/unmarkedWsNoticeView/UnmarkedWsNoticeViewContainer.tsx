@@ -27,7 +27,7 @@ import {
 } from './__generated__/DELETE_UNMARKED_WINTER_STORAGE_NOTICE';
 import hdsToast from '../../common/toast/hdsToast';
 import Modal from '../../common/modal/Modal';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 import {
   CREATE_UNMARKED_WINTER_STORAGE_LEASE,
   CREATE_UNMARKED_WINTER_STORAGE_LEASEVariables as CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS,
@@ -60,30 +60,30 @@ const UnmarkedWsNoticeViewContainer = () => {
     },
   ];
 
-  const [deleteNotice] = useMutation<DELETE_UNMARKED_WINTER_STORAGE_NOTICE, DELETE_UNMARKED_WINTER_STORAGE_NOTICE_VARS>(
-    DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
-    {
-      refetchQueries,
-    }
-  );
+  const [deleteNotice, { loading: isDeleteNoticeLoading }] = useMutation<
+    DELETE_UNMARKED_WINTER_STORAGE_NOTICE,
+    DELETE_UNMARKED_WINTER_STORAGE_NOTICE_VARS
+  >(DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION, {
+    refetchQueries,
+  });
   const [linkCustomer] = useMutation<UPDATE_UNMARKED_WINTER_STORAGE_NOTICE, UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_VARS>(
     UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION,
     {
       refetchQueries,
     }
   );
-  const [createLease] = useMutation<CREATE_UNMARKED_WINTER_STORAGE_LEASE, CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS>(
-    CREATE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
-    {
-      refetchQueries,
-    }
-  );
-  const [deleteLease] = useMutation<DELETE_UNMARKED_WINTER_STORAGE_LEASE, DELETE_UNMARKED_WINTER_STORAGE_LEASE_VARS>(
-    DELETE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION,
-    {
-      refetchQueries,
-    }
-  );
+  const [createLease, { loading: isCreateLeaseLoading }] = useMutation<
+    CREATE_UNMARKED_WINTER_STORAGE_LEASE,
+    CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS
+  >(CREATE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION, {
+    refetchQueries,
+  });
+  const [deleteLease, { loading: isDeleteLeaseLoading }] = useMutation<
+    DELETE_UNMARKED_WINTER_STORAGE_LEASE,
+    DELETE_UNMARKED_WINTER_STORAGE_LEASE_VARS
+  >(DELETE_UNMARKED_WINTER_STORAGE_LEASE_MUTATION, {
+    refetchQueries,
+  });
 
   if (loading || !data?.winterStorageNotice) return <LoadingSpinner isLoading={true} />;
 
@@ -147,6 +147,9 @@ const UnmarkedWsNoticeViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
+        isDeleteNoticeLoading={isDeleteNoticeLoading}
+        isCreateLeaseLoading={isCreateLeaseLoading}
+        isDeleteLeaseLoading={isDeleteLeaseLoading}
         noticeDetails={noticeDetails}
         order={order}
         refetchQueries={refetchQueries}
@@ -155,7 +158,7 @@ const UnmarkedWsNoticeViewContainer = () => {
 
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-          <CustomerEditForm
+          <EditCustomerForm
             customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}

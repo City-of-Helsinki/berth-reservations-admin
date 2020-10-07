@@ -35,14 +35,6 @@ const PrivateCustomerFields = ({ values, handleChange, errors }: PrivateCustomer
         helperText={errors.lastName as string}
         required
       />
-      <TextInput
-        id="ssn"
-        value={values.ssn}
-        onChange={handleChange}
-        label={t('forms.customer.ssn')}
-        invalid={!!errors.ssn}
-        helperText={errors.ssn as string}
-      />
 
       <hr className={styles.divider} />
 

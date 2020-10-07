@@ -61,7 +61,7 @@ export type Application = {
   customerId: string;
   berthSwitch: BerthSwitch | null;
   createdAt: string;
-  queue: number | null;
+  queue: number;
   status: ApplicationStatus;
   lease: ApplicationLease | null;
   boatType?: string | null;

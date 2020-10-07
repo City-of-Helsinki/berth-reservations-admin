@@ -25,9 +25,9 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip yellow"
+        class="chip blue"
       >
-        Odottaa käsittelyä
+        Käsitelty
       </span>
     </div>
     <div
@@ -117,7 +117,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
                 <span
                   class="value left"
                 >
-                  Odottaa käsittelyä
+                  Käsitelty
                 </span>
               </div>
             </section>
@@ -527,9 +527,9 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip yellow"
+        class="chip blue"
       >
-        Odottaa käsittelyä
+        Käsitelty
       </span>
     </div>
     <div
@@ -762,7 +762,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
      
   </div>
   <div
-    class="card card"
+    class="card actionHistoryCard"
   >
     <div
       class="cardHeader"
@@ -873,7 +873,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
                 <span
                   class="value left"
                 >
-                  Odottaa käsittelyä
+                  Käsitelty
                 </span>
               </div>
             </section>

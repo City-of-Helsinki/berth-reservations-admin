@@ -31,10 +31,6 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
         id
         phone
       }
-      sensitivedata {
-        id
-        ssn
-      }
       language
       boats {
         edges {

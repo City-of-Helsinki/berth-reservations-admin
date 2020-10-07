@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvoiceCard renders normally 1`] = `
+<div
+  class="card offerCard"
+>
+  <div
+    class="cardHeader"
+  >
+    <span
+      class="title"
+    >
+      title
+    </span>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <div
+      class="grid cols3"
+    >
+      <article
+        class="section"
+      >
+        <h4
+          class="text standard h4 m title"
+        >
+          place type
+        </h4>
+        <section
+          class="body"
+        >
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              place name
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="properties"
+              />
+            </section>
+          </article>
+        </section>
+      </article>
+      <div />
+      <article
+        class="section"
+      >
+        <h4
+          class="text standard h4 m title"
+        >
+          TILAUSTUNNUS: 1234
+        </h4>
+        <section
+          class="body"
+        >
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Perushinta:
+                </span>
+                <span
+                  class="value right"
+                >
+                  01,00 €
+                </span>
+              </div>
+            </section>
+          </article>
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Lisäpalvelut:
+                </span>
+                <span
+                  class="value right"
+                >
+                  <button>
+                    <span
+                      class="text brand span"
+                    >
+                      Muokkaa
+                    </span>
+                  </button>
+                </span>
+              </div>
+            </section>
+          </article>
+          <hr />
+          <article
+            class="section"
+          >
+            <section
+              class="body"
+            >
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  YHTEENSÄ:
+                </span>
+                <span
+                  class="value right"
+                >
+                  02,00 €
+                </span>
+              </div>
+            </section>
+          </article>
+        </section>
+      </article>
+    </div>
+    <hr />
+    <div
+      class="buttonRow"
+    >
+      <div>
+        <button
+          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+          type="button"
+        >
+          <span
+            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          >
+            Lähetä lasku
+          </span>
+        </button>
+      </div>
+      <div />
+    </div>
+  </div>
+   
+</div>
+`;

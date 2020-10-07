@@ -22,7 +22,7 @@ import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import BillModal from './billModal/BillModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
@@ -31,10 +31,7 @@ const CustomerViewContainer = () => {
   const [openBill, setOpenBill] = useState<Bill>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
-    variables: { id },
-    errorPolicy: 'all',
-  });
+  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
@@ -68,7 +65,7 @@ const CustomerViewContainer = () => {
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-        <CustomerEditForm
+        <EditCustomerForm
           customerId={id}
           onCancel={() => setEditCustomer(false)}
           onSubmit={() => setEditCustomer(false)}

@@ -162,7 +162,7 @@ exports[`HarborCard renders normally 1`] = `
           <strong
             class="text standard strong xxxl"
           >
-            4
+            0
           </strong>
           <span
             class="text standard span s bold label"

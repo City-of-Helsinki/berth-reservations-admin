@@ -10,16 +10,21 @@ import InvoiceCard from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
 import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
+import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import DeleteButton from '../../../common/deleteButton/DeleteButton';
 
 export interface BerthOfferCardProps {
   className?: string;
+  applicationStatus: ApplicationStatus;
   leaseDetails: LeaseDetails;
   refetchQueries: PureQueryOptions[] | string[];
+  isDeletingLease: boolean;
   handleDeleteLease: (id: string) => void;
 }
 
 const BerthOfferCard = ({
   className,
+  applicationStatus,
   leaseDetails: {
     id,
     berthComment,
@@ -40,6 +45,7 @@ const BerthOfferCard = ({
     order,
   },
   refetchQueries,
+  isDeletingLease,
   handleDeleteLease,
 }: BerthOfferCardProps) => {
   const { t } = useTranslation();
@@ -55,6 +61,7 @@ const BerthOfferCard = ({
   return (
     <>
       <InvoiceCard
+        applicationStatus={applicationStatus}
         buttonsRight={
           <>
             <Button variant="supplementary" disabled>
@@ -63,9 +70,11 @@ const BerthOfferCard = ({
             <Button variant="supplementary" disabled>
               {t('offer.billing.showContract')}
             </Button>
-            <Button variant="secondary" theme="coat" onClick={() => handleDeleteLease(id)}>
-              {t('offer.billing.removeOffer')}
-            </Button>
+            <DeleteButton
+              buttonText={t('offer.billing.removeOffer')}
+              onConfirm={() => handleDeleteLease(id)}
+              disabled={isDeletingLease}
+            />
           </>
         }
         className={className}

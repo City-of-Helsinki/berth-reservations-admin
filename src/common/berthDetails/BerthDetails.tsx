@@ -10,6 +10,7 @@ import { formatDate } from '../utils/format';
 import styles from './berthDetails.module.scss';
 import { IconAccessibility, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../icons';
 import Property from '../property/Property';
+import MaintenanceServicesPlaceholder from '../maintenancePlaceholders/MaintenanceServicesPlaceholder';
 
 interface Lease {
   customer: {
@@ -126,13 +127,7 @@ const BerthDetails = ({
         <Section title={t('common.terminology.comments').toUpperCase()} className={styles.comment}>
           <Text>{comment || '-'}</Text>
         </Section>
-        {onEdit && (
-          <Section className={styles.editSection}>
-            <button onClick={onEdit}>
-              <Text color="brand">{t('common.edit')}</Text>
-            </button>
-          </Section>
-        )}
+        <MaintenanceServicesPlaceholder onClick={onEdit} buttonText={t('common.edit')} />
       </Grid>
     </div>
   );

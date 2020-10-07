@@ -32,6 +32,7 @@ export const getIndividualHarborData = (data: INDIVIDUAL_HARBOR | undefined): In
       name: properties.name,
       numberOfPlaces: properties.numberOfPlaces,
       numberOfFreePlaces: properties.numberOfFreePlaces,
+      numberOfPlacesInQueue: 0, // TODO
       streetAddress: properties.streetAddress,
       zipCode: properties.zipCode,
       municipality: properties.municipality,

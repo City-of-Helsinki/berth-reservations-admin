@@ -24,6 +24,8 @@ import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
+import DeleteButton from '../../common/deleteButton/DeleteButton';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -31,6 +33,9 @@ export interface UnmarkedWsNoticeViewProps {
   order: Order | null;
   refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
+  isDeleteNoticeLoading: boolean;
+  isCreateLeaseLoading: boolean;
+  isDeleteLeaseLoading: boolean;
   handleCreateLease(): void;
   handleDeleteLease(): void;
   handleDeleteNotice(): void;
@@ -49,11 +54,16 @@ const UnmarkedWsNoticeView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
+  isDeleteNoticeLoading,
+  isCreateLeaseLoading,
+  isDeleteLeaseLoading,
 }: UnmarkedWsNoticeViewProps) => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
+  const canDeleteLease = noticeDetails.status === ApplicationStatus.OFFER_GENERATED;
+  const canDeleteNotice = canDeleteLease || noticeDetails.status === ApplicationStatus.PENDING;
 
   return (
     <PageContent className={styles.noticeView}>
@@ -72,9 +82,13 @@ const UnmarkedWsNoticeView = ({
           />
         </div>
         <div className={styles.actionsRight}>
-          <Button onClick={handleDeleteNotice} variant="secondary">
-            {t('unmarkedWsNotices.view.deleteNotice')}
-          </Button>
+          {canDeleteNotice && (
+            <DeleteButton
+              buttonText={t('unmarkedWsNotices.view.deleteNotice')}
+              onConfirm={handleDeleteNotice}
+              disabled={isDeleteNoticeLoading}
+            />
+          )}
         </div>
       </div>
 
@@ -97,7 +111,9 @@ const UnmarkedWsNoticeView = ({
                 (order ? (
                   <Chip color={'green'} label="Lasku luotu" />
                 ) : (
-                  <Button onClick={handleCreateLease}>{t('unmarkedWsNotices.view.createInvoice')}</Button>
+                  <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
+                    {t('unmarkedWsNotices.view.createInvoice')}
+                  </Button>
                 ))}
             </div>
           </Grid>
@@ -106,14 +122,19 @@ const UnmarkedWsNoticeView = ({
 
       {order && (
         <InvoiceCard
+          applicationStatus={noticeDetails.status}
           buttonsRight={
-            <Button variant="secondary" theme="coat" onClick={handleDeleteLease}>
-              {t('unmarkedWsNotices.view.deleteInvoice')}
-            </Button>
+            canDeleteLease && (
+              <DeleteButton
+                buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
+                onConfirm={handleDeleteLease}
+                disabled={isDeleteLeaseLoading}
+              />
+            )
           }
           className={styles.fullWidth}
           customerEmail={customerProfile?.primaryEmail ?? null}
-          order={order as Order}
+          order={order}
           placeDetails={<p>{t('common.terminology.unmarkedWinterStoragePlace')}</p>}
           placeName={noticeDetails.choice.winterStorageAreaName}
           placeProperties={[]}

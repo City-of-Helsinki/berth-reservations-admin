@@ -9,6 +9,7 @@ import MapLinks from '../../../common/mapLinks/MapLinks';
 import Text from '../../../common/text/Text';
 import { formatAddress, formatDimension } from '../../../common/utils/format';
 import placeholderImage from '../../../common/placeholderImage.svg';
+import ContactInformationDetails from '../../../common/contactInformationCard/ContactInformationDetails';
 
 export type WinterStorageAreaDetailsProps = Pick<
   WinterStorageAreaData,
@@ -43,8 +44,7 @@ const WinterStorageAreaDetails = ({
         </Section>
       </div>
       <div className={styles.column}>
-        <Section title={t('common.terminology.maintenance').toUpperCase()}>-{/* TODO */}</Section>
-        <Section title={t('common.terminology.harborChief').toUpperCase()}>-{/* TODO */}</Section>
+        <ContactInformationDetails />
       </div>
     </Grid>
   );

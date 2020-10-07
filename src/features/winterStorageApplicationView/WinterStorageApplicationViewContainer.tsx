@@ -18,7 +18,7 @@ import {
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { getCustomerProfile } from '../customerView/utils';
 import Modal from '../../common/modal/Modal';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
 const WinterStorageApplicationViewContainer = () => {
   const { id } = useParams<{ id: string }>();
@@ -89,7 +89,7 @@ const WinterStorageApplicationViewContainer = () => {
 
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-          <CustomerEditForm
+          <EditCustomerForm
             customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}
