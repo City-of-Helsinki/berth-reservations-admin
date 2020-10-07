@@ -89,6 +89,7 @@ const UnmarkedWsNoticeList = ({
         columns={columns}
         data={notices}
         loading={loading}
+        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         renderSubComponent={(row) => (
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...row.original} />

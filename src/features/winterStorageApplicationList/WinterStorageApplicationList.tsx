@@ -87,6 +87,7 @@ const WinterStorageApplicationList = ({
         columns={columns}
         data={applications}
         loading={loading}
+        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} />}
         renderMainHeader={() => (
           <TableFilters

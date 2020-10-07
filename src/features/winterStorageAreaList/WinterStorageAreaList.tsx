@@ -80,6 +80,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
         canSelectRows
         columns={columns}
         data={data}
+        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
         loading={loading}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderMainHeader={() => t('winterStorageAreaList.tableHeaders.mainHeader')}

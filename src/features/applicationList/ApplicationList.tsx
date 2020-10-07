@@ -112,6 +112,7 @@ const ApplicationList = ({
       <Table
         data={tableData}
         loading={loading || isDeleting}
+        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         columns={columns}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} handleDeleteLease={handleDeleteLease} />}
         renderMainHeader={() => {

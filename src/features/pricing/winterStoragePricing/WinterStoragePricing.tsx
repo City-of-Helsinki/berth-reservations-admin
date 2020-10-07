@@ -70,8 +70,8 @@ const WinterStoragePricing = ({ data, loading, className, refetchQueries }: Wint
     },
     {
       Header: t('pricing.winterStorage.period') || '',
-      accessor: 'period',
-      Cell: ({ cell }) => t(getPeriodTKey(cell.value)),
+      accessor: ({ period }) => t(getPeriodTKey(period)),
+      id: 'period',
     },
     {
       id: 'edit',
@@ -115,6 +115,7 @@ const WinterStoragePricing = ({ data, loading, className, refetchQueries }: Wint
           <Section>{t('pricing.winterStorage.description')}</Section>
           <Table
             columns={winterStorageCols}
+            initialState={{ sortBy: [{ id: 'area', desc: false }] }}
             data={getWinterStorageData(data)}
             loading={loading}
             theme="basic"
