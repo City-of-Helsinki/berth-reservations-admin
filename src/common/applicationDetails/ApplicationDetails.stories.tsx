@@ -22,7 +22,7 @@ export const applicationDetails = () => (
       berthNum: 'berth',
     }}
     createdAt="23.8.2019, klo 21.06"
-    queue={245}
+    queue={0}
     status={ApplicationStatus.OFFER_GENERATED}
     boatType="Purjevene / moottoripursi"
     boatRegistrationNumber="A 12345"
@@ -32,7 +32,7 @@ export const applicationDetails = () => (
     boatWeight={350}
     boatName="Cama la Yano"
     boatModel="Marine"
-    harborChoices={[
+    choices={[
       { harbor: '123', harborName: 'first choice', priority: 1 },
       { harbor: '321', harborName: 'second choice', priority: 3 },
     ]}
@@ -55,7 +55,7 @@ export const withAssignedLease = () => (
       berthNum: 'berth',
     }}
     createdAt="23.8.2019, klo 21.06"
-    queue={245}
+    queue={0}
     status={ApplicationStatus.OFFER_GENERATED}
     boatType="Purjevene / moottoripursi"
     boatRegistrationNumber="A 12345"
@@ -65,7 +65,7 @@ export const withAssignedLease = () => (
     boatWeight={350}
     boatName="Cama la Yano"
     boatModel="Marine"
-    harborChoices={[
+    choices={[
       { harbor: '123', harborName: 'first choice', priority: 1 },
       { harbor: '321', harborName: 'second choice', priority: 3 },
     ]}

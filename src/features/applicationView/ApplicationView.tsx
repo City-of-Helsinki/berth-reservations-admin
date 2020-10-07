@@ -81,7 +81,7 @@ const ApplicationView = ({
       <Card className={styles.fullWidth}>
         <CardHeader title={t('applicationView.applicationDetails.title')} />
         <CardBody>
-          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} queue={null} />
+          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
         </CardBody>
       </Card>
 

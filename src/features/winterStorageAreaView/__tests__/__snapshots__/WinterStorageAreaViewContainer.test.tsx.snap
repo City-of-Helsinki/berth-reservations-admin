@@ -373,7 +373,7 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
        
     </div>
     <div
-      class="card card"
+      class="card actionHistoryCard"
     >
       <div
         class="cardHeader"
