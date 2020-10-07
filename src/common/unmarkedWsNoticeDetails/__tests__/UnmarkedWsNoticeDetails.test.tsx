@@ -28,7 +28,6 @@ const applicant = {
   primaryEmail: 'test@hel.ninja',
   primaryPhone: '+358 123 4567',
   showCustomerNameAsLink: false,
-  ssn: '-',
   title: 'Applicant',
 };
 

@@ -117,7 +117,8 @@
       "inQueue": "Jonossa",
       "length": "Pituus",
       "lighting": "Valaistus",
-      "maintenance": "Kunnossapito",
+      "maintenanceTeam": "Kunnossapito",
+      "maintenanceDetails": "Huoltotiedot",
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
       "mooringType": "Kiinnitystapa",
@@ -244,7 +245,6 @@
       "customerGroup": "Asiakasryhmä",
       "firstName": "Etunimet",
       "lastName": "Sukunimi",
-      "ssn": "Henkilötunnus",
       "organizationName": "Yrityksen tai yhteisön nimi",
       "businessId": "Y-tunnus",
       "address": "Jakeluosoite",
@@ -426,6 +426,7 @@
   },
   "customerList": {
     "title": "Asiakkaat",
+    "addNewCustomer": "Lisää uusi asiakas",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",
@@ -586,7 +587,6 @@
     "name": "Nimi",
     "firstName": "Etunimet",
     "lastName": "Sukunimi",
-    "ssn": "Henkilötunnus",
     "businessId": "Y-tunnus",
     "address": "Jakeluosoite",
     "postalCode": "Postinumero",
@@ -682,8 +682,7 @@
   },
   "invoiceCard": {
     "placeDetails": {
-      "title": "Paikan tiedot",
-      "maintenanceDetails": "Huoltotiedot"
+      "title": "Paikan tiedot"
     },
     "invoiceSent": "Tarjous lähetetty",
     "sendInvoice": {

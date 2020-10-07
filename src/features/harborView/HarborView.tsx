@@ -55,7 +55,7 @@ const HarborView = ({
             maxWidth: harbor.maxWidth || 0,
             numberOfPlaces: harbor.numberOfPlaces || 0,
             numberOfFreePlaces: harbor.numberOfFreePlaces || 0,
-            queue: harbor.numberOfPlaces || 0,
+            queue: harbor.numberOfPlacesInQueue || 0,
             wasteCollection: harbor.wasteCollection,
             water: harbor.water,
           }}

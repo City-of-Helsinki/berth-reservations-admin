@@ -63,7 +63,7 @@ export interface ApplicationDetailsProps {
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
   lease?: Lease | null;
-  queue: number | null;
+  queue: number;
   status: ApplicationStatus;
   summaryInformation?: SummaryInformation;
 }
@@ -109,7 +109,7 @@ const ApplicationDetails = ({
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}
           />
-          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue || ''}`} />
+          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
           <LabelValuePair
             label={t('applicationList.applicationDetails.status')}
             value={t(APPLICATION_STATUS[status]?.label)}

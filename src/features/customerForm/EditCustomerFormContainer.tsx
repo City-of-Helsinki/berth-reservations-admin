@@ -16,18 +16,17 @@ import {
   UPDATE_BERTH_SERVICES_PROFILEVariables as UPDATE_BERTH_SERVICES_PROFILE_VARS,
 } from './__generated__/UPDATE_BERTH_SERVICES_PROFILE';
 
-export interface CustomerEditFormProps
+export interface EditCustomerFormProps
   extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete' | 'refetchQueries'> {
   customerId: string;
   refetchQueries?: PureQueryOptions[] | string[];
 }
 
-const CustomerEditFormContainer = ({ customerId, onCancel, onSubmit, refetchQueries }: CustomerEditFormProps) => {
+const EditCustomerFormContainer = ({ customerId, onCancel, onSubmit, refetchQueries }: EditCustomerFormProps) => {
   const { t } = useTranslation();
 
   const { loading, data } = useQuery<CUSTOMER_FORM>(CUSTOMER_FORM_QUERY, {
     variables: { id: customerId },
-    errorPolicy: 'all',
   });
 
   const [updateProfile, { loading: updateProfileLoading }] = useMutation<UPDATE_PROFILE, UPDATE_PROFILE_VARS>(
@@ -74,4 +73,4 @@ const CustomerEditFormContainer = ({ customerId, onCancel, onSubmit, refetchQuer
   );
 };
 
-export default CustomerEditFormContainer;
+export default EditCustomerFormContainer;

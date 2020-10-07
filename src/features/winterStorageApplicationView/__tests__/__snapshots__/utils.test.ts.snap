@@ -52,7 +52,7 @@ Object {
   "lastName": "test",
   "municipality": "helsinki",
   "phoneNumber": "555555",
-  "queue": null,
+  "queue": 0,
   "status": "PENDING",
   "summaryInformation": Object {
     "acceptBoatingNewsletter": true,

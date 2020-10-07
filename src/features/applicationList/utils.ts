@@ -28,7 +28,7 @@ export interface ApplicationData {
   isSwitch: boolean;
   customerId?: string;
   berthSwitch: BerthSwitch | null;
-  queue: number | null;
+  queue: number;
   createdAt: string;
   municipality: string;
   status: ApplicationStatus;
@@ -103,7 +103,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
           customerId: customer?.id,
           isSwitch: !!berthSwitch,
           berthSwitch: berthSwitchProps,
-          queue: null,
+          queue: 0, // TODO
           createdAt,
           municipality,
           status,

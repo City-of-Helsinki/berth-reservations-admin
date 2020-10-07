@@ -37,7 +37,7 @@ describe('SendInvoiceForm', () => {
     await act(async () => {
       wrapper.find('Form').simulate('submit');
     });
-    expect(onSubmit).toHaveBeenCalledWith({ dueDate: '2020-09-23' });
+    expect(onSubmit).toHaveBeenCalledWith({ dueDate: '2020-10-07' });
   });
 
   it('disables submit button if email is missing', async () => {

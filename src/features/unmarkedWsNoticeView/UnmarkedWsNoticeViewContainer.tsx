@@ -27,7 +27,7 @@ import {
 } from './__generated__/DELETE_UNMARKED_WINTER_STORAGE_NOTICE';
 import hdsToast from '../../common/toast/hdsToast';
 import Modal from '../../common/modal/Modal';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 import {
   CREATE_UNMARKED_WINTER_STORAGE_LEASE,
   CREATE_UNMARKED_WINTER_STORAGE_LEASEVariables as CREATE_UNMARKED_WINTER_STORAGE_LEASE_VARS,
@@ -158,7 +158,7 @@ const UnmarkedWsNoticeViewContainer = () => {
 
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-          <CustomerEditForm
+          <EditCustomerForm
             customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}

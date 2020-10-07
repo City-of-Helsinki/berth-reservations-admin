@@ -20,7 +20,7 @@ import {
 } from '../linkApplicationToCustomer/__generated__/UPDATE_BERTH_APPLICATION';
 import { UPDATE_BERTH_APPLICATION_MUTATION } from '../linkApplicationToCustomer/mutations';
 import Modal from '../../common/modal/Modal';
-import CustomerEditForm from '../customerForm/CustomerEditFormContainer';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
 const ApplicationViewContainer = () => {
   const { id } = useParams<{ id: string }>();
@@ -93,7 +93,7 @@ const ApplicationViewContainer = () => {
 
       {customerProfile && (
         <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
-          <CustomerEditForm
+          <EditCustomerForm
             customerId={customerProfile.customerId}
             onCancel={() => setEditCustomer(false)}
             onSubmit={() => setEditCustomer(false)}

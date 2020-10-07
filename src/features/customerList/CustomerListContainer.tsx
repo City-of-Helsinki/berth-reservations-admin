@@ -35,7 +35,7 @@ const CustomerListContainer = () => {
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
   };
 
-  const { data, loading } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
+  const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
     variables: customersVars,
     fetchPolicy: 'no-cache',
   });
@@ -65,6 +65,7 @@ const CustomerListContainer = () => {
         onPageChange: ({ selected }) => goToPage(selected),
       }}
       tableTools={{
+        refetch,
         searchVal,
         searchBy,
         setSearchVal,

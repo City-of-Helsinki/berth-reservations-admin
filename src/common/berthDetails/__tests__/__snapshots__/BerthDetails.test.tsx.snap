@@ -227,18 +227,62 @@ exports[`BerthDetails renders normally with all props 1`] = `
       </section>
     </article>
     <article
-      class="section editSection"
+      class="section"
     >
-      <section
-        class="body"
+      <div
+        class="sectionHeadWithButton"
       >
-        <button>
+        <h4
+          class="text standard h4 m title"
+        >
+          HUOLTOTYÖT (PLACEHOLDER)
+        </h4>
+        <button
+          class="title"
+          type="button"
+        >
           <span
             class="text brand span"
           >
             Muokkaa
           </span>
         </button>
+      </div>
+      <section
+        class="body"
+      >
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="123"
+                >
+                  123
+                </a>
+              </td>
+              <td>
+                Portin lukko rikki
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="456"
+                >
+                  456
+                </a>
+              </td>
+              <td>
+                Poiju irti
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </article>
   </div>
@@ -284,6 +328,51 @@ exports[`BerthDetails renders normally with minimum props 1`] = `
         </span>
       </section>
     </article>
+    <article
+      class="section"
+    >
+      <h4
+        class="text standard h4 m title"
+      >
+        HUOLTOTYÖT (PLACEHOLDER)
+      </h4>
+      <section
+        class="body"
+      >
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="123"
+                >
+                  123
+                </a>
+              </td>
+              <td>
+                Portin lukko rikki
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="456"
+                >
+                  456
+                </a>
+              </td>
+              <td>
+                Poiju irti
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
   </div>
 </div>
 `;
@@ -325,6 +414,51 @@ exports[`BerthDetails renders normally with null props 1`] = `
         >
           -
         </span>
+      </section>
+    </article>
+    <article
+      class="section"
+    >
+      <h4
+        class="text standard h4 m title"
+      >
+        HUOLTOTYÖT (PLACEHOLDER)
+      </h4>
+      <section
+        class="body"
+      >
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="123"
+                >
+                  123
+                </a>
+              </td>
+              <td>
+                Portin lukko rikki
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  class="internalLink brand"
+                  href="#/"
+                  title="456"
+                >
+                  456
+                </a>
+              </td>
+              <td>
+                Poiju irti
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </article>
   </div>

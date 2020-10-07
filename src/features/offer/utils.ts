@@ -141,7 +141,7 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
     servicemapId: properties.servicemapId || '',
     properties: {
       ...pierProps,
-      queue: properties.numberOfPlaces, // TODO
+      queue: 0, // TODO
       numberOfPlaces: properties.numberOfPlaces,
       numberOfFreePlaces: properties.numberOfFreePlaces,
       maxWidth: properties.maxWidth || 0,

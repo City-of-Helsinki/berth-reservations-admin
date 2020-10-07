@@ -129,7 +129,7 @@ export const getApplicationDetailsData = (
     accessibilityRequired,
     applicant: getApplicantDetails(berthApplication),
     berthSwitch,
-    queue: null,
+    queue: 0, // TODO
     choices,
     lease,
     boatType: boatTypes.find(({ id }) => id === berthApplication.boatType)?.name,

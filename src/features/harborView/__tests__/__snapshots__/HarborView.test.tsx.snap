@@ -147,7 +147,7 @@ exports[`HarborView renders normally 1`] = `
               <strong
                 class="text standard strong xxxl"
               >
-                189
+                0
               </strong>
               <span
                 class="text standard span s bold label"
@@ -412,7 +412,7 @@ exports[`HarborView renders normally 1`] = `
        
     </div>
     <div
-      class="card card"
+      class="card actionHistoryCard"
     >
       <div
         class="cardHeader"

@@ -25,7 +25,7 @@ const minimumProps: ApplicationDetailsProps = {
   createdAt: 'Wed Oct 23 2019 15:15:05 GMT+0300 (Eastern European Summer Time)',
   choices: [],
   id: '54321',
-  queue: null,
+  queue: 0,
   status: ApplicationStatus.PENDING,
 };
 
@@ -46,7 +46,6 @@ const moreProps: Partial<ApplicationDetailsProps> = {
     { harborName: 'Eka satama', harbor: '123', priority: 1 },
     { harborName: 'Kolmas satama', harbor: '321', priority: 3 },
   ],
-  queue: 245,
 };
 
 const privateCustomerProfile: PrivateCustomerDetailsProps = {

@@ -21,6 +21,5 @@ export const organizationCustomerProfile = {
   primaryEmail: 'test@example.com',
   primaryPhone: '0504391742',
   language: Language.FINNISH,
-  ssn: '010101A1234',
   customerGroup: CustomerGroup.COMPANY,
 };
