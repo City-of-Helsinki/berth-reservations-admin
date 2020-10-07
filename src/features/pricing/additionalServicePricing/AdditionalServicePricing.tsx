@@ -105,7 +105,7 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
         </CardBody>
       </Card>
       {editRowValues && (
-        <Modal isOpen={true} toggleModal={handleClose} label={t('pricing.editModalHeading').toUpperCase()}>
+        <Modal isOpen toggleModal={handleClose} label={t('pricing.editModalHeading').toUpperCase()}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.ADDITIONAL_SERVICES}

@@ -46,7 +46,7 @@ const HarborViewContainer = () => {
       />
 
       {berthToEdit && (
-        <Modal isOpen={true} toggleModal={() => setBerthToEdit(null)}>
+        <Modal isOpen toggleModal={() => setBerthToEdit(null)}>
           <BerthEditForm
             berthId={berthToEdit}
             onCancel={() => setBerthToEdit(null)}
@@ -77,7 +77,7 @@ const HarborViewContainer = () => {
       </Modal>
 
       {pierToEdit && (
-        <Modal isOpen={true} toggleModal={() => setPierToEdit(null)}>
+        <Modal isOpen toggleModal={() => setPierToEdit(null)}>
           <PierEditForm
             pierId={pierToEdit}
             onCancel={() => setPierToEdit(null)}

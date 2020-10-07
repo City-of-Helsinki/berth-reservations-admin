@@ -10,14 +10,14 @@ describe('BillModal', () => {
 
   it('renders correctly', () => {
     ReactModal.setAppElement('body');
-    const wrapper = mount(<BillModal isOpen={true} bill={mockBills[0]} />);
+    const wrapper = mount(<BillModal isOpen bill={mockBills[0]} />);
     expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('calls toggleModal method on button close click', () => {
     ReactModal.setAppElement('body');
     const toggleModalMock = jest.fn();
-    const wrapper = mount(<BillModal isOpen={true} bill={mockBills[0]} toggleModal={toggleModalMock} />);
+    const wrapper = mount(<BillModal isOpen bill={mockBills[0]} toggleModal={toggleModalMock} />);
     wrapper.find('button').simulate('click');
     expect(toggleModalMock).toBeCalledWith(false);
   });
