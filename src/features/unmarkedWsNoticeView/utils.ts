@@ -12,6 +12,7 @@ interface UnmarkedWinterStorageChoice {
 }
 
 type Choices = (WINTER_STORAGE_CHOICES | null | undefined)[] | null;
+
 export const getChoiceFromWinterStorageAreaChoices = (choices: Choices): UnmarkedWinterStorageChoice => {
   if (
     Array.isArray(choices) &&
@@ -66,6 +67,8 @@ export const getNoticeDetailsData = (
     customerId: customer?.id,
     id,
     status,
+    leaseId: winterStorageNotice.lease?.id,
+    leaseStatus: winterStorageNotice.lease?.status,
     summaryInformation: {
       acceptBoatingNewsletter: acceptBoatingNewsletter,
       acceptFitnessNews: acceptFitnessNews,

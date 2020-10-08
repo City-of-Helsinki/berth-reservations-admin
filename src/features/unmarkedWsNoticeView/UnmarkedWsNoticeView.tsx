@@ -104,7 +104,7 @@ const UnmarkedWsNoticeView = ({
       <Card className={styles.fullWidth}>
         <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
         <CardBody>
-          <Grid colsCount={3}>
+          <Grid colsCount={4} className={styles.noticeDetailsGrid}>
             <UnmarkedWsNoticeDetails {...noticeDetails} />
             <div className={styles.detailsActions}>
               {customerProfile &&

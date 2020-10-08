@@ -1,4 +1,4 @@
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import {
   UNMARKED_WINTER_STORAGE_NOTICES,
   UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges as UNMARKED_WINTER_STORAGE_NOTICES_EDGE,
@@ -25,6 +25,8 @@ export type UnmarkedWinterStorageNotice = {
   id: string;
   lastName: string;
   status: ApplicationStatus;
+  leaseStatus?: LeaseStatus;
+  leaseId?: string;
 };
 
 export const getUnmarkedWinterStorageNotices = (
@@ -45,6 +47,7 @@ export const getUnmarkedWinterStorageNotices = (
         lastName,
         status,
         winterStorageAreaChoices,
+        lease,
       } = (edge as UNMARKED_WINTER_STORAGE_NOTICES_EDGE).node as UNMARKED_WINTER_STORAGE_NOTICES_NODE;
 
       const applicationData: UnmarkedWinterStorageNotice = {
@@ -60,6 +63,8 @@ export const getUnmarkedWinterStorageNotices = (
         id: id,
         lastName: lastName,
         status: status,
+        leaseId: lease?.id,
+        leaseStatus: lease?.status,
       };
 
       return [...acc, applicationData];

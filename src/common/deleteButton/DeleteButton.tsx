@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ConfirmationModal, { ConfirmationModalProps } from '../confirmationModal/ConfirmationModal';
-import Button from '../button/Button';
+import ButtonWithConfirmation, { ButtonWithConfirmationStyle } from '../buttonWithConfirmation/buttonWithConfirmation';
+import { ConfirmationModalProps } from '../confirmationModal/ConfirmationModal';
 
 export interface DeleteButtonProps extends Pick<ConfirmationModalProps, 'onConfirm' | 'warningText'> {
   buttonText: string;
+  buttonStyle?: ButtonWithConfirmationStyle;
   modalTitle?: string;
   infoText?: string;
   onCancelText?: string;
@@ -22,28 +23,22 @@ const DeleteButton = ({
   disabled,
   buttonText,
   warningText,
+  buttonStyle = ButtonWithConfirmationStyle.DEFAULT,
 }: DeleteButtonProps) => {
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <>
-      <Button variant="secondary" theme="coat" onClick={() => setIsModalOpen(true)} disabled={disabled}>
-        {buttonText}
-      </Button>
-      <ConfirmationModal
-        isOpen={isModalOpen}
-        title={modalTitle ?? t('deleteButton.modalTitle')}
-        infoText={infoText ?? t('deleteButton.infoText')}
-        warningText={warningText ?? t('deleteButton.warningText')}
-        onCancelText={onCancelText ?? t('deleteButton.onCancelText')}
-        onConfirmText={onConfirmText ?? t('deleteButton.onConfirmText')}
-        onCancel={() => setIsModalOpen(false)}
-        onConfirm={() => {
-          onConfirm();
-          setIsModalOpen(false);
-        }}
-      />
-    </>
+    <ButtonWithConfirmation
+      buttonText={buttonText}
+      modalTitle={modalTitle ?? t('deleteButton.modalTitle')}
+      buttonStyle={buttonStyle}
+      infoText={infoText ?? t('deleteButton.infoText')}
+      onCancelText={onCancelText ?? t('deleteButton.onCancelText')}
+      onConfirmText={onConfirmText ?? t('deleteButton.onConfirmText')}
+      warningText={warningText ?? t('deleteButton.warningText')}
+      onConfirm={onConfirm}
+      disabled={disabled}
+      confirmButtonVariant="danger"
+    />
   );
 };
 

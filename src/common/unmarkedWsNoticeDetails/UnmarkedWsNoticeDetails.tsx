@@ -1,16 +1,13 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-import Section from '../section/Section';
-import LabelValuePair from '../labelValuePair/LabelValuePair';
-import Text from '../text/Text';
-import { formatDimension, formatWeight, formatDate } from '../utils/format';
-import { APPLICATION_STATUS } from '../utils/consonants';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
-import OrganizationCustomerDetails, {
-  OrganizationCustomerDetailsProps,
-} from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
+import { OrganizationCustomerDetailsProps } from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import NoticeDetails from './fragments/noticeDetails/NoticeDetails';
+import ApplicantDetails from './fragments/applicantDetails/ApplicantDetails';
+import BoatDetails from './fragments/boatDetails/BoatDetails';
+import SummaryDetails from './fragments/summaryDetails/SummaryDetails';
+import StickerDetails from './fragments/stickerDetails/StickerDetailsContainer';
 
 interface SummaryInformation {
   acceptBoatingNewsletter: boolean;
@@ -38,7 +35,9 @@ export interface UnmarkedWsNoticeDetailsProps {
     winterStorageArea: string;
   };
   id: string;
+  leaseId?: string;
   status: ApplicationStatus;
+  leaseStatus?: LeaseStatus;
   summaryInformation?: SummaryInformation;
 }
 
@@ -56,91 +55,29 @@ const UnmarkedWsNoticeDetails = ({
   boatModel,
   choice,
   summaryInformation,
+  leaseStatus,
+  leaseId,
 }: UnmarkedWsNoticeDetailsProps) => {
-  const { t, i18n } = useTranslation();
-
   return (
     <>
       <div>
-        <Section title={t('unmarkedWsNotices.noticeDetails.notice').toUpperCase()}>
-          <LabelValuePair label={'Alue'} value={choice.winterStorageAreaName} />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.receivedDate')}
-            value={formatDate(createdAt, i18n.language, true)}
-          />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.status')}
-            value={t(APPLICATION_STATUS[status]?.label)}
-          />
-        </Section>
-        {applicant &&
-          ('organization' in applicant ? (
-            <OrganizationCustomerDetails
-              {...applicant}
-              title={t('unmarkedWsNotices.noticeDetails.ownerInformation').toUpperCase()}
-            />
-          ) : (
-            <PrivateCustomerDetails
-              {...applicant}
-              title={t('unmarkedWsNotices.noticeDetails.ownerInformation').toUpperCase()}
-            />
-          ))}
+        <NoticeDetails createdAt={createdAt} choice={choice} status={status} />
+        <ApplicantDetails applicant={applicant} />
       </div>
       <div>
-        <Section title={t('applicationList.applicationDetails.boatInfo')}>
-          <LabelValuePair label={t('applicationList.applicationDetails.boatType')} value={boatType} />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.registrationNumber')}
-            value={boatRegistrationNumber}
-          />
-        </Section>
-        <Section>
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.boatWidth')}
-            value={formatDimension(boatWidth, i18n.language)}
-          />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.boatLength')}
-            value={formatDimension(boatLength, i18n.language)}
-          />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.boatDepth')}
-            value={formatDimension(boatDraught, i18n.language)}
-          />
-          <LabelValuePair
-            label={t('applicationList.applicationDetails.boatWeight')}
-            value={formatWeight(boatWeight, i18n.language)}
-          />
-        </Section>
-        <Section>
-          <LabelValuePair label={t('applicationList.applicationDetails.boatName')} value={boatName} />
-          <LabelValuePair label={t('applicationList.applicationDetails.boatBrand')} value={boatModel} />
-        </Section>
-        {summaryInformation && Object.values(summaryInformation).some((value) => value) && (
-          <Section title={t('applicationList.applicationDetails.winterStorageApplicationSummary')}>
-            {summaryInformation.acceptBoatingNewsletter && (
-              <div>
-                <Text>{t('applicationList.applicationDetails.acceptBoatingNewsletter')}</Text>
-              </div>
-            )}
-            {summaryInformation.acceptFitnessNews && (
-              <div>
-                <Text>{t('applicationList.applicationDetails.acceptFitnessNews')}</Text>
-              </div>
-            )}
-            {summaryInformation.acceptLibraryNews && (
-              <div>
-                <Text>{t('applicationList.applicationDetails.acceptLibraryNews')}</Text>
-              </div>
-            )}
-            {summaryInformation.acceptOtherCultureNews && (
-              <div>
-                <Text>{t('applicationList.applicationDetails.acceptOtherCultureNews')}</Text>
-              </div>
-            )}
-          </Section>
-        )}
+        <BoatDetails
+          boatType={boatType}
+          boatRegistrationNumber={boatRegistrationNumber}
+          boatWidth={boatWidth}
+          boatLength={boatLength}
+          boatDraught={boatDraught}
+          boatWeight={boatWeight}
+          boatName={boatName}
+          boatModel={boatModel}
+        />
+        <SummaryDetails summaryInformation={summaryInformation} />
       </div>
+      <div>{leaseId && leaseStatus && <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} />}</div>
     </>
   );
 };

@@ -64,7 +64,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
       class="cardBody"
     >
       <div
-        class="grid cols3"
+        class="grid cols4 noticeDetailsGrid"
       >
         <div>
           <article
@@ -492,6 +492,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
             </section>
           </article>
         </div>
+        <div />
         <div
           class="detailsActions"
         />
@@ -820,7 +821,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
       class="cardBody"
     >
       <div
-        class="grid cols3"
+        class="grid cols4 noticeDetailsGrid"
       >
         <div>
           <article
@@ -1248,6 +1249,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
             </section>
           </article>
         </div>
+        <div />
         <div
           class="detailsActions"
         >

@@ -17,6 +17,8 @@ Array [
     "firstName": "Teppo",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
     "lastName": "Tulppu",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -34,6 +36,8 @@ Array [
     "firstName": "Aku",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToy",
     "lastName": "Ankka",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -51,6 +55,8 @@ Array [
     "firstName": "Hannu",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToz",
     "lastName": "Hanhi",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -68,6 +74,8 @@ Array [
     "firstName": "Milla",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo1",
     "lastName": "Magia",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -85,6 +93,8 @@ Array [
     "firstName": "Iines",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo2",
     "lastName": "Ankka",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -102,6 +112,8 @@ Array [
     "firstName": "Mikki",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo3",
     "lastName": "Hiiri",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -119,6 +131,8 @@ Array [
     "firstName": "Roope",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo4",
     "lastName": "Ankka",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -136,6 +150,8 @@ Array [
     "firstName": "Kulta-Into",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo5",
     "lastName": "Pii",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -153,6 +169,8 @@ Array [
     "firstName": "Hansu",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMA==",
     "lastName": "Hanhi",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
   Object {
@@ -170,6 +188,8 @@ Array [
     "firstName": "Hessu",
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMQ==",
     "lastName": "Hopo",
+    "leaseId": undefined,
+    "leaseStatus": undefined,
     "status": "PENDING",
   },
 ]

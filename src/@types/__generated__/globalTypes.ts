@@ -190,6 +190,11 @@ export interface ApproveOrderMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface AssignNewStickerNumberMutationInput {
+  leaseId: string;
+  clientMutationId?: string | null;
+}
+
 export interface CreateAdditionalContactPersonInput {
   firstName: string;
   lastName: string;
