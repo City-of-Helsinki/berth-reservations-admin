@@ -13,7 +13,7 @@ import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
 import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import OfferCard, { OfferCardProps } from './offerCard/OfferCard';
+import BerthOfferCard, { BerthOfferCardProps } from './berthOfferCard/BerthOfferCard';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
@@ -32,9 +32,11 @@ export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   berthApplication: LinkApplicationToCustomerContainerProps['application'];
   customerProfile: CustomerProfileCardProps | null;
-  leaseDetails: OfferCardProps['leaseDetails'] | null;
+  leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
+  isDeletingLease: boolean;
   handleDeleteLease(id: string): void;
+  handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
 }
 
@@ -44,7 +46,9 @@ const ApplicationView = ({
   customerProfile,
   leaseDetails,
   refetchQueries,
+  isDeletingLease,
   handleDeleteLease,
+  handleEditCustomer,
   handleLinkCustomer,
 }: ApplicationViewProps) => {
   const { t, i18n } = useTranslation();
@@ -69,7 +73,7 @@ const ApplicationView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
           <ActionHistoryCard />
         </>
       ) : (
@@ -79,12 +83,19 @@ const ApplicationView = ({
       <Card className={styles.fullWidth}>
         <CardHeader title={t('applicationView.applicationDetails.title')} />
         <CardBody>
-          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} queue={null} />
+          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
         </CardBody>
       </Card>
 
       {leaseDetails && (
-        <OfferCard leaseDetails={leaseDetails} handleDeleteLease={handleDeleteLease} refetchQueries={refetchQueries} />
+        <BerthOfferCard
+          className={styles.fullWidth}
+          applicationStatus={applicationDetails.status}
+          leaseDetails={leaseDetails}
+          handleDeleteLease={handleDeleteLease}
+          isDeletingLease={isDeletingLease}
+          refetchQueries={refetchQueries}
+        />
       )}
     </PageContent>
   );

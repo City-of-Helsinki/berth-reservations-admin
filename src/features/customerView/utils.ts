@@ -19,7 +19,7 @@ import { CustomerProfileCardProps } from '../../common/customerProfileCard/Custo
 
 export const getCustomerProfile = (
   profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
-): CustomerProfileCardProps => {
+): CustomerProfileCardProps & { customerId: string } => {
   return {
     ...{
       customerId: profile.id,
@@ -30,8 +30,8 @@ export const getCustomerProfile = (
       primaryPhone: profile.primaryPhone?.phone,
       primaryEmail: profile.primaryEmail?.email,
       language: profile.language,
-      ssn: '-', // TODO,
       customerGroup: profile.customerGroup,
+      comment: profile.comment,
     },
     ...(profile.organization && {
       organization: profile.organization,
@@ -159,7 +159,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
           id,
           customerId: profile.id,
           berthSwitch: berthSwitchProps,
-          queue: null,
+          queue: 0, // TODO
           createdAt,
           status,
           lease: leaseProps,

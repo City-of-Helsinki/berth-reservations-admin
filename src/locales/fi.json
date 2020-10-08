@@ -91,6 +91,9 @@
       "ENGLISH": "Englanti"
     },
     "terminology": {
+      "harbor": "Satama",
+      "selection": "Valinta",
+      "accessiblePlace": "Esteetön paikka",
       "address": "Osoite",
       "applications": "Hakemukset",
       "berth": "Venepaikka",
@@ -110,16 +113,21 @@
       "gate": "Portti",
       "harborChief": "Satamapäällikkö",
       "harborMap": "Satamakartta",
+      "invoice": "Lasku",
       "inQueue": "Jonossa",
       "length": "Pituus",
       "lighting": "Valaistus",
-      "maintenance": "Kunnossapito",
+      "maintenanceTeam": "Kunnossapito",
+      "maintenanceDetails": "Huoltotiedot",
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
+      "mooringType": "Kiinnitystapa",
       "parkingPermit": "Pysäköintilupa",
+      "pier": "Laituri",
       "serviceMap": "Palvelukartta",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unnamedBoat": "Nimetön vene",
+      "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "waste": "Jäte",
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
@@ -157,14 +165,18 @@
       "edit": "Muokkaa",
       "errors": {
         "required": "Tämä kenttä on pakollinen.",
+        "email": "Kentän pitää olla sähköpostiosoite.",
+        "postalCode": "Kentän pitää olla postinumero.",
         "numberType": "Kentän pitää olla numero.",
         "integer": "Kentän pitää olla kokonaisluku.",
         "positive": "Kentän pitää olla positiivinen luku.",
         "maxFileSize": "Tiedosto on liian suuri.",
-        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua."
+        "nonNegative": "Kenttä ei saa sisältää negatiivista lukua.",
+        "date": "Tarkista päivämäärä"
       },
       "error": "Tapahtui virhe. Yritä uudestaan.",
       "create": "Luo",
+      "send": "Lähetä",
       "update": "Tallenna",
       "delete": "Poista",
       "cancel": "Peruuta"
@@ -227,6 +239,20 @@
         "infoText": "Oletko varma että haluat poistaa asiakkaan tämän asiakkaan veneen?",
         "warningText": "Tätä toimenpidettä ei voi perua."
       }
+    },
+    "customer": {
+      "title": "Asiakkaan tiedot",
+      "customerGroup": "Asiakasryhmä",
+      "firstName": "Etunimet",
+      "lastName": "Sukunimi",
+      "organizationName": "Yrityksen tai yhteisön nimi",
+      "businessId": "Y-tunnus",
+      "address": "Jakeluosoite",
+      "postalCode": "Postinumero",
+      "city": "Toimipaikka",
+      "phone": "Puhelinnumero",
+      "email": "Sähköpostiosoite",
+      "comment": "Huomiot"
     }
   },
   "harborList": {
@@ -298,7 +324,8 @@
     },
     "applicationType": {
       "newApplication": "Uusi hakemus",
-      "switchApplication": "Vaihtohakemus"
+      "switchApplication": "Vaihtohakemus",
+      "notice": "Ilmoitus"
     },
     "applicationDetails": {
       "title": "HAKEMUKSET",
@@ -362,17 +389,6 @@
   },
   "offer": {
     "title": "Tarjous",
-    "tableHeaders": {
-      "pierFilterBtn": "Laituri",
-      "harbor": "Satama",
-      "pier": "Laituri",
-      "berth": "Paikka",
-      "width": "Leveys",
-      "length": "Pituus",
-      "draught": "Syvyys",
-      "mooringType": "Kiinnitys",
-      "selection": "Valinta"
-    },
     "tableCells": {
       "select": "Valitse"
     },
@@ -381,21 +397,11 @@
       "return": "Palaa valitsematta"
     },
     "berthDetails": {
-      "title": "Paikan tiedot",
-      "mooringType": "Kiinnitystyyppi",
-      "maintenanceDetails": "Huoltotiedot",
-      "gate": "Portti",
-      "electricity": "Sähkö",
-      "water": "Vesi",
-      "lighting": "Valaistus",
-      "waste": "Roskat",
-      "accessible": "Esteetön paikka",
       "previousLeases": "Edelliset vuokralaiset",
-      "comment": "Huomiot",
       "emptyName": "Ei nimeä"
     },
     "billing": {
-      "title": "Lasku",
+      "title": "Tilaustunnus",
       "basePrice": "Perushinta",
       "gate": "Portti",
       "lighting": "Valaistus",
@@ -420,6 +426,7 @@
   },
   "customerList": {
     "title": "Asiakkaat",
+    "addNewCustomer": "Lisää uusi asiakas",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",
@@ -580,7 +587,6 @@
     "name": "Nimi",
     "firstName": "Etunimet",
     "lastName": "Sukunimi",
-    "ssn": "Henkilötunnus",
     "businessId": "Y-tunnus",
     "address": "Jakeluosoite",
     "postalCode": "Postinumero",
@@ -625,6 +631,10 @@
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
+    },
+    "invoiceSent": {
+      "label": "Tarjous on lähetetty asiakkaalle",
+      "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
     }
   },
   "winterStorageAreaList": {
@@ -656,7 +666,10 @@
   },
   "unmarkedWsNotices": {
     "view": {
-      "title": "Nostojärjestysilmoitus"
+      "title": "Nostojärjestysilmoitus",
+      "createInvoice": "Luo lasku",
+      "deleteNotice": "Poista ilmoitus",
+      "deleteInvoice": "Poista lasku"
     },
     "list": {
       "title": "Nostojärjestysilmoitukset"
@@ -665,7 +678,28 @@
       "title": "Nostojärjestysilmoitus",
       "notice": "Ilmoitus",
       "ownerInformation": "Omistajan tiedot"
+    }
+  },
+  "invoiceCard": {
+    "placeDetails": {
+      "title": "Paikan tiedot"
     },
-    "deleteNotice": "Poista ilmoitus"
+    "invoiceSent": "Tarjous lähetetty",
+    "sendInvoice": {
+      "title": "Lähetä lasku",
+      "instructions": {
+        "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
+        "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
+      },
+      "missingEmail": "Sähköpostiosoite puuttuu",
+      "dueDate": "Laskun eräpäivä"
+    }
+  },
+  "deleteButton": {
+    "modalTitle": "Vahvistus",
+    "infoText": "Haluatko varmasti poistaa kyseisen kohteen?",
+    "warningText": "Tätä toimenpidettä ei voi perua.",
+    "onCancelText": "Hylkää",
+    "onConfirmText": "Vahvista"
   }
 }

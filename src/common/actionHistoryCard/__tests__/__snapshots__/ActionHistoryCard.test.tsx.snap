@@ -2,7 +2,7 @@
 
 exports[`ActionHistoryCard renders normally 1`] = `
 <div
-  class="card card"
+  class="card actionHistoryCard"
 >
   <div
     class="cardHeader"

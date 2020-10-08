@@ -7,21 +7,25 @@
   justify-content: space-between;
 }
 
-.tableToolsRight {
-  justify-content: flex-end;
-  display: flex;
-}
-
 .tableToolsLeft {
   display: flex;
   align-items: center;
 
   > * {
-    margin: 0 units(1);
+    margin: 0 units(0.5);
   }
 
   :first-child {
     margin-left: 0;
+  }
+}
+
+.tableToolsRight {
+  justify-content: flex-end;
+  display: flex;
+
+  > * {
+    margin: 0 units(0.5);
   }
 
   :last-child {
@@ -37,7 +41,6 @@
   input {
     background-color: $white;
   }
-  margin-left: units(0.5);
   width: 25%;
   min-width: units(12);
 }

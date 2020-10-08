@@ -55,20 +55,6 @@ exports[`CustomerProfileCard with a private customer profile renders normally 1`
             Käyttäjä
           </span>
         </div>
-        <div
-          class="labelValuePair"
-        >
-          <span
-            class="label standard"
-          >
-            Henkilötunnus:
-          </span>
-          <span
-            class="value left"
-          >
-            010101A1234
-          </span>
-        </div>
       </section>
     </article>
     <article
@@ -399,20 +385,6 @@ exports[`CustomerProfileCard with an organization customer profile renders norma
             class="value left"
           >
             Käyttäjä
-          </span>
-        </div>
-        <div
-          class="labelValuePair"
-        >
-          <span
-            class="label standard"
-          >
-            Henkilötunnus:
-          </span>
-          <span
-            class="value left"
-          >
-            010101A1234
           </span>
         </div>
       </section>

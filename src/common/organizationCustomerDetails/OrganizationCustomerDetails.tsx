@@ -30,7 +30,6 @@ export interface OrganizationCustomerDetailsProps {
   primaryPhone?: string | null;
   language: Language | null;
   showCustomerNameAsLink?: boolean;
-  ssn?: string;
   customerGroup: CustomerGroup | null;
 }
 
@@ -46,7 +45,6 @@ const OrganizationCustomerDetails = ({
   primaryPhone,
   language,
   showCustomerNameAsLink = false,
-  ssn,
   customerGroup,
 }: OrganizationCustomerDetailsProps) => {
   const { t } = useTranslation();
@@ -87,18 +85,6 @@ const OrganizationCustomerDetails = ({
             )
           }
         />
-        {ssn && (
-          <LabelValuePair
-            label={t('customerProfile.ssn')}
-            value={
-              showCustomerNameAsLink && customerId ? (
-                <InternalLink to={`/customers/${customerId}`}>{ssn}</InternalLink>
-              ) : (
-                ssn
-              )
-            }
-          />
-        )}
       </Section>
       <Section>
         <LabelValuePair label={t('customerProfile.phone')} value={primaryPhone} />

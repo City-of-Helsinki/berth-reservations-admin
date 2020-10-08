@@ -95,7 +95,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
             >
               PVM
               <div
-                class="sortArrowWrapper"
+                class="sortArrowWrapper isSorted"
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -218,7 +218,9 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              />
+              >
+                0
+              </div>
               <div
                 class="tableCell"
                 role="cell"
@@ -335,7 +337,9 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              />
+              >
+                0
+              </div>
               <div
                 class="tableCell"
                 role="cell"

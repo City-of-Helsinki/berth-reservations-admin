@@ -13,20 +13,16 @@ import styles from './billModal.module.scss';
 import { Bill } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
 
-interface BillModalProps extends Omit<ModalProps, 'children' | 'isOpen'> {
-  bill?: Bill;
+interface BillModalProps extends Omit<ModalProps, 'children'> {
+  bill: Bill;
 }
 
 const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
   const { t, i18n } = useTranslation();
 
-  if (!bill) {
-    return null;
-  }
-
   const { contractPeriod } = bill;
   return (
-    <Modal isOpen={true} {...modalProps}>
+    <Modal toggleModal={() => toggleModal?.(false)} {...modalProps}>
       <Text as="h4" color="brand" className={styles.heading}>
         {t('customerView.customerBill.bill')}
       </Text>
@@ -52,7 +48,7 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
             }
           />
         ) : (
-          'Placeholder'
+          'PLACEHOLDER' // TODO
         )}
         <LabelValuePair
           label={t('customerView.customerBill.contractPeriod')}

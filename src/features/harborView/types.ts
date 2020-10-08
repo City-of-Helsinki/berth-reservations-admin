@@ -23,7 +23,9 @@ export type IndividualHarborData = {
   | 'servicemapId'
   | 'maxWidth'
 > &
-  PierProps;
+  PierProps & {
+    numberOfPlacesInQueue: number; // TODO
+  };
 
 export type Lease = {
   customer: {

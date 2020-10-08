@@ -47,29 +47,29 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
     {
       Header: t('pricing.harborServices.service') || '',
       width: COLUMN_WIDTH.L,
-      accessor: 'service',
-      Cell: ({ cell }) => t(getProductServiceTKey(cell.value)),
+      accessor: ({ service }) => t(getProductServiceTKey(service)),
+      id: 'service',
     },
     {
       Header: t('pricing.harborServices.price') || '',
-      width: COLUMN_WIDTH.XS,
-      accessor: 'price',
-      Cell: ({ row, cell }) => {
-        switch (row.original.unit) {
+      width: COLUMN_WIDTH.S,
+      accessor: ({ price, unit }) => {
+        switch (unit) {
           case PriceUnits.AMOUNT:
-            return formatPrice(cell.value, i18n.language);
+            return formatPrice(price, i18n.language);
           case PriceUnits.PERCENTAGE:
-            return formatPercentage(cell.value, i18n.language);
+            return formatPercentage(price, i18n.language);
           default:
-            return cell.value;
+            return price;
         }
       },
+      id: 'price',
     },
     {
       Header: t('pricing.harborServices.period') || '',
       width: COLUMN_WIDTH.S,
-      accessor: 'period',
-      Cell: ({ cell }) => t(getPeriodTKey(cell.value)),
+      accessor: ({ period }) => t(getPeriodTKey(period)),
+      id: 'period',
     },
     {
       id: 'edit',
@@ -102,6 +102,7 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
           <Section>{t('pricing.harborServices.description')}</Section>
           <Table
             columns={harborServicesCols}
+            initialState={{ sortBy: [{ id: 'service', desc: false }] }}
             data={getHarborServicesData(data)}
             loading={loading}
             theme="basic"
@@ -109,16 +110,16 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
           />
         </CardBody>
       </Card>
-      <Modal isOpen={!!editRowValues} label={t('pricing.editModalHeading').toUpperCase()}>
-        {editRowValues && (
+      {editRowValues && (
+        <Modal isOpen label={t('pricing.editModalHeading').toUpperCase()} toggleModal={handleClose}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.HARBOR_SERVICES}
             initialValues={editRowValues}
             onSubmit={handleSubmit}
           />
-        )}
-      </Modal>
+        </Modal>
+      )}
     </>
   );
 };

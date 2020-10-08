@@ -3,7 +3,7 @@
 
 .form {
   padding: units(1) 0;
-  max-width: container(s);
+  width: container(s);
 
   > * {
     margin: units(1) 0;
@@ -11,7 +11,7 @@
 }
 
 .confirmationModal {
-  max-width: container(s);
+  width: container(s);
 }
 
 .grid {

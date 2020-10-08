@@ -18,6 +18,7 @@ import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
+import DeleteButton from '../deleteButton/DeleteButton';
 
 interface Lease {
   berthNum: string | number;
@@ -57,11 +58,12 @@ export interface ApplicationDetailsProps {
   boatWidth: number;
   createdAt: string;
   customerId?: string;
+  isDeletingLease?: boolean;
   handleDeleteLease?: (id: string) => void;
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
   lease?: Lease | null;
-  queue: number | null;
+  queue: number;
   status: ApplicationStatus;
   summaryInformation?: SummaryInformation;
 }
@@ -84,6 +86,7 @@ const ApplicationDetails = ({
   boatModel,
   choices,
   lease,
+  isDeletingLease,
   handleDeleteLease,
   accessibilityRequired,
   summaryInformation,
@@ -106,7 +109,7 @@ const ApplicationDetails = ({
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}
           />
-          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue || ''}`} />
+          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
           <LabelValuePair
             label={t('applicationList.applicationDetails.status')}
             value={t(APPLICATION_STATUS[status]?.label)}
@@ -201,9 +204,11 @@ const ApplicationDetails = ({
           <Section title={t('applicationList.applicationDetails.connectedLease').toUpperCase()}>
             {[lease.harborName, lease.pierIdentifier, lease.berthNum].filter(Boolean).join(' ')}
             {handleDeleteLease && (
-              <button className={styles.deleteButton} onClick={() => handleDeleteLease(lease.id)}>
-                <Text color="brand">{t('applicationList.applicationDetails.deleteLease')}</Text>
-              </button>
+              <DeleteButton
+                buttonText={t('applicationList.applicationDetails.deleteLease')}
+                onConfirm={() => handleDeleteLease(lease.id)}
+                disabled={isDeletingLease}
+              />
             )}
           </Section>
         ) : (

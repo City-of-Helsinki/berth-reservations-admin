@@ -22,26 +22,22 @@ import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import BillModal from './billModal/BillModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
+import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
+  const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
   const [openBill, setOpenBill] = useState<Bill>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { loading, error, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
+  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
     return (
       <Notification labelText={t('common.notification.noData.label')}>
         {t('common.notification.noData.description')}
-      </Notification>
-    );
-  if (error)
-    return (
-      <Notification labelText={t('common.notification.error.label')} type="error">
-        {t('common.notification.error.description')}
       </Notification>
     );
 
@@ -60,15 +56,25 @@ const CustomerViewContainer = () => {
         bills={bills}
         boats={boats}
         customerProfile={customerProfile}
+        handleEditCustomer={() => setEditCustomer(true)}
         leases={leases}
+        onClickCreateBoat={() => setCreatingBoat(true)}
         openBills={openBills}
         setBoatToEdit={setBoatToEdit}
         setOpenBill={setOpenBill}
-        onClickCreateBoat={() => setCreatingBoat(true)}
       />
 
+      <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
+        <EditCustomerForm
+          customerId={id}
+          onCancel={() => setEditCustomer(false)}
+          onSubmit={() => setEditCustomer(false)}
+          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+        />
+      </Modal>
+
       {boatToEdit && (
-        <Modal isOpen={true} toggleModal={() => setBoatToEdit(null)}>
+        <Modal isOpen toggleModal={() => setBoatToEdit(null)}>
           <BoatEditForm
             boatTypes={boatTypes}
             initialValues={boatToEdit}
@@ -90,7 +96,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      <BillModal bill={openBill} toggleModal={() => setOpenBill(undefined)} />
+      {openBill && <BillModal isOpen bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
     </>
   );
 };

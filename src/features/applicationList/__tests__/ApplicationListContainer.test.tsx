@@ -24,7 +24,7 @@ const queryMock = {
       first: 10,
       after: undefined,
       switchApplications: undefined,
-      orderBy: undefined,
+      orderBy: 'createdAt',
     },
   },
   result: {

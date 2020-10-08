@@ -9,7 +9,7 @@ interface WinterStorageAreaChoice {
 
 export type WinterStorageApplication = {
   id: string;
-  queue: number | null;
+  queue: number;
   status: ApplicationStatus;
   createdAt: string;
   municipality: string;
@@ -37,7 +37,7 @@ export const getWinterStorageApplicationData = (
     const application = edge.node;
     const applicationData: WinterStorageApplication = {
       id: application.id,
-      queue: null, // TODO: populate from query once available
+      queue: 0, // TODO
       status: application.status,
       createdAt: application.createdAt,
       municipality: application.municipality,

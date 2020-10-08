@@ -68,8 +68,8 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
     },
     {
       Header: t('pricing.berths.period') || '',
-      accessor: 'period',
-      Cell: ({ cell }) => t(getPeriodTKey(cell.value)),
+      accessor: ({ period }) => t(getPeriodTKey(period)),
+      id: 'period',
     },
     {
       id: 'edit',
@@ -113,6 +113,7 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
           <Section>{t('pricing.berths.description')}</Section>
           <Table
             columns={harborCols}
+            initialState={{ sortBy: [{ id: 'name', desc: false }] }}
             data={getBerthsData(data)}
             loading={loading}
             theme="basic"
@@ -120,16 +121,16 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
           />
         </CardBody>
       </Card>
-      <Modal isOpen={!!editRowValues} label={t('pricing.editModalHeading').toUpperCase()}>
-        {editRowValues && (
+      {editRowValues && (
+        <Modal isOpen label={t('pricing.editModalHeading').toUpperCase()} toggleModal={handleClose}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.BERTHS}
             initialValues={editRowValues}
             onSubmit={handleSubmit}
           />
-        )}
-      </Modal>
+        </Modal>
+      )}
     </>
   );
 };

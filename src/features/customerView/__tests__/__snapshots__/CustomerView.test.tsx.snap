@@ -23,6 +23,17 @@ exports[`CustomerView renders normally 1`] = `
         >
           ASIAKASTIEDOT
         </span>
+        <div
+          class="widgets"
+        >
+          <button>
+            <span
+              class="text standard span normalWeight"
+            >
+              Muokkaa
+            </span>
+          </button>
+        </div>
       </div>
       <div
         class="cardBody"
@@ -64,20 +75,6 @@ exports[`CustomerView renders normally 1`] = `
                 class="value left"
               >
                 Käyttäjä
-              </span>
-            </div>
-            <div
-              class="labelValuePair"
-            >
-              <span
-                class="label standard"
-              >
-                Henkilötunnus:
-              </span>
-              <span
-                class="value left"
-              >
-                010101A1234
               </span>
             </div>
           </section>
@@ -242,7 +239,7 @@ exports[`CustomerView renders normally 1`] = `
        
     </div>
     <div
-      class="card"
+      class="card actionHistoryCard"
     >
       <div
         class="cardHeader"
@@ -250,13 +247,37 @@ exports[`CustomerView renders normally 1`] = `
         <span
           class="title"
         >
-          VIIMEAIKAINEN TOIMINTA
+          TOIMINTAHISTORIA
         </span>
       </div>
       <div
-        class="cardBody"
+        class="cardBody cardBody"
       >
-        Placeholder
+        <article
+          class="section section"
+        >
+          <h4
+            class="text standard h4 m title"
+          >
+            VIIMEAIKAINEN TOIMINTA
+          </h4>
+          <section
+            class="body"
+          >
+            Placeholder
+          </section>
+        </article>
+        <div
+          class="linkRow"
+        >
+          <a
+            class="internalLink brand"
+            href="#/"
+            title="Näytä koko historia"
+          >
+            Näytä koko historia
+          </a>
+        </div>
       </div>
        
     </div>

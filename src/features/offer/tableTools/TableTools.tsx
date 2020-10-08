@@ -23,7 +23,7 @@ const TableTools = ({ applicationDate, applicationType, applicationStatus, handl
     <div className={styles.tableTools}>
       <div>
         <Text size="l">
-          {t('offer.tableTools.berths').toUpperCase()}: {applicationType} {applicationDate}
+          {t('common.terminology.berths').toUpperCase()}: {applicationType} {applicationDate}
         </Text>
         <Chip
           className={styles.chip}

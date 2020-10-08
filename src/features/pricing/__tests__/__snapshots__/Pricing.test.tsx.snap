@@ -62,7 +62,7 @@ exports[`PricingPage renders normally 1`] = `
                   >
                     Leveys
                     <div
-                      class="sortArrowWrapper"
+                      class="sortArrowWrapper isSorted"
                     >
                       <svg
                         class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -297,7 +297,7 @@ exports[`PricingPage renders normally 1`] = `
                   >
                     Alue
                     <div
-                      class="sortArrowWrapper"
+                      class="sortArrowWrapper isSorted"
                     >
                       <svg
                         class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -513,7 +513,7 @@ exports[`PricingPage renders normally 1`] = `
             <div
               class="table basic noMainHeader"
               role="table"
-              style="min-width: 525px;"
+              style="min-width: 562.5px;"
             >
               <div
                 class="stickyHeaders"
@@ -532,7 +532,7 @@ exports[`PricingPage renders normally 1`] = `
                   >
                     Palvelu
                     <div
-                      class="sortArrowWrapper"
+                      class="sortArrowWrapper isSorted"
                     >
                       <svg
                         class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -558,7 +558,7 @@ exports[`PricingPage renders normally 1`] = `
                     class="headerCell"
                     colspan="1"
                     role="columnheader"
-                    style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px; cursor: pointer;"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     Hinta
@@ -646,7 +646,7 @@ exports[`PricingPage renders normally 1`] = `
                     <div
                       class="tableCell"
                       role="cell"
-                      style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                     >
                       10,00 €
                     </div>
@@ -701,7 +701,7 @@ exports[`PricingPage renders normally 1`] = `
             <div
               class="table basic noMainHeader"
               role="table"
-              style="min-width: 600px;"
+              style="min-width: 675px;"
             >
               <div
                 class="stickyHeaders"
@@ -720,7 +720,7 @@ exports[`PricingPage renders normally 1`] = `
                   >
                     Palvelu
                     <div
-                      class="sortArrowWrapper"
+                      class="sortArrowWrapper isSorted"
                     >
                       <svg
                         class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -746,7 +746,7 @@ exports[`PricingPage renders normally 1`] = `
                     class="headerCell"
                     colspan="1"
                     role="columnheader"
-                    style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px; cursor: pointer;"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     Hinta
@@ -777,7 +777,7 @@ exports[`PricingPage renders normally 1`] = `
                     class="headerCell"
                     colspan="1"
                     role="columnheader"
-                    style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px; cursor: pointer;"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     ALV
@@ -865,14 +865,14 @@ exports[`PricingPage renders normally 1`] = `
                     <div
                       class="tableCell"
                       role="cell"
-                      style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                     >
                       10,00 €
                     </div>
                     <div
                       class="tableCell"
                       role="cell"
-                      style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                     >
                       24 %
                     </div>

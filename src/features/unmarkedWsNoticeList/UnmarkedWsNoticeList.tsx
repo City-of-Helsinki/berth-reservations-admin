@@ -13,6 +13,7 @@ import { UnmarkedWinterStorageNotice } from './utils';
 import { SortedCol } from '../../common/utils/useBackendSorting';
 import UnmarkedWsNoticeDetails from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
+import Grid from '../../common/grid/Grid';
 
 export interface UnmarkedWsNoticeListProps {
   notices: UnmarkedWinterStorageNotice[];
@@ -88,7 +89,12 @@ const UnmarkedWsNoticeList = ({
         columns={columns}
         data={notices}
         loading={loading}
-        renderSubComponent={(row) => <UnmarkedWsNoticeDetails {...row.original} />}
+        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
+        renderSubComponent={(row) => (
+          <Grid colsCount={3}>
+            <UnmarkedWsNoticeDetails {...row.original} />
+          </Grid>
+        )}
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />

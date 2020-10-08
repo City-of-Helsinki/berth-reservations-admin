@@ -19,7 +19,7 @@ const mockProps: ApplicationViewProps = {
     createdAt: '2020-08-04',
     choices: [],
     id: 'X',
-    queue: null,
+    queue: 0,
     status: ApplicationStatus.PENDING,
   },
   berthApplication: {
@@ -31,11 +31,14 @@ const mockProps: ApplicationViewProps = {
     municipality: 'Helsinki',
     phoneNumber: '0500000000',
     zipCode: '00100',
+    businessId: '',
+    companyName: '',
   },
   customerProfile: null,
   leaseDetails: null,
   refetchQueries: [],
   handleDeleteLease: jest.fn(),
+  handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
 };
 
@@ -114,6 +117,7 @@ describe('ApplicationView', () => {
         berthMooringType: null,
         berthNum: 0,
         berthWidth: null,
+        customerEmail: null,
         electricity: false,
         gate: false,
         harborName: '',
@@ -126,6 +130,6 @@ describe('ApplicationView', () => {
       },
     });
 
-    expect(wrapper.find('OfferCard')).toHaveLength(1);
+    expect(wrapper.find('BerthOfferCard')).toHaveLength(1);
   });
 });

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import Section from '../section/Section';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
-import Grid from '../grid/Grid';
 import Text from '../text/Text';
 import { formatDimension, formatWeight, formatDate } from '../utils/format';
 import { APPLICATION_STATUS } from '../utils/consonants';
@@ -61,10 +60,10 @@ const UnmarkedWsNoticeDetails = ({
   const { t, i18n } = useTranslation();
 
   return (
-    <Grid colsCount={3}>
+    <>
       <div>
         <Section title={t('unmarkedWsNotices.noticeDetails.notice').toUpperCase()}>
-          <LabelValuePair label={'Alue'} value={choice.winterStorageArea} />
+          <LabelValuePair label={'Alue'} value={choice.winterStorageAreaName} />
           <LabelValuePair
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}
@@ -142,7 +141,7 @@ const UnmarkedWsNoticeDetails = ({
           </Section>
         )}
       </div>
-    </Grid>
+    </>
   );
 };
 

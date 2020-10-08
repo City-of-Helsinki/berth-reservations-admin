@@ -7,6 +7,16 @@ export const hasLength = (element: Element) => {
   return text.length > 0;
 };
 
+export const inputHasLength = (element: Element) => {
+  const value = (element as HTMLInputElement).value;
+  if (!value) {
+    return false;
+  }
+
+  const textValue = String(value);
+  return textValue.length > 0;
+};
+
 export const hasPrice = (element: Element) => {
   if (!element.textContent) {
     return false;

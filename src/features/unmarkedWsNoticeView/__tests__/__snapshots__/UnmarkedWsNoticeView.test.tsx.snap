@@ -2,7 +2,7 @@
 
 exports[`UnmarkedWsNoticeView renders normally 1`] = `
 <div
-  class="pageContent applicationView"
+  class="pageContent noticeView"
 >
   <div
     class="fullWidth"
@@ -14,18 +14,36 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
     </h2>
   </div>
   <div
-    class="buttons"
+    class="actions"
   >
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
-      type="button"
+    <div
+      class="noticeStatus"
     >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      <h2
+        class="text standard h2 xl normalWeight"
       >
-        Poista ilmoitus
+        Ilmoitus 06.05.2019
+      </h2>
+      <span
+        class="chip blue"
+      >
+        Käsitelty
       </span>
-    </button>
+    </div>
+    <div
+      class="actionsRight"
+    >
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        type="button"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Poista ilmoitus
+        </span>
+      </button>
+    </div>
   </div>
   <div>
     LinkApplicationToCustomerContainer
@@ -99,7 +117,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
                 <span
                   class="value left"
                 >
-                  Odottaa käsittelyä
+                  Käsitelty
                 </span>
               </div>
             </section>
@@ -474,6 +492,9 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
             </section>
           </article>
         </div>
+        <div
+          class="detailsActions"
+        />
       </div>
     </div>
      
@@ -483,7 +504,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
 
 exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
 <div
-  class="pageContent applicationView"
+  class="pageContent noticeView"
 >
   <div
     class="fullWidth"
@@ -495,18 +516,36 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
     </h2>
   </div>
   <div
-    class="buttons"
+    class="actions"
   >
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
-      type="button"
+    <div
+      class="noticeStatus"
     >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      <h2
+        class="text standard h2 xl normalWeight"
       >
-        Poista ilmoitus
+        Ilmoitus 06.05.2019
+      </h2>
+      <span
+        class="chip blue"
+      >
+        Käsitelty
       </span>
-    </button>
+    </div>
+    <div
+      class="actionsRight"
+    >
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        type="button"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Poista ilmoitus
+        </span>
+      </button>
+    </div>
   </div>
   <div
     class="card"
@@ -519,6 +558,17 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
       >
         ASIAKASTIEDOT
       </span>
+      <div
+        class="widgets"
+      >
+        <button>
+          <span
+            class="text standard span normalWeight"
+          >
+            Muokkaa
+          </span>
+        </button>
+      </div>
     </div>
     <div
       class="cardBody"
@@ -560,20 +610,6 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
               class="value left"
             >
               Hopo
-            </span>
-          </div>
-          <div
-            class="labelValuePair"
-          >
-            <span
-              class="label standard"
-            >
-              Henkilötunnus:
-            </span>
-            <span
-              class="value left"
-            >
-              -
             </span>
           </div>
         </section>
@@ -726,7 +762,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
      
   </div>
   <div
-    class="card card"
+    class="card actionHistoryCard"
   >
     <div
       class="cardHeader"
@@ -837,7 +873,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
                 <span
                   class="value left"
                 >
-                  Odottaa käsittelyä
+                  Käsitelty
                 </span>
               </div>
             </section>
@@ -1211,6 +1247,20 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
               </div>
             </section>
           </article>
+        </div>
+        <div
+          class="detailsActions"
+        >
+          <button
+            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+            type="button"
+          >
+            <span
+              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            >
+              Luo lasku
+            </span>
+          </button>
         </div>
       </div>
     </div>

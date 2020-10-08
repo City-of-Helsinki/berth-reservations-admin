@@ -43,10 +43,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
-    hdsToast.graphQLErrors(graphQLErrors);
-  }
+const errorLink = onError(({ networkError }) => {
   if (networkError && networkError.name !== 'ServerError') {
     // An explicit id is passed here to the toast,
     // so it can be automatically dismissed on e.g. reconnection.

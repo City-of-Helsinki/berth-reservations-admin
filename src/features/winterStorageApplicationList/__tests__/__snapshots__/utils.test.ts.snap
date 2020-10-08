@@ -25,7 +25,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -46,7 +46,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToy",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -67,7 +67,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToz",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -82,7 +82,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo1",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -97,7 +97,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo2",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -112,7 +112,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo3",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -127,7 +127,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo4",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -142,7 +142,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo5",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -157,7 +157,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMA==",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
   Object {
@@ -172,7 +172,7 @@ Array [
     "customerId": undefined,
     "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMQ==",
     "municipality": "helsinki",
-    "queue": null,
+    "queue": 0,
     "status": "PENDING",
   },
 ]

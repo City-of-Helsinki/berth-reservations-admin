@@ -24,6 +24,7 @@ export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   winterStorageApplication: LinkApplicationToCustomerContainerProps['application'];
   handleLinkCustomer(customerId: string): void;
+  handleEditCustomer(): void;
   handleDeleteLease(id: string): void;
 }
 
@@ -31,8 +32,9 @@ const WinterStorageApplicationView = ({
   customerProfile,
   applicationDetails,
   winterStorageApplication,
-  handleLinkCustomer,
   handleDeleteLease,
+  handleEditCustomer,
+  handleLinkCustomer,
 }: ApplicationViewProps) => {
   const { t, i18n } = useTranslation();
 
@@ -53,7 +55,7 @@ const WinterStorageApplicationView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
           <ActionHistoryCard />
         </>
       ) : (
@@ -67,7 +69,7 @@ const WinterStorageApplicationView = ({
         <Card className={styles.fullWidth}>
           <CardHeader title={t('applicationView.applicationDetails.title')} />
           <CardBody>
-            <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} queue={null} />
+            <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
           </CardBody>
         </Card>
       )}

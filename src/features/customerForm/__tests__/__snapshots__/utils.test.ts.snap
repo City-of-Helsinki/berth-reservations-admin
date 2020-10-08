@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils createUpdateInputs should handle switch from organization customer to private customer 1`] = `
+Array [
+  Object {
+    "profile": Object {
+      "addAddresses": Array [
+        Object {
+          "address": "Mariankatu 2",
+          "addressType": "NONE",
+          "city": "Helsinki",
+          "postalCode": "00170",
+          "primary": true,
+        },
+      ],
+      "firstName": "Pehr Evind",
+      "id": "MOCK-PROFILE",
+      "lastName": "Svinhufvud",
+      "updateEmails": Array [
+        Object {
+          "email": "test@example.com",
+          "id": "MOCK-EMAIL",
+          "primary": true,
+        },
+      ],
+      "updatePhones": Array [
+        Object {
+          "id": "MOCK-PHONE",
+          "phone": "+358 00 000 0000",
+          "primary": true,
+        },
+      ],
+    },
+    "serviceType": "BERTH",
+  },
+  Object {
+    "comment": "",
+    "deleteOrganization": true,
+    "id": "MOCK-PROFILE",
+  },
+]
+`;
+
+exports[`utils createUpdateInputs should handle switch from private customer to organization customer 1`] = `
+Array [
+  Object {
+    "profile": Object {
+      "firstName": "Lauri Kristian",
+      "id": "MOCK-PROFILE",
+      "lastName": "Relander",
+      "removeAddresses": Array [
+        "MOCK-ADDRESS",
+      ],
+      "updateEmails": Array [
+        Object {
+          "email": "test@example.com",
+          "id": "MOCK-EMAIL",
+          "primary": true,
+        },
+      ],
+      "updatePhones": Array [
+        Object {
+          "id": "MOCK-PHONE",
+          "phone": "+358 00 000 0000",
+          "primary": true,
+        },
+      ],
+    },
+    "serviceType": "BERTH",
+  },
+  Object {
+    "comment": "",
+    "id": "MOCK-PROFILE",
+    "organization": Object {
+      "address": "Mariankatu 2",
+      "businessId": "1234567-8",
+      "city": "Helsinki",
+      "name": "Suomi Oy",
+      "organizationType": "COMPANY",
+      "postalCode": "00170",
+    },
+  },
+]
+`;
+
+exports[`utils createUpdateInputs should handle updating a private customer 1`] = `
+Array [
+  Object {
+    "profile": Object {
+      "firstName": "Pehr Evind",
+      "id": "MOCK-PROFILE",
+      "lastName": "Svinhufvud",
+      "updateAddresses": Array [
+        Object {
+          "address": "Mariankatu 2",
+          "city": "Helsinki",
+          "id": "MOCK-ADDRESS",
+          "postalCode": "00170",
+        },
+      ],
+      "updateEmails": Array [
+        Object {
+          "email": "test@example.com",
+          "id": "MOCK-EMAIL",
+          "primary": true,
+        },
+      ],
+      "updatePhones": Array [
+        Object {
+          "id": "MOCK-PHONE",
+          "phone": "+358 00 000 0000",
+          "primary": true,
+        },
+      ],
+    },
+    "serviceType": "BERTH",
+  },
+  Object {
+    "comment": "",
+    "id": "MOCK-PROFILE",
+  },
+]
+`;
+
+exports[`utils createUpdateInputs should handle updating an organization customer 1`] = `
+Array [
+  Object {
+    "profile": Object {
+      "firstName": "Lauri Kristian",
+      "id": "MOCK-PROFILE",
+      "lastName": "Relander",
+      "updateEmails": Array [
+        Object {
+          "email": "test@example.com",
+          "id": "MOCK-EMAIL",
+          "primary": true,
+        },
+      ],
+      "updatePhones": Array [
+        Object {
+          "id": "MOCK-PHONE",
+          "phone": "+358 00 000 0000",
+          "primary": true,
+        },
+      ],
+    },
+    "serviceType": "BERTH",
+  },
+  Object {
+    "comment": "",
+    "id": "MOCK-PROFILE",
+    "organization": Object {
+      "address": "Mariankatu 2",
+      "businessId": "1234567-8",
+      "city": "Helsinki",
+      "name": "Suomi Oy",
+      "organizationType": "COMPANY",
+      "postalCode": "00170",
+    },
+  },
+]
+`;
+
+exports[`utils getCustomerFormValues maps a private customer correctly 1`] = `
+Object {
+  "address": "Mariankatu 2",
+  "businessId": "",
+  "city": "Helsinki",
+  "comment": "",
+  "customerGroup": "PRIVATE",
+  "email": "test@example.com",
+  "firstName": "Risto Heikki",
+  "lastName": "Ryti",
+  "organizationName": "",
+  "phone": "+358 00 000 0000",
+  "postalCode": "00170",
+}
+`;
+
+exports[`utils getCustomerFormValues maps a private customer with minimum data correctly 1`] = `
+Object {
+  "address": "",
+  "businessId": "",
+  "city": "",
+  "comment": "",
+  "customerGroup": "PRIVATE",
+  "email": "",
+  "firstName": "Risto Heikki",
+  "lastName": "Ryti",
+  "organizationName": "",
+  "phone": "",
+  "postalCode": "",
+}
+`;
+
+exports[`utils getCustomerFormValues maps an organization customer correctly 1`] = `
+Object {
+  "address": "Mariankatu 2",
+  "businessId": "1234567-8",
+  "city": "Helsinki",
+  "comment": "",
+  "customerGroup": "COMPANY",
+  "email": "test@example.com",
+  "firstName": "Kyösti",
+  "lastName": "Kallio",
+  "organizationName": "Suomi Oy",
+  "phone": "+358 00 000 0000",
+  "postalCode": "00170",
+}
+`;
+
+exports[`utils getCustomerFormValues maps an organization customer with minimum data correctly 1`] = `
+Object {
+  "address": "Mariankatu 2",
+  "businessId": "1234567-8",
+  "city": "Helsinki",
+  "comment": "",
+  "customerGroup": "COMPANY",
+  "email": "",
+  "firstName": "Kyösti",
+  "lastName": "Kallio",
+  "organizationName": "Suomi Oy",
+  "phone": "",
+  "postalCode": "00170",
+}
+`;
+
+exports[`utils getIdentifiers maps a private customer correctly 1`] = `
+Object {
+  "id": "MOCK-PROFILE",
+  "initialCustomerGroup": "PRIVATE",
+  "primaryAddressId": "MOCK-ADDRESS",
+  "primaryEmailId": "MOCK-EMAIL",
+  "primaryPhoneId": "MOCK-PHONE",
+}
+`;
+
+exports[`utils getIdentifiers maps an organization customer correctly 1`] = `
+Object {
+  "id": "MOCK-PROFILE",
+  "initialCustomerGroup": "COMPANY",
+  "primaryAddressId": undefined,
+  "primaryEmailId": "MOCK-EMAIL",
+  "primaryPhoneId": "MOCK-PHONE",
+}
+`;

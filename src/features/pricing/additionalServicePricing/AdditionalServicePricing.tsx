@@ -45,26 +45,26 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
     {
       Header: t('pricing.additionalServices.service') || '',
       width: COLUMN_WIDTH.L,
-      accessor: 'service',
-      Cell: ({ cell }) => t(getProductServiceTKey(cell.value)),
+      accessor: ({ service }) => t(getProductServiceTKey(service)),
+      id: 'service',
     },
     {
       Header: t('pricing.additionalServices.price') || '',
-      width: COLUMN_WIDTH.XS,
-      accessor: 'price',
-      Cell: ({ cell }) => formatPrice(cell.value, i18n.language),
+      width: COLUMN_WIDTH.S,
+      accessor: ({ price }) => formatPrice(price, i18n.language),
+      id: 'price',
     },
     {
       Header: t('pricing.additionalServices.tax') || '',
-      width: COLUMN_WIDTH.XS,
-      accessor: 'tax',
-      Cell: ({ cell }) => getProductTax(cell.value, i18n.language),
+      width: COLUMN_WIDTH.S,
+      accessor: ({ tax }) => getProductTax(tax, i18n.language),
+      id: 'tax',
     },
     {
       Header: t('pricing.additionalServices.period') || '',
       width: COLUMN_WIDTH.S,
-      accessor: 'period',
-      Cell: ({ cell }) => t(getPeriodTKey(cell.value)),
+      accessor: ({ period }) => t(getPeriodTKey(period)),
+      id: 'period',
     },
     {
       id: 'edit',
@@ -96,6 +96,7 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
         <CardBody>
           <Table
             columns={additionalServicesCols}
+            initialState={{ sortBy: [{ id: 'service', desc: false }] }}
             data={getAdditionalServiceData(data)}
             loading={loading}
             theme="basic"
@@ -103,16 +104,16 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
           />
         </CardBody>
       </Card>
-      <Modal isOpen={!!editRowValues} label={t('pricing.editModalHeading').toUpperCase()}>
-        {editRowValues && (
+      {editRowValues && (
+        <Modal isOpen toggleModal={handleClose} label={t('pricing.editModalHeading').toUpperCase()}>
           <EditForm
             closeModal={handleClose}
             formType={EDIT_FORM_TYPE.ADDITIONAL_SERVICES}
             initialValues={editRowValues}
             onSubmit={handleSubmit}
           />
-        )}
-      </Modal>
+        </Modal>
+      )}
     </>
   );
 };

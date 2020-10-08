@@ -1,0 +1,7 @@
+@import 'colours';
+@import 'form';
+
+.divider {
+  border: 1px solid $black-30;
+  margin: units(3) 0;
+}

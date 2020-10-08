@@ -11,6 +11,7 @@ import {
   InvoicingType,
   Language,
 } from '../../../@types/__generated__/globalTypes';
+import { Order } from '../../invoiceCard/types';
 
 export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
   winterStorageNotice: WINTER_STORAGE_NOTICE;
@@ -40,21 +41,24 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
     acceptFitnessNews: true,
     acceptLibraryNews: true,
     acceptOtherCultureNews: true,
-    status: ApplicationStatus.PENDING,
+    status: ApplicationStatus.OFFER_GENERATED,
     winterStorageAreaChoices: [
       {
         winterStorageArea: null,
         priority: 1,
         winterStorageAreaName: 'Iso-Sarvasto',
+        winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
       {
         winterStorageArea: null,
         priority: 2,
         winterStorageAreaName: 'Rajasaari',
+        winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
     ],
+    lease: null,
     __typename: 'WinterStorageApplicationNode',
   },
   boatTypes: [
@@ -113,10 +117,20 @@ export const mockCustomer: CUSTOMER = {
   organization: null,
   primaryAddress: {
     __typename: 'AddressNode',
+    id: 'MOCK-ADDRESS',
     address: 'Paratiisitie 13',
     city: 'Ankkalinna',
     postalCode: '00313',
   },
-  primaryEmail: { __typename: 'EmailNode', email: 'hessu@hopo.fi' },
-  primaryPhone: { __typename: 'PhoneNode', phone: '0' },
+  primaryEmail: { __typename: 'EmailNode', id: 'MOCK-EMAIL', email: 'hessu@hopo.fi' },
+  primaryPhone: { __typename: 'PhoneNode', id: 'MOCK-PHONE', phone: '0' },
+};
+
+export const mockOrder: Order = {
+  fixedProducts: [],
+  id: 'MOCK-ORDER',
+  optionalProducts: [],
+  orderNumber: '1',
+  price: 100,
+  totalPrice: 100,
 };

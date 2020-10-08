@@ -70,6 +70,13 @@ export enum CustomerGroup {
   PRIVATE = "PRIVATE",
 }
 
+export enum EmailType {
+  NONE = "NONE",
+  OTHER = "OTHER",
+  PERSONAL = "PERSONAL",
+  WORK = "WORK",
+}
+
 export enum InvoicingType {
   DIGITAL_INVOICE = "DIGITAL_INVOICE",
   ONLINE_PAYMENT = "ONLINE_PAYMENT",
@@ -117,6 +124,14 @@ export enum PeriodType {
   YEAR = "YEAR",
 }
 
+export enum PhoneType {
+  HOME = "HOME",
+  MOBILE = "MOBILE",
+  NONE = "NONE",
+  OTHER = "OTHER",
+  WORK = "WORK",
+}
+
 export enum PlaceProductTaxEnum {
   TAX_24_00 = "TAX_24_00",
 }
@@ -151,12 +166,35 @@ export enum WinterStorageApplicationAreaType {
   UNMARKED = "UNMARKED",
 }
 
+export enum YouthLanguage {
+  ARABIC = "ARABIC",
+  ENGLISH = "ENGLISH",
+  ESTONIAN = "ESTONIAN",
+  FINNISH = "FINNISH",
+  RUSSIAN = "RUSSIAN",
+  SOMALI = "SOMALI",
+  SWEDISH = "SWEDISH",
+}
+
 export interface AddBoatCertificateInput {
   file?: any | null;
   certificateType: BoatCertificateType;
   validUntil?: any | null;
   checkedAt?: any | null;
   checkedBy?: string | null;
+}
+
+export interface ApproveOrderMutationInput {
+  orders: (OrderApprovalInput | null)[];
+  dueDate?: any | null;
+  clientMutationId?: string | null;
+}
+
+export interface CreateAdditionalContactPersonInput {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
 }
 
 export interface CreateAddressInput {
@@ -223,11 +261,23 @@ export interface CreateBoatMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface CreateEmailInput {
+  primary?: boolean | null;
+  email: string;
+  emailType: EmailType;
+}
+
 export interface CreateOrderLineMutationInput {
   quantity?: number | null;
   orderId: string;
   productId: string;
   clientMutationId?: string | null;
+}
+
+export interface CreatePhoneInput {
+  primary?: boolean | null;
+  phone: string;
+  phoneType: PhoneType;
 }
 
 export interface CreatePierMutationInput {
@@ -242,6 +292,17 @@ export interface CreatePierMutationInput {
   wasteCollection?: boolean | null;
   lighting?: boolean | null;
   personalElectricity?: boolean | null;
+  clientMutationId?: string | null;
+}
+
+export interface CreateWinterStorageLeaseMutationInput {
+  boatId?: string | null;
+  startDate?: any | null;
+  endDate?: any | null;
+  comment?: string | null;
+  applicationId: string;
+  placeId?: string | null;
+  sectionId?: string | null;
   clientMutationId?: string | null;
 }
 
@@ -286,6 +347,11 @@ export interface DeleteWinterStorageLeaseMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface OrderApprovalInput {
+  orderId: string;
+  email: string;
+}
+
 export interface OrganizationInput {
   organizationType: OrganizationType;
   businessId?: string | null;
@@ -293,6 +359,23 @@ export interface OrganizationInput {
   address?: string | null;
   postalCode?: string | null;
   city?: string | null;
+}
+
+export interface SensitiveDataFields {
+  ssn?: string | null;
+}
+
+export interface SubscriptionInputType {
+  subscriptionTypeId: string;
+  enabled: boolean;
+}
+
+export interface UpdateAdditionalContactPersonInput {
+  id: string;
+  firstName?: string | null;
+  lastName?: string | null;
+  phone?: string | null;
+  email?: string | null;
 }
 
 export interface UpdateAdditionalProductMutationInput {
@@ -303,6 +386,16 @@ export interface UpdateAdditionalProductMutationInput {
   taxPercentage?: AdditionalProductTaxEnum | null;
   id: string;
   clientMutationId?: string | null;
+}
+
+export interface UpdateAddressInput {
+  countryCode?: string | null;
+  primary?: boolean | null;
+  id: string;
+  address?: string | null;
+  postalCode?: string | null;
+  city?: string | null;
+  addressType?: AddressType | null;
 }
 
 export interface UpdateBerthApplicationInput {
@@ -330,6 +423,15 @@ export interface UpdateBerthProductMutationInput {
   priceValue?: any | null;
   priceGroupId?: string | null;
   harborId?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface UpdateBerthServicesProfileMutationInput {
+  invoicingType?: InvoicingType | null;
+  comment?: string | null;
+  id: string;
+  organization?: OrganizationInput | null;
+  deleteOrganization?: boolean | null;
   clientMutationId?: string | null;
 }
 
@@ -361,6 +463,13 @@ export interface UpdateBoatMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateEmailInput {
+  primary?: boolean | null;
+  id: string;
+  email?: string | null;
+  emailType?: EmailType | null;
+}
+
 export interface UpdateHarborMutationInput {
   servicemapId?: string | null;
   zipCode?: string | null;
@@ -380,6 +489,13 @@ export interface UpdateHarborMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdatePhoneInput {
+  primary?: boolean | null;
+  id: string;
+  phone?: string | null;
+  phoneType?: PhoneType | null;
+}
+
 export interface UpdatePierMutationInput {
   identifier?: string | null;
   location?: any | null;
@@ -396,6 +512,34 @@ export interface UpdatePierMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateProfileInput {
+  firstName?: string | null;
+  lastName?: string | null;
+  nickname?: string | null;
+  image?: string | null;
+  language?: Language | null;
+  contactMethod?: ContactMethod | null;
+  addEmails?: (CreateEmailInput | null)[] | null;
+  updateEmails?: (UpdateEmailInput | null)[] | null;
+  removeEmails?: (string | null)[] | null;
+  addPhones?: (CreatePhoneInput | null)[] | null;
+  updatePhones?: (UpdatePhoneInput | null)[] | null;
+  removePhones?: (string | null)[] | null;
+  addAddresses?: (CreateAddressInput | null)[] | null;
+  updateAddresses?: (UpdateAddressInput | null)[] | null;
+  removeAddresses?: (string | null)[] | null;
+  subscriptions?: (SubscriptionInputType | null)[] | null;
+  youthProfile?: YouthProfileFields | null;
+  sensitivedata?: SensitiveDataFields | null;
+  id: string;
+}
+
+export interface UpdateProfileMutationInput {
+  serviceType: ServiceType;
+  profile: UpdateProfileInput;
+  clientMutationId?: string | null;
+}
+
 export interface UpdateWinterStorageApplicationInput {
   customerId: string;
   id: string;
@@ -407,6 +551,21 @@ export interface UpdateWinterStorageProductMutationInput {
   priceValue?: any | null;
   winterStorageAreaId?: string | null;
   clientMutationId?: string | null;
+}
+
+export interface YouthProfileFields {
+  schoolName?: string | null;
+  schoolClass?: string | null;
+  languageAtHome?: YouthLanguage | null;
+  approverFirstName?: string | null;
+  approverLastName?: string | null;
+  approverPhone?: string | null;
+  approverEmail?: string | null;
+  birthDate?: any | null;
+  photoUsageApproved?: boolean | null;
+  addAdditionalContactPersons?: (CreateAdditionalContactPersonInput | null)[] | null;
+  updateAdditionalContactPersons?: (UpdateAdditionalContactPersonInput | null)[] | null;
+  removeAdditionalContactPersons?: (string | null)[] | null;
 }
 
 //==============================================================

@@ -14,13 +14,14 @@ export const customersResponse: CUSTOMERS = {
           comment: 'Asiakas ku asiakas.',
           organization: null,
           primaryAddress: {
+            id: 'MOCK-ADDRESS',
             address: 'Jämsänkatu 372',
             city: 'Eurajoki',
             postalCode: '62761',
             __typename: 'AddressNode',
           },
-          primaryPhone: { phone: '+358 494817677', __typename: 'PhoneNode' },
-          primaryEmail: { email: 'tellervo@foobar.com', __typename: 'EmailNode' },
+          primaryPhone: { id: 'MOCK-PHONE', phone: '+358 494817677', __typename: 'PhoneNode' },
+          primaryEmail: { id: 'MOCK-EMAIL', email: 'tellervo@foobar.com', __typename: 'EmailNode' },
           customerGroup: CustomerGroup.PRIVATE,
           serviceConnections: {
             edges: [

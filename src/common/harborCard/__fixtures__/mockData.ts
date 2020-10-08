@@ -19,7 +19,7 @@ export const mockProps: HarborCardProps = {
     maxWidth: 4,
     numberOfFreePlaces: 2,
     numberOfPlaces: 4,
-    queue: 4,
+    queue: 0,
     wasteCollection: true,
     water: true,
   },
