@@ -11,6 +11,8 @@ export interface DeleteButtonProps extends Pick<ConfirmationModalProps, 'onConfi
   onCancelText?: string;
   onConfirmText?: string;
   disabled?: boolean;
+  buttonClassName?: string;
+  modalClassName?: string;
 }
 
 const DeleteButton = ({
@@ -22,12 +24,20 @@ const DeleteButton = ({
   disabled,
   buttonText,
   warningText,
+  buttonClassName,
+  modalClassName,
 }: DeleteButtonProps) => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <Button variant="secondary" theme="coat" onClick={() => setIsModalOpen(true)} disabled={disabled}>
+      <Button
+        variant="secondary"
+        theme="coat"
+        onClick={() => setIsModalOpen(true)}
+        disabled={disabled}
+        className={buttonClassName}
+      >
         {buttonText}
       </Button>
       <ConfirmationModal
@@ -42,6 +52,7 @@ const DeleteButton = ({
           onConfirm();
           setIsModalOpen(false);
         }}
+        className={modalClassName}
       />
     </>
   );

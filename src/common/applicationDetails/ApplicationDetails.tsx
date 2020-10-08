@@ -208,6 +208,7 @@ const ApplicationDetails = ({
                 buttonText={t('applicationList.applicationDetails.deleteLease')}
                 onConfirm={() => handleDeleteLease(lease.id)}
                 disabled={isDeletingLease}
+                buttonClassName={styles.deleteButton}
               />
             )}
           </Section>
