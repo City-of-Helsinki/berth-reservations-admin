@@ -1,5 +1,5 @@
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 interface HarborChoice {
   harbor: string;
@@ -13,6 +13,7 @@ interface Lease {
   harborName: string;
   id: string;
   pierIdentifier: string;
+  status: LeaseStatus;
 }
 
 interface BerthSwitch {
@@ -87,6 +88,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
             harborName: lease.berth.pier.properties.harbor.properties?.name || '',
             id: lease.id,
             pierIdentifier: lease.berth.pier.properties?.identifier || '',
+            status: lease.status,
           };
         }
 

@@ -4,12 +4,13 @@ import { HashRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 
 import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetails';
-import { ApplicationStatus, CustomerGroup, Language } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
 import DeleteButton from '../../deleteButton/DeleteButton';
 import Button from '../../button/Button';
 import ConfirmationModal from '../../confirmationModal/ConfirmationModal';
+import { canDeleteLease } from '../../utils/leaseUtils';
 
 const minimumProps: ApplicationDetailsProps = {
   accessibilityRequired: false,
@@ -79,6 +80,7 @@ const lease: ApplicationDetailsProps['lease'] = {
   harborName: 'Testisatama',
   id: 'id',
   pierIdentifier: '2',
+  status: LeaseStatus.DRAFTED,
 };
 
 describe('ApplicationDetails', () => {
@@ -132,19 +134,44 @@ describe('ApplicationDetails', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
-  it('renders delete lease button if handleDeleteLease prop is provided', () => {
+  it('renders delete lease button if handleDeleteLease prop is provided and lease can be deleted', () => {
+    Object.values(LeaseStatus)
+      .filter(canDeleteLease)
+      .forEach((status) => {
+        const wrapper = getWrapper({
+          lease: { ...lease, status },
+          handleDeleteLease: jest.fn(),
+        });
+        expect(wrapper.find(DeleteButton).find(Button).length).toBe(1);
+      });
+  });
+
+  it('does not render delete lease button if lease cannot be deleted', () => {
+    Object.values(LeaseStatus)
+      .filter((status) => !canDeleteLease(status))
+      .forEach((status) => {
+        const wrapper = getWrapper({
+          lease: { ...lease, status },
+        });
+        expect(wrapper.find(DeleteButton).find(Button).length).toBe(0);
+      });
+  });
+
+  it('delete lease button calls handleDeleteLease', () => {
     // Using a component with react-modal. Silence error output.
     ReactModal.setAppElement('body');
 
     const handleDeleteLease = jest.fn();
     const wrapper = getWrapper({
       applicant: privateCustomerProfile,
-      lease: lease,
+      lease,
       handleDeleteLease: handleDeleteLease,
     });
+
+    expect(wrapper.find(DeleteButton).length).toBe(1);
+
     wrapper.find(DeleteButton).find(Button).simulate('click');
     wrapper.find(ConfirmationModal).find(Button).last().simulate('click');
-
     expect(handleDeleteLease).toHaveBeenCalled();
   });
 });

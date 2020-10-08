@@ -5,7 +5,7 @@ import {
 } from './__generated__/INDIVIDUAL_APPLICATION';
 import { INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION } from '../winterStorageApplicationView/__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import { BerthApplicationLanguage, CustomerGroup, Language } from '../../@types/__generated__/globalTypes';
+import { BerthApplicationLanguage, CustomerGroup, Language, LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 interface Lease {
   berthNum: string | number;
@@ -13,6 +13,7 @@ interface Lease {
   harborName: string;
   id: string;
   pierIdentifier: string;
+  status: LeaseStatus;
 }
 
 interface BerthSwitch {
@@ -113,6 +114,7 @@ export const getApplicationDetailsData = (
         id: berthApplication.lease.id,
         berthNum: berthApplication.lease.berth.number,
         pierIdentifier: berthApplication.lease.berth.pier.properties?.identifier || '',
+        status: berthApplication.lease.status,
       }
     : null;
   const berthSwitch: BerthSwitch | null = berthApplication.berthSwitch

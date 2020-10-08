@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthMooringType, ProductServiceType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
+import { LeaseStatus, BerthMooringType, ProductServiceType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: BerthLease
@@ -97,6 +97,7 @@ export interface BerthLease_lease_order {
 export interface BerthLease_lease {
   __typename: "BerthLeaseNode";
   id: string;
+  status: LeaseStatus;
   berth: BerthLease_lease_berth;
   customer: BerthLease_lease_customer;
   order: BerthLease_lease_order | null;

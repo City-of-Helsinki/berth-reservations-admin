@@ -47,6 +47,7 @@ Object {
     "harborName": "Test Harbor",
     "id": "MOCK-LEASE",
     "pierIdentifier": "A",
+    "status": "DRAFTED",
   },
   "queue": 0,
   "status": "PENDING",

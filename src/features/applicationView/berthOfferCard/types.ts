@@ -1,10 +1,11 @@
-import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
+import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { Order } from '../../invoiceCard/types';
 
 export type { Product } from '../../invoiceCard/types';
 
 export interface LeaseDetails {
   id: string;
+  status: LeaseStatus;
   berthComment: string;
   berthDepth: number | null;
   berthIsAccessible: boolean;

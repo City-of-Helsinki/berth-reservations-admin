@@ -67,6 +67,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
       }
       lease {
         id
+        status
         customer {
           id
           primaryEmail {

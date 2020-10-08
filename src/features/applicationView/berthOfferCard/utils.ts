@@ -9,6 +9,7 @@ export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | nu
 
   return {
     id: lease.id,
+    status: lease.status,
     berthComment: lease.berth?.comment ?? '',
     berthDepth: lease.berth?.depth ?? null,
     berthIsAccessible: lease.berth?.isAccessible ?? false,

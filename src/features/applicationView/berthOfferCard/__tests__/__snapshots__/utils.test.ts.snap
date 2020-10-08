@@ -68,6 +68,7 @@ Object {
     "totalPrice": "256.70",
   },
   "pierIdentifier": "C",
+  "status": "DRAFTED",
   "wasteCollection": true,
   "water": true,
 }
