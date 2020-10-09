@@ -51,6 +51,9 @@ const Page = ({ children }: PageProps) => {
             <InternalNavLink key="pricing" to="/pricing" icon={<IconInvoice />}>
               {t('common.sidebar.pricing')}
             </InternalNavLink>,
+            <InternalNavLink key="assignmentPlanner" to="/assignment-planner" icon={<IconApplications />}>
+              {t('common.sidebar.assignmentPlanner')}
+            </InternalNavLink>,
           ]}
         </Sidebar>
       }

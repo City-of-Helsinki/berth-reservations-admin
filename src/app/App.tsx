@@ -23,6 +23,7 @@ import WinterStorageApplicationList from '../features/winterStorageApplicationLi
 import WinterStorageApplicationView from '../features/winterStorageApplicationView/WinterStorageApplicationViewContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
+import AssignmentPlanner from '../features/assignmentPlanner/AssignmentPlanner';
 
 const App = () => {
   return (
@@ -55,6 +56,7 @@ const App = () => {
                   <PrivateRoute exact path="/pricing" component={Pricing} />
                   <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                   <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />
+                  <PrivateRoute exact path="/assignment-planner" component={AssignmentPlanner} />
                 </Switch>
               </Page>
             </Switch>

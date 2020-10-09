@@ -48,7 +48,8 @@
       "winterStorageApplications": "Talvisäilytyshakemukset",
       "unmarkedWsNotices": "Nostojärjestysilmoitukset",
       "customers": "Asiakkaat",
-      "pricing": "Hinnasto"
+      "pricing": "Hinnasto",
+      "assignmentPlanner": "Automaattiset sijoitukset"
     },
     "header": {
       "serviceName": "Venepaikat",
@@ -701,5 +702,19 @@
     "warningText": "Tätä toimenpidettä ei voi perua.",
     "onCancelText": "Hylkää",
     "onConfirmText": "Vahvista"
+  },
+  "assignmentPlanner": {
+    "pageTitle": "Venepaikkojen automaattiset sijoittelut",
+    "tableHeaders": {
+      "firstName": "Etunimi",
+      "lastName": "Sukunimi",
+      "email": "Sähköposti",
+      "priority": "Prioriteetti",
+      "harborName": "Satama",
+      "pierIdentifier": "Laituri",
+      "berthNumber": "Paikka"
+    },
+    "assignButton": "Liitä valinnat hakemuksiin",
+    "remove": "Poista"
   }
 }
