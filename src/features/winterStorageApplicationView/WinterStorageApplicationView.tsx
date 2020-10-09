@@ -71,6 +71,8 @@ const WinterStorageApplicationView = ({
           <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
         </CardBody>
       </Card>
+
+      {/*  TODO: Offer and invoicing */}
     </PageContent>
   );
 };
