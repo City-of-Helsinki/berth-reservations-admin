@@ -12,6 +12,7 @@ import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
+import { berthInvoicingFeatureFlag } from '../../../common/utils/featureFlags';
 
 export interface BerthOfferCardProps {
   className?: string;
@@ -79,6 +80,7 @@ const BerthOfferCard = ({
         }
         className={className}
         customerEmail={customerEmail}
+        invoicingDisabled={!berthInvoicingFeatureFlag()}
         order={order}
         placeDetails={
           <PlaceDetails
