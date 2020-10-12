@@ -18,6 +18,7 @@ import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
+import { queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 
@@ -111,7 +112,9 @@ const ApplicationDetails = ({
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}
           />
-          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
+          {queueFeatureFlag() ? (
+            <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
+          ) : null}
           <LabelValuePair
             label={t('applicationList.applicationDetails.status')}
             value={t(APPLICATION_STATUS[status]?.label)}

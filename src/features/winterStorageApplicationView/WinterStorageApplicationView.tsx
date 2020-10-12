@@ -65,14 +65,14 @@ const WinterStorageApplicationView = ({
         />
       )}
 
-      {applicationDetails && (
-        <Card className={styles.fullWidth}>
-          <CardHeader title={t('applicationView.applicationDetails.title')} />
-          <CardBody>
-            <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
-          </CardBody>
-        </Card>
-      )}
+      <Card className={styles.fullWidth}>
+        <CardHeader title={t('applicationView.applicationDetails.title')} />
+        <CardBody>
+          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
+        </CardBody>
+      </Card>
+
+      {/*  TODO: Offer and invoicing */}
     </PageContent>
   );
 };
