@@ -13,3 +13,7 @@ export const maintenanceFeatureFlag = () => {
 export const harborMooringFeatureFlag = () => {
   return process.env.NODE_ENV !== 'production';
 };
+
+export const berthInvoicingFeatureFlag = () => {
+  return process.env.NODE_ENV !== 'production';
+};
