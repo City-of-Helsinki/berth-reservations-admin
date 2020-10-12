@@ -1,10 +1,8 @@
 @import 'spacings';
 
 .deleteButton {
-  display: block;
-  text-align: left;
+  display: block !important;
   margin-top: units(1);
-  width: max-content;
 }
 
 .accessibleCheckbox {

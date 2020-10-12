@@ -12,6 +12,7 @@ import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
+import { canDeleteLease } from '../../../common/utils/leaseUtils';
 import { berthInvoicingFeatureFlag } from '../../../common/utils/featureFlags';
 
 export interface BerthOfferCardProps {
@@ -28,6 +29,7 @@ const BerthOfferCard = ({
   applicationStatus,
   leaseDetails: {
     id,
+    status,
     berthComment,
     berthDepth,
     berthIsAccessible,
@@ -71,11 +73,13 @@ const BerthOfferCard = ({
             <Button variant="supplementary" disabled>
               {t('offer.billing.showContract')}
             </Button>
-            <DeleteButton
-              buttonText={t('offer.billing.removeOffer')}
-              onConfirm={() => handleDeleteLease(id)}
-              disabled={isDeletingLease}
-            />
+            {canDeleteLease(status) && (
+              <DeleteButton
+                buttonText={t('offer.billing.removeOffer')}
+                onConfirm={() => handleDeleteLease(id)}
+                disabled={isDeletingLease}
+              />
+            )}
           </>
         }
         className={className}

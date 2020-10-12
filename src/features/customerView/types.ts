@@ -1,6 +1,7 @@
 import {
   ApplicationStatus,
   BoatCertificateType,
+  LeaseStatus,
   OrderStatus,
   PriceUnits,
   ProductServiceType,
@@ -46,6 +47,7 @@ export type ApplicationLease = {
   harborId: string;
   harborName: string;
   pierIdentifier: string;
+  status: LeaseStatus;
 };
 
 export type BerthSwitch = {

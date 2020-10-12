@@ -34,6 +34,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           status
           lease {
             id
+            status
             berth {
               number
               pier {

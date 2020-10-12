@@ -25,11 +25,14 @@ import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
 import DeleteButton from '../../common/deleteButton/DeleteButton';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { canDeleteApplication } from '../../common/utils/applicationUtils';
+import { canDeleteLease } from '../../common/utils/leaseUtils';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
+  leaseStatus: LeaseStatus | null;
   order: Order | null;
   refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
@@ -47,6 +50,7 @@ const UnmarkedWsNoticeView = ({
   customerProfile,
   noticeDetails,
   order,
+  leaseStatus,
   refetchQueries,
   winterStorageNotice,
   handleCreateLease,
@@ -62,8 +66,6 @@ const UnmarkedWsNoticeView = ({
     t,
     i18n: { language },
   } = useTranslation();
-  const canDeleteLease = noticeDetails.status === ApplicationStatus.OFFER_GENERATED;
-  const canDeleteNotice = canDeleteLease || noticeDetails.status === ApplicationStatus.PENDING;
 
   return (
     <PageContent className={styles.noticeView}>
@@ -82,7 +84,7 @@ const UnmarkedWsNoticeView = ({
           />
         </div>
         <div className={styles.actionsRight}>
-          {canDeleteNotice && (
+          {canDeleteApplication(noticeDetails.status) && (
             <DeleteButton
               buttonText={t('unmarkedWsNotices.view.deleteNotice')}
               onConfirm={handleDeleteNotice}
@@ -124,7 +126,7 @@ const UnmarkedWsNoticeView = ({
         <InvoiceCard
           applicationStatus={noticeDetails.status}
           buttonsRight={
-            canDeleteLease && (
+            canDeleteLease(leaseStatus) && (
               <DeleteButton
                 buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
                 onConfirm={handleDeleteLease}

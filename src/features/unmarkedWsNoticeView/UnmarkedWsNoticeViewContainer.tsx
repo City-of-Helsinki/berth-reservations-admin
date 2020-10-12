@@ -92,6 +92,7 @@ const UnmarkedWsNoticeViewContainer = () => {
 
   const noticeDetails = getNoticeDetailsData(data.winterStorageNotice, data.boatTypes || []);
   const order = data.winterStorageNotice?.lease?.order ? getOrder(data.winterStorageNotice.lease.order) : null;
+  const leaseStatus = data.winterStorageNotice?.lease?.status ?? null;
 
   const handleDeleteNotice = () =>
     deleteNotice({
@@ -152,6 +153,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         isDeleteLeaseLoading={isDeleteLeaseLoading}
         noticeDetails={noticeDetails}
         order={order}
+        leaseStatus={leaseStatus}
         refetchQueries={refetchQueries}
         winterStorageNotice={data.winterStorageNotice}
       />

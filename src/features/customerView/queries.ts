@@ -183,6 +183,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             status
             lease {
               id
+              status
               berth {
                 number
                 pier {
