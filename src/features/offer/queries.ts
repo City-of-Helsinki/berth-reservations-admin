@@ -52,7 +52,7 @@ export const OFFER_QUERY = gql`
                 water
                 lighting
                 wasteCollection
-                berths {
+                berths(isAvailable: true) {
                   edges {
                     node {
                       id
