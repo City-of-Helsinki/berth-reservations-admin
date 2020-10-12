@@ -23,7 +23,7 @@ USER appuser
 # Copy package.json and package-lock.json/yarn.lock files
 COPY package*.json *yarn* ./
 
-# Install npm depepndencies
+# Install npm dependencies
 ENV PATH /app/node_modules/.bin:$PATH
 
 USER root
@@ -58,6 +58,8 @@ ARG REACT_APP_API_URL
 ARG REACT_APP_TUNNISTAMO_URI
 ARG REACT_APP_SENTRY_DSN
 ARG REACT_APP_SENTRY_ENVIRONMENT
+ARG SASS_PATH="node_modules:src/assets/styles"
+ENV SASS_PATH $SASS_PATH
 
 COPY . /app
 RUN yarn build
