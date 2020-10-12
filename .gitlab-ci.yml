@@ -6,7 +6,7 @@ include:
 variables:
   SERVICE_PORT: 80
   DOCKER_BUILD_ARG_REACT_APP_SENTRY_DSN: '$GL_SENTRY_DSN'
-  SASS_PATH: 'node_modules:src/assets/styles'
+  DOCKER_BUILD_ARG_SASS_PATH: 'node_modules:src/assets/styles'
 
 build-review:
   extends: .build
