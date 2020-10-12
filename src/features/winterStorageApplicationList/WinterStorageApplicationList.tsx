@@ -14,6 +14,7 @@ import { WinterStorageApplication } from './utils';
 import ApplicationDetails from '../../common/applicationDetails/ApplicationDetails';
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
+import { queueFeatureFlag } from '../../common/utils/featureFlags';
 
 interface WinterStorageApplicationListProps {
   applications: WinterStorageApplication[];
@@ -35,7 +36,8 @@ const WinterStorageApplicationList = ({
   onSortedColChange,
 }: WinterStorageApplicationListProps) => {
   const { t, i18n } = useTranslation();
-  const columns: ColumnType[] = [
+
+  const rawColumns: (ColumnType | undefined)[] = [
     {
       Cell: ({ cell }) => (
         <InternalLink to={`/winter-storage-applications/${cell.value}`}>
@@ -54,12 +56,14 @@ const WinterStorageApplicationList = ({
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
     },
-    {
-      Header: t('applicationList.tableHeaders.queue') || '',
-      accessor: 'queue',
-      disableSortBy: true,
-      width: COLUMN_WIDTH.XS,
-    },
+    queueFeatureFlag()
+      ? {
+          Header: t('applicationList.tableHeaders.queue') || '',
+          accessor: 'queue',
+          disableSortBy: true,
+          width: COLUMN_WIDTH.XS,
+        }
+      : undefined,
     {
       Header: t('applicationList.tableHeaders.municipality') || '',
       accessor: 'municipality',
@@ -79,6 +83,7 @@ const WinterStorageApplicationList = ({
       width: COLUMN_WIDTH.M,
     },
   ];
+  const columns: ColumnType[] = rawColumns.filter((column): column is ColumnType => column !== undefined);
 
   return (
     <PageContent>

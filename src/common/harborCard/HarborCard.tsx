@@ -16,6 +16,7 @@ import placeholderImage from '../placeholderImage.svg';
 import MapLinks from '../mapLinks/MapLinks';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../icons';
 import { formatAddress } from '../utils/format';
+import { queueFeatureFlag } from '../utils/featureFlags';
 
 export interface HarborCardProps {
   className?: string;
@@ -97,7 +98,11 @@ const HarborCard = ({
             <div />
             <Property counter={properties.numberOfPlaces} label={t('harborCard.numberOfPlaces')} />
             <Property counter={properties.numberOfFreePlaces} label={t('harborCard.numberOfFreePlaces')} />
-            <Property counter={properties.queue} label={t('common.terminology.inQueue')} />
+            {queueFeatureFlag() ? (
+              <Property counter={properties.queue} label={t('common.terminology.inQueue')} />
+            ) : (
+              <div />
+            )}
             <Property counter={properties.maxWidth} label={t('harborCard.maxWidth')} />
 
             <Property
