@@ -63,7 +63,6 @@ const EditCustomerFormContainer = ({ customerId, onCancel, onSubmit, refetchQuer
       )
       .then(() => {
         hdsToast({
-          autoDismiss: true,
           translated: true,
           labelText: 'toast.changesSaved.label',
           text: 'toast.changesSaved.description',

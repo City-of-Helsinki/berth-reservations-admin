@@ -48,6 +48,7 @@ const errorLink = onError(({ networkError }) => {
     // An explicit id is passed here to the toast,
     // so it can be automatically dismissed on e.g. reconnection.
     hdsToast({
+      autoDismiss: false,
       type: 'warning',
       labelText: 'toast.networkError.label',
       text: 'toast.networkError.description',

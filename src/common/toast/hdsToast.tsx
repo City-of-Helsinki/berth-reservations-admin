@@ -47,7 +47,7 @@ const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, tran
   );
 };
 
-const hdsToast = ({ autoDismiss = false, type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
+const hdsToast = ({ autoDismiss = true, type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
   const id = toastId ?? uuidv4();
   return toast(
     <NotificationWrapper
@@ -68,6 +68,7 @@ const hdsToast = ({ autoDismiss = false, type, labelText, text, toastId, transla
 hdsToast.graphQLErrors = (errors: ReadonlyArray<GraphQLError>) => {
   errors.forEach((error) =>
     hdsToast({
+      autoDismiss: false,
       type: 'error',
       labelText:
         error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.label`)
