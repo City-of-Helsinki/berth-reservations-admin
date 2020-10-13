@@ -46,6 +46,7 @@ const SendInvoiceFormContainer = ({
     }).then((res) => {
       if (!res.errors) {
         hdsToast({
+          autoDismiss: true,
           type: 'success',
           labelText: 'toast.invoiceSent.label',
           text: 'toast.invoiceSent.description',

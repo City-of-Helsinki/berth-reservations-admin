@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DismissableNotification, DismissableNotificationProps } from 'hds-react';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,6 +9,7 @@ import i18n from '../../locales/i18n';
 import { HDSToastContainerId } from './HDSToastContainer';
 
 interface HDSToastArgs {
+  autoDismiss?: boolean;
   type: DismissableNotificationProps['type'];
   labelText: string;
   text: string;
@@ -16,19 +17,24 @@ interface HDSToastArgs {
   translated?: boolean;
 }
 
-interface DismissableNotificationWrapperProps extends HDSToastArgs {
+interface NotificationWrapperProps extends HDSToastArgs {
   toastId: string;
   translated: boolean;
 }
 
-const DismissableNotificationWrapper = ({
-  type,
-  labelText,
-  text,
-  toastId,
-  translated,
-}: DismissableNotificationWrapperProps) => {
+const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, translated }: NotificationWrapperProps) => {
   const { t } = useTranslation();
+  const autoDismissTime = 3000;
+
+  useEffect(() => {
+    if (autoDismiss) {
+      const timer = setTimeout(() => {
+        toast.dismiss(toastId);
+      }, autoDismissTime);
+      return () => clearTimeout(timer);
+    }
+  }, [autoDismiss, toastId]);
+
   return (
     <DismissableNotification
       type={type}
@@ -41,10 +47,11 @@ const DismissableNotificationWrapper = ({
   );
 };
 
-const hdsToast = ({ type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
+const hdsToast = ({ autoDismiss = false, type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
   const id = toastId ?? uuidv4();
   return toast(
-    <DismissableNotificationWrapper
+    <NotificationWrapper
+      autoDismiss={autoDismiss}
       type={type}
       labelText={labelText}
       text={text}
