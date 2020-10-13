@@ -628,6 +628,10 @@
         "description": "Tapahtui odottamaton virhe."
       }
     },
+    "changesSaved": {
+      "label": "Muutokset tallennettu",
+      "description": "Muutokset on tallennettu"
+    },
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
