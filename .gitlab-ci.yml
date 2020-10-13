@@ -5,6 +5,7 @@ include:
 
 variables:
   SERVICE_PORT: 80
+  DOCKER_BUILD_ARG_REACT_APP_SERVICE_MAP_URL: "https://palvelukartta.hel.fi/unit/"
   DOCKER_BUILD_ARG_REACT_APP_SENTRY_DSN: '$GL_SENTRY_DSN'
   DOCKER_BUILD_ARG_SASS_PATH: 'node_modules:src/assets/styles'
 
@@ -13,7 +14,6 @@ build-review:
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-review"
     DOCKER_BUILD_ARG_REACT_APP_API_URL: "https://venepaikka-federation.test.kuva.hel.ninja/"
-    DOCKER_BUILD_ARG_REACT_APP_SERVICE_MAP_URL: "https://palvelukartta.hel.fi/unit/"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: "https://tunnistamo.test.kuva.hel.ninja"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: "api-tokens"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_RENEW_ENDPOINT: "silent_renew"
@@ -30,7 +30,6 @@ build-staging:
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-staging"
     DOCKER_BUILD_ARG_REACT_APP_API_URL: "https://venepaikka-federation.test.kuva.hel.ninja/"
-    DOCKER_BUILD_ARG_REACT_APP_SERVICE_MAP_URL: "https://palvelukartta.hel.fi/unit/"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: "https://api.hel.fi/sso-test"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: "api-tokens"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_RENEW_ENDPOINT: "silent_renew"
@@ -47,7 +46,6 @@ build-production:
   variables:
     DOCKER_IMAGE_NAME: "$CI_PROJECT_NAME-production"
     DOCKER_BUILD_ARG_REACT_APP_API_URL: "https://api.hel.fi/berths-federation/"
-    DOCKER_BUILD_ARG_REACT_APP_SERVICE_MAP_URL: "https://palvelukartta.hel.fi/unit/"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: "https://api.hel.fi/sso"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: "api-tokens"
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_RENEW_ENDPOINT: "silent_renew"
