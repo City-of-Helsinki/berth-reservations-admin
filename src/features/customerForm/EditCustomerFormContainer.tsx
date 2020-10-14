@@ -15,6 +15,7 @@ import {
   UPDATE_BERTH_SERVICES_PROFILE,
   UPDATE_BERTH_SERVICES_PROFILEVariables as UPDATE_BERTH_SERVICES_PROFILE_VARS,
 } from './__generated__/UPDATE_BERTH_SERVICES_PROFILE';
+import hdsToast from '../../common/toast/hdsToast';
 
 export interface EditCustomerFormProps
   extends Omit<FormProps<CustomerFormValues>, 'initialValues' | 'onCreate' | 'onDelete' | 'refetchQueries'> {
@@ -60,7 +61,15 @@ const EditCustomerFormContainer = ({ customerId, onCancel, onSubmit, refetchQuer
           },
         })
       )
-      .then(() => onSubmit?.(values));
+      .then(() => {
+        hdsToast({
+          translated: true,
+          labelText: 'toast.changesSaved.label',
+          text: 'toast.changesSaved.description',
+          type: 'success',
+        });
+        onSubmit?.(values);
+      });
   };
 
   return (
