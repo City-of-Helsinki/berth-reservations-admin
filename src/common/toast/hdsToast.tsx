@@ -22,15 +22,16 @@ interface NotificationWrapperProps extends HDSToastArgs {
   translated: boolean;
 }
 
+const AUTO_DISMISS_TIME = 3000;
+
 const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, translated }: NotificationWrapperProps) => {
   const { t } = useTranslation();
-  const autoDismissTime = 3000;
 
   useEffect(() => {
     if (autoDismiss) {
       const timer = setTimeout(() => {
         toast.dismiss(toastId);
-      }, autoDismissTime);
+      }, AUTO_DISMISS_TIME);
       return () => clearTimeout(timer);
     }
   }, [autoDismiss, toastId]);
