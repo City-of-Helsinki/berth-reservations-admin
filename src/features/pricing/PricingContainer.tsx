@@ -8,8 +8,10 @@ import Pricing from './Pricing';
 import { PRICING_QUERY } from './queries';
 import { PRICING } from './__generated__/PRICING';
 import { AdditionalServiceValues } from './additionalServicePricing/modal/AdditionalServicesModal';
-import { ADD_ADDITIONAL_SERVICE } from './additionalServicePricing/__generated__/ADD_ADDITIONAL_SERVICE';
-import { ADD_ADDITIONAL_SERVICE_MUTATIONVariables as ADD_ADDITIONAL_SERVICE_MUTATION_VARS } from './additionalServicePricing/__generated__/ADD_ADDITIONAL_SERVICE_MUTATION';
+import {
+  ADD_ADDITIONAL_SERVICE,
+  ADD_ADDITIONAL_SERVICEVariables as ADD_ADDITIONAL_SERVICE_VARS,
+} from './additionalServicePricing/__generated__/ADD_ADDITIONAL_SERVICE';
 import {
   ADD_ADDITIONAL_SERVICE_MUTATION,
   UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION,
@@ -23,7 +25,7 @@ const PricingContainer = () => {
   const { loading, error, data } = useQuery<PRICING>(PRICING_QUERY);
   const [editingAdditionalServiceId, setEditingAdditionalServiceId] = useState<string>();
   const [isAddingAdditionalService, setIsAddingAdditionalService] = useState<boolean>(false);
-  const [addAdditionalService] = useMutation<ADD_ADDITIONAL_SERVICE, ADD_ADDITIONAL_SERVICE_MUTATION_VARS>(
+  const [addAdditionalService] = useMutation<ADD_ADDITIONAL_SERVICE, ADD_ADDITIONAL_SERVICE_VARS>(
     ADD_ADDITIONAL_SERVICE_MUTATION
   );
   const [updateAdditionalServicePrice] = useMutation<UPDATE_ADDITIONAL_SERVICE_PRICE, UPDATE_HARBOR_SERVICE_PRICE_VARS>(
