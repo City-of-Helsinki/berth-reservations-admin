@@ -26,7 +26,7 @@ import styles from './additionalServicesForm.module.scss';
 const serviceOptions = Object.values(ProductServiceType);
 const taxOptions = Object.values(AdditionalProductTaxEnum);
 const priceUnitOptions = Object.values(PriceUnits);
-// const periodOptions = Object.values(PeriodType);
+const periodOptions = Object.values(PeriodType);
 
 export interface AdditionalServiceValues {
   service: ProductServiceType | null;
@@ -38,12 +38,11 @@ export interface AdditionalServiceValues {
 
 export interface AdditionalServicesFormProps {
   initialValues?: AdditionalServiceValues | null;
-  periodOptions: PeriodType[];
   onSubmit(values: AdditionalServiceValues): void;
   onClose(): void;
 }
 
-export const getAdditionalServicesValidationSchema = (t: TFunction, periodOptions: PeriodType[]) => {
+export const getAdditionalServicesValidationSchema = (t: TFunction) => {
   return Yup.object().shape({
     service: Yup.string().oneOf(serviceOptions).required(t('forms.common.errors.required')),
     priceValue: Yup.number()
@@ -66,7 +65,7 @@ const OPTIONAL_SERVICES = [
   ProductServiceType.DINGHY_PLACE,
 ];
 
-const AdditionalServicesForm = ({ initialValues, onSubmit, onClose, periodOptions }: AdditionalServicesFormProps) => {
+const AdditionalServicesForm = ({ initialValues, onSubmit, onClose }: AdditionalServicesFormProps) => {
   const { t, i18n } = useTranslation();
   const defaultValues: AdditionalServiceValues = {
     service: null,
@@ -80,7 +79,7 @@ const AdditionalServicesForm = ({ initialValues, onSubmit, onClose, periodOption
     <Formik
       initialValues={initialValues ?? defaultValues}
       onSubmit={onSubmit}
-      validationSchema={getAdditionalServicesValidationSchema(t, periodOptions)}
+      validationSchema={getAdditionalServicesValidationSchema(t)}
     >
       {({ isSubmitting, errors, isValid, dirty }) => {
         const isSubmitDisabled = !dirty || isSubmitting || !isValid;

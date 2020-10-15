@@ -14,7 +14,6 @@ describe('AdditionalServicesForm', () => {
   const initialProps: AdditionalServicesFormProps = {
     onClose: jest.fn(),
     onSubmit: jest.fn(),
-    periodOptions: Object.values(PeriodType),
     initialValues: {
       service: ProductServiceType.LIGHTING,
       priceValue: 25,
