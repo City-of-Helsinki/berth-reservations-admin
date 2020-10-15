@@ -3,10 +3,8 @@
 
 .row {
   margin: units(2) 0;
-
-  > *:not(:first-child) {
-    margin-left: units(1);
-  }
+  column-gap: units(1);
+  align-items: baseline;
 }
 
 .buttonRow {

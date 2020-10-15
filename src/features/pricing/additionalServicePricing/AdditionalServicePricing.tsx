@@ -1,45 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Row } from 'react-table';
-import { useMutation } from '@apollo/react-hooks';
+import classNames from 'classnames';
 
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import CardBody from '../../../common/cardBody/CardBody';
 import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
 import Text from '../../../common/text/Text';
-import EditForm, { EDIT_FORM_TYPE } from '../editModal/EditForm';
 import { AdditionalServicePricing as AdditionalServicePricingData } from './__generated__/AdditionalServicePricing';
 import { getAdditionalServiceData } from './utils';
 import { getPeriodTKey, getProductServiceTKey, getProductTax } from '../../../common/utils/translations';
-import { PeriodType, ProductServiceType, AdditionalProductTaxEnum } from '../../../@types/__generated__/globalTypes';
-import { UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION } from './mutations';
-import { UPDATE_ADDITIONAL_SERVICE_PRICE } from './__generated__/UPDATE_ADDITIONAL_SERVICE_PRICE';
-import { UPDATE_HARBOR_SERVICE_PRICEVariables as UPDATE_HARBOR_SERVICE_PRICE_VARS } from '../harborServicePricing/__generated__/UPDATE_HARBOR_SERVICE_PRICE';
-import { formatPrice } from '../../../common/utils/format';
+import {
+  PeriodType,
+  ProductServiceType,
+  AdditionalProductTaxEnum,
+  PriceUnits,
+} from '../../../@types/__generated__/globalTypes';
+import { formatPercentage, formatPrice } from '../../../common/utils/format';
 import Modal from '../../../common/modal/Modal';
+import AdditionalServicesModal, { AdditionalServiceValues } from './modal/AdditionalServicesModal';
+import styles from './additionalServicePricing.module.scss';
 
 export interface AdditionalService {
   id: string;
   service: ProductServiceType;
-  price: number;
-  tax: AdditionalProductTaxEnum;
+  priceValue: number;
+  priceUnit: PriceUnits;
+  taxPercentage: AdditionalProductTaxEnum;
   period: PeriodType;
 }
 
 export interface AdditionalServicePricingProps {
   data: AdditionalServicePricingData | undefined | null;
   loading: boolean;
+  isModalOpen: boolean;
+  editingServiceId?: string;
   className?: string;
+  onEditRowClick(id: string): void;
+  onAddServiceClick(): void;
+  onSubmitModal(values: AdditionalServiceValues): void;
+  onCloseModal(): void;
 }
 
-const AdditionalServicePricing = ({ data, loading, className }: AdditionalServicePricingProps) => {
+const AdditionalServicePricing = ({
+  data,
+  loading,
+  className,
+  isModalOpen,
+  editingServiceId,
+  onSubmitModal,
+  onAddServiceClick,
+  onEditRowClick,
+  onCloseModal,
+}: AdditionalServicePricingProps) => {
   const { t, i18n } = useTranslation();
-
-  const [editRowValues, setEditRowValues] = useState<AdditionalService>();
-  const [updateHarborServicePrice] = useMutation<UPDATE_ADDITIONAL_SERVICE_PRICE, UPDATE_HARBOR_SERVICE_PRICE_VARS>(
-    UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION
-  );
 
   const additionalServicesCols: Column<AdditionalService>[] = [
     {
@@ -51,14 +66,23 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
     {
       Header: t('pricing.additionalServices.price') || '',
       width: COLUMN_WIDTH.S,
-      accessor: ({ price }) => formatPrice(price, i18n.language),
-      id: 'price',
+      accessor: ({ priceValue, priceUnit }) => {
+        switch (priceUnit) {
+          case PriceUnits.AMOUNT:
+            return formatPrice(priceValue, i18n.language);
+          case PriceUnits.PERCENTAGE:
+            return formatPercentage(priceValue, i18n.language);
+          default:
+            return priceValue;
+        }
+      },
+      id: 'priceValue',
     },
     {
       Header: t('pricing.additionalServices.tax') || '',
       width: COLUMN_WIDTH.S,
-      accessor: ({ tax }) => getProductTax(tax, i18n.language),
-      id: 'tax',
+      accessor: ({ taxPercentage }) => getProductTax(taxPercentage, i18n.language),
+      id: 'taxPercentage',
     },
     {
       Header: t('pricing.additionalServices.period') || '',
@@ -72,26 +96,19 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
       sortType: 'none',
       width: COLUMN_WIDTH.S,
       Cell: ({ row }: { row: Row<AdditionalService> }) => (
-        <button onClick={() => setEditRowValues(row.original)}>
+        <button onClick={() => onEditRowClick(row.original.id)}>
           <Text color="brand">{t('common.edit')}</Text>
         </button>
       ),
     },
   ];
 
-  const handleSubmit = async ({ id, price, period, tax }: AdditionalService) => {
-    await updateHarborServicePrice({
-      variables: { input: { id, priceValue: price, period, taxPercentage: tax } },
-    });
-
-    setEditRowValues(undefined);
-  };
-
-  const handleClose = () => setEditRowValues(undefined);
+  const initialValues = data?.edges.find((edge) => edge?.node?.id === editingServiceId)?.node;
+  const modalLabelKey = editingServiceId ? 'pricing.editModalHeading' : 'common.addNew';
 
   return (
     <>
-      <Card className={className}>
+      <Card className={classNames(styles.additionalServicePricing, className)}>
         <CardHeader title={t('pricing.additionalServices.title')} />
         <CardBody>
           <Table
@@ -101,19 +118,22 @@ const AdditionalServicePricing = ({ data, loading, className }: AdditionalServic
             loading={loading}
             theme="basic"
             renderEmptyStateRow={() => t('common.notification.noData.description')}
+            renderTableToolsBottom={() => (
+              <button className={styles.addButton} onClick={onAddServiceClick}>
+                <Text color="brand">{t('common.addNew')}</Text>
+              </button>
+            )}
           />
         </CardBody>
       </Card>
-      {editRowValues && (
-        <Modal isOpen toggleModal={handleClose} label={t('pricing.editModalHeading').toUpperCase()}>
-          <EditForm
-            closeModal={handleClose}
-            formType={EDIT_FORM_TYPE.ADDITIONAL_SERVICES}
-            initialValues={editRowValues}
-            onSubmit={handleSubmit}
-          />
-        </Modal>
-      )}
+      <Modal isOpen={isModalOpen} toggleModal={onCloseModal} label={t(modalLabelKey).toUpperCase()}>
+        <AdditionalServicesModal
+          closeModal={onCloseModal}
+          initialValues={initialValues}
+          periodOptions={Object.values(PeriodType)}
+          onSubmit={onSubmitModal}
+        />
+      </Modal>
     </>
   );
 };

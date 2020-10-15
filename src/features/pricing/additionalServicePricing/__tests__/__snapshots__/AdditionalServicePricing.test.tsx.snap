@@ -2,7 +2,7 @@
 
 exports[`AdditionalServicePricing renders noData message when there is no data 1`] = `
 <div
-  class="card"
+  class="card additionalServicePricing"
 >
   <div
     class="cardHeader"
@@ -183,6 +183,15 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
           </div>
         </div>
       </div>
+      <button
+        class="addButton"
+      >
+        <span
+          class="text brand span"
+        >
+          Lisää uusi
+        </span>
+      </button>
     </div>
   </div>
    
@@ -191,7 +200,7 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
 
 exports[`AdditionalServicePricing renders normally 1`] = `
 <div
-  class="card"
+  class="card additionalServicePricing"
 >
   <div
     class="cardHeader"
@@ -412,6 +421,15 @@ exports[`AdditionalServicePricing renders normally 1`] = `
           </div>
         </div>
       </div>
+      <button
+        class="addButton"
+      >
+        <span
+          class="text brand span"
+        >
+          Lisää uusi
+        </span>
+      </button>
     </div>
   </div>
    
