@@ -399,7 +399,7 @@ export interface UpdateAddressInput {
 }
 
 export interface UpdateBerthApplicationInput {
-  customerId: string;
+  customerId?: string | null;
   id: string;
   clientMutationId?: string | null;
 }
@@ -541,7 +541,7 @@ export interface UpdateProfileMutationInput {
 }
 
 export interface UpdateWinterStorageApplicationInput {
-  customerId: string;
+  customerId?: string | null;
   id: string;
   clientMutationId?: string | null;
 }
