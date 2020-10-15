@@ -19,7 +19,7 @@ export interface PricingProps {
   additionalServicesData: AdditionalServicePricingProps['data'];
   additionalServicesModal: Pick<
     AdditionalServicePricingProps,
-    'isModalOpen' | 'onAddServiceClick' | 'onEditRowClick' | 'onCloseModal' | 'editingServiceId' | 'onSubmitModal'
+    'isModalOpen' | 'onAddServiceClick' | 'onEditRowClick' | 'onCloseModal' | 'editingServiceId' | 'onSubmitForm'
   >;
   loading: boolean;
   refetchQueries?: PureQueryOptions[] | string[];

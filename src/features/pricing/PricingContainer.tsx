@@ -7,7 +7,7 @@ import { getOperationName } from 'apollo-link';
 import Pricing from './Pricing';
 import { PRICING_QUERY } from './queries';
 import { PRICING } from './__generated__/PRICING';
-import { AdditionalServiceValues } from './additionalServicePricing/modal/AdditionalServicesModal';
+import { AdditionalServiceValues } from './additionalServicePricing/form/AdditionalServicesForm';
 import {
   ADD_ADDITIONAL_SERVICE,
   ADD_ADDITIONAL_SERVICEVariables as ADD_ADDITIONAL_SERVICE_VARS,
@@ -70,7 +70,7 @@ const PricingContainer = () => {
         onEditRowClick: setEditingAdditionalServiceId,
         onCloseModal: handleCloseAdditionalServiceModal,
         editingServiceId: editingAdditionalServiceId,
-        onSubmitModal: handleSubmitAdditionalService,
+        onSubmitForm: handleSubmitAdditionalService,
       }}
       loading={loading}
       refetchQueries={[getOperationName(PRICING_QUERY) || 'PRICING_QUERY']}

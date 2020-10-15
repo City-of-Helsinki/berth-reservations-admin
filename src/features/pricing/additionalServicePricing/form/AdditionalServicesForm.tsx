@@ -21,7 +21,7 @@ import {
   getPriceUnits,
 } from '../../../../common/utils/translations';
 import Button from '../../../../common/button/Button';
-import styles from './additionalServicesModal.module.scss';
+import styles from './additionalServicesForm.module.scss';
 
 const serviceOptions = Object.values(ProductServiceType);
 const taxOptions = Object.values(AdditionalProductTaxEnum);
@@ -36,11 +36,11 @@ export interface AdditionalServiceValues {
   period?: PeriodType | null;
 }
 
-export interface AdditionalServicesModalProps {
+export interface AdditionalServicesFormProps {
   initialValues?: AdditionalServiceValues | null;
   periodOptions: PeriodType[];
-  onSubmit: (values: AdditionalServiceValues) => void;
-  closeModal: () => void;
+  onSubmit(values: AdditionalServiceValues): void;
+  onClose(): void;
 }
 
 export const getAdditionalServicesValidationSchema = (t: TFunction, periodOptions: PeriodType[]) => {
@@ -66,12 +66,7 @@ const OPTIONAL_SERVICES = [
   ProductServiceType.DINGHY_PLACE,
 ];
 
-const AdditionalServicesModal = ({
-  initialValues,
-  onSubmit,
-  closeModal,
-  periodOptions,
-}: AdditionalServicesModalProps) => {
+const AdditionalServicesForm = ({ initialValues, onSubmit, onClose, periodOptions }: AdditionalServicesFormProps) => {
   const { t, i18n } = useTranslation();
   const defaultValues: AdditionalServiceValues = {
     service: null,
@@ -159,7 +154,7 @@ const AdditionalServicesModal = ({
               />
             </Grid>
             <div className={styles.buttonRow}>
-              <Button variant="secondary" id="cancel" onClick={closeModal}>
+              <Button variant="secondary" id="cancel" onClick={onClose}>
                 {t('common.cancel')}
               </Button>
               <Button type="submit" disabled={isSubmitDisabled}>
@@ -173,4 +168,4 @@ const AdditionalServicesModal = ({
   );
 };
 
-export default AdditionalServicesModal;
+export default AdditionalServicesForm;

@@ -19,7 +19,7 @@ import {
 } from '../../../@types/__generated__/globalTypes';
 import { formatPercentage, formatPrice } from '../../../common/utils/format';
 import Modal from '../../../common/modal/Modal';
-import AdditionalServicesModal, { AdditionalServiceValues } from './modal/AdditionalServicesModal';
+import AdditionalServicesForm, { AdditionalServiceValues } from './form/AdditionalServicesForm';
 import styles from './additionalServicePricing.module.scss';
 
 export interface AdditionalService {
@@ -39,7 +39,7 @@ export interface AdditionalServicePricingProps {
   className?: string;
   onEditRowClick(id: string): void;
   onAddServiceClick(): void;
-  onSubmitModal(values: AdditionalServiceValues): void;
+  onSubmitForm(values: AdditionalServiceValues): void;
   onCloseModal(): void;
 }
 
@@ -49,7 +49,7 @@ const AdditionalServicePricing = ({
   className,
   isModalOpen,
   editingServiceId,
-  onSubmitModal,
+  onSubmitForm,
   onAddServiceClick,
   onEditRowClick,
   onCloseModal,
@@ -127,11 +127,11 @@ const AdditionalServicePricing = ({
         </CardBody>
       </Card>
       <Modal isOpen={isModalOpen} toggleModal={onCloseModal} label={t(modalLabelKey).toUpperCase()}>
-        <AdditionalServicesModal
-          closeModal={onCloseModal}
+        <AdditionalServicesForm
+          onClose={onCloseModal}
           initialValues={initialValues}
           periodOptions={Object.values(PeriodType)}
-          onSubmit={onSubmitModal}
+          onSubmit={onSubmitForm}
         />
       </Modal>
     </>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AdditionalServicesModal renders normally 1`] = `
+exports[`AdditionalServicesForm renders normally 1`] = `
 <form
   action="#"
   class="form"

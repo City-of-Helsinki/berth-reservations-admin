@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
-import AdditionalServicesModal, { AdditionalServicesModalProps } from '../AdditionalServicesModal';
+import AdditionalServicesForm, { AdditionalServicesFormProps } from '../AdditionalServicesForm';
 import {
   ProductServiceType,
   PeriodType,
@@ -10,9 +10,9 @@ import {
   PriceUnits,
 } from '../../../../../@types/__generated__/globalTypes';
 
-describe('AdditionalServicesModal', () => {
-  const initialProps: AdditionalServicesModalProps = {
-    closeModal: jest.fn(),
+describe('AdditionalServicesForm', () => {
+  const initialProps: AdditionalServicesFormProps = {
+    onClose: jest.fn(),
     onSubmit: jest.fn(),
     periodOptions: Object.values(PeriodType),
     initialValues: {
@@ -28,8 +28,8 @@ describe('AdditionalServicesModal', () => {
     jest.resetAllMocks();
   });
 
-  const getWrapper = (props: Partial<AdditionalServicesModalProps> = {}) =>
-    mount(<AdditionalServicesModal {...initialProps} {...props} />);
+  const getWrapper = (props: Partial<AdditionalServicesFormProps> = {}) =>
+    mount(<AdditionalServicesForm {...initialProps} {...props} />);
 
   it('renders normally', () => {
     const wrapper = getWrapper();
@@ -76,10 +76,10 @@ describe('AdditionalServicesModal', () => {
       const cancelBtn = getWrapper().find('Button').at(0);
       cancelBtn.simulate('click');
 
-      expect(initialProps.closeModal).toHaveBeenCalledTimes(1);
+      expect(initialProps.onClose).toHaveBeenCalledTimes(1);
     });
     it('Should call the provided onSubmit prop with modal values when the form is submitted', async () => {
-      const initialValues: AdditionalServicesModalProps['initialValues'] = {
+      const initialValues: AdditionalServicesFormProps['initialValues'] = {
         priceValue: 50,
         service: ProductServiceType.LIGHTING,
         priceUnit: PriceUnits.PERCENTAGE,
