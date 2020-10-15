@@ -1,0 +1,18 @@
+@import 'containers';
+@import 'spacings';
+
+.row {
+  margin: units(2) 0;
+  column-gap: units(1);
+  align-items: baseline;
+}
+
+.buttonRow {
+  margin-top: units(4);
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  width: container(s);
+}
