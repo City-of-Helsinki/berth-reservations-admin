@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Dropdown } from 'hds-react';
 
 import Select, { SelectProps } from '../Select';
 
@@ -26,12 +27,12 @@ describe('Select', () => {
     const onChange = jest.fn();
     const wrapper = getWrapper({
       id: 'test',
-      onChange: onChange,
+      onChange,
     });
 
     const option = { value: '2', label: 'Second' };
 
-    wrapper.find('Dropdown').simulate('change', option);
+    wrapper.find(Dropdown).simulate('change', option);
 
     expect(onChange).toHaveBeenCalledWith({ target: { id: 'test', value: '2' } });
   });
@@ -40,13 +41,13 @@ describe('Select', () => {
     const onChange = jest.fn();
     const wrapper = getWrapper({
       id: 'test',
-      onChange: onChange,
+      onChange,
       value: '2',
     });
 
     const option = { value: '2', label: 'Second' };
 
-    wrapper.find('Dropdown').simulate('change', option);
+    wrapper.find(Dropdown).simulate('change', option);
 
     expect(onChange).not.toHaveBeenCalled();
   });

@@ -1,9 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
+import { IconAngleDown } from 'hds-react';
 
 import ApplicationList, { ApplicationListProps } from '../ApplicationList';
 import { mockData, mockTableData } from '../__fixtures__/mockData';
+import ApplicationDetails from '../../../common/applicationDetails/ApplicationDetails';
+import TableFilters from '../../../common/tableFilters/TableFilters';
 
 const mockProps: ApplicationListProps = {
   data: undefined,
@@ -48,10 +51,10 @@ describe('ApplicationList', () => {
       tableData: mockTableData,
     });
 
-    wrapper.find('Table').find('IconAngleDown.expandArrow').at(0).simulate('click');
+    wrapper.find(IconAngleDown).at(0).simulate('click');
     wrapper.update();
 
-    expect(wrapper.find('ApplicationDetails')).toBeDefined();
+    expect(wrapper.find(ApplicationDetails)).toBeDefined();
   });
 
   it('should call goToPage and setOnlySwitchApps when filter is changed', () => {
@@ -64,7 +67,7 @@ describe('ApplicationList', () => {
       setOnlySwitchApps,
     });
 
-    wrapper.find('TableFilters').find('button.filterBtn').at(1).simulate('click');
+    wrapper.find(TableFilters).find('button.filterBtn').at(1).simulate('click');
     wrapper.update();
 
     expect(goToPage).toHaveBeenCalledWith(0);
