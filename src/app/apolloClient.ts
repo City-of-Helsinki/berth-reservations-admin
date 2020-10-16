@@ -62,7 +62,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 });
 
 const uploadLink = createUploadLink({
-  uri: process.env.REACT_APP_API_URI,
+  uri: process.env.REACT_APP_API_URL,
   headers: {
     'keep-alive': 'true',
   },

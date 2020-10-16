@@ -23,15 +23,15 @@ USER appuser
 # Copy package.json and package-lock.json/yarn.lock files
 COPY package*.json *yarn* ./
 
-# Install npm depepndencies
+# Install npm dependencies
 ENV PATH /app/node_modules/.bin:$PATH
 
 USER root
-
 RUN apt-install.sh build-essential
 
+# Install the actual app dependencies
 USER appuser
-RUN yarn && yarn cache clean --force
+RUN yarn install && yarn cache clean --force
 
 USER root
 RUN apt-cleanup.sh build-essential
@@ -54,10 +54,11 @@ CMD ["react-scripts", "start"]
 FROM appbase as staticbuilder
 # ===================================
 
-ARG REACT_APP_API_URI
+ARG REACT_APP_API_URL
 ARG REACT_APP_TUNNISTAMO_URI
 ARG REACT_APP_SENTRY_DSN
 ARG REACT_APP_SENTRY_ENVIRONMENT
+ARG SASS_PATH="node_modules:src/assets/styles"
 
 COPY . /app
 RUN yarn build

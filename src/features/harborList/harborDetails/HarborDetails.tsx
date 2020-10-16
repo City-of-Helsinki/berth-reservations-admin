@@ -29,7 +29,7 @@ const HarborDetails = ({
 }: HarborDetailsProps) => {
   const { t, i18n } = useTranslation();
   const imageSrc = imageFile ? imageFile : placeholderImage;
-  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URI}${servicemapId}`;
+  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URL}${servicemapId}`;
 
   return (
     <Grid colsCount={4}>

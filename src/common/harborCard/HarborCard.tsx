@@ -58,7 +58,7 @@ const HarborCard = ({
 }: HarborCardProps) => {
   const { t } = useTranslation();
 
-  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URI}${servicemapId}`;
+  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URL}${servicemapId}`;
 
   return (
     <Card className={classNames(className, styles.card)}>
