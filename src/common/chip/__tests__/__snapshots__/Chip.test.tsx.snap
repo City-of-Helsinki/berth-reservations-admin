@@ -2,7 +2,7 @@
 
 exports[`Chip renders normally 1`] = `
 <span
-  class="chip red"
+  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI"
 >
   Foo
 </span>

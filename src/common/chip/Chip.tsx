@@ -14,10 +14,7 @@ const Chip = ({ type, label, className }: ChipProps) => {
   const statusLabelType = type === 'warning' ? 'alert' : type;
 
   return (
-    <StatusLabel
-      className={classNames({ [styles.warning]: type === 'warning' }, 'foo', className)}
-      type={statusLabelType}
-    >
+    <StatusLabel className={classNames({ [styles.warning]: type === 'warning' }, className)} type={statusLabelType}>
       {label}
     </StatusLabel>
   );

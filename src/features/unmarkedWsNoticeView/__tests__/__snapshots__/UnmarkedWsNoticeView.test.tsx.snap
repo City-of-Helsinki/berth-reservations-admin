@@ -25,7 +25,7 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip blue"
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_info__3YrAe status-label_hds-status-label--info__J28-H"
       >
         Käsitelty
       </span>
@@ -527,7 +527,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip blue"
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_info__3YrAe status-label_hds-status-label--info__J28-H"
       >
         Käsitelty
       </span>

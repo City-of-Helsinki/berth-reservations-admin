@@ -5,7 +5,6 @@ exports[`Checkbox renders normally 1`] = `
   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
 >
   <input
-    aria-checked="false"
     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
     id="test"
     type="checkbox"

@@ -88,6 +88,7 @@ exports[`HarborView renders normally 1`] = `
                     <svg
                       class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv arrow"
                       color="brand"
+                      role="img"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -177,6 +178,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -487,13 +489,13 @@ exports[`HarborView renders normally 1`] = `
         class="globalSearchTableTools"
       >
         <div
-          class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6 filterField"
+          class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField"
         >
           <div
-            class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+            class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
           >
             <input
-              class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+              class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
               id="textSearchGlobalFilter"
               placeholder="Haku"
               type="text"
@@ -582,7 +584,6 @@ exports[`HarborView renders normally 1`] = `
                 style="cursor:pointer"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="checkbox"
                   title="Toggle All Rows Selected"
@@ -607,6 +608,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -638,6 +640,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -669,6 +672,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -700,6 +704,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -731,6 +736,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -762,6 +768,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -793,6 +800,7 @@ exports[`HarborView renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -843,7 +851,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA=="
                     title="Toggle Row Selected"
@@ -913,6 +920,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -950,7 +958,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjkxZDM4NTE5LWMzMTgtNDgyYy05OGIxLWE4YmU1NmIyNTMxYw=="
                     title="Toggle Row Selected"
@@ -1020,6 +1027,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1057,7 +1065,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjcxZmQwYzNhLThkZWYtNDg5Ni05Y2IyLWQwZTRlZWRmZjM5NQ=="
                     title="Toggle Row Selected"
@@ -1127,6 +1134,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1164,7 +1172,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmFiYjljMWFhLWZkZjktNGU5OS04NjgwLTViYzdmNzNkOTUxYQ=="
                     title="Toggle Row Selected"
@@ -1234,6 +1241,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1271,7 +1279,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmM5Nzk0YzY4LTg2ZDgtNGRlNy1iZDc5LWE1YWJhYWFmMzJjMA=="
                     title="Toggle Row Selected"
@@ -1341,6 +1348,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1378,7 +1386,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmE5ZTk0MDQ2LWEzNWQtNGMxZS04YjcwLTc2Mjk0OWFlNDY0MQ=="
                     title="Toggle Row Selected"
@@ -1448,6 +1455,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1485,7 +1493,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmUzZmRiZTFlLTA4NWEtNDk3Ni1iZDNmLWZhM2UyZTA0OWIzYw=="
                     title="Toggle Row Selected"
@@ -1555,6 +1562,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1592,7 +1600,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjIxNmMzMWE1LWMwYjEtNGFiZi05N2NmLWI0ZWY3MjNmMjE5YQ=="
                     title="Toggle Row Selected"
@@ -1662,6 +1669,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1699,7 +1707,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjkzMjczODdkLWYyNmEtNGYyNC1iYTI2LTc1ZWU0YzQ1MTE2ZA=="
                     title="Toggle Row Selected"
@@ -1769,6 +1776,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1806,7 +1814,6 @@ exports[`HarborView renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOmI1MzVhN2U3LTNiM2ItNDliYS05NDE1LTg5YzhjY2I3ZDNmMg=="
                     title="Toggle Row Selected"
@@ -1876,6 +1883,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1916,6 +1924,7 @@ exports[`HarborView renders normally 1`] = `
           >
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -2030,6 +2039,7 @@ exports[`HarborView renders normally 1`] = `
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
