@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'hds-react/lib';
 
 import Modal, { ModalProps } from '../../../common/modal/Modal';
 import { isBerthBill } from '../utils';
@@ -12,6 +11,7 @@ import Text from '../../../common/text/Text';
 import styles from './billModal.module.scss';
 import { Bill } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
+import Button from '../../../common/button/Button';
 
 interface BillModalProps extends Omit<ModalProps, 'children'> {
   bill: Bill;
@@ -94,9 +94,7 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
       </Section>
 
       <div className={styles.closeButtonContainer}>
-        <Button theme="coat" onClick={() => toggleModal?.(false)}>
-          {t('customerView.customerBill.closeModal')}
-        </Button>
+        <Button onClick={() => toggleModal?.(false)}>{t('customerView.customerBill.closeModal')}</Button>
       </div>
     </Modal>
   );
