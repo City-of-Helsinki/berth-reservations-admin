@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { DismissableNotification, DismissableNotificationProps } from 'hds-react';
+import { Notification, NotificationProps } from 'hds-react';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,7 @@ import { HDSToastContainerId } from './HDSToastContainer';
 
 interface HDSToastArgs {
   autoDismiss?: boolean;
-  type: DismissableNotificationProps['type'];
+  type: NotificationProps['type'];
   labelText: string;
   text: string;
   toastId?: string;
@@ -37,14 +37,15 @@ const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, tran
   }, [autoDismiss, toastId]);
 
   return (
-    <DismissableNotification
+    <Notification
       type={type}
-      closeButtonLabelText={t('common.closeToast')}
-      labelText={translated ? t(labelText) : labelText}
+      dismissible
+      closeButtonLabelText={t('toast.closeToast') ?? ''}
+      label={translated ? t(labelText) : labelText}
       onClose={() => toast.dismiss(toastId)}
     >
       {translated ? t(text) : text}
-    </DismissableNotification>
+    </Notification>
   );
 };
 

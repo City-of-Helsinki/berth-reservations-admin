@@ -104,7 +104,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     }).then(() => {
       history.replace('/unmarked-ws-notices');
       hdsToast({
-        type: 'notification',
+        type: 'info',
         labelText: 'toast.noticeDeleted.label',
         text: 'toast.noticeDeleted.description',
         translated: true,

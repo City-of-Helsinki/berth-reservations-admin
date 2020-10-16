@@ -35,7 +35,7 @@ describe('HDSToastContainer', () => {
   };
 
   const simulateCloseToast = async (wrapper: ReactWrapper, toastId: number) => {
-    wrapper.find(`#toast-${toastId}`).find('button[title="common.closeToast"]').simulate('click');
+    wrapper.find(`#toast-${toastId}`).find('button[title="toast.closeToast"]').simulate('click');
     await act(async () => await wait(1500));
     wrapper.update();
   };

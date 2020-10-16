@@ -53,7 +53,7 @@ const PricingContainer = () => {
 
   if (error)
     return (
-      <Notification labelText={t('common.notification.error.label')} type="error">
+      <Notification size="large" label={t('common.notification.error.label')} type="error">
         {t('common.notification.error.description')}
       </Notification>
     );
