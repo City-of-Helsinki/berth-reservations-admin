@@ -39,7 +39,7 @@ export interface AdditionalServiceValues {
 export interface AdditionalServicesFormProps {
   initialValues?: AdditionalServiceValues | null;
   onSubmit(values: AdditionalServiceValues): void;
-  onClose(): void;
+  onCancel(): void;
 }
 
 export const getAdditionalServicesValidationSchema = (t: TFunction) => {
@@ -65,7 +65,7 @@ const OPTIONAL_SERVICES = [
   ProductServiceType.DINGHY_PLACE,
 ];
 
-const AdditionalServicesForm = ({ initialValues, onSubmit, onClose }: AdditionalServicesFormProps) => {
+const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: AdditionalServicesFormProps) => {
   const { t, i18n } = useTranslation();
   const defaultValues: AdditionalServiceValues = {
     service: null,
@@ -153,7 +153,7 @@ const AdditionalServicesForm = ({ initialValues, onSubmit, onClose }: Additional
               />
             </Grid>
             <div className={styles.buttonRow}>
-              <Button variant="secondary" id="cancel" onClick={onClose}>
+              <Button variant="secondary" id="cancel" onClick={onCancel}>
                 {t('common.cancel')}
               </Button>
               <Button type="submit" disabled={isSubmitDisabled}>

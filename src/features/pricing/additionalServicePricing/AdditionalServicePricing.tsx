@@ -127,7 +127,7 @@ const AdditionalServicePricing = ({
         </CardBody>
       </Card>
       <Modal isOpen={isModalOpen} toggleModal={onCloseModal} label={t(modalLabelKey).toUpperCase()}>
-        <AdditionalServicesForm onClose={onCloseModal} initialValues={initialValues} onSubmit={onSubmitForm} />
+        <AdditionalServicesForm onCancel={onCloseModal} initialValues={initialValues} onSubmit={onSubmitForm} />
       </Modal>
     </>
   );

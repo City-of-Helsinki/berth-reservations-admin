@@ -12,7 +12,7 @@ import {
 
 describe('AdditionalServicesForm', () => {
   const initialProps: AdditionalServicesFormProps = {
-    onClose: jest.fn(),
+    onCancel: jest.fn(),
     onSubmit: jest.fn(),
     initialValues: {
       service: ProductServiceType.LIGHTING,
@@ -71,13 +71,13 @@ describe('AdditionalServicesForm', () => {
   });
 
   describe('Modal buttons', () => {
-    it('Should call the provided closeModal prop when cancel button is clicked', () => {
+    it('Should call the provided onCancel prop when cancel button is clicked', () => {
       const cancelBtn = getWrapper().find('Button').at(0);
       cancelBtn.simulate('click');
 
-      expect(initialProps.onClose).toHaveBeenCalledTimes(1);
+      expect(initialProps.onCancel).toHaveBeenCalledTimes(1);
     });
-    it('Should call the provided onSubmit prop with modal values when the form is submitted', async () => {
+    it('Should call the provided onSubmit prop with the form values when the form is submitted', async () => {
       const initialValues: AdditionalServicesFormProps['initialValues'] = {
         priceValue: 50,
         service: ProductServiceType.LIGHTING,
