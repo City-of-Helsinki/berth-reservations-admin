@@ -43,7 +43,10 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const errorLink = onError(({ networkError }) => {
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    hdsToast.graphQLErrors(graphQLErrors);
+  }
   if (networkError && networkError.name !== 'ServerError') {
     // An explicit id is passed here to the toast,
     // so it can be automatically dismissed on e.g. reconnection.
@@ -59,7 +62,7 @@ const errorLink = onError(({ networkError }) => {
 });
 
 const uploadLink = createUploadLink({
-  uri: process.env.REACT_APP_API_URI,
+  uri: process.env.REACT_APP_API_URL,
   headers: {
     'keep-alive': 'true',
   },
