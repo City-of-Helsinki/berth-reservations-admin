@@ -48,7 +48,7 @@ const WinterStorageApplicationView = ({
         </Text>
         <Chip
           className={styles.chip}
-          color={APPLICATION_STATUS[applicationDetails.status].color}
+          type={APPLICATION_STATUS[applicationDetails.status].type}
           label={t(APPLICATION_STATUS[applicationDetails.status].label)}
         />
       </div>

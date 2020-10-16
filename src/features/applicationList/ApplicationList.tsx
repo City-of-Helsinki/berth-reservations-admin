@@ -86,7 +86,7 @@ const ApplicationList = ({
     {
       Cell: ({ cell: { value } }) => (
         <Chip
-          color={APPLICATION_STATUS[value as ApplicationStatus].color}
+          type={APPLICATION_STATUS[value as ApplicationStatus].type}
           label={t(APPLICATION_STATUS[value as ApplicationStatus].label)}
         />
       ),

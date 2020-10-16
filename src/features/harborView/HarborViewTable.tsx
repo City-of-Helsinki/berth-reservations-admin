@@ -38,7 +38,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       Cell: ({ cell }: { cell: Cell<Berth> }) => {
         const isBerthActive = cell.row.original.isActive;
         if (!isBerthActive) {
-          return <Chip color="red" label={t('harborView.berthProperties.inactive')} />;
+          return <Chip type="error" label={t('harborView.berthProperties.inactive')} />;
         }
         const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
         if (!activeLease) {

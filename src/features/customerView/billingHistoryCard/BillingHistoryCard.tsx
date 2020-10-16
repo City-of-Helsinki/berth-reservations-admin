@@ -21,19 +21,19 @@ interface BillingHistoryProps {
 }
 
 const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
-  const billStatusToChipColor = (billStatus: OrderStatus): ChipProps['color'] => {
+  const billStatusToChipColor = (billStatus: OrderStatus): ChipProps['type'] => {
     switch (billStatus) {
       case OrderStatus.WAITING:
-        return 'orange';
+        return 'warning';
       case OrderStatus.PAID:
-        return 'green';
+        return 'success';
       case OrderStatus.EXPIRED:
-        return 'red';
+        return 'error';
       case OrderStatus.REJECTED:
       case OrderStatus.CANCELLED:
-        return 'grey';
+        return 'neutral';
       default:
-        return 'grey';
+        return 'neutral';
     }
   };
 
@@ -60,7 +60,7 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
                   <div className={styles.gridItem}>
                     <Text>{formatPrice(bill.totalPrice, i18n.language)}</Text>
                   </div>
-                  <Chip color={billStatusToChipColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                  <Chip type={billStatusToChipColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
                 </React.Fragment>
               ))}
             </Grid>

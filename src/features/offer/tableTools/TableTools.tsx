@@ -27,7 +27,7 @@ const TableTools = ({ applicationDate, applicationType, applicationStatus, handl
         </Text>
         <Chip
           className={styles.chip}
-          color={APPLICATION_STATUS[applicationStatus].color}
+          type={APPLICATION_STATUS[applicationStatus].type}
           label={t(APPLICATION_STATUS[applicationStatus].label)}
         />
       </div>

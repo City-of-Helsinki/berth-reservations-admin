@@ -9,12 +9,12 @@ export default {
 
 export const chip = () => (
   <>
-    <Chip label="Red" color="red" />
-    <Chip label="Orange" color="orange" />
-    <Chip label="Yellow" color="yellow" />
-    <Chip label="Green" color="green" />
-    <Chip label="Grey" color="grey" />
-    <Chip label="Blue" color="blue" />
+    <Chip label="Error" type="error" />
+    <Chip label="Warning" type="warning" />
+    <Chip label="Alert" type="alert" />
+    <Chip label="Success" type="success" />
+    <Chip label="Neutral" type="neutral" />
+    <Chip label="Info" type="info" />
   </>
 );
 

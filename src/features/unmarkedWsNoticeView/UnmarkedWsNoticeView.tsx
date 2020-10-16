@@ -79,7 +79,7 @@ const UnmarkedWsNoticeView = ({
             {t('applicationList.applicationType.notice')} {formatDate(noticeDetails.createdAt, language)}
           </Text>
           <Chip
-            color={APPLICATION_STATUS[noticeDetails.status].color}
+            type={APPLICATION_STATUS[noticeDetails.status].type}
             label={t(APPLICATION_STATUS[noticeDetails.status].label)}
           />
         </div>
@@ -111,7 +111,7 @@ const UnmarkedWsNoticeView = ({
             <div className={styles.detailsActions}>
               {customerProfile &&
                 (order ? (
-                  <Chip color={'green'} label="Lasku luotu" />
+                  <Chip type="success" label="Lasku luotu" />
                 ) : (
                   <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
                     {t('unmarkedWsNotices.view.createInvoice')}

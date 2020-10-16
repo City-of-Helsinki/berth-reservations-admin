@@ -36,7 +36,7 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
       Cell: ({ cell }: { cell: Cell<WinterStoragePlace> }) => {
         const isPlaceActive = cell.row.original.isActive;
         if (!isPlaceActive) {
-          return <Chip color="red" label={t('winterStorageAreaView.berthProperties.inactive')} />;
+          return <Chip type="error" label={t('winterStorageAreaView.berthProperties.inactive')} />;
         }
         const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
         if (!activeLease) {
