@@ -6,7 +6,15 @@ import AdditionalServicePricing, { AdditionalServicePricingProps } from '../Addi
 import { data } from '../__fixtures__/data';
 
 describe('AdditionalServicePricing', () => {
-  const initialProps: AdditionalServicePricingProps = { data, loading: false };
+  const initialProps: AdditionalServicePricingProps = {
+    data,
+    loading: false,
+    isModalOpen: false,
+    onEditRowClick: jest.fn(),
+    onAddServiceClick: jest.fn(),
+    onSubmitForm: jest.fn(),
+    onCloseModal: jest.fn(),
+  };
 
   const getWrapper = (props: Partial<AdditionalServicePricingProps> = {}) =>
     mount(

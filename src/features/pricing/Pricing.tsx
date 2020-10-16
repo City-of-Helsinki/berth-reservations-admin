@@ -17,6 +17,10 @@ export interface PricingProps {
   winterStorageData: WinterStoragePricingProps['data'];
   harborServicesData: HarborServicePricingProps['data'];
   additionalServicesData: AdditionalServicePricingProps['data'];
+  additionalServicesModal: Pick<
+    AdditionalServicePricingProps,
+    'isModalOpen' | 'onAddServiceClick' | 'onEditRowClick' | 'onCloseModal' | 'editingServiceId' | 'onSubmitForm'
+  >;
   loading: boolean;
   refetchQueries?: PureQueryOptions[] | string[];
 }
@@ -26,6 +30,7 @@ const Pricing = ({
   winterStorageData,
   harborServicesData,
   additionalServicesData,
+  additionalServicesModal,
   loading,
   refetchQueries,
 }: PricingProps) => {
@@ -43,7 +48,7 @@ const Pricing = ({
         />
         <WinterStoragePricing className={styles.fullWidth} data={winterStorageData} loading={loading} />
         <HarborServicePricing data={harborServicesData} loading={loading} />
-        <AdditionalServicePricing data={additionalServicesData} loading={loading} />
+        <AdditionalServicePricing {...additionalServicesModal} data={additionalServicesData} loading={loading} />
       </div>
     </PageContent>
   );

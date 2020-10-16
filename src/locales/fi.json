@@ -575,6 +575,7 @@
       "title": "Lisäpalvelut",
       "service": "Palvelu",
       "price": "Hinta",
+      "unit": "Yksikkö",
       "tax": "ALV",
       "period": "Aika"
     }

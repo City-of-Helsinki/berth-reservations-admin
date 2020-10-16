@@ -680,7 +680,7 @@ exports[`PricingPage renders normally 1`] = `
        
     </div>
     <div
-      class="card"
+      class="card additionalServicePricing"
     >
       <div
         class="cardHeader"
@@ -901,6 +901,15 @@ exports[`PricingPage renders normally 1`] = `
               </div>
             </div>
           </div>
+          <button
+            class="addButton"
+          >
+            <span
+              class="text brand span"
+            >
+              Lisää uusi
+            </span>
+          </button>
         </div>
       </div>
        
