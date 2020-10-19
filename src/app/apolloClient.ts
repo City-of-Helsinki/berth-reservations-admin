@@ -2,7 +2,7 @@ import ApolloClient from 'apollo-client';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
 import { createUploadLink } from 'apollo-upload-client';
-import { onError } from 'apollo-link-error';
+import { ErrorLink, onError } from 'apollo-link-error';
 import gql from 'graphql-tag';
 import { ApolloLink } from 'apollo-link';
 
@@ -43,7 +43,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const errorLink = onError(({ graphQLErrors, networkError }) => {
+export const errorHandler: ErrorLink.ErrorHandler = ({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     hdsToast.graphQLErrors(graphQLErrors);
   }
@@ -59,7 +59,8 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
       translated: true,
     });
   }
-});
+};
+export const errorLink = onError(errorHandler);
 
 const uploadLink = createUploadLink({
   uri: process.env.REACT_APP_API_URL,
