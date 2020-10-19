@@ -5,7 +5,7 @@ module.exports = {
   client: {
     service: {
       name: 'Venepaikka Admin Interface',
-      url: process.env.REACT_APP_API_URI,
+      url: process.env.REACT_APP_API_URL,
     },
   },
 };

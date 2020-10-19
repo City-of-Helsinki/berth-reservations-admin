@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AdditionalServicesFields renders normally 1`] = `
-Array [
+exports[`AdditionalServicesForm renders normally 1`] = `
+<form
+  action="#"
+  class="form"
+>
   <div
     class="row"
   >
@@ -17,8 +20,8 @@ Array [
         Lisäpalvelut
       </div>
     </div>
-  </div>,
-  <hr />,
+  </div>
+  <hr />
   <div
     class="grid cols1 row"
   >
@@ -44,16 +47,14 @@ Array [
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="service-label service-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF Dropdown-module_placeholder__2nbDo"
           disabled=""
           id="service-toggle-button"
           type="button"
         >
           <span
             class="Dropdown-module_buttonLabel__2jVRU"
-          >
-            Valaistus
-          </span>
+          />
           <svg
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
             viewBox="0 0 24 24"
@@ -76,25 +77,25 @@ Array [
       </div>
       <ul
         aria-labelledby="service-label"
-        class="Dropdown-module_menu__3rei6 Dropdown-module_overflow__I5ddb"
+        class="Dropdown-module_menu__3rei6"
         id="service-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
         tabindex="-1"
       />
     </div>
-  </div>,
+  </div>
   <div
-    class="grid cols2 row"
+    class="grid cols3 row"
   >
     <div
       class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
-        for="price"
+        for="priceValue"
       >
-        Hinta (€)
+        Hinta
         <span
           class="RequiredIndicator-module_indicator__Pt7GX"
         >
@@ -106,8 +107,8 @@ Array [
       >
         <input
           class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
-          id="price"
-          name="price"
+          id="priceValue"
+          name="priceValue"
           required=""
           type="text"
           value="25"
@@ -119,8 +120,68 @@ Array [
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
-        for="tax-toggle-button"
-        id="tax-label"
+        for="priceUnit-toggle-button"
+        id="priceUnit-label"
+      >
+        Yksikkö
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="Dropdown-module_wrapper__1oIw5"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="priceUnit-label priceUnit-toggle-button"
+          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          id="priceUnit-toggle-button"
+          type="button"
+        >
+          <span
+            class="Dropdown-module_buttonLabel__2jVRU"
+          >
+            €
+          </span>
+          <svg
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <path
+                d="M0 0h24v24H0z"
+              />
+              <path
+                d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                fill="currentColor"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <ul
+        aria-labelledby="priceUnit-label"
+        class="Dropdown-module_menu__3rei6"
+        id="priceUnit-menu"
+        role="listbox"
+        style="max-height: calc(var(--dropdown-height) * 5);"
+        tabindex="-1"
+      />
+    </div>
+    <div
+      class="Dropdown-module_root__2LI4- select"
+    >
+      <label
+        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        for="taxPercentage-toggle-button"
+        id="taxPercentage-label"
       >
         ALV
         <span
@@ -135,9 +196,9 @@ Array [
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="tax-label tax-toggle-button"
+          aria-labelledby="taxPercentage-label taxPercentage-toggle-button"
           class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
-          id="tax-toggle-button"
+          id="taxPercentage-toggle-button"
           type="button"
         >
           <span
@@ -166,17 +227,17 @@ Array [
         </button>
       </div>
       <ul
-        aria-labelledby="tax-label"
+        aria-labelledby="taxPercentage-label"
         class="Dropdown-module_menu__3rei6"
-        id="tax-menu"
+        id="taxPercentage-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
         tabindex="-1"
       />
     </div>
-  </div>,
+  </div>
   <div
-    class="grid cols2 row"
+    class="grid cols3 row"
   >
     <div
       class="Dropdown-module_root__2LI4- select"
@@ -238,6 +299,32 @@ Array [
         tabindex="-1"
       />
     </div>
-  </div>,
-]
+  </div>
+  <div
+    class="buttonRow"
+  >
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      id="cancel"
+      type="button"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Peruuta
+      </span>
+    </button>
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      disabled=""
+      type="submit"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Tallenna
+      </span>
+    </button>
+  </div>
+</form>
 `;

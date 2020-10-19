@@ -2,7 +2,7 @@ import ApolloClient from 'apollo-client';
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
 import { createUploadLink } from 'apollo-upload-client';
-import { onError } from 'apollo-link-error';
+import { ErrorLink, onError } from 'apollo-link-error';
 import gql from 'graphql-tag';
 import { ApolloLink } from 'apollo-link';
 
@@ -43,11 +43,15 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const errorLink = onError(({ networkError }) => {
+export const errorHandler: ErrorLink.ErrorHandler = ({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    hdsToast.graphQLErrors(graphQLErrors);
+  }
   if (networkError && networkError.name !== 'ServerError') {
     // An explicit id is passed here to the toast,
     // so it can be automatically dismissed on e.g. reconnection.
     hdsToast({
+      autoDismiss: false,
       type: 'warning',
       labelText: 'toast.networkError.label',
       text: 'toast.networkError.description',
@@ -55,10 +59,11 @@ const errorLink = onError(({ networkError }) => {
       translated: true,
     });
   }
-});
+};
+export const errorLink = onError(errorHandler);
 
 const uploadLink = createUploadLink({
-  uri: process.env.REACT_APP_API_URI,
+  uri: process.env.REACT_APP_API_URL,
   headers: {
     'keep-alive': 'true',
   },

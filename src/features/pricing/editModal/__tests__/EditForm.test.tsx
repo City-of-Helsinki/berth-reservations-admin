@@ -7,17 +7,10 @@ import EditForm, { EditPricingFormProps, EDIT_FORM_TYPE } from '../EditForm';
 import BerthsFields from '../fields/BerthsFields';
 import WinterStorageFields from '../fields/WinterStorageFields';
 import HarborServicesFields from '../fields/HarborServicesFields';
-import AdditionalServicesFields from '../fields/AdditionalServicesFields';
 import { BerthPrice } from '../../berthPricing/BerthPricing';
 import { WinterStoragePrice } from '../../winterStoragePricing/WinterStoragePricing';
 import { HarborService } from '../../harborServicePricing/HarborServicePricing';
-import { AdditionalService } from '../../additionalServicePricing/AdditionalServicePricing';
-import {
-  PeriodType,
-  AdditionalProductTaxEnum,
-  ProductServiceType,
-  PriceUnits,
-} from '../../../../@types/__generated__/globalTypes';
+import { PeriodType, ProductServiceType, PriceUnits } from '../../../../@types/__generated__/globalTypes';
 
 const berthsData: BerthPrice = {
   id: '1',
@@ -45,17 +38,9 @@ const harborServicesData: HarborService = {
   period: PeriodType.SEASON,
 };
 
-const additionalServicesData: AdditionalService = {
-  id: '1',
-  service: ProductServiceType.SUMMER_STORAGE_FOR_TRAILERS,
-  price: 24,
-  tax: AdditionalProductTaxEnum.TAX_10_00,
-  period: PeriodType.SEASON,
-};
-
 describe('EditForm', () => {
   const mockProps: Pick<
-    EditPricingFormProps<BerthPrice | WinterStoragePrice | HarborService | AdditionalService>,
+    EditPricingFormProps<BerthPrice | WinterStoragePrice | HarborService>,
     'closeModal' | 'onSubmit'
   > = {
     onSubmit: jest.fn(),
@@ -63,23 +48,14 @@ describe('EditForm', () => {
   };
 
   const getWrapper = (
-    props: Pick<
-      EditPricingFormProps<BerthPrice | WinterStoragePrice | HarborService | AdditionalService>,
-      'initialValues' | 'formType'
-    >
+    props: Pick<EditPricingFormProps<BerthPrice | WinterStoragePrice | HarborService>, 'initialValues' | 'formType'>
   ) => mount(<EditForm {...mockProps} {...props} />);
 
   // [name, component, data, formType]
-  const cases: [
-    string,
-    () => JSX.Element,
-    BerthPrice | WinterStoragePrice | HarborService | AdditionalService,
-    EDIT_FORM_TYPE
-  ][] = [
+  const cases: [string, () => JSX.Element, BerthPrice | WinterStoragePrice | HarborService, EDIT_FORM_TYPE][] = [
     ['berths', BerthsFields, berthsData, EDIT_FORM_TYPE.BERTHS],
     ['winter storage', WinterStorageFields, winterStorageData, EDIT_FORM_TYPE.WINTER_STORAGE],
     ['harbor services', HarborServicesFields, harborServicesData, EDIT_FORM_TYPE.HARBOR_SERVICES],
-    ['additional services', AdditionalServicesFields, additionalServicesData, EDIT_FORM_TYPE.ADDITIONAL_SERVICES],
   ];
 
   afterEach(() => {
