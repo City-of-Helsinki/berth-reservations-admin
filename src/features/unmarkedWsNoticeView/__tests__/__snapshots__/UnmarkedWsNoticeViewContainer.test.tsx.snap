@@ -419,7 +419,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
       class="cardBody"
     >
       <div
-        class="grid cols4 noticeDetailsGrid"
+        class="grid cols3"
       >
         <div>
           <article
@@ -847,7 +847,6 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
             </section>
           </article>
         </div>
-        <div />
         <div
           class="detailsActions"
         />

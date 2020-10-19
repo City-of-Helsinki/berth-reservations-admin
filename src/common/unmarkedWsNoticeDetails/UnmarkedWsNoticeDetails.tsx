@@ -77,7 +77,7 @@ const UnmarkedWsNoticeDetails = ({
         />
         <SummaryDetails summaryInformation={summaryInformation} />
       </div>
-      <div>{leaseId && leaseStatus && <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} />}</div>
+      {leaseId && leaseStatus && <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} />}
     </>
   );
 };

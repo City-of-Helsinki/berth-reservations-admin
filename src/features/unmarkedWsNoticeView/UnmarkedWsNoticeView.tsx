@@ -106,17 +106,14 @@ const UnmarkedWsNoticeView = ({
       <Card className={styles.fullWidth}>
         <CardHeader title={t('unmarkedWsNotices.noticeDetails.title').toUpperCase()} />
         <CardBody>
-          <Grid colsCount={4} className={styles.noticeDetailsGrid}>
+          <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...noticeDetails} />
             <div className={styles.detailsActions}>
-              {customerProfile &&
-                (order ? (
-                  <Chip color={'green'} label="Lasku luotu" />
-                ) : (
-                  <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
-                    {t('unmarkedWsNotices.view.createInvoice')}
-                  </Button>
-                ))}
+              {customerProfile && !order && (
+                <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
+                  {t('unmarkedWsNotices.view.createInvoice')}
+                </Button>
+              )}
             </div>
           </Grid>
         </CardBody>

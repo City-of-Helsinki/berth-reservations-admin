@@ -1,25 +1,27 @@
 import React from 'react';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import Section from '../section/Section';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
 import Grid from '../grid/Grid';
 import styles from './applicationDetails.module.scss';
 import Text from '../text/Text';
-import {formatDate, formatDimension, formatWeight} from '../utils/format';
-import {APPLICATION_STATUS} from '../utils/consonants';
-import {ApplicationStatus, LeaseStatus} from '../../@types/__generated__/globalTypes';
-import PrivateCustomerDetails, {PrivateCustomerDetailsProps} from '../privateCustomerDetails/PrivateCustomerDetails';
-import OrganizationCustomerDetails, {OrganizationCustomerDetailsProps,} from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import { formatDate, formatDimension, formatWeight } from '../utils/format';
+import { APPLICATION_STATUS } from '../utils/consonants';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
+import OrganizationCustomerDetails, {
+  OrganizationCustomerDetailsProps,
+} from '../organizationCustomerDetails/OrganizationCustomerDetails';
 import Checkbox from '../checkbox/Checkbox';
 import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
-import {queueFeatureFlag} from '../utils/featureFlags';
+import { queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
-import {canDeleteLease} from '../utils/leaseUtils';
-import {ButtonWithConfirmationStyle} from "../buttonWithConfirmation/buttonWithConfirmation";
+import { canDeleteLease } from '../utils/leaseUtils';
+import { ButtonWithConfirmationStyle } from '../buttonWithConfirmation/buttonWithConfirmation';
 
 interface Lease {
   berthNum: string | number;
