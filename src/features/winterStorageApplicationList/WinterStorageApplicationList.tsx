@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
-import { SortedCol } from '../../common/utils/useBackendSorting';
 import InternalLink from '../../common/internalLink/InternalLink';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import { formatDate } from '../../common/utils/format';
@@ -21,8 +21,9 @@ interface WinterStorageApplicationListProps {
   loading: boolean;
   pageCount: number;
   pageIndex: number;
+  sortBy: SortingRule<WinterStorageApplication>[];
   goToPage(page: number): void;
-  onSortedColChange(sortedCol: SortedCol | undefined): void;
+  onSortedColsChange(sortedCol: SortingRule<WinterStorageApplication>[]): void;
 }
 
 type ColumnType = Column<WinterStorageApplication>;
@@ -33,7 +34,8 @@ const WinterStorageApplicationList = ({
   pageCount,
   pageIndex,
   goToPage,
-  onSortedColChange,
+  sortBy,
+  onSortedColsChange,
 }: WinterStorageApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -98,7 +100,7 @@ const WinterStorageApplicationList = ({
         columns={columns}
         data={applications}
         loading={loading}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} />}
         renderMainHeader={() => (
           <TableFilters
@@ -112,7 +114,8 @@ const WinterStorageApplicationList = ({
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

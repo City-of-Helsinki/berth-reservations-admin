@@ -64,6 +64,7 @@ type TableProps<D extends object> = {
     goToPage(pageIndex: number): void;
   }) => React.ReactNode;
   onSortedColChange?: (sortedCol: TableState<D>['sortBy'][0] | undefined) => void;
+  onSortedColsChange?: (sortedCol: TableState<D>['sortBy']) => void;
 } & TableOptions<D>;
 
 const EXPANDER = 'EXPANDER';
@@ -101,6 +102,8 @@ const Table = <D extends { id: string }>({
   renderEmptyStateRow,
   renderPaginator,
   onSortedColChange,
+  onSortedColsChange,
+  manualSortBy,
 }: TableProps<D>) => {
   const { t } = useTranslation();
 
@@ -229,6 +232,7 @@ const Table = <D extends { id: string }>({
       data: dataState,
       globalFilter,
       initialState,
+      manualSortBy,
       autoResetSortBy: !skipPageResetRef.current,
       autoResetSelectedRows: !skipPageResetRef.current,
       autoResetFilters: !skipPageResetRef.current,
@@ -256,6 +260,10 @@ const Table = <D extends { id: string }>({
   useEffect(() => {
     onSortedColChange?.(state.sortBy[0]);
   }, [state.sortBy, onSortedColChange]);
+
+  useEffect(() => {
+    onSortedColsChange?.(state.sortBy);
+  }, [state.sortBy, onSortedColsChange]);
 
   useEffect(() => {
     const updateData = (newData: D[]) => {

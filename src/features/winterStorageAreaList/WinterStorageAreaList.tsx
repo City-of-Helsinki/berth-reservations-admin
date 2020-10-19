@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { atom, useRecoilState } from 'recoil';
+import { SortingRule } from 'react-table';
 
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import { WinterStorageAreaData } from './types';
@@ -11,6 +13,7 @@ import Pagination from '../../common/pagination/Pagination';
 import WinterStorageAreaDetails from './winterStorageAreaDetails/WinterStorageAreaDetails';
 import GlobalSearchTableTools from '../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import InternalLink from '../../common/internalLink/InternalLink';
+import { HarborData } from '../harborList/types';
 
 type ColumnType = Column<WinterStorageAreaData> & { accessor: keyof WinterStorageAreaData };
 
@@ -19,8 +22,20 @@ export type WinterStorageAreaListProps = {
   loading?: boolean;
 };
 
+const sortByAtom = atom<SortingRule<HarborData>[]>({
+  key: 'WinterStorageAreaList_sortByAtom',
+  default: [{ id: 'name', desc: false }],
+});
+
+const globalFilterAtom = atom<string | undefined>({
+  key: 'WinterStorageAreaList_globalFilterAtom',
+  default: undefined,
+});
+
 const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) => {
   const { t } = useTranslation();
+  const [sortBy, setSortBy] = useRecoilState(sortByAtom);
+  const [globalFilter, setGlobalFilter] = useRecoilState(globalFilterAtom);
 
   const columns: ColumnType[] = [
     {
@@ -87,7 +102,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
         canSelectRows
         columns={columns}
         data={data}
-        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+        initialState={{ sortBy, globalFilter }}
         loading={loading}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderMainHeader={() => t('winterStorageAreaList.tableHeaders.mainHeader')}
@@ -99,7 +114,16 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
           />
         )}
         renderSubComponent={(row) => <WinterStorageAreaDetails {...row.original} />}
-        renderTableToolsTop={(_, setters) => <GlobalSearchTableTools handleGlobalFilter={setters.setGlobalFilter} />}
+        renderTableToolsTop={(_, setters) => (
+          <GlobalSearchTableTools
+            defaultValue={globalFilter}
+            handleGlobalFilter={(filter) => {
+              setGlobalFilter(filter);
+              setters.setGlobalFilter(filter);
+            }}
+          />
+        )}
+        onSortedColsChange={(sortedCol) => setSortBy(sortedCol)}
       />
     </PageContent>
   );

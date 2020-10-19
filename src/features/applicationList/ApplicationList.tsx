@@ -22,7 +22,8 @@ export interface ApplicationListProps {
   getPageCount: (connectionsCount: number | null | undefined) => number;
   goToPage: (pageIndex: number) => void;
   handleDeleteLease: (id: string) => Promise<void>;
-  onSortedColChange: (sortedCol: SortingRule<ApplicationData> | undefined) => void;
+  onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
+  sortBy: SortingRule<ApplicationData>[];
   isDeleting: boolean;
   loading: boolean;
   onlySwitchApps?: boolean;
@@ -38,7 +39,8 @@ const ApplicationList = ({
   getPageCount,
   goToPage,
   handleDeleteLease,
-  onSortedColChange,
+  sortBy,
+  onSortedColsChange,
   isDeleting,
   loading,
   onlySwitchApps,
@@ -131,7 +133,6 @@ const ApplicationList = ({
       <Table
         data={tableData}
         loading={loading || isDeleting}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         columns={columns}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} handleDeleteLease={handleDeleteLease} />}
         renderMainHeader={() => {
@@ -165,7 +166,9 @@ const ApplicationList = ({
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        initialState={{ sortBy }}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

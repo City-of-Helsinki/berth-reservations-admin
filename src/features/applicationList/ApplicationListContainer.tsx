@@ -1,22 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import { SortingRule } from 'react-table';
 
 import ApplicationList from './ApplicationList';
 import {
   BERTH_APPLICATIONS,
   BERTH_APPLICATIONSVariables as BERTH_APPLICATIONS_VARS,
 } from './__generated__/BERTH_APPLICATIONS';
-import { getBerthApplicationData } from './utils';
+import { ApplicationData, getBerthApplicationData } from './utils';
 import { BERTH_APPLICATIONS_QUERY } from './queries';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 import { usePagination } from '../../common/utils/usePagination';
-import { useBackendSorting } from '../../common/utils/useBackendSorting';
+import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
+import { orderByGetter } from '../../common/utils/recoil';
+
+const onlySwitchAppsAtom = atom<boolean | undefined>({
+  key: 'ApplicationListContainer_onlySwitchAppsAtom',
+  default: undefined,
+});
+
+const sortByAtom = atom<SortingRule<ApplicationData>[]>({
+  key: 'ApplicationListContainer_sortByAtom',
+  default: [{ id: 'createdAt', desc: true }],
+});
+
+const orderBySelector = selector<string | undefined>({
+  key: 'ApplicationListContainer_orderBySelector',
+  get: orderByGetter(sortByAtom),
+});
 
 const ApplicationListContainer = () => {
-  const [onlySwitchApps, setOnlySwitchApps] = useState<boolean>();
+  const [onlySwitchApps, setOnlySwitchApps] = useRecoilState<boolean | undefined>(onlySwitchAppsAtom);
+  const orderBy = useRecoilValue(orderBySelector);
 
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
-  const { orderBy, handleSortedColChange } = useBackendSorting(() => goToPage(0));
+  const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
+
   const berthApplicationsVars: BERTH_APPLICATIONS_VARS = {
     first: pageSize,
     after: cursor,
@@ -48,7 +68,8 @@ const ApplicationListContainer = () => {
       getPageCount={getPageCount}
       goToPage={goToPage}
       handleDeleteLease={handleDeleteLease}
-      onSortedColChange={handleSortedColChange({ createdAt: 'createdAt' })}
+      sortBy={sortBy}
+      onSortedColsChange={handleSortedColsChange}
       isDeleting={isDeleting}
       loading={loading}
       onlySwitchApps={onlySwitchApps}
