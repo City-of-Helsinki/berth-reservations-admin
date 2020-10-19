@@ -14,7 +14,7 @@ const NoticeDetails = ({ choice, createdAt, status }: NoticeDetailsProps) => {
 
   return (
     <Section title={t('unmarkedWsNotices.noticeDetails.notice').toUpperCase()}>
-      <LabelValuePair label={'Alue'} value={choice.winterStorageAreaName} />
+      <LabelValuePair label={t('unmarkedWsNotices.noticeDetails.area')} value={choice.winterStorageAreaName} />
       <LabelValuePair
         label={t('applicationList.applicationDetails.receivedDate')}
         value={formatDate(createdAt, i18n.language, true)}

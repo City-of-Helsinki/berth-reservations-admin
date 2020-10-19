@@ -682,6 +682,7 @@
     "noticeDetails": {
       "title": "Nostojärjestysilmoitus",
       "notice": "Ilmoitus",
+      "area": "Alue",
       "ownerInformation": "Omistajan tiedot",
       "stickerDetails": {
         "title": "TARRA",
