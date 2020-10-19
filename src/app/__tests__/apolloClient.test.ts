@@ -38,7 +38,7 @@ describe('apolloClient', () => {
         text: 'toast.networkError.description',
         toastId: 'networkErrorToast',
         translated: true,
-        type: 'warning',
+        type: 'alert',
       });
     });
   });
