@@ -16,7 +16,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 1200px;"
+        style="min-width: 1275px;"
       >
         <div
           class="stickyHeaders"
@@ -28,9 +28,9 @@ exports[`ApplicationListContainer renders normally 1`] = `
           >
             <div
               class="headerCell"
-              colspan="8"
+              colspan="9"
               role="columnheader"
-              style="box-sizing: border-box; flex: 1200 0 auto; min-width: 0px; width: 1200px;"
+              style="box-sizing: border-box; flex: 1275 0 auto; min-width: 0px; width: 1275px;"
             >
               <button
                 class="filterBtn active"
@@ -83,7 +83,15 @@ exports[`ApplicationListContainer renders normally 1`] = `
               role="columnheader"
               style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
             >
-              Hakemustyyppi
+              Nimi
+            </div>
+            <div
+              class="headerCell"
+              colspan="1"
+              role="columnheader"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+            >
+              Tyyppi
             </div>
             <div
               class="headerCell"
@@ -147,7 +155,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
               role="columnheader"
               style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
             >
-              Vene- / talvisäilytyspaikka
+              Venepaikka
             </div>
             <div
               class="headerCell expander"
@@ -201,10 +209,16 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 <a
                   class="internalLink brand"
                   href="#/applications/MOCK-APPLICATION-0"
-                  title="Vaihtohakemus"
                 >
-                  Vaihtohakemus
+                  Matti Meikäläinen
                 </a>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+              >
+                Vaihto
               </div>
               <div
                 class="tableCell"
@@ -320,10 +334,16 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 <a
                   class="internalLink brand"
                   href="#/applications/MOCK-APPLICATION-2"
-                  title="Uusi hakemus"
                 >
-                  Uusi hakemus
+                  Matti Möttönen
                 </a>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+              >
+                Uusi
               </div>
               <div
                 class="tableCell"

@@ -74,6 +74,8 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices {
 export interface BERTH_APPLICATIONS_berthApplications_edges_node {
   __typename: "BerthApplicationNode";
   id: string;
+  firstName: string;
+  lastName: string;
   customer: BERTH_APPLICATIONS_berthApplications_edges_node_customer | null;
   berthSwitch: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch | null;
   createdAt: any;

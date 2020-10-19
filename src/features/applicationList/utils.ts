@@ -26,6 +26,8 @@ interface BerthSwitch {
 
 export interface ApplicationData {
   id: string;
+  firstName: string;
+  lastName: string;
   isSwitch: boolean;
   customerId?: string;
   berthSwitch: BerthSwitch | null;
@@ -54,6 +56,8 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
       if (application?.node) {
         const {
           id,
+          firstName,
+          lastName,
           customer,
           berthSwitch,
           createdAt,
@@ -102,6 +106,8 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
 
         const applicationData = {
           id,
+          firstName,
+          lastName,
           customerId: customer?.id,
           isSwitch: !!berthSwitch,
           berthSwitch: berthSwitchProps,

@@ -32,8 +32,10 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWidth: 0,
           createdAt: '2020-07-16',
           customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
+          firstName: 'Matti',
           harborChoices: [{ __typename: 'HarborChoiceType', harbor: '1', harborName: '1', priority: 0 }],
           id: 'MOCK-APPLICATION-0',
+          lastName: 'Meikäläinen',
           lease: {
             __typename: 'BerthLeaseNode',
             berth: {
@@ -84,8 +86,10 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWidth: 0,
           createdAt: '2020-07-16',
           customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
+          firstName: 'Maija',
           harborChoices: null,
           id: 'MOCK-APPLICATION-0',
+          lastName: 'Meikäläinen',
           lease: {
             __typename: 'BerthLeaseNode',
             id: 'MOCK-LEASE-1',
@@ -131,10 +135,12 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWidth: 0,
           createdAt: '2020-07-16',
           customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE-0' },
+          firstName: 'Matti',
           harborChoices: [
             { __typename: 'HarborChoiceType', harbor: 'MOCK-HARBOR-0', harborName: 'Testisatama', priority: 0 },
           ],
           id: 'MOCK-APPLICATION-2',
+          lastName: 'Möttönen',
           lease: null,
           municipality: 'Helsinki',
           status: ApplicationStatus.PENDING,

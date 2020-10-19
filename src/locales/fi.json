@@ -317,12 +317,12 @@
     "tableHeaders": {
       "switchFilter": "Vaihtohakemukset",
       "newApplicationFilter": "Uudet hakemukset",
-      "applicationType": "Hakemustyyppi",
+      "applicationType": "Tyyppi",
       "queue": "Jono",
       "pvm": "PVM",
       "municipality": "Kotikunta",
       "status": "Tila",
-      "lease": "Vene- / talvisäilytyspaikka"
+      "lease": "Venepaikka"
     },
     "status": {
       "pending": "Odottaa käsittelyä",
@@ -334,8 +334,8 @@
       "noSuitableNotified": "Ei paikkaa, lähetetty"
     },
     "applicationType": {
-      "newApplication": "Uusi hakemus",
-      "switchApplication": "Vaihtohakemus",
+      "newApplication": "Uusi",
+      "switchApplication": "Vaihto",
       "notice": "Ilmoitus"
     },
     "applicationDetails": {
