@@ -21,7 +21,7 @@ interface BillingHistoryProps {
 }
 
 const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
-  const billStatusToChipColor = (billStatus: OrderStatus): StatusLabelProps['type'] => {
+  const billStatusToColor = (billStatus: OrderStatus): StatusLabelProps['type'] => {
     switch (billStatus) {
       case OrderStatus.WAITING:
         return 'warning';
@@ -60,7 +60,7 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
                   <div className={styles.gridItem}>
                     <Text>{formatPrice(bill.totalPrice, i18n.language)}</Text>
                   </div>
-                  <StatusLabel type={billStatusToChipColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                  <StatusLabel type={billStatusToColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
                 </React.Fragment>
               ))}
             </Grid>

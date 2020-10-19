@@ -11,6 +11,7 @@ import DeleteButton from '../../../common/deleteButton/DeleteButton';
 import InvoiceCard from '../../invoiceCard/InvoiceCard';
 import { canDeleteLease } from '../../../common/utils/leaseUtils';
 import { canDeleteApplication } from '../../../common/utils/applicationUtils';
+import StatusLabel from '../../../common/statusLabel/StatusLabel';
 
 const mockNoticeDetails = getNoticeDetailsData(mockData.winterStorageNotice, mockData.boatTypes);
 
@@ -20,6 +21,10 @@ const mockProps: UnmarkedWsNoticeViewProps = {
   leaseStatus: null,
   noticeDetails: mockNoticeDetails,
   winterStorageNotice: mockData.winterStorageNotice,
+  isDeleteNoticeLoading: false,
+  isCreateLeaseLoading: false,
+  isDeleteLeaseLoading: false,
+  refetchQueries: [],
   handleCreateLease: jest.fn(),
   handleDeleteNotice: jest.fn(),
   handleDeleteLease: jest.fn(),
@@ -61,8 +66,8 @@ describe('UnmarkedWsNoticeView', () => {
   it('renders invoice card correctly if a lease has been created', () => {
     const wrapper = getWrapper({ customerProfile: getCustomerProfile(mockCustomer), order: mockOrder });
 
-    expect(wrapper.find('Chip')).toBeDefined();
-    expect(wrapper.find('InvoiceCard')).toBeDefined();
+    expect(wrapper.find(StatusLabel)).toBeDefined();
+    expect(wrapper.find(InvoiceCard)).toBeDefined();
   });
 
   it('renders delete notice button if notice can be deleted', () => {

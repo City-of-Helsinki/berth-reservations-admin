@@ -47,7 +47,7 @@ const WinterStorageApplicationView = ({
           {formatDate(applicationDetails.createdAt, i18n.language)}
         </Text>
         <StatusLabel
-          className={styles.chip}
+          className={styles.statusLabel}
           type={APPLICATION_STATUS[applicationDetails.status].type}
           label={t(APPLICATION_STATUS[applicationDetails.status].label)}
         />
