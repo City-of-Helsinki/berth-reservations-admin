@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Chip renders normally 1`] = `
-<span
-  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI"
->
-  Foo
-</span>
-`;
