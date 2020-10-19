@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { ApplicationStatus, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: BERTH_APPLICATIONS
@@ -60,6 +60,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth {
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease {
   __typename: "BerthLeaseNode";
   id: string;
+  status: LeaseStatus;
   berth: BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth;
 }
 

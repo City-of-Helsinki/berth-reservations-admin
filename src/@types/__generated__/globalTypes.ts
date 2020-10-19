@@ -202,6 +202,15 @@ export interface CreateAdditionalContactPersonInput {
   email: string;
 }
 
+export interface CreateAdditionalProductMutationInput {
+  service: ProductServiceType;
+  period: PeriodType;
+  priceValue: any;
+  priceUnit?: PriceUnits | null;
+  taxPercentage?: AdditionalProductTaxEnum | null;
+  clientMutationId?: string | null;
+}
+
 export interface CreateAddressInput {
   countryCode?: string | null;
   primary?: boolean | null;

@@ -5,6 +5,7 @@ import { act } from 'react-dom/test-utils';
 import LinkApplicationToCustomer, { LinkApplicationToCustomerProps } from '../LinkApplicationToCustomer';
 import { SearchBy } from '../../applicationView/ApplicationView';
 import { CustomerGroup } from '../../../@types/__generated__/globalTypes';
+import CustomersTableTools from '../tableTools/CustomersTableTools';
 
 const mockProps: LinkApplicationToCustomerProps = {
   customersTableTools: {
@@ -12,6 +13,7 @@ const mockProps: LinkApplicationToCustomerProps = {
     searchBy: SearchBy.FIRST_NAME,
     searchByOptions: [],
     searchVal: undefined,
+    canCreateNewCustomer: true,
     setSearchBy: jest.fn(),
     handleCreateCustomer: jest.fn(),
     handleLinkCustomer: jest.fn(),
@@ -85,5 +87,19 @@ describe('LinkApplicationToCustomer', () => {
 
     wrapper.find('CustomersTableTools').find('Button').at(0).simulate('click');
     expect(handleLinkCustomer).toHaveBeenCalledWith('1');
+  });
+
+  it('does not render create new user button when canCreateNewCustomer is false', () => {
+    const wrapper = getWrapper({
+      customersTableTools: { ...mockProps.customersTableTools, canCreateNewCustomer: false },
+    });
+    expect(wrapper.find(CustomersTableTools).text().includes('Luo uusi asiakas')).toBe(false);
+  });
+
+  it('renders create new user button when canCreateNewCustomer is true', () => {
+    const wrapper = getWrapper({
+      customersTableTools: { ...mockProps.customersTableTools, canCreateNewCustomer: true },
+    });
+    expect(wrapper.find(CustomersTableTools).text().includes('Luo uusi asiakas')).toBe(true);
   });
 });

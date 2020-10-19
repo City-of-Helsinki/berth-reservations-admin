@@ -1,12 +1,14 @@
 import { BerthLease_lease as BerthLease } from '../__generated__/BerthLease';
 import {
-  BerthMooringType,
-  ProductServiceType,
   AdditionalProductType,
+  BerthMooringType,
+  LeaseStatus,
+  ProductServiceType,
 } from '../../../../@types/__generated__/globalTypes';
 
 export const lease: BerthLease = {
   id: '165023f5-5b74-4656-9315-d4e1a22f111d',
+  status: LeaseStatus.DRAFTED,
   berth: {
     depth: null,
     length: 6,

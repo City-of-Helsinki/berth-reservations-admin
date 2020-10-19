@@ -575,6 +575,7 @@
       "title": "Lisäpalvelut",
       "service": "Palvelu",
       "price": "Hinta",
+      "unit": "Yksikkö",
       "tax": "ALV",
       "period": "Aika"
     }
@@ -627,6 +628,10 @@
         "label": "Virhe",
         "description": "Tapahtui odottamaton virhe."
       }
+    },
+    "changesSaved": {
+      "label": "Muutokset tallennettu",
+      "description": "Muutokset on tallennettu"
     },
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",

@@ -1,6 +1,6 @@
 import { BERTH_APPLICATIONS } from '../__generated__/BERTH_APPLICATIONS';
 import { getBerthApplicationData } from '../utils';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 export const mockData: BERTH_APPLICATIONS = {
   berthApplications: {
@@ -53,6 +53,7 @@ export const mockData: BERTH_APPLICATIONS = {
               },
             },
             id: 'MOCK-LEASE-0',
+            status: LeaseStatus.OFFERED,
           },
           municipality: 'Helsinki',
           status: ApplicationStatus.PENDING,
@@ -88,6 +89,7 @@ export const mockData: BERTH_APPLICATIONS = {
           lease: {
             __typename: 'BerthLeaseNode',
             id: 'MOCK-LEASE-1',
+            status: LeaseStatus.OFFERED,
             berth: {
               __typename: 'BerthNode',
               number: '7',

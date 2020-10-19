@@ -27,6 +27,18 @@ describe('DeleteButton', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
+  it('assigns the buttonClassName prop to the main button', () => {
+    const buttonClassName = 'test';
+    const wrapper = getWrapper({ ...defaultProps, buttonClassName });
+    expect(wrapper.find(Button).props().className).toBe(buttonClassName);
+  });
+
+  it('assigns the modalClassName prop to the modal', () => {
+    const modalClassName = 'test';
+    const wrapper = getWrapper({ ...defaultProps, modalClassName });
+    expect(wrapper.find(ConfirmationModal).props().className).toBe(modalClassName);
+  });
+
   it('renders correctly when modal open', () => {
     const wrapper = getWrapper(defaultProps);
     clickDelete(wrapper);

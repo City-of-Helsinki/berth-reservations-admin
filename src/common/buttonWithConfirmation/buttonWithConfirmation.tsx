@@ -16,6 +16,8 @@ export interface ButtonWithConfirmationProps extends Omit<ConfirmationModalProps
   buttonStyle?: ButtonWithConfirmationStyle;
   confirmButtonVariant?: ButtonProps['variant'];
   disabled?: boolean;
+  buttonClassName?: string;
+  modalClassName?: string;
 }
 
 const ButtonWithConfirmation = ({
@@ -29,6 +31,8 @@ const ButtonWithConfirmation = ({
   confirmButtonVariant = 'primary',
   warningText,
   buttonStyle = ButtonWithConfirmationStyle.DEFAULT,
+  buttonClassName,
+  modalClassName,
 }: ButtonWithConfirmationProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,13 +40,19 @@ const ButtonWithConfirmation = ({
     switch (buttonStyle) {
       case ButtonWithConfirmationStyle.DEFAULT:
         return (
-          <Button variant="secondary" theme="coat" onClick={() => setIsModalOpen(true)} disabled={disabled}>
+          <Button
+            variant="secondary"
+            theme="coat"
+            onClick={() => setIsModalOpen(true)}
+            disabled={disabled}
+            className={buttonClassName}
+          >
             {buttonText}
           </Button>
         );
       case ButtonWithConfirmationStyle.FLAT:
         return (
-          <button onClick={() => setIsModalOpen(true)} disabled={disabled}>
+          <button onClick={() => setIsModalOpen(true)} disabled={disabled} className={buttonClassName}>
             <Text color="brand">{buttonText}</Text>
           </button>
         );
@@ -65,6 +75,7 @@ const ButtonWithConfirmation = ({
           onConfirm();
           setIsModalOpen(false);
         }}
+        className={modalClassName}
       />
     </>
   );

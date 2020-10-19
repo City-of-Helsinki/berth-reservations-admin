@@ -143,6 +143,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
             harborName: lease.berth.pier.properties.harbor.properties?.name || '',
             id: lease.id,
             pierIdentifier: lease.berth.pier.properties.identifier,
+            status: lease.status,
           };
         }
         const berthSwitchProps = berthSwitch

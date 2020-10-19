@@ -333,6 +333,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease {
   __typename: "BerthLeaseNode";
   id: string;
+  status: LeaseStatus;
   berth: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth;
 }
 

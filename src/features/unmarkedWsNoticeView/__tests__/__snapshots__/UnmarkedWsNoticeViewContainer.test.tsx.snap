@@ -113,7 +113,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
             <span
               class="Dropdown-module_buttonLabel__2jVRU"
             >
-              Sukunimi
+              Sähköposti
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
@@ -154,7 +154,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
             class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
             id="searchSimilarCustomers"
             type="text"
-            value="test"
+            value="test@test.com"
           />
         </div>
       </div>

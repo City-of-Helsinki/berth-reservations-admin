@@ -15,33 +15,35 @@ import Button from '../../common/button/Button';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 export interface InvoiceCardProps {
+  applicationStatus: ApplicationStatus;
   buttonsRight?: React.ReactNode;
   className?: string;
   editAdditionalServices: () => void;
+  invoicingDisabled?: boolean;
+  order: Order | null;
+  placeDetails?: React.ReactNode;
+  placeName: React.ReactNode;
+  placeProperties: PlaceProperty[];
+  placeType: string;
   sendButtonLabel?: string;
   sendInvoice: () => void;
-  order: Order | null;
-  placeType: string;
-  placeName: React.ReactNode;
-  placeDetails?: React.ReactNode;
-  placeProperties: PlaceProperty[];
   title: string;
-  applicationStatus: ApplicationStatus;
 }
 
 const InvoiceCard = ({
+  applicationStatus,
   buttonsRight,
   className,
   editAdditionalServices,
-  sendButtonLabel,
-  sendInvoice,
+  invoicingDisabled,
   order,
   placeDetails,
   placeName,
   placeProperties,
   placeType,
+  sendButtonLabel,
+  sendInvoice,
   title,
-  applicationStatus,
 }: InvoiceCardProps) => {
   const { t } = useTranslation();
 
@@ -61,7 +63,10 @@ const InvoiceCard = ({
     );
 
   const renderSendButton = () => {
-    if (applicationStatus !== ApplicationStatus.OFFER_GENERATED && applicationStatus !== ApplicationStatus.OFFER_SENT) {
+    if (
+      invoicingDisabled ||
+      (applicationStatus !== ApplicationStatus.OFFER_GENERATED && applicationStatus !== ApplicationStatus.OFFER_SENT)
+    ) {
       return null;
     }
     return (

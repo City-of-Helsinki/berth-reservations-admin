@@ -30,6 +30,7 @@ const mockProps: CustomersTableToolsProps<string> = {
   searchBy: '',
   searchByOptions: searchByOptions,
   searchVal: undefined,
+  canCreateNewCustomer: true,
   setSearchBy: jest.fn(),
   handleCreateCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),

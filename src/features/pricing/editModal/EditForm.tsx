@@ -3,11 +3,9 @@ import { Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 
 import styles from './editForm.module.scss';
-import AdditionalServicesFields, { getAdditionalServicesValidationSchema } from './fields/AdditionalServicesFields';
 import BerthsFields, { getBerthsValidationSchema } from './fields/BerthsFields';
 import WinterStorageFields, { getWinterStorageValidationSchema } from './fields/WinterStorageFields';
 import HarborServicesFields, { getHarborServicesValidationSchema } from './fields/HarborServicesFields';
-import { AdditionalService } from '../additionalServicePricing/AdditionalServicePricing';
 import { HarborService } from '../harborServicePricing/HarborServicePricing';
 import { WinterStoragePrice } from '../winterStoragePricing/WinterStoragePricing';
 import { BerthPrice } from '../berthPricing/BerthPricing';
@@ -17,10 +15,9 @@ export enum EDIT_FORM_TYPE {
   BERTHS = 'BERTHS',
   HARBOR_SERVICES = 'HARBOR_SERVICES',
   WINTER_STORAGE = 'WINTER_STORAGE',
-  ADDITIONAL_SERVICES = 'ADDITIONAL_SERVICES',
 }
 
-export interface EditPricingFormProps<T extends BerthPrice | WinterStoragePrice | HarborService | AdditionalService> {
+export interface EditPricingFormProps<T extends BerthPrice | WinterStoragePrice | HarborService> {
   onSubmit: (values: T) => void;
   closeModal: () => void;
   initialValues: T;
@@ -44,15 +41,10 @@ const getForm = (formType: EDIT_FORM_TYPE) => {
         getValidationSchema: getHarborServicesValidationSchema,
         component: <HarborServicesFields />,
       };
-    case EDIT_FORM_TYPE.ADDITIONAL_SERVICES:
-      return {
-        getValidationSchema: getAdditionalServicesValidationSchema,
-        component: <AdditionalServicesFields />,
-      };
   }
 };
 
-const EditForm = <T extends BerthPrice | WinterStoragePrice | HarborService | AdditionalService>({
+const EditForm = <T extends BerthPrice | WinterStoragePrice | HarborService>({
   onSubmit,
   closeModal,
   formType,

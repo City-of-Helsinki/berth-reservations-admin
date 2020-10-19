@@ -32,7 +32,7 @@ cd berth-reservations-admin
 yarn
 ```
 
-After cloning this repository, create a new `.env.development.local` file from the provided `.env` file to be able to change environment variables such as `REACT_APP_API_URI`.
+After cloning this repository, create a new `.env.development.local` file from the provided `.env` file to be able to change environment variables such as `REACT_APP_API_URL`.
 
 ```bash
 cp .env.example .env.development.local

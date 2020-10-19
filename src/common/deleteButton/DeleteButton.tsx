@@ -12,6 +12,8 @@ export interface DeleteButtonProps extends Pick<ConfirmationModalProps, 'onConfi
   onCancelText?: string;
   onConfirmText?: string;
   disabled?: boolean;
+  buttonClassName?: string;
+  modalClassName?: string;
 }
 
 const DeleteButton = ({
@@ -24,6 +26,8 @@ const DeleteButton = ({
   buttonText,
   warningText,
   buttonStyle = ButtonWithConfirmationStyle.DEFAULT,
+  buttonClassName,
+  modalClassName,
 }: DeleteButtonProps) => {
   const { t } = useTranslation();
   return (
@@ -38,6 +42,8 @@ const DeleteButton = ({
       onConfirm={onConfirm}
       disabled={disabled}
       confirmButtonVariant="danger"
+      buttonClassName={buttonClassName}
+      modalClassName={modalClassName}
     />
   );
 };
