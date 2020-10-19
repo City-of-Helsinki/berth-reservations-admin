@@ -5,7 +5,7 @@ import Section from '../section/Section';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
 import Text from '../text/Text';
 import { formatDimension, formatWeight, formatDate } from '../utils/format';
-import { APPLICATION_STATUS } from '../utils/consonants';
+import { APPLICATION_STATUS } from '../utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
 import OrganizationCustomerDetails, {

@@ -1,4 +1,4 @@
-import { ChipProps } from '../../common/chip/Chip';
+import { ChipProps } from '../chip/Chip';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 type ApplicationStatusType = {

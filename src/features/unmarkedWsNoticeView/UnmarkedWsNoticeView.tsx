@@ -20,7 +20,7 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
+import { APPLICATION_STATUS } from '../../common/utils/constants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';

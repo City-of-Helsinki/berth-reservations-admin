@@ -13,7 +13,7 @@ import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
+import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
 
