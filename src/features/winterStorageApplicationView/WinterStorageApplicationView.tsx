@@ -9,7 +9,7 @@ import ApplicationDetails, { ApplicationDetailsProps } from '../../common/applic
 import CardHeader from '../../common/cardHeader/CardHeader';
 import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -46,7 +46,7 @@ const WinterStorageApplicationView = ({
           {t('applicationList.applicationType.newApplication')}{' '}
           {formatDate(applicationDetails.createdAt, i18n.language)}
         </Text>
-        <Chip
+        <StatusLabel
           className={styles.chip}
           type={APPLICATION_STATUS[applicationDetails.status].type}
           label={t(APPLICATION_STATUS[applicationDetails.status].label)}

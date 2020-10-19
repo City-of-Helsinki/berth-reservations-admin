@@ -19,7 +19,7 @@ import UnmarkedWsNoticeDetails, {
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
@@ -78,7 +78,7 @@ const UnmarkedWsNoticeView = ({
           <Text as="h2" size="xl" weight="normalWeight">
             {t('applicationList.applicationType.notice')} {formatDate(noticeDetails.createdAt, language)}
           </Text>
-          <Chip
+          <StatusLabel
             type={APPLICATION_STATUS[noticeDetails.status].type}
             label={t(APPLICATION_STATUS[noticeDetails.status].label)}
           />
@@ -111,7 +111,7 @@ const UnmarkedWsNoticeView = ({
             <div className={styles.detailsActions}>
               {customerProfile &&
                 (order ? (
-                  <Chip type="success" label="Lasku luotu" />
+                  <StatusLabel type="success" label="Lasku luotu" />
                 ) : (
                   <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
                     {t('unmarkedWsNotices.view.createInvoice')}

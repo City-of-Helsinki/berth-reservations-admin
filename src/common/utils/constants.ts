@@ -1,10 +1,10 @@
-import { ChipProps } from '../chip/Chip';
+import { StatusLabelProps } from '../statusLabel/StatusLabel';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 type ApplicationStatusType = {
   [key in ApplicationStatus]: {
     label: string;
-    type: ChipProps['type'];
+    type: StatusLabelProps['type'];
   };
 };
 

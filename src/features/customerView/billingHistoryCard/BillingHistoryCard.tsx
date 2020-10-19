@@ -10,7 +10,7 @@ import CardBody from '../../../common/cardBody/CardBody';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Text from '../../../common/text/Text';
 import styles from './billingHistoryCard.module.scss';
-import Chip, { ChipProps } from '../../../common/chip/Chip';
+import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/StatusLabel';
 import { getOrderStatusTKey } from '../../../common/utils/translations';
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 import { Bill } from '../types';
@@ -21,7 +21,7 @@ interface BillingHistoryProps {
 }
 
 const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
-  const billStatusToChipColor = (billStatus: OrderStatus): ChipProps['type'] => {
+  const billStatusToChipColor = (billStatus: OrderStatus): StatusLabelProps['type'] => {
     switch (billStatus) {
       case OrderStatus.WAITING:
         return 'warning';
@@ -60,7 +60,7 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
                   <div className={styles.gridItem}>
                     <Text>{formatPrice(bill.totalPrice, i18n.language)}</Text>
                   </div>
-                  <Chip type={billStatusToChipColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                  <StatusLabel type={billStatusToChipColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
                 </React.Fragment>
               ))}
             </Grid>

@@ -12,7 +12,7 @@ import { ApplicationData } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
@@ -85,7 +85,7 @@ const ApplicationList = ({
     },
     {
       Cell: ({ cell: { value } }) => (
-        <Chip
+        <StatusLabel
           type={APPLICATION_STATUS[value as ApplicationStatus].type}
           label={t(APPLICATION_STATUS[value as ApplicationStatus].label)}
         />

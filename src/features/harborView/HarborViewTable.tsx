@@ -7,7 +7,7 @@ import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
 import BerthDetails from '../../common/berthDetails/BerthDetails';
 import Table, { Column } from '../../common/table/Table';
 import { Berth, Pier } from './types';
-import Chip from '../../common/chip/Chip';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDimension } from '../../common/utils/format';
 import Pagination from '../../common/pagination/Pagination';
@@ -38,7 +38,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       Cell: ({ cell }: { cell: Cell<Berth> }) => {
         const isBerthActive = cell.row.original.isActive;
         if (!isBerthActive) {
-          return <Chip type="error" label={t('harborView.berthProperties.inactive')} />;
+          return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
         }
         const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
         if (!activeLease) {
