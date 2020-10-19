@@ -1,3 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HarborViewTableTools renders normally 1`] = `"<div class=\\"container\\"><div class=\\"buttons\\"><button type=\\"button\\" class=\\"Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button\\"><span class=\\"Button-module_label__2zMLC button_hds-button__label__2EQa-\\">Lisää laituri</span></button><button type=\\"button\\" class=\\"Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button\\"><span class=\\"Button-module_label__2zMLC button_hds-button__label__2EQa-\\">Lisää venepaikka</span></button></div><div class=\\"globalSearchTableTools\\"><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField\\"><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input type=\\"text\\" class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"textSearchGlobalFilter\\" placeholder=\\"Haku\\"/></div></div></div></div>"`;
+exports[`HarborViewTableTools renders normally 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="buttons"
+  >
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+      type="button"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Lisää laituri
+      </span>
+    </button>
+    <button
+      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+      type="button"
+    >
+      <span
+        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      >
+        Lisää venepaikka
+      </span>
+    </button>
+  </div>
+  <div
+    class="globalSearchTableTools"
+  >
+    <div
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField"
+    >
+      <div
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+      >
+        <input
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+          id="textSearchGlobalFilter"
+          placeholder="Haku"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
