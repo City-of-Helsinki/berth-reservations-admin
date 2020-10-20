@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ButtonWithConfirmation, { ButtonWithConfirmationStyle } from '../buttonWithConfirmation/buttonWithConfirmation';
+import ButtonWithConfirmation, { ButtonWithConfirmationProps } from '../buttonWithConfirmation/buttonWithConfirmation';
 import { ConfirmationModalProps } from '../confirmationModal/ConfirmationModal';
 
 export interface DeleteButtonProps extends Pick<ConfirmationModalProps, 'onConfirm' | 'warningText'> {
   buttonText: string;
-  buttonStyle?: ButtonWithConfirmationStyle;
+  buttonStyle?: ButtonWithConfirmationProps['buttonStyle'];
   modalTitle?: string;
   infoText?: string;
   onCancelText?: string;
@@ -25,7 +25,7 @@ const DeleteButton = ({
   disabled,
   buttonText,
   warningText,
-  buttonStyle = ButtonWithConfirmationStyle.DEFAULT,
+  buttonStyle = 'default',
   buttonClassName,
   modalClassName,
 }: DeleteButtonProps) => {

@@ -3,9 +3,7 @@ import React from 'react';
 
 import LabelValuePair from '../../../labelValuePair/LabelValuePair';
 import Section from '../../../section/Section';
-import ButtonWithConfirmation, {
-  ButtonWithConfirmationStyle,
-} from '../../../buttonWithConfirmation/buttonWithConfirmation';
+import ButtonWithConfirmation from '../../../buttonWithConfirmation/buttonWithConfirmation';
 import { formatStickerNumber } from '../../../utils/format';
 
 interface StickerDetailsProps {
@@ -37,7 +35,7 @@ const StickerDetails = ({
           infoText={t('unmarkedWsNotices.noticeDetails.stickerDetails.assign.infoText')}
           onConfirmText={t('unmarkedWsNotices.noticeDetails.stickerDetails.assign.confirm')}
           onCancelText={t('common.cancel')}
-          buttonStyle={ButtonWithConfirmationStyle.FLAT}
+          buttonStyle="flat"
           onConfirm={handleAssignNewStickerNumber}
           disabled={isAssigningNewStickerNumber}
         />

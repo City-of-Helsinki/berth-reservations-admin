@@ -21,7 +21,6 @@ import ApplicationChoicesList, {
 import { queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
-import { ButtonWithConfirmationStyle } from '../buttonWithConfirmation/buttonWithConfirmation';
 
 interface Lease {
   berthNum: string | number;
@@ -215,7 +214,7 @@ const ApplicationDetails = ({
                 onConfirm={() => handleDeleteLease(lease.id)}
                 disabled={isDeletingLease}
                 buttonClassName={styles.deleteButton}
-                buttonStyle={ButtonWithConfirmationStyle.FLAT}
+                buttonStyle="flat"
               />
             )}
           </Section>

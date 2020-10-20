@@ -5,15 +5,10 @@ import ConfirmationModal, { ConfirmationModalProps } from '../confirmationModal/
 import Button from '../button/Button';
 import Text from '../text/Text';
 
-export enum ButtonWithConfirmationStyle {
-  DEFAULT,
-  FLAT,
-}
-
 export interface ButtonWithConfirmationProps extends Omit<ConfirmationModalProps, 'title' | 'isOpen' | 'onCancel'> {
   buttonText: string;
   modalTitle: string;
-  buttonStyle?: ButtonWithConfirmationStyle;
+  buttonStyle?: 'flat' | 'default';
   confirmButtonVariant?: ButtonProps['variant'];
   disabled?: boolean;
   buttonClassName?: string;
@@ -30,7 +25,7 @@ const ButtonWithConfirmation = ({
   buttonText,
   confirmButtonVariant = 'primary',
   warningText,
-  buttonStyle = ButtonWithConfirmationStyle.DEFAULT,
+  buttonStyle = 'default',
   buttonClassName,
   modalClassName,
 }: ButtonWithConfirmationProps) => {
@@ -38,7 +33,7 @@ const ButtonWithConfirmation = ({
 
   const renderButton = () => {
     switch (buttonStyle) {
-      case ButtonWithConfirmationStyle.DEFAULT:
+      case 'default':
         return (
           <Button
             variant="secondary"
@@ -50,7 +45,7 @@ const ButtonWithConfirmation = ({
             {buttonText}
           </Button>
         );
-      case ButtonWithConfirmationStyle.FLAT:
+      case 'flat':
         return (
           <button onClick={() => setIsModalOpen(true)} disabled={disabled} className={buttonClassName}>
             <Text color="brand">{buttonText}</Text>
