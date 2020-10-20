@@ -6,7 +6,7 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(units(16), max-content) 4fr;
+  grid-template-columns: max-content 4fr;
   grid-template-rows: minmax(units(4), min-content) 1fr auto;
   grid-template-areas:
     'header  header'
@@ -19,8 +19,26 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
     grid-area: header;
   }
 
-  .sidebar {
+  .side {
     grid-area: side;
+    display: flex;
+  }
+
+  .sidebar {
+    display: block;
+    overflow: hidden;
+  }
+
+  .sidebarHidden {
+    width: 0;
+  }
+
+  .sidebarToggle {
+    display: block;
+    text-align: center;
+    width: units(1.5);
+    height: 100%;
+    background: $black-10;
   }
 
   .content {
