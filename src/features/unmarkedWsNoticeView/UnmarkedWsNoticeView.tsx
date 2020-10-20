@@ -17,7 +17,6 @@ import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
 } from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
-import Chip from '../../common/chip/Chip';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
