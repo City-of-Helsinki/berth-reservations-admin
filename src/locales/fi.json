@@ -151,6 +151,10 @@
       "paid": "Maksettu",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua"
+    },
+    "unlinkCustomer": {
+      "buttonText": "Poista asiakasliitos",
+      "infoText": "Haluatko varmasti poistaa asiakasliitoksen?"
     }
   },
   "login": {

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
 
@@ -8,10 +7,6 @@ import Card from '../../common/card/Card';
 import CardBody from '../../common/cardBody/CardBody';
 import ApplicationDetails, { ApplicationDetailsProps } from '../../common/applicationDetails/ApplicationDetails';
 import CardHeader from '../../common/cardHeader/CardHeader';
-import Text from '../../common/text/Text';
-import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import BerthOfferCard, { BerthOfferCardProps } from './berthOfferCard/BerthOfferCard';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -20,6 +15,7 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../linkApplicationToCustomer/LinkApplicationToCustomerContainer';
+import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -38,6 +34,7 @@ export interface ApplicationViewProps {
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
+  handleUnlinkCustomer(): void;
 }
 
 const ApplicationView = ({
@@ -50,26 +47,25 @@ const ApplicationView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
+  handleUnlinkCustomer,
 }: ApplicationViewProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <PageContent className={styles.applicationView}>
       <PageTitle title={t('applicationView.title')} />
 
-      <div className={classNames(styles.fullWidth, styles.pageHeader)}>
-        <Text as="h2" size="xl" weight="normalWeight">
-          {applicationDetails.berthSwitch !== null
+      <ApplicationHeader
+        text={
+          applicationDetails.berthSwitch !== null
             ? t('applicationList.applicationType.switchApplication')
-            : t('applicationList.applicationType.newApplication')}{' '}
-          {formatDate(applicationDetails.createdAt, i18n.language)}
-        </Text>
-        <Chip
-          className={styles.chip}
-          color={APPLICATION_STATUS[applicationDetails.status].color}
-          label={t(APPLICATION_STATUS[applicationDetails.status].label)}
-        />
-      </div>
+            : t('applicationList.applicationType.newApplication')
+        }
+        createdAt={applicationDetails.createdAt}
+        status={applicationDetails.status}
+        customerId={applicationDetails.customerId}
+        handleUnlinkCustomer={handleUnlinkCustomer}
+      />
 
       {customerProfile ? (
         <>
