@@ -1,62 +1,88 @@
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import { WINTER_STORAGE_APPLICATIONS } from './__generated__/WINTER_STORAGE_APPLICATIONS';
+import {
+  WINTER_STORAGE_APPLICATIONS,
+  WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges as WINTER_STORAGE_APPLICATIONS_EDGE,
+  WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node as WINTER_STORAGE_APPLICATIONS_NODE,
+} from './__generated__/WINTER_STORAGE_APPLICATIONS';
 
 interface WinterStorageAreaChoice {
-  winterStorageAreaName: string;
-  winterStorageArea: string;
   priority: number;
+  winterStorageArea: string;
+  winterStorageAreaName: string;
 }
 
 export type WinterStorageApplication = {
+  boatLength: number;
+  boatModel: string;
+  boatName: string;
+  boatRegistrationNumber: string;
+  boatType?: string | null;
+  boatWidth: number;
+  choices: WinterStorageAreaChoice[];
+  createdAt: string;
+  customerId?: string;
+  firstName: string;
   id: string;
+  lastName: string;
+  municipality: string;
   queue: number;
   status: ApplicationStatus;
-  createdAt: string;
-  municipality: string;
-  customerId?: string;
-  boatType?: string | null;
-  boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatName: string;
-  boatModel: string;
-  choices: WinterStorageAreaChoice[];
 };
 
 export const getWinterStorageApplicationData = (
   data: WINTER_STORAGE_APPLICATIONS | undefined
 ): WinterStorageApplication[] => {
-  if (!data || !data.winterStorageApplications) {
-    return [];
-  }
+  const boatTypes = data?.boatTypes;
 
-  return data.winterStorageApplications.edges.reduce<WinterStorageApplication[]>((acc, edge) => {
-    if (!edge || !edge.node) {
-      return acc;
-    }
-    const application = edge.node;
-    const applicationData: WinterStorageApplication = {
-      id: application.id,
-      queue: 0, // TODO
-      status: application.status,
-      createdAt: application.createdAt,
-      municipality: application.municipality,
-      customerId: application.customer?.id,
-      boatType: data.boatTypes?.find(({ id }) => id === application.boatType)?.name,
-      boatRegistrationNumber: application.boatRegistrationNumber,
-      boatWidth: application.boatWidth,
-      boatLength: application.boatLength,
-      boatName: application.boatName,
-      boatModel: application.boatModel,
-      choices:
-        application.winterStorageAreaChoices?.map((choice) => {
+  return (
+    data?.winterStorageApplications?.edges.reduce<WinterStorageApplication[]>((acc, edge) => {
+      const {
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
+        boatType,
+        boatWidth,
+        createdAt,
+        customer,
+        firstName,
+        id,
+        lastName,
+        municipality,
+        status,
+        winterStorageAreaChoices,
+      } = (edge as WINTER_STORAGE_APPLICATIONS_EDGE).node as WINTER_STORAGE_APPLICATIONS_NODE;
+
+      const choices =
+        winterStorageAreaChoices?.map((choice) => {
           return {
             priority: choice?.priority ?? Number.MAX_VALUE,
             winterStorageAreaName: choice?.winterStorageAreaName ?? '',
             winterStorageArea: choice?.winterStorageAreaName ?? '',
           };
-        }) ?? [],
-    };
-    return [...acc, applicationData];
-  }, []);
+        }) ?? [];
+
+      // TODO: lease
+
+      const applicationData = {
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
+        boatType: boatTypes?.find(({ id }) => id === boatType)?.name,
+        boatWidth,
+        choices,
+        createdAt,
+        customerId: customer?.id,
+        firstName,
+        id,
+        lastName,
+        municipality,
+        queue: 0, // TODO,
+        status,
+      };
+
+      return [...acc, applicationData];
+    }, []) ?? []
+  );
 };
