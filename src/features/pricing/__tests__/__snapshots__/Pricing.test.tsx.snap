@@ -10,477 +10,234 @@ exports[`PricingPage renders normally 1`] = `
     HINNASTO
   </h2>
   <div
-    class="grid"
+    class="card"
   >
     <div
-      class="card fullWidth"
+      class="cardHeader"
     >
-      <div
-        class="cardHeader"
+      <span
+        class="title"
       >
-        <span
-          class="title"
-        >
-          Venepaikka
-        </span>
-      </div>
-      <div
-        class="cardBody"
-      >
-        <article
-          class="section"
-        >
-          <section
-            class="body"
-          >
-            Perushinta. Hinnat sisältävät alv 24 %.
-          </section>
-        </article>
-        <div>
-          <div
-            class="tableWrapper"
-          >
-            <div
-              class="table basic noMainHeader"
-              role="table"
-              style="min-width: 712.5px;"
-            >
-              <div
-                class="stickyHeaders"
-              >
-                <div
-                  class="header"
-                  role="row"
-                  style="display: flex; flex: 1 0 auto; min-width: 0px;"
-                >
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Leveys
-                    <div
-                      class="sortArrowWrapper isSorted"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Yksityinen
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Yritys
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Aika
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                  >
-                    Muokkaa
-                  </div>
-                </div>
-              </div>
-              <div
-                role="rowgroup"
-              >
-                <div
-                  class="rowWrapper"
-                >
-                  <div
-                    role="row"
-                    style="display: flex; flex: 1 0 auto; min-width: 0px;"
-                  >
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      sed sed debitis
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      10,20 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      20,40 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      Kausi
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      <button>
-                        <span
-                          class="text brand span"
-                        >
-                          Muokkaa
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-       
+        Venepaikka
+      </span>
     </div>
     <div
-      class="card fullWidth"
+      class="cardBody"
     >
-      <div
-        class="cardHeader"
+      <article
+        class="section"
       >
-        <span
-          class="title"
+        <section
+          class="body"
         >
-          Talvisäilytyspaikka
-        </span>
-      </div>
-      <div
-        class="cardBody"
-      >
-        <article
-          class="section"
+          Perushinta. Hinnat sisältävät alv 24 %.
+        </section>
+      </article>
+      <div>
+        <div
+          class="tableWrapper"
         >
-          <section
-            class="body"
-          >
-            Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.
-          </section>
-        </article>
-        <div>
           <div
-            class="tableWrapper"
+            class="table basic noMainHeader"
+            role="table"
+            style="min-width: 712.5px;"
           >
             <div
-              class="table basic noMainHeader"
-              role="table"
-              style="min-width: 712.5px;"
+              class="stickyHeaders"
             >
               <div
-                class="stickyHeaders"
+                class="header"
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 0px;"
               >
                 <div
-                  class="header"
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Leveys
+                  <div
+                    class="sortArrowWrapper isSorted"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Yksityinen
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Yritys
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Aika
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                >
+                  Muokkaa
+                </div>
+              </div>
+            </div>
+            <div
+              role="rowgroup"
+            >
+              <div
+                class="rowWrapper"
+              >
+                <div
                   role="row"
                   style="display: flex; flex: 1 0 auto; min-width: 0px;"
                 >
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Alue
-                    <div
-                      class="sortArrowWrapper isSorted"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    sed sed debitis
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Yksityinen
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    10,20 €
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Yritys
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    20,40 €
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Aika
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    Kausi
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
+                    class="tableCell"
+                    role="cell"
                     style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                   >
-                    Muokkaa
-                  </div>
-                </div>
-              </div>
-              <div
-                role="rowgroup"
-              >
-                <div
-                  class="rowWrapper"
-                >
-                  <div
-                    role="row"
-                    style="display: flex; flex: 1 0 auto; min-width: 0px;"
-                  >
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      Corporate Developer Mobility
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      10,20 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      20,40 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-                    >
-                      Kausi
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      <button>
-                        <span
-                          class="text brand span"
-                        >
-                          Muokkaa
-                        </span>
-                      </button>
-                    </div>
+                    <button>
+                      <span
+                        class="text brand span"
+                      >
+                        Muokkaa
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -488,199 +245,238 @@ exports[`PricingPage renders normally 1`] = `
           </div>
         </div>
       </div>
-       
+    </div>
+     
+  </div>
+  <div
+    class="card"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        Talvisäilytyspaikka
+      </span>
     </div>
     <div
-      class="card"
+      class="cardBody"
     >
-      <div
-        class="cardHeader"
+      <article
+        class="section"
       >
-        <span
-          class="title"
+        <section
+          class="body"
         >
-          Satamapalvelut
-        </span>
-      </div>
-      <div
-        class="cardBody"
-      >
-        <article
-          class="section"
+          Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.
+        </section>
+      </article>
+      <div>
+        <div
+          class="tableWrapper"
         >
-          <section
-            class="body"
-          >
-            Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.
-          </section>
-        </article>
-        <div>
           <div
-            class="tableWrapper"
+            class="table basic noMainHeader"
+            role="table"
+            style="min-width: 712.5px;"
           >
             <div
-              class="table basic noMainHeader"
-              role="table"
-              style="min-width: 562.5px;"
+              class="stickyHeaders"
             >
               <div
-                class="stickyHeaders"
+                class="header"
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 0px;"
               >
                 <div
-                  class="header"
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Alue
+                  <div
+                    class="sortArrowWrapper isSorted"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Yksityinen
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Yritys
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Aika
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                >
+                  Muokkaa
+                </div>
+              </div>
+            </div>
+            <div
+              role="rowgroup"
+            >
+              <div
+                class="rowWrapper"
+              >
+                <div
                   role="row"
                   style="display: flex; flex: 1 0 auto; min-width: 0px;"
                 >
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Palvelu
-                    <div
-                      class="sortArrowWrapper isSorted"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    Corporate Developer Mobility
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Hinta
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    10,20 €
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
                   >
-                    Aika
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    20,40 €
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                  >
+                    Kausi
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
                     style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                   >
-                    Muokkaa
-                  </div>
-                </div>
-              </div>
-              <div
-                role="rowgroup"
-              >
-                <div
-                  class="rowWrapper"
-                >
-                  <div
-                    role="row"
-                    style="display: flex; flex: 1 0 auto; min-width: 0px;"
-                  >
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px;"
-                    >
-                      Jollapaikka
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      10,00 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      Kausi
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      <button>
-                        <span
-                          class="text brand span"
-                        >
-                          Muokkaa
-                        </span>
-                      </button>
-                    </div>
+                    <button>
+                      <span
+                        class="text brand span"
+                      >
+                        Muokkaa
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -688,247 +484,447 @@ exports[`PricingPage renders normally 1`] = `
           </div>
         </div>
       </div>
-       
+    </div>
+     
+  </div>
+  <div
+    class="card"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        Satamapalvelut
+      </span>
     </div>
     <div
-      class="card additionalServicePricing"
+      class="cardBody"
     >
-      <div
-        class="cardHeader"
+      <article
+        class="section"
       >
-        <span
-          class="title"
+        <section
+          class="body"
         >
-          Lisäpalvelut
-        </span>
-      </div>
-      <div
-        class="cardBody"
-      >
-        <div>
+          Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.
+        </section>
+      </article>
+      <div>
+        <div
+          class="tableWrapper"
+        >
           <div
-            class="tableWrapper"
+            class="table basic noMainHeader"
+            role="table"
+            style="min-width: 562.5px;"
           >
             <div
-              class="table basic noMainHeader"
-              role="table"
-              style="min-width: 675px;"
+              class="stickyHeaders"
             >
               <div
-                class="stickyHeaders"
+                class="header"
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 0px;"
               >
                 <div
-                  class="header"
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Palvelu
+                  <div
+                    class="sortArrowWrapper isSorted"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Hinta
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Aika
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                >
+                  Muokkaa
+                </div>
+              </div>
+            </div>
+            <div
+              role="rowgroup"
+            >
+              <div
+                class="rowWrapper"
+              >
+                <div
                   role="row"
                   style="display: flex; flex: 1 0 auto; min-width: 0px;"
                 >
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
-                    title="Toggle SortBy"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px;"
                   >
-                    Palvelu
-                    <div
-                      class="sortArrowWrapper isSorted"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
+                    Jollapaikka
                   </div>
                   <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Hinta
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    ALV
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
-                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
-                    title="Toggle SortBy"
-                  >
-                    Aika
-                    <div
-                      class="sortArrowWrapper"
-                    >
-                      <svg
-                        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M0 0h24v24H0z"
-                          />
-                          <path
-                            d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
-                            fill="currentColor"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="headerCell"
-                    colspan="1"
-                    role="columnheader"
+                    class="tableCell"
+                    role="cell"
                     style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                   >
-                    Muokkaa
+                    10,00 €
                   </div>
-                </div>
-              </div>
-              <div
-                role="rowgroup"
-              >
-                <div
-                  class="rowWrapper"
-                >
                   <div
-                    role="row"
-                    style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
                   >
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px;"
-                    >
-                      Jollapaikka
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      10,00 €
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      24 %
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      Kausi
-                    </div>
-                    <div
-                      class="tableCell"
-                      role="cell"
-                      style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-                    >
-                      <button>
-                        <span
-                          class="text brand span"
-                        >
-                          Muokkaa
-                        </span>
-                      </button>
-                    </div>
+                    Kausi
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  >
+                    <button>
+                      <span
+                        class="text brand span"
+                      >
+                        Muokkaa
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <button
-            class="addButton"
-          >
-            <span
-              class="text brand span"
-            >
-              Lisää uusi
-            </span>
-          </button>
         </div>
       </div>
-       
     </div>
+     
+  </div>
+  <div
+    class="card additionalServicePricing"
+  >
+    <div
+      class="cardHeader"
+    >
+      <span
+        class="title"
+      >
+        Lisäpalvelut
+      </span>
+    </div>
+    <div
+      class="cardBody"
+    >
+      <div>
+        <div
+          class="tableWrapper"
+        >
+          <div
+            class="table basic noMainHeader"
+            role="table"
+            style="min-width: 675px;"
+          >
+            <div
+              class="stickyHeaders"
+            >
+              <div
+                class="header"
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              >
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Palvelu
+                  <div
+                    class="sortArrowWrapper isSorted"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Hinta
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  ALV
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                  title="Toggle SortBy"
+                >
+                  Aika
+                  <div
+                    class="sortArrowWrapper"
+                  >
+                    <svg
+                      class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                        />
+                        <path
+                          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="headerCell"
+                  colspan="1"
+                  role="columnheader"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                >
+                  Muokkaa
+                </div>
+              </div>
+            </div>
+            <div
+              role="rowgroup"
+            >
+              <div
+                class="rowWrapper"
+              >
+                <div
+                  role="row"
+                  style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                >
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px;"
+                  >
+                    Jollapaikka
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  >
+                    10,00 €
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  >
+                    24 %
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  >
+                    Kausi
+                  </div>
+                  <div
+                    class="tableCell"
+                    role="cell"
+                    style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  >
+                    <button>
+                      <span
+                        class="text brand span"
+                      >
+                        Muokkaa
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="addButton"
+        >
+          <span
+            class="text brand span"
+          >
+            Lisää uusi
+          </span>
+        </button>
+      </div>
+    </div>
+     
   </div>
 </div>
 `;
