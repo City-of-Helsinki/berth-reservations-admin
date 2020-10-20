@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Section from '../../../section/Section';
-import Text from '../../../text/Text';
+import Section from '../../../../common/section/Section';
+import Text from '../../../../common/text/Text';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
 type SummaryDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'summaryInformation'>;

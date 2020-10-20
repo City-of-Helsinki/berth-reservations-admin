@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import OrganizationCustomerDetails from '../../../organizationCustomerDetails/OrganizationCustomerDetails';
-import PrivateCustomerDetails from '../../../privateCustomerDetails/PrivateCustomerDetails';
+import OrganizationCustomerDetails from '../../../../common/organizationCustomerDetails/OrganizationCustomerDetails';
+import PrivateCustomerDetails from '../../../../common/privateCustomerDetails/PrivateCustomerDetails';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
 type ApplicantDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'applicant'>;

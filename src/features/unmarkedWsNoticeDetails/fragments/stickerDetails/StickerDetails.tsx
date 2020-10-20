@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 
-import LabelValuePair from '../../../labelValuePair/LabelValuePair';
-import Section from '../../../section/Section';
-import ButtonWithConfirmation from '../../../buttonWithConfirmation/buttonWithConfirmation';
-import { formatStickerNumber } from '../../../utils/format';
+import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
+import Section from '../../../../common/section/Section';
+import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/buttonWithConfirmation';
+import { formatStickerNumber } from '../../../../common/utils/format';
 
 interface StickerDetailsProps {
   stickerNumber: number | null;

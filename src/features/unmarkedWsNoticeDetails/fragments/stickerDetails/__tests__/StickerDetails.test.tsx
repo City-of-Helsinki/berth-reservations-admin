@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
 
 import StickerDetails from '../StickerDetails';
-import LabelValuePair from '../../../../labelValuePair/LabelValuePair';
-import ButtonWithConfirmation from '../../../../buttonWithConfirmation/buttonWithConfirmation';
-import Button from '../../../../button/Button';
+import LabelValuePair from '../../../../../common/labelValuePair/LabelValuePair';
+import ButtonWithConfirmation from '../../../../../common/buttonWithConfirmation/buttonWithConfirmation';
+import Button from '../../../../../common/button/Button';
 
 describe('StickerDetails', () => {
   it('renders correctly', () => {

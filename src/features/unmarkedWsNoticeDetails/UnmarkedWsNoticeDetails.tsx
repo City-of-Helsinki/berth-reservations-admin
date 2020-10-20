@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
-import { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
-import { OrganizationCustomerDetailsProps } from '../organizationCustomerDetails/OrganizationCustomerDetails';
+import { PrivateCustomerDetailsProps } from '../../common/privateCustomerDetails/PrivateCustomerDetails';
+import { OrganizationCustomerDetailsProps } from '../../common/organizationCustomerDetails/OrganizationCustomerDetails';
 import NoticeDetails from './fragments/noticeDetails/NoticeDetails';
 import ApplicantDetails from './fragments/applicantDetails/ApplicantDetails';
 import BoatDetails from './fragments/boatDetails/BoatDetails';

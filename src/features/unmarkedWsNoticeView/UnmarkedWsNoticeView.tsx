@@ -15,7 +15,7 @@ import LinkApplicationToCustomerContainer, {
 import Button from '../../common/button/Button';
 import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
-} from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+} from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';

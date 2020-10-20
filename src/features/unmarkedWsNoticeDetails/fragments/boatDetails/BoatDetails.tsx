@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Section from '../../../section/Section';
-import LabelValuePair from '../../../labelValuePair/LabelValuePair';
-import { formatDimension, formatWeight } from '../../../utils/format';
+import Section from '../../../../common/section/Section';
+import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
+import { formatDimension, formatWeight } from '../../../../common/utils/format';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
 type BoatDetailsProps = Pick<

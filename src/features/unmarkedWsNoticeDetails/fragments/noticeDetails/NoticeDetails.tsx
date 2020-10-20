@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Section from '../../../section/Section';
-import LabelValuePair from '../../../labelValuePair/LabelValuePair';
-import { formatDate } from '../../../utils/format';
-import { APPLICATION_STATUS } from '../../../utils/consonants';
+import Section from '../../../../common/section/Section';
+import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
+import { formatDate } from '../../../../common/utils/format';
+import { APPLICATION_STATUS } from '../../../../common/utils/consonants';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
 type NoticeDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'choice' | 'createdAt' | 'status'>;

@@ -6,7 +6,7 @@ import { act } from 'react-dom/test-utils';
 import UnmarkedWsNoticeList, { UnmarkedWsNoticeListProps } from '../UnmarkedWsNoticeList';
 import { getUnmarkedWinterStorageNotices } from '../utils';
 import { unmarkedWinterStorageNoticeMockData } from '../__fixtures__/mockData';
-import UnmarkedWsNoticeDetails from '../../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+import UnmarkedWsNoticeDetails from '../../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 
 const notices = getUnmarkedWinterStorageNotices(unmarkedWinterStorageNoticeMockData);
 
