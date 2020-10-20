@@ -65,6 +65,7 @@ const WinterStorageApplicationViewContainer = () => {
       },
     });
   };
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
 
   if (loading || !data?.winterStorageApplication) return <LoadingSpinner isLoading={true} />;
 
@@ -85,6 +86,7 @@ const WinterStorageApplicationViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
+        handleUnlinkCustomer={handleUnlinkCustomer}
       />
 
       {customerProfile && (

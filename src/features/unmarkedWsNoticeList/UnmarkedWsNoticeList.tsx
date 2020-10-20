@@ -11,7 +11,7 @@ import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { UnmarkedWinterStorageNotice } from './utils';
 import { SortedCol } from '../../common/utils/useBackendSorting';
-import UnmarkedWsNoticeDetails from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
 

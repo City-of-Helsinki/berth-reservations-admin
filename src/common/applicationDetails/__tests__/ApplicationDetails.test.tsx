@@ -8,7 +8,6 @@ import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../.
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
 import DeleteButton from '../../deleteButton/DeleteButton';
-import Button from '../../button/Button';
 import ConfirmationModal from '../../confirmationModal/ConfirmationModal';
 import { canDeleteLease } from '../../utils/leaseUtils';
 
@@ -142,7 +141,7 @@ describe('ApplicationDetails', () => {
           lease: { ...lease, status },
           handleDeleteLease: jest.fn(),
         });
-        expect(wrapper.find(DeleteButton).find(Button).length).toBe(1);
+        expect(wrapper.find(DeleteButton).find('button').length).toBe(1);
       });
   });
 
@@ -153,7 +152,7 @@ describe('ApplicationDetails', () => {
         const wrapper = getWrapper({
           lease: { ...lease, status },
         });
-        expect(wrapper.find(DeleteButton).find(Button).length).toBe(0);
+        expect(wrapper.find(DeleteButton).find('button').length).toBe(0);
       });
   });
 
@@ -170,8 +169,8 @@ describe('ApplicationDetails', () => {
 
     expect(wrapper.find(DeleteButton).length).toBe(1);
 
-    wrapper.find(DeleteButton).find(Button).simulate('click');
-    wrapper.find(ConfirmationModal).find(Button).last().simulate('click');
+    wrapper.find(DeleteButton).find('button').simulate('click');
+    wrapper.find(ConfirmationModal).find('button').last().simulate('click');
     expect(handleDeleteLease).toHaveBeenCalled();
   });
 });

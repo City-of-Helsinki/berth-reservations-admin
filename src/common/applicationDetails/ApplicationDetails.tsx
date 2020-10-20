@@ -6,7 +6,7 @@ import LabelValuePair from '../labelValuePair/LabelValuePair';
 import Grid from '../grid/Grid';
 import styles from './applicationDetails.module.scss';
 import Text from '../text/Text';
-import { formatDimension, formatWeight, formatDate } from '../utils/format';
+import { formatDate, formatDimension, formatWeight } from '../utils/format';
 import { APPLICATION_STATUS } from '../utils/constants';
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
@@ -214,6 +214,7 @@ const ApplicationDetails = ({
                 onConfirm={() => handleDeleteLease(lease.id)}
                 disabled={isDeletingLease}
                 buttonClassName={styles.deleteButton}
+                buttonStyle="flat"
               />
             )}
           </Section>

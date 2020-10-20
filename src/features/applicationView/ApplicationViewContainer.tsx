@@ -54,6 +54,7 @@ const ApplicationViewContainer = () => {
         input: { id, customerId },
       },
     });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
 
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [deleteDraftedApplication, { loading: isDeletingLease }] = useDeleteBerthApplication();
@@ -87,6 +88,7 @@ const ApplicationViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
+        handleUnlinkCustomer={handleUnlinkCustomer}
         leaseDetails={leaseDetails}
         refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
       />

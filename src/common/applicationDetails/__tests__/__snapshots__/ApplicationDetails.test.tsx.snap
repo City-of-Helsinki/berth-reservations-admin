@@ -508,11 +508,10 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
       >
         Testisatama 2 1
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 deleteButton"
-          type="button"
+          class="deleteButton"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="text brand span"
           >
             Poista ehdotettu paikka
           </span>
