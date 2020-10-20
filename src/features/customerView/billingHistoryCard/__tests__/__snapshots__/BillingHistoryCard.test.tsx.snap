@@ -58,7 +58,7 @@ exports[`BillingHistoryCard renders correctly 1`] = `
             </span>
           </div>
           <span
-            class="chip orange"
+            class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX warning"
           >
             Odottaa maksua
           </span>

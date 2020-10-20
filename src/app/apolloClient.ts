@@ -52,7 +52,7 @@ export const errorHandler: ErrorLink.ErrorHandler = ({ graphQLErrors, networkErr
     // so it can be automatically dismissed on e.g. reconnection.
     hdsToast({
       autoDismiss: false,
-      type: 'warning',
+      type: 'alert',
       labelText: 'toast.networkError.label',
       text: 'toast.networkError.description',
       toastId: 'networkErrorToast',

@@ -21,7 +21,7 @@ function useRouterQuery() {
 
 const OfferContainer = () => {
   const routerQuery = useRouterQuery();
-  const { applicationId } = useParams();
+  const { applicationId } = useParams<{ applicationId: string }>();
   const history = useHistory();
 
   const { loading, error, data } = useQuery<OFFER>(OFFER_QUERY, {
@@ -38,13 +38,13 @@ const OfferContainer = () => {
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.berthApplication)
     return (
-      <Notification labelText={t('common.notification.noData.label')}>
+      <Notification label={t('common.notification.noData.label')}>
         {t('common.notification.noData.description')}
       </Notification>
     );
   if (error)
     return (
-      <Notification labelText={t('common.notification.error.label')} type="error">
+      <Notification label={t('common.notification.error.label')} type="error">
         {t('common.notification.error.description')}
       </Notification>
     );

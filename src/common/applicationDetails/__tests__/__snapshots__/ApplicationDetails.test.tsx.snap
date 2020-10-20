@@ -528,7 +528,6 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
@@ -821,7 +820,6 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="false"
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
             readonly=""
@@ -1070,7 +1068,6 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="false"
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
             readonly=""
@@ -1642,7 +1639,6 @@ exports[`ApplicationDetails renders normally with organization customer applican
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
@@ -2165,7 +2161,6 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"

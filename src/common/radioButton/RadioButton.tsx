@@ -1,6 +1,5 @@
 import React from 'react';
-import { RadioButton as HDSRadioButton } from 'hds-react';
-import { RadioButtonProps } from 'hds-react/lib';
+import { RadioButton as HDSRadioButton, RadioButtonProps } from 'hds-react';
 import classNames from 'classnames';
 
 import styles from './radioButton.module.scss';

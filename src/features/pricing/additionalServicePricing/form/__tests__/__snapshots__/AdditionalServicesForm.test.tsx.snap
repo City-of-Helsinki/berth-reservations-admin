@@ -26,7 +26,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols1 row"
   >
     <div
-      class="Dropdown-module_root__2LI4- Dropdown-module_disabled__2ej9O select"
+      class="Dropdown-module_root__3ro8_ Dropdown-module_disabled__sDjft select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -35,28 +35,30 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       >
         Palvelu
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1oIw5"
+        class="Dropdown-module_wrapper__1sFxz"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="service-label service-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF Dropdown-module_placeholder__2nbDo"
+          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV Dropdown-module_placeholder__1kfMz"
           disabled=""
           id="service-toggle-button"
           type="button"
         >
           <span
-            class="Dropdown-module_buttonLabel__2jVRU"
+            class="Dropdown-module_buttonLabel__3y4eg"
           />
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -77,7 +79,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
       <ul
         aria-labelledby="service-label"
-        class="Dropdown-module_menu__3rei6"
+        class="Dropdown-module_menu__3xwA0"
         id="service-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
@@ -89,7 +91,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols3 row"
   >
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -97,16 +99,17 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       >
         Hinta
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="priceValue"
           name="priceValue"
           required=""
@@ -116,7 +119,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
     </div>
     <div
-      class="Dropdown-module_root__2LI4- select"
+      class="Dropdown-module_root__3ro8_ select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -125,29 +128,31 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       >
         Yksikkö
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1oIw5"
+        class="Dropdown-module_wrapper__1sFxz"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="priceUnit-label priceUnit-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
           id="priceUnit-toggle-button"
           type="button"
         >
           <span
-            class="Dropdown-module_buttonLabel__2jVRU"
+            class="Dropdown-module_buttonLabel__3y4eg"
           >
             €
           </span>
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -168,7 +173,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
       <ul
         aria-labelledby="priceUnit-label"
-        class="Dropdown-module_menu__3rei6"
+        class="Dropdown-module_menu__3xwA0"
         id="priceUnit-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
@@ -176,7 +181,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       />
     </div>
     <div
-      class="Dropdown-module_root__2LI4- select"
+      class="Dropdown-module_root__3ro8_ select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -185,29 +190,31 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       >
         ALV
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1oIw5"
+        class="Dropdown-module_wrapper__1sFxz"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="taxPercentage-label taxPercentage-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
           id="taxPercentage-toggle-button"
           type="button"
         >
           <span
-            class="Dropdown-module_buttonLabel__2jVRU"
+            class="Dropdown-module_buttonLabel__3y4eg"
           >
             24 %
           </span>
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -228,7 +235,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
       <ul
         aria-labelledby="taxPercentage-label"
-        class="Dropdown-module_menu__3rei6"
+        class="Dropdown-module_menu__3xwA0"
         id="taxPercentage-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
@@ -240,7 +247,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols3 row"
   >
     <div
-      class="Dropdown-module_root__2LI4- select"
+      class="Dropdown-module_root__3ro8_ select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -249,29 +256,31 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       >
         Aika
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1oIw5"
+        class="Dropdown-module_wrapper__1sFxz"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="period-label period-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
           id="period-toggle-button"
           type="button"
         >
           <span
-            class="Dropdown-module_buttonLabel__2jVRU"
+            class="Dropdown-module_buttonLabel__3y4eg"
           >
             Kausi
           </span>
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -292,7 +301,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
       <ul
         aria-labelledby="period-label"
-        class="Dropdown-module_menu__3rei6"
+        class="Dropdown-module_menu__3xwA0"
         id="period-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"

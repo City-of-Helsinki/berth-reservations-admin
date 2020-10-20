@@ -65,7 +65,6 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 style="cursor: pointer;"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="checkbox"
                   title="Toggle All Rows Selected"
@@ -99,6 +98,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -181,7 +181,6 @@ exports[`ApplicationListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-MOCK-APPLICATION-0"
                     title="Toggle Row Selected"
@@ -234,7 +233,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -263,6 +262,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -300,7 +300,6 @@ exports[`ApplicationListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-MOCK-APPLICATION-2"
                     title="Toggle Row Selected"
@@ -353,7 +352,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -374,6 +373,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -414,6 +414,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
           >
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -470,6 +471,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

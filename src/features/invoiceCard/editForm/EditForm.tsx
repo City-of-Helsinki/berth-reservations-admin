@@ -67,7 +67,7 @@ const EditForm: React.FC<EditFormProps> = ({
   if (!data?.additionalProducts)
     return (
       <div className={styles.editForm}>
-        <Notification labelText={t('common.notification.noData.label')}>
+        <Notification label={t('common.notification.noData.label')}>
           {t('common.notification.noData.description')}
         </Notification>
       </div>

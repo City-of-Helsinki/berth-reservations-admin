@@ -2,16 +2,15 @@
 
 exports[`RadioButton renders normally 1`] = `
 <div
-  class="RadioButton-module_radioButton__cl9Gp radio-button_hds-radio-button__qM8AJ radioButton"
+  class="RadioButton-module_radioButton__1xM1I radio-button_hds-radio-button__1kktv radioButton"
 >
   <input
-    aria-checked="false"
-    class="RadioButton-module_input__3Jcdf radio-button_hds-radio-button__input__ztS8g"
+    class="RadioButton-module_input__1cTWc radio-button_hds-radio-button__input__27sH6"
     id="test"
     type="radio"
   />
   <label
-    class="RadioButton-module_label__g_pgE radio-button_hds-radio-button__label__1e-Rr"
+    class="RadioButton-module_label__3Zij9 radio-button_hds-radio-button__label__1XnIa"
     for="test"
   />
 </div>

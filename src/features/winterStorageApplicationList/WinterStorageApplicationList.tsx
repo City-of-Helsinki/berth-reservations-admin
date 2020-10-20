@@ -7,8 +7,8 @@ import { SortedCol } from '../../common/utils/useBackendSorting';
 import InternalLink from '../../common/internalLink/InternalLink';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
+import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { WinterStorageApplication } from './utils';
 import ApplicationDetails from '../../common/applicationDetails/ApplicationDetails';
@@ -72,8 +72,8 @@ const WinterStorageApplicationList = ({
     },
     {
       Cell: ({ cell: { value } }) => (
-        <Chip
-          color={APPLICATION_STATUS[value as ApplicationStatus].color}
+        <StatusLabel
+          type={APPLICATION_STATUS[value as ApplicationStatus].type}
           label={t(APPLICATION_STATUS[value as ApplicationStatus].label)}
         />
       ),

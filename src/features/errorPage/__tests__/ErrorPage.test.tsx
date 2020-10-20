@@ -11,6 +11,6 @@ describe('ErrorPage', () => {
         <ErrorPage />
       </HashRouter>
     );
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 });

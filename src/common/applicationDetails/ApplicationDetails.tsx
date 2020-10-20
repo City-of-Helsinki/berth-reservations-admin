@@ -7,7 +7,7 @@ import Grid from '../grid/Grid';
 import styles from './applicationDetails.module.scss';
 import Text from '../text/Text';
 import { formatDate, formatDimension, formatWeight } from '../utils/format';
-import { APPLICATION_STATUS } from '../utils/consonants';
+import { APPLICATION_STATUS } from '../utils/constants';
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
 import OrganizationCustomerDetails, {

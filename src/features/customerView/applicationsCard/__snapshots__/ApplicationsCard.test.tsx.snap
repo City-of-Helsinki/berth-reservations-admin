@@ -332,7 +332,6 @@ exports[`ApplicationsCard renders normally 1`] = `
               class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
             >
               <input
-                aria-checked="true"
                 checked=""
                 class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                 id="accessible"

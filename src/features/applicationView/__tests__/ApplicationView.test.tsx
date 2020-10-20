@@ -38,6 +38,8 @@ const mockProps: ApplicationViewProps = {
   customerProfile: null,
   leaseDetails: null,
   refetchQueries: [],
+  isDeletingLease: false,
+  handleUnlinkCustomer: jest.fn(),
   handleDeleteLease: jest.fn(),
   handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),

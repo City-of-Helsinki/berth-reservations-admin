@@ -51,7 +51,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="cursor: pointer;"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="checkbox"
                   title="Toggle All Rows Selected"
@@ -85,6 +84,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -151,7 +151,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox"
                     title="Toggle Row Selected"
@@ -196,7 +195,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -212,6 +211,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -249,7 +249,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToy"
                     title="Toggle Row Selected"
@@ -294,7 +293,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -310,6 +309,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -347,7 +347,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToz"
                     title="Toggle Row Selected"
@@ -392,7 +391,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -408,6 +407,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -445,7 +445,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo1"
                     title="Toggle Row Selected"
@@ -490,7 +489,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -506,6 +505,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -543,7 +543,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo2"
                     title="Toggle Row Selected"
@@ -588,7 +587,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -604,6 +603,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -641,7 +641,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo3"
                     title="Toggle Row Selected"
@@ -686,7 +685,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -702,6 +701,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -739,7 +739,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo4"
                     title="Toggle Row Selected"
@@ -784,7 +783,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -800,6 +799,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -837,7 +837,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo5"
                     title="Toggle Row Selected"
@@ -882,7 +881,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -898,6 +897,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -935,7 +935,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMA=="
                     title="Toggle Row Selected"
@@ -980,7 +979,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -996,6 +995,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1033,7 +1033,6 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                   style="cursor: pointer;"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMQ=="
                     title="Toggle Row Selected"
@@ -1078,7 +1077,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 <span
-                  class="chip yellow"
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
                 >
                   Odottaa käsittelyä
                 </span>
@@ -1094,6 +1093,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -1134,6 +1134,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -1248,6 +1249,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

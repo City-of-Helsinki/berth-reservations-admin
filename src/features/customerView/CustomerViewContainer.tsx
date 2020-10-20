@@ -36,7 +36,11 @@ const CustomerViewContainer = () => {
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
     return (
-      <Notification labelText={t('common.notification.noData.label')}>
+      <Notification
+        size="large"
+        closeButtonLabelText={t('toast.closeToast') ?? ''}
+        label={t('common.notification.noData.label')}
+      >
         {t('common.notification.noData.description')}
       </Notification>
     );

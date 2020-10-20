@@ -82,7 +82,7 @@ const LinkApplicationToCustomer = ({
   return (
     <>
       <div className={styles.fullWidth}>
-        <Notification labelText={t('linkApplicationToCustomer.noCustomerProfileNotification.label')} type="warning">
+        <Notification label={t('linkApplicationToCustomer.noCustomerProfileNotification.label')} type="alert">
           {t('linkApplicationToCustomer.noCustomerProfileNotification.description')}
         </Notification>
       </div>

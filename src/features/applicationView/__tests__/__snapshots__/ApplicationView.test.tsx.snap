@@ -21,7 +21,7 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
         Uusi hakemus 04.08.2020
       </h2>
       <span
-        class="chip yellow"
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
       >
         Odottaa käsittelyä
       </span>
@@ -276,7 +276,6 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
                 class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="accessible"
                   readonly=""
