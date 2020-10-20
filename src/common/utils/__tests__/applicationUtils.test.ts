@@ -1,5 +1,5 @@
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
-import { canDeleteApplication } from '../applicationUtils';
+import { canDeleteApplication, canUnlinkCustomer } from '../applicationUtils';
 
 describe('applicationUtils', () => {
   describe('canDeleteApplication', () => {
@@ -16,6 +16,15 @@ describe('applicationUtils', () => {
       Object.values(ApplicationStatus)
         .filter((status) => !predicate(status))
         .forEach((status) => expect(canDeleteApplication(status)).toBe(true));
+    });
+  });
+
+  describe('canUnlinkCustomer', () => {
+    it('should only be possible to unlink a customer when application status is PENDING', () => {
+      expect(canUnlinkCustomer(ApplicationStatus.PENDING)).toBe(true);
+      Object.values(ApplicationStatus)
+        .filter((status) => status !== ApplicationStatus.PENDING)
+        .forEach((status) => expect(canUnlinkCustomer(status)).toBe(false));
     });
   });
 });

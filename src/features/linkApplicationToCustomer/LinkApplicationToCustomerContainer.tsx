@@ -59,6 +59,7 @@ const LinkApplicationToCustomerContainer = ({
     FILTERED_CUSTOMERS_VARS
   >(FILTERED_CUSTOMERS_QUERY, {
     variables: filteredCustomersVars,
+    fetchPolicy: 'no-cache',
   });
 
   const exactlyFilteredCustomersVars: FILTERED_CUSTOMERS_VARS = {
@@ -72,6 +73,7 @@ const LinkApplicationToCustomerContainer = ({
     FILTERED_CUSTOMERS_VARS
   >(FILTERED_CUSTOMERS_QUERY, {
     variables: exactlyFilteredCustomersVars,
+    fetchPolicy: 'no-cache',
   });
 
   const createNewCustomer = useCreateNewCustomer([

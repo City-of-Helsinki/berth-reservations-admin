@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 
 import ApplicationView, { ApplicationViewProps } from '../ApplicationView';
 import { ApplicationStatus, Language } from '../../../@types/__generated__/globalTypes';
+import ApplicationHeader from '../../../common/applicationHeader/ApplicationHeader';
 
 const mockProps: ApplicationViewProps = {
   applicationDetails: {
@@ -69,7 +70,7 @@ describe('ApplicationView', () => {
   it('renders title as "New application" if applicationDetails.berthSwitch is null', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper.find('div.pageHeader>Text').text()).toMatch('Uusi hakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Uusi hakemus');
   });
 
   it('renders title as "Switch application" if applicationDetails.berthSwitch is not null', () => {
@@ -80,7 +81,7 @@ describe('ApplicationView', () => {
       },
     });
 
-    expect(wrapper.find('div.pageHeader>Text').text()).toMatch('Vaihtohakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Vaihtohakemus');
   });
 
   it('renders CustomerProfileCard and ActionHistoryCard with "customerProfile" prop', () => {

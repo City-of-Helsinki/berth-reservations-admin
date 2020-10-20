@@ -116,6 +116,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         input: { id, customerId },
       },
     });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
   const handleCreateLease = () => {
     const options = {
       variables: {
@@ -156,6 +157,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         leaseStatus={leaseStatus}
         refetchQueries={refetchQueries}
         winterStorageNotice={data.winterStorageNotice}
+        handleUnlinkCustomer={handleUnlinkCustomer}
       />
 
       {customerProfile && (

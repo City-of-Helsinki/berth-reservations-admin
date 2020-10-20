@@ -17,17 +17,14 @@ import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
 } from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
-import Text from '../../common/text/Text';
-import { formatDate } from '../../common/utils/format';
 import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
 import DeleteButton from '../../common/deleteButton/DeleteButton';
 import { LeaseStatus } from '../../@types/__generated__/globalTypes';
-import { canDeleteApplication } from '../../common/utils/applicationUtils';
 import { canDeleteLease } from '../../common/utils/leaseUtils';
+import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
@@ -44,6 +41,7 @@ export interface UnmarkedWsNoticeViewProps {
   handleDeleteNotice(): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
+  handleUnlinkCustomer(): void;
 }
 
 const UnmarkedWsNoticeView = ({
@@ -61,11 +59,9 @@ const UnmarkedWsNoticeView = ({
   isDeleteNoticeLoading,
   isCreateLeaseLoading,
   isDeleteLeaseLoading,
+  handleUnlinkCustomer,
 }: UnmarkedWsNoticeViewProps) => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <PageContent className={styles.noticeView}>
@@ -73,26 +69,15 @@ const UnmarkedWsNoticeView = ({
         <PageTitle title={t('unmarkedWsNotices.view.title')} />
       </div>
 
-      <div className={styles.actions}>
-        <div className={styles.noticeStatus}>
-          <Text as="h2" size="xl" weight="normalWeight">
-            {t('applicationList.applicationType.notice')} {formatDate(noticeDetails.createdAt, language)}
-          </Text>
-          <Chip
-            color={APPLICATION_STATUS[noticeDetails.status].color}
-            label={t(APPLICATION_STATUS[noticeDetails.status].label)}
-          />
-        </div>
-        <div className={styles.actionsRight}>
-          {canDeleteApplication(noticeDetails.status) && (
-            <DeleteButton
-              buttonText={t('unmarkedWsNotices.view.deleteNotice')}
-              onConfirm={handleDeleteNotice}
-              disabled={isDeleteNoticeLoading}
-            />
-          )}
-        </div>
-      </div>
+      <ApplicationHeader
+        text={t('applicationList.applicationType.notice')}
+        createdAt={noticeDetails.createdAt}
+        status={noticeDetails.status}
+        customerId={noticeDetails.customerId}
+        handleUnlinkCustomer={handleUnlinkCustomer}
+        handleDeleteApplication={handleDeleteNotice}
+        isDeleteApplicationLoading={isDeleteNoticeLoading}
+      />
 
       {customerProfile ? (
         <>
