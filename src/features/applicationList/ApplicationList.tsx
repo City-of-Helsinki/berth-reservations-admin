@@ -16,6 +16,7 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
@@ -30,6 +31,9 @@ export interface ApplicationListProps {
   pageIndex: number;
   setOnlySwitchApps: (onlySwitchApps?: boolean) => void;
   tableData: ApplicationData[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -47,6 +51,9 @@ const ApplicationList = ({
   pageIndex,
   setOnlySwitchApps,
   tableData,
+  count,
+  statusFilter,
+  onStatusFilterChange,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -163,6 +170,13 @@ const ApplicationList = ({
             forcePage={pageIndex}
             pageCount={getPageCount(data?.berthApplications?.count)}
             onPageChange={({ selected }) => goToPage(selected)}
+          />
+        )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}

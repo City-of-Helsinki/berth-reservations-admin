@@ -15,6 +15,7 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 interface WinterStorageApplicationListProps {
   applications: WinterStorageApplication[];
@@ -22,8 +23,11 @@ interface WinterStorageApplicationListProps {
   pageCount: number;
   pageIndex: number;
   sortBy: SortingRule<WinterStorageApplication>[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
   goToPage(page: number): void;
   onSortedColsChange(sortedCol: SortingRule<WinterStorageApplication>[]): void;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<WinterStorageApplication>;
@@ -34,8 +38,11 @@ const WinterStorageApplicationList = ({
   pageCount,
   pageIndex,
   goToPage,
+  count,
+  statusFilter,
   sortBy,
   onSortedColsChange,
+  onStatusFilterChange,
 }: WinterStorageApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -112,6 +119,13 @@ const WinterStorageApplicationList = ({
         )}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
+        )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
+          />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         onSortedColsChange={onSortedColsChange}

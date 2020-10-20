@@ -14,6 +14,7 @@ import { UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 export interface UnmarkedWsNoticeListProps {
   notices: UnmarkedWinterStorageNotice[];
@@ -21,6 +22,9 @@ export interface UnmarkedWsNoticeListProps {
   pageCount: number;
   pageIndex: number;
   sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
   goToPage(page: number): void;
 }
@@ -33,6 +37,9 @@ const UnmarkedWsNoticeList = ({
   pageCount,
   pageIndex,
   goToPage,
+  count,
+  statusFilter,
+  onStatusFilterChange,
   onSortedColsChange,
   sortBy,
 }: UnmarkedWsNoticeListProps) => {
@@ -100,6 +107,13 @@ const UnmarkedWsNoticeList = ({
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
+        )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
+          />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         onSortedColsChange={onSortedColsChange}

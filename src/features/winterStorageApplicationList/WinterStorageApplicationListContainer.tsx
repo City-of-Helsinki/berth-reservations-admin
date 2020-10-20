@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { atom, selector, useRecoilValue } from 'recoil';
+import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 
 import WinterStorageApplicationList from './WinterStorageApplicationList';
@@ -14,6 +14,7 @@ import {
 import { WINTER_STORAGE_APPLICATIONS_QUERY } from './queries';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'WinterStorageApplicationListContainer_sortByAtom',
@@ -25,10 +26,17 @@ const orderBySelector = selector<string | undefined>({
   get: orderByGetter(sortByAtom),
 });
 
+const statusFilterAtom = atom<ApplicationStatus | undefined>({
+  key: 'WinterStorageApplicationListContainer_statusAtom',
+  default: undefined,
+});
+
 const WinterStorageApplicationListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
+
+  const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
 
   const { loading, data } = useQuery<WINTER_STORAGE_APPLICATIONS, WINTER_STORAGE_APPLICATIONS_VARS>(
     WINTER_STORAGE_APPLICATIONS_QUERY,
@@ -37,6 +45,7 @@ const WinterStorageApplicationListContainer = () => {
         first: pageSize,
         after: cursor,
         orderBy,
+        statuses: statusFilter ? [statusFilter] : undefined,
       },
     }
   );
@@ -52,6 +61,9 @@ const WinterStorageApplicationListContainer = () => {
       goToPage={goToPage}
       onSortedColsChange={handleSortedColsChange}
       sortBy={sortBy}
+      count={data?.winterStorageApplications?.count}
+      statusFilter={statusFilter}
+      onStatusFilterChange={setStatusFilter}
     />
   );
 };

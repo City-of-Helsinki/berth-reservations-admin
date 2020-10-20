@@ -1,0 +1,13 @@
+@import 'spacings';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: units(0.75);
+}
+
+.select {
+  width: 250px;
+}

@@ -14,6 +14,7 @@ import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApp
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { orderByGetter } from '../../common/utils/recoil';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 const onlySwitchAppsAtom = atom<boolean | undefined>({
   key: 'ApplicationListContainer_onlySwitchAppsAtom',
@@ -30,6 +31,11 @@ const orderBySelector = selector<string | undefined>({
   get: orderByGetter(sortByAtom),
 });
 
+const statusFilterAtom = atom<ApplicationStatus | undefined>({
+  key: 'ApplicationListContainer_statusAtom',
+  default: undefined,
+});
+
 const ApplicationListContainer = () => {
   const [onlySwitchApps, setOnlySwitchApps] = useRecoilState<boolean | undefined>(onlySwitchAppsAtom);
   const orderBy = useRecoilValue(orderBySelector);
@@ -37,11 +43,14 @@ const ApplicationListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
 
+  const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
+
   const berthApplicationsVars: BERTH_APPLICATIONS_VARS = {
     first: pageSize,
     after: cursor,
     switchApplications: onlySwitchApps,
     orderBy,
+    statuses: statusFilter ? [statusFilter] : undefined,
   };
 
   const { loading, data } = useQuery<BERTH_APPLICATIONS, BERTH_APPLICATIONS_VARS>(BERTH_APPLICATIONS_QUERY, {
@@ -76,6 +85,9 @@ const ApplicationListContainer = () => {
       pageIndex={pageIndex}
       setOnlySwitchApps={setOnlySwitchApps}
       tableData={tableData}
+      count={data?.berthApplications?.count}
+      statusFilter={statusFilter}
+      onStatusFilterChange={setStatusFilter}
     />
   );
 };
