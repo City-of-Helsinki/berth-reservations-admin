@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import Text from '../text/Text';
 import { formatDate } from '../utils/format';
-import Chip from '../chip/Chip';
-import { APPLICATION_STATUS } from '../utils/consonants';
+import StatusLabel from '../statusLabel/StatusLabel';
+import { APPLICATION_STATUS } from '../utils/constants';
 import { canDeleteApplication, canUnlinkCustomer } from '../utils/applicationUtils';
 import DeleteButton from '../deleteButton/DeleteButton';
 import styles from './applicationHeader.module.scss';
@@ -36,7 +36,7 @@ const ApplicationHeader = ({
         <Text as="h2" size="xl" weight="normalWeight">
           {text} {formatDate(createdAt, i18n.language)}
         </Text>
-        <Chip color={APPLICATION_STATUS[status].color} label={t(APPLICATION_STATUS[status].label)} />
+        <StatusLabel type={APPLICATION_STATUS[status].type} label={t(APPLICATION_STATUS[status].label)} />
       </div>
       <div className={styles.actionsRight}>
         {canUnlinkCustomer(status) && customerId && handleUnlinkCustomer && (

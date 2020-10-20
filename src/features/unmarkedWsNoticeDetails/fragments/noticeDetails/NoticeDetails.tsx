@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Section from '../../../../common/section/Section';
 import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
 import { formatDate } from '../../../../common/utils/format';
-import { APPLICATION_STATUS } from '../../../../common/utils/consonants';
+import { APPLICATION_STATUS } from '../../../../common/utils/constants';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
 type NoticeDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'choice' | 'createdAt' | 'status'>;

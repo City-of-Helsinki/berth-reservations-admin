@@ -21,7 +21,7 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
         Uusi hakemus 04.08.2020
       </h2>
       <span
-        class="chip yellow"
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
       >
         Odottaa käsittelyä
       </span>
