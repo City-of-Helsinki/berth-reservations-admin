@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonProps } from 'hds-react';
 
 import Modal from '../modal/Modal';
 import Text from '../text/Text';
@@ -9,6 +10,7 @@ export interface ConfirmationModalProps {
   isOpen: boolean;
   title: string;
   infoText: string;
+  confirmButtonVariant?: ButtonProps['variant'];
   warningText?: string;
   onCancelText: string;
   onConfirmText: string;
@@ -21,6 +23,7 @@ const ConfirmationModal = ({
   isOpen,
   title,
   infoText,
+  confirmButtonVariant = 'danger',
   warningText,
   onCancelText,
   onConfirmText,
@@ -45,7 +48,7 @@ const ConfirmationModal = ({
         <Button variant="secondary" onClick={onCancel} type="button">
           {onCancelText}
         </Button>
-        <Button variant="danger" onClick={onConfirm} type="button">
+        <Button variant={confirmButtonVariant} onClick={onConfirm} type="button">
           {onConfirmText}
         </Button>
       </div>

@@ -686,7 +686,19 @@
     "noticeDetails": {
       "title": "Nostojärjestysilmoitus",
       "notice": "Ilmoitus",
-      "ownerInformation": "Omistajan tiedot"
+      "area": "Alue",
+      "ownerInformation": "Omistajan tiedot",
+      "stickerDetails": {
+        "title": "TARRA",
+        "number": "Numero",
+        "season": "Kausi",
+        "assign": {
+          "buttonText": "Vaihda numero",
+          "modalTitle": "VAIHDA NUMERO",
+          "infoText": "Oletko varma että haluat vaihtaa tarranumeron tälle hakemukselle?",
+          "confirm": "Vaihda"
+        }
+      }
     }
   },
   "invoiceCard": {

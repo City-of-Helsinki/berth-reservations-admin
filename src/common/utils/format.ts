@@ -1,3 +1,8 @@
+export const formatStickerNumber = (stickerNumber: number | null | undefined) => {
+  if (!stickerNumber) return '-';
+  return `${stickerNumber}`.padStart(4, '0');
+};
+
 export const formatDimension = (value: number | null | undefined, locale: string) => {
   if (!value) return '-';
 

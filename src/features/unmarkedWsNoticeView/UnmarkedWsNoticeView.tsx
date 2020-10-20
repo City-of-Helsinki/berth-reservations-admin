@@ -15,9 +15,8 @@ import LinkApplicationToCustomerContainer, {
 import Button from '../../common/button/Button';
 import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
-} from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+} from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
-import Chip from '../../common/chip/Chip';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
@@ -94,14 +93,11 @@ const UnmarkedWsNoticeView = ({
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...noticeDetails} />
             <div className={styles.detailsActions}>
-              {customerProfile &&
-                (order ? (
-                  <Chip color={'green'} label="Lasku luotu" />
-                ) : (
-                  <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
-                    {t('unmarkedWsNotices.view.createInvoice')}
-                  </Button>
-                ))}
+              {customerProfile && !order && (
+                <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
+                  {t('unmarkedWsNotices.view.createInvoice')}
+                </Button>
+              )}
             </div>
           </Grid>
         </CardBody>

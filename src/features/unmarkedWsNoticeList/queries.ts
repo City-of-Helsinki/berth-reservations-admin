@@ -29,6 +29,10 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
             winterStorageAreaName
             winterStorageSectionIds
           }
+          lease {
+            id
+            status
+          }
         }
       }
     }

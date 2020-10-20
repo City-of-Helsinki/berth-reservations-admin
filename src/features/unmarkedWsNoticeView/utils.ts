@@ -4,7 +4,7 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices as WINTER_STORAGE_CHOICES,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
 import { getApplicantDetails } from '../applicationView/utils';
-import { UnmarkedWsNoticeDetailsProps } from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+import { UnmarkedWsNoticeDetailsProps } from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 
 interface UnmarkedWinterStorageChoice {
   winterStorageAreaName: string;
@@ -12,6 +12,7 @@ interface UnmarkedWinterStorageChoice {
 }
 
 type Choices = (WINTER_STORAGE_CHOICES | null | undefined)[] | null;
+
 export const getChoiceFromWinterStorageAreaChoices = (choices: Choices): UnmarkedWinterStorageChoice => {
   if (
     Array.isArray(choices) &&
@@ -66,6 +67,8 @@ export const getNoticeDetailsData = (
     customerId: customer?.id,
     id,
     status,
+    leaseId: winterStorageNotice.lease?.id,
+    leaseStatus: winterStorageNotice.lease?.status,
     summaryInformation: {
       acceptBoatingNewsletter: acceptBoatingNewsletter,
       acceptFitnessNews: acceptFitnessNews,
