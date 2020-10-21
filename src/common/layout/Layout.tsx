@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { IconAngleLeft, IconAngleRight } from 'hds-react';
 
 import styles from './layout.module.scss';
+import Button from '../button/Button';
 
 export interface LayoutProps {
   header: JSX.Element;
@@ -18,11 +19,16 @@ const Layout = ({ header, sidebar, children, footer }: LayoutProps) => {
     <main className={classNames(styles.layout, { [styles.noSidebar]: !sidebar })}>
       <header className={styles.header}>{header}</header>
       {sidebar && (
-        <nav className={classNames(styles.side)}>
+        <nav className={styles.side}>
           <div className={classNames(styles.sidebar, !sidebarVisible && styles.sidebarHidden)}>{sidebar}</div>
-          <button className={styles.sidebarToggle} onClick={() => setSidebarVisible(!sidebarVisible)}>
-            {sidebarVisible ? <IconAngleLeft /> : <IconAngleRight />}
-          </button>
+          <div className={styles.sidebarToggleArea}>
+            <Button
+              className={classNames(styles.sidebarToggle, !sidebarVisible && styles.sidebarToggleShow)}
+              onClick={() => setSidebarVisible(!sidebarVisible)}
+            >
+              {sidebarVisible ? <IconAngleLeft /> : <IconAngleRight />}
+            </Button>
+          </div>
         </nav>
       )}
       <div className={styles.content}>{children}</div>

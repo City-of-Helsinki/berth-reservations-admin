@@ -33,12 +33,39 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
     width: 0;
   }
 
-  .sidebarToggle {
-    display: block;
-    text-align: center;
-    width: units(1.5);
+  .sidebarToggleArea {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0;
     height: 100%;
     background: $black-10;
+  }
+
+  .sidebarToggle {
+    width: units(2);
+    height: units(2);
+    overflow: hidden;
+    border-radius: 50%;
+    filter: grayscale(1) brightness(2);
+    margin-top: units(0.5);
+
+    &:hover {
+      filter: none;
+    }
+
+    span {
+      padding: 0;
+      margin: 0;
+      line-height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .sidebarToggleShow {
+    left: units(1);
   }
 
   .content {
