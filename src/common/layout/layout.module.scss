@@ -43,7 +43,7 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
 
   .content {
     grid-area: content;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $black-5;
   }
 
