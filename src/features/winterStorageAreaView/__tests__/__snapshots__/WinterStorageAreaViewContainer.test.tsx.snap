@@ -318,55 +318,20 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
           <section
             class="body"
           >
-            <div
-              class="labelValuePair"
+            <p>
+              Mikko Mallikas
+            </p>
+            <p>
+              +358 00 000 0000
+            </p>
+            <a
+              class="link default"
+              href="mailto:etunimi.sukunimi@gmail.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              <span
-                class="label standard"
-              >
-                Nimi:
-              </span>
-              <span
-                class="value left"
-              >
-                Mikko Mallikas
-              </span>
-            </div>
-            <div
-              class="labelValuePair"
-            >
-              <span
-                class="label standard"
-              >
-                Puhelin:
-              </span>
-              <span
-                class="value left"
-              >
-                +358 00 000 0000
-              </span>
-            </div>
-            <div
-              class="labelValuePair"
-            >
-              <span
-                class="label standard"
-              >
-                Sähköposti:
-              </span>
-              <span
-                class="value left"
-              >
-                <a
-                  class="link default"
-                  href="mailto:etunimi.sukunimi@gmail.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  etunimi.sukunimi@gmail.com
-                </a>
-              </span>
-            </div>
+              etunimi.sukunimi@gmail.com
+            </a>
           </section>
         </article>
       </div>
