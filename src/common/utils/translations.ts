@@ -36,6 +36,8 @@ export const getProductServiceTKey = (productService: ProductServiceType) => {
       return 'common.terminology.mooring';
     case ProductServiceType.PARKING_PERMIT:
       return 'common.terminology.parkingPermit';
+    case ProductServiceType.STORAGE_ON_ICE:
+      return 'common.terminology.storageOnIce';
     case ProductServiceType.SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT:
       return 'common.terminology.dockingEquipmentSummerStorage';
     case ProductServiceType.SUMMER_STORAGE_FOR_TRAILERS:
