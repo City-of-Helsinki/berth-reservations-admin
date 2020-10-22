@@ -3,8 +3,10 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import ApplicationView, { ApplicationViewProps } from '../ApplicationView';
-import { ApplicationStatus, Language } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import ApplicationHeader from '../../../common/applicationHeader/ApplicationHeader';
+import { canDeleteApplication } from '../../../common/utils/applicationUtils';
+import DeleteButton from '../../../common/deleteButton/DeleteButton';
 
 const mockProps: ApplicationViewProps = {
   applicationDetails: {
@@ -36,13 +38,15 @@ const mockProps: ApplicationViewProps = {
     companyName: '',
   },
   customerProfile: null,
-  leaseDetails: null,
-  refetchQueries: [],
-  isDeletingLease: false,
-  handleUnlinkCustomer: jest.fn(),
+  handleDeleteApplication: jest.fn(),
   handleDeleteLease: jest.fn(),
   handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
+  handleUnlinkCustomer: jest.fn(),
+  isDeleteApplicationLoading: false,
+  isDeletingLease: false,
+  leaseDetails: null,
+  refetchQueries: [],
 };
 
 // LinkApplicationToCustomer is mocked to limit the test scope
@@ -84,6 +88,24 @@ describe('ApplicationView', () => {
     });
 
     expect(wrapper.find(ApplicationHeader).text()).toContain('Vaihtohakemus');
+  });
+
+  it('renders delete notice button if notice can be deleted', () => {
+    Object.values(ApplicationStatus)
+      .filter(canDeleteApplication)
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, applicationDetails: { ...mockProps.applicationDetails, status } });
+        expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(1);
+      });
+  });
+
+  it('does not render delete notice button if notice cannot be deleted', () => {
+    Object.values(ApplicationStatus)
+      .filter((status) => !canDeleteApplication(status))
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, applicationDetails: { ...mockProps.applicationDetails, status } });
+        expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(0);
+      });
   });
 
   it('renders CustomerProfileCard and ActionHistoryCard with "customerProfile" prop', () => {
@@ -128,6 +150,7 @@ describe('ApplicationView', () => {
         lighting: false,
         order: null,
         pierIdentifier: '',
+        status: LeaseStatus.DRAFTED,
         wasteCollection: false,
         water: false,
       },

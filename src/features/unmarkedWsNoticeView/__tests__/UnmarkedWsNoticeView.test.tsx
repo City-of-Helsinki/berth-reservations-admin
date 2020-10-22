@@ -25,6 +25,7 @@ const mockProps: UnmarkedWsNoticeViewProps = {
   isCreateLeaseLoading: false,
   isDeleteLeaseLoading: false,
   refetchQueries: [],
+  handleUnlinkCustomer: jest.fn(),
   handleCreateLease: jest.fn(),
   handleDeleteNotice: jest.fn(),
   handleDeleteLease: jest.fn(),
