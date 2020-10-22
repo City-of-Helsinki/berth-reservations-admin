@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
 
 import ApplicationView from './ApplicationView';
@@ -15,15 +15,22 @@ import { getApplicationDetailsData } from './utils';
 import { getOfferDetailsData } from './berthOfferCard/utils';
 import { getCustomerProfile } from '../customerView/utils';
 import {
+  DELETE_BERTH_APPLICATION,
+  DELETE_BERTH_APPLICATIONVariables as DELETE_BERTH_APPLICATION_VARS,
+} from './__generated__/DELETE_BERTH_APPLICATION';
+import {
   UPDATE_BERTH_APPLICATION,
   UPDATE_BERTH_APPLICATIONVariables as UPDATE_BERTH_APPLICATION_VARS,
 } from '../linkApplicationToCustomer/__generated__/UPDATE_BERTH_APPLICATION';
 import { UPDATE_BERTH_APPLICATION_MUTATION } from '../linkApplicationToCustomer/mutations';
 import Modal from '../../common/modal/Modal';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
+import hdsToast from '../../common/toast/hdsToast';
+import { DELETE_BERTH_APPLICATION_MUTATION } from './mutations';
 
 const ApplicationViewContainer = () => {
   const { id } = useParams<{ id: string }>();
+  const history = useHistory();
 
   const { loading, data } = useQuery<INDIVIDUAL_APPLICATION, INDIVIDUAL_APPLICATION_VARS>(
     INDIVIDUAL_APPLICATION_QUERY,
@@ -34,6 +41,19 @@ const ApplicationViewContainer = () => {
     }
   );
 
+  const [deleteApplication, { loading: isDeletingApplication }] = useMutation<
+    DELETE_BERTH_APPLICATION,
+    DELETE_BERTH_APPLICATION_VARS
+  >(DELETE_BERTH_APPLICATION_MUTATION, {
+    refetchQueries: [
+      {
+        query: INDIVIDUAL_APPLICATION_QUERY,
+        variables: {
+          id,
+        },
+      },
+    ],
+  });
   const [linkCustomer] = useMutation<UPDATE_BERTH_APPLICATION, UPDATE_BERTH_APPLICATION_VARS>(
     UPDATE_BERTH_APPLICATION_MUTATION,
     {
@@ -48,6 +68,22 @@ const ApplicationViewContainer = () => {
     }
   );
 
+  const handleDeleteApplication = () =>
+    deleteApplication({
+      variables: {
+        input: {
+          id: applicationDetails.id,
+        },
+      },
+    }).then(() => {
+      history.replace('/applications');
+      hdsToast({
+        type: 'info',
+        labelText: 'toast.noticeDeleted.label',
+        text: 'toast.noticeDeleted.description',
+        translated: true,
+      });
+    });
   const handleLinkCustomer = (customerId: string) =>
     linkCustomer({
       variables: {
@@ -84,11 +120,13 @@ const ApplicationViewContainer = () => {
         applicationDetails={applicationDetails}
         berthApplication={data.berthApplication}
         customerProfile={customerProfile}
-        isDeletingLease={isDeletingLease}
+        handleDeleteApplication={handleDeleteApplication}
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
         handleUnlinkCustomer={handleUnlinkCustomer}
+        isDeleteApplicationLoading={isDeletingApplication}
+        isDeletingLease={isDeletingLease}
         leaseDetails={leaseDetails}
         refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
       />

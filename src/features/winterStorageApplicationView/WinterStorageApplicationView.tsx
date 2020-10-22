@@ -16,23 +16,27 @@ import LinkApplicationToCustomerContainer, {
 import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
 
 export interface ApplicationViewProps {
-  customerProfile: CustomerProfileCardProps | null;
   applicationDetails: ApplicationDetailsProps;
+  customerProfile: CustomerProfileCardProps | null;
+  isDeleteApplicationLoading: boolean;
   winterStorageApplication: LinkApplicationToCustomerContainerProps['application'];
-  handleLinkCustomer(customerId: string): void;
-  handleEditCustomer(): void;
+  handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
+  handleEditCustomer(): void;
+  handleLinkCustomer(customerId: string): void;
   handleUnlinkCustomer(): void;
 }
 
 const WinterStorageApplicationView = ({
-  customerProfile,
   applicationDetails,
-  winterStorageApplication,
+  customerProfile,
+  handleDeleteApplication,
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
   handleUnlinkCustomer,
+  isDeleteApplicationLoading,
+  winterStorageApplication,
 }: ApplicationViewProps) => {
   const { t } = useTranslation();
 
@@ -41,11 +45,13 @@ const WinterStorageApplicationView = ({
       <PageTitle title={t('applicationView.winterStorageTitle')} />
 
       <ApplicationHeader
-        text={t('applicationList.applicationType.newApplication')}
         createdAt={applicationDetails.createdAt}
-        status={applicationDetails.status}
         customerId={applicationDetails.customerId}
+        handleDeleteApplication={handleDeleteApplication}
         handleUnlinkCustomer={handleUnlinkCustomer}
+        isDeleteApplicationLoading={isDeleteApplicationLoading}
+        status={applicationDetails.status}
+        text={t('applicationList.applicationType.newApplication')}
       />
 
       {customerProfile ? (

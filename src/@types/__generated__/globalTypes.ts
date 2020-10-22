@@ -327,6 +327,11 @@ export interface CreateWinterStorageProductMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface DeleteBerthApplicationMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface DeleteBerthLeaseMutationInput {
   id: string;
   clientMutationId?: string | null;
