@@ -62,52 +62,50 @@ const BerthOfferCard = ({
   ];
 
   return (
-    <>
-      <InvoiceCard
-        applicationStatus={applicationStatus}
-        buttonsRight={
-          <>
-            <Button variant="supplementary" disabled>
-              {t('offer.invoicing.showInvoice')}
-            </Button>
-            <Button variant="supplementary" disabled>
-              {t('offer.invoicing.showContract')}
-            </Button>
-            {canDeleteLease(status) && (
-              <DeleteButton
-                buttonText={t('offer.invoicing.removeOffer')}
-                onConfirm={() => handleDeleteLease(id)}
-                disabled={isDeletingLease}
-              />
-            )}
-          </>
-        }
-        className={className}
-        customerEmail={customerEmail}
-        invoicingDisabled={!berthInvoicingFeatureFlag()}
-        order={order}
-        placeDetails={
-          <PlaceDetails
-            berthMooringType={berthMooringType}
-            berthWidth={berthWidth}
-            berthLength={berthLength}
-            berthDepth={berthDepth}
-            berthIsAccessible={berthIsAccessible}
-            berthComment={berthComment}
-          />
-        }
-        placeName={
-          <InternalLink to="/" underlined>
-            {[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}
-          </InternalLink>
-        }
-        placeProperties={properties}
-        placeType={t('common.terminology.berth').toUpperCase()}
-        refetchQueries={refetchQueries}
-        sendButtonLabel={t('offer.invoicing.acceptAndSend')}
-        title={t('offer.title').toUpperCase()}
-      />
-    </>
+    <InvoiceCard
+      applicationStatus={applicationStatus}
+      buttonsRight={
+        <>
+          <Button variant="supplementary" disabled>
+            {t('offer.invoicing.showInvoice')}
+          </Button>
+          <Button variant="supplementary" disabled>
+            {t('offer.invoicing.showContract')}
+          </Button>
+          {canDeleteLease(status) && (
+            <DeleteButton
+              buttonText={t('offer.invoicing.removeOffer')}
+              onConfirm={() => handleDeleteLease(id)}
+              disabled={isDeletingLease}
+            />
+          )}
+        </>
+      }
+      className={className}
+      customerEmail={customerEmail}
+      invoicingDisabled={!berthInvoicingFeatureFlag()}
+      order={order}
+      placeDetails={
+        <PlaceDetails
+          berthMooringType={berthMooringType}
+          berthWidth={berthWidth}
+          berthLength={berthLength}
+          berthDepth={berthDepth}
+          berthIsAccessible={berthIsAccessible}
+          berthComment={berthComment}
+        />
+      }
+      placeName={
+        <InternalLink to="/" underlined>
+          {[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}
+        </InternalLink>
+      }
+      placeProperties={properties}
+      placeType={t('common.terminology.berth').toUpperCase()}
+      refetchQueries={refetchQueries}
+      sendButtonLabel={t('offer.invoicing.acceptAndSend')}
+      title={t('offer.title').toUpperCase()}
+    />
   );
 };
 
