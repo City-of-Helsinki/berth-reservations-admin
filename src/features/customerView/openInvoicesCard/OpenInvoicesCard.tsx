@@ -26,7 +26,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
     const { contractPeriod } = invoice;
 
     return (
-      <div key={id}>
+      <CardBody key={id}>
         <Section
           title={
             isBerthInvoice(invoice)
@@ -93,18 +93,16 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
         <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
           {t('customerView.customerInvoice.showInvoice')}
         </Button>
-      </div>
+      </CardBody>
     );
   };
 
   return (
     <Card>
       <CardHeader title={t('customerView.customerInvoice.title')} />
-      <CardBody>
-        {invoices.length > 0
-          ? invoices.map((invoice, id) => renderInvoice(invoice, id))
-          : t('customerView.customerInvoice.noInvoice')}
-      </CardBody>
+      {invoices.length > 0
+        ? invoices.map((invoice, id) => renderInvoice(invoice, id))
+        : t('customerView.customerInvoice.noInvoice')}
     </Card>
   );
 };
