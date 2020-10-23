@@ -60,7 +60,9 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
                   <div className={styles.gridItem}>
                     <Text>{formatPrice(bill.totalPrice, i18n.language)}</Text>
                   </div>
-                  <StatusLabel type={billStatusToColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                  <div className={styles.gridItem}>
+                    <StatusLabel type={billStatusToColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                  </div>
                 </React.Fragment>
               ))}
             </Grid>
