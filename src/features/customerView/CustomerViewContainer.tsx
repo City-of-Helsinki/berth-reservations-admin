@@ -20,7 +20,7 @@ import { Bill, Boat } from './types';
 import { OrderStatus } from '../../@types/__generated__/globalTypes';
 import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
-import BillModal from './billModal/BillModal';
+import InvoiceModal from './invoiceModal/InvoiceModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
@@ -100,7 +100,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      {openBill && <BillModal isOpen bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
+      {openBill && <InvoiceModal isOpen bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
     </>
   );
 };

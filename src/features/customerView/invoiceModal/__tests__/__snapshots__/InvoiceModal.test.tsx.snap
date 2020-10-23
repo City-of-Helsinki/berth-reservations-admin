@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BillModal renders correctly 1`] = `
+exports[`InvoiceModal renders correctly 1`] = `
 <div
   class="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
 >

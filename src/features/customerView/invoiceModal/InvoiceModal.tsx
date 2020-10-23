@@ -8,16 +8,16 @@ import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import { getOrderStatusTKey, getProductServiceTKey } from '../../../common/utils/translations';
 import Text from '../../../common/text/Text';
-import styles from './billModal.module.scss';
+import styles from './invoiceModal.module.scss';
 import { Bill } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 
-interface BillModalProps extends Omit<ModalProps, 'children'> {
+interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
   bill: Bill;
 }
 
-const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
+const InvoiceModal = ({ bill, toggleModal, ...modalProps }: InvoiceModalProps) => {
   const { t, i18n } = useTranslation();
 
   const { contractPeriod } = bill;
@@ -100,4 +100,4 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
   );
 };
 
-export default BillModal;
+export default InvoiceModal;
