@@ -8,7 +8,7 @@ import styles from './sendInvoiceForm.module.scss';
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 import Text from '../../../common/text/Text';
-import { addDaysToDate, getToday, mapDateToDateInputValue } from './utils';
+import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../../common/utils/dates';
 
 type FormValues = {
   dueDate: string;
