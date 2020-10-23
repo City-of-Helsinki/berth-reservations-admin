@@ -23,6 +23,9 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           lastName
           customer {
             id
+            primaryEmail {
+              email
+            }
           }
           berthSwitch {
             berthNumber
@@ -49,6 +52,9 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           lease {
             id
             status
+            order {
+              id
+            }
             berth {
               number
               pier {

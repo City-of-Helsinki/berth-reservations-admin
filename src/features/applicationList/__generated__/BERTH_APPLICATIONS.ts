@@ -9,9 +9,15 @@ import { ApplicationStatus, LeaseStatus } from "./../../../@types/__generated__/
 // GraphQL query operation: BERTH_APPLICATIONS
 // ====================================================
 
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_customer_primaryEmail {
+  __typename: "EmailNode";
+  email: string;
+}
+
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_customer {
   __typename: "ProfileNode";
   id: string;
+  primaryEmail: BERTH_APPLICATIONS_berthApplications_edges_node_customer_primaryEmail | null;
 }
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason {
@@ -27,6 +33,11 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch {
   id: string;
   pier: string;
   reason: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_order {
+  __typename: "OrderNode";
+  id: string;
 }
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth_pier_properties_harbor_properties {
@@ -61,6 +72,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease {
   __typename: "BerthLeaseNode";
   id: string;
   status: LeaseStatus;
+  order: BERTH_APPLICATIONS_berthApplications_edges_node_lease_order | null;
   berth: BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth;
 }
 
