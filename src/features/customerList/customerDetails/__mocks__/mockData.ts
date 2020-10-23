@@ -1,10 +1,10 @@
-import { CustomerListApplication, CustomerListBerthLeases, CustomerListBill, CustomerListBoat } from '../../types';
+import { CustomerListApplication, CustomerListBerthLeases, CustomerListInvoice, CustomerListBoat } from '../../types';
 import { CustomerGroup } from '../../../../@types/__generated__/globalTypes';
 import { CustomerDetailsProps } from '../CustomerDetails';
 
 export const customerListEntry: Omit<
   CustomerDetailsProps,
-  'berths' | 'winterStoragePlaces' | 'boats' | 'applications' | 'bills'
+  'berths' | 'winterStoragePlaces' | 'boats' | 'applications' | 'invoices'
 > = {
   name: 'Mikko Matias Mallikas',
   address: 'Telakkakatu 1 A 10',
@@ -25,7 +25,7 @@ export const customerListBoats: CustomerListBoat[] = [{ id: '123', name: 'Cama l
 
 export const customerListApplications: CustomerListApplication[] = [{ id: '123', createdAt: '2019-12-01' }];
 
-export const customerListBills: CustomerListBill[] = [{ id: '123', date: '2020-01-21' }];
+export const customerListInvoices: CustomerListInvoice[] = [{ id: '123', date: '2020-01-21' }];
 
 export const customerListBerthLeases: CustomerListBerthLeases[] = [
   { id: '123', title: 'Pursilahdenranta B31' },

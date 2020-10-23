@@ -4,7 +4,7 @@ import CustomerDetails from './CustomerDetails';
 import {
   customerListApplications,
   customerListBerthLeases,
-  customerListBills,
+  customerListInvoices,
   customerListBoats,
   customerListEntry,
   customerListWinterStoragePlaces,
@@ -28,6 +28,6 @@ export const customerDetails = () => (
     winterStoragePlaces={customerListWinterStoragePlaces}
     boats={customerListBoats}
     applications={customerListApplications}
-    bills={customerListBills}
+    invoices={customerListInvoices}
   />
 );
