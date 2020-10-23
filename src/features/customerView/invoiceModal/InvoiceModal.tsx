@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Modal, { ModalProps } from '../../../common/modal/Modal';
-import { isBerthInvoice } from '../utils';
+import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
 import Section from '../../../common/section/Section';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import { formatDate, formatPrice } from '../../../common/utils/format';
@@ -36,7 +36,7 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
               : t('customerView.customerInvoice.winterStorageInvoice')
           }
         />
-        {isBerthInvoice(invoice) ? (
+        {isBerthInvoice(invoice) && (
           <LabelValuePair
             label={t('customerView.customerInvoice.berthPlace')}
             value={
@@ -47,8 +47,12 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
               invoice.berthInformation.number
             }
           />
-        ) : (
-          'PLACEHOLDER' // TODO
+        )}
+        {isWinterStorageInvoice(invoice) && (
+          <LabelValuePair
+            label={t('customerView.customerInvoice.winterStorageArea')}
+            value={invoice.winterStorageInformation.winterStorageAreaName}
+          />
         )}
         <LabelValuePair
           label={t('customerView.customerInvoice.contractPeriod')}
