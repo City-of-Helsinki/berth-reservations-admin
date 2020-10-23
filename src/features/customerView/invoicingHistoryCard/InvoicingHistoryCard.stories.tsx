@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
-import { mockBills } from '../__fixtures__/mockData';
+import { mockInvoices } from '../__fixtures__/mockData';
 import InvoicingHistoryCard from './InvoicingHistoryCard';
 
 export default {
@@ -9,7 +9,9 @@ export default {
   title: 'InvoicingHistoryCard',
 };
 
-export const invoicingHistoryCard = () => <InvoicingHistoryCard bills={mockBills} onClick={action("Here's your bill!")} />;
+export const invoicingHistoryCard = () => (
+  <InvoicingHistoryCard invoices={mockInvoices} onClick={action("Here's your invoice!")} />
+);
 
 invoicingHistoryCard.story = {
   name: 'Default',

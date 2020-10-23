@@ -7,14 +7,14 @@ import { privateCustomerProfile } from '../../../common/privateCustomerDetails/_
 
 const mockProps: CustomerViewProps = {
   applications: [],
-  bills: [],
+  invoices: [],
   boats: [],
   customerProfile: privateCustomerProfile,
   handleEditCustomer: jest.fn(),
   leases: [],
-  openBills: [],
+  openInvoices: [],
   setBoatToEdit: jest.fn(),
-  setOpenBill: jest.fn(),
+  setOpenInvoice: jest.fn(),
   onClickCreateBoat: jest.fn(),
 };
 

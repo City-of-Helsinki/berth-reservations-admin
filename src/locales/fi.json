@@ -413,7 +413,7 @@
       "additionalServices": "Lisäpalvelut",
       "total": "Yhteensä",
       "acceptAndSend": "Hyväksy ja lähetä tarjous",
-      "showBill": "Näytä lasku",
+      "showInvoice": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"
     },
@@ -483,8 +483,8 @@
       "choice": "Toive",
       "accessible": "Tarvitsen esteettömän paikan"
     },
-    "customerBill": {
-      "bill": "LASKU",
+    "customerInvoice": {
+      "invoice": "LASKU",
       "title": "AVOIMET LASKUT",
       "berthRental": "VENEPAIKAN VUOKRA",
       "showInvoice": "Näytä lasku",
@@ -499,10 +499,10 @@
       "gate": "Portti",
       "lighting": "Valaistus",
       "total": "YHTEENSÄ",
-      "noBill": "Ei avoimia laskuja",
-      "billType": "Laskun aihe",
-      "berthBill": "Venepaikan vuokra",
-      "winterStorageBill": "Talvisäilytyspaikan vuokra",
+      "noInvoice": "Ei avoimia laskuja",
+      "invoiceType": "Laskun aihe",
+      "berthInvoice": "Venepaikan vuokra",
+      "winterStorageInvoice": "Talvisäilytyspaikan vuokra",
       "status": "Laskun tila",
       "closeModal": "Sulje",
       "winterStorageRental": "TALVISÄILYTYSPAIKAN VUOKRA",
@@ -512,8 +512,8 @@
       "title": "LASKUHISTORIA",
       "sectionTitle": "LASKUT",
       "noInvoicingHistory": "Ei laskuhistoriaa",
-      "berthBill": "Venepaikan vuokra",
-      "winterStorageBill": "Talvisäilytyspaikan vuokra"
+      "berthInvoice": "Venepaikan vuokra",
+      "winterStorageInvoice": "Talvisäilytyspaikan vuokra"
     },
     "customerBoats": {
       "title": "ASIAKKAAN VENEET",

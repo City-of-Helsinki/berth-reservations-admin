@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { isBerthBill } from '../utils';
+import { isBerthInvoice } from '../utils';
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import Section from '../../../common/section/Section';
@@ -13,16 +13,16 @@ import styles from './invoicingHistoryCard.module.scss';
 import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/StatusLabel';
 import { getOrderStatusTKey } from '../../../common/utils/translations';
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
-import { Bill } from '../types';
+import { Invoice } from '../types';
 
 interface InvoicingHistoryProps {
-  bills: Bill[];
-  onClick(bill: Bill): void;
+  invoices: Invoice[];
+  onClick(invoice: Invoice): void;
 }
 
-const InvoicingHistoryCard = ({ bills, onClick }: InvoicingHistoryProps) => {
-  const billStatusToColor = (billStatus: OrderStatus): StatusLabelProps['type'] => {
-    switch (billStatus) {
+const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
+  const invoiceStatusToColor = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
+    switch (invoiceStatus) {
       case OrderStatus.WAITING:
         return 'warning';
       case OrderStatus.PAID:
@@ -42,26 +42,29 @@ const InvoicingHistoryCard = ({ bills, onClick }: InvoicingHistoryProps) => {
     <Card>
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
-        {bills.length > 0 ? (
+        {invoices.length > 0 ? (
           <Section title={t('customerView.invoicingHistory.sectionTitle')}>
             <Grid colsCount={4}>
-              {bills.map((bill, id) => (
+              {invoices.map((invoice, id) => (
                 <React.Fragment key={id}>
-                  <button onClick={() => onClick(bill)} className={styles.gridItem}>
+                  <button onClick={() => onClick(invoice)} className={styles.gridItem}>
                     <Text color="brand">
-                      {isBerthBill(bill)
-                        ? t('customerView.invoicingHistory.berthBill')
-                        : t('customerView.invoicingHistory.winterStorageBill')}
+                      {isBerthInvoice(invoice)
+                        ? t('customerView.invoicingHistory.berthInvoice')
+                        : t('customerView.invoicingHistory.winterStorageInvoice')}
                     </Text>
                   </button>
                   <div className={styles.gridItem}>
-                    <Text>{formatDate(bill.dueDate, i18n.language)}</Text>
+                    <Text>{formatDate(invoice.dueDate, i18n.language)}</Text>
                   </div>
                   <div className={styles.gridItem}>
-                    <Text>{formatPrice(bill.totalPrice, i18n.language)}</Text>
+                    <Text>{formatPrice(invoice.totalPrice, i18n.language)}</Text>
                   </div>
                   <div className={styles.gridItem}>
-                    <StatusLabel type={billStatusToColor(bill.status)} label={t(getOrderStatusTKey(bill.status))} />
+                    <StatusLabel
+                      type={invoiceStatusToColor(invoice.status)}
+                      label={t(getOrderStatusTKey(invoice.status))}
+                    />
                   </div>
                 </React.Fragment>
               ))}

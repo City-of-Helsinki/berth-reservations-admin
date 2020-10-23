@@ -68,7 +68,7 @@ const BerthOfferCard = ({
         buttonsRight={
           <>
             <Button variant="supplementary" disabled>
-              {t('offer.invoicing.showBill')}
+              {t('offer.invoicing.showInvoice')}
             </Button>
             <Button variant="supplementary" disabled>
               {t('offer.invoicing.showContract')}

@@ -9,7 +9,7 @@ import ApplicationsCard from './applicationsCard/ApplicationsCard';
 import OpenInvoicesCard from './openInvoicesCard/OpenInvoicesCard';
 import InvoicingHistoryCard from './invoicingHistoryCard/InvoicingHistoryCard';
 import BoatsCard from './boatsCard/BoatsCard';
-import { Application, Bill, Boat, Lease } from './types';
+import { Application, Invoice, Boat, Lease } from './types';
 import BerthLeasesCard from './leasesCard/BerthLeasesCard';
 import WinterStorageLeasesCard from './leasesCard/WinterStorageLeasesCard';
 import { isBerthLease, isWinterStorageLease } from './utils';
@@ -17,28 +17,28 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 
 export interface CustomerViewProps {
   applications: Application[];
-  bills: Bill[];
+  invoices: Invoice[];
   boats: Boat[];
   customerProfile: CustomerProfileCardProps;
   handleEditCustomer: () => void;
   leases: Lease[];
   onClickCreateBoat: () => void;
-  openBills: Bill[];
+  openInvoices: Invoice[];
   setBoatToEdit: (boat: Boat | null) => void;
-  setOpenBill: (bill: Bill | undefined) => void;
+  setOpenInvoice: (invoice: Invoice | undefined) => void;
 }
 
 const CustomerView = ({
   applications,
-  bills,
+  invoices,
   boats,
   customerProfile,
   handleEditCustomer,
   leases,
   onClickCreateBoat,
-  openBills,
+  openInvoices,
   setBoatToEdit,
-  setOpenBill,
+  setOpenInvoice,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   return (
@@ -51,9 +51,9 @@ const CustomerView = ({
 
         <ApplicationsCard applications={applications} />
 
-        <OpenInvoicesCard bills={openBills} handleShowBill={(bill) => setOpenBill(bill)} />
+        <OpenInvoicesCard invoices={openInvoices} handleShowInvoice={(invoice) => setOpenInvoice(invoice)} />
 
-        <InvoicingHistoryCard bills={bills} onClick={(bill) => setOpenBill(bill)} />
+        <InvoicingHistoryCard invoices={invoices} onClick={(invoice) => setOpenInvoice(invoice)} />
 
         <BerthLeasesCard
           leases={leases.filter(isBerthLease)}

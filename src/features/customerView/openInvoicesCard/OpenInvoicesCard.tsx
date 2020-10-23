@@ -7,70 +7,70 @@ import CardBody from '../../../common/cardBody/CardBody';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../common/section/Section';
 import styles from './openInvoicesCard.module.scss';
-import { isBerthBill, isWinterStorageBill } from '../utils';
+import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
 import { getProductServiceTKey } from '../../../common/utils/translations';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
-import { Bill } from '../types';
+import { Invoice } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
 
 export interface OpenInvoicesCardProps {
-  bills: Bill[];
-  handleShowBill(bill: Bill): void;
+  invoices: Invoice[];
+  handleShowInvoice(invoice: Invoice): void;
 }
 
-const OpenInvoicesCard = ({ bills, handleShowBill }: OpenInvoicesCardProps) => {
+const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps) => {
   const { t, i18n } = useTranslation();
 
-  const renderBill = (bill: Bill, id: number) => {
-    const { contractPeriod } = bill;
+  const renderInvoice = (invoice: Invoice, id: number) => {
+    const { contractPeriod } = invoice;
 
     return (
       <div key={id}>
         <Section
           title={
-            isBerthBill(bill)
-              ? t('customerView.customerBill.berthRental')
-              : t('customerView.customerBill.winterStorageRental')
+            isBerthInvoice(invoice)
+              ? t('customerView.customerInvoice.berthRental')
+              : t('customerView.customerInvoice.winterStorageRental')
           }
         >
-          {isBerthBill(bill) && (
+          {isBerthInvoice(invoice) && (
             <LabelValuePair
-              label={t('customerView.customerBill.berthPlace')}
+              label={t('customerView.customerInvoice.berthPlace')}
               value={
-                bill.berthInformation.harborName +
+                invoice.berthInformation.harborName +
                 ' ' +
-                bill.berthInformation.pierIdentifier +
+                invoice.berthInformation.pierIdentifier +
                 ' ' +
-                bill.berthInformation.number
+                invoice.berthInformation.number
               }
             />
           )}
-          {isWinterStorageBill(bill) && (
+          {isWinterStorageInvoice(invoice) && (
             <LabelValuePair
-              label={t('customerView.customerBill.winterStorageArea')}
-              value={bill.winterStorageInformation.winterStorageAreaName}
+              label={t('customerView.customerInvoice.winterStorageArea')}
+              value={invoice.winterStorageInformation.winterStorageAreaName}
             />
           )}
           <LabelValuePair
-            label={t('customerView.customerBill.contractPeriod')}
+            label={t('customerView.customerInvoice.contractPeriod')}
             value={`${formatDate(contractPeriod.startDate, i18n.language)} - ${formatDate(
               contractPeriod.endDate,
               i18n.language
             )}`}
           />
           <LabelValuePair
-            label={t('customerView.customerBill.dueDate')}
-            value={formatDate(bill.dueDate, i18n.language)}
+            label={t('customerView.customerInvoice.dueDate')}
+            value={formatDate(invoice.dueDate, i18n.language)}
           />
         </Section>
         <Section className={styles.feesSection}>
           <LabelValuePair
             align="right"
-            label={t('customerView.customerBill.basicFee')}
-            value={formatPrice(bill.basePrice, i18n.language)}
+            label={t('customerView.customerInvoice.basicFee')}
+            value={formatPrice(invoice.basePrice, i18n.language)}
           />
-          {bill.orderLines.map((orderLine, id) => (
+          {invoice.orderLines.map((orderLine, id) => (
             <LabelValuePair
               align="right"
               label={t(getProductServiceTKey(orderLine.product))}
@@ -86,12 +86,12 @@ const OpenInvoicesCard = ({ bills, handleShowBill }: OpenInvoicesCardProps) => {
         <Section className={styles.feesSection}>
           <LabelValuePair
             align="right"
-            label={t('customerView.customerBill.total')}
-            value={formatPrice(bill.totalPrice, i18n.language)}
+            label={t('customerView.customerInvoice.total')}
+            value={formatPrice(invoice.totalPrice, i18n.language)}
           />
         </Section>
-        <Button variant="secondary" theme="coat" onClick={() => handleShowBill(bill)} className={styles.button}>
-          {t('customerView.customerBill.showInvoice')}
+        <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
+          {t('customerView.customerInvoice.showInvoice')}
         </Button>
       </div>
     );
@@ -99,9 +99,11 @@ const OpenInvoicesCard = ({ bills, handleShowBill }: OpenInvoicesCardProps) => {
 
   return (
     <Card>
-      <CardHeader title={t('customerView.customerBill.title')} />
+      <CardHeader title={t('customerView.customerInvoice.title')} />
       <CardBody>
-        {bills.length > 0 ? bills.map((bill, id) => renderBill(bill, id)) : t('customerView.customerBill.noBill')}
+        {invoices.length > 0
+          ? invoices.map((invoice, id) => renderInvoice(invoice, id))
+          : t('customerView.customerInvoice.noInvoice')}
       </CardBody>
     </Card>
   );

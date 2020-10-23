@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 
 import Button from '../../../../common/button/Button';
 import OpenInvoicesCard from '../OpenInvoicesCard';
-import { mockBills } from '../../__fixtures__/mockData';
+import { mockInvoices } from '../../__fixtures__/mockData';
 
 const mockProps = {
-  bills: mockBills,
-  handleShowBill: jest.fn(),
+  invoices: mockInvoices,
+  handleShowInvoice: jest.fn(),
 };
 
 describe('OpenInvoicesCard', () => {
@@ -22,10 +22,10 @@ describe('OpenInvoicesCard', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
-  it('invokes handleShowBill method when the user clicks on the Show Invoice button', () => {
+  it('invokes handleShowInvoice method when the user clicks on the Show Invoice button', () => {
     const wrapper = getWrapper();
     wrapper.find(Button).simulate('click');
 
-    expect(mockProps.handleShowBill).toHaveBeenCalledTimes(1);
+    expect(mockProps.handleShowInvoice).toHaveBeenCalledTimes(1);
   });
 });

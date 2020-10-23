@@ -5,14 +5,14 @@ import {
 import {
   Application,
   ApplicationLease,
-  BerthBill,
+  BerthInvoice,
   BerthLease,
-  Bill,
   Boat,
+  Invoice,
   LargeBoat,
   Lease,
   OrderLine,
-  WinterStorageBill,
+  WinterStorageInvoice,
   WinterStorageLease,
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
@@ -183,11 +183,11 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
   );
 };
 
-export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageBill)[] => {
+export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterStorageInvoice)[] => {
   return (
     profile.orders?.edges
       .map((edge) => edge?.node)
-      .reduce<(BerthBill | WinterStorageBill)[]>((acc, orderNode) => {
+      .reduce<(BerthInvoice | WinterStorageInvoice)[]>((acc, orderNode) => {
         if (!orderNode || !orderNode.lease) {
           return acc;
         }
@@ -208,7 +208,7 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
             ];
           }, []);
         const { lease } = orderNode;
-        const bill = {
+        const invoice = {
           status: orderNode.status,
           contractPeriod: {
             startDate: lease.startDate,
@@ -223,7 +223,7 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
           return [
             ...acc,
             {
-              ...bill,
+              ...invoice,
               berthInformation: {
                 number: lease.berth.number,
                 pierIdentifier: lease.berth.pier.properties?.identifier ?? '',
@@ -235,7 +235,7 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
           return [
             ...acc,
             {
-              ...bill,
+              ...invoice,
               winterStorageInformation: {
                 winterStorageAreaName: lease.place?.winterStorageSection.properties?.area.properties?.name ?? '',
               },
@@ -246,9 +246,10 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
   );
 };
 
-export const isBerthBill = (bill: Bill): bill is BerthBill => (bill as BerthBill).berthInformation !== undefined;
-export const isWinterStorageBill = (bill: Bill): bill is WinterStorageBill =>
-  (bill as WinterStorageBill).winterStorageInformation !== undefined;
+export const isBerthInvoice = (invoice: Invoice): invoice is BerthInvoice =>
+  (invoice as BerthInvoice).berthInformation !== undefined;
+export const isWinterStorageInvoice = (invoice: Invoice): invoice is WinterStorageInvoice =>
+  (invoice as WinterStorageInvoice).winterStorageInformation !== undefined;
 
 export const isBerthLease = (lease: Lease): lease is BerthLease => (lease as BerthLease).harbor !== undefined;
 export const isWinterStorageLease = (lease: Lease): lease is WinterStorageLease =>
