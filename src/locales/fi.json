@@ -405,7 +405,7 @@
       "previousLeases": "Edelliset vuokralaiset",
       "emptyName": "Ei nimeä"
     },
-    "billing": {
+    "invoicing": {
       "title": "Tilaustunnus",
       "basePrice": "Perushinta",
       "gate": "Portti",
@@ -508,10 +508,10 @@
       "winterStorageRental": "TALVISÄILYTYSPAIKAN VUOKRA",
       "winterStorageArea": "Talvisäilytyspaikka"
     },
-    "billingHistory": {
+    "invoicingHistory": {
       "title": "LASKUHISTORIA",
       "sectionTitle": "LASKUT",
-      "noBillingHistory": "Ei laskuhistoriaa",
+      "noInvoicingHistory": "Ei laskuhistoriaa",
       "berthBill": "Venepaikan vuokra",
       "winterStorageBill": "Talvisäilytyspaikan vuokra"
     },

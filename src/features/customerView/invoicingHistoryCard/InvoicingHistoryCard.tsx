@@ -9,18 +9,18 @@ import Grid from '../../../common/grid/Grid';
 import CardBody from '../../../common/cardBody/CardBody';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Text from '../../../common/text/Text';
-import styles from './billingHistoryCard.module.scss';
+import styles from './invoicingHistoryCard.module.scss';
 import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/StatusLabel';
 import { getOrderStatusTKey } from '../../../common/utils/translations';
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 import { Bill } from '../types';
 
-interface BillingHistoryProps {
+interface InvoicingHistoryProps {
   bills: Bill[];
   onClick(bill: Bill): void;
 }
 
-const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
+const InvoicingHistoryCard = ({ bills, onClick }: InvoicingHistoryProps) => {
   const billStatusToColor = (billStatus: OrderStatus): StatusLabelProps['type'] => {
     switch (billStatus) {
       case OrderStatus.WAITING:
@@ -40,18 +40,18 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
   const { t, i18n } = useTranslation();
   return (
     <Card>
-      <CardHeader title={t('customerView.billingHistory.title')} />
+      <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
         {bills.length > 0 ? (
-          <Section title={t('customerView.billingHistory.sectionTitle')}>
+          <Section title={t('customerView.invoicingHistory.sectionTitle')}>
             <Grid colsCount={4}>
               {bills.map((bill, id) => (
                 <React.Fragment key={id}>
                   <button onClick={() => onClick(bill)} className={styles.gridItem}>
                     <Text color="brand">
                       {isBerthBill(bill)
-                        ? t('customerView.billingHistory.berthBill')
-                        : t('customerView.billingHistory.winterStorageBill')}
+                        ? t('customerView.invoicingHistory.berthBill')
+                        : t('customerView.invoicingHistory.winterStorageBill')}
                     </Text>
                   </button>
                   <div className={styles.gridItem}>
@@ -68,11 +68,11 @@ const BillingHistoryCard = ({ bills, onClick }: BillingHistoryProps) => {
             </Grid>
           </Section>
         ) : (
-          t('customerView.billingHistory.noBillingHistory')
+          t('customerView.invoicingHistory.noInvoicingHistory')
         )}
       </CardBody>
     </Card>
   );
 };
 
-export default BillingHistoryCard;
+export default InvoicingHistoryCard;

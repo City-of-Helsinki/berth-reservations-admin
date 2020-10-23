@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import BillingHistoryCard from '../BillingHistoryCard';
+import InvoicingHistoryCard from '../InvoicingHistoryCard';
 import { mockBills } from '../../__fixtures__/mockData';
 
-describe('BillingHistoryCard', () => {
+describe('InvoicingHistoryCard', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<BillingHistoryCard bills={mockBills} onClick={jest.fn} />);
+    const wrapper = shallow(<InvoicingHistoryCard bills={mockBills} onClick={jest.fn} />);
     expect(wrapper.render()).toMatchSnapshot();
   });
 });

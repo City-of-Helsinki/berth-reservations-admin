@@ -68,14 +68,14 @@ const BerthOfferCard = ({
         buttonsRight={
           <>
             <Button variant="supplementary" disabled>
-              {t('offer.billing.showBill')}
+              {t('offer.invoicing.showBill')}
             </Button>
             <Button variant="supplementary" disabled>
-              {t('offer.billing.showContract')}
+              {t('offer.invoicing.showContract')}
             </Button>
             {canDeleteLease(status) && (
               <DeleteButton
-                buttonText={t('offer.billing.removeOffer')}
+                buttonText={t('offer.invoicing.removeOffer')}
                 onConfirm={() => handleDeleteLease(id)}
                 disabled={isDeletingLease}
               />
@@ -104,7 +104,7 @@ const BerthOfferCard = ({
         placeProperties={properties}
         placeType={t('common.terminology.berth').toUpperCase()}
         refetchQueries={refetchQueries}
-        sendButtonLabel={t('offer.billing.acceptAndSend')}
+        sendButtonLabel={t('offer.invoicing.acceptAndSend')}
         title={t('offer.title').toUpperCase()}
       />
     </>
