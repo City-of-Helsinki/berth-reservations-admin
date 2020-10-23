@@ -6,7 +6,7 @@ import CardHeader from '../../../common/cardHeader/CardHeader';
 import CardBody from '../../../common/cardBody/CardBody';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../common/section/Section';
-import styles from './billsCard.module.scss';
+import styles from './openInvoicesCard.module.scss';
 import { isBerthBill, isWinterStorageBill } from '../utils';
 import { getProductServiceTKey } from '../../../common/utils/translations';
 import { formatDate, formatPrice } from '../../../common/utils/format';
@@ -14,12 +14,12 @@ import Button from '../../../common/button/Button';
 import { Bill } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
 
-export interface BillsCardProps {
+export interface OpenInvoicesCardProps {
   bills: Bill[];
   handleShowBill(bill: Bill): void;
 }
 
-const BillsCard = ({ bills, handleShowBill }: BillsCardProps) => {
+const OpenInvoicesCard = ({ bills, handleShowBill }: OpenInvoicesCardProps) => {
   const { t, i18n } = useTranslation();
 
   const renderBill = (bill: Bill, id: number) => {
@@ -107,4 +107,4 @@ const BillsCard = ({ bills, handleShowBill }: BillsCardProps) => {
   );
 };
 
-export default BillsCard;
+export default OpenInvoicesCard;

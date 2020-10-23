@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Button from '../../../../common/button/Button';
-import BillsCard from '../BillsCard';
+import OpenInvoicesCard from '../OpenInvoicesCard';
 import { mockBills } from '../../__fixtures__/mockData';
 
 const mockProps = {
@@ -10,11 +10,11 @@ const mockProps = {
   handleShowBill: jest.fn(),
 };
 
-describe('BillsCard', () => {
+describe('OpenInvoicesCard', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-  const getWrapper = (props = mockProps) => shallow(<BillsCard {...props} />);
+  const getWrapper = (props = mockProps) => shallow(<OpenInvoicesCard {...props} />);
 
   it('renders normally', () => {
     const wrapper = getWrapper();

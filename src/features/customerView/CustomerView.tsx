@@ -6,7 +6,7 @@ import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import ApplicationsCard from './applicationsCard/ApplicationsCard';
-import BillsCard from './billsCard/BillsCard';
+import OpenInvoicesCard from './openInvoicesCard/OpenInvoicesCard';
 import InvoicingHistoryCard from './invoicingHistoryCard/InvoicingHistoryCard';
 import BoatsCard from './boatsCard/BoatsCard';
 import { Application, Bill, Boat, Lease } from './types';
@@ -51,7 +51,7 @@ const CustomerView = ({
 
         <ApplicationsCard applications={applications} />
 
-        <BillsCard bills={openBills} handleShowBill={(bill) => setOpenBill(bill)} />
+        <OpenInvoicesCard bills={openBills} handleShowBill={(bill) => setOpenBill(bill)} />
 
         <InvoicingHistoryCard bills={bills} onClick={(bill) => setOpenBill(bill)} />
 

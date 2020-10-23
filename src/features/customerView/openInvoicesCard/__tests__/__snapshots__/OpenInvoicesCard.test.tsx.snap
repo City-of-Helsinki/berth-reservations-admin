@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BillsCard renders normally 1`] = `
+exports[`OpenInvoicesCard renders normally 1`] = `
 <div
   class="card"
 >
