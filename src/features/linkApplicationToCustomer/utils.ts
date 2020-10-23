@@ -20,6 +20,7 @@ export const getWinterStoragePlaces = (leases: LEASES | null): string | undefine
   leases?.edges
     .reduce<(string | null | undefined)[]>((acc, edge) => {
       if (edge?.node?.isActive) {
+        // Add both winter storage and unmarked winter storage area names, even if undefined
         return [
           ...acc,
           edge?.node?.place?.winterStorageSection.properties?.area.properties?.name,
@@ -28,7 +29,7 @@ export const getWinterStoragePlaces = (leases: LEASES | null): string | undefine
       }
       return acc;
     }, [])
-    .filter(Boolean)
+    .filter(Boolean) // Filter out undefined
     .join(', ');
 
 export const getFilteredCustomersData = (data?: FILTERED_CUSTOMERS): CustomerData[] => {
