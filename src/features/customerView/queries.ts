@@ -105,6 +105,16 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 }
               }
             }
+            section {
+              properties {
+                area {
+                  id
+                  properties {
+                    name
+                  }
+                }
+              }
+            }
           }
         }
       }

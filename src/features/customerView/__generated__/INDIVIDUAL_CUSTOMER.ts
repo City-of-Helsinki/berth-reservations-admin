@@ -156,6 +156,27 @@ export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_plac
   winterStorageSection: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place_winterStorageSection;
 }
 
+export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties_area_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties_area {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties_area_properties | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties {
+  __typename: "WinterStorageSectionProperties";
+  area: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties_area;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section {
+  __typename: "WinterStorageSectionNode";
+  properties: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties | null;
+}
+
 export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node {
   __typename: "WinterStorageLeaseNode";
   id: string;
@@ -163,6 +184,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node {
   startDate: any;
   endDate: any;
   place: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place | null;
+  section: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges {

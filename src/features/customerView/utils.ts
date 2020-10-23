@@ -71,27 +71,50 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
   if (!profile.winterStorageLeases?.edges) return [];
 
   return profile.winterStorageLeases.edges.reduce<Lease[]>((acc, edge) => {
-    if (!edge?.node?.place || edge?.node?.status !== 'PAID') return acc;
+    if (edge?.node?.status !== 'PAID') return acc;
 
-    const placeNum = edge.node.place.number.toString(10);
-    const sectionIdentifier = edge.node.place.winterStorageSection.properties?.identifier || null;
-    const winterStorageArea = edge.node.place.winterStorageSection.properties?.area;
+    if (edge?.node?.place) {
+      const placeNum = edge.node.place.number.toString(10);
+      const sectionIdentifier = edge.node.place.winterStorageSection.properties?.identifier || null;
+      const winterStorageArea = edge.node.place.winterStorageSection.properties?.area;
 
-    const lease = {
-      id: edge.node.id,
-      winterStorageArea: winterStorageArea
-        ? {
-            id: winterStorageArea.id,
-            name: winterStorageArea.properties?.name || '',
-          }
-        : null,
-      placeNum,
-      sectionIdentifier,
-      startDate: edge.node.startDate,
-      endDate: edge.node.endDate,
-    };
+      const lease = {
+        id: edge.node.id,
+        winterStorageArea: winterStorageArea
+          ? {
+              id: winterStorageArea.id,
+              name: winterStorageArea.properties?.name || '',
+            }
+          : null,
+        placeNum,
+        sectionIdentifier,
+        startDate: edge.node.startDate,
+        endDate: edge.node.endDate,
+      };
 
-    return [...acc, lease];
+      return [...acc, lease];
+    }
+
+    if (edge?.node?.section) {
+      const winterStorageArea = edge.node.section.properties?.area;
+
+      const lease = {
+        id: edge.node.id,
+        winterStorageArea: winterStorageArea
+          ? {
+              id: winterStorageArea.id,
+              name: winterStorageArea.properties?.name || '',
+            }
+          : null,
+        placeNum: 0,
+        sectionIdentifier: null,
+        startDate: edge.node.startDate,
+        endDate: edge.node.endDate,
+      };
+      return [...acc, lease];
+    }
+
+    return acc;
   }, []);
 };
 
