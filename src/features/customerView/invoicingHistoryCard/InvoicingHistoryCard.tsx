@@ -21,7 +21,7 @@ interface InvoicingHistoryProps {
 }
 
 const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
-  const invoiceStatusToColor = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
+  const invoiceStatusToType = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
     switch (invoiceStatus) {
       case OrderStatus.WAITING:
         return 'warning';
@@ -62,7 +62,7 @@ const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
                   </div>
                   <div className={styles.gridItem}>
                     <StatusLabel
-                      type={invoiceStatusToColor(invoice.status)}
+                      type={invoiceStatusToType(invoice.status)}
                       label={t(getOrderStatusTKey(invoice.status))}
                     />
                   </div>
