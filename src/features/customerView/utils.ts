@@ -237,7 +237,10 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
             {
               ...invoice,
               winterStorageInformation: {
-                winterStorageAreaName: lease.place?.winterStorageSection.properties?.area.properties?.name ?? '',
+                winterStorageAreaName:
+                  lease.place?.winterStorageSection.properties?.area.properties?.name ??
+                  lease.section?.properties?.area.properties?.name ??
+                  '',
               },
             },
           ];
