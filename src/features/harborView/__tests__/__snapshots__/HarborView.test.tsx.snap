@@ -475,7 +475,7 @@ exports[`HarborView renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width:1350px"
+        style="min-width:0px"
       >
         <div
           class="stickyHeaders"

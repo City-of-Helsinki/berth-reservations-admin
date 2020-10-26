@@ -32,7 +32,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
         <div
           class="table basic noMainHeader"
           role="table"
-          style="min-width: 712.5px;"
+          style="min-width: 0px;"
         >
           <div
             class="stickyHeaders"
@@ -234,7 +234,7 @@ exports[`BerthPricing renders normally 1`] = `
         <div
           class="table basic noMainHeader"
           role="table"
-          style="min-width: 712.5px;"
+          style="min-width: 0px;"
         >
           <div
             class="stickyHeaders"

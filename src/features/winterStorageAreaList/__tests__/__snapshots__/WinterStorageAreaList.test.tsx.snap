@@ -34,7 +34,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width:1012.5px"
+        style="min-width:0px"
       >
         <div
           class="stickyHeaders"

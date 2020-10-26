@@ -16,7 +16,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 1275px;"
+        style="min-width: 0px;"
       >
         <div
           class="stickyHeaders"
@@ -644,7 +644,7 @@ exports[`ApplicationList renders normally with minimum props 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 1275px;"
+        style="min-width: 0px;"
       >
         <div
           class="stickyHeaders"

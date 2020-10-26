@@ -16,7 +16,7 @@ exports[`UnmarkedWsNoticeList renders normally with data 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 825px;"
+        style="min-width: 0px;"
       >
         <div
           class="stickyHeaders"
@@ -1232,7 +1232,7 @@ exports[`UnmarkedWsNoticeList renders normally without data 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 825px;"
+        style="min-width: 0px;"
       >
         <div
           class="stickyHeaders"

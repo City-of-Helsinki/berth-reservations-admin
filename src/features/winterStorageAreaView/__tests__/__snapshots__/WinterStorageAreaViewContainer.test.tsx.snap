@@ -408,7 +408,7 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
         <div
           class="table primary"
           role="table"
-          style="min-width: 900px;"
+          style="min-width: 0px;"
         >
           <div
             class="stickyHeaders"

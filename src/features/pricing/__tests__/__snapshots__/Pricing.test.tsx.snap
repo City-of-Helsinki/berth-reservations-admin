@@ -40,7 +40,7 @@ exports[`PricingPage renders normally 1`] = `
           <div
             class="table basic noMainHeader"
             role="table"
-            style="min-width: 712.5px;"
+            style="min-width: 0px;"
           >
             <div
               class="stickyHeaders"
@@ -279,7 +279,7 @@ exports[`PricingPage renders normally 1`] = `
           <div
             class="table basic noMainHeader"
             role="table"
-            style="min-width: 712.5px;"
+            style="min-width: 0px;"
           >
             <div
               class="stickyHeaders"
@@ -518,7 +518,7 @@ exports[`PricingPage renders normally 1`] = `
           <div
             class="table basic noMainHeader"
             role="table"
-            style="min-width: 562.5px;"
+            style="min-width: 0px;"
           >
             <div
               class="stickyHeaders"
@@ -709,7 +709,7 @@ exports[`PricingPage renders normally 1`] = `
           <div
             class="table basic noMainHeader"
             role="table"
-            style="min-width: 675px;"
+            style="min-width: 0px;"
           >
             <div
               class="stickyHeaders"

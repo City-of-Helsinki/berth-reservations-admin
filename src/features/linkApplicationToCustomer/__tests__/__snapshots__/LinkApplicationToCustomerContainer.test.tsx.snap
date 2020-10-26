@@ -144,7 +144,7 @@ Array [
       <div
         class="table primary"
         role="table"
-        style="min-width: 1050px;"
+        style="min-width: 0px;"
       >
         <div
           class="stickyHeaders"
