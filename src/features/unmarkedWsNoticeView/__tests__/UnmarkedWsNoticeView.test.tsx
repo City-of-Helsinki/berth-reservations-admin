@@ -21,7 +21,7 @@ const mockProps: UnmarkedWsNoticeViewProps = {
   leaseStatus: null,
   noticeDetails: mockNoticeDetails,
   winterStorageNotice: mockData.winterStorageNotice,
-  isDeleteNoticeLoading: false,
+  isDeletingNotice: false,
   isCreateLeaseLoading: false,
   isDeleteLeaseLoading: false,
   refetchQueries: [],

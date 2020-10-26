@@ -60,7 +60,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     },
   ];
 
-  const [deleteNotice, { loading: isDeleteNoticeLoading }] = useMutation<
+  const [deleteNotice, { loading: isDeletingNotice }] = useMutation<
     DELETE_UNMARKED_WINTER_STORAGE_NOTICE,
     DELETE_UNMARKED_WINTER_STORAGE_NOTICE_VARS
   >(DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION, {
@@ -149,7 +149,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
-        isDeleteNoticeLoading={isDeleteNoticeLoading}
+        isDeletingNotice={isDeletingNotice}
         isCreateLeaseLoading={isCreateLeaseLoading}
         isDeleteLeaseLoading={isDeleteLeaseLoading}
         noticeDetails={noticeDetails}
