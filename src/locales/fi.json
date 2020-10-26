@@ -265,6 +265,17 @@
       "phone": "Puhelinnumero",
       "email": "Sähköpostiosoite",
       "comment": "Huomiot"
+    },
+    "sendMultiOffers": {
+      "title": "Lähetä Tarjous",
+      "dueDate": "Tarjousten eräpäivä",
+      "berthOffers": "Venepaikkatarjouksia",
+      "offersWithoutPlaces": "Hakemuksia ilman paikkaa",
+      "instructions": {
+        "paragraph1": "Tarjoukset lähetetään asiakkaiden sähköpostiosoitteisiin ja niihin merkitään alla oleva eräpäivä.",
+        "paragraph2": "Lähetettyä tarjousta ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle.",
+        "paragraph3": "Jos hakemukseen ei ole tarjottu venepaikkaa, asiakkaalle lähetetään ilmoitus paikatta jäämisestä."
+      }
     }
   },
   "harborList": {
@@ -315,6 +326,12 @@
   "applicationList": {
     "title": "Venepaikkahakemukset",
     "winterStorageTitle": "Talvisäilytyspaikkahakemukset",
+    "tools": {
+      "sendOffer": "Lähteä tarjous",
+      "selectedRow": "{{count}} rivi valittu",
+      "selectedRow_plural": "{{count}} riviä valittu",
+      "clearSelectedRows": "Tyhjennä valinnat"
+    },
     "tableHeaders": {
       "switchFilter": "Vaihtohakemukset",
       "newApplicationFilter": "Uudet hakemukset",
@@ -372,6 +389,18 @@
       "acceptFitnessNews": "Tilaan tietoa liikuntapalveluista",
       "acceptLibraryNews": "Tilaan tietoa kirjastopalveluista",
       "acceptOtherCultureNews": "Tilaan tietoa muista kulttuuripalveluista"
+    },
+    "errors":{
+      "unhandledApplications":{
+        "label": "Kaikkia valittuja hakemuksia ei ole käsitelty",
+        "description": "Tarjous tai ilmoitus paikatta jäämisestä voidaan lähettää vain hakemuksille, jotka on käsitelty."
+      }
+    },
+    "notifications": {
+      "offersSent": {
+        "label": "Tarjoukset on lähetetty asiakkaille",
+        "description": "Hakemusten tilat on päivitetty ja tarjoukset odottavat asiakkaiden toimenpiteitä"
+      }
     }
   },
   "applicationView": {

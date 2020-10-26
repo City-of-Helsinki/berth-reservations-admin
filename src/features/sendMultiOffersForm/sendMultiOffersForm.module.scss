@@ -1,0 +1,29 @@
+@import 'containers';
+@import 'spacings';
+@import 'form';
+
+.grid {
+  grid-gap: units(1);
+}
+
+.instructions {
+  line-height: 1.5;
+  margin: units(2) 0;
+}
+
+.paragraph {
+  margin: units(1) 0;
+  max-width: 34em;
+}
+
+.dueDate {
+  width: 50%;
+  margin: auto;
+}
+
+.missingEmail {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+  display: block;
+}
