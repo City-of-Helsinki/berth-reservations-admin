@@ -28,7 +28,7 @@ export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   berthApplication: LinkApplicationToCustomerContainerProps['application'];
   customerProfile: CustomerProfileCardProps | null;
-  isDeleteApplicationLoading: boolean;
+  isDeletingApplication: boolean;
   isDeletingLease: boolean;
   leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
@@ -48,7 +48,7 @@ const ApplicationView = ({
   handleEditCustomer,
   handleLinkCustomer,
   handleUnlinkCustomer,
-  isDeleteApplicationLoading,
+  isDeletingApplication,
   isDeletingLease,
   leaseDetails,
   refetchQueries,
@@ -64,7 +64,7 @@ const ApplicationView = ({
         customerId={applicationDetails.customerId}
         handleDeleteApplication={handleDeleteApplication}
         handleUnlinkCustomer={handleUnlinkCustomer}
-        isDeleteApplicationLoading={isDeleteApplicationLoading}
+        isDeletingApplication={isDeletingApplication}
         status={applicationDetails.status}
         text={
           applicationDetails.berthSwitch !== null

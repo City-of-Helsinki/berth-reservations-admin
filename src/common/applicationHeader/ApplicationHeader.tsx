@@ -15,7 +15,7 @@ interface ApplicationHeaderProps {
   createdAt: string;
   status: ApplicationStatus;
   customerId?: string;
-  isDeleteApplicationLoading?: boolean;
+  isDeletingApplication?: boolean;
   handleUnlinkCustomer?(): void;
   handleDeleteApplication?(): void;
 }
@@ -25,7 +25,7 @@ const ApplicationHeader = ({
   createdAt,
   status,
   customerId,
-  isDeleteApplicationLoading,
+  isDeletingApplication,
   handleDeleteApplication,
   handleUnlinkCustomer,
 }: ApplicationHeaderProps) => {
@@ -50,7 +50,7 @@ const ApplicationHeader = ({
           <DeleteButton
             buttonText={t('unmarkedWsNotices.view.deleteNotice')}
             onConfirm={handleDeleteApplication}
-            disabled={isDeleteApplicationLoading}
+            disabled={isDeletingApplication}
           />
         )}
       </div>

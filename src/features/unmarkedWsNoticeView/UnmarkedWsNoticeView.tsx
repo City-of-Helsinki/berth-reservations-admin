@@ -75,7 +75,7 @@ const UnmarkedWsNoticeView = ({
         customerId={noticeDetails.customerId}
         handleUnlinkCustomer={handleUnlinkCustomer}
         handleDeleteApplication={handleDeleteNotice}
-        isDeleteApplicationLoading={isDeleteNoticeLoading}
+        isDeletingApplication={isDeleteNoticeLoading}
       />
 
       {customerProfile ? (

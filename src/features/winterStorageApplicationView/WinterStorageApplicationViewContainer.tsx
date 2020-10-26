@@ -115,7 +115,7 @@ const WinterStorageApplicationViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
-        isDeleteApplicationLoading={isDeletingApplication}
+        isDeletingApplication={isDeletingApplication}
         handleUnlinkCustomer={handleUnlinkCustomer}
         handleDeleteApplication={handleDeleteApplication}
       />

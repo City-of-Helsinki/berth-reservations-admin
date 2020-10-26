@@ -125,7 +125,7 @@ const ApplicationViewContainer = () => {
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
         handleUnlinkCustomer={handleUnlinkCustomer}
-        isDeleteApplicationLoading={isDeletingApplication}
+        isDeletingApplication={isDeletingApplication}
         isDeletingLease={isDeletingLease}
         leaseDetails={leaseDetails}
         refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}

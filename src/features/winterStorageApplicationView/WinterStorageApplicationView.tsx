@@ -18,7 +18,7 @@ import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader'
 export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   customerProfile: CustomerProfileCardProps | null;
-  isDeleteApplicationLoading: boolean;
+  isDeletingApplication: boolean;
   winterStorageApplication: LinkApplicationToCustomerContainerProps['application'];
   handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
@@ -35,7 +35,7 @@ const WinterStorageApplicationView = ({
   handleEditCustomer,
   handleLinkCustomer,
   handleUnlinkCustomer,
-  isDeleteApplicationLoading,
+  isDeletingApplication,
   winterStorageApplication,
 }: ApplicationViewProps) => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const WinterStorageApplicationView = ({
         customerId={applicationDetails.customerId}
         handleDeleteApplication={handleDeleteApplication}
         handleUnlinkCustomer={handleUnlinkCustomer}
-        isDeleteApplicationLoading={isDeleteApplicationLoading}
+        isDeletingApplication={isDeletingApplication}
         status={applicationDetails.status}
         text={t('applicationList.applicationType.newApplication')}
       />
