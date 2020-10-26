@@ -307,7 +307,12 @@ exports[`CustomerView renders normally 1`] = `
           AVOIMET LASKUT
         </span>
       </div>
-      Ei avoimia laskuja 
+      <div
+        class="cardBody"
+      >
+        Ei avoimia laskuja
+      </div>
+       
     </div>
     <div
       class="card"

@@ -100,9 +100,11 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
   return (
     <Card>
       <CardHeader title={t('customerView.customerInvoice.title')} />
-      {invoices.length > 0
-        ? invoices.map((invoice, id) => renderInvoice(invoice, id))
-        : t('customerView.customerInvoice.noInvoice')}
+      {invoices.length > 0 ? (
+        invoices.map((invoice, id) => renderInvoice(invoice, id))
+      ) : (
+        <CardBody>{t('customerView.customerInvoice.noInvoice')}</CardBody>
+      )}
     </Card>
   );
 };
