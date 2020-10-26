@@ -32,7 +32,7 @@ export interface UnmarkedWsNoticeViewProps {
   order: Order | null;
   refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
-  isDeleteNoticeLoading: boolean;
+  isDeletingNotice: boolean;
   isCreateLeaseLoading: boolean;
   isDeleteLeaseLoading: boolean;
   handleCreateLease(): void;
@@ -55,7 +55,7 @@ const UnmarkedWsNoticeView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
-  isDeleteNoticeLoading,
+  isDeletingNotice,
   isCreateLeaseLoading,
   isDeleteLeaseLoading,
   handleUnlinkCustomer,
@@ -75,7 +75,7 @@ const UnmarkedWsNoticeView = ({
         customerId={noticeDetails.customerId}
         handleUnlinkCustomer={handleUnlinkCustomer}
         handleDeleteApplication={handleDeleteNotice}
-        isDeleteApplicationLoading={isDeleteNoticeLoading}
+        isDeletingApplication={isDeletingNotice}
       />
 
       {customerProfile ? (

@@ -148,6 +148,7 @@ export enum ProductServiceType {
   LIGHTING = "LIGHTING",
   MOORING = "MOORING",
   PARKING_PERMIT = "PARKING_PERMIT",
+  STORAGE_ON_ICE = "STORAGE_ON_ICE",
   SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT = "SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT",
   SUMMER_STORAGE_FOR_TRAILERS = "SUMMER_STORAGE_FOR_TRAILERS",
   WASTE_COLLECTION = "WASTE_COLLECTION",
@@ -323,6 +324,11 @@ export interface CreateWinterStorageLeaseMutationInput {
 export interface CreateWinterStorageProductMutationInput {
   priceValue: any;
   winterStorageAreaId?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface DeleteBerthApplicationMutationInput {
+  id: string;
   clientMutationId?: string | null;
 }
 

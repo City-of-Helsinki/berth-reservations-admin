@@ -20,6 +20,10 @@
 }
 
 .actionsRight {
-  text-align: right;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: units(1);
   grid-area: r;
+  text-align: right;
 }

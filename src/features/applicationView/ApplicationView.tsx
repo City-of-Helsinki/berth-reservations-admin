@@ -28,9 +28,11 @@ export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   berthApplication: LinkApplicationToCustomerContainerProps['application'];
   customerProfile: CustomerProfileCardProps | null;
+  isDeletingApplication: boolean;
+  isDeletingLease: boolean;
   leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
-  isDeletingLease: boolean;
+  handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
@@ -41,13 +43,15 @@ const ApplicationView = ({
   applicationDetails,
   berthApplication,
   customerProfile,
-  leaseDetails,
-  refetchQueries,
-  isDeletingLease,
+  handleDeleteApplication,
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
   handleUnlinkCustomer,
+  isDeletingApplication,
+  isDeletingLease,
+  leaseDetails,
+  refetchQueries,
 }: ApplicationViewProps) => {
   const { t } = useTranslation();
 
@@ -56,15 +60,17 @@ const ApplicationView = ({
       <PageTitle title={t('applicationView.title')} />
 
       <ApplicationHeader
+        createdAt={applicationDetails.createdAt}
+        customerId={applicationDetails.customerId}
+        handleDeleteApplication={handleDeleteApplication}
+        handleUnlinkCustomer={handleUnlinkCustomer}
+        isDeletingApplication={isDeletingApplication}
+        status={applicationDetails.status}
         text={
           applicationDetails.berthSwitch !== null
             ? t('applicationList.applicationType.switchApplication')
             : t('applicationList.applicationType.newApplication')
         }
-        createdAt={applicationDetails.createdAt}
-        status={applicationDetails.status}
-        customerId={applicationDetails.customerId}
-        handleUnlinkCustomer={handleUnlinkCustomer}
       />
 
       {customerProfile ? (
