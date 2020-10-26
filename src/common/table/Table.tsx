@@ -241,8 +241,8 @@ const Table = <D extends { id: string }>({
     useFlexLayout,
     useSortBy,
     useExpanded,
-    useRowSelect,
-    usePagination
+    usePagination,
+    useRowSelect
   );
 
   const resetSelectedRows = useCallback(() => {
