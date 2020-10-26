@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
+import { toast } from 'react-toastify';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -8,7 +9,7 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { ApplicationData } from './utils';
+import { ApplicationData, getDraftedOffers } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
@@ -17,6 +18,13 @@ import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
 import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
+import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import hdsToast from '../../common/toast/hdsToast';
+
+interface Order {
+  orderId: string;
+  email: string;
+}
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
@@ -26,6 +34,7 @@ export interface ApplicationListProps {
   onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
   sortBy: SortingRule<ApplicationData>[];
   isDeleting: boolean;
+  isSubmittingApproveOrders: boolean;
   loading: boolean;
   onlySwitchApps?: boolean;
   pageIndex: number;
@@ -34,6 +43,7 @@ export interface ApplicationListProps {
   count?: number;
   statusFilter?: ApplicationStatus;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  handleApproveOrders(orders: Order[]): Promise<void>;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -45,6 +55,8 @@ const ApplicationList = ({
   handleDeleteLease,
   sortBy,
   onSortedColsChange,
+  isSubmittingApproveOrders,
+  handleApproveOrders,
   isDeleting,
   loading,
   onlySwitchApps,
@@ -172,18 +184,44 @@ const ApplicationList = ({
             />
           );
         }}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => {
+          let toastId;
+          if (selectedRows.some((row) => row.status !== ApplicationStatus.OFFER_GENERATED))
+            toastId = hdsToast({
+              type: 'error',
+              toastId: 'multiApplicationsError',
+              labelText: 'applicationList.errors.unhandledApplications.label',
+              text: 'applicationList.errors.unhandledApplications.description',
+              translated: true,
+            });
+          else toast.dismiss(toastId);
+
+          const offers = getDraftedOffers(selectedRows);
+          const offersWithoutPlacesCount = selectedRows.filter((row) => !row.lease).length;
+
+          return (
+            <>
+              <ApplicationListTools
+                offersCount={offers.length}
+                offersWithoutPlacesCount={offersWithoutPlacesCount}
+                selectedApplicationsCount={selectedRows.length}
+                isSubmitting={isSubmittingApproveOrders}
+                clearSelectedRows={resetSelectedRows}
+                handleApproveOrders={() => handleApproveOrders(offers)}
+              />
+              <ApplicationStateTableTools
+                count={count}
+                statusFilter={statusFilter}
+                onStatusFilterChange={onStatusFilterChange}
+              />
+            </>
+          );
+        }}
         renderTableToolsBottom={() => (
           <Pagination
             forcePage={pageIndex}
             pageCount={getPageCount(data?.berthApplications?.count)}
             onPageChange={({ selected }) => goToPage(selected)}
-          />
-        )}
-        renderTableToolsTop={() => (
-          <ApplicationStateTableTools
-            count={count}
-            statusFilter={statusFilter}
-            onStatusFilterChange={onStatusFilterChange}
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
