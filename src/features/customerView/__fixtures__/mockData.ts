@@ -24,6 +24,7 @@ export const emptyMockProfile: CUSTOMER_PROFILE = {
 
 export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
   {
+    orderNumber: 'MOCK-INVOICE',
     status: OrderStatus.WAITING,
     berthInformation: {
       number: '1',

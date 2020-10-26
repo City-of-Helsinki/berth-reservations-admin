@@ -28,6 +28,7 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
       </Text>
 
       <Section>
+        <LabelValuePair label={t('common.terminology.orderNumber')} value={invoice.orderNumber} />
         <LabelValuePair
           label={t('customerView.customerInvoice.invoiceType')}
           value={

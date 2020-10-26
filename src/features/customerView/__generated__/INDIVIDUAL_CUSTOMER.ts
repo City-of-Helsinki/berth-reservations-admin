@@ -313,6 +313,7 @@ export type INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease = INDIVIDUAL_CUS
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node {
   __typename: "OrderNode";
+  orderNumber: string;
   dueDate: any;
   totalPrice: any;
   price: any;

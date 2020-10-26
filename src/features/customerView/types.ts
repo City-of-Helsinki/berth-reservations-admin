@@ -106,6 +106,7 @@ export type OrderLine = {
 };
 
 export type Invoice = {
+  orderNumber?: string;
   status: OrderStatus;
   contractPeriod: {
     startDate: string;
