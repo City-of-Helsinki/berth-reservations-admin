@@ -30,13 +30,13 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
         <Section
           title={
             isBerthInvoice(invoice)
-              ? t('customerView.customerInvoice.berthRental')
-              : t('customerView.customerInvoice.winterStorageRental')
+              ? t('common.terminology.berthRent').toUpperCase()
+              : t('common.terminology.winterStoragePlaceRent').toUpperCase()
           }
         >
           {isBerthInvoice(invoice) && (
             <LabelValuePair
-              label={t('customerView.customerInvoice.berthPlace')}
+              label={t('common.terminology.berth')}
               value={
                 invoice.berthInformation.harborName +
                 ' ' +
@@ -48,7 +48,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
           )}
           {isWinterStorageInvoice(invoice) && (
             <LabelValuePair
-              label={t('customerView.customerInvoice.winterStorageArea')}
+              label={t('common.terminology.winterStorageArea')}
               value={invoice.winterStorageInformation.winterStorageAreaName}
             />
           )}
@@ -67,7 +67,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
         <Section className={styles.feesSection}>
           <LabelValuePair
             align="right"
-            label={t('customerView.customerInvoice.basicFee')}
+            label={t('common.terminology.basePrice')}
             value={formatPrice(invoice.basePrice, i18n.language)}
           />
           {invoice.orderLines.map((orderLine, id) => (
@@ -86,7 +86,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
         <Section className={styles.feesSection}>
           <LabelValuePair
             align="right"
-            label={t('customerView.customerInvoice.total')}
+            label={t('common.total').toUpperCase()}
             value={formatPrice(invoice.totalPrice, i18n.language)}
           />
         </Section>
@@ -99,7 +99,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
 
   return (
     <Card>
-      <CardHeader title={t('customerView.customerInvoice.title')} />
+      <CardHeader title={t('common.terminology.openInvoices').toUpperCase()} />
       {invoices.length > 0 ? (
         invoices.map((invoice, id) => renderInvoice(invoice, id))
       ) : (

@@ -24,21 +24,19 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
   return (
     <Modal toggleModal={() => toggleModal?.(false)} {...modalProps}>
       <Text as="h4" color="brand" className={styles.heading}>
-        {t('customerView.customerInvoice.invoice')}
+        {t('common.terminology.invoice').toUpperCase()}
       </Text>
 
       <Section>
         <LabelValuePair
           label={t('customerView.customerInvoice.invoiceType')}
           value={
-            isBerthInvoice(invoice)
-              ? t('customerView.customerInvoice.berthInvoice')
-              : t('customerView.customerInvoice.winterStorageInvoice')
+            isBerthInvoice(invoice) ? t('common.terminology.berthRent') : t('common.terminology.winterStoragePlaceRent')
           }
         />
         {isBerthInvoice(invoice) && (
           <LabelValuePair
-            label={t('customerView.customerInvoice.berthPlace')}
+            label={t('common.terminology.berth')}
             value={
               invoice.berthInformation.harborName +
               ' ' +
@@ -50,7 +48,7 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
         )}
         {isWinterStorageInvoice(invoice) && (
           <LabelValuePair
-            label={t('customerView.customerInvoice.winterStorageArea')}
+            label={t('common.terminology.winterStorageArea')}
             value={invoice.winterStorageInformation.winterStorageAreaName}
           />
         )}
@@ -75,7 +73,7 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
 
       <Section>
         <LabelValuePair
-          label={t('customerView.customerInvoice.basicFee')}
+          label={t('common.terminology.basePrice')}
           value={formatPrice(invoice.basePrice, i18n.language)}
         />
         {invoice.orderLines.map((orderLine, id) => (
@@ -95,13 +93,13 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
 
       <Section>
         <LabelValuePair
-          label={t('customerView.customerInvoice.total')}
+          label={t('common.total').toUpperCase()}
           value={formatPrice(invoice.totalPrice, i18n.language)}
         />
       </Section>
 
       <div className={styles.closeButtonContainer}>
-        <Button onClick={() => toggleModal?.(false)}>{t('customerView.customerInvoice.closeModal')}</Button>
+        <Button onClick={() => toggleModal?.(false)}>{t('common.close')}</Button>
       </div>
     </Modal>
   );

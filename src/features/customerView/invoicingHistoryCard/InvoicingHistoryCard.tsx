@@ -43,15 +43,15 @@ const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
         {invoices.length > 0 ? (
-          <Section title={t('customerView.invoicingHistory.sectionTitle')}>
+          <Section title={t('common.terminology.invoices').toUpperCase()}>
             <Grid colsCount={4}>
               {invoices.map((invoice, id) => (
                 <React.Fragment key={id}>
                   <button onClick={() => onClick(invoice)} className={styles.gridItem}>
                     <Text color="brand">
                       {isBerthInvoice(invoice)
-                        ? t('customerView.invoicingHistory.berthInvoice')
-                        : t('customerView.invoicingHistory.winterStorageInvoice')}
+                        ? t('common.terminology.berthRent')
+                        : t('common.terminology.winterStoragePlaceRent')}
                     </Text>
                   </button>
                   <div className={styles.gridItem}>
