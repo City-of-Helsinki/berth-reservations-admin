@@ -16,7 +16,7 @@ const queryMock = {
     variables: {
       first: 10,
       after: undefined,
-      orderBy: 'createdAt',
+      orderBy: undefined,
     },
   },
   result: {
