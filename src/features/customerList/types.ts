@@ -19,7 +19,7 @@ export interface CustomerData {
   postalCode?: string;
   comment: string | null;
   berthsColumnData: string;
-  billsColumnData: string;
+  invoicesColumnData: string;
   boatsColumnData: string;
   boats: CustomerListBoat[];
   applications: CustomerListApplication[];
@@ -47,7 +47,7 @@ export interface CustomerListApplication {
   createdAt: string;
 }
 
-export interface CustomerListBill {
+export interface CustomerListInvoice {
   id: string;
   date: string;
 }

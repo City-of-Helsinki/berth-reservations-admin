@@ -8,7 +8,7 @@ import { CustomerGroup } from '../../../@types/__generated__/globalTypes';
 import {
   CustomerListApplication,
   CustomerListBerthLeases,
-  CustomerListBill,
+  CustomerListInvoice,
   CustomerListBoat,
   CustomerListWinterStoragePlaces,
 } from '../types';
@@ -26,7 +26,7 @@ export interface CustomerDetailsProps {
   winterStoragePlaces: CustomerListWinterStoragePlaces[];
   boats: CustomerListBoat[];
   applications: CustomerListApplication[];
-  bills: CustomerListBill[];
+  invoices: CustomerListInvoice[];
   comment: string | null;
   customerGroup: CustomerGroup | null;
 }
@@ -42,7 +42,7 @@ const CustomerDetails = ({
   winterStoragePlaces,
   boats,
   applications,
-  bills,
+  invoices,
   comment,
   customerGroup,
 }: CustomerDetailsProps) => {
@@ -92,9 +92,9 @@ const CustomerDetails = ({
               <div key={application.id}>{formatDate(application.createdAt, i18n.language)}</div>
             ))}
           </Section>
-          <Section title={t('common.terminology.bills').toUpperCase()}>
-            {bills.map((bill) => (
-              <div key={bill.id}>{bill.date}</div>
+          <Section title={t('common.terminology.invoices').toUpperCase()}>
+            {invoices.map((invoice) => (
+              <div key={invoice.id}>{invoice.date}</div>
             ))}
           </Section>
         </div>

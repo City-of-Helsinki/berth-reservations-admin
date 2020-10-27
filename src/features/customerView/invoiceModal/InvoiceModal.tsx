@@ -2,76 +2,82 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Modal, { ModalProps } from '../../../common/modal/Modal';
-import { isBerthBill } from '../utils';
+import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
 import Section from '../../../common/section/Section';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import { getOrderStatusTKey, getProductServiceTKey } from '../../../common/utils/translations';
 import Text from '../../../common/text/Text';
-import styles from './billModal.module.scss';
-import { Bill } from '../types';
+import styles from './invoiceModal.module.scss';
+import { Invoice } from '../types';
 import { PriceUnits } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 
-interface BillModalProps extends Omit<ModalProps, 'children'> {
-  bill: Bill;
+interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
+  invoice: Invoice;
 }
 
-const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
+const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps) => {
   const { t, i18n } = useTranslation();
 
-  const { contractPeriod } = bill;
+  const { contractPeriod } = invoice;
   return (
     <Modal toggleModal={() => toggleModal?.(false)} {...modalProps}>
       <Text as="h4" color="brand" className={styles.heading}>
-        {t('customerView.customerBill.bill')}
+        {t('common.terminology.invoice').toUpperCase()}
       </Text>
 
       <Section>
+        <LabelValuePair label={t('common.terminology.orderNumber')} value={invoice.orderNumber} />
         <LabelValuePair
-          label={t('customerView.customerBill.billType')}
+          label={t('customerView.customerInvoice.invoiceType')}
           value={
-            isBerthBill(bill)
-              ? t('customerView.customerBill.berthBill')
-              : t('customerView.customerBill.winterStorageBill')
+            isBerthInvoice(invoice) ? t('common.terminology.berthRent') : t('common.terminology.winterStoragePlaceRent')
           }
         />
-        {isBerthBill(bill) ? (
+        {isBerthInvoice(invoice) && (
           <LabelValuePair
-            label={t('customerView.customerBill.berthPlace')}
+            label={t('common.terminology.berth')}
             value={
-              bill.berthInformation.harborName +
+              invoice.berthInformation.harborName +
               ' ' +
-              bill.berthInformation.pierIdentifier +
+              invoice.berthInformation.pierIdentifier +
               ' ' +
-              bill.berthInformation.number
+              invoice.berthInformation.number
             }
           />
-        ) : (
-          'PLACEHOLDER' // TODO
+        )}
+        {isWinterStorageInvoice(invoice) && (
+          <LabelValuePair
+            label={t('common.terminology.winterStorageArea')}
+            value={invoice.winterStorageInformation.winterStorageAreaName}
+          />
         )}
         <LabelValuePair
-          label={t('customerView.customerBill.contractPeriod')}
+          label={t('customerView.customerInvoice.contractPeriod')}
           value={`${formatDate(contractPeriod.startDate, i18n.language)} - ${formatDate(
             contractPeriod.endDate,
             i18n.language
           )}`}
         />
         <LabelValuePair
-          label={t('customerView.customerBill.dueDate')}
-          value={formatDate(bill.dueDate, i18n.language)}
+          label={t('customerView.customerInvoice.dueDate')}
+          value={formatDate(invoice.dueDate, i18n.language)}
         />
-        <LabelValuePair label={t('customerView.customerBill.status')} value={t(getOrderStatusTKey(bill.status))} />
+        <LabelValuePair
+          label={t('customerView.customerInvoice.status')}
+          value={t(getOrderStatusTKey(invoice.status))}
+        />
       </Section>
 
       <hr className={styles.divider} />
 
       <Section>
         <LabelValuePair
-          label={t('customerView.customerBill.basicFee')}
-          value={formatPrice(bill.basePrice, i18n.language)}
+          label={t('common.terminology.basePrice')}
+          value={formatPrice(invoice.basePrice, i18n.language)}
         />
-        {bill.orderLines.map((orderLine, id) => (
+        {invoice.orderLines.map((orderLine, id) => (
           <LabelValuePair
             label={t(getProductServiceTKey(orderLine.product))}
             value={
@@ -88,16 +94,16 @@ const BillModal = ({ bill, toggleModal, ...modalProps }: BillModalProps) => {
 
       <Section>
         <LabelValuePair
-          label={t('customerView.customerBill.total')}
-          value={formatPrice(bill.totalPrice, i18n.language)}
+          label={t('common.total').toUpperCase()}
+          value={formatPrice(invoice.totalPrice, i18n.language)}
         />
       </Section>
 
       <div className={styles.closeButtonContainer}>
-        <Button onClick={() => toggleModal?.(false)}>{t('customerView.customerBill.closeModal')}</Button>
+        <Button onClick={() => toggleModal?.(false)}>{t('common.close')}</Button>
       </div>
     </Modal>
   );
 };
 
-export default BillModal;
+export default InvoiceModal;

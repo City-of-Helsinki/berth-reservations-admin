@@ -105,12 +105,23 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 }
               }
             }
+            section {
+              properties {
+                area {
+                  id
+                  properties {
+                    name
+                  }
+                }
+              }
+            }
           }
         }
       }
       orders {
         edges {
           node {
+            orderNumber
             dueDate
             totalPrice
             price
@@ -156,6 +167,16 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                         properties {
                           name
                         }
+                      }
+                    }
+                  }
+                }
+                section {
+                  properties {
+                    area {
+                      id
+                      properties {
+                        name
                       }
                     }
                   }

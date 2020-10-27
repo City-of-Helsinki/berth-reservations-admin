@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BillingHistoryCard renders correctly 1`] = `
+exports[`InvoicingHistoryCard renders correctly 1`] = `
 <div
   class="card"
 >
@@ -57,11 +57,15 @@ exports[`BillingHistoryCard renders correctly 1`] = `
               191,70 €
             </span>
           </div>
-          <span
-            class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX warning"
+          <div
+            class="gridItem"
           >
-            Odottaa maksua
-          </span>
+            <span
+              class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX warning"
+            >
+              Odottaa maksua
+            </span>
+          </div>
         </div>
       </section>
     </article>

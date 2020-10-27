@@ -128,7 +128,7 @@ const EditForm: React.FC<EditFormProps> = ({
         <form className={styles.editForm} onSubmit={handleSubmit}>
           <div>
             <Text as="h4" color="brand" size="m" uppercase>
-              {t('offer.billing.additionalServices')}
+              {t('offer.invoicing.additionalServices')}
             </Text>
             <List noBullets>
               {products?.map(({ id, label, price }, i) => (

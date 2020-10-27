@@ -13,14 +13,14 @@ import {
   getBoats,
   getApplications,
   getCustomerProfile,
-  getBills,
+  getInvoices,
   getWinterStorageLeases,
 } from './utils';
-import { Bill, Boat } from './types';
+import { Invoice, Boat } from './types';
 import { OrderStatus } from '../../@types/__generated__/globalTypes';
 import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
-import BillModal from './billModal/BillModal';
+import InvoiceModal from './invoiceModal/InvoiceModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 
@@ -28,7 +28,7 @@ const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
-  const [openBill, setOpenBill] = useState<Bill>();
+  const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
@@ -46,26 +46,26 @@ const CustomerViewContainer = () => {
     );
 
   const applications = getApplications(data.profile, data.boatTypes || []);
-  const bills = getBills(data.profile);
+  const invoices = getInvoices(data.profile);
   const boats = getBoats(data.profile);
   const { boatTypes } = data;
   const customerProfile = getCustomerProfile(data.profile);
   const leases = [...getBerthLeases(data.profile), ...getWinterStorageLeases(data.profile)];
-  const openBills = bills.filter((bill) => bill.status === OrderStatus.WAITING);
+  const openInvoices = invoices.filter((invoice) => invoice.status === OrderStatus.WAITING);
 
   return (
     <>
       <CustomerView
         applications={applications}
-        bills={bills}
+        invoices={invoices}
         boats={boats}
         customerProfile={customerProfile}
         handleEditCustomer={() => setEditCustomer(true)}
         leases={leases}
         onClickCreateBoat={() => setCreatingBoat(true)}
-        openBills={openBills}
+        openInvoices={openInvoices}
         setBoatToEdit={setBoatToEdit}
-        setOpenBill={setOpenBill}
+        setOpenInvoice={setOpenInvoice}
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
@@ -100,7 +100,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      {openBill && <BillModal isOpen bill={openBill} toggleModal={() => setOpenBill(undefined)} />}
+      {openInvoice && <InvoiceModal isOpen invoice={openInvoice} toggleModal={() => setOpenInvoice(undefined)} />}
     </>
   );
 };

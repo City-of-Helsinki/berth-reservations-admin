@@ -105,7 +105,8 @@ export type OrderLine = {
   priceValue: number;
 };
 
-export type Bill = {
+export type Invoice = {
+  orderNumber?: string;
   status: OrderStatus;
   contractPeriod: {
     startDate: string;
@@ -117,7 +118,7 @@ export type Bill = {
   orderLines: OrderLine[];
 };
 
-export type BerthBill = Bill & {
+export type BerthInvoice = Invoice & {
   berthInformation: {
     number: string;
     pierIdentifier: string;
@@ -125,7 +126,7 @@ export type BerthBill = Bill & {
   };
 };
 
-export type WinterStorageBill = Bill & {
+export type WinterStorageInvoice = Invoice & {
   winterStorageInformation: {
     winterStorageAreaName: string;
   };

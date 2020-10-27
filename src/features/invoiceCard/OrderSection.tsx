@@ -20,10 +20,10 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
   } = useTranslation();
 
   return (
-    <Section title={`${t('offer.billing.title').toUpperCase()}: ${order.orderNumber}`}>
+    <Section title={`${t('common.terminology.orderNumber').toUpperCase()}: ${order.orderNumber}`}>
       <Section>
         <LabelValuePair
-          label={t('offer.billing.basePrice')}
+          label={t('common.terminology.basePrice')}
           value={formatPrice(order.price, language)}
           align={'right'}
         />
@@ -38,7 +38,7 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
       </Section>
       <Section>
         <LabelValuePair
-          label={t('offer.billing.additionalServices')}
+          label={t('offer.invoicing.additionalServices')}
           value={
             <button onClick={() => editAdditionalServices()}>
               <Text color="brand">{t('common.edit')}</Text>
@@ -58,7 +58,7 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
       <hr />
       <Section>
         <LabelValuePair
-          label={t('offer.billing.total').toUpperCase()}
+          label={t('common.total').toUpperCase()}
           value={formatPrice(order.totalPrice, language)}
           align={'right'}
         />

@@ -74,7 +74,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
     },
     {
       Header: t('customerList.tableHeaders.invoice') || '',
-      accessor: 'billsColumnData',
+      accessor: 'invoicesColumnData',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
     },
@@ -107,7 +107,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
               winterStoragePlaces={[]}
               boats={row.original.boats}
               applications={row.original.applications}
-              bills={[]}
+              invoices={[]}
               comment={row.original.comment}
               customerGroup={row.original.customerGroup}
             />
