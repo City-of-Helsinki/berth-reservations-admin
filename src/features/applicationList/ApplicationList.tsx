@@ -185,8 +185,11 @@ const ApplicationList = ({
           );
         }}
         renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => {
+          const offers = getDraftedOffers(selectedRows);
+          const offersWithoutPlacesCount = selectedRows.filter((row) => !row.lease).length;
+
           let toastId;
-          if (selectedRows.some((row) => row.status !== ApplicationStatus.OFFER_GENERATED))
+          if (offersWithoutPlacesCount > 0)
             toastId = hdsToast({
               type: 'error',
               toastId: 'multiApplicationsError',
@@ -195,9 +198,6 @@ const ApplicationList = ({
               translated: true,
             });
           else toast.dismiss(toastId);
-
-          const offers = getDraftedOffers(selectedRows);
-          const offersWithoutPlacesCount = selectedRows.filter((row) => !row.lease).length;
 
           return (
             <>

@@ -63,7 +63,6 @@ const ApplicationListContainer = () => {
   const { loading, data } = useQuery<BERTH_APPLICATIONS, BERTH_APPLICATIONS_VARS>(BERTH_APPLICATIONS_QUERY, {
     fetchPolicy: 'no-cache',
     variables: berthApplicationsVars,
-    // fetchPolicy: 'no-cache',
   });
 
   const [deleteDraftedApplication, { loading: isDeleting }] = useDeleteBerthApplication();
