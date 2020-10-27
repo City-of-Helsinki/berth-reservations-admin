@@ -39,17 +39,10 @@ const Pricing = ({
   return (
     <PageContent className={styles.pricing}>
       <PageTitle title={t('pricing.title')} />
-      <div className={styles.grid}>
-        <BerthPricing
-          className={styles.fullWidth}
-          data={berthsData}
-          loading={loading}
-          refetchQueries={refetchQueries}
-        />
-        <WinterStoragePricing className={styles.fullWidth} data={winterStorageData} loading={loading} />
-        <HarborServicePricing data={harborServicesData} loading={loading} />
-        <AdditionalServicePricing {...additionalServicesModal} data={additionalServicesData} loading={loading} />
-      </div>
+      <BerthPricing data={berthsData} loading={loading} refetchQueries={refetchQueries} />
+      <WinterStoragePricing data={winterStorageData} loading={loading} />
+      <HarborServicePricing data={harborServicesData} loading={loading} />
+      <AdditionalServicePricing {...additionalServicesModal} data={additionalServicesData} loading={loading} />
     </PageContent>
   );
 };
