@@ -63,7 +63,10 @@ const WinterStorageApplicationListContainer = () => {
       sortBy={sortBy}
       count={data?.winterStorageApplications?.count}
       statusFilter={statusFilter}
-      onStatusFilterChange={setStatusFilter}
+      onStatusFilterChange={(statusFilter) => {
+        setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
     />
   );
 };

@@ -11,6 +11,69 @@ exports[`ApplicationListContainer renders normally 1`] = `
   </h2>
   <div>
     <div
+      class="container"
+    >
+      <span>
+        Tuloksien lukumäärä: 0
+      </span>
+      <div
+        class="Dropdown-module_root__3ro8_ select select"
+      >
+        <label
+          class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+          for="hds-toggle-button"
+          id="hds-label"
+        >
+          Hakemuksen tila
+        </label>
+        <div
+          class="Dropdown-module_wrapper__1sFxz"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hds-label hds-toggle-button"
+            class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
+            id="hds-toggle-button"
+            type="button"
+          >
+            <span
+              class="Dropdown-module_buttonLabel__3y4eg"
+            >
+              Kaikki
+            </span>
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+        <ul
+          aria-labelledby="hds-label"
+          class="Dropdown-module_menu__3xwA0 Dropdown-module_overflow__3tPgF"
+          id="hds-menu"
+          role="listbox"
+          style="max-height: calc(var(--dropdown-height) * 5);"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+    <div
       class="tableWrapper"
     >
       <div
@@ -105,7 +168,7 @@ exports[`ApplicationListContainer renders normally 1`] = `
                 class="sortArrowWrapper isSorted"
               >
                 <svg
-                  class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow"
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -174,244 +237,12 @@ exports[`ApplicationListContainer renders normally 1`] = `
         >
           <div
             class="rowWrapper"
+            role="row"
           >
             <div
-              role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              class="tableCell"
             >
-              <div
-                class="tableCell selector"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <div
-                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
-                  style="cursor: pointer;"
-                >
-                  <input
-                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-MOCK-APPLICATION-0"
-                    title="Toggle Row Selected"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label
-                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-MOCK-APPLICATION-0"
-                  />
-                </div>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/applications/MOCK-APPLICATION-0"
-                >
-                  Matti Meikäläinen
-                </a>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              >
-                Vaihto
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-              >
-                16.07.2020
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              >
-                0
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-              >
-                Helsinki
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <span
-                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
-                >
-                  Odottaa käsittelyä
-                </span>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/harbors/MOCK-HARBOR-0"
-                  title="Testisatama G 7"
-                >
-                  Testisatama G 7
-                </a>
-              </div>
-              <div
-                class="tableCell expander"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <div
-                  style="cursor: pointer;"
-                  title="Toggle Row Expanded"
-                >
-                  <svg
-                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                      />
-                      <path
-                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
-                        fill="currentColor"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="rowWrapper"
-          >
-            <div
-              role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
-            >
-              <div
-                class="tableCell selector"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <div
-                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
-                  style="cursor: pointer;"
-                >
-                  <input
-                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-MOCK-APPLICATION-2"
-                    title="Toggle Row Selected"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label
-                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-MOCK-APPLICATION-2"
-                  />
-                </div>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/applications/MOCK-APPLICATION-2"
-                >
-                  Matti Möttönen
-                </a>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              >
-                Uusi
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-              >
-                16.07.2020
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
-              >
-                0
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
-              >
-                Helsinki
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <span
-                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
-                >
-                  Odottaa käsittelyä
-                </span>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
-              />
-              <div
-                class="tableCell expander"
-                role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
-              >
-                <div
-                  style="cursor: pointer;"
-                  title="Toggle Row Expanded"
-                >
-                  <svg
-                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                      />
-                      <path
-                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
-                        fill="currentColor"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
+              Ei tietoja
             </div>
           </div>
         </div>

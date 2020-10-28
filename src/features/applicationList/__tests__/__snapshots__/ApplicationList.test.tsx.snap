@@ -11,6 +11,69 @@ exports[`ApplicationList renders normally with all props 1`] = `
   </h2>
   <div>
     <div
+      class="container"
+    >
+      <span>
+        Tuloksien lukumäärä: 0
+      </span>
+      <div
+        class="Dropdown-module_root__3ro8_ select select"
+      >
+        <label
+          class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+          for="hds-toggle-button"
+          id="hds-label"
+        >
+          Hakemuksen tila
+        </label>
+        <div
+          class="Dropdown-module_wrapper__1sFxz"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hds-label hds-toggle-button"
+            class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
+            id="hds-toggle-button"
+            type="button"
+          >
+            <span
+              class="Dropdown-module_buttonLabel__3y4eg"
+            >
+              Kaikki
+            </span>
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+        <ul
+          aria-labelledby="hds-label"
+          class="Dropdown-module_menu__3xwA0 Dropdown-module_overflow__3tPgF"
+          id="hds-menu"
+          role="listbox"
+          style="max-height: calc(var(--dropdown-height) * 5);"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+    <div
       class="tableWrapper"
     >
       <div
@@ -102,7 +165,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
             >
               PVM
               <div
-                class="sortArrowWrapper isSorted"
+                class="sortArrowWrapper"
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
@@ -514,6 +577,69 @@ exports[`ApplicationList renders normally with minimum props 1`] = `
   </h2>
   <div>
     <div
+      class="container"
+    >
+      <span>
+        Tuloksien lukumäärä: 0
+      </span>
+      <div
+        class="Dropdown-module_root__3ro8_ select select"
+      >
+        <label
+          class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+          for="hds-toggle-button"
+          id="hds-label"
+        >
+          Hakemuksen tila
+        </label>
+        <div
+          class="Dropdown-module_wrapper__1sFxz"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hds-label hds-toggle-button"
+            class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
+            id="hds-toggle-button"
+            type="button"
+          >
+            <span
+              class="Dropdown-module_buttonLabel__3y4eg"
+            >
+              Kaikki
+            </span>
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+        <ul
+          aria-labelledby="hds-label"
+          class="Dropdown-module_menu__3xwA0 Dropdown-module_overflow__3tPgF"
+          id="hds-menu"
+          role="listbox"
+          style="max-height: calc(var(--dropdown-height) * 5);"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+    <div
       class="tableWrapper"
     >
       <div
@@ -605,7 +731,7 @@ exports[`ApplicationList renders normally with minimum props 1`] = `
             >
               PVM
               <div
-                class="sortArrowWrapper isSorted"
+                class="sortArrowWrapper"
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"

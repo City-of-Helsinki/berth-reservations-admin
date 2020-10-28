@@ -63,7 +63,10 @@ const UnmarkedWsNoticeListContainer = () => {
       count={data?.winterStorageNotices?.count}
       onSortedColsChange={handleSortedColsChange}
       statusFilter={statusFilter}
-      onStatusFilterChange={setStatusFilter}
+      onStatusFilterChange={(statusFilter) => {
+        setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
     />
   );
 };

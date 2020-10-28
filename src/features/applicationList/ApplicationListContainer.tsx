@@ -87,7 +87,10 @@ const ApplicationListContainer = () => {
       tableData={tableData}
       count={data?.berthApplications?.count}
       statusFilter={statusFilter}
-      onStatusFilterChange={setStatusFilter}
+      onStatusFilterChange={(statusFilter) => {
+        setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
     />
   );
 };

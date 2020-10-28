@@ -2,6 +2,8 @@ import { Selector } from 'testcafe';
 
 export const customers = {
   customerList: {
+    table: Selector('div[class^="table_tableWrapper"]'),
+    searchInput: Selector('input[id="searchSimilarCustomers"]'),
     firstCustomerLink: Selector('div[class^="pageContent"] div[class^="table_rowWrapper"]:first-of-type a'),
     selectAllToggle: Selector('div[class^="table_headerCell"] div input[type^="checkbox"]'),
     selectFirstCustomer: Selector('div[class^="table_rowWrapper"] div input[type^="checkbox"]').nth(0),

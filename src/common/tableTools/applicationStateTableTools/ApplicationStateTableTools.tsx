@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Select from '../../select/Select';
-import { APPLICATION_STATUS } from '../../utils/consonants';
+import { APPLICATION_STATUS } from '../../utils/constants';
 import styles from './applicationStateTableTools.module.scss';
 
 interface ApplicationStateTableToolsProps {
