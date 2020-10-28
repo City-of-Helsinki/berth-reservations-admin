@@ -267,7 +267,7 @@
       "comment": "Huomiot"
     },
     "sendMultiOffers": {
-      "title": "Lähetä Tarjous",
+      "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",
       "berthOffers": "Venepaikkatarjouksia",
       "offersWithoutPlaces": "Hakemuksia ilman paikkaa",
@@ -327,7 +327,7 @@
     "title": "Venepaikkahakemukset",
     "winterStorageTitle": "Talvisäilytyspaikkahakemukset",
     "tools": {
-      "sendOffer": "Lähteä tarjous",
+      "sendOffer": "Lähetä tarjous",
       "selectedRow": "{{count}} rivi valittu",
       "selectedRow_plural": "{{count}} riviä valittu",
       "clearSelectedRows": "Tyhjennä valinnat"
