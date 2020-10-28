@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
+import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICE
@@ -111,6 +111,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease_order 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease {
   __typename: "WinterStorageLeaseNode";
   id: string;
+  status: LeaseStatus;
   customer: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease_customer;
   order: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease_order | null;
 }

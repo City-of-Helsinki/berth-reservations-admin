@@ -148,6 +148,7 @@ export enum ProductServiceType {
   LIGHTING = "LIGHTING",
   MOORING = "MOORING",
   PARKING_PERMIT = "PARKING_PERMIT",
+  STORAGE_ON_ICE = "STORAGE_ON_ICE",
   SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT = "SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT",
   SUMMER_STORAGE_FOR_TRAILERS = "SUMMER_STORAGE_FOR_TRAILERS",
   WASTE_COLLECTION = "WASTE_COLLECTION",
@@ -190,11 +191,25 @@ export interface ApproveOrderMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface AssignNewStickerNumberMutationInput {
+  leaseId: string;
+  clientMutationId?: string | null;
+}
+
 export interface CreateAdditionalContactPersonInput {
   firstName: string;
   lastName: string;
   phone: string;
   email: string;
+}
+
+export interface CreateAdditionalProductMutationInput {
+  service: ProductServiceType;
+  period: PeriodType;
+  priceValue: any;
+  priceUnit?: PriceUnits | null;
+  taxPercentage?: AdditionalProductTaxEnum | null;
+  clientMutationId?: string | null;
 }
 
 export interface CreateAddressInput {
@@ -312,6 +327,11 @@ export interface CreateWinterStorageProductMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface DeleteBerthApplicationMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface DeleteBerthLeaseMutationInput {
   id: string;
   clientMutationId?: string | null;
@@ -399,7 +419,7 @@ export interface UpdateAddressInput {
 }
 
 export interface UpdateBerthApplicationInput {
-  customerId: string;
+  customerId?: string | null;
   id: string;
   clientMutationId?: string | null;
 }
@@ -541,7 +561,7 @@ export interface UpdateProfileMutationInput {
 }
 
 export interface UpdateWinterStorageApplicationInput {
-  customerId: string;
+  customerId?: string | null;
   id: string;
   clientMutationId?: string | null;
 }

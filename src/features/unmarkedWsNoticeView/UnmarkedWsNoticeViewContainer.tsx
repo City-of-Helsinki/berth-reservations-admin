@@ -60,7 +60,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     },
   ];
 
-  const [deleteNotice, { loading: isDeleteNoticeLoading }] = useMutation<
+  const [deleteNotice, { loading: isDeletingNotice }] = useMutation<
     DELETE_UNMARKED_WINTER_STORAGE_NOTICE,
     DELETE_UNMARKED_WINTER_STORAGE_NOTICE_VARS
   >(DELETE_UNMARKED_WINTER_STORAGE_NOTICE_MUTATION, {
@@ -92,6 +92,7 @@ const UnmarkedWsNoticeViewContainer = () => {
 
   const noticeDetails = getNoticeDetailsData(data.winterStorageNotice, data.boatTypes || []);
   const order = data.winterStorageNotice?.lease?.order ? getOrder(data.winterStorageNotice.lease.order) : null;
+  const leaseStatus = data.winterStorageNotice?.lease?.status ?? null;
 
   const handleDeleteNotice = () =>
     deleteNotice({
@@ -103,7 +104,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     }).then(() => {
       history.replace('/unmarked-ws-notices');
       hdsToast({
-        type: 'notification',
+        type: 'info',
         labelText: 'toast.noticeDeleted.label',
         text: 'toast.noticeDeleted.description',
         translated: true,
@@ -115,6 +116,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         input: { id, customerId },
       },
     });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
   const handleCreateLease = () => {
     const options = {
       variables: {
@@ -147,13 +149,15 @@ const UnmarkedWsNoticeViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
-        isDeleteNoticeLoading={isDeleteNoticeLoading}
+        isDeletingNotice={isDeletingNotice}
         isCreateLeaseLoading={isCreateLeaseLoading}
         isDeleteLeaseLoading={isDeleteLeaseLoading}
         noticeDetails={noticeDetails}
         order={order}
+        leaseStatus={leaseStatus}
         refetchQueries={refetchQueries}
         winterStorageNotice={data.winterStorageNotice}
+        handleUnlinkCustomer={handleUnlinkCustomer}
       />
 
       {customerProfile && (

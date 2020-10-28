@@ -3,8 +3,8 @@
 @import 'z-index';
 
 $rows-spacing: units(0.25);
-$cell-padding-vertical: units(0.5);
-$cell-padding-horizontal: units(1);
+$cell-padding-vertical: units(0.25);
+$cell-padding-horizontal: units(0.5);
 $transition-duration: 300ms;
 $placeholder-bg-size: 1000px;
 
@@ -43,7 +43,8 @@ $placeholder-bg-size: 1000px;
 
     .placeholder {
       height: units(1.5);
-      width: 100%;
+      width: calc(100% - #{units(0.5)});
+      margin: 0 units(0.25);
       background: linear-gradient(90deg, $black-5, $black-10, $black-5);
       background-size: $placeholder-bg-size 100%;
       animation: shimmer 2s ease-in-out infinite;

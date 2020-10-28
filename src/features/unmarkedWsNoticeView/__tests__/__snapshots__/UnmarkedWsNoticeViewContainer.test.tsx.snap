@@ -25,7 +25,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
         Ilmoitus 06.05.2019
       </h2>
       <span
-        class="chip blue"
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_info__3YrAe status-label_hds-status-label--info__J28-H"
       >
         Käsitelty
       </span>
@@ -48,18 +48,22 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
   <div
     class="fullWidth"
   >
-    <div
-      class="Notification-module_notification__2hN3H notification_hds-notification__2DQPN Notification-module_warning__2isNX notification_hds-notification--warning__1t18X"
+    <section
+      aria-atomic="true"
+      aria-label="Notification"
+      class="Notification-module_notification__2hN3H notification_hds-notification__2DQPN Notification-module_alert__1Erry notification_hds-notification--alert__1MV7H"
     >
       <div
-        class="Notification-module_label__1bhNu notification_hds-notification__label__2t1lR"
+        class="Notification-module_content__ZZKvE notification_hds-notification__content__5ylSS"
       >
-        <span
-          aria-hidden="true"
-          class="Notification-module_icon__1ans7 notification_hds-icon__29HQM"
+        <div
+          aria-level="2"
+          class="Notification-module_label__1bhNu notification_hds-notification__label__2t1lR"
+          role="heading"
         >
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Notification-module_iconAttention__3i8Cj undefined"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Notification-module_icon__1ans7 notification_hds-icon__29HQM"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -76,19 +80,15 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
               />
             </g>
           </svg>
-        </span>
-        <span
-          class="Notification-module_labelText__1qBt6 helpers_text-bold__1mCMR helpers_text-md__2Td0C"
-        >
           Hakemusta ei ole liitetty mihinkään asiakkaaseen
-        </span>
+        </div>
+        <div
+          class="Notification-module_body__9BSAD notification_hds-notification__body__3cobH"
+        >
+          Liitä hakemus olemassa olevaan asiakasprofiiliin tai luo uusi asiakasprofiili hakemuksen tiedoilla.
+        </div>
       </div>
-      <div
-        class="Notification-module_bodyText__2seBK notification_hds-notification__body__3cobH helpers_text-body__1PMI3"
-      >
-        Liitä hakemus olemassa olevaan asiakasprofiiliin tai luo uusi asiakasprofiili hakemuksen tiedoilla.
-      </div>
-    </div>
+    </section>
   </div>
   <div
     class="fullWidth"
@@ -97,26 +97,27 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
       class="customersTableTools"
     >
       <div
-        class="Dropdown-module_root__2LI4- select select"
+        class="Dropdown-module_root__3ro8_ select select"
       >
         <div
-          class="Dropdown-module_wrapper__1oIw5"
+          class="Dropdown-module_wrapper__1sFxz"
         >
           <button
             aria-expanded="false"
             aria-haspopup="listbox"
             aria-labelledby="hds-label hds-toggle-button"
-            class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+            class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
             id="hds-toggle-button"
             type="button"
           >
             <span
-              class="Dropdown-module_buttonLabel__2jVRU"
+              class="Dropdown-module_buttonLabel__3y4eg"
             >
-              Sukunimi
+              Sähköposti
             </span>
             <svg
-              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -137,7 +138,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
         </div>
         <ul
           aria-labelledby="hds-label"
-          class="Dropdown-module_menu__3rei6"
+          class="Dropdown-module_menu__3xwA0"
           id="hds-menu"
           role="listbox"
           style="max-height: calc(var(--dropdown-height) * 5);"
@@ -145,16 +146,16 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
         />
       </div>
       <div
-        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6 searchInput"
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq searchInput"
       >
         <div
-          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
         >
           <input
-            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
             id="searchSimilarCustomers"
             type="text"
-            value="test"
+            value="test@test.com"
           />
         </div>
       </div>
@@ -231,6 +232,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -326,6 +328,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
           >
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -382,6 +385,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

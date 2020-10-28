@@ -12,6 +12,7 @@ export interface CustomersTableToolsProps<T> {
   searchVal: string | undefined;
   searchBy: T;
   searchByOptions: Array<{ value: T; label: string }>;
+  canCreateNewCustomer: boolean;
   setSearchVal(val: string): void;
   setSearchBy(val: T): void;
   handleLinkCustomer?(): void;
@@ -23,6 +24,7 @@ const CustomersTableTools = <T extends string>({
   searchVal,
   searchBy,
   searchByOptions,
+  canCreateNewCustomer,
   setSearchVal,
   setSearchBy,
   handleLinkCustomer,
@@ -48,9 +50,11 @@ const CustomersTableTools = <T extends string>({
       <Button disabled={!handleLinkCustomer} onClick={handleLinkCustomer}>
         {t('applicationView.customerTableTools.linkCustomer')}
       </Button>
-      <Button variant="secondary" onClick={handleCreateCustomer}>
-        {t('applicationView.customerTableTools.createNewCustomer')}
-      </Button>
+      {canCreateNewCustomer && (
+        <Button variant="secondary" onClick={handleCreateCustomer}>
+          {t('applicationView.customerTableTools.createNewCustomer')}
+        </Button>
+      )}
     </div>
   );
 };

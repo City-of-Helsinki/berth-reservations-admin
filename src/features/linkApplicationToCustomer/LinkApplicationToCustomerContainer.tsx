@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLazyQuery } from '@apollo/react-hooks';
+import { useLazyQuery, useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 
 import { getFilteredCustomersData } from './utils';
@@ -38,7 +38,7 @@ const LinkApplicationToCustomerContainer = ({
 }: LinkApplicationToCustomerContainerProps) => {
   const { t } = useTranslation();
 
-  const [searchBy, setSearchBy] = useState<SearchBy>(SearchBy.LAST_NAME);
+  const [searchBy, setSearchBy] = useState<SearchBy>(SearchBy.EMAIL);
   const prevSearchBy = usePrevious(searchBy);
   const [searchVal, setSearchVal] = useState<string>('');
   const [debouncedSearchVal] = useDebounce(searchVal, 500, {
@@ -59,12 +59,31 @@ const LinkApplicationToCustomerContainer = ({
     FILTERED_CUSTOMERS_VARS
   >(FILTERED_CUSTOMERS_QUERY, {
     variables: filteredCustomersVars,
+    fetchPolicy: 'no-cache',
+  });
+
+  const exactlyFilteredCustomersVars: FILTERED_CUSTOMERS_VARS = {
+    first: 1,
+    [SearchBy.FIRST_NAME]: application.firstName,
+    [SearchBy.LAST_NAME]: application.lastName,
+    [SearchBy.EMAIL]: application.email,
+  };
+  const { data: exactlyFilteredCustomersData, loading: loadingExactlyFilteredCustomers } = useQuery<
+    FILTERED_CUSTOMERS,
+    FILTERED_CUSTOMERS_VARS
+  >(FILTERED_CUSTOMERS_QUERY, {
+    variables: exactlyFilteredCustomersVars,
+    fetchPolicy: 'no-cache',
   });
 
   const createNewCustomer = useCreateNewCustomer([
     {
       query: FILTERED_CUSTOMERS_QUERY,
       variables: filteredCustomersVars,
+    },
+    {
+      query: FILTERED_CUSTOMERS_QUERY,
+      variables: exactlyFilteredCustomersVars,
     },
   ]);
 
@@ -84,6 +103,8 @@ const LinkApplicationToCustomerContainer = ({
   }, [called, fetchFilteredCustomers]);
 
   const filteredCustomersData = getFilteredCustomersData(customersData);
+  const canCreateNewCustomer =
+    !getFilteredCustomersData(exactlyFilteredCustomersData).length && !loadingExactlyFilteredCustomers;
 
   const handleCreateCustomer = () => {
     createNewCustomer(application);
@@ -96,6 +117,7 @@ const LinkApplicationToCustomerContainer = ({
         searchVal,
         searchBy,
         setSearchVal,
+        canCreateNewCustomer,
         setSearchBy: (searchBy) => {
           setSearchBy(searchBy);
           setSearchVal(application[searchBy] ?? '');

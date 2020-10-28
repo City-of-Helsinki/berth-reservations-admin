@@ -22,7 +22,7 @@ Array [
     class="form"
   >
     <div
-      class="Dropdown-module_root__2LI4- select"
+      class="Dropdown-module_root__3ro8_ select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -31,29 +31,31 @@ Array [
       >
         Asiakasryhmä
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1oIw5"
+        class="Dropdown-module_wrapper__1sFxz"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="customerGroup-label customerGroup-toggle-button"
-          class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
           id="customerGroup-toggle-button"
           type="button"
         >
           <span
-            class="Dropdown-module_buttonLabel__2jVRU"
+            class="Dropdown-module_buttonLabel__3y4eg"
           >
             Yksityinen
           </span>
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -74,7 +76,7 @@ Array [
       </div>
       <ul
         aria-labelledby="customerGroup-label"
-        class="Dropdown-module_menu__3rei6"
+        class="Dropdown-module_menu__3xwA0"
         id="customerGroup-menu"
         role="listbox"
         style="max-height: calc(var(--dropdown-height) * 5);"
@@ -82,7 +84,7 @@ Array [
       />
     </div>
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -90,16 +92,17 @@ Array [
       >
         Etunimet
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="firstName"
           required=""
           type="text"
@@ -108,7 +111,7 @@ Array [
       </div>
     </div>
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -116,16 +119,17 @@ Array [
       >
         Sukunimi
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="lastName"
           required=""
           type="text"
@@ -137,7 +141,7 @@ Array [
       class="divider"
     />
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -145,16 +149,17 @@ Array [
       >
         Jakeluosoite
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="address"
           required=""
           type="text"
@@ -166,7 +171,7 @@ Array [
       class="grid cols2 grid"
     >
       <div
-        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
       >
         <label
           class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -174,16 +179,17 @@ Array [
         >
           Postinumero
           <span
-            class="RequiredIndicator-module_indicator__Pt7GX"
+            aria-hidden="true"
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
           >
             *
           </span>
         </label>
         <div
-          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
         >
           <input
-            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
             id="postalCode"
             required=""
             type="text"
@@ -192,7 +198,7 @@ Array [
         </div>
       </div>
       <div
-        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
       >
         <label
           class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -200,16 +206,17 @@ Array [
         >
           Toimipaikka
           <span
-            class="RequiredIndicator-module_indicator__Pt7GX"
+            aria-hidden="true"
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
           >
             *
           </span>
         </label>
         <div
-          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
         >
           <input
-            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
             id="city"
             required=""
             type="text"
@@ -222,7 +229,7 @@ Array [
       class="divider"
     />
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -231,10 +238,10 @@ Array [
         Puhelinnumero
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="phone"
           type="text"
           value="+358 00 000 0000"
@@ -242,7 +249,7 @@ Array [
       </div>
     </div>
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -250,16 +257,17 @@ Array [
       >
         Sähköpostiosoite
         <span
-          class="RequiredIndicator-module_indicator__Pt7GX"
+          aria-hidden="true"
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
           *
         </span>
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <input
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="email"
           required=""
           type="text"
@@ -268,7 +276,7 @@ Array [
       </div>
     </div>
     <div
-      class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6"
+      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -277,10 +285,10 @@ Array [
         Huomiot
       </label>
       <div
-        class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
       >
         <textarea
-          class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="comment"
         />
       </div>

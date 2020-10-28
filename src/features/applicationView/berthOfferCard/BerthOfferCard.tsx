@@ -12,6 +12,8 @@ import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
+import { canDeleteLease } from '../../../common/utils/leaseUtils';
+import { berthInvoicingFeatureFlag } from '../../../common/utils/featureFlags';
 
 export interface BerthOfferCardProps {
   className?: string;
@@ -27,6 +29,7 @@ const BerthOfferCard = ({
   applicationStatus,
   leaseDetails: {
     id,
+    status,
     berthComment,
     berthDepth,
     berthIsAccessible,
@@ -65,20 +68,23 @@ const BerthOfferCard = ({
         buttonsRight={
           <>
             <Button variant="supplementary" disabled>
-              {t('offer.billing.showBill')}
+              {t('offer.invoicing.showInvoice')}
             </Button>
             <Button variant="supplementary" disabled>
-              {t('offer.billing.showContract')}
+              {t('offer.invoicing.showContract')}
             </Button>
-            <DeleteButton
-              buttonText={t('offer.billing.removeOffer')}
-              onConfirm={() => handleDeleteLease(id)}
-              disabled={isDeletingLease}
-            />
+            {canDeleteLease(status) && (
+              <DeleteButton
+                buttonText={t('offer.invoicing.removeOffer')}
+                onConfirm={() => handleDeleteLease(id)}
+                disabled={isDeletingLease}
+              />
+            )}
           </>
         }
         className={className}
         customerEmail={customerEmail}
+        invoicingDisabled={!berthInvoicingFeatureFlag()}
         order={order}
         placeDetails={
           <PlaceDetails
@@ -98,7 +104,7 @@ const BerthOfferCard = ({
         placeProperties={properties}
         placeType={t('common.terminology.berth').toUpperCase()}
         refetchQueries={refetchQueries}
-        sendButtonLabel={t('offer.billing.acceptAndSend')}
+        sendButtonLabel={t('offer.invoicing.acceptAndSend')}
         title={t('offer.title').toUpperCase()}
       />
     </>

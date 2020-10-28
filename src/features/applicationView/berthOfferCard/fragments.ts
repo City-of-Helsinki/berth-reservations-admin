@@ -4,6 +4,7 @@ export const BERTH_LEASE_FRAGMENT = gql`
   fragment BerthLease on BerthApplicationNode {
     lease {
       id
+      status
       berth {
         depth
         length

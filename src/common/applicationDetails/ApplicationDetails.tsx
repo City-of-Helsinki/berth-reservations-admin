@@ -6,9 +6,9 @@ import LabelValuePair from '../labelValuePair/LabelValuePair';
 import Grid from '../grid/Grid';
 import styles from './applicationDetails.module.scss';
 import Text from '../text/Text';
-import { formatDimension, formatWeight, formatDate } from '../utils/format';
-import { APPLICATION_STATUS } from '../utils/consonants';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { formatDate, formatDimension, formatWeight } from '../utils/format';
+import { APPLICATION_STATUS } from '../utils/constants';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
 import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
@@ -18,7 +18,9 @@ import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
+import { queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
+import { canDeleteLease } from '../utils/leaseUtils';
 
 interface Lease {
   berthNum: string | number;
@@ -26,6 +28,7 @@ interface Lease {
   harborName: string;
   id: string;
   pierIdentifier: string;
+  status: LeaseStatus;
 }
 
 interface BerthSwitch {
@@ -109,7 +112,9 @@ const ApplicationDetails = ({
             label={t('applicationList.applicationDetails.receivedDate')}
             value={formatDate(createdAt, i18n.language, true)}
           />
-          <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
+          {queueFeatureFlag() ? (
+            <LabelValuePair label={t('applicationList.applicationDetails.queueNumber')} value={`${queue}`} />
+          ) : null}
           <LabelValuePair
             label={t('applicationList.applicationDetails.status')}
             value={t(APPLICATION_STATUS[status]?.label)}
@@ -203,11 +208,13 @@ const ApplicationDetails = ({
         {lease ? (
           <Section title={t('applicationList.applicationDetails.connectedLease').toUpperCase()}>
             {[lease.harborName, lease.pierIdentifier, lease.berthNum].filter(Boolean).join(' ')}
-            {handleDeleteLease && (
+            {handleDeleteLease && canDeleteLease(lease.status) && (
               <DeleteButton
                 buttonText={t('applicationList.applicationDetails.deleteLease')}
                 onConfirm={() => handleDeleteLease(lease.id)}
                 disabled={isDeletingLease}
+                buttonClassName={styles.deleteButton}
+                buttonStyle="flat"
               />
             )}
           </Section>

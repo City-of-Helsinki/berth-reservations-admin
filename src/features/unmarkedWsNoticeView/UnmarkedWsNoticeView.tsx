@@ -15,25 +15,24 @@ import LinkApplicationToCustomerContainer, {
 import Button from '../../common/button/Button';
 import UnmarkedWsNoticeDetails, {
   UnmarkedWsNoticeDetailsProps,
-} from '../../common/unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+} from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
-import Text from '../../common/text/Text';
-import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import Grid from '../../common/grid/Grid';
 import InvoiceCard from '../invoiceCard/InvoiceCardContainer';
 import { Order } from '../invoiceCard/types';
 import DeleteButton from '../../common/deleteButton/DeleteButton';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { canDeleteLease } from '../../common/utils/leaseUtils';
+import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
 
 export interface UnmarkedWsNoticeViewProps {
   customerProfile: CustomerProfileCardProps | null;
   noticeDetails: UnmarkedWsNoticeDetailsProps;
+  leaseStatus: LeaseStatus | null;
   order: Order | null;
   refetchQueries: PureQueryOptions[] | string[];
   winterStorageNotice: LinkApplicationToCustomerContainerProps['application'];
-  isDeleteNoticeLoading: boolean;
+  isDeletingNotice: boolean;
   isCreateLeaseLoading: boolean;
   isDeleteLeaseLoading: boolean;
   handleCreateLease(): void;
@@ -41,12 +40,14 @@ export interface UnmarkedWsNoticeViewProps {
   handleDeleteNotice(): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
+  handleUnlinkCustomer(): void;
 }
 
 const UnmarkedWsNoticeView = ({
   customerProfile,
   noticeDetails,
   order,
+  leaseStatus,
   refetchQueries,
   winterStorageNotice,
   handleCreateLease,
@@ -54,16 +55,12 @@ const UnmarkedWsNoticeView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
-  isDeleteNoticeLoading,
+  isDeletingNotice,
   isCreateLeaseLoading,
   isDeleteLeaseLoading,
+  handleUnlinkCustomer,
 }: UnmarkedWsNoticeViewProps) => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation();
-  const canDeleteLease = noticeDetails.status === ApplicationStatus.OFFER_GENERATED;
-  const canDeleteNotice = canDeleteLease || noticeDetails.status === ApplicationStatus.PENDING;
+  const { t } = useTranslation();
 
   return (
     <PageContent className={styles.noticeView}>
@@ -71,26 +68,15 @@ const UnmarkedWsNoticeView = ({
         <PageTitle title={t('unmarkedWsNotices.view.title')} />
       </div>
 
-      <div className={styles.actions}>
-        <div className={styles.noticeStatus}>
-          <Text as="h2" size="xl" weight="normalWeight">
-            {t('applicationList.applicationType.notice')} {formatDate(noticeDetails.createdAt, language)}
-          </Text>
-          <Chip
-            color={APPLICATION_STATUS[noticeDetails.status].color}
-            label={t(APPLICATION_STATUS[noticeDetails.status].label)}
-          />
-        </div>
-        <div className={styles.actionsRight}>
-          {canDeleteNotice && (
-            <DeleteButton
-              buttonText={t('unmarkedWsNotices.view.deleteNotice')}
-              onConfirm={handleDeleteNotice}
-              disabled={isDeleteNoticeLoading}
-            />
-          )}
-        </div>
-      </div>
+      <ApplicationHeader
+        text={t('applicationList.applicationType.notice')}
+        createdAt={noticeDetails.createdAt}
+        status={noticeDetails.status}
+        customerId={noticeDetails.customerId}
+        handleUnlinkCustomer={handleUnlinkCustomer}
+        handleDeleteApplication={handleDeleteNotice}
+        isDeletingApplication={isDeletingNotice}
+      />
 
       {customerProfile ? (
         <>
@@ -107,14 +93,11 @@ const UnmarkedWsNoticeView = ({
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...noticeDetails} />
             <div className={styles.detailsActions}>
-              {customerProfile &&
-                (order ? (
-                  <Chip color={'green'} label="Lasku luotu" />
-                ) : (
-                  <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
-                    {t('unmarkedWsNotices.view.createInvoice')}
-                  </Button>
-                ))}
+              {customerProfile && !order && (
+                <Button onClick={handleCreateLease} disabled={isCreateLeaseLoading}>
+                  {t('unmarkedWsNotices.view.createInvoice')}
+                </Button>
+              )}
             </div>
           </Grid>
         </CardBody>
@@ -124,7 +107,7 @@ const UnmarkedWsNoticeView = ({
         <InvoiceCard
           applicationStatus={noticeDetails.status}
           buttonsRight={
-            canDeleteLease && (
+            canDeleteLease(leaseStatus) && (
               <DeleteButton
                 buttonText={t('unmarkedWsNotices.view.deleteInvoice')}
                 onConfirm={handleDeleteLease}

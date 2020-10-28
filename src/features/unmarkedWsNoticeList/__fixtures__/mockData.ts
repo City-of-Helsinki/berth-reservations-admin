@@ -17,6 +17,7 @@ export const singleNode: UNMARKED_WINTER_STORAGE_NOTICES_NODE = {
   boatName: 'test',
   boatModel: 'test',
   areaType: WinterStorageApplicationAreaType.UNMARKED,
+  lease: null,
   winterStorageAreaChoices: [
     {
       priority: 1,
@@ -51,6 +52,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -78,6 +80,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -105,6 +108,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -132,6 +136,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -159,6 +164,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -186,6 +192,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -213,6 +220,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -240,6 +248,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,
@@ -267,6 +276,7 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           boatName: 'test',
           boatModel: 'test',
           areaType: WinterStorageApplicationAreaType.UNMARKED,
+          lease: null,
           winterStorageAreaChoices: [
             {
               priority: 1,

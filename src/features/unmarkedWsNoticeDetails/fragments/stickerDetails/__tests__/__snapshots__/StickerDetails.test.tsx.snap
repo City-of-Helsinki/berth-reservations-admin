@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StickerDetails renders correctly 1`] = `
+<article
+  class="section"
+>
+  <h4
+    class="text standard h4 m title"
+  >
+    TARRA
+  </h4>
+  <section
+    class="body"
+  >
+    <div
+      class="labelValuePair"
+    >
+      <span
+        class="label standard"
+      >
+        Numero:
+      </span>
+      <span
+        class="value left"
+      >
+        0123
+      </span>
+    </div>
+    <div
+      class="labelValuePair"
+    >
+      <span
+        class="label standard"
+      >
+        Kausi:
+      </span>
+      <span
+        class="value left"
+      >
+        2020/2021
+      </span>
+    </div>
+    <button>
+      <span
+        class="text brand span"
+      >
+        Vaihda numero
+      </span>
+    </button>
+  </section>
+</article>
+`;

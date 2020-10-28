@@ -64,7 +64,7 @@ export const getCustomersData = (data: CUSTOMERS | undefined): CustomerData[] =>
           postalCode: organization?.postalCode ?? primaryAddress?.postalCode,
           comment: profile.comment,
           berthsColumnData: '',
-          billsColumnData: '',
+          invoicesColumnData: '',
           boatsColumnData: '',
           boats,
           applications,

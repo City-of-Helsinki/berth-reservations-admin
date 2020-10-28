@@ -12,9 +12,10 @@ import { ApplicationData } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
+import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { queueFeatureFlag } from '../../common/utils/featureFlags';
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
@@ -47,7 +48,7 @@ const ApplicationList = ({
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
-  const columns: ColumnType[] = [
+  const rawColumns: (ColumnType | undefined)[] = [
     {
       Cell: ({ cell }) => (
         <InternalLink to={`/applications/${cell.row.original.id}`}>
@@ -68,12 +69,14 @@ const ApplicationList = ({
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
     },
-    {
-      Header: t('applicationList.tableHeaders.queue') as string,
-      accessor: 'queue',
-      disableSortBy: true,
-      width: COLUMN_WIDTH.XS,
-    },
+    queueFeatureFlag()
+      ? {
+          Header: t('applicationList.tableHeaders.queue') as string,
+          accessor: 'queue',
+          disableSortBy: true,
+          width: COLUMN_WIDTH.XS,
+        }
+      : undefined,
     {
       Header: t('applicationList.tableHeaders.municipality') as string,
       accessor: 'municipality',
@@ -82,8 +85,8 @@ const ApplicationList = ({
     },
     {
       Cell: ({ cell: { value } }) => (
-        <Chip
-          color={APPLICATION_STATUS[value as ApplicationStatus].color}
+        <StatusLabel
+          type={APPLICATION_STATUS[value as ApplicationStatus].type}
           label={t(APPLICATION_STATUS[value as ApplicationStatus].label)}
         />
       ),
@@ -105,6 +108,7 @@ const ApplicationList = ({
       width: COLUMN_WIDTH.XL,
     },
   ];
+  const columns: ColumnType[] = rawColumns.filter((column): column is ColumnType => column !== undefined);
 
   return (
     <PageContent>

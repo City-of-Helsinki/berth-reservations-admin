@@ -508,11 +508,10 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
       >
         Testisatama 2 1
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
-          type="button"
+          class="deleteButton"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="text brand span"
           >
             Poista ehdotettu paikka
           </span>
@@ -529,7 +528,6 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
@@ -822,7 +820,6 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="false"
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
             readonly=""
@@ -1071,7 +1068,6 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="false"
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
             readonly=""
@@ -1643,7 +1639,6 @@ exports[`ApplicationDetails renders normally with organization customer applican
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"
@@ -2166,7 +2161,6 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
           class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
         >
           <input
-            aria-checked="true"
             checked=""
             class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
             id="accessible"

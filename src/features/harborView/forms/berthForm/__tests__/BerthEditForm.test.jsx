@@ -53,7 +53,7 @@ describe('features/harborView/BerthEditForm', () => {
       </MockedProvider>
     );
     expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeTruthy();
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('renders content after loading', async () => {
@@ -63,7 +63,7 @@ describe('features/harborView/BerthEditForm', () => {
       </MockedProvider>
     );
     await waitForContent(wrapper);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('calls update mutation on save', async () => {

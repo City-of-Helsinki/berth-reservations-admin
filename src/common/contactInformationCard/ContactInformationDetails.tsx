@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import Section from '../section/Section';
 import ExternalLink from '../externalLink/ExternalLink';
-import LabelValuePair from '../labelValuePair/LabelValuePair';
 
 export interface ContactInformationDetailsProps {
   className?: string;
@@ -22,12 +21,9 @@ const ContactInformationDetails = ({ className }: ContactInformationDetailsProps
       </Section>
 
       <Section title={t('common.terminology.harborChief').toUpperCase() + ' (PLACEHOLDER)'} className={className}>
-        <LabelValuePair label={'Nimi'} value={'Mikko Mallikas'} />
-        <LabelValuePair label={'Puhelin'} value={'+358 00 000 0000'} />
-        <LabelValuePair
-          label={'Sähköposti'}
-          value={<ExternalLink href="mailto:etunimi.sukunimi@gmail.com">etunimi.sukunimi@gmail.com</ExternalLink>}
-        />
+        <p>Mikko Mallikas</p>
+        <p>+358 00 000 0000</p>
+        <ExternalLink href="mailto:etunimi.sukunimi@gmail.com">etunimi.sukunimi@gmail.com</ExternalLink>
       </Section>
     </>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import styles from './winterStorageApplicationView.module.scss';
@@ -7,10 +6,6 @@ import Card from '../../common/card/Card';
 import CardBody from '../../common/cardBody/CardBody';
 import ApplicationDetails, { ApplicationDetailsProps } from '../../common/applicationDetails/ApplicationDetails';
 import CardHeader from '../../common/cardHeader/CardHeader';
-import Text from '../../common/text/Text';
-import { formatDate } from '../../common/utils/format';
-import Chip from '../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../common/utils/consonants';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -18,40 +13,46 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../linkApplicationToCustomer/LinkApplicationToCustomerContainer';
+import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
 
 export interface ApplicationViewProps {
-  customerProfile: CustomerProfileCardProps | null;
   applicationDetails: ApplicationDetailsProps;
+  customerProfile: CustomerProfileCardProps | null;
+  isDeletingApplication: boolean;
   winterStorageApplication: LinkApplicationToCustomerContainerProps['application'];
-  handleLinkCustomer(customerId: string): void;
-  handleEditCustomer(): void;
+  handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
+  handleEditCustomer(): void;
+  handleLinkCustomer(customerId: string): void;
+  handleUnlinkCustomer(): void;
 }
 
 const WinterStorageApplicationView = ({
-  customerProfile,
   applicationDetails,
-  winterStorageApplication,
+  customerProfile,
+  handleDeleteApplication,
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
+  handleUnlinkCustomer,
+  isDeletingApplication,
+  winterStorageApplication,
 }: ApplicationViewProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <PageContent className={styles.applicationView}>
       <PageTitle title={t('applicationView.winterStorageTitle')} />
-      <div className={classNames(styles.fullWidth, styles.pageHeader)}>
-        <Text as="h2" size="xl" weight="normalWeight">
-          {t('applicationList.applicationType.newApplication')}{' '}
-          {formatDate(applicationDetails.createdAt, i18n.language)}
-        </Text>
-        <Chip
-          className={styles.chip}
-          color={APPLICATION_STATUS[applicationDetails.status].color}
-          label={t(APPLICATION_STATUS[applicationDetails.status].label)}
-        />
-      </div>
+
+      <ApplicationHeader
+        createdAt={applicationDetails.createdAt}
+        customerId={applicationDetails.customerId}
+        handleDeleteApplication={handleDeleteApplication}
+        handleUnlinkCustomer={handleUnlinkCustomer}
+        isDeletingApplication={isDeletingApplication}
+        status={applicationDetails.status}
+        text={t('applicationList.applicationType.newApplication')}
+      />
 
       {customerProfile ? (
         <>
@@ -65,14 +66,14 @@ const WinterStorageApplicationView = ({
         />
       )}
 
-      {applicationDetails && (
-        <Card className={styles.fullWidth}>
-          <CardHeader title={t('applicationView.applicationDetails.title')} />
-          <CardBody>
-            <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
-          </CardBody>
-        </Card>
-      )}
+      <Card className={styles.fullWidth}>
+        <CardHeader title={t('applicationView.applicationDetails.title')} />
+        <CardBody>
+          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
+        </CardBody>
+      </Card>
+
+      {/*  TODO: Offer and invoicing */}
     </PageContent>
   );
 };

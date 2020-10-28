@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './tableTools.module.scss';
 import Text from '../../../common/text/Text';
-import Chip from '../../../common/chip/Chip';
-import { APPLICATION_STATUS } from '../../../common/utils/consonants';
+import StatusLabel from '../../../common/statusLabel/StatusLabel';
+import { APPLICATION_STATUS } from '../../../common/utils/constants';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 
@@ -25,9 +25,9 @@ const TableTools = ({ applicationDate, applicationType, applicationStatus, handl
         <Text size="l">
           {t('common.terminology.berths').toUpperCase()}: {applicationType} {applicationDate}
         </Text>
-        <Chip
-          className={styles.chip}
-          color={APPLICATION_STATUS[applicationStatus].color}
+        <StatusLabel
+          className={styles.statusLabel}
+          type={APPLICATION_STATUS[applicationStatus].type}
           label={t(APPLICATION_STATUS[applicationStatus].label)}
         />
       </div>

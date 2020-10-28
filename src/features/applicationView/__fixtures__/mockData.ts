@@ -15,6 +15,7 @@ import {
   CustomerGroup,
   InvoicingType,
   Language,
+  LeaseStatus,
   PeriodType,
   PriceUnits,
   ProductServiceType,
@@ -53,6 +54,7 @@ export const mockBerthSwitch: BERTH_SWITCH = {
 
 export const mockLease: LEASE = {
   __typename: 'BerthLeaseNode',
+  status: LeaseStatus.DRAFTED,
   berth: {
     __typename: 'BerthNode',
     comment: '',

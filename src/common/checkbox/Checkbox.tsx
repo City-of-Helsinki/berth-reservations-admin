@@ -1,6 +1,5 @@
 import React from 'react';
-import { Checkbox as HDSCheckbox } from 'hds-react';
-import { CheckboxProps } from 'hds-react/lib';
+import { Checkbox as HDSCheckbox, CheckboxProps } from 'hds-react';
 import classNames from 'classnames';
 
 import styles from './checkbox.module.scss';

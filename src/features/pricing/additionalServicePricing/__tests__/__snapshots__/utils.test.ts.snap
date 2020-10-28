@@ -5,9 +5,10 @@ Array [
   Object {
     "id": "a8400b59-534c-4934-b643-083a4273ca1a",
     "period": "SEASON",
-    "price": 10,
+    "priceUnit": "AMOUNT",
+    "priceValue": 10,
     "service": "DINGHY_PLACE",
-    "tax": "TAX_24_00",
+    "taxPercentage": "TAX_24_00",
   },
 ]
 `;

@@ -14,13 +14,13 @@ exports[`WinterStorageAreaList renders normally 1`] = `
       class="globalSearchTableTools"
     >
       <div
-        class="TextInput-module_root__1ceal text-input_hds-text-input__24bl6 filterField"
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField"
       >
         <div
-          class="TextInput-module_inputWrapper__1ru3h text-input_hds-text-input__input-wrapper__2p7Uy"
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
         >
           <input
-            class="TextInput-module_input__35GDy text-input_hds-text-input__input__2XAyI"
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
             id="textSearchGlobalFilter"
             placeholder="Haku"
             type="text"
@@ -69,7 +69,6 @@ exports[`WinterStorageAreaList renders normally 1`] = `
                 style="cursor:pointer"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="checkbox"
                   title="Toggle All Rows Selected"
@@ -94,6 +93,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -125,6 +125,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -156,6 +157,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -201,6 +203,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -246,6 +249,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -291,6 +295,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -336,6 +341,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -381,6 +387,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               >
                 <svg
                   class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                  role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -431,7 +438,6 @@ exports[`WinterStorageAreaList renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-0"
                     title="Toggle Row Selected"
@@ -586,6 +592,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -623,7 +630,6 @@ exports[`WinterStorageAreaList renders normally 1`] = `
                   style="cursor:pointer"
                 >
                   <input
-                    aria-checked="false"
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-1"
                     title="Toggle Row Selected"
@@ -778,6 +784,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
                 >
                   <svg
                     class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -818,6 +825,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
           >
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -874,6 +882,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv"
+              role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

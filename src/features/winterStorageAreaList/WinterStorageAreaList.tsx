@@ -35,41 +35,48 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: t('winterStorageAreaList.tableHeaders.places') || '',
       accessor: 'numberOfPlaces',
       width: COLUMN_WIDTH.S,
+      sortDescFirst: true,
     },
     {
       Header: t('winterStorageAreaList.tableHeaders.freePlaces') || '',
       accessor: 'numberOfFreePlaces',
       width: COLUMN_WIDTH.S,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconPlug} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconPlug} />,
       accessor: 'electricity',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconWaterTap} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconWaterTap} />,
       accessor: 'water',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconFence} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconFence} />,
       accessor: 'gate',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconTrestle} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconTrestle} />,
       accessor: 'summerStorageForDockingEquipment',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconDollyEmpty} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconDollyEmpty} />,
       accessor: 'summerStorageForTrailers',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
   ];
 

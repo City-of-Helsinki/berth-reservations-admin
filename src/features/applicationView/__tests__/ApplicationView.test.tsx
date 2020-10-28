@@ -3,7 +3,10 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import ApplicationView, { ApplicationViewProps } from '../ApplicationView';
-import { ApplicationStatus, Language } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
+import ApplicationHeader from '../../../common/applicationHeader/ApplicationHeader';
+import { canDeleteApplication } from '../../../common/utils/applicationUtils';
+import DeleteButton from '../../../common/deleteButton/DeleteButton';
 
 const mockProps: ApplicationViewProps = {
   applicationDetails: {
@@ -35,11 +38,15 @@ const mockProps: ApplicationViewProps = {
     companyName: '',
   },
   customerProfile: null,
-  leaseDetails: null,
-  refetchQueries: [],
+  handleDeleteApplication: jest.fn(),
   handleDeleteLease: jest.fn(),
   handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
+  handleUnlinkCustomer: jest.fn(),
+  isDeletingApplication: false,
+  isDeletingLease: false,
+  leaseDetails: null,
+  refetchQueries: [],
 };
 
 // LinkApplicationToCustomer is mocked to limit the test scope
@@ -69,7 +76,7 @@ describe('ApplicationView', () => {
   it('renders title as "New application" if applicationDetails.berthSwitch is null', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper.find('div.pageHeader>Text').text()).toMatch('Uusi hakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Uusi hakemus');
   });
 
   it('renders title as "Switch application" if applicationDetails.berthSwitch is not null', () => {
@@ -80,7 +87,25 @@ describe('ApplicationView', () => {
       },
     });
 
-    expect(wrapper.find('div.pageHeader>Text').text()).toMatch('Vaihtohakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Vaihtohakemus');
+  });
+
+  it('renders delete notice button if notice can be deleted', () => {
+    Object.values(ApplicationStatus)
+      .filter(canDeleteApplication)
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, applicationDetails: { ...mockProps.applicationDetails, status } });
+        expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(1);
+      });
+  });
+
+  it('does not render delete notice button if notice cannot be deleted', () => {
+    Object.values(ApplicationStatus)
+      .filter((status) => !canDeleteApplication(status))
+      .forEach((status) => {
+        const wrapper = getWrapper({ ...mockProps, applicationDetails: { ...mockProps.applicationDetails, status } });
+        expect(wrapper.find('.actionsRight').find(DeleteButton).length).toBe(0);
+      });
   });
 
   it('renders CustomerProfileCard and ActionHistoryCard with "customerProfile" prop', () => {
@@ -125,6 +150,7 @@ describe('ApplicationView', () => {
         lighting: false,
         order: null,
         pierIdentifier: '',
+        status: LeaseStatus.DRAFTED,
         wasteCollection: false,
         water: false,
       },

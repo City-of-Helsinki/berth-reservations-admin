@@ -29,7 +29,7 @@ const HarborDetails = ({
 }: HarborDetailsProps) => {
   const { t, i18n } = useTranslation();
   const imageSrc = imageFile ? imageFile : placeholderImage;
-  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URI}${servicemapId}`;
+  const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URL}${servicemapId}`;
 
   return (
     <Grid colsCount={4}>
@@ -37,7 +37,7 @@ const HarborDetails = ({
         <img className={styles.image} src={imageSrc} alt={t('common.imageAltText')} />
       </div>
       <div className={styles.column}>
-        <Section className={styles.address} title={t('common.terminology.address').toUpperCase()}>
+        <Section className={styles.address} title={t('common.address').toUpperCase()}>
           {formatAddress(streetAddress, zipCode, municipality)}
         </Section>
         <Section>

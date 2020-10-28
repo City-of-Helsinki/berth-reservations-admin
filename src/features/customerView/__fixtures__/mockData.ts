@@ -1,5 +1,5 @@
 import { OrderStatus, PriceUnits, ProductServiceType } from '../../../@types/__generated__/globalTypes';
-import { BerthBill, WinterStorageBill } from '../types';
+import { BerthInvoice, WinterStorageInvoice } from '../types';
 import { INDIVIDUAL_CUSTOMER_profile as CUSTOMER_PROFILE } from '../__generated__/INDIVIDUAL_CUSTOMER';
 
 export const emptyMockProfile: CUSTOMER_PROFILE = {
@@ -22,8 +22,9 @@ export const emptyMockProfile: CUSTOMER_PROFILE = {
   customerGroup: null,
 };
 
-export const mockBills: (BerthBill | WinterStorageBill)[] = [
+export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
   {
+    orderNumber: 'MOCK-INVOICE',
     status: OrderStatus.WAITING,
     berthInformation: {
       number: '1',

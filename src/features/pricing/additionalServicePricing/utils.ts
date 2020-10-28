@@ -9,8 +9,9 @@ export const getAdditionalServiceData = (data: AdditionalServicePricingProps['da
     const berthPrice = {
       id: edge.node.id,
       service: edge.node.service,
-      price: edge.node.priceValue,
-      tax: edge.node.taxPercentage,
+      priceValue: edge.node.priceValue,
+      priceUnit: edge.node.priceUnit,
+      taxPercentage: edge.node.taxPercentage,
       period: edge.node.period,
     };
 

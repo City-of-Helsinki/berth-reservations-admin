@@ -36,41 +36,48 @@ const HarborList = ({ data, loading }: HarborListProps) => {
       Header: t('harborList.tableHeaders.places') || '',
       accessor: 'numberOfPlaces',
       width: COLUMN_WIDTH.S,
+      sortDescFirst: true,
     },
     {
       Header: t('harborList.tableHeaders.freePlaces') || '',
       accessor: 'numberOfFreePlaces',
       width: COLUMN_WIDTH.S,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconPlug} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconPlug} />,
       accessor: 'electricity',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconFence} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconFence} />,
       accessor: 'gate',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconStreetLight} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconStreetLight} />,
       accessor: 'lighting',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconWaterTap} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconWaterTap} />,
       accessor: 'water',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
     {
       Cell: ({ cell }) => <IconWrapper outlined icon={IconTrash} color={!cell.value ? 'disabled' : 'standard'} />,
       Header: () => <IconWrapper outlined icon={IconTrash} />,
       accessor: 'wasteCollection',
       width: COLUMN_WIDTH.XS,
+      sortDescFirst: true,
     },
   ];
 

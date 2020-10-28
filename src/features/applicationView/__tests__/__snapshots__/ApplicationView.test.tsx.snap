@@ -10,18 +10,36 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
     HAKEMUS
   </h2>
   <div
-    class="fullWidth pageHeader"
+    class="actions"
   >
-    <h2
-      class="text standard h2 xl normalWeight"
+    <div
+      class="noticeStatus"
     >
-      Uusi hakemus 04.08.2020
-    </h2>
-    <span
-      class="chip yellow chip"
+      <h2
+        class="text standard h2 xl normalWeight"
+      >
+        Uusi hakemus 04.08.2020
+      </h2>
+      <span
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
+      >
+        Odottaa käsittelyä
+      </span>
+    </div>
+    <div
+      class="actionsRight"
     >
-      Odottaa käsittelyä
-    </span>
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        type="button"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Poista ilmoitus
+        </span>
+      </button>
+    </div>
   </div>
   <div>
     LinkApplicationToCustomerContainer
@@ -269,7 +287,6 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
                 class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
               >
                 <input
-                  aria-checked="false"
                   class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                   id="accessible"
                   readonly=""

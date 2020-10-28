@@ -2,7 +2,7 @@
 
 exports[`Select renders normally 1`] = `
 <div
-  class="Dropdown-module_root__2LI4- select"
+  class="Dropdown-module_root__3ro8_ select"
 >
   <label
     class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -12,23 +12,24 @@ exports[`Select renders normally 1`] = `
     Selector
   </label>
   <div
-    class="Dropdown-module_wrapper__1oIw5"
+    class="Dropdown-module_wrapper__1sFxz"
   >
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-labelledby="hds-label hds-toggle-button"
-      class="Dropdown-module_buttonDropdown__IwbnQ Dropdown-module_dropdown__22ZdF"
+      class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
       id="hds-toggle-button"
       type="button"
     >
       <span
-        class="Dropdown-module_buttonLabel__2jVRU"
+        class="Dropdown-module_buttonLabel__3y4eg"
       >
         First
       </span>
       <svg
-        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__1Y1mT"
+        class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+        role="img"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -49,7 +50,7 @@ exports[`Select renders normally 1`] = `
   </div>
   <ul
     aria-labelledby="hds-label"
-    class="Dropdown-module_menu__3rei6"
+    class="Dropdown-module_menu__3xwA0"
     id="hds-menu"
     role="listbox"
     style="max-height:calc(var(--dropdown-height) * 5)"

@@ -5,14 +5,14 @@ import {
 import {
   Application,
   ApplicationLease,
-  BerthBill,
+  BerthInvoice,
   BerthLease,
-  Bill,
   Boat,
+  Invoice,
   LargeBoat,
   Lease,
   OrderLine,
-  WinterStorageBill,
+  WinterStorageInvoice,
   WinterStorageLease,
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
@@ -71,27 +71,50 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
   if (!profile.winterStorageLeases?.edges) return [];
 
   return profile.winterStorageLeases.edges.reduce<Lease[]>((acc, edge) => {
-    if (!edge?.node?.place || edge?.node?.status !== 'PAID') return acc;
+    if (edge?.node?.status !== 'PAID') return acc;
 
-    const placeNum = edge.node.place.number.toString(10);
-    const sectionIdentifier = edge.node.place.winterStorageSection.properties?.identifier || null;
-    const winterStorageArea = edge.node.place.winterStorageSection.properties?.area;
+    if (edge?.node?.place) {
+      const placeNum = edge.node.place.number.toString(10);
+      const sectionIdentifier = edge.node.place.winterStorageSection.properties?.identifier || null;
+      const winterStorageArea = edge.node.place.winterStorageSection.properties?.area;
 
-    const lease = {
-      id: edge.node.id,
-      winterStorageArea: winterStorageArea
-        ? {
-            id: winterStorageArea.id,
-            name: winterStorageArea.properties?.name || '',
-          }
-        : null,
-      placeNum,
-      sectionIdentifier,
-      startDate: edge.node.startDate,
-      endDate: edge.node.endDate,
-    };
+      const lease = {
+        id: edge.node.id,
+        winterStorageArea: winterStorageArea
+          ? {
+              id: winterStorageArea.id,
+              name: winterStorageArea.properties?.name || '',
+            }
+          : null,
+        placeNum,
+        sectionIdentifier,
+        startDate: edge.node.startDate,
+        endDate: edge.node.endDate,
+      };
 
-    return [...acc, lease];
+      return [...acc, lease];
+    }
+
+    if (edge?.node?.section) {
+      const winterStorageArea = edge.node.section.properties?.area;
+
+      const lease = {
+        id: edge.node.id,
+        winterStorageArea: winterStorageArea
+          ? {
+              id: winterStorageArea.id,
+              name: winterStorageArea.properties?.name || '',
+            }
+          : null,
+        placeNum: 0,
+        sectionIdentifier: null,
+        startDate: edge.node.startDate,
+        endDate: edge.node.endDate,
+      };
+      return [...acc, lease];
+    }
+
+    return acc;
   }, []);
 };
 
@@ -143,6 +166,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
             harborName: lease.berth.pier.properties.harbor.properties?.name || '',
             id: lease.id,
             pierIdentifier: lease.berth.pier.properties.identifier,
+            status: lease.status,
           };
         }
         const berthSwitchProps = berthSwitch
@@ -182,11 +206,11 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
   );
 };
 
-export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageBill)[] => {
+export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterStorageInvoice)[] => {
   return (
     profile.orders?.edges
       .map((edge) => edge?.node)
-      .reduce<(BerthBill | WinterStorageBill)[]>((acc, orderNode) => {
+      .reduce<(BerthInvoice | WinterStorageInvoice)[]>((acc, orderNode) => {
         if (!orderNode || !orderNode.lease) {
           return acc;
         }
@@ -207,7 +231,8 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
             ];
           }, []);
         const { lease } = orderNode;
-        const bill = {
+        const invoice = {
+          orderNumber: orderNode.orderNumber,
           status: orderNode.status,
           contractPeriod: {
             startDate: lease.startDate,
@@ -222,7 +247,7 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
           return [
             ...acc,
             {
-              ...bill,
+              ...invoice,
               berthInformation: {
                 number: lease.berth.number,
                 pierIdentifier: lease.berth.pier.properties?.identifier ?? '',
@@ -234,9 +259,12 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
           return [
             ...acc,
             {
-              ...bill,
+              ...invoice,
               winterStorageInformation: {
-                winterStorageAreaName: lease.place?.winterStorageSection.properties?.area.properties?.name ?? '',
+                winterStorageAreaName:
+                  lease.place?.winterStorageSection.properties?.area.properties?.name ??
+                  lease.section?.properties?.area.properties?.name ??
+                  '',
               },
             },
           ];
@@ -245,9 +273,10 @@ export const getBills = (profile: CUSTOMER_PROFILE): (BerthBill | WinterStorageB
   );
 };
 
-export const isBerthBill = (bill: Bill): bill is BerthBill => (bill as BerthBill).berthInformation !== undefined;
-export const isWinterStorageBill = (bill: Bill): bill is WinterStorageBill =>
-  (bill as WinterStorageBill).winterStorageInformation !== undefined;
+export const isBerthInvoice = (invoice: Invoice): invoice is BerthInvoice =>
+  (invoice as BerthInvoice).berthInformation !== undefined;
+export const isWinterStorageInvoice = (invoice: Invoice): invoice is WinterStorageInvoice =>
+  (invoice as WinterStorageInvoice).winterStorageInformation !== undefined;
 
 export const isBerthLease = (lease: Lease): lease is BerthLease => (lease as BerthLease).harbor !== undefined;
 export const isWinterStorageLease = (lease: Lease): lease is WinterStorageLease =>

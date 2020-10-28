@@ -15,6 +15,12 @@
   justify-self: center;
   display: flex;
 }
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .ellipsisCell {
   overflow: hidden;
@@ -22,7 +28,7 @@
   text-overflow: ellipsis;
 }
 
-.chip {
+.statusLabel {
   margin-bottom: auto;
   margin-left: units(0.5);
 }

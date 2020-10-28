@@ -1,11 +1,7 @@
 @import 'spacings';
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: units(1);
-}
-
-.fullWidth {
-  grid-column: -1 / 1;
+.pricing {
+  > :not(:first-child) {
+    margin-top: units(1);
+  }
 }

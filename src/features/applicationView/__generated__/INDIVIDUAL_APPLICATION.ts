@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, InvoicingType, CustomerGroup, Language, ApplicationStatus, BerthMooringType, ProductServiceType, AdditionalProductType, PriceUnits, PeriodType } from "./../../../@types/__generated__/globalTypes";
+import { BerthApplicationLanguage, InvoicingType, CustomerGroup, Language, ApplicationStatus, LeaseStatus, BerthMooringType, ProductServiceType, AdditionalProductType, PriceUnits, PeriodType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_APPLICATION
@@ -164,6 +164,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_order {
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease {
   __typename: "BerthLeaseNode";
   id: string;
+  status: LeaseStatus;
   berth: INDIVIDUAL_APPLICATION_berthApplication_lease_berth;
   customer: INDIVIDUAL_APPLICATION_berthApplication_lease_customer;
   order: INDIVIDUAL_APPLICATION_berthApplication_lease_order | null;

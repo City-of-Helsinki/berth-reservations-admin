@@ -5,7 +5,7 @@ import CustomerDetails from '../CustomerDetails';
 import {
   customerListApplications,
   customerListBerthLeases,
-  customerListBills,
+  customerListInvoices,
   customerListBoats,
   customerListEntry,
   customerListWinterStoragePlaces,
@@ -25,7 +25,7 @@ describe('CustomerDetails', () => {
         winterStoragePlaces={customerListWinterStoragePlaces}
         boats={customerListBoats}
         applications={customerListApplications}
-        bills={customerListBills}
+        invoices={customerListInvoices}
         comment={customerListEntry.comment}
         customerGroup={customerListEntry.customerGroup}
       />

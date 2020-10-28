@@ -6,7 +6,7 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(units(16), max-content) 4fr;
+  grid-template-columns: max-content 4fr;
   grid-template-rows: minmax(units(4), min-content) 1fr auto;
   grid-template-areas:
     'header  header'
@@ -19,13 +19,58 @@ $noSidebar: 'header  header' 'content content' 'footer  footer';
     grid-area: header;
   }
 
-  .sidebar {
+  .side {
     grid-area: side;
+    display: flex;
+  }
+
+  .sidebar {
+    display: block;
+    overflow: hidden;
+  }
+
+  .sidebarHidden {
+    width: 0;
+  }
+
+  .sidebarToggleArea {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0;
+    height: 100%;
+    background: $black-10;
+  }
+
+  .sidebarToggle {
+    width: units(2);
+    height: units(2);
+    overflow: hidden;
+    border-radius: 50%;
+    filter: grayscale(1) brightness(2);
+    margin-top: units(0.5);
+
+    &:hover {
+      filter: none;
+    }
+
+    span {
+      padding: 0;
+      margin: 0;
+      line-height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .sidebarToggleShow {
+    left: units(1);
   }
 
   .content {
     grid-area: content;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $black-5;
   }
 

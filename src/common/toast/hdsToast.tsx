@@ -1,5 +1,5 @@
-import React from 'react';
-import { DismissableNotification, DismissableNotificationProps } from 'hds-react';
+import React, { useEffect } from 'react';
+import { Notification, NotificationProps } from 'hds-react';
 import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
@@ -9,42 +9,51 @@ import i18n from '../../locales/i18n';
 import { HDSToastContainerId } from './HDSToastContainer';
 
 interface HDSToastArgs {
-  type: DismissableNotificationProps['type'];
+  autoDismiss?: boolean;
+  type: NotificationProps['type'];
   labelText: string;
   text: string;
   toastId?: string;
   translated?: boolean;
 }
 
-interface DismissableNotificationWrapperProps extends HDSToastArgs {
+interface NotificationWrapperProps extends HDSToastArgs {
   toastId: string;
   translated: boolean;
 }
 
-const DismissableNotificationWrapper = ({
-  type,
-  labelText,
-  text,
-  toastId,
-  translated,
-}: DismissableNotificationWrapperProps) => {
+const AUTO_DISMISS_TIME = 3000;
+
+const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, translated }: NotificationWrapperProps) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (autoDismiss) {
+      const timer = setTimeout(() => {
+        toast.dismiss(toastId);
+      }, AUTO_DISMISS_TIME);
+      return () => clearTimeout(timer);
+    }
+  }, [autoDismiss, toastId]);
+
   return (
-    <DismissableNotification
+    <Notification
       type={type}
-      closeButtonLabelText={t('common.closeToast')}
-      labelText={translated ? t(labelText) : labelText}
+      dismissible
+      closeButtonLabelText={t('toast.closeToast') ?? ''}
+      label={translated ? t(labelText) : labelText}
       onClose={() => toast.dismiss(toastId)}
     >
       {translated ? t(text) : text}
-    </DismissableNotification>
+    </Notification>
   );
 };
 
-const hdsToast = ({ type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
+const hdsToast = ({ autoDismiss = true, type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
   const id = toastId ?? uuidv4();
   return toast(
-    <DismissableNotificationWrapper
+    <NotificationWrapper
+      autoDismiss={autoDismiss}
       type={type}
       labelText={labelText}
       text={text}
@@ -61,6 +70,7 @@ const hdsToast = ({ type, labelText, text, toastId, translated = false }: HDSToa
 hdsToast.graphQLErrors = (errors: ReadonlyArray<GraphQLError>) => {
   errors.forEach((error) =>
     hdsToast({
+      autoDismiss: false,
       type: 'error',
       labelText:
         error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.label`)

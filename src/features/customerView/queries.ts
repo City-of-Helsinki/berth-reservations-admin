@@ -105,12 +105,23 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 }
               }
             }
+            section {
+              properties {
+                area {
+                  id
+                  properties {
+                    name
+                  }
+                }
+              }
+            }
           }
         }
       }
       orders {
         edges {
           node {
+            orderNumber
             dueDate
             totalPrice
             price
@@ -160,6 +171,16 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                     }
                   }
                 }
+                section {
+                  properties {
+                    area {
+                      id
+                      properties {
+                        name
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -183,6 +204,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             status
             lease {
               id
+              status
               berth {
                 number
                 pier {

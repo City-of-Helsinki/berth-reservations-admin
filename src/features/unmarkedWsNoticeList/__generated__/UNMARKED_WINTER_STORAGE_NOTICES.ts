@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { WinterStorageApplicationAreaType, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { WinterStorageApplicationAreaType, ApplicationStatus, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICES
@@ -15,6 +15,12 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
   winterStorageArea: string | null;
   winterStorageAreaName: string;
   winterStorageSectionIds: (string | null)[] | null;
+}
+
+export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_lease {
+  __typename: "WinterStorageLeaseNode";
+  id: string;
+  status: LeaseStatus;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node {
@@ -32,6 +38,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
   lastName: string;
   status: ApplicationStatus;
   winterStorageAreaChoices: (UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices | null)[] | null;
+  lease: UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_lease | null;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges {
