@@ -1,0 +1,20 @@
+@import 'spacings';
+
+.container {
+  margin-bottom: units(0.75);
+  display: flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+
+  > * {
+    margin: 0 units(0.5);
+  }
+}
+
+.select {
+  width: 250px;
+}

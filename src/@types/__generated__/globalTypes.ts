@@ -385,6 +385,12 @@ export interface SensitiveDataFields {
   ssn?: string | null;
 }
 
+export interface SetStickersPostedMutationInput {
+  leaseIds: string[];
+  date: any;
+  clientMutationId?: string | null;
+}
+
 export interface SubscriptionInputType {
   subscriptionTypeId: string;
   enabled: boolean;

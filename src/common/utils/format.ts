@@ -24,7 +24,9 @@ export const formatWeight = (value: number | null | undefined, locale: string) =
   return `${localizedValues} kg`;
 };
 
-export const formatDate = (date: string, locale: string, withTime = false) => {
+export const formatDate = (date: string | null, locale: string, withTime = false) => {
+  if (!date) return '-';
+
   const dateOpts = {
     year: 'numeric',
     month: '2-digit',

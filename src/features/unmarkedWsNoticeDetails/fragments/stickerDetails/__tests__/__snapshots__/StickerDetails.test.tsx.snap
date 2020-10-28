@@ -40,6 +40,20 @@ exports[`StickerDetails renders correctly 1`] = `
         2020/2021
       </span>
     </div>
+    <div
+      class="labelValuePair"
+    >
+      <span
+        class="label standard"
+      >
+        Postitettu:
+      </span>
+      <span
+        class="value left"
+      >
+        -
+      </span>
+    </div>
     <button>
       <span
         class="text brand span"

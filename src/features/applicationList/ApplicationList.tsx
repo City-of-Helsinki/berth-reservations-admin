@@ -18,6 +18,8 @@ import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
 import ApplicationListTools from '../applicationListTools/ApplicationListTools';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
+import ListActions from "../../common/listActions/ListActions";
+import {UnmarkedWinterStorageNotice} from "../unmarkedWsNoticeList/utils";
 
 interface Order {
   orderId: string;
@@ -188,20 +190,32 @@ const ApplicationList = ({
         }}
         renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
           <>
-            <ApplicationListTools
-              clearSelectedRows={resetSelectedRows}
-              filterUnhandledApplications={(row: ApplicationData) => !row.lease}
-              getDraftedOffers={getDraftedOffers}
-              handleApproveOffers={handleApproveOrders}
-              isSubmitting={isSubmittingApproveOrders}
-              selectedRows={selectedRows}
-            />
             <ApplicationTableTools
               count={count}
               statusFilter={statusFilter}
               onStatusFilterChange={onStatusFilterChange}
               nameFilter={nameFilter}
               onNameFilterChange={onNameFilterChange}
+            />
+            <ListActions
+              selectedRows={selectedRows}
+              resetSelectedRows={resetSelectedRows}
+              listActions={[
+                {
+                  id: 'sendOffer',
+                  label: t('applicationList.tools.sendOffer'),
+                  renderComponent: (selectedRows, resetSelectedRows) => (
+                    <ApplicationListTools
+                      clearSelectedRows={resetSelectedRows}
+                      filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+                      getDraftedOffers={getDraftedOffers}
+                      handleApproveOffers={handleApproveOrders}
+                      isSubmitting={isSubmittingApproveOrders}
+                      selectedRows={selectedRows}
+                    />
+                  ),
+                },
+              ]}
             />
           </>
         )}

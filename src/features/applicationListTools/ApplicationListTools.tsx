@@ -59,13 +59,13 @@ const ApplicationListTools = ({
   return (
     <>
       <div className={styles.applicationListTools}>
-        <Button className={styles.marginRight} onClick={handleClickSend} variant="secondary" disabled={noSelection}>
+        <Button className={styles.marginLeft} onClick={handleClickSend} variant="secondary" disabled={noSelection}>
           {t('applicationList.tools.sendOffer')}
         </Button>
-        <span className={styles.marginRight}>
+        <span className={styles.marginLeft}>
           {t('applicationList.tools.selectedRow', { count: selectedRows.length })}
         </span>
-        <button className={styles.marginRight} disabled={noSelection} onClick={clearSelectedRows}>
+        <button className={styles.marginLeft} disabled={noSelection} onClick={clearSelectedRows}>
           <Text color={noSelection ? 'gray' : 'brand'}>{t('applicationList.tools.clearSelectedRows')}</Text>
         </button>
       </div>
