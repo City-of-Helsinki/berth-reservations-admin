@@ -191,6 +191,7 @@ const ApplicationList = ({
           let toastId;
           if (offersWithoutPlacesCount > 0)
             toastId = hdsToast({
+              autoDismiss: false,
               type: 'error',
               toastId: 'multiApplicationsError',
               labelText: 'applicationList.errors.unhandledApplications.label',
