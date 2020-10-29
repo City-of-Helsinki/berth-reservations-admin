@@ -21,8 +21,14 @@ describe('utils', () => {
     });
 
     it('should return empty array when there are no berth applications', () => {
-      const testData: BERTH_APPLICATIONS = buildTestData([]);
-      expect(getBerthApplicationData(testData)).toEqual([]);
+      const emptyData: BERTH_APPLICATIONS = buildTestData([]);
+      const nullEdge: BERTH_APPLICATIONS = buildTestData([null]);
+      const nullNode: BERTH_APPLICATIONS = buildTestData([{ __typename: 'BerthApplicationNodeEdge', node: null }]);
+
+      expect(getBerthApplicationData(emptyData)).toEqual([]);
+      expect(getBerthApplicationData(nullEdge)).toEqual([]);
+      expect(getBerthApplicationData(nullNode)).toEqual([]);
+      expect(getBerthApplicationData(undefined)).toEqual([]);
     });
   });
 });

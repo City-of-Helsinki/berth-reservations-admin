@@ -1,8 +1,4 @@
-import {
-  BERTH_APPLICATIONS,
-  BERTH_APPLICATIONS_berthApplications_edges as BERTH_APPLICATIONS_EDGE,
-  BERTH_APPLICATIONS_berthApplications_edges_node as BERTH_APPLICATIONS_NODE,
-} from './__generated__/BERTH_APPLICATIONS';
+import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 interface HarborChoice {
@@ -57,6 +53,8 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
 
   return (
     data?.berthApplications?.edges.reduce<ApplicationData[]>((acc, edge) => {
+      if (!edge?.node) return acc;
+
       const {
         accessibilityRequired,
         berthSwitch,
@@ -77,7 +75,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         lease,
         municipality,
         status,
-      } = (edge as BERTH_APPLICATIONS_EDGE).node as BERTH_APPLICATIONS_NODE;
+      } = edge.node;
 
       const choices =
         harborChoices?.map((choice) => {

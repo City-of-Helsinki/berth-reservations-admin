@@ -1,7 +1,5 @@
 import {
   FILTERED_CUSTOMERS,
-  FILTERED_CUSTOMERS_profiles_edges as PROFILE_EDGE,
-  FILTERED_CUSTOMERS_profiles_edges_node as PROFILE_NODE,
   FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases as LEASES,
 } from './__generated__/FILTERED_CUSTOMERS';
 import { CustomerGroup } from '../../@types/__generated__/globalTypes';
@@ -36,15 +34,9 @@ export const getFilteredCustomersData = (data?: FILTERED_CUSTOMERS): CustomerDat
   if (!data?.profiles) return [];
 
   return data.profiles.edges.reduce<CustomerData[]>((acc, edge) => {
-    const {
-      id,
-      firstName,
-      lastName,
-      primaryAddress,
-      berthLeases,
-      customerGroup,
-      winterStorageLeases,
-    } = (edge as PROFILE_EDGE).node as PROFILE_NODE;
+    if (!edge?.node) return acc;
+
+    const { id, firstName, lastName, primaryAddress, berthLeases, customerGroup, winterStorageLeases } = edge.node;
 
     const berths = berthLeases?.edges
       .map((edge) => edge?.node?.berth?.pier.properties?.harbor.properties?.name)

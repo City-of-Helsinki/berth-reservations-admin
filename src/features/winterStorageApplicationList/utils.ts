@@ -1,9 +1,5 @@
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import {
-  WINTER_STORAGE_APPLICATIONS,
-  WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges as WINTER_STORAGE_APPLICATIONS_EDGE,
-  WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node as WINTER_STORAGE_APPLICATIONS_NODE,
-} from './__generated__/WINTER_STORAGE_APPLICATIONS';
+import { WINTER_STORAGE_APPLICATIONS } from './__generated__/WINTER_STORAGE_APPLICATIONS';
 
 interface WinterStorageAreaChoice {
   priority: number;
@@ -36,6 +32,8 @@ export const getWinterStorageApplicationData = (
 
   return (
     data?.winterStorageApplications?.edges.reduce<WinterStorageApplication[]>((acc, edge) => {
+      if (!edge?.node) return acc;
+
       const {
         boatLength,
         boatModel,
@@ -51,7 +49,7 @@ export const getWinterStorageApplicationData = (
         municipality,
         status,
         winterStorageAreaChoices,
-      } = (edge as WINTER_STORAGE_APPLICATIONS_EDGE).node as WINTER_STORAGE_APPLICATIONS_NODE;
+      } = edge.node;
 
       const choices =
         winterStorageAreaChoices?.map((choice) => {

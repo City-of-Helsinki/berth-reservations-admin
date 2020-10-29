@@ -15,7 +15,22 @@ describe('utils', () => {
           edges: [],
         },
       };
+      const nullEdge: NOTIFICATION_TEMPLATES = {
+        notificationTemplates: {
+          __typename: 'NotificationTemplateNodeConnection',
+          edges: [null],
+        },
+      };
+      const nullNode: NOTIFICATION_TEMPLATES = {
+        notificationTemplates: {
+          __typename: 'NotificationTemplateNodeConnection',
+          edges: [{ __typename: 'NotificationTemplateNodeEdge', node: null }],
+        },
+      };
+
       expect(getNotificationTemplates(emptyData)).toEqual([]);
+      expect(getNotificationTemplates(nullEdge)).toEqual([]);
+      expect(getNotificationTemplates(nullNode)).toEqual([]);
       expect(getNotificationTemplates(undefined)).toEqual([]);
     });
 

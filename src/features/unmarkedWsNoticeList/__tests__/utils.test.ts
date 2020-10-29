@@ -12,7 +12,7 @@ describe('unmarkedWsNoticeList utils', () => {
     });
 
     it('should return an empty array if there are no notices', () => {
-      const noData: UNMARKED_WINTER_STORAGE_NOTICES = {
+      const emptyData: UNMARKED_WINTER_STORAGE_NOTICES = {
         boatTypes: [],
         winterStorageNotices: {
           __typename: 'WinterStorageApplicationNodeConnection',
@@ -20,7 +20,26 @@ describe('unmarkedWsNoticeList utils', () => {
           edges: [],
         },
       };
-      expect(getUnmarkedWinterStorageNotices(noData)).toEqual([]);
+      const nullEdge: UNMARKED_WINTER_STORAGE_NOTICES = {
+        boatTypes: [],
+        winterStorageNotices: {
+          __typename: 'WinterStorageApplicationNodeConnection',
+          count: 1,
+          edges: [null],
+        },
+      };
+      const nullNode: UNMARKED_WINTER_STORAGE_NOTICES = {
+        boatTypes: [],
+        winterStorageNotices: {
+          __typename: 'WinterStorageApplicationNodeConnection',
+          count: 1,
+          edges: [{ __typename: 'WinterStorageApplicationNodeEdge', node: null }],
+        },
+      };
+
+      expect(getUnmarkedWinterStorageNotices(emptyData)).toEqual([]);
+      expect(getUnmarkedWinterStorageNotices(nullEdge)).toEqual([]);
+      expect(getUnmarkedWinterStorageNotices(nullNode)).toEqual([]);
       expect(getUnmarkedWinterStorageNotices(undefined)).toEqual([]);
     });
 
