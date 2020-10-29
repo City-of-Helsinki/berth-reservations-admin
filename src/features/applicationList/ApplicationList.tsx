@@ -204,7 +204,6 @@ const ApplicationList = ({
             <>
               <ApplicationListTools
                 offersCount={offers.length}
-                offersWithoutPlacesCount={offersWithoutPlacesCount}
                 selectedApplicationsCount={selectedRows.length}
                 isSubmitting={isSubmittingApproveOrders}
                 clearSelectedRows={resetSelectedRows}

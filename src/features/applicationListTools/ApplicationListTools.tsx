@@ -9,7 +9,6 @@ import styles from './applicationListTools.module.scss';
 
 export interface ApplicationListToolsProps {
   offersCount: number;
-  offersWithoutPlacesCount: number;
   selectedApplicationsCount: number;
   isSubmitting: boolean;
   clearSelectedRows(): void;
@@ -18,7 +17,6 @@ export interface ApplicationListToolsProps {
 
 const ApplicationListTools = ({
   offersCount,
-  offersWithoutPlacesCount,
   selectedApplicationsCount,
   isSubmitting,
   clearSelectedRows,
@@ -54,7 +52,6 @@ const ApplicationListTools = ({
       <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
         <SendMultiOffersForm
           offersCount={offersCount}
-          offersWithoutPlacesCount={offersWithoutPlacesCount}
           onSubmit={handleSubmit}
           onCancel={() => setSendInvoiceModalOpen(false)}
           isSubmitting={isSubmitting}

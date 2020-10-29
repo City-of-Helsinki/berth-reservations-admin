@@ -2,8 +2,13 @@
 @import 'spacings';
 @import 'form';
 
-.grid {
-  grid-gap: units(1);
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: units(0.5);
 }
 
 .instructions {

@@ -9,7 +9,6 @@ import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';
 import Text from '../../common/text/Text';
 import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../common/utils/dates';
-import Grid from '../../common/grid/Grid';
 
 type FormValues = {
   dueDate: string;
@@ -18,18 +17,11 @@ type FormValues = {
 export type SendMultiOffersFormProps = {
   isSubmitting: boolean;
   offersCount: number;
-  offersWithoutPlacesCount: number;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const SendMultiOffersForm = ({
-  isSubmitting,
-  offersCount,
-  offersWithoutPlacesCount,
-  onSubmit,
-  onCancel,
-}: SendMultiOffersFormProps) => {
+const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: SendMultiOffersFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(
@@ -57,12 +49,12 @@ const SendMultiOffersForm = ({
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
           <FormHeader title={t('forms.sendMultiOffers.title').toUpperCase()} />
-          <Grid colsCount={2} className={styles.grid}>
-            <Text as="strong">{t('forms.sendMultiOffers.berthOffers')}</Text>
-            <Text as="strong">{t('forms.sendMultiOffers.offersWithoutPlaces')}</Text>
+          <div className={styles.column}>
+            <Text as="strong" className={styles.header}>
+              {t('forms.sendMultiOffers.berthOffers')}
+            </Text>
             <Text size="xl">{offersCount}</Text>
-            <Text size="xl">{offersWithoutPlacesCount}</Text>
-          </Grid>
+          </div>
 
           <div className={styles.instructions}>
             <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph1')}</p>
