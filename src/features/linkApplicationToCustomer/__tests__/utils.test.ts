@@ -19,14 +19,32 @@ describe('utils', () => {
     });
 
     it('should return an empty array when there are no customers', () => {
-      const testData: FILTERED_CUSTOMERS = {
+      const emptyData: FILTERED_CUSTOMERS = {
         profiles: {
           __typename: 'ProfileNodeConnection',
           count: 0,
           edges: [],
         },
       };
-      expect(getFilteredCustomersData(testData)).toEqual([]);
+      const nullEdge: FILTERED_CUSTOMERS = {
+        profiles: {
+          __typename: 'ProfileNodeConnection',
+          count: 1,
+          edges: [null],
+        },
+      };
+      const nullNode: FILTERED_CUSTOMERS = {
+        profiles: {
+          __typename: 'ProfileNodeConnection',
+          count: 1,
+          edges: [{ __typename: 'ProfileNodeEdge', node: null }],
+        },
+      };
+
+      expect(getFilteredCustomersData(emptyData)).toEqual([]);
+      expect(getFilteredCustomersData(nullEdge)).toEqual([]);
+      expect(getFilteredCustomersData(nullNode)).toEqual([]);
+      expect(getFilteredCustomersData(undefined)).toEqual([]);
     });
   });
 });

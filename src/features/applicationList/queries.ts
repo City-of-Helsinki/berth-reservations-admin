@@ -7,6 +7,8 @@ export const BERTH_APPLICATIONS_QUERY = gql`
       edges {
         node {
           id
+          firstName
+          lastName
           customer {
             id
           }

@@ -18,7 +18,7 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
       <h2
         class="text standard h2 xl normalWeight"
       >
-        Uusi hakemus 04.08.2020
+        Uusi 04.08.2020
       </h2>
       <span
         class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -85,7 +85,7 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
                 <span
                   class="value left"
                 >
-                  Uusi hakemus
+                  Uusi
                 </span>
               </div>
               <div

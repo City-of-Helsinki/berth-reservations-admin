@@ -50,18 +50,33 @@ const ApplicationList = ({
 
   const rawColumns: (ColumnType | undefined)[] = [
     {
-      Cell: ({ cell }) => (
-        <InternalLink to={`/applications/${cell.row.original.id}`}>
-          {cell.value
-            ? t('applicationList.applicationType.switchApplication')
-            : t('applicationList.applicationType.newApplication')}
+      Cell: ({
+        cell: {
+          row: {
+            original: { id, firstName, lastName },
+          },
+        },
+      }) => (
+        <InternalLink to={`/applications/${id}`}>
+          {firstName} {lastName}
         </InternalLink>
       ),
+      Header: t('common.name') as string,
+      accessor: 'id',
+      filter: 'exact',
+      disableSortBy: true,
+      width: COLUMN_WIDTH.M,
+    },
+    {
+      Cell: ({ cell: { value } }) =>
+        value
+          ? t('applicationList.applicationType.switchApplication')
+          : t('applicationList.applicationType.newApplication'),
       Header: t('applicationList.tableHeaders.applicationType') as string,
       accessor: 'isSwitch',
       filter: 'exact',
       disableSortBy: true,
-      width: COLUMN_WIDTH.M,
+      width: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),

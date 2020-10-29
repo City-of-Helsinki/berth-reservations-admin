@@ -27,7 +27,7 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
           <span
             class="value left"
           >
-            Vaihtohakemus
+            Vaihto
           </span>
         </div>
         <div
@@ -575,7 +575,7 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
           <span
             class="value left"
           >
-            Uusi hakemus
+            Uusi
           </span>
         </div>
         <div
@@ -866,7 +866,7 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
           <span
             class="value left"
           >
-            Uusi hakemus
+            Uusi
           </span>
         </div>
         <div
@@ -1114,7 +1114,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
           <span
             class="value left"
           >
-            Vaihtohakemus
+            Vaihto
           </span>
         </div>
         <div
@@ -1686,7 +1686,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
           <span
             class="value left"
           >
-            Vaihtohakemus
+            Vaihto
           </span>
         </div>
         <div

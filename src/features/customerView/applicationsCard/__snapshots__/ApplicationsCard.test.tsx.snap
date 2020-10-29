@@ -42,7 +42,7 @@ exports[`ApplicationsCard renders normally 1`] = `
               <span
                 class="value left"
               >
-                Vaihtohakemus
+                Vaihto
               </span>
             </div>
             <div

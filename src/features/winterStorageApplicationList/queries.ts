@@ -11,6 +11,8 @@ export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
           status
           createdAt
           municipality
+          firstName
+          lastName
           customer {
             id
           }

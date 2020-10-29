@@ -28,6 +28,8 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   status: ApplicationStatus;
   createdAt: any;
   municipality: string;
+  firstName: string;
+  lastName: string;
   customer: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_customer | null;
   boatType: string | null;
   boatRegistrationNumber: string;

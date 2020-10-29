@@ -39,12 +39,18 @@ const WinterStorageApplicationList = ({
 
   const rawColumns: (ColumnType | undefined)[] = [
     {
-      Cell: ({ cell }) => (
-        <InternalLink to={`/winter-storage-applications/${cell.value}`}>
-          {t('applicationList.applicationType.newApplication')}
+      Cell: ({
+        cell: {
+          row: {
+            original: { id, firstName, lastName },
+          },
+        },
+      }) => (
+        <InternalLink to={`/applications/${id}`}>
+          {firstName} {lastName}
         </InternalLink>
       ),
-      Header: t('applicationList.tableHeaders.applicationType') || '',
+      Header: t('common.name') as string,
       accessor: 'id',
       filter: 'exact',
       disableSortBy: true,
