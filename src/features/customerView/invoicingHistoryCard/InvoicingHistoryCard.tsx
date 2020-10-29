@@ -21,6 +21,8 @@ interface InvoicingHistoryProps {
 }
 
 const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
+  const { t, i18n } = useTranslation();
+
   const invoiceStatusToType = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
     switch (invoiceStatus) {
       case OrderStatus.WAITING:
@@ -37,37 +39,49 @@ const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
     }
   };
 
-  const { t, i18n } = useTranslation();
+  const getRows = () =>
+    invoices.map((invoice, id) => (
+      <React.Fragment key={id}>
+        <button onClick={() => onClick(invoice)} className={styles.gridItem}>
+          <Text color="brand">
+            {isBerthInvoice(invoice)
+              ? t('common.terminology.berthRent')
+              : t('common.terminology.winterStoragePlaceRent')}
+          </Text>
+        </button>
+        <div className={styles.gridItem}>
+          <Text>
+            {`${formatDate(invoice.contractPeriod.startDate, i18n.language)} - ${formatDate(
+              invoice.contractPeriod.endDate,
+              i18n.language
+            )}`}
+          </Text>
+        </div>
+        <div className={styles.gridItem}>
+          <Text>{formatDate(invoice.dueDate, i18n.language)}</Text>
+        </div>
+        <div className={styles.gridItem}>
+          <Text>{formatPrice(invoice.totalPrice, i18n.language)}</Text>
+        </div>
+        <div className={styles.gridItem}>
+          <StatusLabel type={invoiceStatusToType(invoice.status)} label={t(getOrderStatusTKey(invoice.status))} />
+        </div>
+      </React.Fragment>
+    ));
+
   return (
     <Card>
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
         {invoices.length > 0 ? (
-          <Section title={t('common.terminology.invoices').toUpperCase()}>
-            <Grid colsCount={4}>
-              {invoices.map((invoice, id) => (
-                <React.Fragment key={id}>
-                  <button onClick={() => onClick(invoice)} className={styles.gridItem}>
-                    <Text color="brand">
-                      {isBerthInvoice(invoice)
-                        ? t('common.terminology.berthRent')
-                        : t('common.terminology.winterStoragePlaceRent')}
-                    </Text>
-                  </button>
-                  <div className={styles.gridItem}>
-                    <Text>{formatDate(invoice.dueDate, i18n.language)}</Text>
-                  </div>
-                  <div className={styles.gridItem}>
-                    <Text>{formatPrice(invoice.totalPrice, i18n.language)}</Text>
-                  </div>
-                  <div className={styles.gridItem}>
-                    <StatusLabel
-                      type={invoiceStatusToType(invoice.status)}
-                      label={t(getOrderStatusTKey(invoice.status))}
-                    />
-                  </div>
-                </React.Fragment>
-              ))}
+          <Section>
+            <Grid colsCount={5}>
+              <div className={styles.gridHeader}>Tyyppi</div>
+              <div className={styles.gridHeader}>Kausi</div>
+              <div className={styles.gridHeader}>Eräpäivä</div>
+              <div className={styles.gridHeader}>Summa</div>
+              <div className={styles.gridHeader}>Tila</div>
+              {getRows()}
             </Grid>
           </Section>
         ) : (
