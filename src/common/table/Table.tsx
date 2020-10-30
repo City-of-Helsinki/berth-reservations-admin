@@ -258,12 +258,15 @@ const Table = <D extends { id: string }>({
     gotoPage(0);
   }, [gotoPage, state.sortBy, state.filters, state.globalFilter]);
 
-  const initialSortBy = initialState?.sortBy;
+  const initialSortByState = initialState?.sortBy?.[0];
+  const currentSortByState = state.sortBy[0];
 
   useEffect(() => {
-    if (initialSortBy?.[0]?.id === state.sortBy[0]?.id && initialSortBy?.[0]?.desc === state.sortBy[0]?.desc) return;
-    onSortedColChange?.(state.sortBy[0]);
-  }, [state.sortBy, onSortedColChange, initialSortBy]);
+    if (initialSortByState?.id === currentSortByState?.id && initialSortByState?.desc === currentSortByState?.desc)
+      return;
+
+    onSortedColChange?.(currentSortByState);
+  }, [currentSortByState, onSortedColChange, initialSortByState]);
 
   useEffect(() => {
     const updateData = (newData: D[]) => {
