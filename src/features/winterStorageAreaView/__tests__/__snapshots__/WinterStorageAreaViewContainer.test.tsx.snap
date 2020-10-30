@@ -408,7 +408,7 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
         <div
           class="table primary"
           role="table"
-          style="min-width: 0px;"
+          style="min-width: 75px;"
         >
           <div
             class="stickyHeaders"
@@ -416,13 +416,13 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
             <div
               class="header mainHeaderReset"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 75px;"
             >
               <div
                 class=""
                 colspan="6"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 900 0 auto; min-width: 0px; width: 900px;"
+                style="box-sizing: border-box; flex: 825 0 auto; min-width: 75px; width: 825px;"
               >
                 <div
                   class="container"
@@ -454,13 +454,13 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
             <div
               class="header"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 75px;"
             >
               <div
                 class="headerCell selector"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -649,12 +649,12 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
             >
               <div
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                style="display: flex; flex: 1 0 auto; min-width: 75px;"
               >
                 <div
                   class="tableCell selector"
                   role="cell"
-                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                  style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
                 >
                   <div
                     class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -713,12 +713,12 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
             >
               <div
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                style="display: flex; flex: 1 0 auto; min-width: 75px;"
               >
                 <div
                   class="tableCell selector"
                   role="cell"
-                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                  style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
                 >
                   <div
                     class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"

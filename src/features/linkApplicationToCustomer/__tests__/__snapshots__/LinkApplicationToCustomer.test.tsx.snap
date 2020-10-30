@@ -142,7 +142,7 @@ Array [
       <div
         class="table primary"
         role="table"
-        style="min-width: 0px;"
+        style="min-width: 75px;"
       >
         <div
           class="stickyHeaders"
@@ -150,13 +150,13 @@ Array [
           <div
             class="header mainHeader"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell"
               colspan="7"
               role="columnheader"
-              style="box-sizing: border-box; flex: 1050 0 auto; min-width: 0px; width: 1050px;"
+              style="box-sizing: border-box; flex: 975 0 auto; min-width: 75px; width: 975px;"
             >
               LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
             </div>
@@ -164,13 +164,13 @@ Array [
           <div
             class="header"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell radioSelector"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
             >
                
             </div>
@@ -256,12 +256,12 @@ Array [
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 75px;"
             >
               <div
                 class="tableCell radioSelector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="RadioButton-module_radioButton__1xM1I radio-button_hds-radio-button__1kktv radioButton"
@@ -333,12 +333,12 @@ Array [
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 75px;"
             >
               <div
                 class="tableCell radioSelector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="RadioButton-module_radioButton__1xM1I radio-button_hds-radio-button__1kktv radioButton"
@@ -652,7 +652,7 @@ Array [
       <div
         class="table primary"
         role="table"
-        style="min-width: 0px;"
+        style="min-width: 75px;"
       >
         <div
           class="stickyHeaders"
@@ -660,13 +660,13 @@ Array [
           <div
             class="header mainHeader"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell"
               colspan="7"
               role="columnheader"
-              style="box-sizing: border-box; flex: 1050 0 auto; min-width: 0px; width: 1050px;"
+              style="box-sizing: border-box; flex: 975 0 auto; min-width: 75px; width: 975px;"
             >
               LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
             </div>
@@ -674,13 +674,13 @@ Array [
           <div
             class="header"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell radioSelector"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
             >
                
             </div>

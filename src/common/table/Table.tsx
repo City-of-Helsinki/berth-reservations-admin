@@ -115,6 +115,8 @@ const Table = <D extends { id: string }>({
         return <Checkbox id={'checkbox'} title={title} style={style} checked={checked} onChange={onChange} />;
       },
       id: SELECTOR,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     []
   );
@@ -145,6 +147,8 @@ const Table = <D extends { id: string }>({
         );
       },
       id: RADIO_SELECTOR,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     []
   );
@@ -165,7 +169,8 @@ const Table = <D extends { id: string }>({
         <button onClick={() => toggleAllRowsExpanded(false)}>{t('common.table.minimizeAll')}</button>
       ),
       id: EXPANDER,
-      minWidth: 0,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     [t]
   );

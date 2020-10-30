@@ -47,12 +47,14 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
     {
       Header: t('pricing.harborServices.service') || '',
       width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
       accessor: ({ service }) => t(getProductServiceTKey(service)),
       id: 'service',
     },
     {
       Header: t('pricing.harborServices.price') || '',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       accessor: ({ price, unit }) => {
         switch (unit) {
           case PriceUnits.AMOUNT:
@@ -68,6 +70,7 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
     {
       Header: t('pricing.harborServices.period') || '',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       accessor: ({ period }) => t(getPeriodTKey(period)),
       id: 'period',
     },
@@ -76,6 +79,7 @@ const HarborServicePricing = ({ data, loading, className }: HarborServicePricing
       Header: t('common.edit') || '',
       sortType: 'none',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ row }: { row: Row<HarborService> }) => (
         <button onClick={() => setEditRowValues(row.original)}>
           <Text color="brand">{t('common.edit')}</Text>

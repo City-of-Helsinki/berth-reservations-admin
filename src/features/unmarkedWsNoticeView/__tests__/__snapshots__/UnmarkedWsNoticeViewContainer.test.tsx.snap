@@ -187,7 +187,7 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 0px;"
+        style="min-width: 75px;"
       >
         <div
           class="stickyHeaders"
@@ -195,13 +195,13 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
           <div
             class="header mainHeader"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell"
               colspan="7"
               role="columnheader"
-              style="box-sizing: border-box; flex: 1050 0 auto; min-width: 0px; width: 1050px;"
+              style="box-sizing: border-box; flex: 975 0 auto; min-width: 75px; width: 975px;"
             >
               LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
             </div>
@@ -209,13 +209,13 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
           <div
             class="header"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
             <div
               class="headerCell radioSelector"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
             >
                
             </div>
