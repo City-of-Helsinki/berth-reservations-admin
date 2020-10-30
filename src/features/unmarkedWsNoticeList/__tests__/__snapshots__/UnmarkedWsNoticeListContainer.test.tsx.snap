@@ -65,10 +65,10 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
         </div>
         <ul
           aria-labelledby="hds-label"
-          class="Dropdown-module_menu__3xwA0 Dropdown-module_overflow__3tPgF"
+          class="Dropdown-module_menu__3xwA0"
           id="hds-menu"
           role="listbox"
-          style="max-height: calc(var(--dropdown-height) * 5);"
+          style="max-height: calc(var(--dropdown-height) * 9);"
           tabindex="-1"
         />
       </div>
