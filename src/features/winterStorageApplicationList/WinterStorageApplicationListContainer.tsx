@@ -17,6 +17,7 @@ const WinterStorageApplicationListContainer = () => {
   const { loading, data } = useQuery<WINTER_STORAGE_APPLICATIONS, WINTER_STORAGE_APPLICATIONS_VARS>(
     WINTER_STORAGE_APPLICATIONS_QUERY,
     {
+      fetchPolicy: 'no-cache',
       variables: {
         first: pageSize,
         after: cursor,

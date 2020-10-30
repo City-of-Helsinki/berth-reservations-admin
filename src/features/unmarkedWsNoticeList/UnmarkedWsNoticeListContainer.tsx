@@ -17,6 +17,7 @@ const UnmarkedWsNoticeListContainer = () => {
   const { loading, data } = useQuery<UNMARKED_WINTER_STORAGE_NOTICES, UNMARKED_WINTER_STORAGE_NOTICES_VARS>(
     UNMARKED_WINTER_STORAGE_NOTICES_QUERY,
     {
+      fetchPolicy: 'no-cache',
       variables: {
         first: pageSize,
         after: cursor,
