@@ -27,6 +27,7 @@ export type SelectProps<T extends OptionValue = string> = {
   options: Option<T>[];
   required?: boolean;
   value?: T;
+  visibleOptions?: number;
 };
 
 const Select = <T extends OptionValue = string>({
@@ -38,6 +39,7 @@ const Select = <T extends OptionValue = string>({
   options,
   required,
   value,
+  visibleOptions,
 }: SelectProps<T>) => {
   const selectedOption = options.find((option) => option.value === value);
 
@@ -66,6 +68,7 @@ const Select = <T extends OptionValue = string>({
       options={options}
       required={required}
       selectedOption={selectedOption}
+      visibleOptions={visibleOptions}
     />
   );
 };
