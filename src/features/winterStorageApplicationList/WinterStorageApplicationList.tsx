@@ -46,7 +46,7 @@ const WinterStorageApplicationList = ({
           },
         },
       }) => (
-        <InternalLink to={`/applications/${id}`}>
+        <InternalLink to={`/winter-storage-applications/${id}`}>
           {firstName} {lastName}
         </InternalLink>
       ),
