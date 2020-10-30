@@ -41,7 +41,7 @@ fixture('List view table state persistence')
 
 test('Application list', async (t) => {
   await t.click(navigation.applications);
-  await testSorting(t, applications.applicationList.table, 3, 1);
+  await testSorting(t, applications.applicationList.table, 4, 1);
 });
 
 test('Customer list', async (t) => {
