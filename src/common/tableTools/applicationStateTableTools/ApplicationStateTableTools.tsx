@@ -14,6 +14,12 @@ interface ApplicationStateTableToolsProps {
 
 const ApplicationStateTableTools = ({ count, statusFilter, onStatusFilterChange }: ApplicationStateTableToolsProps) => {
   const { t } = useTranslation();
+  const options = [
+    { label: t('common.all'), value: '' as ApplicationStatus },
+    ...Object.values(ApplicationStatus).map((status) => {
+      return { label: t(APPLICATION_STATUS[status].label), value: status };
+    }),
+  ];
   return (
     <div className={styles.container}>
       <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
@@ -24,12 +30,8 @@ const ApplicationStateTableTools = ({ count, statusFilter, onStatusFilterChange 
           (e.target.value as string) === '' ? onStatusFilterChange(undefined) : onStatusFilterChange(e.target.value)
         }
         value={statusFilter ?? ('' as ApplicationStatus)}
-        options={[
-          { label: t('common.all'), value: '' as ApplicationStatus },
-          ...Object.values(ApplicationStatus).map((status) => {
-            return { label: t(APPLICATION_STATUS[status].label), value: status };
-          }),
-        ]}
+        options={options}
+        visibleOptions={options.length + 1}
       />
     </div>
   );
