@@ -34,8 +34,8 @@ export const mockData: BERTH_APPLICATIONS = {
           customer: {
             __typename: 'ProfileNode',
             id: 'MOCK-PROFILE',
-            primaryEmail: { __typename: 'EmailNode', email: 'test@example.com' },
           },
+          email: 'test@example.com',
           firstName: 'Matti',
           harborChoices: [{ __typename: 'HarborChoiceType', harbor: '1', harborName: '1', priority: 0 }],
           id: 'MOCK-APPLICATION-0',
@@ -96,11 +96,8 @@ export const mockData: BERTH_APPLICATIONS = {
           customer: {
             __typename: 'ProfileNode',
             id: 'MOCK-PROFILE',
-            primaryEmail: {
-              __typename: 'EmailNode',
-              email: 'test@example.com',
-            },
           },
+          email: 'test-0@example.com',
           firstName: 'Maija',
           harborChoices: null,
           id: 'MOCK-APPLICATION-1',
@@ -156,8 +153,8 @@ export const mockData: BERTH_APPLICATIONS = {
           customer: {
             __typename: 'ProfileNode',
             id: 'MOCK-PROFILE-0',
-            primaryEmail: { __typename: 'EmailNode', email: 'test@example.com' },
           },
+          email: 'test-2@example.com',
           firstName: 'Matti',
           harborChoices: [
             { __typename: 'HarborChoiceType', harbor: 'MOCK-HARBOR-0', harborName: 'Testisatama', priority: 0 },

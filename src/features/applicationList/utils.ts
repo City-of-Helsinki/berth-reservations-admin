@@ -39,7 +39,7 @@ export interface ApplicationData {
   choices: Array<HarborChoice>;
   createdAt: string;
   customerId?: string;
-  customerEmail: string | undefined;
+  email: string;
   firstName: string;
   id: string;
   isSwitch: boolean;
@@ -70,6 +70,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         boatWidth,
         createdAt,
         customer,
+        email,
         firstName,
         harborChoices,
         id,
@@ -123,7 +124,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         choices,
         createdAt,
         customerId: customer?.id,
-        customerEmail: customer?.primaryEmail?.email,
+        email,
         firstName,
         id,
         isSwitch: !!berthSwitch,
@@ -146,18 +147,14 @@ interface Offer {
 
 export const getDraftedOffers = (applications: ApplicationData[]) =>
   applications.reduce<Offer[]>((acc, application) => {
-    if (
-      application.status !== ApplicationStatus.OFFER_GENERATED ||
-      !application.lease?.orderId ||
-      !application.customerEmail
-    )
+    if (application.status !== ApplicationStatus.OFFER_GENERATED || !application.lease?.orderId || !application.email)
       return acc;
 
     return [
       ...acc,
       {
         orderId: application.lease.orderId,
-        email: application.customerEmail,
+        email: application.email,
       },
     ];
   }, []);

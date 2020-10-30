@@ -6,7 +6,6 @@ import ApplicationListTools, { ApplicationListToolsProps } from '../ApplicationL
 describe('ApplicationListTools', () => {
   const initialProps: ApplicationListToolsProps = {
     offersCount: 2,
-    offersWithoutPlacesCount: 1,
     selectedApplicationsCount: 3,
     isSubmitting: false,
     clearSelectedRows: jest.fn(),

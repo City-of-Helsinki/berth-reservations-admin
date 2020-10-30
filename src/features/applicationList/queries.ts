@@ -23,9 +23,6 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           lastName
           customer {
             id
-            primaryEmail {
-              email
-            }
           }
           berthSwitch {
             berthNumber
@@ -37,6 +34,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
               title
             }
           }
+          email
           createdAt
           municipality
           boatType
