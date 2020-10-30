@@ -259,10 +259,10 @@ exports[`ApplicationListContainer renders normally 1`] = `
               >
                 <a
                   class="internalLink brand"
-                  href="#/harbors/MOCK-HARBOR-0"
-                  title="Testisatama G 7"
+                  href="#/harbors/MOCK-HARBOR-1"
+                  title="Pier Brosnan 7"
                 >
-                  Testisatama G 7
+                  Pier Brosnan 7
                 </a>
               </div>
               <div
