@@ -79,10 +79,10 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
       <ul
         aria-labelledby="service-label"
-        class="Dropdown-module_menu__3xwA0"
+        class="Dropdown-module_menu__3xwA0 Dropdown-module_overflow__3tPgF"
         id="service-menu"
         role="listbox"
-        style="max-height: calc(var(--dropdown-height) * 5);"
+        style="max-height: calc(var(--dropdown-height) * 4);"
         tabindex="-1"
       />
     </div>

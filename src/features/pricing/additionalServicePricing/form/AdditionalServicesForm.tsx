@@ -63,6 +63,7 @@ const OPTIONAL_SERVICES = [
   ProductServiceType.SUMMER_STORAGE_FOR_TRAILERS,
   ProductServiceType.PARKING_PERMIT,
   ProductServiceType.DINGHY_PLACE,
+  ProductServiceType.STORAGE_ON_ICE,
 ];
 
 const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: AdditionalServicesFormProps) => {
@@ -98,6 +99,7 @@ const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: Additiona
                 name="service"
                 label={t('pricing.additionalServices.service')}
                 disabled={initialValues?.service}
+                visibleOptions={4}
                 options={serviceOptions
                   .filter((option) => OPTIONAL_SERVICES.includes(option))
                   .map((option) => ({
