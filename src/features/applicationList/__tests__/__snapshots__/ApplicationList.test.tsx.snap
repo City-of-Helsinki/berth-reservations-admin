@@ -259,6 +259,131 @@ exports[`ApplicationList renders normally with all props 1`] = `
               >
                 <a
                   class="internalLink brand"
+                  href="#/harbors/MOCK-HARBOR-0"
+                  title="Testisatama G 7"
+                >
+                  Testisatama G 7
+                </a>
+              </div>
+              <div
+                class="tableCell expander"
+                role="cell"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              >
+                <div
+                  style="cursor: pointer;"
+                  title="Toggle Row Expanded"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                      />
+                      <path
+                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rowWrapper"
+          >
+            <div
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            >
+              <div
+                class="tableCell selector"
+                role="cell"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              >
+                <div
+                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+                  style="cursor: pointer;"
+                >
+                  <input
+                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+                    id="checkbox-MOCK-APPLICATION-1"
+                    title="Toggle Row Selected"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label
+                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+                    for="checkbox-MOCK-APPLICATION-1"
+                  />
+                </div>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              >
+                <a
+                  class="internalLink brand"
+                  href="#/applications/MOCK-APPLICATION-1"
+                >
+                  Maija Meikäläinen
+                </a>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+              >
+                Vaihto
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+              >
+                16.07.2020
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 0px; width: 75px;"
+              >
+                0
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+              >
+                Helsinki
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              >
+                <span
+                  class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
+                >
+                  Odottaa käsittelyä
+                </span>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing: border-box; flex: 300 0 auto; min-width: 0px; width: 300px;"
+              >
+                <a
+                  class="internalLink brand"
                   href="#/harbors/MOCK-HARBOR-1"
                   title="Pier Brosnan 7"
                 >
