@@ -7,6 +7,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
     $switchApplications: Boolean
     $orderBy: String
     $statuses: [ApplicationStatus]
+    $nameFilter: String
   ) {
     berthApplications(
       first: $first
@@ -14,6 +15,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
       switchApplications: $switchApplications
       orderBy: $orderBy
       statuses: $statuses
+      name: $nameFilter
     ) {
       count
       edges {

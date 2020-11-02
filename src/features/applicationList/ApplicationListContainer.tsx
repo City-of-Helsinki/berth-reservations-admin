@@ -43,8 +43,14 @@ const statusFilterAtom = atom<ApplicationStatus | undefined>({
   default: undefined,
 });
 
+const nameFilterAtom = atom<string | undefined>({
+  key: 'ApplicationListContainer_nameFilterAtom',
+  default: undefined,
+});
+
 const ApplicationListContainer = () => {
-  const [onlySwitchApps, setOnlySwitchApps] = useRecoilState<boolean | undefined>(onlySwitchAppsAtom);
+  const [onlySwitchApps, setOnlySwitchApps] = useRecoilState(onlySwitchAppsAtom);
+  const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
   const orderBy = useRecoilValue(orderBySelector);
 
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
@@ -58,6 +64,7 @@ const ApplicationListContainer = () => {
     switchApplications: onlySwitchApps,
     orderBy,
     statuses: statusFilter ? [statusFilter] : undefined,
+    nameFilter,
   };
 
   const { loading, data } = useQuery<BERTH_APPLICATIONS, BERTH_APPLICATIONS_VARS>(BERTH_APPLICATIONS_QUERY, {
@@ -123,6 +130,11 @@ const ApplicationListContainer = () => {
       statusFilter={statusFilter}
       onStatusFilterChange={(statusFilter) => {
         setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
+      nameFilter={nameFilter}
+      onNameFilterChange={(nameFilter) => {
+        setNameFilter(nameFilter);
         goToPage(0);
       }}
     />

@@ -1,13 +1,20 @@
 import gql from 'graphql-tag';
 
 export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
-  query WINTER_STORAGE_APPLICATIONS($first: Int!, $after: String, $orderBy: String, $statuses: [ApplicationStatus]) {
+  query WINTER_STORAGE_APPLICATIONS(
+    $first: Int!
+    $after: String
+    $orderBy: String
+    $statuses: [ApplicationStatus]
+    $nameFilter: String
+  ) {
     winterStorageApplications(
       first: $first
       after: $after
       orderBy: $orderBy
       areaTypes: [MARKED]
       statuses: $statuses
+      name: $nameFilter
     ) {
       count
       edges {
