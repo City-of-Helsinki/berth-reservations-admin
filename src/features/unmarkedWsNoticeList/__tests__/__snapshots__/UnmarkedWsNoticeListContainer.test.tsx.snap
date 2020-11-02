@@ -16,7 +16,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width: 825px;"
+        style="min-width: 675px;"
       >
         <div
           class="stickyHeaders"
@@ -24,13 +24,13 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           <div
             class="header mainHeader"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 675px;"
           >
             <div
               class="headerCell"
               colspan="6"
               role="columnheader"
-              style="box-sizing: border-box; flex: 825 0 auto; min-width: 0px; width: 825px;"
+              style="box-sizing: border-box; flex: 675 0 auto; min-width: 675px; width: 675px;"
             >
               Nostojärjestysilmoitukset
             </div>
@@ -38,13 +38,13 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           <div
             class="header"
             role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 0px;"
+            style="display: flex; flex: 1 0 auto; min-width: 675px;"
           >
             <div
               class="headerCell selector"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
             >
               <div
                 class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -67,7 +67,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
             >
               Nimi
             </div>
@@ -75,7 +75,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+              style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
               title="Toggle SortBy"
             >
               PVM
@@ -107,7 +107,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+              style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
             >
               Talvisäilytysalue
             </div>
@@ -115,7 +115,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
             >
               Tila
             </div>
@@ -123,7 +123,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               class="headerCell expander"
               colspan="1"
               role="columnheader"
-              style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+              style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
             >
               <button>
                 Pienennä kaikki
@@ -139,12 +139,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -166,7 +166,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -178,21 +178,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -203,7 +203,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -237,12 +237,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -264,7 +264,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -276,21 +276,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -301,7 +301,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -335,12 +335,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -362,7 +362,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -374,21 +374,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -399,7 +399,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -433,12 +433,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -460,7 +460,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -472,21 +472,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -497,7 +497,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -531,12 +531,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -558,7 +558,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -570,21 +570,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -595,7 +595,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -629,12 +629,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -656,7 +656,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -668,21 +668,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -693,7 +693,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -727,12 +727,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -754,7 +754,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -766,21 +766,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -791,7 +791,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -825,12 +825,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -852,7 +852,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -864,21 +864,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -889,7 +889,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -923,12 +923,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -950,7 +950,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -962,21 +962,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 06.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -987,7 +987,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"
@@ -1021,12 +1021,12 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           >
             <div
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -1048,7 +1048,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <a
                   class="internalLink brand"
@@ -1060,21 +1060,21 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 07.05.2019
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Iso-Sarvasto
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 150px; width: 150px;"
               >
                 <span
                   class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX"
@@ -1085,7 +1085,7 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
                 <div
                   style="cursor: pointer;"

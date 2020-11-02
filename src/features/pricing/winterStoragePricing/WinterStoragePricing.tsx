@@ -78,6 +78,7 @@ const WinterStoragePricing = ({ data, loading, className, refetchQueries }: Wint
       Header: t('common.edit') || '',
       sortType: 'none',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ row }: { row: Row<WinterStoragePrice> }) => (
         <button onClick={() => setEditRowValues(row.original)}>
           <Text color="brand">{t('common.edit')}</Text>

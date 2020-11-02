@@ -32,7 +32,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
         <div
           class="table basic noMainHeader"
           role="table"
-          style="min-width: 712.5px;"
+          style="min-width: 112.5px;"
         >
           <div
             class="stickyHeaders"
@@ -40,7 +40,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
             <div
               class="header"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 112.5px;"
             >
               <div
                 class="headerCell"
@@ -174,7 +174,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Muokkaa
               </div>
@@ -234,7 +234,7 @@ exports[`BerthPricing renders normally 1`] = `
         <div
           class="table basic noMainHeader"
           role="table"
-          style="min-width: 712.5px;"
+          style="min-width: 112.5px;"
         >
           <div
             class="stickyHeaders"
@@ -242,7 +242,7 @@ exports[`BerthPricing renders normally 1`] = `
             <div
               class="header"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 112.5px;"
             >
               <div
                 class="headerCell"
@@ -376,7 +376,7 @@ exports[`BerthPricing renders normally 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Muokkaa
               </div>
@@ -390,7 +390,7 @@ exports[`BerthPricing renders normally 1`] = `
             >
               <div
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                style="display: flex; flex: 1 0 auto; min-width: 112.5px;"
               >
                 <div
                   class="tableCell"
@@ -423,7 +423,7 @@ exports[`BerthPricing renders normally 1`] = `
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
                 >
                   <button>
                     <span

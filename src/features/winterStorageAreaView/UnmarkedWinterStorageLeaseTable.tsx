@@ -43,6 +43,7 @@ const WinterStoragePlaceTable = ({ leases, className }: WinterStorageAreaViewTab
       id: 'notified',
       filter: 'text',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     },
   ];
 

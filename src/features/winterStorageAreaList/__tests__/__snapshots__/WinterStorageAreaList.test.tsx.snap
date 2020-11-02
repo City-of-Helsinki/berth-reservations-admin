@@ -34,7 +34,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
       <div
         class="table primary"
         role="table"
-        style="min-width:1012.5px"
+        style="min-width:862.5px"
       >
         <div
           class="stickyHeaders"
@@ -42,13 +42,13 @@ exports[`WinterStorageAreaList renders normally 1`] = `
           <div
             class="header mainHeader"
             role="row"
-            style="display:flex;flex:1 0 auto;min-width:0px"
+            style="display:flex;flex:1 0 auto;min-width:862.5px"
           >
             <div
               class="headerCell"
               colspan="10"
               role="columnheader"
-              style="box-sizing:border-box;flex:1012.5 0 auto;min-width:0px;width:1012.5px"
+              style="box-sizing:border-box;flex:862.5 0 auto;min-width:862.5px;width:862.5px"
             >
               Talvisäilytysalueet
             </div>
@@ -56,13 +56,13 @@ exports[`WinterStorageAreaList renders normally 1`] = `
           <div
             class="header"
             role="row"
-            style="display:flex;flex:1 0 auto;min-width:0px"
+            style="display:flex;flex:1 0 auto;min-width:862.5px"
           >
             <div
               class="headerCell selector"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
             >
               <div
                 class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -84,7 +84,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px;cursor:pointer"
+              style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px;cursor:pointer"
               title="Toggle SortBy"
             >
               Alue
@@ -116,7 +116,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px;cursor:pointer"
+              style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px;cursor:pointer"
               title="Toggle SortBy"
             >
               Paikkoja
@@ -148,7 +148,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px;cursor:pointer"
+              style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px;cursor:pointer"
               title="Toggle SortBy"
             >
               Vapaita
@@ -180,7 +180,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px;cursor:pointer"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px;cursor:pointer"
               title="Toggle SortBy"
             >
               <div
@@ -226,7 +226,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px;cursor:pointer"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px;cursor:pointer"
               title="Toggle SortBy"
             >
               <div
@@ -272,7 +272,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px;cursor:pointer"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px;cursor:pointer"
               title="Toggle SortBy"
             >
               <div
@@ -318,7 +318,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px;cursor:pointer"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px;cursor:pointer"
               title="Toggle SortBy"
             >
               <div
@@ -364,7 +364,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px;cursor:pointer"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px;cursor:pointer"
               title="Toggle SortBy"
             >
               <div
@@ -410,7 +410,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               class="headerCell expander"
               colspan="1"
               role="columnheader"
-              style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
             >
               <button>
                 Pienennä kaikki
@@ -426,12 +426,12 @@ exports[`WinterStorageAreaList renders normally 1`] = `
           >
             <div
               role="row"
-              style="display:flex;flex:1 0 auto;min-width:0px"
+              style="display:flex;flex:1 0 auto;min-width:862.5px"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -452,7 +452,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 <a
                   class="internalLink brand"
@@ -465,21 +465,21 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 15
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 5
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper disabled outlined"
@@ -500,7 +500,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper disabled outlined"
@@ -521,7 +521,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper disabled outlined"
@@ -542,7 +542,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper disabled outlined"
@@ -563,7 +563,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper disabled outlined"
@@ -584,7 +584,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   style="cursor:pointer"
@@ -618,12 +618,12 @@ exports[`WinterStorageAreaList renders normally 1`] = `
           >
             <div
               role="row"
-              style="display:flex;flex:1 0 auto;min-width:0px"
+              style="display:flex;flex:1 0 auto;min-width:862.5px"
             >
               <div
                 class="tableCell selector"
                 role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
@@ -644,7 +644,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 <a
                   class="internalLink brand"
@@ -657,21 +657,21 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 15
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:112.5 0 auto;min-width:0px;width:112.5px"
+                style="box-sizing:border-box;flex:112.5 0 auto;min-width:112.5px;width:112.5px"
               >
                 5
               </div>
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper standard outlined"
@@ -692,7 +692,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper standard outlined"
@@ -713,7 +713,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper standard outlined"
@@ -734,7 +734,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper standard outlined"
@@ -755,7 +755,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell"
                 role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:0px;width:75px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   class="iconWrapper standard outlined"
@@ -776,7 +776,7 @@ exports[`WinterStorageAreaList renders normally 1`] = `
               <div
                 class="tableCell expander"
                 role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
               >
                 <div
                   style="cursor:pointer"

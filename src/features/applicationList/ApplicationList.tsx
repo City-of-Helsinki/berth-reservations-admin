@@ -66,6 +66,7 @@ const ApplicationList = ({
       filter: 'exact',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell: { value } }) =>
@@ -77,12 +78,14 @@ const ApplicationList = ({
       filter: 'exact',
       disableSortBy: true,
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
       Header: t('applicationList.tableHeaders.pvm') as string,
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     queueFeatureFlag()
       ? {
@@ -90,6 +93,7 @@ const ApplicationList = ({
           accessor: 'queue',
           disableSortBy: true,
           width: COLUMN_WIDTH.XS,
+          minWidth: COLUMN_WIDTH.XS,
         }
       : undefined,
     {
@@ -97,6 +101,7 @@ const ApplicationList = ({
       accessor: 'municipality',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Cell: ({ cell: { value } }) => (
@@ -109,6 +114,7 @@ const ApplicationList = ({
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) =>
@@ -121,6 +127,7 @@ const ApplicationList = ({
       accessor: 'lease',
       disableSortBy: true,
       width: COLUMN_WIDTH.XL,
+      minWidth: COLUMN_WIDTH.XL,
     },
   ];
   const columns: ColumnType[] = rawColumns.filter((column): column is ColumnType => column !== undefined);
