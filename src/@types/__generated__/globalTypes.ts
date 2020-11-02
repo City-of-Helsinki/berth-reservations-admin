@@ -540,18 +540,18 @@ export interface UpdateProfileInput {
   language?: Language | null;
   contactMethod?: ContactMethod | null;
   addEmails?: (CreateEmailInput | null)[] | null;
-  updateEmails?: (UpdateEmailInput | null)[] | null;
-  removeEmails?: (string | null)[] | null;
   addPhones?: (CreatePhoneInput | null)[] | null;
-  updatePhones?: (UpdatePhoneInput | null)[] | null;
-  removePhones?: (string | null)[] | null;
   addAddresses?: (CreateAddressInput | null)[] | null;
-  updateAddresses?: (UpdateAddressInput | null)[] | null;
-  removeAddresses?: (string | null)[] | null;
   subscriptions?: (SubscriptionInputType | null)[] | null;
   youthProfile?: YouthProfileFields | null;
   sensitivedata?: SensitiveDataFields | null;
   id: string;
+  updateEmails?: (UpdateEmailInput | null)[] | null;
+  removeEmails?: (string | null)[] | null;
+  updatePhones?: (UpdatePhoneInput | null)[] | null;
+  removePhones?: (string | null)[] | null;
+  updateAddresses?: (UpdateAddressInput | null)[] | null;
+  removeAddresses?: (string | null)[] | null;
 }
 
 export interface UpdateProfileMutationInput {

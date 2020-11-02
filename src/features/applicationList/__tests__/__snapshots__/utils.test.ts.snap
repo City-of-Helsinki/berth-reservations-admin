@@ -65,7 +65,7 @@ Array [
     "createdAt": "2020-07-16",
     "customerId": "MOCK-PROFILE",
     "firstName": "Maija",
-    "id": "MOCK-APPLICATION-0",
+    "id": "MOCK-APPLICATION-1",
     "isSwitch": true,
     "lastName": "Meikäläinen",
     "lease": Object {

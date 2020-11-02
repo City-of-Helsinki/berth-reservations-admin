@@ -88,7 +88,7 @@ export const mockData: BERTH_APPLICATIONS = {
           customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
           firstName: 'Maija',
           harborChoices: null,
-          id: 'MOCK-APPLICATION-0',
+          id: 'MOCK-APPLICATION-1',
           lastName: 'Meikäläinen',
           lease: {
             __typename: 'BerthLeaseNode',
