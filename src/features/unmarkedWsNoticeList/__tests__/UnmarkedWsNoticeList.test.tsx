@@ -11,12 +11,14 @@ import UnmarkedWsNoticeDetails from '../../unmarkedWsNoticeDetails/UnmarkedWsNot
 const notices = getUnmarkedWinterStorageNotices(unmarkedWinterStorageNoticeMockData);
 
 const mockProps: UnmarkedWsNoticeListProps = {
+  sortBy: [],
+  onSortedColsChange: jest.fn(),
+  onStatusFilterChange: jest.fn(),
   notices,
   loading: false,
   pageCount: 1,
   pageIndex: 0,
   goToPage: jest.fn(),
-  onSortedColChange: jest.fn(),
 };
 
 describe('UnmarkedWsNoticeList', () => {

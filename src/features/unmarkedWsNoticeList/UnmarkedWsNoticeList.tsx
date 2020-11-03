@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -10,18 +11,22 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { UnmarkedWinterStorageNotice } from './utils';
-import { SortedCol } from '../../common/utils/useBackendSorting';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 export interface UnmarkedWsNoticeListProps {
   notices: UnmarkedWinterStorageNotice[];
   loading: boolean;
   pageCount: number;
   pageIndex: number;
+  sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
   goToPage(page: number): void;
-  onSortedColChange(sortedCol: SortedCol | undefined): void;
 }
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
@@ -32,7 +37,11 @@ const UnmarkedWsNoticeList = ({
   pageCount,
   pageIndex,
   goToPage,
-  onSortedColChange,
+  count,
+  statusFilter,
+  onStatusFilterChange,
+  onSortedColsChange,
+  sortBy,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
@@ -93,7 +102,7 @@ const UnmarkedWsNoticeList = ({
         columns={columns}
         data={notices}
         loading={loading}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => (
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...row.original} />
@@ -103,8 +112,16 @@ const UnmarkedWsNoticeList = ({
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
+          />
+        )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

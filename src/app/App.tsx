@@ -1,6 +1,7 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 import apolloClient from './apolloClient';
 import ApplicationList from '../features/applicationList/ApplicationListContainer';
@@ -26,42 +27,44 @@ import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNot
 
 const App = () => {
   return (
-    <ApolloProvider client={apolloClient}>
-      <Router>
-        <Switch>
-          <Route exact path="/error" component={ErrorPage} />
-          <ErrorBoundary errorComponent={<Redirect to="/error" />}>
-            <Switch>
-              <Route path="/login" component={LoginPage} />
-              <Route exact path="/callback" component={CallbackPage} />
-              <Redirect exact from="/" to="/harbors" />
-              <Page>
-                <Switch>
-                  <PrivateRoute exact path="/harbors/:id" component={HarborView} />
-                  <PrivateRoute exact path="/harbors" component={HarborList} />
-                  <PrivateRoute exact path="/customers/:id" component={CustomerView} />
-                  <PrivateRoute exact path="/customers" component={CustomerList} />
-                  <PrivateRoute exact path="/applications/:id" component={ApplicationView} />
-                  <PrivateRoute exact path="/applications" component={ApplicationList} />
-                  <PrivateRoute
-                    exact
-                    path="/winter-storage-applications/:id"
-                    component={WinterStorageApplicationView}
-                  />
-                  <PrivateRoute exact path="/winter-storage-applications" component={WinterStorageApplicationList} />
-                  <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
-                  <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
-                  <PrivateRoute exact path="/offer/:applicationId" component={Offer} />
-                  <PrivateRoute exact path="/pricing" component={Pricing} />
-                  <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
-                  <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />
-                </Switch>
-              </Page>
-            </Switch>
-          </ErrorBoundary>
-        </Switch>
-      </Router>
-    </ApolloProvider>
+    <RecoilRoot>
+      <ApolloProvider client={apolloClient}>
+        <Router>
+          <Switch>
+            <Route exact path="/error" component={ErrorPage} />
+            <ErrorBoundary errorComponent={<Redirect to="/error" />}>
+              <Switch>
+                <Route path="/login" component={LoginPage} />
+                <Route exact path="/callback" component={CallbackPage} />
+                <Redirect exact from="/" to="/harbors" />
+                <Page>
+                  <Switch>
+                    <PrivateRoute exact path="/harbors/:id" component={HarborView} />
+                    <PrivateRoute exact path="/harbors" component={HarborList} />
+                    <PrivateRoute exact path="/customers/:id" component={CustomerView} />
+                    <PrivateRoute exact path="/customers" component={CustomerList} />
+                    <PrivateRoute exact path="/applications/:id" component={ApplicationView} />
+                    <PrivateRoute exact path="/applications" component={ApplicationList} />
+                    <PrivateRoute
+                      exact
+                      path="/winter-storage-applications/:id"
+                      component={WinterStorageApplicationView}
+                    />
+                    <PrivateRoute exact path="/winter-storage-applications" component={WinterStorageApplicationList} />
+                    <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
+                    <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
+                    <PrivateRoute exact path="/offer/:applicationId" component={Offer} />
+                    <PrivateRoute exact path="/pricing" component={Pricing} />
+                    <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
+                    <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />
+                  </Switch>
+                </Page>
+              </Switch>
+            </ErrorBoundary>
+          </Switch>
+        </Router>
+      </ApolloProvider>
+    </RecoilRoot>
   );
 };
 

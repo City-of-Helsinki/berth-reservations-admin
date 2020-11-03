@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconTrash } from 'hds-react';
+import { atom, useRecoilState } from 'recoil';
+import { SortingRule } from 'react-table';
 
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import HarborDetails from './harborDetails/HarborDetails';
@@ -22,8 +24,20 @@ export interface HarborListProps {
   loading?: boolean;
 }
 
+const sortByAtom = atom<SortingRule<HarborData>[]>({
+  key: 'HarborList_sortByAtom',
+  default: [{ id: 'name', desc: false }],
+});
+
+const globalFilterAtom = atom<string | undefined>({
+  key: 'HarborList_globalFilterAtom',
+  default: undefined,
+});
+
 const HarborList = ({ data, loading }: HarborListProps) => {
   const { t } = useTranslation();
+  const [sortBy, setSortBy] = useRecoilState(sortByAtom);
+  const [globalFilter, setGlobalFilter] = useRecoilState(globalFilterAtom);
 
   const columns: ColumnType[] = [
     {
@@ -105,8 +119,16 @@ const HarborList = ({ data, loading }: HarborListProps) => {
         data={data}
         loading={loading}
         columns={columns}
-        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
-        renderTableToolsTop={(_, setters) => <GlobalSearchTableTools handleGlobalFilter={setters.setGlobalFilter} />}
+        initialState={{ sortBy, globalFilter }}
+        renderTableToolsTop={(_, setters) => (
+          <GlobalSearchTableTools
+            defaultValue={globalFilter}
+            handleGlobalFilter={(filter) => {
+              setGlobalFilter(filter);
+              setters.setGlobalFilter(filter);
+            }}
+          />
+        )}
         renderSubComponent={(row) => <HarborDetails {...row.original} />}
         renderMainHeader={() => t('harborList.tableHeaders.mainHeader')}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
@@ -118,6 +140,7 @@ const HarborList = ({ data, loading }: HarborListProps) => {
           />
         )}
         canSelectRows
+        onSortedColsChange={(sortedCol) => setSortBy(sortedCol)}
       />
     </PageContent>
   );

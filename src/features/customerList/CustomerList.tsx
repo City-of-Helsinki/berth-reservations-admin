@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
@@ -26,11 +27,12 @@ export interface CustomerListProps {
   loading: boolean;
   data: CustomerData[];
   pagination: PaginationProps;
+  sortBy: SortingRule<CustomerData>[];
   tableTools: Omit<CustomerListTableToolsProps<SearchBy>, 'selectedCustomerIds' | 'clearSelectedRows'>;
-  onSortedColChange(sortBy: { id: string; desc?: boolean } | undefined): void;
+  onSortedColsChange: (sortedCol: SortingRule<CustomerData>[]) => void;
 }
 
-const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange }: CustomerListProps) => {
+const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChange, sortBy }: CustomerListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -100,7 +102,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         data={data}
         loading={loading}
         columns={columns}
-        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => {
           return (
             <CustomerDetails
@@ -130,7 +132,8 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderTableToolsBottom={() => <Pagination {...pagination} />}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy={true}
         canSelectRows
       />
     </PageContent>

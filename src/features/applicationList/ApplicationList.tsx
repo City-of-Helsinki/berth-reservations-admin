@@ -16,19 +16,24 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
   getPageCount: (connectionsCount: number | null | undefined) => number;
   goToPage: (pageIndex: number) => void;
   handleDeleteLease: (id: string) => Promise<void>;
-  onSortedColChange: (sortedCol: SortingRule<ApplicationData> | undefined) => void;
+  onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
+  sortBy: SortingRule<ApplicationData>[];
   isDeleting: boolean;
   loading: boolean;
   onlySwitchApps?: boolean;
   pageIndex: number;
   setOnlySwitchApps: (onlySwitchApps?: boolean) => void;
   tableData: ApplicationData[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -38,13 +43,17 @@ const ApplicationList = ({
   getPageCount,
   goToPage,
   handleDeleteLease,
-  onSortedColChange,
+  sortBy,
+  onSortedColsChange,
   isDeleting,
   loading,
   onlySwitchApps,
   pageIndex,
   setOnlySwitchApps,
   tableData,
+  count,
+  statusFilter,
+  onStatusFilterChange,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -138,7 +147,6 @@ const ApplicationList = ({
       <Table
         data={tableData}
         loading={loading || isDeleting}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         columns={columns}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} handleDeleteLease={handleDeleteLease} />}
         renderMainHeader={() => {
@@ -171,8 +179,17 @@ const ApplicationList = ({
             onPageChange={({ selected }) => goToPage(selected)}
           />
         )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
+          />
+        )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        initialState={{ sortBy }}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

@@ -4,6 +4,7 @@ import { MockedProvider } from '@apollo/react-testing';
 import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
+import { RecoilRoot } from 'recoil';
 
 import { unmarkedWinterStorageNoticeMockData } from '../__fixtures__/mockData';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from '../queries';
@@ -27,11 +28,13 @@ const queryMock = {
 describe('UnmarkedWsNoticeListContainer', () => {
   const getWrapper = () => {
     return mount(
-      <MockedProvider mocks={[queryMock]}>
-        <HashRouter>
-          <UnmarkedWsNoticeListContainer />
-        </HashRouter>
-      </MockedProvider>
+      <RecoilRoot>
+        <MockedProvider mocks={[queryMock]}>
+          <HashRouter>
+            <UnmarkedWsNoticeListContainer />
+          </HashRouter>
+        </MockedProvider>
+      </RecoilRoot>
     );
   };
 

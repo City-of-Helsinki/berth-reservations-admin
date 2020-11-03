@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
-import { SortedCol } from '../../common/utils/useBackendSorting';
 import InternalLink from '../../common/internalLink/InternalLink';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import { formatDate } from '../../common/utils/format';
@@ -15,14 +15,19 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 
 interface WinterStorageApplicationListProps {
   applications: WinterStorageApplication[];
   loading: boolean;
   pageCount: number;
   pageIndex: number;
+  sortBy: SortingRule<WinterStorageApplication>[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
   goToPage(page: number): void;
-  onSortedColChange(sortedCol: SortedCol | undefined): void;
+  onSortedColsChange(sortedCol: SortingRule<WinterStorageApplication>[]): void;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<WinterStorageApplication>;
@@ -33,7 +38,11 @@ const WinterStorageApplicationList = ({
   pageCount,
   pageIndex,
   goToPage,
-  onSortedColChange,
+  count,
+  statusFilter,
+  sortBy,
+  onSortedColsChange,
+  onStatusFilterChange,
 }: WinterStorageApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -103,7 +112,7 @@ const WinterStorageApplicationList = ({
         columns={columns}
         data={applications}
         loading={loading}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} />}
         renderMainHeader={() => (
           <TableFilters
@@ -116,8 +125,16 @@ const WinterStorageApplicationList = ({
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
+        renderTableToolsTop={() => (
+          <ApplicationStateTableTools
+            count={count}
+            statusFilter={statusFilter}
+            onStatusFilterChange={onStatusFilterChange}
+          />
+        )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

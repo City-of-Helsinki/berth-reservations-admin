@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 import WinterStorageAreaList from '../WinterStorageAreaList';
 import { getWinterStorageAreasData } from '../utils';
@@ -13,9 +14,11 @@ const mockProps = {
 describe('WinterStorageAreaList', () => {
   const getWrapper = (props = {}) =>
     shallow(
-      <MemoryRouter>
-        <WinterStorageAreaList {...mockProps} {...props} />
-      </MemoryRouter>
+      <RecoilRoot>
+        <MemoryRouter>
+          <WinterStorageAreaList {...mockProps} {...props} />
+        </MemoryRouter>
+      </RecoilRoot>
     );
 
   it('renders normally', () => {

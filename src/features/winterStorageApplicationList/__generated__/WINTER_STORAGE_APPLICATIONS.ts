@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { WinterStorageApplicationAreaType, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { ApplicationStatus, WinterStorageApplicationAreaType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: WINTER_STORAGE_APPLICATIONS
@@ -66,4 +66,5 @@ export interface WINTER_STORAGE_APPLICATIONSVariables {
   first: number;
   after?: string | null;
   orderBy?: string | null;
+  statuses?: (ApplicationStatus | null)[] | null;
 }

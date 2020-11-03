@@ -162,7 +162,8 @@
     "unlinkCustomer": {
       "buttonText": "Poista asiakasliitos",
       "infoText": "Haluatko varmasti poistaa asiakasliitoksen?"
-    }
+    },
+    "all": "Kaikki"
   },
   "login": {
     "heading": "Helsingin kaupungin venepaikkapalvelut",
@@ -704,5 +705,9 @@
     "warningText": "Tätä toimenpidettä ei voi perua.",
     "onCancelText": "Hylkää",
     "onConfirmText": "Vahvista"
+  },
+  "applicationStateTableTools": {
+    "selectLabel": "Hakemuksen tila",
+    "count": "Tuloksien lukumäärä: {{count}}"
   }
 }

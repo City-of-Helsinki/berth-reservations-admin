@@ -4,6 +4,7 @@ import { MockedProvider } from '@apollo/react-testing';
 import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
+import { RecoilRoot } from 'recoil';
 
 import ApplicationListContainer from '../ApplicationListContainer';
 import { BERTH_APPLICATIONS_QUERY } from '../queries';
@@ -35,11 +36,13 @@ const queryMock = {
 describe('ApplicationListContainer', () => {
   const getWrapper = () => {
     return mount(
-      <MockedProvider mocks={[queryMock]}>
-        <HashRouter>
-          <ApplicationListContainer />
-        </HashRouter>
-      </MockedProvider>
+      <RecoilRoot>
+        <MockedProvider mocks={[queryMock]}>
+          <HashRouter>
+            <ApplicationListContainer />
+          </HashRouter>
+        </MockedProvider>
+      </RecoilRoot>
     );
   };
 
