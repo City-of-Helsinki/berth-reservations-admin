@@ -3,17 +3,38 @@ import { mount } from 'enzyme';
 
 import ApplicationListTools, { ApplicationListToolsProps } from '../ApplicationListTools';
 
+type TestApplication = {
+  id: string;
+  leaseId: string;
+};
+
+type TestOffer = TestApplication & {
+  orderId: string;
+};
+
+type TestProps = ApplicationListToolsProps<TestApplication, TestOffer>;
+
 describe('ApplicationListTools', () => {
-  const initialProps: ApplicationListToolsProps = {
-    offersCount: 2,
-    selectedApplicationsCount: 3,
-    isSubmitting: false,
+  const initialProps: TestProps = {
     clearSelectedRows: jest.fn(),
-    handleApproveOrders: jest.fn(),
+    filterUnhandledApplications: (application) => !application.leaseId,
+    getDraftedOffers: (offers) =>
+      offers.map((offer, i) => {
+        return {
+          ...offer,
+          orderId: String(i),
+        };
+      }),
+    handleApproveOffers: jest.fn(),
+    isSubmitting: false,
+    selectedRows: [
+      { id: 'UNO', leaseId: 'EINS' },
+      { id: 'DOS', leaseId: 'ZWEI' },
+      { id: 'TRES', leaseId: 'DREI' },
+    ],
   };
 
-  const getWrapper = (props: Partial<ApplicationListToolsProps> = {}) =>
-    mount(<ApplicationListTools {...initialProps} {...props} />);
+  const getWrapper = (props: Partial<TestProps> = {}) => mount(<ApplicationListTools {...initialProps} {...props} />);
 
   beforeEach(() => {
     jest.resetAllMocks();

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
-import { toast } from 'react-toastify';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -17,7 +16,6 @@ import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
 import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 import ApplicationListTools from '../applicationListTools/ApplicationListTools';
-import hdsToast from '../../common/toast/hdsToast';
 
 interface Order {
   orderId: string;
@@ -119,39 +117,23 @@ const UnmarkedWsNoticeList = ({
             <UnmarkedWsNoticeDetails {...row.original} />
           </Grid>
         )}
-        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => {
-          const offers = getDraftedOffers(selectedRows);
-          const offersWithoutPlacesCount = selectedRows.filter((row) => !row.leaseId).length;
-
-          let toastId;
-          if (offersWithoutPlacesCount > 0)
-            toastId = hdsToast({
-              autoDismiss: false,
-              type: 'error',
-              toastId: 'multiUnMarkedWSApplicationsError',
-              labelText: 'applicationList.errors.unhandledApplications.label',
-              text: 'applicationList.errors.unhandledApplications.description',
-              translated: true,
-            });
-          else toast.dismiss(toastId);
-
-          return (
-            <>
-              <ApplicationListTools
-                offersCount={offers.length}
-                selectedApplicationsCount={selectedRows.length}
-                isSubmitting={isSubmittingApproveOrders}
-                clearSelectedRows={resetSelectedRows}
-                handleApproveOrders={() => handleApproveOrders(offers)}
-              />
-              <ApplicationStateTableTools
-                count={count}
-                statusFilter={statusFilter}
-                onStatusFilterChange={onStatusFilterChange}
-              />
-            </>
-          );
-        }}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+          <>
+            <ApplicationListTools
+              clearSelectedRows={resetSelectedRows}
+              filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+              getDraftedOffers={getDraftedOffers}
+              handleApproveOffers={handleApproveOrders}
+              isSubmitting={isSubmittingApproveOrders}
+              selectedRows={selectedRows}
+            />
+            <ApplicationStateTableTools
+              count={count}
+              statusFilter={statusFilter}
+              onStatusFilterChange={onStatusFilterChange}
+            />
+          </>
+        )}
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />

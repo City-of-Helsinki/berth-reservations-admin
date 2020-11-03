@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
-import { toast } from 'react-toastify';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -19,7 +18,6 @@ import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
 import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 import ApplicationListTools from '../applicationListTools/ApplicationListTools';
-import hdsToast from '../../common/toast/hdsToast';
 
 interface Order {
   orderId: string;
@@ -184,39 +182,23 @@ const ApplicationList = ({
             />
           );
         }}
-        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => {
-          const offers = getDraftedOffers(selectedRows);
-          const offersWithoutPlacesCount = selectedRows.filter((row) => !row.lease).length;
-
-          let toastId;
-          if (offersWithoutPlacesCount > 0)
-            toastId = hdsToast({
-              autoDismiss: false,
-              type: 'error',
-              toastId: 'multiApplicationsError',
-              labelText: 'applicationList.errors.unhandledApplications.label',
-              text: 'applicationList.errors.unhandledApplications.description',
-              translated: true,
-            });
-          else toast.dismiss(toastId);
-
-          return (
-            <>
-              <ApplicationListTools
-                offersCount={offers.length}
-                selectedApplicationsCount={selectedRows.length}
-                isSubmitting={isSubmittingApproveOrders}
-                clearSelectedRows={resetSelectedRows}
-                handleApproveOrders={() => handleApproveOrders(offers)}
-              />
-              <ApplicationStateTableTools
-                count={count}
-                statusFilter={statusFilter}
-                onStatusFilterChange={onStatusFilterChange}
-              />
-            </>
-          );
-        }}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+          <>
+            <ApplicationListTools
+              clearSelectedRows={resetSelectedRows}
+              filterUnhandledApplications={(row: ApplicationData) => !row.lease}
+              getDraftedOffers={getDraftedOffers}
+              handleApproveOffers={handleApproveOrders}
+              isSubmitting={isSubmittingApproveOrders}
+              selectedRows={selectedRows}
+            />
+            <ApplicationStateTableTools
+              count={count}
+              statusFilter={statusFilter}
+              onStatusFilterChange={onStatusFilterChange}
+            />
+          </>
+        )}
         renderTableToolsBottom={() => (
           <Pagination
             forcePage={pageIndex}

@@ -85,21 +85,20 @@ const ApplicationListContainer = () => {
   );
 
   const handleApproveOrders = async (orders: Array<{ orderId: string; email: string }>) => {
-    try {
-      await approveOrders({
-        variables: {
-          input: {
-            orders,
-          },
+    approveOrders({
+      variables: {
+        input: {
+          orders,
         },
-      });
+      },
+    }).then(() => {
       hdsToast({
         type: 'success',
         labelText: 'applicationList.notifications.offersSent.label',
         text: 'applicationList.notifications.offersSent.description',
         translated: true,
       });
-    } catch (error) {}
+    });
   };
 
   const tableData = getBerthApplicationData(data);

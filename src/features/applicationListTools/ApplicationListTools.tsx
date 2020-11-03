@@ -1,32 +1,57 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 
 import Button from '../../common/button/Button';
 import Modal from '../../common/modal/Modal';
 import Text from '../../common/text/Text';
 import SendMultiOffersForm from '../sendMultiOffersForm/SendMultiOffersForm';
 import styles from './applicationListTools.module.scss';
+import hdsToast from '../../common/toast/hdsToast';
 
-export interface ApplicationListToolsProps {
-  offersCount: number;
-  selectedApplicationsCount: number;
+export interface ApplicationListToolsProps<A, O> {
   isSubmitting: boolean;
+  selectedRows: A[];
   clearSelectedRows(): void;
-  handleApproveOrders(): Promise<void>;
+  filterUnhandledApplications(offer: A): boolean;
+  getDraftedOffers(rows: A[]): O[];
+  handleApproveOffers(offers: O[]): void;
 }
 
 const ApplicationListTools = ({
-  offersCount,
-  selectedApplicationsCount,
-  isSubmitting,
   clearSelectedRows,
-  handleApproveOrders,
-}: ApplicationListToolsProps) => {
+  filterUnhandledApplications,
+  getDraftedOffers,
+  handleApproveOffers,
+  isSubmitting,
+  selectedRows,
+}: ApplicationListToolsProps<object, object>) => {
   const { t } = useTranslation();
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
-  const noSelection = selectedApplicationsCount === 0;
-  const handleSubmit = async () => {
-    await handleApproveOrders();
+  const toastId = 'multiApplicationsError';
+
+  const offers = getDraftedOffers(selectedRows);
+  const unhandledApplicationsCount = selectedRows.filter(filterUnhandledApplications).length;
+  const noSelection = selectedRows.length === 0;
+
+  const handleClickSend = () => {
+    if (unhandledApplicationsCount > 0) {
+      hdsToast({
+        autoDismiss: false,
+        type: 'error',
+        toastId,
+        labelText: 'applicationList.errors.unhandledApplications.label',
+        text: 'applicationList.errors.unhandledApplications.description',
+        translated: true,
+      });
+    } else {
+      toast.dismiss(toastId);
+    }
+    setSendInvoiceModalOpen(true);
+  };
+
+  const handleSubmit = () => {
+    handleApproveOffers(offers);
     clearSelectedRows();
     setSendInvoiceModalOpen(false);
   };
@@ -34,16 +59,11 @@ const ApplicationListTools = ({
   return (
     <>
       <div className={styles.applicationListTools}>
-        <Button
-          className={styles.marginRight}
-          onClick={() => setSendInvoiceModalOpen(true)}
-          variant="secondary"
-          disabled={noSelection}
-        >
+        <Button className={styles.marginRight} onClick={handleClickSend} variant="secondary" disabled={noSelection}>
           {t('applicationList.tools.sendOffer')}
         </Button>
         <span className={styles.marginRight}>
-          {t('applicationList.tools.selectedRow', { count: selectedApplicationsCount })}
+          {t('applicationList.tools.selectedRow', { count: selectedRows.length })}
         </span>
         <button className={styles.marginRight} disabled={noSelection} onClick={clearSelectedRows}>
           <Text color={noSelection ? 'gray' : 'brand'}>{t('applicationList.tools.clearSelectedRows')}</Text>
@@ -51,7 +71,7 @@ const ApplicationListTools = ({
       </div>
       <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
         <SendMultiOffersForm
-          offersCount={offersCount}
+          offersCount={offers.length}
           onSubmit={handleSubmit}
           onCancel={() => setSendInvoiceModalOpen(false)}
           isSubmitting={isSubmitting}
