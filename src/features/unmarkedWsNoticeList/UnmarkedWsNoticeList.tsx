@@ -63,12 +63,14 @@ const UnmarkedWsNoticeList = ({
       filter: 'exact',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
       Header: t('applicationList.tableHeaders.pvm') as string,
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('common.terminology.winterStorageArea') as string,
@@ -76,6 +78,7 @@ const UnmarkedWsNoticeList = ({
       id: 'choice',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Cell: ({ cell: { value } }) => (
@@ -88,6 +91,7 @@ const UnmarkedWsNoticeList = ({
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
   ];
 

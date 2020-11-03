@@ -55,7 +55,7 @@ const WinterStorageApplicationList = ({
           },
         },
       }) => (
-        <InternalLink to={`/applications/${id}`}>
+        <InternalLink to={`/winter-storage-applications/${id}`}>
           {firstName} {lastName}
         </InternalLink>
       ),
@@ -64,12 +64,14 @@ const WinterStorageApplicationList = ({
       filter: 'exact',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
       Header: t('applicationList.tableHeaders.pvm') || '',
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     queueFeatureFlag()
       ? {
@@ -77,6 +79,7 @@ const WinterStorageApplicationList = ({
           accessor: 'queue',
           disableSortBy: true,
           width: COLUMN_WIDTH.XS,
+          minWidth: COLUMN_WIDTH.XS,
         }
       : undefined,
     {
@@ -84,6 +87,7 @@ const WinterStorageApplicationList = ({
       accessor: 'municipality',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Cell: ({ cell: { value } }) => (
@@ -96,6 +100,7 @@ const WinterStorageApplicationList = ({
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
   ];
   const columns: ColumnType[] = rawColumns.filter((column): column is ColumnType => column !== undefined);

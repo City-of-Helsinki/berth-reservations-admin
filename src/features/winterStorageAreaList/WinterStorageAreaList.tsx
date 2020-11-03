@@ -45,17 +45,20 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: t('winterStorageAreaList.tableHeaders.name') || '',
       accessor: 'name',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('winterStorageAreaList.tableHeaders.places') || '',
       accessor: 'numberOfPlaces',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       sortDescFirst: true,
     },
     {
       Header: t('winterStorageAreaList.tableHeaders.freePlaces') || '',
       accessor: 'numberOfFreePlaces',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       sortDescFirst: true,
     },
     {
@@ -63,6 +66,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: () => <IconWrapper outlined icon={IconPlug} />,
       accessor: 'electricity',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
       sortDescFirst: true,
     },
     {
@@ -70,6 +74,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: () => <IconWrapper outlined icon={IconWaterTap} />,
       accessor: 'water',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
       sortDescFirst: true,
     },
     {
@@ -77,6 +82,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: () => <IconWrapper outlined icon={IconFence} />,
       accessor: 'gate',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
       sortDescFirst: true,
     },
     {
@@ -84,6 +90,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: () => <IconWrapper outlined icon={IconTrestle} />,
       accessor: 'summerStorageForDockingEquipment',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
       sortDescFirst: true,
     },
     {
@@ -91,6 +98,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
       Header: () => <IconWrapper outlined icon={IconDollyEmpty} />,
       accessor: 'summerStorageForTrailers',
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
       sortDescFirst: true,
     },
   ];

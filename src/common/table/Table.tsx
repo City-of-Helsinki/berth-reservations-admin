@@ -118,6 +118,8 @@ const Table = <D extends { id: string }>({
         return <Checkbox id={'checkbox'} title={title} style={style} checked={checked} onChange={onChange} />;
       },
       id: SELECTOR,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     []
   );
@@ -148,6 +150,8 @@ const Table = <D extends { id: string }>({
         );
       },
       id: RADIO_SELECTOR,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     []
   );
@@ -168,7 +172,8 @@ const Table = <D extends { id: string }>({
         <button onClick={() => toggleAllRowsExpanded(false)}>{t('common.table.minimizeAll')}</button>
       ),
       id: EXPANDER,
-      minWidth: 0,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     }),
     [t]
   );
@@ -245,8 +250,8 @@ const Table = <D extends { id: string }>({
     useFlexLayout,
     useSortBy,
     useExpanded,
-    useRowSelect,
-    usePagination
+    usePagination,
+    useRowSelect
   );
 
   const resetSelectedRows = useCallback(() => {
@@ -257,9 +262,15 @@ const Table = <D extends { id: string }>({
     gotoPage(0);
   }, [gotoPage, state.sortBy, state.filters, state.globalFilter]);
 
+  const initialSortByState = initialState?.sortBy?.[0];
+  const currentSortByState = state.sortBy[0];
+
   useEffect(() => {
-    onSortedColChange?.(state.sortBy[0]);
-  }, [state.sortBy, onSortedColChange]);
+    if (initialSortByState?.id === currentSortByState?.id && initialSortByState?.desc === currentSortByState?.desc)
+      return;
+
+    onSortedColChange?.(currentSortByState);
+  }, [currentSortByState, onSortedColChange, initialSortByState]);
 
   useEffect(() => {
     onSortedColsChange?.(state.sortBy);

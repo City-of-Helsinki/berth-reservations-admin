@@ -41,6 +41,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       accessor: 'name',
       sortType: 'toString',
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) => {
@@ -52,12 +53,14 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       accessor: 'customerGroup',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.municipality') || '',
       accessor: 'city',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.berths') || '',
@@ -65,6 +68,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       accessor: ({ berthLeases }) => berthLeases.map((berthLease) => berthLease.title).join(', '),
       disableSortBy: true,
       width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
     },
     {
       Header: t('customerList.tableHeaders.applications') || '',
@@ -73,12 +77,14 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
         applications.map((application) => formatDate(application.createdAt, i18n.language)).join(' + '),
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.invoice') || '',
       accessor: 'invoicesColumnData',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.boats') || '',
@@ -86,6 +92,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       accessor: ({ boats }) => boats.length,
       disableSortBy: true,
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     },
   ];
   return (

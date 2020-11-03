@@ -60,12 +60,14 @@ const AdditionalServicePricing = ({
     {
       Header: t('pricing.additionalServices.service') || '',
       width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
       accessor: ({ service }) => t(getProductServiceTKey(service)),
       id: 'service',
     },
     {
       Header: t('pricing.additionalServices.price') || '',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       accessor: ({ priceValue, priceUnit }) => {
         switch (priceUnit) {
           case PriceUnits.AMOUNT:
@@ -81,12 +83,14 @@ const AdditionalServicePricing = ({
     {
       Header: t('pricing.additionalServices.tax') || '',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       accessor: ({ taxPercentage }) => getProductTax(taxPercentage, i18n.language),
       id: 'taxPercentage',
     },
     {
       Header: t('pricing.additionalServices.period') || '',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       accessor: ({ period }) => t(getPeriodTKey(period)),
       id: 'period',
     },
@@ -95,6 +99,7 @@ const AdditionalServicePricing = ({
       Header: t('common.edit') || '',
       sortType: 'none',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ row }: { row: Row<AdditionalService> }) => (
         <button onClick={() => onEditRowClick(row.original.id)}>
           <Text color="brand">{t('common.edit')}</Text>

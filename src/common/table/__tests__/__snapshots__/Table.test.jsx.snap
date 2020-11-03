@@ -8,7 +8,7 @@ exports[`Table renders normally 1`] = `
     <div
       class="table primary noMainHeader"
       role="table"
-      style="min-width:450px"
+      style="min-width:0px"
     >
       <div
         class="stickyHeaders"
