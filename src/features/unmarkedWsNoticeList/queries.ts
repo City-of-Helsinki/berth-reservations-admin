@@ -28,6 +28,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
           firstName
           id
           lastName
+          email
           status
           winterStorageAreaChoices {
             priority
@@ -38,6 +39,9 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
           lease {
             id
             status
+            order {
+              id
+            }
           }
         }
       }

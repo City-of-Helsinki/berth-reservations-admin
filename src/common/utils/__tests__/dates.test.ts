@@ -1,6 +1,6 @@
-import { addDaysToDate, getToday, mapDateToDateInputValue } from '../utils';
+import { addDaysToDate, getToday, mapDateToDateInputValue } from '../dates';
 
-describe('sendInvoiceForm utils', () => {
+describe('dates', () => {
   describe('getToday', () => {
     const mockDate: Date = new Date('2020-09-23T00:00:00.000Z');
     const dateSpy = jest.spyOn(global.Date, 'now').mockImplementation(() => mockDate.valueOf());

@@ -4,24 +4,24 @@ import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
 
-import styles from './sendInvoiceForm.module.scss';
-import FormHeader from '../../../common/formHeader/FormHeader';
-import Button from '../../../common/button/Button';
-import Text from '../../../common/text/Text';
-import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../../common/utils/dates';
+import styles from './sendMultiOffersForm.module.scss';
+import FormHeader from '../../common/formHeader/FormHeader';
+import Button from '../../common/button/Button';
+import Text from '../../common/text/Text';
+import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../common/utils/dates';
 
 type FormValues = {
   dueDate: string;
 };
 
-export type SendInvoiceFormProps = {
-  email: string | null;
+export type SendMultiOffersFormProps = {
   isSubmitting: boolean;
+  offersCount: number;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoiceFormProps) => {
+const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: SendMultiOffersFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(
@@ -48,14 +48,19 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
     >
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
-          <FormHeader title={t('invoiceCard.sendInvoice.title').toUpperCase()} />
+          <FormHeader title={t('forms.sendMultiOffers.title').toUpperCase()} />
+          <div className={styles.column}>
+            <Text as="strong" className={styles.header}>
+              {t('forms.sendMultiOffers.berthOffers')}
+            </Text>
+            <Text size="xl">{offersCount}</Text>
+          </div>
 
-          <p className={styles.instructions}>
-            {t('invoiceCard.sendInvoice.instructions.paragraph1', {
-              email: email,
-            })}
-          </p>
-          <p className={styles.instructions}>{t('invoiceCard.sendInvoice.instructions.paragraph2')}</p>
+          <div className={styles.instructions}>
+            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph1')}</p>
+            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph2')}</p>
+            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph3')}</p>
+          </div>
 
           <div className={styles.dueDate}>
             <TextInput
@@ -63,7 +68,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
               type="date"
               value={values.dueDate}
               onChange={handleChange}
-              label={t('invoiceCard.sendInvoice.dueDate')}
+              label={t('forms.sendMultiOffers.dueDate')}
               invalid={!!errors.dueDate}
               helperText={errors.dueDate}
               required
@@ -74,19 +79,14 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
             <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
               {t('forms.common.cancel')}
             </Button>
-            <Button type="submit" disabled={!email || isSubmitting}>
+            <Button type="submit" disabled={isSubmitting}>
               {t('forms.common.send')}
             </Button>
           </div>
-          {email === null && (
-            <Text color="critical" className={styles.missingEmail}>
-              {t('invoiceCard.sendInvoice.missingEmail')}
-            </Text>
-          )}
         </Form>
       )}
     </Formik>
   );
 };
 
-export default SendInvoiceForm;
+export default SendMultiOffersForm;

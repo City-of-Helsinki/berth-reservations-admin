@@ -14,6 +14,7 @@ interface Lease {
   id: string;
   pierIdentifier: string;
   status: LeaseStatus;
+  orderId: string | undefined;
 }
 
 interface BerthSwitch {
@@ -38,6 +39,7 @@ export interface ApplicationData {
   choices: Array<HarborChoice>;
   createdAt: string;
   customerId?: string;
+  email: string;
   firstName: string;
   id: string;
   isSwitch: boolean;
@@ -68,6 +70,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         boatWidth,
         createdAt,
         customer,
+        email,
         firstName,
         harborChoices,
         id,
@@ -95,6 +98,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
           id: lease.id,
           pierIdentifier: lease.berth.pier.properties?.identifier || '',
           status: lease.status,
+          orderId: lease.order?.id,
         };
       }
 
@@ -120,6 +124,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         choices,
         createdAt,
         customerId: customer?.id,
+        email,
         firstName,
         id,
         isSwitch: !!berthSwitch,
@@ -134,3 +139,22 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
     }, []) ?? []
   );
 };
+
+interface Offer {
+  orderId: string;
+  email: string;
+}
+
+export const getDraftedOffers = (applications: ApplicationData[]) =>
+  applications.reduce<Offer[]>((acc, application) => {
+    if (application.status !== ApplicationStatus.OFFER_GENERATED || !application.lease?.orderId || !application.email)
+      return acc;
+
+    return [
+      ...acc,
+      {
+        orderId: application.lease.orderId,
+        email: application.email,
+      },
+    ];
+  }, []);

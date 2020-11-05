@@ -31,7 +31,11 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWeight: 5,
           boatWidth: 0,
           createdAt: '2020-07-16',
-          customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
+          customer: {
+            __typename: 'ProfileNode',
+            id: 'MOCK-PROFILE',
+          },
+          email: 'test@example.com',
           firstName: 'Matti',
           harborChoices: [{ __typename: 'HarborChoiceType', harbor: '1', harborName: '1', priority: 0 }],
           id: 'MOCK-APPLICATION-0',
@@ -55,6 +59,10 @@ export const mockData: BERTH_APPLICATIONS = {
               },
             },
             id: 'MOCK-LEASE-0',
+            order: {
+              __typename: 'OrderNode',
+              id: 'MOCK-ORDER-0',
+            },
             status: LeaseStatus.OFFERED,
           },
           municipality: 'Helsinki',
@@ -85,7 +93,11 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWeight: 5,
           boatWidth: 0,
           createdAt: '2020-07-16',
-          customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
+          customer: {
+            __typename: 'ProfileNode',
+            id: 'MOCK-PROFILE',
+          },
+          email: 'test-0@example.com',
           firstName: 'Maija',
           harborChoices: null,
           id: 'MOCK-APPLICATION-1',
@@ -94,6 +106,10 @@ export const mockData: BERTH_APPLICATIONS = {
             __typename: 'BerthLeaseNode',
             id: 'MOCK-LEASE-1',
             status: LeaseStatus.OFFERED,
+            order: {
+              __typename: 'OrderNode',
+              id: 'MOCK-ORDER-0',
+            },
             berth: {
               __typename: 'BerthNode',
               number: '7',
@@ -134,7 +150,11 @@ export const mockData: BERTH_APPLICATIONS = {
           boatWeight: 5,
           boatWidth: 0,
           createdAt: '2020-07-16',
-          customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE-0' },
+          customer: {
+            __typename: 'ProfileNode',
+            id: 'MOCK-PROFILE-0',
+          },
+          email: 'test-2@example.com',
           firstName: 'Matti',
           harborChoices: [
             { __typename: 'HarborChoiceType', harbor: 'MOCK-HARBOR-0', harborName: 'Testisatama', priority: 0 },

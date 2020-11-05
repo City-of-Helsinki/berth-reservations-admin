@@ -29,6 +29,11 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch {
   reason: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason | null;
 }
 
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_order {
+  __typename: "OrderNode";
+  id: string;
+}
+
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth_pier_properties_harbor_properties {
   __typename: "HarborProperties";
   name: string | null;
@@ -61,6 +66,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease {
   __typename: "BerthLeaseNode";
   id: string;
   status: LeaseStatus;
+  order: BERTH_APPLICATIONS_berthApplications_edges_node_lease_order | null;
   berth: BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth;
 }
 
@@ -78,6 +84,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node {
   lastName: string;
   customer: BERTH_APPLICATIONS_berthApplications_edges_node_customer | null;
   berthSwitch: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch | null;
+  email: string;
   createdAt: any;
   municipality: string;
   boatType: string | null;

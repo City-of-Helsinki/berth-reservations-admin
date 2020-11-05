@@ -1,5 +1,6 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { getOperationName } from 'apollo-link';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 
@@ -12,6 +13,12 @@ import { ApplicationData, getBerthApplicationData } from './utils';
 import { BERTH_APPLICATIONS_QUERY } from './queries';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 import { usePagination } from '../../common/utils/usePagination';
+import { APPROVE_ORDERS_MUTATION } from '../invoiceCard/sendInvoiceForm/mutations';
+import {
+  APPROVE_ORDERS,
+  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
+} from '../invoiceCard/sendInvoiceForm/__generated__/APPROVE_ORDERS';
+import hdsToast from '../../common/toast/hdsToast';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { orderByGetter } from '../../common/utils/recoil';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
@@ -70,6 +77,30 @@ const ApplicationListContainer = () => {
     });
   };
 
+  const [approveOrders, { loading: isSubmittingApproveOrders }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
+    APPROVE_ORDERS_MUTATION,
+    {
+      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+    }
+  );
+
+  const handleApproveOrders = async (orders: Array<{ orderId: string; email: string }>) => {
+    approveOrders({
+      variables: {
+        input: {
+          orders,
+        },
+      },
+    }).then(() => {
+      hdsToast({
+        type: 'success',
+        labelText: 'applicationList.notifications.offersSent.label',
+        text: 'applicationList.notifications.offersSent.description',
+        translated: true,
+      });
+    });
+  };
+
   const tableData = getBerthApplicationData(data);
 
   return (
@@ -80,7 +111,9 @@ const ApplicationListContainer = () => {
       handleDeleteLease={handleDeleteLease}
       sortBy={sortBy}
       onSortedColsChange={handleSortedColsChange}
+      handleApproveOrders={handleApproveOrders}
       isDeleting={isDeleting}
+      isSubmittingApproveOrders={isSubmittingApproveOrders}
       loading={loading}
       onlySwitchApps={onlySwitchApps}
       pageIndex={pageIndex}

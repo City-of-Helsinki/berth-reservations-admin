@@ -1,5 +1,6 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { getOperationName } from 'apollo-link';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 
@@ -12,6 +13,12 @@ import {
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
 import { getUnmarkedWinterStorageNotices } from './utils';
+import { APPROVE_ORDERS_MUTATION } from '../invoiceCard/sendInvoiceForm/mutations';
+import {
+  APPROVE_ORDERS,
+  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
+} from '../invoiceCard/sendInvoiceForm/__generated__/APPROVE_ORDERS';
+import hdsToast from '../../common/toast/hdsToast';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
@@ -50,8 +57,33 @@ const UnmarkedWsNoticeListContainer = () => {
       },
     }
   );
+  const [approveOrders, { loading: isSubmittingApproveOrders }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
+    APPROVE_ORDERS_MUTATION,
+    {
+      refetchQueries: [
+        getOperationName(UNMARKED_WINTER_STORAGE_NOTICES_QUERY) || 'UNMARKED_WINTER_STORAGE_NOTICES_QUERY',
+      ],
+    }
+  );
   const notices = getUnmarkedWinterStorageNotices(data);
   const pageCount = getPageCount(data?.winterStorageNotices?.count);
+
+  const handleApproveOrders = async (orders: Array<{ orderId: string; email: string }>) => {
+    approveOrders({
+      variables: {
+        input: {
+          orders,
+        },
+      },
+    }).then(() => {
+      hdsToast({
+        type: 'success',
+        labelText: 'applicationList.notifications.offersSent.label',
+        text: 'applicationList.notifications.offersSent.description',
+        translated: true,
+      });
+    });
+  };
 
   return (
     <UnmarkedWsNoticeList
@@ -59,6 +91,7 @@ const UnmarkedWsNoticeListContainer = () => {
       loading={loading}
       pageCount={pageCount}
       pageIndex={pageIndex}
+      isSubmittingApproveOrders={isSubmittingApproveOrders}
       goToPage={goToPage}
       sortBy={sortBy}
       count={data?.winterStorageNotices?.count}
@@ -68,6 +101,7 @@ const UnmarkedWsNoticeListContainer = () => {
         setStatusFilter(statusFilter);
         goToPage(0);
       }}
+      handleApproveOrders={handleApproveOrders}
     />
   );
 };

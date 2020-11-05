@@ -18,11 +18,13 @@ export type UnmarkedWinterStorageNotice = {
   createdAt: string;
   customerId?: string;
   firstName: string;
+  email: string;
   id: string;
   lastName: string;
   status: ApplicationStatus;
   leaseStatus?: LeaseStatus;
   leaseId?: string;
+  orderId: string | undefined;
 };
 
 export const getUnmarkedWinterStorageNotices = (
@@ -41,6 +43,7 @@ export const getUnmarkedWinterStorageNotices = (
         boatWidth,
         createdAt,
         firstName,
+        email,
         id,
         lastName,
         status,
@@ -58,10 +61,12 @@ export const getUnmarkedWinterStorageNotices = (
         choice: getChoiceFromWinterStorageAreaChoices(winterStorageAreaChoices),
         createdAt: createdAt,
         firstName: firstName,
+        email: email,
         id: id,
         lastName: lastName,
         status: status,
         leaseId: lease?.id,
+        orderId: lease?.order?.id,
         leaseStatus: lease?.status,
       };
 
@@ -69,3 +74,22 @@ export const getUnmarkedWinterStorageNotices = (
     }, []) ?? []
   );
 };
+
+interface Offer {
+  orderId: string;
+  email: string;
+}
+
+export const getDraftedOffers = (applications: UnmarkedWinterStorageNotice[]) =>
+  applications.reduce<Offer[]>((acc, application) => {
+    if (application.status !== ApplicationStatus.OFFER_GENERATED || !application.orderId || !application.email)
+      return acc;
+
+    return [
+      ...acc,
+      {
+        orderId: application.orderId,
+        email: application.email,
+      },
+    ];
+  }, []);

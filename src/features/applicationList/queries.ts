@@ -34,6 +34,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
               title
             }
           }
+          email
           createdAt
           municipality
           boatType
@@ -49,6 +50,9 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           lease {
             id
             status
+            order {
+              id
+            }
             berth {
               number
               pier {

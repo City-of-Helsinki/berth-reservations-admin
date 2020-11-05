@@ -8,7 +8,7 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { ApplicationData } from './utils';
+import { ApplicationData, getDraftedOffers } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
@@ -17,6 +17,12 @@ import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
 import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
+import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+
+interface Order {
+  orderId: string;
+  email: string;
+}
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
@@ -26,6 +32,7 @@ export interface ApplicationListProps {
   onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
   sortBy: SortingRule<ApplicationData>[];
   isDeleting: boolean;
+  isSubmittingApproveOrders: boolean;
   loading: boolean;
   onlySwitchApps?: boolean;
   pageIndex: number;
@@ -34,6 +41,7 @@ export interface ApplicationListProps {
   count?: number;
   statusFilter?: ApplicationStatus;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  handleApproveOrders(orders: Order[]): Promise<void>;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -45,6 +53,8 @@ const ApplicationList = ({
   handleDeleteLease,
   sortBy,
   onSortedColsChange,
+  isSubmittingApproveOrders,
+  handleApproveOrders,
   isDeleting,
   loading,
   onlySwitchApps,
@@ -172,18 +182,28 @@ const ApplicationList = ({
             />
           );
         }}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+          <>
+            <ApplicationListTools
+              clearSelectedRows={resetSelectedRows}
+              filterUnhandledApplications={(row: ApplicationData) => !row.lease}
+              getDraftedOffers={getDraftedOffers}
+              handleApproveOffers={handleApproveOrders}
+              isSubmitting={isSubmittingApproveOrders}
+              selectedRows={selectedRows}
+            />
+            <ApplicationStateTableTools
+              count={count}
+              statusFilter={statusFilter}
+              onStatusFilterChange={onStatusFilterChange}
+            />
+          </>
+        )}
         renderTableToolsBottom={() => (
           <Pagination
             forcePage={pageIndex}
             pageCount={getPageCount(data?.berthApplications?.count)}
             onPageChange={({ selected }) => goToPage(selected)}
-          />
-        )}
-        renderTableToolsTop={() => (
-          <ApplicationStateTableTools
-            count={count}
-            statusFilter={statusFilter}
-            onStatusFilterChange={onStatusFilterChange}
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
