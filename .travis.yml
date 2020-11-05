@@ -15,7 +15,7 @@ jobs:
       script: yarn lint && yarn ci
     - stage: 'Build'
       name: 'Run (test) build'
-      if: branch IN (master, develop)
+      if: branch IN (master)
       script: yarn build
     - stage: 'Browser test'
       name: 'Run browser tests'
