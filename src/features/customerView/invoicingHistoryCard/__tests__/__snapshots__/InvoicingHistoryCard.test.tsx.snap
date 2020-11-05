@@ -19,17 +19,37 @@ exports[`InvoicingHistoryCard renders correctly 1`] = `
     <article
       class="section"
     >
-      <h4
-        class="text standard h4 m title"
-      >
-        LASKUT
-      </h4>
       <section
         class="body"
       >
         <div
-          class="grid cols4"
+          class="grid cols5"
         >
+          <div
+            class="gridHeader"
+          >
+            Tyyppi
+          </div>
+          <div
+            class="gridHeader"
+          >
+            Kausi
+          </div>
+          <div
+            class="gridHeader"
+          >
+            Eräpäivä
+          </div>
+          <div
+            class="gridHeader"
+          >
+            Summa
+          </div>
+          <div
+            class="gridHeader"
+          >
+            Tila
+          </div>
           <button
             class="gridItem"
           >
@@ -39,6 +59,15 @@ exports[`InvoicingHistoryCard renders correctly 1`] = `
               Venepaikan vuokra
             </span>
           </button>
+          <div
+            class="gridItem"
+          >
+            <span
+              class="text standard span"
+            >
+              26.06.2020 - 14.09.2020
+            </span>
+          </div>
           <div
             class="gridItem"
           >

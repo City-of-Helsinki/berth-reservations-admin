@@ -76,6 +76,7 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
       Header: t('common.edit') || '',
       sortType: 'none',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ row }: { row: Row<BerthPrice> }) => (
         <button onClick={() => setEditRowValues(row.original)}>
           <Text color="brand">{t('common.edit')}</Text>

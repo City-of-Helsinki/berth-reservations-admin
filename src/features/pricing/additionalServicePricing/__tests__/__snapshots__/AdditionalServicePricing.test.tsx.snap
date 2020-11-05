@@ -31,13 +31,13 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
             <div
               class="header"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Palvelu
@@ -69,7 +69,7 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Hinta
@@ -101,7 +101,7 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 ALV
@@ -133,7 +133,7 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Aika
@@ -165,7 +165,7 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Muokkaa
               </div>
@@ -233,13 +233,13 @@ exports[`AdditionalServicePricing renders normally 1`] = `
             <div
               class="header"
               role="row"
-              style="display: flex; flex: 1 0 auto; min-width: 0px;"
+              style="display: flex; flex: 1 0 auto; min-width: 675px;"
             >
               <div
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Palvelu
@@ -271,7 +271,7 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Hinta
@@ -303,7 +303,7 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 ALV
@@ -335,7 +335,7 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px; cursor: pointer;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                 title="Toggle SortBy"
               >
                 Aika
@@ -367,7 +367,7 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
               >
                 Muokkaa
               </div>
@@ -381,40 +381,40 @@ exports[`AdditionalServicePricing renders normally 1`] = `
             >
               <div
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 0px;"
+                style="display: flex; flex: 1 0 auto; min-width: 675px;"
               >
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 0px; width: 225px;"
+                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
                 >
                   Jollapaikka
                 </div>
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
                 >
                   10,00 €
                 </div>
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
                 >
                   24 %
                 </div>
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
                 >
                   Kausi
                 </div>
                 <div
                   class="tableCell"
                   role="cell"
-                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 0px; width: 112.5px;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px;"
                 >
                   <button>
                     <span

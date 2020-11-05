@@ -8,7 +8,7 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { ApplicationData } from './utils';
+import { ApplicationData, getDraftedOffers } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
@@ -16,19 +16,32 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
+import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+
+interface Order {
+  orderId: string;
+  email: string;
+}
 
 export interface ApplicationListProps {
   data: BERTH_APPLICATIONS | undefined;
   getPageCount: (connectionsCount: number | null | undefined) => number;
   goToPage: (pageIndex: number) => void;
   handleDeleteLease: (id: string) => Promise<void>;
-  onSortedColChange: (sortedCol: SortingRule<ApplicationData> | undefined) => void;
+  onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
+  sortBy: SortingRule<ApplicationData>[];
   isDeleting: boolean;
+  isSubmittingApproveOrders: boolean;
   loading: boolean;
   onlySwitchApps?: boolean;
   pageIndex: number;
   setOnlySwitchApps: (onlySwitchApps?: boolean) => void;
   tableData: ApplicationData[];
+  count?: number;
+  statusFilter?: ApplicationStatus;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  handleApproveOrders(orders: Order[]): Promise<void>;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -38,36 +51,60 @@ const ApplicationList = ({
   getPageCount,
   goToPage,
   handleDeleteLease,
-  onSortedColChange,
+  sortBy,
+  onSortedColsChange,
+  isSubmittingApproveOrders,
+  handleApproveOrders,
   isDeleting,
   loading,
   onlySwitchApps,
   pageIndex,
   setOnlySwitchApps,
   tableData,
+  count,
+  statusFilter,
+  onStatusFilterChange,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
   const rawColumns: (ColumnType | undefined)[] = [
     {
-      Cell: ({ cell }) => (
-        <InternalLink to={`/applications/${cell.row.original.id}`}>
-          {cell.value
-            ? t('applicationList.applicationType.switchApplication')
-            : t('applicationList.applicationType.newApplication')}
+      Cell: ({
+        cell: {
+          row: {
+            original: { id, firstName, lastName },
+          },
+        },
+      }) => (
+        <InternalLink to={`/applications/${id}`}>
+          {firstName} {lastName}
         </InternalLink>
       ),
+      Header: t('common.name') as string,
+      accessor: 'id',
+      filter: 'exact',
+      disableSortBy: true,
+      width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
+    },
+    {
+      Cell: ({ cell: { value } }) =>
+        value
+          ? t('applicationList.applicationType.switchApplication')
+          : t('applicationList.applicationType.newApplication'),
       Header: t('applicationList.tableHeaders.applicationType') as string,
       accessor: 'isSwitch',
       filter: 'exact',
       disableSortBy: true,
-      width: COLUMN_WIDTH.M,
+      width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
       Header: t('applicationList.tableHeaders.pvm') as string,
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     queueFeatureFlag()
       ? {
@@ -75,6 +112,7 @@ const ApplicationList = ({
           accessor: 'queue',
           disableSortBy: true,
           width: COLUMN_WIDTH.XS,
+          minWidth: COLUMN_WIDTH.XS,
         }
       : undefined,
     {
@@ -82,6 +120,7 @@ const ApplicationList = ({
       accessor: 'municipality',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Cell: ({ cell: { value } }) => (
@@ -94,6 +133,7 @@ const ApplicationList = ({
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) =>
@@ -106,6 +146,7 @@ const ApplicationList = ({
       accessor: 'lease',
       disableSortBy: true,
       width: COLUMN_WIDTH.XL,
+      minWidth: COLUMN_WIDTH.XL,
     },
   ];
   const columns: ColumnType[] = rawColumns.filter((column): column is ColumnType => column !== undefined);
@@ -116,7 +157,6 @@ const ApplicationList = ({
       <Table
         data={tableData}
         loading={loading || isDeleting}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
         columns={columns}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} handleDeleteLease={handleDeleteLease} />}
         renderMainHeader={() => {
@@ -142,6 +182,23 @@ const ApplicationList = ({
             />
           );
         }}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+          <>
+            <ApplicationListTools
+              clearSelectedRows={resetSelectedRows}
+              filterUnhandledApplications={(row: ApplicationData) => !row.lease}
+              getDraftedOffers={getDraftedOffers}
+              handleApproveOffers={handleApproveOrders}
+              isSubmitting={isSubmittingApproveOrders}
+              selectedRows={selectedRows}
+            />
+            <ApplicationStateTableTools
+              count={count}
+              statusFilter={statusFilter}
+              onStatusFilterChange={onStatusFilterChange}
+            />
+          </>
+        )}
         renderTableToolsBottom={() => (
           <Pagination
             forcePage={pageIndex}
@@ -150,7 +207,9 @@ const ApplicationList = ({
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        initialState={{ sortBy }}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

@@ -7,6 +7,7 @@ export const navigation = {
   applicationsExpandable: Selector('div[class^="expandableNavItem"]'),
   applications: Selector('a[class^="internalNavLink_"][href^="/applications"]'),
   winterStorageApplications: Selector('a[class^="internalNavLink_"][href^="/winter-storage-applications"]'),
+  unmarkedWinterStorageApplications: Selector('a[class^="internalNavLink_"][href^="/unmarked-ws-notices"]'),
   customers: Selector('a[class^="internalNavLink_"][href^="/customers"]'),
   pricing: Selector('a[class^="internalNavLink_"][href^="/pricing"]'),
 };

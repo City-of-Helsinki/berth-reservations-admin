@@ -1,12 +1,26 @@
 import gql from 'graphql-tag';
 
 export const BERTH_APPLICATIONS_QUERY = gql`
-  query BERTH_APPLICATIONS($first: Int!, $after: String, $switchApplications: Boolean, $orderBy: String) {
-    berthApplications(first: $first, after: $after, switchApplications: $switchApplications, orderBy: $orderBy) {
+  query BERTH_APPLICATIONS(
+    $first: Int!
+    $after: String
+    $switchApplications: Boolean
+    $orderBy: String
+    $statuses: [ApplicationStatus]
+  ) {
+    berthApplications(
+      first: $first
+      after: $after
+      switchApplications: $switchApplications
+      orderBy: $orderBy
+      statuses: $statuses
+    ) {
       count
       edges {
         node {
           id
+          firstName
+          lastName
           customer {
             id
           }
@@ -20,6 +34,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
               title
             }
           }
+          email
           createdAt
           municipality
           boatType
@@ -35,6 +50,9 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           lease {
             id
             status
+            order {
+              id
+            }
             berth {
               number
               pier {

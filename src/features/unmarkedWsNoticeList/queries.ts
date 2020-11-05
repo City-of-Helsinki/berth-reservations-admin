@@ -1,12 +1,18 @@
 import gql from 'graphql-tag';
 
 export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
-  query UNMARKED_WINTER_STORAGE_NOTICES($first: Int!, $after: String, $orderBy: String) {
+  query UNMARKED_WINTER_STORAGE_NOTICES(
+    $first: Int!
+    $after: String
+    $orderBy: String
+    $statuses: [ApplicationStatus]
+  ) {
     winterStorageNotices: winterStorageApplications(
       first: $first
       after: $after
       orderBy: $orderBy
       areaTypes: [UNMARKED]
+      statuses: $statuses
     ) {
       count
       edges {
@@ -22,6 +28,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
           firstName
           id
           lastName
+          email
           status
           winterStorageAreaChoices {
             priority
@@ -32,6 +39,9 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
           lease {
             id
             status
+            order {
+              id
+            }
           }
         }
       }

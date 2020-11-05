@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
@@ -26,11 +27,12 @@ export interface CustomerListProps {
   loading: boolean;
   data: CustomerData[];
   pagination: PaginationProps;
+  sortBy: SortingRule<CustomerData>[];
   tableTools: Omit<CustomerListTableToolsProps<SearchBy>, 'selectedCustomerIds' | 'clearSelectedRows'>;
-  onSortedColChange(sortBy: { id: string; desc?: boolean } | undefined): void;
+  onSortedColsChange: (sortedCol: SortingRule<CustomerData>[]) => void;
 }
 
-const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange }: CustomerListProps) => {
+const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChange, sortBy }: CustomerListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -39,6 +41,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
       accessor: 'name',
       sortType: 'toString',
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) => {
@@ -50,12 +53,14 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
       accessor: 'customerGroup',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.municipality') || '',
       accessor: 'city',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.berths') || '',
@@ -63,6 +68,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
       accessor: ({ berthLeases }) => berthLeases.map((berthLease) => berthLease.title).join(', '),
       disableSortBy: true,
       width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
     },
     {
       Header: t('customerList.tableHeaders.applications') || '',
@@ -71,12 +77,14 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         applications.map((application) => formatDate(application.createdAt, i18n.language)).join(' + '),
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.invoice') || '',
       accessor: 'invoicesColumnData',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('customerList.tableHeaders.boats') || '',
@@ -84,6 +92,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
       accessor: ({ boats }) => boats.length,
       disableSortBy: true,
       width: COLUMN_WIDTH.XS,
+      minWidth: COLUMN_WIDTH.XS,
     },
   ];
   return (
@@ -93,7 +102,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         data={data}
         loading={loading}
         columns={columns}
-        initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => {
           return (
             <CustomerDetails
@@ -123,7 +132,8 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColChange
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderTableToolsBottom={() => <Pagination {...pagination} />}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy={true}
         canSelectRows
       />
     </PageContent>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -9,19 +10,30 @@ import { formatDate } from '../../common/utils/format';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import { UnmarkedWinterStorageNotice } from './utils';
-import { SortedCol } from '../../common/utils/useBackendSorting';
+import { getDraftedOffers, UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
+import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
+import ApplicationListTools from '../applicationListTools/ApplicationListTools';
 
+interface Order {
+  orderId: string;
+  email: string;
+}
 export interface UnmarkedWsNoticeListProps {
-  notices: UnmarkedWinterStorageNotice[];
+  count?: number;
+  isSubmittingApproveOrders: boolean;
   loading: boolean;
+  notices: UnmarkedWinterStorageNotice[];
   pageCount: number;
   pageIndex: number;
+  sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
+  statusFilter?: ApplicationStatus;
   goToPage(page: number): void;
-  onSortedColChange(sortedCol: SortedCol | undefined): void;
+  handleApproveOrders(orders: Order[]): Promise<void>;
+  onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
@@ -31,8 +43,14 @@ const UnmarkedWsNoticeList = ({
   loading,
   pageCount,
   pageIndex,
+  isSubmittingApproveOrders,
   goToPage,
-  onSortedColChange,
+  count,
+  statusFilter,
+  onStatusFilterChange,
+  onSortedColsChange,
+  sortBy,
+  handleApproveOrders,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
@@ -54,12 +72,14 @@ const UnmarkedWsNoticeList = ({
       filter: 'exact',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
     {
       Cell: ({ cell }) => formatDate(cell.value, i18n.language),
       Header: t('applicationList.tableHeaders.pvm') as string,
       accessor: 'createdAt',
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Header: t('common.terminology.winterStorageArea') as string,
@@ -67,6 +87,7 @@ const UnmarkedWsNoticeList = ({
       id: 'choice',
       disableSortBy: true,
       width: COLUMN_WIDTH.S,
+      minWidth: COLUMN_WIDTH.S,
     },
     {
       Cell: ({ cell: { value } }) => (
@@ -79,6 +100,7 @@ const UnmarkedWsNoticeList = ({
       accessor: 'status',
       disableSortBy: true,
       width: COLUMN_WIDTH.M,
+      minWidth: COLUMN_WIDTH.M,
     },
   ];
 
@@ -89,18 +111,36 @@ const UnmarkedWsNoticeList = ({
         columns={columns}
         data={notices}
         loading={loading}
-        initialState={{ sortBy: [{ id: 'createdAt', desc: false }] }}
+        initialState={{ sortBy }}
         renderSubComponent={(row) => (
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...row.original} />
           </Grid>
+        )}
+        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+          <>
+            <ApplicationListTools
+              clearSelectedRows={resetSelectedRows}
+              filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+              getDraftedOffers={getDraftedOffers}
+              handleApproveOffers={handleApproveOrders}
+              isSubmitting={isSubmittingApproveOrders}
+              selectedRows={selectedRows}
+            />
+            <ApplicationStateTableTools
+              count={count}
+              statusFilter={statusFilter}
+              onStatusFilterChange={onStatusFilterChange}
+            />
+          </>
         )}
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        onSortedColChange={onSortedColChange}
+        onSortedColsChange={onSortedColsChange}
+        manualSortBy
         canSelectRows
       />
     </PageContent>

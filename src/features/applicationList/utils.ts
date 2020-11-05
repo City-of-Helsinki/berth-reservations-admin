@@ -14,6 +14,7 @@ interface Lease {
   id: string;
   pierIdentifier: string;
   status: LeaseStatus;
+  orderId: string | undefined;
 }
 
 interface BerthSwitch {
@@ -25,106 +26,135 @@ interface BerthSwitch {
 }
 
 export interface ApplicationData {
+  accessibilityRequired: boolean;
+  berthSwitch: BerthSwitch | null;
+  boatDraught: number | null;
+  boatLength: number;
+  boatModel: string;
+  boatName: string;
+  boatRegistrationNumber: string;
+  boatType?: string | null;
+  boatWeight: number | null;
+  boatWidth: number;
+  choices: Array<HarborChoice>;
+  createdAt: string;
+  customerId?: string;
+  email: string;
+  firstName: string;
   id: string;
   isSwitch: boolean;
-  customerId?: string;
-  berthSwitch: BerthSwitch | null;
-  queue: number;
-  createdAt: string;
-  municipality: string;
-  status: ApplicationStatus;
+  lastName: string;
   lease: Lease | null;
-  boatType?: string | null;
-  boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
-  boatName: string;
-  boatModel: string;
-  choices: Array<HarborChoice>;
-  accessibilityRequired: boolean;
+  municipality: string;
+  queue: number;
+  status: ApplicationStatus;
 }
 
 export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): ApplicationData[] => {
   const boatTypes = data?.boatTypes;
 
   return (
-    data?.berthApplications?.edges.reduce<ApplicationData[]>((acc, application) => {
-      if (application?.node) {
-        const {
-          id,
-          customer,
-          berthSwitch,
-          createdAt,
-          municipality,
-          status,
-          lease,
-          boatDraught,
-          boatRegistrationNumber,
-          boatModel,
-          boatName,
-          boatWidth,
-          boatLength,
-          boatType,
-          boatWeight,
-          accessibilityRequired,
-        } = application.node;
+    data?.berthApplications?.edges.reduce<ApplicationData[]>((acc, edge) => {
+      if (!edge?.node) return acc;
 
-        const choices =
-          application.node.harborChoices?.map((choice) => {
-            return {
-              priority: choice?.priority ?? Number.MAX_VALUE,
-              harbor: choice?.harbor ?? '',
-              harborName: choice?.harborName ?? '',
-            };
-          }) ?? [];
+      const {
+        accessibilityRequired,
+        berthSwitch,
+        boatDraught,
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
+        boatType,
+        boatWeight,
+        boatWidth,
+        createdAt,
+        customer,
+        email,
+        firstName,
+        harborChoices,
+        id,
+        lastName,
+        lease,
+        municipality,
+        status,
+      } = edge.node;
 
-        let leaseProps: Lease | null = null;
-        if (lease?.berth?.pier.properties?.harbor) {
-          leaseProps = {
-            berthNum: lease.berth.number || '',
-            harborId: lease.berth.pier.properties.harbor.id,
-            harborName: lease.berth.pier.properties.harbor.properties?.name || '',
-            id: lease.id,
-            pierIdentifier: lease.berth.pier.properties?.identifier || '',
-            status: lease.status,
+      const choices =
+        harborChoices?.map((choice) => {
+          return {
+            priority: choice?.priority ?? Number.MAX_VALUE,
+            harbor: choice?.harbor ?? '',
+            harborName: choice?.harborName ?? '',
           };
-        }
+        }) ?? [];
 
-        const berthSwitchProps = berthSwitch && {
-          berthNum: berthSwitch.berthNumber,
-          harborId: berthSwitch.harbor,
-          harborName: berthSwitch.harborName,
-          pierIdentifier: berthSwitch.pier,
-          reason: berthSwitch.reason?.title || null,
+      let leaseProps: Lease | null = null;
+      if (lease?.berth?.pier.properties?.harbor) {
+        leaseProps = {
+          berthNum: lease.berth.number || '',
+          harborId: lease.berth.pier.properties.harbor.id,
+          harborName: lease.berth.pier.properties.harbor.properties?.name || '',
+          id: lease.id,
+          pierIdentifier: lease.berth.pier.properties?.identifier || '',
+          status: lease.status,
+          orderId: lease.order?.id,
         };
-
-        const applicationData = {
-          id,
-          customerId: customer?.id,
-          isSwitch: !!berthSwitch,
-          berthSwitch: berthSwitchProps,
-          queue: 0, // TODO
-          createdAt,
-          municipality,
-          status,
-          lease: leaseProps,
-          boatRegistrationNumber,
-          boatModel,
-          boatName,
-          boatWidth,
-          boatLength,
-          boatDraught,
-          boatWeight,
-          boatType: boatTypes?.find(({ id }) => id === boatType)?.name,
-          choices,
-          accessibilityRequired,
-        };
-
-        return [...acc, applicationData];
       }
-      return acc;
+
+      const berthSwitchProps = berthSwitch && {
+        berthNum: berthSwitch.berthNumber,
+        harborId: berthSwitch.harbor,
+        harborName: berthSwitch.harborName,
+        pierIdentifier: berthSwitch.pier,
+        reason: berthSwitch.reason?.title || null,
+      };
+
+      const applicationData = {
+        accessibilityRequired,
+        berthSwitch: berthSwitchProps,
+        boatDraught,
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
+        boatType: boatTypes?.find(({ id }) => id === boatType)?.name,
+        boatWeight,
+        boatWidth,
+        choices,
+        createdAt,
+        customerId: customer?.id,
+        email,
+        firstName,
+        id,
+        isSwitch: !!berthSwitch,
+        lastName,
+        lease: leaseProps,
+        municipality,
+        queue: 0, // TODO
+        status,
+      };
+
+      return [...acc, applicationData];
     }, []) ?? []
   );
 };
+
+interface Offer {
+  orderId: string;
+  email: string;
+}
+
+export const getDraftedOffers = (applications: ApplicationData[]) =>
+  applications.reduce<Offer[]>((acc, application) => {
+    if (application.status !== ApplicationStatus.OFFER_GENERATED || !application.lease?.orderId || !application.email)
+      return acc;
+
+    return [
+      ...acc,
+      {
+        orderId: application.lease.orderId,
+        email: application.email,
+      },
+    ];
+  }, []);

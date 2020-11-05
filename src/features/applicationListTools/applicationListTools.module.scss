@@ -1,0 +1,11 @@
+@import 'spacings';
+
+.applicationListTools {
+  display: flex;
+  align-items: center;
+  margin-bottom: units(0.5);
+
+  .marginRight:not(:last-child) {
+    margin-right: units(0.5);
+  }
+}

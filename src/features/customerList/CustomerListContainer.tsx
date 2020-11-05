@@ -1,25 +1,50 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
+import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import { SortingRule } from 'react-table';
 
 import { CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
 import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
-import { useBackendSorting } from '../../common/utils/useBackendSorting';
+import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
+import { ApplicationData } from '../applicationList/utils';
+import { orderByGetter } from '../../common/utils/recoil';
+
+const searchByAtom = atom<SearchBy>({
+  key: 'CustomerListContainer_searchByAtom',
+  default: SearchBy.LAST_NAME,
+});
+
+const searchValAtom = atom<string>({
+  key: 'CustomerListContainer_searchValAtom',
+  default: '',
+});
+
+const sortByAtom = atom<SortingRule<ApplicationData>[]>({
+  key: 'CustomerListContainer_sortByAtom',
+  default: [{ id: 'name', desc: false }],
+});
+
+const orderBySelector = selector<string | undefined>({
+  key: 'CustomerListContainer_orderBySelector',
+  get: orderByGetter(sortByAtom),
+});
 
 const CustomerListContainer = () => {
   const { t } = useTranslation();
 
-  const [searchBy, setSearchBy] = useState<SearchBy>(SearchBy.LAST_NAME);
-  const [searchVal, setSearchVal] = useState<string>('');
+  const [searchBy, setSearchBy] = useRecoilState(searchByAtom);
+  const [searchVal, setSearchVal] = useRecoilState(searchValAtom);
 
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
-  const { orderBy, handleSortedColChange } = useBackendSorting(() => goToPage(0));
+  const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
+  const orderBy = useRecoilValue(orderBySelector);
 
   const [debouncedSearchVal] = useDebounce(searchVal, 500, {
     equalityFn: (prev, next) => prev === next,
@@ -58,7 +83,8 @@ const CustomerListContainer = () => {
     <CustomerList
       loading={loading}
       data={tableData}
-      onSortedColChange={handleSortedColChange({ name: 'lastName' })}
+      onSortedColsChange={handleSortedColsChange}
+      sortBy={sortBy}
       pagination={{
         forcePage: pageIndex,
         pageCount: getPageCount(data?.profiles?.count),

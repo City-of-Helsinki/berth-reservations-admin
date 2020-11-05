@@ -1,6 +1,32 @@
 import { useEffect, useState } from 'react';
+import { RecoilState, useRecoilState } from 'recoil';
+import { SortingRule } from 'react-table';
+import equal from 'fast-deep-equal';
 
 import { usePrevious } from './usePrevious';
+
+export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, onSortByChange?: Function) => {
+  const [sortBy, setSortBy] = useRecoilState<SortingRule<T>[]>(atom);
+
+  const handleSortedColsChange = (sortedColumns: SortingRule<T>[]) => {
+    if (!equal(sortBy, sortedColumns)) {
+      setSortBy(sortedColumns);
+    }
+  };
+
+  const prevSortBy = usePrevious(sortBy);
+
+  useEffect(() => {
+    if (!equal(prevSortBy, sortBy)) {
+      onSortByChange?.();
+    }
+  }, [prevSortBy, sortBy, onSortByChange]);
+
+  return {
+    sortBy,
+    handleSortedColsChange,
+  };
+};
 
 export interface SortedCol {
   id: string;

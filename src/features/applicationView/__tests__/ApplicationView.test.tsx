@@ -76,7 +76,7 @@ describe('ApplicationView', () => {
   it('renders title as "New application" if applicationDetails.berthSwitch is null', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper.find(ApplicationHeader).text()).toContain('Uusi hakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Uusi');
   });
 
   it('renders title as "Switch application" if applicationDetails.berthSwitch is not null', () => {
@@ -87,7 +87,7 @@ describe('ApplicationView', () => {
       },
     });
 
-    expect(wrapper.find(ApplicationHeader).text()).toContain('Vaihtohakemus');
+    expect(wrapper.find(ApplicationHeader).text()).toContain('Vaihto');
   });
 
   it('renders delete notice button if notice can be deleted', () => {

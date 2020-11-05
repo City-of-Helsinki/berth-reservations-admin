@@ -1,5 +1,7 @@
 @import 'spacings';
 
 .pageContent {
-  margin: units(2);
+  padding: units(2);
+  width: min-content;
+  min-width: 100%;
 }

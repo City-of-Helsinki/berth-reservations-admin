@@ -9,13 +9,15 @@ import ApplicationDetails from '../../../common/applicationDetails/ApplicationDe
 import TableFilters from '../../../common/tableFilters/TableFilters';
 
 const mockProps: ApplicationListProps = {
+  sortBy: [],
+  onStatusFilterChange: jest.fn(),
   data: undefined,
   getPageCount: jest.fn(() => 0),
   goToPage: jest.fn(),
   handleDeleteLease: jest.fn(),
   isDeleting: false,
   loading: false,
-  onSortedColChange: jest.fn(),
+  onSortedColsChange: jest.fn(),
   onlySwitchApps: false,
   pageIndex: 0,
   setOnlySwitchApps: jest.fn(),
