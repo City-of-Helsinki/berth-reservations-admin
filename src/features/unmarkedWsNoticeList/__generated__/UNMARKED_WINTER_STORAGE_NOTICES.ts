@@ -75,4 +75,5 @@ export interface UNMARKED_WINTER_STORAGE_NOTICESVariables {
   after?: string | null;
   orderBy?: string | null;
   statuses?: (ApplicationStatus | null)[] | null;
+  nameFilter?: string | null;
 }

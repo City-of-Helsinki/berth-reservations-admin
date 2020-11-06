@@ -38,12 +38,18 @@ const statusFilterAtom = atom<ApplicationStatus | undefined>({
   default: undefined,
 });
 
+const nameFilterAtom = atom<string | undefined>({
+  key: 'UnmarkedWsNoticeListContainer_nameFilterAtom',
+  default: undefined,
+});
+
 const UnmarkedWsNoticeListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
 
   const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
+  const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
 
   const { loading, data } = useQuery<UNMARKED_WINTER_STORAGE_NOTICES, UNMARKED_WINTER_STORAGE_NOTICES_VARS>(
     UNMARKED_WINTER_STORAGE_NOTICES_QUERY,
@@ -54,6 +60,7 @@ const UnmarkedWsNoticeListContainer = () => {
         after: cursor,
         orderBy,
         statuses: statusFilter ? [statusFilter] : undefined,
+        nameFilter,
       },
     }
   );
@@ -102,6 +109,11 @@ const UnmarkedWsNoticeListContainer = () => {
         goToPage(0);
       }}
       handleApproveOrders={handleApproveOrders}
+      nameFilter={nameFilter}
+      onNameFilterChange={(nameFilter) => {
+        setNameFilter(nameFilter);
+        goToPage(0);
+      }}
     />
   );
 };

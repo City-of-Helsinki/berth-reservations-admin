@@ -129,4 +129,5 @@ export interface BERTH_APPLICATIONSVariables {
   switchApplications?: boolean | null;
   orderBy?: string | null;
   statuses?: (ApplicationStatus | null)[] | null;
+  nameFilter?: string | null;
 }

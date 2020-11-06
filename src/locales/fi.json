@@ -736,6 +736,7 @@
   },
   "applicationStateTableTools": {
     "selectLabel": "Hakemuksen tila",
+    "nameFilterLabel": "Asiakkaan nimi",
     "count": "Tuloksien lukumäärä: {{count}}"
   }
 }

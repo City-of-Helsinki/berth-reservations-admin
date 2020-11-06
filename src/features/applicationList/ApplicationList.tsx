@@ -16,8 +16,8 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
-import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 
 interface Order {
   orderId: string;
@@ -40,8 +40,10 @@ export interface ApplicationListProps {
   tableData: ApplicationData[];
   count?: number;
   statusFilter?: ApplicationStatus;
+  nameFilter?: string;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   handleApproveOrders(orders: Order[]): Promise<void>;
+  onNameFilterChange(nameFilter: string | undefined): void;
 }
 
 type ColumnType = Column<ApplicationData>;
@@ -64,6 +66,8 @@ const ApplicationList = ({
   count,
   statusFilter,
   onStatusFilterChange,
+  nameFilter,
+  onNameFilterChange,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -192,10 +196,12 @@ const ApplicationList = ({
               isSubmitting={isSubmittingApproveOrders}
               selectedRows={selectedRows}
             />
-            <ApplicationStateTableTools
+            <ApplicationTableTools
               count={count}
               statusFilter={statusFilter}
               onStatusFilterChange={onStatusFilterChange}
+              nameFilter={nameFilter}
+              onNameFilterChange={onNameFilterChange}
             />
           </>
         )}

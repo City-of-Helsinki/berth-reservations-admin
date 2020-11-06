@@ -31,12 +31,18 @@ const statusFilterAtom = atom<ApplicationStatus | undefined>({
   default: undefined,
 });
 
+const nameFilterAtom = atom<string | undefined>({
+  key: 'WinterStorageApplicationListContainer_nameFilterAtom',
+  default: undefined,
+});
+
 const WinterStorageApplicationListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
 
   const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
+  const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
 
   const { loading, data } = useQuery<WINTER_STORAGE_APPLICATIONS, WINTER_STORAGE_APPLICATIONS_VARS>(
     WINTER_STORAGE_APPLICATIONS_QUERY,
@@ -47,6 +53,7 @@ const WinterStorageApplicationListContainer = () => {
         after: cursor,
         orderBy,
         statuses: statusFilter ? [statusFilter] : undefined,
+        nameFilter,
       },
     }
   );
@@ -66,6 +73,11 @@ const WinterStorageApplicationListContainer = () => {
       statusFilter={statusFilter}
       onStatusFilterChange={(statusFilter) => {
         setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
+      nameFilter={nameFilter}
+      onNameFilterChange={(nameFilter) => {
+        setNameFilter(nameFilter);
         goToPage(0);
       }}
     />

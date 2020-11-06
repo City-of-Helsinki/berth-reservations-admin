@@ -14,8 +14,8 @@ import { getDraftedOffers, UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
-import ApplicationStateTableTools from '../../common/tableTools/applicationStateTableTools/ApplicationStateTableTools';
 import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 
 interface Order {
   orderId: string;
@@ -30,10 +30,12 @@ export interface UnmarkedWsNoticeListProps {
   pageIndex: number;
   sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
   statusFilter?: ApplicationStatus;
+  nameFilter?: string;
   goToPage(page: number): void;
   handleApproveOrders(orders: Order[]): Promise<void>;
   onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  onNameFilterChange(nameFilter: string | undefined): void;
 }
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
@@ -51,6 +53,8 @@ const UnmarkedWsNoticeList = ({
   onSortedColsChange,
   sortBy,
   handleApproveOrders,
+  nameFilter,
+  onNameFilterChange,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
@@ -127,10 +131,12 @@ const UnmarkedWsNoticeList = ({
               isSubmitting={isSubmittingApproveOrders}
               selectedRows={selectedRows}
             />
-            <ApplicationStateTableTools
+            <ApplicationTableTools
               count={count}
               statusFilter={statusFilter}
               onStatusFilterChange={onStatusFilterChange}
+              nameFilter={nameFilter}
+              onNameFilterChange={onNameFilterChange}
             />
           </>
         )}

@@ -67,4 +67,5 @@ export interface WINTER_STORAGE_APPLICATIONSVariables {
   after?: string | null;
   orderBy?: string | null;
   statuses?: (ApplicationStatus | null)[] | null;
+  nameFilter?: string | null;
 }

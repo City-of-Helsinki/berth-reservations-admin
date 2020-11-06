@@ -6,6 +6,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
     $after: String
     $orderBy: String
     $statuses: [ApplicationStatus]
+    $nameFilter: String
   ) {
     winterStorageNotices: winterStorageApplications(
       first: $first
@@ -13,6 +14,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
       orderBy: $orderBy
       areaTypes: [UNMARKED]
       statuses: $statuses
+      name: $nameFilter
     ) {
       count
       edges {
