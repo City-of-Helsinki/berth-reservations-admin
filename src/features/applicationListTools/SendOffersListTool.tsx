@@ -6,10 +6,10 @@ import Button from '../../common/button/Button';
 import Modal from '../../common/modal/Modal';
 import Text from '../../common/text/Text';
 import SendMultiOffersForm from '../sendMultiOffersForm/SendMultiOffersForm';
-import styles from './applicationListTools.module.scss';
+import styles from './sendOffersListTool.module.scss';
 import hdsToast from '../../common/toast/hdsToast';
 
-export interface ApplicationListToolsProps<A, O> {
+export interface SendOffersListToolProps<A, O> {
   isSubmitting: boolean;
   selectedRows: A[];
   clearSelectedRows(): void;
@@ -18,14 +18,14 @@ export interface ApplicationListToolsProps<A, O> {
   handleApproveOffers(offers: O[]): void;
 }
 
-const ApplicationListTools = ({
+const SendOffersListTool = ({
   clearSelectedRows,
   filterUnhandledApplications,
   getDraftedOffers,
   handleApproveOffers,
   isSubmitting,
   selectedRows,
-}: ApplicationListToolsProps<object, object>) => {
+}: SendOffersListToolProps<object, object>) => {
   const { t } = useTranslation();
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
   const toastId = 'multiApplicationsError';
@@ -81,4 +81,4 @@ const ApplicationListTools = ({
   );
 };
 
-export default ApplicationListTools;
+export default SendOffersListTool;

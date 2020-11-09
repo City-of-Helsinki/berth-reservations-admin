@@ -16,10 +16,10 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { queueFeatureFlag } from '../../common/utils/featureFlags';
-import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
-import ListActions from "../../common/listActions/ListActions";
-import {UnmarkedWinterStorageNotice} from "../unmarkedWsNoticeList/utils";
+import ListActions from '../../common/listActions/ListActions';
+import { UnmarkedWinterStorageNotice } from '../unmarkedWsNoticeList/utils';
 
 interface Order {
   orderId: string;
@@ -205,7 +205,7 @@ const ApplicationList = ({
                   id: 'sendOffer',
                   label: t('applicationList.tools.sendOffer'),
                   renderComponent: (selectedRows, resetSelectedRows) => (
-                    <ApplicationListTools
+                    <SendOffersListTool
                       clearSelectedRows={resetSelectedRows}
                       filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
                       getDraftedOffers={getDraftedOffers}

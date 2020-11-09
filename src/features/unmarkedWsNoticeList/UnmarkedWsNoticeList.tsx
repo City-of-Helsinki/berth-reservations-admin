@@ -14,7 +14,7 @@ import { getDraftedOffers, UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
-import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 import ListActions from '../../common/listActions/ListActions';
 
@@ -159,7 +159,7 @@ const UnmarkedWsNoticeList = ({
                   id: 'sendOffer',
                   label: t('applicationList.tools.sendOffer'),
                   renderComponent: (selectedRows, resetSelectedRows) => (
-                    <ApplicationListTools
+                    <SendOffersListTool
                       clearSelectedRows={resetSelectedRows}
                       filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
                       getDraftedOffers={getDraftedOffers}

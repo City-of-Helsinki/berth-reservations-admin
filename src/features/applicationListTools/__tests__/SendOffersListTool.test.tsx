@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ApplicationListTools, { ApplicationListToolsProps } from '../ApplicationListTools';
+import SendOffersListTool, { SendOffersListToolProps } from '../SendOffersListTool';
 
 type TestApplication = {
   id: string;
@@ -12,9 +12,9 @@ type TestOffer = TestApplication & {
   orderId: string;
 };
 
-type TestProps = ApplicationListToolsProps<TestApplication, TestOffer>;
+type TestProps = SendOffersListToolProps<TestApplication, TestOffer>;
 
-describe('ApplicationListTools', () => {
+describe('SendOffersListTool', () => {
   const initialProps: TestProps = {
     clearSelectedRows: jest.fn(),
     filterUnhandledApplications: (application) => !application.leaseId,
@@ -34,7 +34,7 @@ describe('ApplicationListTools', () => {
     ],
   };
 
-  const getWrapper = (props: Partial<TestProps> = {}) => mount(<ApplicationListTools {...initialProps} {...props} />);
+  const getWrapper = (props: Partial<TestProps> = {}) => mount(<SendOffersListTool {...initialProps} {...props} />);
 
   beforeEach(() => {
     jest.resetAllMocks();
