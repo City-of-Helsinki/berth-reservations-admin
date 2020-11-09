@@ -11,36 +11,6 @@ exports[`UnmarkedWsNoticeList renders normally with data 1`] = `
   </h2>
   <div>
     <div
-      class="applicationListTools"
-    >
-      <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 marginRight"
-        disabled=""
-        type="button"
-      >
-        <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-        >
-          Lähetä tarjous
-        </span>
-      </button>
-      <span
-        class="marginRight"
-      >
-        0 riviä valittu
-      </span>
-      <button
-        class="marginRight"
-        disabled=""
-      >
-        <span
-          class="text gray span"
-        >
-          Tyhjennä valinnat
-        </span>
-      </button>
-    </div>
-    <div
       class="container"
     >
       <span>
@@ -1396,36 +1366,6 @@ exports[`UnmarkedWsNoticeList renders normally without data 1`] = `
     NOSTOJÄRJESTYSILMOITUKSET
   </h2>
   <div>
-    <div
-      class="applicationListTools"
-    >
-      <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 marginRight"
-        disabled=""
-        type="button"
-      >
-        <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-        >
-          Lähetä tarjous
-        </span>
-      </button>
-      <span
-        class="marginRight"
-      >
-        0 riviä valittu
-      </span>
-      <button
-        class="marginRight"
-        disabled=""
-      >
-        <span
-          class="text gray span"
-        >
-          Tyhjennä valinnat
-        </span>
-      </button>
-    </div>
     <div
       class="container"
     >

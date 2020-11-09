@@ -20,6 +20,7 @@ interface ListActionsProps<T> {
   resetSelectedRows(): void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ListActions = <T extends any>({ selectedRows, resetSelectedRows, listActions }: ListActionsProps<T>) => {
   const { t } = useTranslation();
   const [selectedAction, setSelectedAction] = useState<ListActionItem<T>>();

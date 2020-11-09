@@ -21,11 +21,8 @@ Array [
     "lastName": "Tulppu",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -50,11 +47,8 @@ Array [
     "lastName": "Ankka",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -79,11 +73,8 @@ Array [
     "lastName": "Hanhi",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -108,11 +99,8 @@ Array [
     "lastName": "Magia",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -137,11 +125,8 @@ Array [
     "lastName": "Ankka",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -166,11 +151,8 @@ Array [
     "lastName": "Hiiri",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -195,11 +177,8 @@ Array [
     "lastName": "Ankka",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -224,11 +203,8 @@ Array [
     "lastName": "Pii",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -253,11 +229,8 @@ Array [
     "lastName": "Hanhi",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
@@ -282,11 +255,8 @@ Array [
     "lastName": "Hopo",
     "leaseId": undefined,
     "leaseStatus": undefined,
-<<<<<<< HEAD
-    "orderId": undefined,
-=======
     "municipality": "Helsinki",
->>>>>>> 67da9c08... Enable generating sticker PDFs
+    "orderId": undefined,
     "status": "PENDING",
     "stickerNumber": undefined,
     "stickerSeason": undefined,
