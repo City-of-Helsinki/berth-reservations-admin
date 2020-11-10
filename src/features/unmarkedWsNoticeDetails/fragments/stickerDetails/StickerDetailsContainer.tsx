@@ -48,6 +48,7 @@ const StickerDetailsContainer = ({ leaseId, leaseStatus }: StickerDetailsContain
     <StickerDetails
       stickerNumber={sticker.stickerNumber}
       stickerSeason={sticker.stickerSeason}
+      stickerPosted={sticker.stickerPosted}
       handleAssignNewStickerNumber={handleAssignNewStickerNumber}
       isAssigningNewStickerNumber={isAssigningNewStickerNumber}
     />

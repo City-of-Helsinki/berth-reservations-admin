@@ -4,7 +4,7 @@ import { getOperationName } from 'apollo-link';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 
-import UnmarkedWsNoticeList from './UnmarkedWsNoticeList';
+import UnmarkedWsNoticeList, { CustomerInfo } from './UnmarkedWsNoticeList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import {
@@ -12,16 +12,21 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICESVariables as UNMARKED_WINTER_STORAGE_NOTICES_VARS,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
-import { getUnmarkedWinterStorageNotices } from './utils';
 import { APPROVE_ORDERS_MUTATION } from '../invoiceCard/sendInvoiceForm/mutations';
 import {
   APPROVE_ORDERS,
   APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
 } from '../invoiceCard/sendInvoiceForm/__generated__/APPROVE_ORDERS';
-import hdsToast from '../../common/toast/hdsToast';
+import { generateAndSaveStickerPDF, getUnmarkedWinterStorageNotices } from './utils';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import hdsToast from '../../common/toast/hdsToast';
+import { SET_STICKERS_POSTED_MUTATION } from './mutations';
+import {
+  SET_STICKERS_POSTED,
+  SET_STICKERS_POSTEDVariables as SET_STICKERS_POSTED_VARS,
+} from './__generated__/SET_STICKERS_POSTED';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'UnmarkedWsNoticeListContainer_sortByAtom',
@@ -64,6 +69,7 @@ const UnmarkedWsNoticeListContainer = () => {
       },
     }
   );
+
   const [approveOrders, { loading: isSubmittingApproveOrders }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
     APPROVE_ORDERS_MUTATION,
     {
@@ -72,6 +78,33 @@ const UnmarkedWsNoticeListContainer = () => {
       ],
     }
   );
+
+  const [setStickersPosted] = useMutation<SET_STICKERS_POSTED, SET_STICKERS_POSTED_VARS>(SET_STICKERS_POSTED_MUTATION);
+
+  const onSavePdf = (customers: CustomerInfo[]) => {
+    if (customers.some((customer) => !customer.stickerNumber || !customer.leaseId)) {
+      hdsToast({
+        autoDismiss: false,
+        type: 'error',
+        toastId: 'printWsStickerPDFError',
+        labelText: 'unmarkedWsNotices.list.errors.printWsStickerPDFError.label',
+        text: 'unmarkedWsNotices.list.errors.printWsStickerPDFError.description',
+        translated: true,
+      });
+      return;
+    }
+
+    generateAndSaveStickerPDF(customers);
+    setStickersPosted({
+      variables: {
+        input: {
+          leaseIds: customers.map((customer) => customer.leaseId as string),
+          date: new Date().toISOString().split('T')[0],
+        },
+      },
+    });
+  };
+
   const notices = getUnmarkedWinterStorageNotices(data);
   const pageCount = getPageCount(data?.winterStorageNotices?.count);
 
@@ -114,6 +147,7 @@ const UnmarkedWsNoticeListContainer = () => {
         setNameFilter(nameFilter);
         goToPage(0);
       }}
+      onSavePdf={onSavePdf}
     />
   );
 };

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationListTools renders normally 1`] = `
+exports[`SendOffersListTool renders normally 1`] = `
 <div
   class="applicationListTools"
 >
   <button
-    class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 marginRight"
+    class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 marginLeft"
     type="button"
   >
     <span
@@ -15,12 +15,12 @@ exports[`ApplicationListTools renders normally 1`] = `
     </span>
   </button>
   <span
-    class="marginRight"
+    class="marginLeft"
   >
     3 riviä valittu
   </span>
   <button
-    class="marginRight"
+    class="marginLeft"
   >
     <span
       class="text brand span"

@@ -27,6 +27,8 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
   id: string;
   status: LeaseStatus;
   order: UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_lease_order | null;
+  stickerNumber: number | null;
+  stickerSeason: string | null;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node {
@@ -43,6 +45,9 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
   id: string;
   lastName: string;
   email: string;
+  municipality: string;
+  zipCode: string;
+  address: string;
   status: ApplicationStatus;
   winterStorageAreaChoices: (UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices | null)[] | null;
   lease: UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_lease | null;

@@ -11,36 +11,6 @@ exports[`ApplicationListContainer renders normally 1`] = `
   </h2>
   <div>
     <div
-      class="applicationListTools"
-    >
-      <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 marginRight"
-        disabled=""
-        type="button"
-      >
-        <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-        >
-          Lähetä tarjous
-        </span>
-      </button>
-      <span
-        class="marginRight"
-      >
-        0 riviä valittu
-      </span>
-      <button
-        class="marginRight"
-        disabled=""
-      >
-        <span
-          class="text gray span"
-        >
-          Tyhjennä valinnat
-        </span>
-      </button>
-    </div>
-    <div
       class="container"
     >
       <span>
@@ -125,6 +95,59 @@ exports[`ApplicationListContainer renders normally 1`] = `
             tabindex="-1"
           />
         </div>
+      </div>
+    </div>
+    <div
+      class="container"
+    >
+      <div
+        class="Dropdown-module_root__3ro8_ select select"
+      >
+        <div
+          class="Dropdown-module_wrapper__1sFxz"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hds-label hds-toggle-button"
+            class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
+            id="hds-toggle-button"
+            type="button"
+          >
+            <span
+              class="Dropdown-module_buttonLabel__3y4eg"
+            >
+              Toiminnot
+            </span>
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+        <ul
+          aria-labelledby="hds-label"
+          class="Dropdown-module_menu__3xwA0"
+          id="hds-menu"
+          role="listbox"
+          style="max-height: calc(var(--dropdown-height) * 5);"
+          tabindex="-1"
+        />
       </div>
     </div>
     <div

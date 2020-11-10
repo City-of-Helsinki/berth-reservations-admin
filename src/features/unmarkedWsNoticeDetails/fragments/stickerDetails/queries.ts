@@ -5,6 +5,7 @@ export const UNMARKED_WINTER_STORAGE_STICKER_QUERY = gql`
     unmarkedWinterStorageSticker: winterStorageLease(id: $id) {
       stickerNumber
       stickerSeason
+      stickerPosted
     }
   }
 `;

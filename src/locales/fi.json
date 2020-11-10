@@ -692,7 +692,17 @@
       "deleteInvoice": "Poista lasku"
     },
     "list": {
-      "title": "Nostojärjestysilmoitukset"
+      "title": "Nostojärjestysilmoitukset",
+      "stickerPrint": {
+        "noSelection": "Valitse listalta asiakkaita tulostaaksesi tarrakirje",
+        "onClick": "Tulosta tarrakirjeet"
+      },
+      "errors": {
+        "printWsStickerPDFError": {
+          "label": "Virhe tulostaessa tarrakirjeitä",
+          "description": "Tarrakirjeitä voi ainoastaan tulostaa asiakkaille joilla on olemassa tarranumero."
+        }
+      }
     },
     "noticeDetails": {
       "title": "Nostojärjestysilmoitus",
@@ -703,6 +713,7 @@
         "title": "TARRA",
         "number": "Numero",
         "season": "Kausi",
+        "posted": "Postitettu",
         "assign": {
           "buttonText": "Vaihda numero",
           "modalTitle": "VAIHDA NUMERO",
@@ -738,5 +749,12 @@
     "selectLabel": "Hakemuksen tila",
     "nameFilterLabel": "Asiakkaan nimi",
     "count": "Tuloksien lukumäärä: {{count}}"
+  },
+  "buttonWithSelectedRows": {
+    "actions": "Toiminnot",
+    "noSelection": "Valitse listalta asiakkaita suorittaaksesi toiminto",
+    "selectedRows": "{{count}} rivi valittu",
+    "selectedRows_plural": "{{count}} riviä valittu",
+    "clearSelectedRows": "Tyhjennä valinnat"
   }
 }

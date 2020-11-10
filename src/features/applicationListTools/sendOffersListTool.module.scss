@@ -1,0 +1,10 @@
+@import 'spacings';
+
+.applicationListTools {
+  display: flex;
+  align-items: center;
+
+  .marginLeft {
+    margin-left: units(0.5);
+  }
+}

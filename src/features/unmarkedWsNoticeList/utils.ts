@@ -1,6 +1,10 @@
+import jsPDF from 'jspdf';
+
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { UNMARKED_WINTER_STORAGE_NOTICES } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { getChoiceFromWinterStorageAreaChoices } from '../unmarkedWsNoticeView/utils';
+import { CustomerInfo } from './UnmarkedWsNoticeList';
+import { formatStickerNumber } from '../../common/utils/format';
 
 interface UnmarkedWinterStorageChoice {
   winterStorageAreaName: string;
@@ -25,6 +29,11 @@ export type UnmarkedWinterStorageNotice = {
   leaseStatus?: LeaseStatus;
   leaseId?: string;
   orderId: string | undefined;
+  municipality: string;
+  address: string;
+  zipCode: string;
+  stickerNumber?: number | null;
+  stickerSeason?: string | null;
 };
 
 export const getUnmarkedWinterStorageNotices = (
@@ -46,6 +55,9 @@ export const getUnmarkedWinterStorageNotices = (
         email,
         id,
         lastName,
+        municipality,
+        address,
+        zipCode,
         status,
         winterStorageAreaChoices,
         lease,
@@ -68,6 +80,11 @@ export const getUnmarkedWinterStorageNotices = (
         leaseId: lease?.id,
         orderId: lease?.order?.id,
         leaseStatus: lease?.status,
+        municipality,
+        address,
+        zipCode,
+        stickerNumber: lease?.stickerNumber,
+        stickerSeason: lease?.stickerSeason,
       };
 
       return [...acc, applicationData];
@@ -93,3 +110,55 @@ export const getDraftedOffers = (applications: UnmarkedWinterStorageNotice[]) =>
       },
     ];
   }, []);
+
+export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
+  const leftMargin = 64;
+
+  const doc = new jsPDF('portrait', 'px', 'a4', true);
+  doc.setFont('times', 'normal');
+  doc.setFontSize(12);
+  customers.forEach((customer, index) => {
+    doc.text(`${customer.firstName} ${customer.lastName}`, leftMargin, 64);
+    doc.text(`${customer.address}`, leftMargin, 74);
+    doc.text(`${customer.zipCode} ${customer.municipality}`, leftMargin, 86);
+
+    doc.text(`Tarra nro: ${formatStickerNumber(customer.stickerNumber)}`, leftMargin, 160);
+    doc.text(`Kausi: ${customer.stickerSeason}`, leftMargin, 172);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(16);
+    doc.text('Ohessa veneen talvisäilytyskauden 15.9.2020 - 10.6.2021 tarra.', leftMargin, 350);
+    doc.setFont('times', 'normal');
+    doc.setFontSize(12);
+
+    doc.text(
+      'Kiinnitäthän tarran näkyvälle paikalle veneeseen, sen peitteeseen tai \n' +
+        'telakointitarvikkeeseen. Tarran on oltava kiinnitettynä koko talvisäilytyskauden ajan \n' +
+        'tarkastuksia varten.  Mikäli tarra katoaa, saat uuden ottamalla yhteyttä \n' +
+        'venepaikkavarauksiin.\n\n' +
+        'Muistutamme vielä, että mastot tulee olla kaadettuina talvisäilytysalueilla ja \n' +
+        'ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. \n' +
+        'Talvisäilytysalueet eivät ole vartioituja.\n\n' +
+        'Sähkö on suljettu talvisäilytysalueilla 1.12. – 15.3. /sääolosuhteet. Vedet suljetaan \n' +
+        'talvisäilytysalueilla aikaisintaan viikolla 42/sääolosuhteet ja avataan keväällä \n' +
+        'sääolosuhteiden mukaan.',
+      leftMargin,
+      370
+    );
+
+    doc.setFont('times', 'bold');
+    doc.text('Toivotamme teille oikein mukavaa talvikautta!', leftMargin, 510);
+    doc.setFont('times', 'normal');
+
+    doc.text('Paula & Maarit', leftMargin, 524);
+    doc.text('Venepaikkavaraukset', leftMargin, 536);
+    doc.text('Sähköposti: venepaikkavaraukset@hel.fi', leftMargin, 548);
+    doc.text('Puh. 09 310 87900 (puhelinaika ma-to klo 9-12)', leftMargin, 560);
+
+    if (index < customers.length - 1) {
+      doc.addPage();
+    }
+  });
+
+  doc.save('tarrat.pdf');
+};

@@ -11,6 +11,7 @@ export interface UNMARKED_WINTER_STORAGE_STICKER_unmarkedWinterStorageSticker {
   __typename: "WinterStorageLeaseNode";
   stickerNumber: number | null;
   stickerSeason: string | null;
+  stickerPosted: any | null;
 }
 
 export interface UNMARKED_WINTER_STORAGE_STICKER {

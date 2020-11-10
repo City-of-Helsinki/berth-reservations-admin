@@ -4,11 +4,12 @@ import React from 'react';
 import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../../common/section/Section';
 import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/buttonWithConfirmation';
-import { formatStickerNumber } from '../../../../common/utils/format';
+import { formatDate, formatStickerNumber } from '../../../../common/utils/format';
 
 interface StickerDetailsProps {
   stickerNumber: number | null;
   stickerSeason: string | null;
+  stickerPosted: string | null;
   isAssigningNewStickerNumber?: boolean;
   handleAssignNewStickerNumber?(): void;
 }
@@ -16,10 +17,11 @@ interface StickerDetailsProps {
 const StickerDetails = ({
   stickerNumber,
   stickerSeason,
+  stickerPosted,
   isAssigningNewStickerNumber,
   handleAssignNewStickerNumber,
 }: StickerDetailsProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Section title={t('unmarkedWsNotices.noticeDetails.stickerDetails.title')}>
@@ -28,6 +30,10 @@ const StickerDetails = ({
         value={formatStickerNumber(stickerNumber)}
       />
       <LabelValuePair label={t('unmarkedWsNotices.noticeDetails.stickerDetails.season')} value={stickerSeason} />
+      <LabelValuePair
+        label={t('unmarkedWsNotices.noticeDetails.stickerDetails.posted')}
+        value={formatDate(stickerPosted, i18n.language)}
+      />
       {handleAssignNewStickerNumber && (
         <ButtonWithConfirmation
           buttonText={t('unmarkedWsNotices.noticeDetails.stickerDetails.assign.buttonText')}

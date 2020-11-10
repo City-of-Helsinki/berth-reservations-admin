@@ -14,8 +14,20 @@ import { getDraftedOffers, UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
-import ApplicationListTools from '../applicationListTools/ApplicationListTools';
+import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
+import ListActions from '../../common/listActions/ListActions';
+
+export type CustomerInfo = {
+  firstName: string;
+  lastName: string;
+  address: string;
+  municipality: string;
+  zipCode: string;
+  leaseId?: string;
+  stickerNumber?: number | null;
+  stickerSeason?: string | null;
+};
 
 interface Order {
   orderId: string;
@@ -36,6 +48,7 @@ export interface UnmarkedWsNoticeListProps {
   onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   onNameFilterChange(nameFilter: string | undefined): void;
+  onSavePdf(customers: CustomerInfo[]): void;
 }
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
@@ -55,6 +68,7 @@ const UnmarkedWsNoticeList = ({
   handleApproveOrders,
   nameFilter,
   onNameFilterChange,
+  onSavePdf,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
@@ -121,16 +135,9 @@ const UnmarkedWsNoticeList = ({
             <UnmarkedWsNoticeDetails {...row.original} />
           </Grid>
         )}
+        renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
           <>
-            <ApplicationListTools
-              clearSelectedRows={resetSelectedRows}
-              filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
-              getDraftedOffers={getDraftedOffers}
-              handleApproveOffers={handleApproveOrders}
-              isSubmitting={isSubmittingApproveOrders}
-              selectedRows={selectedRows}
-            />
             <ApplicationTableTools
               count={count}
               statusFilter={statusFilter}
@@ -138,9 +145,34 @@ const UnmarkedWsNoticeList = ({
               nameFilter={nameFilter}
               onNameFilterChange={onNameFilterChange}
             />
+            <ListActions
+              selectedRows={selectedRows}
+              resetSelectedRows={resetSelectedRows}
+              listActions={[
+                {
+                  id: 'printStickers',
+                  label: t('unmarkedWsNotices.list.stickerPrint.onClick'),
+                  buttonText: t('unmarkedWsNotices.list.stickerPrint.onClick'),
+                  onClick: onSavePdf,
+                },
+                {
+                  id: 'sendOffer',
+                  label: t('applicationList.tools.sendOffer'),
+                  renderComponent: (selectedRows, resetSelectedRows) => (
+                    <SendOffersListTool
+                      clearSelectedRows={resetSelectedRows}
+                      filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+                      getDraftedOffers={getDraftedOffers}
+                      handleApproveOffers={handleApproveOrders}
+                      isSubmitting={isSubmittingApproveOrders}
+                      selectedRows={selectedRows}
+                    />
+                  ),
+                },
+              ]}
+            />
           </>
         )}
-        renderMainHeader={() => t('unmarkedWsNotices.list.title')}
         renderTableToolsBottom={() => (
           <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}

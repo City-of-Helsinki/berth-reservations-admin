@@ -7,7 +7,7 @@ import Select from '../../select/Select';
 import { APPLICATION_STATUS } from '../../utils/constants';
 import styles from './applicationTableTools.module.scss';
 
-interface ApplicationStateTableToolsProps {
+interface ApplicationTableToolsProps {
   count?: number;
   nameFilter?: string;
   statusFilter?: ApplicationStatus;
@@ -21,7 +21,7 @@ const ApplicationTableTools = ({
   onNameFilterChange,
   statusFilter,
   onStatusFilterChange,
-}: ApplicationStateTableToolsProps) => {
+}: ApplicationTableToolsProps) => {
   const { t } = useTranslation();
   const options = [
     { label: t('common.all'), value: '' as ApplicationStatus },

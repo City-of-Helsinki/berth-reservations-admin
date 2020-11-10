@@ -31,6 +31,9 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
           id
           lastName
           email
+          municipality
+          zipCode
+          address
           status
           winterStorageAreaChoices {
             priority
@@ -44,6 +47,8 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
             order {
               id
             }
+            stickerNumber
+            stickerSeason
           }
         }
       }
