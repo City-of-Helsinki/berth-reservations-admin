@@ -139,7 +139,7 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
         'Muistutamme vielä, että mastot tulee olla kaadettuina talvisäilytysalueilla ja \n' +
         'ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. \n' +
         'Talvisäilytysalueet eivät ole vartioituja.\n\n' +
-        'Sähkö on suljettu talvisäilytysalueilla 1.12. – 15.3. /sääolosuhteet. Vedet suljetaan \n' +
+        'Sähkö on suljettu talvisäilytysalueilla 1.12. - 15.3. /sääolosuhteet. Vedet suljetaan \n' +
         'talvisäilytysalueilla aikaisintaan viikolla 42/sääolosuhteet ja avataan keväällä \n' +
         'sääolosuhteiden mukaan.',
       leftMargin,
