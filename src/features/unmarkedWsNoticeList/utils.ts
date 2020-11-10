@@ -127,17 +127,21 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
 
     doc.setFont('times', 'bold');
     doc.setFontSize(16);
-    doc.text('Ohessa veneen talvisäilytyskauden tarra kuluvalle kaudelle.', leftMargin, 350);
+    doc.text('Ohessa veneen talvisäilytyskauden 15.9.2020 - 10.6.2021 tarra.', leftMargin, 350);
     doc.setFont('times', 'normal');
     doc.setFontSize(12);
 
     doc.text(
       'Kiinnitäthän tarran näkyvälle paikalle veneeseen, sen peitteeseen tai \n' +
-        'telakointitarvikkeeseen.\n\n' +
-        'Mikäli tarra katoaa, saat uuden ottamalla yhteyttä venepaikkavarauksiin.\n\n' +
+        'telakointitarvikkeeseen. Tarran on oltava kiinnitettynä koko talvisäilytyskauden ajan \n' +
+        'tarkastuksia varten.  Mikäli tarra katoaa, saat uuden ottamalla yhteyttä \n' +
+        'venepaikkavarauksiin.\n\n' +
         'Muistutamme vielä, että mastot tulee olla kaadettuina talvisäilytysalueilla ja \n' +
-        'ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. Kaikki \n' +
-        'ongelmajätteet kuten akut ja jäteöljy tulee toimittaa ongelmajätteiden keräyspisteisiin.',
+        'ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. \n' +
+        'Talvisäilytysalueet eivät ole vartioituja.\n\n' +
+        'Sähkö on suljettu talvisäilytysalueilla 1.12. – 15.3. /sääolosuhteet. Vedet suljetaan \n' +
+        'talvisäilytysalueilla aikaisintaan viikolla 42/sääolosuhteet ja avataan keväällä \n' +
+        'sääolosuhteiden mukaan.',
       leftMargin,
       370
     );
