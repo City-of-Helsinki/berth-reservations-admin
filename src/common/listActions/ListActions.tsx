@@ -20,8 +20,11 @@ interface ListActionsProps<T> {
   resetSelectedRows(): void;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ListActions = <T extends any>({ selectedRows, resetSelectedRows, listActions }: ListActionsProps<T>) => {
+const ListActions = <T extends object | string | number | boolean | bigint | symbol>({
+  selectedRows,
+  resetSelectedRows,
+  listActions,
+}: ListActionsProps<T>) => {
   const { t } = useTranslation();
   const [selectedAction, setSelectedAction] = useState<ListActionItem<T>>();
   const hasSelectedRows = !!selectedRows.length;
@@ -41,10 +44,8 @@ const ListActions = <T extends any>({ selectedRows, resetSelectedRows, listActio
         options={options}
         className={styles.select}
       />
-      {selectedAction &&
-        selectedAction.renderComponent &&
-        selectedAction.renderComponent(selectedRows, resetSelectedRows)}
-      {selectedAction && selectedAction.onClick && (
+      {selectedAction?.renderComponent?.(selectedRows, resetSelectedRows)}
+      {selectedAction?.onClick && (
         <div className={styles.buttonContainer}>
           <Button
             onClick={() => selectedAction.onClick?.(selectedRows)}
