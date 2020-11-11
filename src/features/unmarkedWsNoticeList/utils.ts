@@ -118,9 +118,9 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
   doc.setFont('times', 'normal');
   doc.setFontSize(12);
   customers.forEach((customer, index) => {
-    doc.text(`${customer.firstName} ${customer.lastName}`, leftMargin, 64);
-    doc.text(`${customer.address}`, leftMargin, 74);
-    doc.text(`${customer.zipCode} ${customer.municipality}`, leftMargin, 86);
+    doc.text(`${customer.firstName} ${customer.lastName}`, leftMargin, 74);
+    doc.text(`${customer.address}`, leftMargin, 84);
+    doc.text(`${customer.zipCode} ${customer.municipality}`, leftMargin, 96);
 
     doc.text(`Tarra nro: ${formatStickerNumber(customer.stickerNumber)}`, leftMargin, 160);
     doc.text(`Kausi: ${customer.stickerSeason}`, leftMargin, 172);
