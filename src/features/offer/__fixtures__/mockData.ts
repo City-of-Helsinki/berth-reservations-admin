@@ -11,6 +11,8 @@ export const OfferQueryData: OFFER = {
     customer: {
       __typename: 'ProfileNode',
       id: '1',
+      firstName: 'test',
+      lastName: 'test',
     },
     boatType: 'rowboat',
     boatRegistrationNumber: '1234',

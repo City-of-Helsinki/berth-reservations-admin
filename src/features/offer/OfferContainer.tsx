@@ -14,6 +14,8 @@ import { formatDate } from '../../common/utils/format';
 import { CREATE_LEASE_MUTATION } from './mutations';
 import { CREATE_LEASE, CREATE_LEASEVariables as CREATE_LEASE_VARS } from './__generated__/CREATE_LEASE';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
+import hdsToast from '../../common/toast/hdsToast';
+import { BerthData } from './types';
 
 function useRouterQuery() {
   return new URLSearchParams(useLocation().search);
@@ -64,15 +66,28 @@ const OfferContainer = () => {
   const harbor = getHarbor(data);
   const boat = getBoat(data);
 
-  const handleClickSelect = (berthId: string) => {
+  const handleClickSelect = (berth: BerthData) => {
     createBerthLease({
       variables: {
         input: {
           applicationId: applicationId || '',
-          berthId,
+          berthId: berth.id,
         },
       },
-    }).then(() => history.push('/applications'));
+    }).then(() => {
+      history.push('/applications');
+      hdsToast({
+        type: 'success',
+        autoDismiss: false,
+        labelText: t('offer.notifications.berthLeaseCreated.label'),
+        text: t('offer.notifications.berthLeaseCreated.description', {
+          name: `${data.berthApplication?.customer?.firstName} ${data.berthApplication?.customer?.lastName}`,
+          harbor: berth.harbor,
+          pier: berth.pier,
+          berth: berth.berth,
+        }),
+      });
+    });
   };
 
   return (
