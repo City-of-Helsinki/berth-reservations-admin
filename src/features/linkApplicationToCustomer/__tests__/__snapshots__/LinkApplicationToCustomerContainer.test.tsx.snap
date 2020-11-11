@@ -70,7 +70,7 @@ Array [
             <span
               class="Dropdown-module_buttonLabel__3y4eg"
             >
-              Sähköposti
+              Sukunimi
             </span>
             <svg
               class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
@@ -112,7 +112,7 @@ Array [
             class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
             id="searchSimilarCustomers"
             type="text"
-            value="test@example.com"
+            value="Käyttäjä"
           />
         </div>
       </div>
