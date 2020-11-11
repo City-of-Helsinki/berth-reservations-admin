@@ -78,7 +78,8 @@ const OfferContainer = () => {
       history.push('/applications');
       hdsToast({
         type: 'success',
-        autoDismiss: false,
+        autoDismiss: true,
+        autoDismissTime: 5000,
         labelText: t('offer.notifications.berthLeaseCreated.label'),
         text: t('offer.notifications.berthLeaseCreated.description', {
           name: `${data.berthApplication?.customer?.firstName} ${data.berthApplication?.customer?.lastName}`,
