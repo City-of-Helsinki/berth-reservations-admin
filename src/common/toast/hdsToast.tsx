@@ -10,6 +10,7 @@ import { HDSToastContainerId } from './HDSToastContainer';
 
 interface HDSToastArgs {
   autoDismiss?: boolean;
+  autoDismissTime?: number;
   type: NotificationProps['type'];
   labelText: string;
   text: string;
@@ -24,17 +25,25 @@ interface NotificationWrapperProps extends HDSToastArgs {
 
 const AUTO_DISMISS_TIME = 3000;
 
-const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, translated }: NotificationWrapperProps) => {
+const NotificationWrapper = ({
+  autoDismiss,
+  autoDismissTime = AUTO_DISMISS_TIME,
+  type,
+  labelText,
+  text,
+  toastId,
+  translated,
+}: NotificationWrapperProps) => {
   const { t } = useTranslation();
 
   useEffect(() => {
     if (autoDismiss) {
       const timer = setTimeout(() => {
         toast.dismiss(toastId);
-      }, AUTO_DISMISS_TIME);
+      }, autoDismissTime);
       return () => clearTimeout(timer);
     }
-  }, [autoDismiss, toastId]);
+  }, [autoDismiss, autoDismissTime, toastId]);
 
   return (
     <Notification
@@ -49,7 +58,15 @@ const NotificationWrapper = ({ autoDismiss, type, labelText, text, toastId, tran
   );
 };
 
-const hdsToast = ({ autoDismiss = true, type, labelText, text, toastId, translated = false }: HDSToastArgs) => {
+const hdsToast = ({
+  autoDismiss = true,
+  autoDismissTime = AUTO_DISMISS_TIME,
+  type,
+  labelText,
+  text,
+  toastId,
+  translated = false,
+}: HDSToastArgs) => {
   const id = toastId ?? uuidv4();
   return toast(
     <NotificationWrapper
@@ -59,6 +76,7 @@ const hdsToast = ({ autoDismiss = true, type, labelText, text, toastId, translat
       text={text}
       toastId={id}
       translated={translated}
+      autoDismissTime={autoDismissTime}
     />,
     {
       toastId: id,

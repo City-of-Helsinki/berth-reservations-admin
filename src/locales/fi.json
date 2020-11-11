@@ -457,6 +457,12 @@
       "boatLength": "Veneen pituus",
       "boatDraught": "Veneen syväys",
       "boatWeight": "Veneen paino"
+    },
+    "notifications": {
+      "berthLeaseCreated": {
+        "label": "Hakemus käsitelty",
+        "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle {{name}}."
+      }
     }
   },
   "customerList": {

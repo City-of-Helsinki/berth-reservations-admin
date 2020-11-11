@@ -22,7 +22,7 @@ interface OfferProps {
   applicationStatus: ApplicationStatus;
   applicationType: string;
   boat: Boat | null;
-  handleClickSelect: (berthId: string) => void;
+  handleClickSelect: (berth: BerthData) => void;
   handleReturn: () => void;
   harbor: HarborCardProps | null;
   isSubmitting: boolean;
@@ -49,7 +49,7 @@ const Offer = ({
   const columns: ColumnType[] = [
     {
       Cell: ({ row }) => (
-        <Button onClick={() => handleClickSelect(row.original.id)} disabled={isSubmitting}>
+        <Button onClick={() => handleClickSelect(row.original)} disabled={isSubmitting}>
           {t('offer.tableCells.select')}
         </Button>
       ),
