@@ -38,7 +38,7 @@ const LinkApplicationToCustomerContainer = ({
 }: LinkApplicationToCustomerContainerProps) => {
   const { t } = useTranslation();
 
-  const [searchBy, setSearchBy] = useState<SearchBy>(SearchBy.EMAIL);
+  const [searchBy, setSearchBy] = useState<SearchBy>(SearchBy.LAST_NAME);
   const prevSearchBy = usePrevious(searchBy);
   const [searchVal, setSearchVal] = useState<string>('');
   const [debouncedSearchVal] = useDebounce(searchVal, 500, {
