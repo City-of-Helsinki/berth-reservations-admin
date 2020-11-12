@@ -17,7 +17,7 @@ export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, 
   const prevSortBy = usePrevious(sortBy);
 
   useEffect(() => {
-    if (!equal(prevSortBy, sortBy)) {
+    if (prevSortBy && !equal(prevSortBy, sortBy)) {
       onSortByChange?.();
     }
   }, [prevSortBy, sortBy, onSortByChange]);
