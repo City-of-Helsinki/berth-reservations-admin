@@ -26,10 +26,12 @@ const PricingContainer = () => {
   const [editingAdditionalServiceId, setEditingAdditionalServiceId] = useState<string>();
   const [isAddingAdditionalService, setIsAddingAdditionalService] = useState<boolean>(false);
   const [addAdditionalService] = useMutation<ADD_ADDITIONAL_SERVICE, ADD_ADDITIONAL_SERVICE_VARS>(
-    ADD_ADDITIONAL_SERVICE_MUTATION
+    ADD_ADDITIONAL_SERVICE_MUTATION,
+    { refetchQueries: [{ query: PRICING_QUERY }] }
   );
   const [updateAdditionalServicePrice] = useMutation<UPDATE_ADDITIONAL_SERVICE_PRICE, UPDATE_HARBOR_SERVICE_PRICE_VARS>(
-    UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION
+    UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION,
+    { refetchQueries: [{ query: PRICING_QUERY }] }
   );
   const isAdditionalServiceModalOpen = !!editingAdditionalServiceId || isAddingAdditionalService;
   const handleCloseAdditionalServiceModal = () => {
