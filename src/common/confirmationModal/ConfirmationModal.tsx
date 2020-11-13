@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { ButtonProps } from 'hds-react';
 
 import Modal from '../modal/Modal';
@@ -32,7 +33,7 @@ const ConfirmationModal = ({
   className,
 }: ConfirmationModalProps) => {
   return (
-    <Modal isOpen={isOpen} toggleModal={onCancel} className={className}>
+    <Modal isOpen={isOpen} toggleModal={onCancel} className={classNames(styles.confirmationModal, className)}>
       <Text as="h4" color="brand" className={styles.uppercase}>
         {title}
       </Text>
