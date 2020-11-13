@@ -27,6 +27,15 @@ test('Selection of customers', async (t) => {
   await t.click(customers.customerList.deselectAll).expect(customers.customerList.selectedCount.exists).notOk();
 });
 
+test('Pagination', async (t) => {
+  await login(t);
+
+  // Stay on the same page after reloading the browser
+  await t.click(navigation.customers).click(customers.customerList.paginationNextButton);
+  await t.eval(() => window.location.reload());
+  await t.expect(customers.customerList.selectedPage.textContent).contains('2');
+});
+
 test('Editing customers', async (t) => {
   await login(t);
 
