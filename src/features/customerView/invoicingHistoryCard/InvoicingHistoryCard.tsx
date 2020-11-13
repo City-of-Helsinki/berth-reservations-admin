@@ -14,13 +14,15 @@ import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/Statu
 import { getOrderStatusTKey } from '../../../common/utils/translations';
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 import { Invoice } from '../types';
+import Button from '../../../common/button/Button';
 
 interface InvoicingHistoryProps {
   invoices: Invoice[];
   onClick(invoice: Invoice): void;
+  onClickCreateAdditionalInvoice(): void;
 }
 
-const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
+const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoice }: InvoicingHistoryProps) => {
   const { t, i18n } = useTranslation();
 
   const invoiceStatusToType = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
@@ -73,6 +75,7 @@ const InvoicingHistoryCard = ({ invoices, onClick }: InvoicingHistoryProps) => {
     <Card>
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
+        <Button onClick={onClickCreateAdditionalInvoice}>{t('additionalInvoice.create')}</Button>
         {invoices.length > 0 ? (
           <Section>
             <Grid colsCount={5}>

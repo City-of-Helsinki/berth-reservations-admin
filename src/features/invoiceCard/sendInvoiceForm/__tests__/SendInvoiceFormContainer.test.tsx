@@ -5,7 +5,7 @@ import React from 'react';
 import { MockedProvider, MockedResponse } from '@apollo/react-testing';
 
 import SendInvoiceFormContainer, { SendInvoiceFormContainerProps } from '../SendInvoiceFormContainer';
-import { APPROVE_ORDERS_MUTATION } from '../mutations';
+import { APPROVE_ORDERS_MUTATION } from '../../../../common/mutations/approveOrders';
 
 const mockProps: SendInvoiceFormContainerProps = {
   email: 'test@example.com',

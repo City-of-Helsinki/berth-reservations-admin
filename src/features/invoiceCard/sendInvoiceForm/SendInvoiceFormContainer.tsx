@@ -3,9 +3,12 @@ import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
 
 import SendInvoiceForm from './SendInvoiceForm';
-import { APPROVE_ORDERS, APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS } from './__generated__/APPROVE_ORDERS';
-import { APPROVE_ORDERS_MUTATION } from './mutations';
 import hdsToast from '../../../common/toast/hdsToast';
+import { APPROVE_ORDERS_MUTATION } from '../../../common/mutations/approveOrders';
+import {
+  APPROVE_ORDERS,
+  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
+} from '../../../common/mutations/__generated__/APPROVE_ORDERS';
 
 export type SendInvoiceFormContainerProps = {
   orderId: string;

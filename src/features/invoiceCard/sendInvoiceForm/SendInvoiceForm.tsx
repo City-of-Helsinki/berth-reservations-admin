@@ -8,7 +8,8 @@ import styles from './sendInvoiceForm.module.scss';
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 import Text from '../../../common/text/Text';
-import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../../common/utils/dates';
+import { getDefaultDueDate, getDueDateValidation } from '../../../common/utils/dates';
+import { InvoiceInstructions } from '../../../common/invoiceInstructions/InvoiceInstructions';
 
 type FormValues = {
   dueDate: string;
@@ -24,18 +25,14 @@ export type SendInvoiceFormProps = {
 const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoiceFormProps) => {
   const { t } = useTranslation();
 
-  const validationSchema = useMemo(
-    () =>
-      Yup.object<FormValues>().shape({
-        dueDate: Yup.date()
-          .min(new Date(getToday().toDateString()), t('forms.common.errors.date'))
-          .required(t('forms.common.errors.required')),
-      }),
-    [t]
-  );
+  const validationSchema = useMemo(() => {
+    return Yup.object<FormValues>().shape({
+      dueDate: getDueDateValidation(t),
+    });
+  }, [t]);
 
   const initial: FormValues = {
-    dueDate: mapDateToDateInputValue(addDaysToDate(getToday(), 14)),
+    dueDate: getDefaultDueDate(),
   };
 
   return (
@@ -50,12 +47,7 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
         <Form className={styles.form}>
           <FormHeader title={t('invoiceCard.sendInvoice.title').toUpperCase()} />
 
-          <p className={styles.instructions}>
-            {t('invoiceCard.sendInvoice.instructions.paragraph1', {
-              email: email,
-            })}
-          </p>
-          <p className={styles.instructions}>{t('invoiceCard.sendInvoice.instructions.paragraph2')}</p>
+          <InvoiceInstructions email={email} />
 
           <div className={styles.dueDate}>
             <TextInput

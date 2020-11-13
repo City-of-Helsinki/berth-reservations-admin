@@ -4,24 +4,33 @@ import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
 
-import styles from './sendMultiOffersForm.module.scss';
+import styles from './additionalInvoice.module.scss';
 import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';
-import Text from '../../common/text/Text';
 import { getDefaultDueDate, getDueDateValidation } from '../../common/utils/dates';
+import { CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAddtionalInvoiceOrder } from './__generated__/CREATE_ADDITIONAL_INVOICE';
+import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
+import { InvoiceInstructions } from '../../common/invoiceInstructions/InvoiceInstructions';
 
 type FormValues = {
   dueDate: string;
 };
 
-export type SendMultiOffersFormProps = {
+export type SendAdditionalInvoiceFormProps = {
   isSubmitting: boolean;
-  offersCount: number;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
+  order: CreateAddtionalInvoiceOrder | null | undefined;
+  email: string | null | undefined;
 };
 
-const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: SendMultiOffersFormProps) => {
+const SendAdditionalInvoiceForm = ({
+  isSubmitting,
+  onSubmit,
+  onCancel,
+  order,
+  email,
+}: SendAdditionalInvoiceFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(
@@ -46,19 +55,13 @@ const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: 
     >
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
-          <FormHeader title={t('forms.sendMultiOffers.title').toUpperCase()} />
-          <div className={styles.column}>
-            <Text as="strong" className={styles.header}>
-              {t('forms.sendMultiOffers.berthOffers')}
-            </Text>
-            <Text size="xl">{offersCount}</Text>
-          </div>
+          <FormHeader title={t('additionalInvoice.sendTitle').toUpperCase()} />
 
-          <div className={styles.instructions}>
-            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph1')}</p>
-            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph2')}</p>
-            <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph3')}</p>
-          </div>
+          <LabelValuePair label={t('common.total')} value={order?.totalPrice} />
+
+          <hr className={styles.divider} />
+
+          <InvoiceInstructions email={email as string} />
 
           <div className={styles.dueDate}>
             <TextInput
@@ -66,7 +69,7 @@ const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: 
               type="date"
               value={values.dueDate}
               onChange={handleChange}
-              label={t('forms.sendMultiOffers.dueDate')}
+              label={t('additionalInvoice.dueDate')}
               invalid={!!errors.dueDate}
               helperText={errors.dueDate}
               required
@@ -87,4 +90,4 @@ const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: 
   );
 };
 
-export default SendMultiOffersForm;
+export default SendAdditionalInvoiceForm;
