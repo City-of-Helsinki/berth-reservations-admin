@@ -16,7 +16,7 @@ Array [
     class="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
   >
     <div
-      class="ReactModal__Content ReactModal__Content--after-open modal"
+      class="ReactModal__Content ReactModal__Content--after-open modal confirmationModal"
       role="dialog"
       tabindex="-1"
     >
