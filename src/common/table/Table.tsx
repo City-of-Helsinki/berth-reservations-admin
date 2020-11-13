@@ -265,14 +265,14 @@ const Table = <D extends { id: string }>({
 
   const initialSortByState = initialState?.sortBy;
   const currentSortByState = state.sortBy;
-  const didSortByChanged = equal(initialSortByState, currentSortByState);
+  const didSortByChanged = !equal(initialSortByState, currentSortByState);
 
   useEffect(() => {
-    onSortedColChange?.(currentSortByState[0]);
+    if (didSortByChanged) onSortedColChange?.(currentSortByState[0]);
   }, [currentSortByState, onSortedColChange, didSortByChanged]);
 
   useEffect(() => {
-    onSortedColsChange?.(currentSortByState);
+    if (didSortByChanged) onSortedColsChange?.(currentSortByState);
   }, [currentSortByState, onSortedColsChange, didSortByChanged]);
 
   useEffect(() => {
