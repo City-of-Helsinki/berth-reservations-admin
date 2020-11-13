@@ -13,6 +13,7 @@ import {
   ASSIGN_NEW_STICKER_NUMBERVariables as ASSIGN_NEW_STICKER_NUMBER_VARS,
 } from './__generated__/ASSIGN_NEW_STICKER_NUMBER';
 import { LeaseStatus } from '../../../../@types/__generated__/globalTypes';
+import hdsToast from '../../../../common/toast/hdsToast';
 
 interface StickerDetailsContainerProps {
   leaseId: string;
@@ -41,7 +42,15 @@ const StickerDetailsContainer = ({ leaseId, leaseStatus }: StickerDetailsContain
 
   const handleAssignNewStickerNumber =
     leaseStatus === LeaseStatus.PAID
-      ? () => assignNewStickerNumber({ variables: { input: { leaseId: leaseId } } })
+      ? () =>
+          assignNewStickerNumber({ variables: { input: { leaseId: leaseId } } }).then(() => {
+            hdsToast({
+              translated: true,
+              labelText: 'toast.stickerNumChanged.label',
+              text: 'toast.stickerNumChanged.description',
+              type: 'success',
+            });
+          })
       : undefined;
 
   return (
