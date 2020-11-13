@@ -6,6 +6,7 @@ import { GraphQLError } from 'graphql';
 
 import hdsToast from '../hdsToast';
 import HDSToastContainer from '../HDSToastContainer';
+import i18n from '../../../locales/i18n';
 
 describe('HDSToastContainer', () => {
   const TestComponent = () => {
@@ -66,21 +67,51 @@ describe('HDSToastContainer', () => {
   });
 
   describe('graphQLErrors', () => {
+    const defaultMessage = 'default message';
     const graphQLErrors = [
-      new GraphQLError('error', undefined, undefined, undefined, undefined, undefined, {
+      new GraphQLError(defaultMessage, undefined, undefined, undefined, undefined, undefined, {
         code: 'default',
       }),
-      new GraphQLError('error', undefined, undefined, undefined, undefined, undefined, undefined),
+      new GraphQLError(defaultMessage, undefined, undefined, undefined, undefined, undefined, undefined),
     ];
 
-    const GraphQLErrorsTestComponent = () => {
+    const venepaikkaWarning = new GraphQLError(
+      'warning message',
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      {
+        type: 'VENEPAIKKA_WARNING',
+      }
+    );
+
+    const venepaikkaError = new GraphQLError('error message', undefined, undefined, undefined, undefined, undefined, {
+      type: 'VENEPAIKKA_ERROR',
+    });
+
+    const venepaikkaWarningWithCode = new GraphQLError(
+      'warning message',
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      {
+        type: 'VENEPAIKKA_WARNING',
+        code: 'test',
+      }
+    );
+
+    const GraphQLErrorsTestComponent = ({ errors }: { errors: GraphQLError[] }) => {
       return (
         <div>
           <HDSToastContainer />
           <button
             id="toastBtn"
             onClick={() => {
-              hdsToast.graphQLErrors(graphQLErrors);
+              hdsToast.graphQLErrors(errors);
             }}
           />
         </div>
@@ -88,9 +119,48 @@ describe('HDSToastContainer', () => {
     };
 
     it('creates a toast from each graphQLError', async () => {
-      const wrapper = mount(<GraphQLErrorsTestComponent />);
+      const wrapper = mount(<GraphQLErrorsTestComponent errors={graphQLErrors} />);
       await simulateToast(wrapper);
       expect(wrapper.find('.Toastify__toast')).toHaveLength(2);
+      expect(wrapper.text()).not.toContain(defaultMessage);
+    });
+
+    it('Uses message from graphQL error when extensions.type is a venepaikka error', async () => {
+      const warningWrapper = mount(<GraphQLErrorsTestComponent errors={[venepaikkaWarning]} />);
+      await simulateToast(warningWrapper);
+      expect(warningWrapper.text()).toContain('warning message');
+
+      const errorWrapper = mount(<GraphQLErrorsTestComponent errors={[venepaikkaError]} />);
+      await simulateToast(errorWrapper);
+      expect(warningWrapper.text()).toContain('error message');
+    });
+
+    it('Uses translations based on code when extensions.code is defined and a translation exists', async () => {
+      const label = 'label from code';
+      const description = 'description from code';
+
+      i18n.addResourceBundle(
+        'fi',
+        'testNamespace',
+        {
+          toast: {
+            graphQLErrors: {
+              test: {
+                label,
+                description,
+              },
+            },
+          },
+        },
+        true,
+        true
+      );
+      i18n.setDefaultNamespace('testNamespace');
+
+      const warningWrapper = mount(<GraphQLErrorsTestComponent errors={[venepaikkaWarningWithCode]} />);
+      await simulateToast(warningWrapper);
+      expect(warningWrapper.text()).toContain(label);
+      expect(warningWrapper.text()).toContain(description);
     });
   });
 });

@@ -86,21 +86,31 @@ const hdsToast = ({
 };
 
 hdsToast.graphQLErrors = (errors: ReadonlyArray<GraphQLError>) => {
-  errors.forEach((error) =>
+  errors.forEach((error) => {
+    if (error.extensions?.type === 'VENEPAIKKA_ERROR' || error.extensions?.type === 'VENEPAIKKA_WARNING') {
+      hdsToast({
+        autoDismiss: false,
+        type: error.extensions.type === 'VENEPAIKKA_WARNING' ? 'alert' : 'error',
+        labelText:
+          error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.label`)
+            ? i18n.t(`toast.graphQLErrors.${error.extensions?.code}.label`)
+            : i18n.t('toast.graphQLErrors.default.label'),
+        text:
+          error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.description`)
+            ? i18n.t(`toast.graphQLErrors.${error.extensions?.code}.description`)
+            : error.message,
+      });
+      return;
+    }
+
     hdsToast({
       autoDismiss: false,
       type: 'error',
-      labelText:
-        error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.label`)
-          ? `toast.graphQLErrors.${error.extensions?.code}.label`
-          : 'toast.graphQLErrors.default.label',
-      text:
-        error.extensions?.code && i18n.exists(`toast.graphQLErrors.${error.extensions.code}.description`)
-          ? `toast.graphQLErrors.${error.extensions?.code}.description`
-          : 'toast.graphQLErrors.default.description',
+      labelText: 'toast.graphQLErrors.default.label',
+      text: 'toast.graphQLErrors.default.description',
       translated: true,
-    })
-  );
+    });
+  });
 };
 
 export default hdsToast;
