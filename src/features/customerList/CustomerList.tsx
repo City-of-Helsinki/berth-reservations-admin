@@ -67,7 +67,11 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       Cell: ({ cell }: { cell: Cell<CustomerData, string> }) => <WrappingTableCell>{cell.value}</WrappingTableCell>,
       Header: t('customerList.tableHeaders.berths') || '',
       id: 'berths',
-      accessor: ({ berthLeases }): string => berthLeases.map((berthLease) => berthLease.title).join(', '),
+      accessor: ({ berthLeases }): string =>
+        berthLeases
+          .filter((berthLease) => berthLease.isActive)
+          .map((berthLease) => berthLease.title)
+          .join(', '),
       disableSortBy: true,
       width: COLUMN_WIDTH.L,
       minWidth: COLUMN_WIDTH.L,

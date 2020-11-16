@@ -69,6 +69,7 @@ export const customersResponse: CUSTOMERS = {
               {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6YThhNGNkOGEtMDcxYy00ZGU3LThkMGYtYTE5NmIyMDVmMWZi',
+                  isActive: true,
                   berth: {
                     number: '37',
                     pier: {
@@ -91,6 +92,7 @@ export const customersResponse: CUSTOMERS = {
               {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6MWE1ZTRkOGItNDQ2Yy00NTA1LThiMDgtNDc4NTkxYTFmZTQ3',
+                  isActive: true,
                   berth: {
                     number: '6',
                     pier: {

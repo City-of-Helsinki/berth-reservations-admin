@@ -29,6 +29,7 @@ export interface CustomerData {
 
 export interface CustomerListBerthLeases {
   id: string;
+  isActive: boolean;
   title: string;
 }
 

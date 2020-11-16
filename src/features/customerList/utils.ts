@@ -1,4 +1,9 @@
-import { CUSTOMERS, CUSTOMERS_profiles_edges_node as ProfileNode } from './__generated__/CUSTOMERS';
+import {
+  CUSTOMERS,
+  CUSTOMERS_profiles_edges_node as ProfileNode,
+  CUSTOMERS_profiles_edges_node_berthLeases_edges as BerthLeaseEdge,
+  CUSTOMERS_profiles_edges_node_berthLeases_edges_node as BerthLeaseNode,
+} from './__generated__/CUSTOMERS';
 import { CustomerData, CustomerListApplication, CustomerListBerthLeases, CustomerListBoat } from './types';
 
 const getBoats = (profile: ProfileNode): CustomerListBoat[] | undefined => {
@@ -25,18 +30,19 @@ const getApplications = (profile: ProfileNode): CustomerListApplication[] | unde
 
 function getBerthLeases(profile: ProfileNode): CustomerListBerthLeases[] | undefined {
   return profile.berthLeases?.edges
-    .filter((edge) => edge && edge.node)
-    .map((edge) => {
-      const id = edge?.node?.id ?? '';
+    .filter((edge: BerthLeaseEdge | null): edge is BerthLeaseEdge & { node: BerthLeaseNode } => !!(edge && edge.node))
+    .map(({ node }) => {
+      const { id, isActive } = node;
 
-      const berth = edge?.node?.berth;
-      const berthNumber = berth?.number ?? '';
-      const harborName = berth?.pier.properties?.harbor?.properties?.name ?? '';
-      const pierIdentifier = berth?.pier?.properties?.identifier ?? '';
+      const berth = node.berth;
+      const berthNumber = berth.number;
+      const harborName = berth.pier.properties?.harbor?.properties?.name ?? '';
+      const pierIdentifier = berth.pier?.properties?.identifier ?? '';
       const title = `${harborName} ${pierIdentifier} ${berthNumber}`;
 
       return {
         id,
+        isActive,
         title,
       };
     });

@@ -28,6 +28,6 @@ export const customerListApplications: CustomerListApplication[] = [{ id: '123',
 export const customerListInvoices: CustomerListInvoice[] = [{ id: '123', date: '2020-01-21' }];
 
 export const customerListBerthLeases: CustomerListBerthLeases[] = [
-  { id: '123', title: 'Pursilahdenranta B31' },
-  { id: '321', title: 'Strömsinlahdenranta B31' },
+  { id: '123', isActive: true, title: 'Pursilahdenranta B31' },
+  { id: '321', isActive: true, title: 'Strömsinlahdenranta B31' },
 ];
