@@ -17,6 +17,7 @@ import Grid from '../../common/grid/Grid';
 import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 import ListActions from '../../common/listActions/ListActions';
+import PrintAllStickersButton from './printAllStickersButton/PrintAllStickersButton';
 
 export type CustomerInfo = {
   firstName: string;
@@ -154,6 +155,11 @@ const UnmarkedWsNoticeList = ({
                   label: t('unmarkedWsNotices.list.stickerPrint.onClick'),
                   buttonText: t('unmarkedWsNotices.list.stickerPrint.onClick'),
                   onClick: onSavePdf,
+                },
+                {
+                  id: 'printAllStickers',
+                  label: t('unmarkedWsNotices.list.allStickerPrint.label'),
+                  renderComponent: () => <PrintAllStickersButton />,
                 },
                 {
                   id: 'sendOffer',
