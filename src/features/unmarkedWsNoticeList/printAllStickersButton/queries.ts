@@ -12,6 +12,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_QUERY = gql`
           zipCode
           address
           lease {
+            id
             stickerNumber
             stickerSeason
           }

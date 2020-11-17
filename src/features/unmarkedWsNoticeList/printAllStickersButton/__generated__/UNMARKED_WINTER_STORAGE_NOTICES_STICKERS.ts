@@ -9,6 +9,7 @@
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_winterStorageNotices_edges_node_lease {
   __typename: "WinterStorageLeaseNode";
+  id: string;
   stickerNumber: number | null;
   stickerSeason: string | null;
 }

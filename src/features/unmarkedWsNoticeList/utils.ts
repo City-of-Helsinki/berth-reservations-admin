@@ -117,10 +117,10 @@ export const getCustomersWithStickers = (
 ): CustomerInfo[] => {
   return (
     data?.winterStorageNotices?.edges.reduce<CustomerInfo[]>((acc, edge) => {
-      if (!edge?.node?.lease?.stickerNumber) {
+      if (!edge?.node?.lease?.stickerNumber || !edge?.node?.lease?.id) {
         return acc;
       }
-      const { firstName, lastName, address, municipality, zipCode } = edge.node;
+      const { firstName, lastName, address, municipality, zipCode, lease } = edge.node;
       return [
         ...acc,
         {
@@ -129,8 +129,9 @@ export const getCustomersWithStickers = (
           address,
           municipality,
           zipCode,
-          stickerNumber: edge.node.lease.stickerNumber,
-          stickerSeason: edge.node.lease.stickerSeason,
+          leaseId: lease.id,
+          stickerNumber: lease.stickerNumber,
+          stickerSeason: lease.stickerSeason,
         },
       ];
     }, []) ?? []
