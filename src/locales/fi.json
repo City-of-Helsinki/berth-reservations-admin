@@ -707,6 +707,11 @@
         "noSelection": "Valitse listalta asiakkaita tulostaaksesi tarrakirje",
         "onClick": "Tulosta tarrakirjeet"
       },
+      "allStickerPrint": {
+        "label": "Tulosta kaikki tarrakirjeet",
+        "buttonText": "Tulosta",
+        "loading": "Ladataan asiakastietoja"
+      },
       "errors": {
         "printWsStickerPDFError": {
           "label": "Virhe tulostaessa tarrakirjeitä",
