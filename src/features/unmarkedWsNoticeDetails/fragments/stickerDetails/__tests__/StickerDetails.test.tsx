@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 
 import StickerDetails from '../StickerDetails';
 import LabelValuePair from '../../../../../common/labelValuePair/LabelValuePair';
-import ButtonWithConfirmation from '../../../../../common/buttonWithConfirmation/buttonWithConfirmation';
+import ButtonWithConfirmation from '../../../../../common/buttonWithConfirmation/ButtonWithConfirmation';
 import Button from '../../../../../common/button/Button';
 
 describe('StickerDetails', () => {

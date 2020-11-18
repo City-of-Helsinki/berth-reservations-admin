@@ -3,7 +3,7 @@ import React from 'react';
 
 import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../../common/section/Section';
-import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/buttonWithConfirmation';
+import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/ButtonWithConfirmation';
 import { formatDate, formatStickerNumber } from '../../../../common/utils/format';
 
 interface StickerDetailsProps {
