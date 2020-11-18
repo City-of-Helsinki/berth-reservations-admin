@@ -138,6 +138,7 @@ const Offer = ({
             handleReturn={handleReturn}
           />
         )}
+        renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
       />
     </PageContent>
   );

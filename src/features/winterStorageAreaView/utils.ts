@@ -209,7 +209,7 @@ export const getMarkedWinterStorage = (
 export const getUnmarkedWinterStorage = (
   data: INDIVIDUAL_WINTER_STORAGE_AREA | undefined
 ): UnmarkedWinterStorage | undefined => {
-  const leases = getUnmarkedWinterStorageLeases(data);
+  const leases = getUnmarkedWinterStorageLeases(data).filter((lease) => lease.isActive);
 
   if (leases.length === 0) return undefined;
   return {
