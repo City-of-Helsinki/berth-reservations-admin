@@ -63,6 +63,7 @@ export interface ApplicationDetailsProps {
   customerId?: string;
   isDeletingLease?: boolean;
   handleDeleteLease?: (id: string) => void;
+  handleNoPlacesAvailable?: (id: string) => void;
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
   lease?: Lease | null;
@@ -91,6 +92,7 @@ const ApplicationDetails = ({
   lease,
   isDeletingLease,
   handleDeleteLease,
+  handleNoPlacesAvailable,
   accessibilityRequired,
   summaryInformation,
 }: ApplicationDetailsProps) => {
@@ -219,7 +221,12 @@ const ApplicationDetails = ({
             )}
           </Section>
         ) : (
-          <ApplicationChoicesList choices={choices} applicationId={id} customerId={customerId} />
+          <ApplicationChoicesList
+            choices={choices}
+            applicationId={id}
+            customerId={customerId}
+            handleNoPlacesAvailable={handleNoPlacesAvailable}
+          />
         )}
         {berthAccessibilityFeatureFlag() && (
           <Section>
