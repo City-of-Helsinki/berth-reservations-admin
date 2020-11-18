@@ -18,7 +18,7 @@ import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
-import { queueFeatureFlag } from '../utils/featureFlags';
+import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 
@@ -221,15 +221,17 @@ const ApplicationDetails = ({
         ) : (
           <ApplicationChoicesList choices={choices} applicationId={id} customerId={customerId} />
         )}
-        <Section>
-          <Checkbox
-            id={'accessible'}
-            label={t('applicationList.applicationDetails.accessible')}
-            checked={accessibilityRequired}
-            readOnly
-            className={styles.accessibleCheckbox}
-          />
-        </Section>
+        {berthAccessibilityFeatureFlag() && (
+          <Section>
+            <Checkbox
+              id={'accessible'}
+              label={t('applicationList.applicationDetails.accessible')}
+              checked={accessibilityRequired}
+              readOnly
+              className={styles.accessibleCheckbox}
+            />
+          </Section>
+        )}
       </div>
     </Grid>
   );
