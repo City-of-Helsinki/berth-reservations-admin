@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { SortingRule } from 'react-table';
+import { Cell, SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
@@ -13,6 +13,7 @@ import CustomerDetails from './customerDetails/CustomerDetails';
 import { getSelectedRowIds } from '../../common/utils/getSelectedRowIds';
 import PageContent from '../../common/pageContent/PageContent';
 import { getCustomerGroupKey } from '../../common/utils/translations';
+import WrappingTableCell from '../../common/wrappingTableCell/WrappingTableCell';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -63,14 +64,20 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       minWidth: COLUMN_WIDTH.S,
     },
     {
+      Cell: ({ cell }: { cell: Cell<CustomerData, string> }) => <WrappingTableCell>{cell.value}</WrappingTableCell>,
       Header: t('customerList.tableHeaders.berths') || '',
       id: 'berths',
-      accessor: ({ berthLeases }) => berthLeases.map((berthLease) => berthLease.title).join(', '),
+      accessor: ({ berthLeases }): string =>
+        berthLeases
+          .filter((berthLease) => berthLease.isActive)
+          .map((berthLease) => berthLease.title)
+          .join(', '),
       disableSortBy: true,
       width: COLUMN_WIDTH.L,
       minWidth: COLUMN_WIDTH.L,
     },
     {
+      Cell: ({ cell }: { cell: Cell<CustomerData, string> }) => <WrappingTableCell>{cell.value}</WrappingTableCell>,
       Header: t('customerList.tableHeaders.applications') || '',
       id: 'applications',
       accessor: ({ applications }) =>

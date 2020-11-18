@@ -49,6 +49,11 @@ const CustomerDetails = ({
   const { t, i18n } = useTranslation();
   const customerGroupKey = getCustomerGroupKey(customerGroup);
 
+  const activeBerthList = berths.reduce<React.ReactNode[]>((acc, berth) => {
+    if (berth.isActive) return acc.concat(<div key={berth.id}>{berth.title}</div>);
+    return acc;
+  }, []);
+
   return (
     <div>
       <Grid colsCount={4}>
@@ -69,9 +74,8 @@ const CustomerDetails = ({
         </div>
         <div>
           <Section title={t('common.terminology.berths').toUpperCase()}>
-            {berths.map((berth) => (
-              <div key={berth.id}>{berth.title}</div>
-            ))}
+            {activeBerthList}
+            {activeBerthList.length < berths.length && <hr />}
           </Section>
           <Section title={t('common.terminology.winterStoragePlaces').toUpperCase()}>
             {winterStoragePlaces.map((place) => (

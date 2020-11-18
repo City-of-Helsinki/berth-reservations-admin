@@ -84,6 +84,7 @@ export const CUSTOMERS_QUERY = gql`
             edges {
               node {
                 id
+                isActive
                 berth {
                   number
                   pier {

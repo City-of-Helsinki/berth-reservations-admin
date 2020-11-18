@@ -123,6 +123,7 @@ export interface CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth {
 export interface CUSTOMERS_profiles_edges_node_berthLeases_edges_node {
   __typename: "BerthLeaseNode";
   id: string;
+  isActive: boolean;
   berth: CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth;
 }
 
