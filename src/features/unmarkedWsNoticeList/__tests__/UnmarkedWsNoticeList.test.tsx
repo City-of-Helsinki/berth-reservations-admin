@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { RecoilRoot } from 'recoil';
 import { MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 
@@ -18,15 +19,21 @@ const mockProps: UnmarkedWsNoticeListProps = {
   loading: false,
   pageCount: 1,
   pageIndex: 0,
+  isSubmittingApproveOrders: false,
+  handleApproveOrders: jest.fn(),
+  onNameFilterChange: jest.fn(),
+  onSavePdf: jest.fn(),
   goToPage: jest.fn(),
 };
 
 describe('UnmarkedWsNoticeList', () => {
   const getWrapper = (props?: Partial<UnmarkedWsNoticeListProps>) =>
     mount(
-      <MemoryRouter>
-        <UnmarkedWsNoticeList {...mockProps} {...props} />
-      </MemoryRouter>
+      <RecoilRoot>
+        <MemoryRouter>
+          <UnmarkedWsNoticeList {...mockProps} {...props} />
+        </MemoryRouter>
+      </RecoilRoot>
     );
 
   it('renders normally with data', () => {
