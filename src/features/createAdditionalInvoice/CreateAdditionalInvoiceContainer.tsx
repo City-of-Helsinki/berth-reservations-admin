@@ -119,6 +119,7 @@ const CreateAdditionalInvoiceContainer = ({
           onSubmit={handleSendInvoice}
           order={createdOrder?.createAdditionalProductOrder?.order}
           email={email}
+          berthLease={activeBerthLease}
         />
       ) : (
         <CreateAdditionalInvoiceForm

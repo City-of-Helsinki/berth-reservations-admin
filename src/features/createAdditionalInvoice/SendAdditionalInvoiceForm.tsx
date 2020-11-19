@@ -11,6 +11,8 @@ import { getDefaultDueDate, getDueDateValidation } from '../../common/utils/date
 import { CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAddtionalInvoiceOrder } from './__generated__/CREATE_ADDITIONAL_INVOICE';
 import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { InvoiceInstructions } from '../../common/invoiceInstructions/InvoiceInstructions';
+import { BerthLease } from '../customerView/types';
+import { LeaseInformation } from './LeaseInformation';
 
 type FormValues = {
   dueDate: string;
@@ -22,6 +24,7 @@ export type SendAdditionalInvoiceFormProps = {
   onSubmit: (data: FormValues) => void;
   order: CreateAddtionalInvoiceOrder | null | undefined;
   email: string | null | undefined;
+  berthLease?: BerthLease;
 };
 
 const SendAdditionalInvoiceForm = ({
@@ -30,6 +33,7 @@ const SendAdditionalInvoiceForm = ({
   onCancel,
   order,
   email,
+  berthLease,
 }: SendAdditionalInvoiceFormProps) => {
   const { t } = useTranslation();
 
@@ -56,6 +60,10 @@ const SendAdditionalInvoiceForm = ({
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
           <FormHeader title={t('additionalInvoice.sendTitle').toUpperCase()} />
+
+          {berthLease && <LeaseInformation berthLease={berthLease} />}
+
+          <hr className={styles.divider} />
 
           <LabelValuePair label={t('common.total')} value={order?.totalPrice} />
 

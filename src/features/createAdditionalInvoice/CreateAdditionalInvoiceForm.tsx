@@ -4,15 +4,14 @@ import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
 
 import Section from '../../common/section/Section';
-import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import Button from '../../common/button/Button';
 import { BerthLease } from '../customerView/types';
-import { formatDate } from '../../common/utils/format';
 import styles from './additionalInvoice.module.scss';
 import { AdditionalService } from '../pricing/additionalServicePricing/AdditionalServicePricing';
 import Select from '../../common/select/Select';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import FormHeader from '../../common/formHeader/FormHeader';
+import { LeaseInformation } from './LeaseInformation';
 
 interface CreateAdditionalInvoiceProps {
   berthLease?: BerthLease;
@@ -31,7 +30,7 @@ const CreateAdditionalInvoiceForm = ({
   onSubmit,
   onCancel,
 }: CreateAdditionalInvoiceProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const validationSchema = useMemo(
     () =>
@@ -59,19 +58,7 @@ const CreateAdditionalInvoiceForm = ({
         <Form className={styles.form}>
           <FormHeader title={t('additionalInvoice.createTitle').toUpperCase()} />
 
-          {berthLease && (
-            <Section>
-              <LabelValuePair label={t('additionalInvoice.contract')} value={t('additionalInvoice.berthPlace')} />
-              <LabelValuePair label={t('additionalInvoice.berthPlace')} value={berthLease.harbor?.name} />
-              <LabelValuePair
-                label={t('additionalInvoice.contractPeriod')}
-                value={`${formatDate(berthLease.startDate, i18n.language)} - ${formatDate(
-                  berthLease.endDate,
-                  i18n.language
-                )}`}
-              />
-            </Section>
-          )}
+          {berthLease && <LeaseInformation berthLease={berthLease} />}
 
           <hr className={styles.divider} />
 
