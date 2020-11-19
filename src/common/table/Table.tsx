@@ -23,6 +23,7 @@ import {
   UseGlobalFiltersOptions,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
+import equal from 'fast-deep-equal';
 
 import styles from './table.module.scss';
 import Checkbox from '../checkbox/Checkbox';
@@ -254,19 +255,17 @@ const Table = <D extends { id: string }>({
     gotoPage(0);
   }, [gotoPage, state.sortBy, state.filters, state.globalFilter]);
 
-  const initialSortByState = initialState?.sortBy?.[0];
-  const currentSortByState = state.sortBy[0];
+  const initialSortByState = initialState?.sortBy;
+  const currentSortByState = state.sortBy;
+  const didSortByChanged = !equal(initialSortByState, currentSortByState);
 
   useEffect(() => {
-    if (initialSortByState?.id === currentSortByState?.id && initialSortByState?.desc === currentSortByState?.desc)
-      return;
-
-    onSortedColChange?.(currentSortByState);
-  }, [currentSortByState, onSortedColChange, initialSortByState]);
+    if (didSortByChanged) onSortedColChange?.(currentSortByState[0]);
+  }, [currentSortByState, onSortedColChange, didSortByChanged]);
 
   useEffect(() => {
-    onSortedColsChange?.(state.sortBy);
-  }, [state.sortBy, onSortedColsChange]);
+    if (didSortByChanged) onSortedColsChange?.(currentSortByState);
+  }, [currentSortByState, onSortedColsChange, didSortByChanged]);
 
   useEffect(() => {
     onSelectionChange?.(state.selectedRowIds);
