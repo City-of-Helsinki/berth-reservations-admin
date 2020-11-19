@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
+import { atom } from 'recoil';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -18,6 +19,7 @@ import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 import ListActions from '../../common/listActions/ListActions';
 import PrintAllStickersButton from './printAllStickersButton/PrintAllStickersButton';
+import { usePreserveSelect } from '../../common/utils/usePreserveSelect';
 
 export type CustomerInfo = {
   firstName: string;
@@ -54,6 +56,11 @@ export interface UnmarkedWsNoticeListProps {
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
 
+const selectedNoticesAtom = atom<{ [x: string]: UnmarkedWinterStorageNotice }>({
+  key: 'UnmarkedWsNoticeList_selectedNoticesAtom',
+  default: {},
+});
+
 const UnmarkedWsNoticeList = ({
   notices,
   loading,
@@ -72,6 +79,10 @@ const UnmarkedWsNoticeList = ({
   onSavePdf,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
+  const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<UnmarkedWinterStorageNotice>(
+    selectedNoticesAtom
+  );
+
   const columns: ColumnType[] = [
     {
       Cell: ({ cell }) => {
@@ -130,14 +141,14 @@ const UnmarkedWsNoticeList = ({
         columns={columns}
         data={notices}
         loading={loading}
-        initialState={{ sortBy }}
+        initialState={{ sortBy, selectedRowIds: selectedRowIdsDict }}
         renderSubComponent={(row) => (
           <Grid colsCount={3}>
             <UnmarkedWsNoticeDetails {...row.original} />
           </Grid>
         )}
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}
-        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+        renderTableToolsTop={(_, { resetSelectedRows }) => (
           <>
             <ApplicationTableTools
               count={count}
@@ -151,23 +162,23 @@ const UnmarkedWsNoticeList = ({
               resetSelectedRows={resetSelectedRows}
               listActions={[
                 {
-                  id: 'printStickers',
+                  id: 'UnmarkedWsNoticeList_printStickers',
                   label: t('unmarkedWsNotices.list.stickerPrint.onClick'),
                   buttonText: t('unmarkedWsNotices.list.stickerPrint.onClick'),
                   onClick: onSavePdf,
                 },
                 {
-                  id: 'printAllStickers',
+                  id: 'UnmarkedWsNoticeList_printAllStickers',
                   label: t('unmarkedWsNotices.list.allStickerPrint.label'),
                   renderComponent: () => <PrintAllStickersButton />,
                 },
                 {
-                  id: 'sendOffer',
+                  id: 'UnmarkedWsNoticeList_sendOffer',
                   label: t('applicationList.tools.sendOffer'),
-                  renderComponent: (selectedRows, resetSelectedRows) => (
+                  renderComponent: () => (
                     <SendOffersListTool
                       clearSelectedRows={resetSelectedRows}
-                      filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+                      filterUnhandledApplications={(row) => !row.leaseId}
                       getDraftedOffers={getDraftedOffers}
                       handleApproveOffers={handleApproveOrders}
                       isSubmitting={isSubmittingApproveOrders}
@@ -184,6 +195,7 @@ const UnmarkedWsNoticeList = ({
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         onSortedColsChange={onSortedColsChange}
+        onSelectionChange={(selectedRowIds) => onSelectionChange(selectedRowIds, notices)}
         manualSortBy
         canSelectRows
       />
