@@ -26,12 +26,16 @@ import { UPDATE_BERTH_APPLICATION_MUTATION } from '../linkApplicationToCustomer/
 import Modal from '../../common/modal/Modal';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 import hdsToast from '../../common/toast/hdsToast';
-import { DELETE_BERTH_APPLICATION_MUTATION } from './mutations';
+import { DELETE_BERTH_APPLICATION_MUTATION, REJECT_BERTH_APPLICATION_MUTATION } from './mutations';
+import {
+  REJECT_BERTH_APPLICATION,
+  REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
+} from './__generated__/REJECT_BERTH_APPLICATION';
 
 const ApplicationViewContainer = () => {
-  const { id } = useParams<{ id: string }>();
   const history = useHistory();
-
+  const { id } = useParams<{ id: string }>();
+  const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const { loading, data } = useQuery<INDIVIDUAL_APPLICATION, INDIVIDUAL_APPLICATION_VARS>(
     INDIVIDUAL_APPLICATION_QUERY,
     {
@@ -40,31 +44,29 @@ const ApplicationViewContainer = () => {
       },
     }
   );
-
+  const refetchQuery = {
+    query: INDIVIDUAL_APPLICATION_QUERY,
+    variables: {
+      id,
+    },
+  };
   const [deleteApplication, { loading: isDeletingApplication }] = useMutation<
     DELETE_BERTH_APPLICATION,
     DELETE_BERTH_APPLICATION_VARS
   >(DELETE_BERTH_APPLICATION_MUTATION, {
-    refetchQueries: [
-      {
-        query: INDIVIDUAL_APPLICATION_QUERY,
-        variables: {
-          id,
-        },
-      },
-    ],
+    refetchQueries: [refetchQuery],
   });
   const [linkCustomer] = useMutation<UPDATE_BERTH_APPLICATION, UPDATE_BERTH_APPLICATION_VARS>(
     UPDATE_BERTH_APPLICATION_MUTATION,
     {
-      refetchQueries: [
-        {
-          query: INDIVIDUAL_APPLICATION_QUERY,
-          variables: {
-            id,
-          },
-        },
-      ],
+      refetchQueries: [refetchQuery],
+    }
+  );
+  const [deleteDraftedApplication, { loading: isDeletingLease }] = useDeleteBerthApplication();
+  const [rejectApplication] = useMutation<REJECT_BERTH_APPLICATION, REJECT_BERTH_APPLICATION_VARS>(
+    REJECT_BERTH_APPLICATION_MUTATION,
+    {
+      refetchQueries: [refetchQuery],
     }
   );
 
@@ -91,19 +93,7 @@ const ApplicationViewContainer = () => {
       },
     });
   const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
-
-  const [editCustomer, setEditCustomer] = useState<boolean>(false);
-  const [deleteDraftedApplication, { loading: isDeletingLease }] = useDeleteBerthApplication();
-
-  const customer = data?.berthApplication?.customer;
-
-  if (loading || !data?.berthApplication) return <LoadingSpinner isLoading={true} />;
-
-  const customerProfile = customer ? getCustomerProfile(customer) : null;
-  const applicationDetails = getApplicationDetailsData(data.berthApplication, data.boatTypes || []);
-  const leaseDetails = getOfferDetailsData(data.berthApplication.lease);
-
-  const handleDeleteLease = (id: string) => {
+  const handleDeleteLease = (id: string) =>
     deleteDraftedApplication({
       variables: {
         input: {
@@ -112,7 +102,21 @@ const ApplicationViewContainer = () => {
       },
       refetchQueries: [getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION'],
     });
-  };
+  const handleNoPlacesAvailable = () =>
+    rejectApplication({
+      variables: {
+        input: {
+          id,
+        },
+      },
+    });
+
+  if (loading || !data?.berthApplication) return <LoadingSpinner isLoading={true} />;
+
+  const { customer } = data.berthApplication;
+  const customerProfile = customer ? getCustomerProfile(customer) : null;
+  const applicationDetails = getApplicationDetailsData(data.berthApplication, data.boatTypes || []);
+  const leaseDetails = getOfferDetailsData(data.berthApplication.lease);
 
   return (
     <>
@@ -124,6 +128,7 @@ const ApplicationViewContainer = () => {
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
+        handleNoPlacesAvailable={handleNoPlacesAvailable}
         handleUnlinkCustomer={handleUnlinkCustomer}
         isDeletingApplication={isDeletingApplication}
         isDeletingLease={isDeletingLease}

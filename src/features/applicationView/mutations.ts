@@ -7,3 +7,11 @@ export const DELETE_BERTH_APPLICATION_MUTATION = gql`
     }
   }
 `;
+
+export const REJECT_BERTH_APPLICATION_MUTATION = gql`
+  mutation REJECT_BERTH_APPLICATION($input: RejectBerthApplicationMutationInput!) {
+    rejectBerthApplication(input: $input) {
+      clientMutationId
+    }
+  }
+`;

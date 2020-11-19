@@ -28,7 +28,7 @@ interface ApplicationChoicesListProps {
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   applicationId: string;
   customerId?: string;
-  handleNoPlacesAvailable?: (applicationId: string) => void;
+  handleNoPlacesAvailable?: () => void;
 }
 
 const isHarborChoice = (choice: Choice): choice is HarborChoice => (choice as HarborChoice).harbor !== undefined;
@@ -87,7 +87,7 @@ const ApplicationChoicesList = ({
             infoText={t('applicationDetails.applicationChoicesList.noPlacesModalInfo')}
             modalTitle={t('applicationDetails.applicationChoicesList.noPlacesModalTitle')}
             onCancelText={t('common.cancel')}
-            onConfirm={() => handleNoPlacesAvailable(applicationId)}
+            onConfirm={() => handleNoPlacesAvailable()}
             onConfirmText={t('common.save')}
           />
         </div>
