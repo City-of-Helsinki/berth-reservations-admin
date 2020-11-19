@@ -49,10 +49,9 @@ const CustomerDetails = ({
   const { t, i18n } = useTranslation();
   const customerGroupKey = getCustomerGroupKey(customerGroup);
 
-  const activeBerthList = berths.reduce<React.ReactNode[]>((acc, berth) => {
-    if (berth.isActive) return acc.concat(<div key={berth.id}>{berth.title}</div>);
-    return acc;
-  }, []);
+  const activeBerths = berths.filter((berth) => berth.isActive);
+  const previousBerths = berths.filter((berth) => !berth.isActive);
+  const renderBerthLine = (berth: CustomerListBerthLeases) => <div key={berth.id}>{berth.title}</div>;
 
   return (
     <div>
@@ -74,8 +73,11 @@ const CustomerDetails = ({
         </div>
         <div>
           <Section title={t('common.terminology.berths').toUpperCase()}>
-            {activeBerthList}
-            {activeBerthList.length < berths.length && <hr />}
+            <>
+              {activeBerths.map(renderBerthLine)}
+              {previousBerths.length > 0 && <hr />}
+              {previousBerths.map(renderBerthLine)}
+            </>
           </Section>
           <Section title={t('common.terminology.winterStoragePlaces').toUpperCase()}>
             {winterStoragePlaces.map((place) => (
