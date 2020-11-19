@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
+import classNames from 'classnames';
 
 import styles from './additionalInvoice.module.scss';
 import FormHeader from '../../common/formHeader/FormHeader';
@@ -57,6 +58,7 @@ const SendAdditionalInvoiceForm = ({
   };
 
   const additionalProductService = getAdditionalProductService(order);
+  const additionalProductNameKey = getProductServiceTKey(additionalProductService as ProductServiceType);
 
   return (
     <Formik
@@ -72,18 +74,24 @@ const SendAdditionalInvoiceForm = ({
 
           {berthLease && <LeaseInformation berthLease={berthLease} />}
 
-          <hr className={styles.divider} />
+          <hr className={classNames(styles.divider, styles.invoiceTopDivider)} />
+
+          <LabelValuePair label={t('additionalInvoice.invoiceProduct')} value={t(additionalProductNameKey)} />
+
+          <hr className={classNames(styles.divider, styles.invoiceBottomDivider)} />
 
           <LabelValuePair
-            label={t('additionalInvoice.invoiceProduct')}
-            value={t(getProductServiceTKey(additionalProductService as ProductServiceType))}
+            label={`${t(additionalProductNameKey)} ${t('common.total').toLocaleLowerCase()}`}
+            value={formatPrice(order?.totalPrice, language)}
           />
 
           <hr className={styles.divider} />
 
-          <LabelValuePair label={t('common.total')} value={formatPrice(order?.totalPrice, language)} />
-
-          <hr className={styles.divider} />
+          <LabelValuePair
+            className={styles.totalPrice}
+            label={t('common.total').toUpperCase()}
+            value={formatPrice(order?.totalPrice, language)}
+          />
 
           <InvoiceInstructions email={email as string} />
 

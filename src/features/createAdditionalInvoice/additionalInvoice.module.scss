@@ -5,4 +5,17 @@
 .dueDate {
   width: 50%;
   margin: auto;
+  margin-top: units(2);
+}
+
+.invoiceTopDivider {
+  margin-bottom: units(2);
+}
+
+.invoiceBottomDivider {
+  margin-top: units(2);
+}
+
+.totalPrice {
+  margin-bottom: units(2);
 }
