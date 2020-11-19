@@ -11,7 +11,7 @@ type ListActionItem<T> = {
   label: string;
   buttonText?: string;
   onClick?(selectedRows: T[]): void;
-  renderComponent?(selectedRows: T[], resetSelectedRows: () => void): React.ReactNode;
+  renderComponent?(): React.ReactNode;
 };
 
 interface ListActionsProps<T> {
@@ -26,7 +26,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
   listActions,
 }: ListActionsProps<T>) => {
   const { t } = useTranslation();
-  const [selectedAction, setSelectedAction] = useState<ListActionItem<T>>();
+  const [selectedActionId, setSelectedActionId] = useState<string>();
   const hasSelectedRows = !!selectedRows.length;
 
   const options = [
@@ -36,15 +36,17 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
     }),
   ];
 
+  const selectedAction = listActions.find((action) => action.id === selectedActionId);
+
   return (
     <div className={styles.container}>
       <Select
-        onChange={(e) => setSelectedAction(listActions.find((action) => action.id === e.target.value))}
-        value={selectedAction ? selectedAction.id : ''}
+        onChange={(e) => setSelectedActionId(listActions.find((action) => action.id === e.target.value)?.id)}
+        value={selectedActionId ?? ''}
         options={options}
         className={styles.select}
       />
-      {selectedAction?.renderComponent?.(selectedRows, resetSelectedRows)}
+      {selectedAction?.renderComponent?.()}
       {selectedAction?.onClick && (
         <div className={styles.buttonContainer}>
           <Button
