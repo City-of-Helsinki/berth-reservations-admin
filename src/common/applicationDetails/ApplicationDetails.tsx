@@ -63,7 +63,7 @@ export interface ApplicationDetailsProps {
   customerId?: string;
   isDeletingLease?: boolean;
   handleDeleteLease?: (id: string) => void;
-  handleNoPlacesAvailable?: () => void;
+  handleNoPlacesAvailable?: (id: string) => void;
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
   lease?: Lease | null;

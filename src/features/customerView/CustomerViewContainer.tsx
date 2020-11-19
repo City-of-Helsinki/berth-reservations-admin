@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
+import { getOperationName } from 'apollo-link';
 
 import CustomerView from './CustomerView';
 import { INDIVIDUAL_CUSTOMER_QUERY } from './queries';
@@ -23,6 +24,12 @@ import BoatEditForm from './forms/boatForm/BoatEditForm';
 import InvoiceModal from './invoiceModal/InvoiceModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
+import {
+  REJECT_BERTH_APPLICATION,
+  REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
+} from '../applicationView/__generated__/REJECT_BERTH_APPLICATION';
+import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
+import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
@@ -32,6 +39,21 @@ const CustomerViewContainer = () => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
+  const [rejectApplication] = useMutation<REJECT_BERTH_APPLICATION, REJECT_BERTH_APPLICATION_VARS>(
+    REJECT_BERTH_APPLICATION_MUTATION,
+    {
+      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+    }
+  );
+
+  const handleNoPlacesAvailable = async (id: string) =>
+    rejectApplication({
+      variables: {
+        input: {
+          id,
+        },
+      },
+    });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
@@ -57,10 +79,11 @@ const CustomerViewContainer = () => {
     <>
       <CustomerView
         applications={applications}
-        invoices={invoices}
         boats={boats}
         customerProfile={customerProfile}
         handleEditCustomer={() => setEditCustomer(true)}
+        handleNoPlacesAvailable={handleNoPlacesAvailable}
+        invoices={invoices}
         leases={leases}
         onClickCreateBoat={() => setCreatingBoat(true)}
         openInvoices={openInvoices}

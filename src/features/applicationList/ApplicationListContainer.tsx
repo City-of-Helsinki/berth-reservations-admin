@@ -22,6 +22,11 @@ import hdsToast from '../../common/toast/hdsToast';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { orderByGetter } from '../../common/utils/recoil';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import {
+  REJECT_BERTH_APPLICATION,
+  REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
+} from '../applicationView/__generated__/REJECT_BERTH_APPLICATION';
+import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
 
 const onlySwitchAppsAtom = atom<boolean | undefined>({
   key: 'ApplicationListContainer_onlySwitchAppsAtom',
@@ -49,13 +54,11 @@ const nameFilterAtom = atom<string | undefined>({
 });
 
 const ApplicationListContainer = () => {
+  const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const [onlySwitchApps, setOnlySwitchApps] = useRecoilState(onlySwitchAppsAtom);
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
   const orderBy = useRecoilValue(orderBySelector);
-
-  const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
-
   const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
 
   const berthApplicationsVars: BERTH_APPLICATIONS_VARS = {
@@ -66,13 +69,23 @@ const ApplicationListContainer = () => {
     statuses: statusFilter ? [statusFilter] : undefined,
     nameFilter,
   };
-
   const { loading, data } = useQuery<BERTH_APPLICATIONS, BERTH_APPLICATIONS_VARS>(BERTH_APPLICATIONS_QUERY, {
     fetchPolicy: 'no-cache',
     variables: berthApplicationsVars,
   });
-
   const [deleteDraftedApplication, { loading: isDeleting }] = useDeleteBerthApplication();
+  const [rejectApplication] = useMutation<REJECT_BERTH_APPLICATION, REJECT_BERTH_APPLICATION_VARS>(
+    REJECT_BERTH_APPLICATION_MUTATION,
+    {
+      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+    }
+  );
+  const [approveOrders, { loading: isSubmittingApproveOrders }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
+    APPROVE_ORDERS_MUTATION,
+    {
+      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+    }
+  );
 
   const handleDeleteLease = async (id: string) => {
     await deleteDraftedApplication({
@@ -83,14 +96,14 @@ const ApplicationListContainer = () => {
       },
     });
   };
-
-  const [approveOrders, { loading: isSubmittingApproveOrders }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
-    APPROVE_ORDERS_MUTATION,
-    {
-      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
-    }
-  );
-
+  const handleNoPlacesAvailable = async (id: string) =>
+    rejectApplication({
+      variables: {
+        input: {
+          id,
+        },
+      },
+    });
   const handleApproveOrders = async (orders: Array<{ orderId: string; email: string }>) => {
     approveOrders({
       variables: {
@@ -112,31 +125,32 @@ const ApplicationListContainer = () => {
 
   return (
     <ApplicationList
+      count={data?.berthApplications?.count}
       data={data}
       getPageCount={getPageCount}
       goToPage={goToPage}
-      handleDeleteLease={handleDeleteLease}
-      sortBy={sortBy}
-      onSortedColsChange={handleSortedColsChange}
       handleApproveOrders={handleApproveOrders}
+      handleDeleteLease={handleDeleteLease}
+      handleNoPlacesAvailable={handleNoPlacesAvailable}
       isDeleting={isDeleting}
       isSubmittingApproveOrders={isSubmittingApproveOrders}
       loading={loading}
-      onlySwitchApps={onlySwitchApps}
-      pageIndex={pageIndex}
-      setOnlySwitchApps={setOnlySwitchApps}
-      tableData={tableData}
-      count={data?.berthApplications?.count}
-      statusFilter={statusFilter}
-      onStatusFilterChange={(statusFilter) => {
-        setStatusFilter(statusFilter);
-        goToPage(0);
-      }}
-      nameFilter={nameFilter}
       onNameFilterChange={(nameFilter) => {
         setNameFilter(nameFilter);
         goToPage(0);
       }}
+      onSortedColsChange={handleSortedColsChange}
+      onStatusFilterChange={(statusFilter) => {
+        setStatusFilter(statusFilter);
+        goToPage(0);
+      }}
+      onlySwitchApps={onlySwitchApps}
+      pageIndex={pageIndex}
+      setOnlySwitchApps={setOnlySwitchApps}
+      sortBy={sortBy}
+      statusFilter={statusFilter}
+      tableData={tableData}
+      nameFilter={nameFilter}
     />
   );
 };

@@ -102,7 +102,7 @@ const ApplicationViewContainer = () => {
       },
       refetchQueries: [getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION'],
     });
-  const handleNoPlacesAvailable = () =>
+  const handleNoPlacesAvailable = (id: string) =>
     rejectApplication({
       variables: {
         input: {

@@ -27,49 +27,51 @@ interface Order {
 }
 
 export interface ApplicationListProps {
+  count?: number;
   data: BERTH_APPLICATIONS | undefined;
   getPageCount: (connectionsCount: number | null | undefined) => number;
   goToPage: (pageIndex: number) => void;
   handleDeleteLease: (id: string) => Promise<void>;
-  onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
-  sortBy: SortingRule<ApplicationData>[];
+  handleNoPlacesAvailable: (id: string) => void;
   isDeleting: boolean;
   isSubmittingApproveOrders: boolean;
   loading: boolean;
+  nameFilter?: string;
+  onSortedColsChange: (sortedCol: SortingRule<ApplicationData>[]) => void;
   onlySwitchApps?: boolean;
   pageIndex: number;
   setOnlySwitchApps: (onlySwitchApps?: boolean) => void;
-  tableData: ApplicationData[];
-  count?: number;
+  sortBy: SortingRule<ApplicationData>[];
   statusFilter?: ApplicationStatus;
-  nameFilter?: string;
-  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  tableData: ApplicationData[];
   handleApproveOrders(orders: Order[]): Promise<void>;
   onNameFilterChange(nameFilter: string | undefined): void;
+  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
 
 type ColumnType = Column<ApplicationData>;
 
 const ApplicationList = ({
+  count,
   data,
   getPageCount,
   goToPage,
-  handleDeleteLease,
-  sortBy,
-  onSortedColsChange,
-  isSubmittingApproveOrders,
   handleApproveOrders,
+  handleDeleteLease,
+  handleNoPlacesAvailable,
   isDeleting,
+  isSubmittingApproveOrders,
   loading,
+  nameFilter,
+  onNameFilterChange,
+  onSortedColsChange,
+  onStatusFilterChange,
   onlySwitchApps,
   pageIndex,
   setOnlySwitchApps,
-  tableData,
-  count,
+  sortBy,
   statusFilter,
-  onStatusFilterChange,
-  nameFilter,
-  onNameFilterChange,
+  tableData,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -164,7 +166,13 @@ const ApplicationList = ({
         data={tableData}
         loading={loading || isDeleting}
         columns={columns}
-        renderSubComponent={(row) => <ApplicationDetails {...row.original} handleDeleteLease={handleDeleteLease} />}
+        renderSubComponent={(row) => (
+          <ApplicationDetails
+            {...row.original}
+            handleDeleteLease={handleDeleteLease}
+            handleNoPlacesAvailable={handleNoPlacesAvailable}
+          />
+        )}
         renderMainHeader={() => {
           const filters = [
             {

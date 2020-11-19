@@ -36,7 +36,7 @@ export interface ApplicationViewProps {
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
-  handleNoPlacesAvailable(): void;
+  handleNoPlacesAvailable(id: string): void;
   handleUnlinkCustomer(): void;
 }
 
