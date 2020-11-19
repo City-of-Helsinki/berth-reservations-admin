@@ -42,8 +42,6 @@ const CreateAdditionalInvoiceContainer = ({
 
   const additionalProducts: AdditionalService[] = getBillableAdditionalProducts(data);
 
-  const activeBerthLease = berthLeases.find((lease) => lease.isActive);
-
   const [createAdditionalInvoice, { loading: isCreatingInvoice, data: createdOrder }] = useMutation<
     CREATE_ADDITIONAL_INVOICE,
     CREATE_ADDITIONAL_INVOICE_VARS
@@ -68,7 +66,7 @@ const CreateAdditionalInvoiceContainer = ({
     createAdditionalInvoice({
       variables: {
         input: {
-          leaseId: activeBerthLease?.id as string,
+          leaseId: values.leaseId as string,
           additionalProductId: values.additionalProductId as string,
           customerId,
         },
@@ -119,11 +117,10 @@ const CreateAdditionalInvoiceContainer = ({
           onSubmit={handleSendInvoice}
           order={createdOrder?.createAdditionalProductOrder?.order}
           email={email}
-          berthLease={activeBerthLease}
         />
       ) : (
         <CreateAdditionalInvoiceForm
-          berthLease={activeBerthLease}
+          berthLeases={berthLeases}
           additionalProducts={additionalProducts}
           onSubmit={handleCreateInvoice}
           onCancel={closeModal}

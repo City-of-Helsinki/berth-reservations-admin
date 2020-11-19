@@ -11,10 +11,10 @@ import { AdditionalService } from '../pricing/additionalServicePricing/Additiona
 import Select from '../../common/select/Select';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import FormHeader from '../../common/formHeader/FormHeader';
-import { LeaseInformation } from './LeaseInformation';
+import { formatDate } from '../../common/utils/format';
 
 interface CreateAdditionalInvoiceProps {
-  berthLease?: BerthLease;
+  berthLeases: BerthLease[];
   additionalProducts: AdditionalService[];
   onSubmit: (data: AdditionalInvoiceFormValues) => void;
   onCancel: () => void;
@@ -22,26 +22,47 @@ interface CreateAdditionalInvoiceProps {
 
 export interface AdditionalInvoiceFormValues {
   additionalProductId?: string;
+  leaseId?: string;
 }
 
 const CreateAdditionalInvoiceForm = ({
-  berthLease,
+  berthLeases,
   additionalProducts,
   onSubmit,
   onCancel,
 }: CreateAdditionalInvoiceProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const validationSchema = useMemo(
     () =>
       Yup.object<AdditionalInvoiceFormValues>().shape({
         additionalProductId: Yup.string().required(t('forms.common.errors.required')),
+        leaseId: Yup.string().required(t('forms.common.errors.required')),
       }),
     [t]
   );
 
   const initial: AdditionalInvoiceFormValues = {
     additionalProductId: additionalProducts[0].id,
+    leaseId: berthLeases[0].id,
+  };
+
+  const toLeaseOption = (berthLease: BerthLease) => {
+    const berthName = berthLease.harbor?.name?.substring(0, 30);
+    return {
+      label: `${berthName} ${formatDate(berthLease.startDate, i18n.language)} - ${formatDate(
+        berthLease.endDate,
+        i18n.language
+      )}`,
+      value: berthLease.id,
+    };
+  };
+
+  const toAdditionalProductOption = (additionalProduct: AdditionalService) => {
+    return {
+      label: t(getProductServiceTKey(additionalProduct.service)),
+      value: additionalProduct.id,
+    };
   };
 
   const isSubmitting = false;
@@ -54,41 +75,48 @@ const CreateAdditionalInvoiceForm = ({
       validateOnChange={false}
       validationSchema={validationSchema}
     >
-      {({ values, handleChange }) => (
-        <Form className={styles.form}>
-          <FormHeader title={t('additionalInvoice.createTitle').toUpperCase()} />
+      {({ values, handleChange }) => {
+        return (
+          <Form className={styles.form}>
+            <FormHeader title={t('additionalInvoice.createTitle').toUpperCase()} />
 
-          {berthLease && <LeaseInformation berthLease={berthLease} />}
+            <Section>
+              <Select
+                id="leaseId"
+                value={values.leaseId}
+                options={berthLeases.map(toLeaseOption)}
+                onChange={handleChange}
+                label={t('additionalInvoice.berthContract')}
+                required
+                disabled={false}
+              />
+            </Section>
 
-          <hr className={styles.divider} />
+            <hr className={styles.divider} />
 
-          <Section>
-            <Select
-              id="additionalProductId"
-              value={values.additionalProductId}
-              options={additionalProducts.map((additionalProduct) => {
-                return {
-                  label: t(getProductServiceTKey(additionalProduct.service)),
-                  value: additionalProduct.id,
-                };
-              })}
-              onChange={handleChange}
-              label={t('additionalInvoice.addtionalService')}
-              required
-              disabled={!berthLease}
-            />
-          </Section>
+            <Section>
+              <Select
+                id="additionalProductId"
+                value={values.additionalProductId}
+                options={additionalProducts.map(toAdditionalProductOption)}
+                onChange={handleChange}
+                label={t('additionalInvoice.addtionalService')}
+                required
+                disabled={false}
+              />
+            </Section>
 
-          <div className={styles.formActionButtons}>
-            <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
-              {t('forms.common.cancel')}
-            </Button>
-            <Button type="submit" disabled={isSubmitting}>
-              {t('additionalInvoice.createInvoice')}
-            </Button>
-          </div>
-        </Form>
-      )}
+            <div className={styles.formActionButtons}>
+              <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
+                {t('forms.common.cancel')}
+              </Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {t('additionalInvoice.createInvoice')}
+              </Button>
+            </div>
+          </Form>
+        );
+      }}
     </Formik>
   );
 };

@@ -12,10 +12,9 @@ import { getDefaultDueDate, getDueDateValidation } from '../../common/utils/date
 import { CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAddtionalInvoiceOrder } from './__generated__/CREATE_ADDITIONAL_INVOICE';
 import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { InvoiceInstructions } from '../../common/invoiceInstructions/InvoiceInstructions';
-import { BerthLease } from '../customerView/types';
 import { LeaseInformation } from './LeaseInformation';
 import { formatPrice } from '../../common/utils/format';
-import { getAdditionalProductService } from './utils';
+import { getAdditionalProductService, getBerthLease } from './utils';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import { ProductServiceType } from '../../@types/__generated__/globalTypes';
 
@@ -29,7 +28,6 @@ export type SendAdditionalInvoiceFormProps = {
   onSubmit: (data: FormValues) => void;
   order: CreateAddtionalInvoiceOrder | null | undefined;
   email: string | null | undefined;
-  berthLease?: BerthLease;
 };
 
 const SendAdditionalInvoiceForm = ({
@@ -38,7 +36,6 @@ const SendAdditionalInvoiceForm = ({
   onCancel,
   order,
   email,
-  berthLease,
 }: SendAdditionalInvoiceFormProps) => {
   const {
     t,
@@ -59,6 +56,7 @@ const SendAdditionalInvoiceForm = ({
 
   const additionalProductService = getAdditionalProductService(order);
   const additionalProductNameKey = getProductServiceTKey(additionalProductService as ProductServiceType);
+  const berthLease = getBerthLease(order);
 
   return (
     <Formik

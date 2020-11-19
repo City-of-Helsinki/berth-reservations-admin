@@ -758,10 +758,10 @@
     "create": "Luo uusi lisäpalvelulasku",
     "createTitle": "Luo uusi lisäpalvelulasku",
     "sendTitle": "Lähetä lisäpalvelulasku",
-    "contract": "Sopimus",
+    "berthContract": "Venepaikkasopimukset",
     "berthPlace": "Venepaikka",
     "contractPeriod": "Sopimuskausi",
-    "addtionalService": "Lisäpalvelu",
+    "addtionalService": "Lisäpalvelut",
     "createInvoice": "Luo lasku",
     "dueDate": "Eräpäivä",
     "invoiceProduct": "Laskun aihe"

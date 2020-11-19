@@ -8,6 +8,25 @@ export const CREATE_ADDITIONAL_INVOICE_MUTATION = gql`
         id
         price
         totalPrice
+        lease {
+          ... on BerthLeaseNode {
+            id
+            startDate
+            endDate
+            berth {
+              pier {
+                properties {
+                  harbor {
+                    id
+                    properties {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         orderLines {
           edges {
             node {

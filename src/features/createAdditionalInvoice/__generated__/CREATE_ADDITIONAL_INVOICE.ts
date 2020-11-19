@@ -9,6 +9,46 @@ import { CreateAdditionalProductOrderMutationInput, ProductServiceType } from ".
 // GraphQL mutation operation: CREATE_ADDITIONAL_INVOICE
 // ====================================================
 
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_WinterStorageLeaseNode {
+  __typename: "WinterStorageLeaseNode";
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties_harbor_properties | null;
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties {
+  __typename: "PierProperties";
+  harbor: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties_harbor;
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier {
+  __typename: "PierNode";
+  properties: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier_properties | null;
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth {
+  __typename: "BerthNode";
+  pier: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth_pier;
+}
+
+export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode {
+  __typename: "BerthLeaseNode";
+  id: string;
+  startDate: any;
+  endDate: any;
+  berth: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode_berth;
+}
+
+export type CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease = CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_WinterStorageLeaseNode | CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode;
+
 export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_orderLines_edges_node_product {
   __typename: "AdditionalProductNode";
   id: string;
@@ -35,6 +75,7 @@ export interface CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order {
   id: string;
   price: any;
   totalPrice: any;
+  lease: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease | null;
   orderLines: CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_orderLines;
 }
 
