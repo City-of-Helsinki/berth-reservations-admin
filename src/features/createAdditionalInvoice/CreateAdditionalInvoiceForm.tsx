@@ -68,7 +68,7 @@ const CreateAdditionalInvoiceForm = ({
               value={values.additionalProductId}
               options={additionalProducts.map((additionalProduct) => {
                 return {
-                  label: t(getProductServiceTKey(additionalProduct.service)) + ' ' + additionalProduct.period,
+                  label: t(getProductServiceTKey(additionalProduct.service)),
                   value: additionalProduct.id,
                 };
               })}

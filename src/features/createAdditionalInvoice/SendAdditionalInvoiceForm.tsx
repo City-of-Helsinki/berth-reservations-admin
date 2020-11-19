@@ -13,6 +13,10 @@ import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { InvoiceInstructions } from '../../common/invoiceInstructions/InvoiceInstructions';
 import { BerthLease } from '../customerView/types';
 import { LeaseInformation } from './LeaseInformation';
+import { formatPrice } from '../../common/utils/format';
+import { getAdditionalProductService } from './utils';
+import { getProductServiceTKey } from '../../common/utils/translations';
+import { ProductServiceType } from '../../@types/__generated__/globalTypes';
 
 type FormValues = {
   dueDate: string;
@@ -35,7 +39,10 @@ const SendAdditionalInvoiceForm = ({
   email,
   berthLease,
 }: SendAdditionalInvoiceFormProps) => {
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
 
   const validationSchema = useMemo(
     () =>
@@ -48,6 +55,8 @@ const SendAdditionalInvoiceForm = ({
   const initial: FormValues = {
     dueDate: getDefaultDueDate(),
   };
+
+  const additionalProductService = getAdditionalProductService(order);
 
   return (
     <Formik
@@ -65,7 +74,14 @@ const SendAdditionalInvoiceForm = ({
 
           <hr className={styles.divider} />
 
-          <LabelValuePair label={t('common.total')} value={order?.totalPrice} />
+          <LabelValuePair
+            label={t('additionalInvoice.invoiceProduct')}
+            value={t(getProductServiceTKey(additionalProductService as ProductServiceType))}
+          />
+
+          <hr className={styles.divider} />
+
+          <LabelValuePair label={t('common.total')} value={formatPrice(order?.totalPrice, language)} />
 
           <hr className={styles.divider} />
 

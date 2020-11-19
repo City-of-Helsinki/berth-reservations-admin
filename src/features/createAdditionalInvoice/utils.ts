@@ -1,6 +1,7 @@
 import { AdditionalService } from '../pricing/additionalServicePricing/AdditionalServicePricing';
 import { ADDITIONAL_SERVICES } from './__generated__/ADDITIONAL_SERVICES';
 import { PeriodType, ProductServiceType } from '../../@types/__generated__/globalTypes';
+import { CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAddtionalInvoiceOrder } from './__generated__/CREATE_ADDITIONAL_INVOICE';
 
 const BILLABLE_ADDITIONAL_SERVICES = [ProductServiceType.STORAGE_ON_ICE];
 
@@ -26,4 +27,10 @@ export const getBillableAdditionalProducts = (data?: ADDITIONAL_SERVICES): Addit
 
     return [...acc, additionalProduct];
   }, []);
+};
+
+export const getAdditionalProductService = (
+  order: CreateAddtionalInvoiceOrder | null | undefined
+): ProductServiceType | undefined => {
+  return order ? order.orderLines.edges[0]?.node?.product?.service : undefined;
 };

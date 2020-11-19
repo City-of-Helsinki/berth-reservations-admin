@@ -8,6 +8,16 @@ export const CREATE_ADDITIONAL_INVOICE_MUTATION = gql`
         id
         price
         totalPrice
+        orderLines {
+          edges {
+            node {
+              product {
+                id
+                service
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -763,7 +763,8 @@
     "contractPeriod": "Sopimuskausi",
     "addtionalService": "Lisäpalvelu",
     "createInvoice": "Luo lasku",
-    "dueDate": "Eräpäivä"
+    "dueDate": "Eräpäivä",
+    "invoiceProduct": "Laskun aihe"
   },
   "deleteButton": {
     "modalTitle": "Vahvistus",
