@@ -78,7 +78,7 @@ const ApplicationChoicesList = ({
             );
           })}
       </List>
-      {handleNoPlacesAvailable && (
+      {customerId && handleNoPlacesAvailable && (
         <div className={styles.actions}>
           <ButtonWithConfirmation
             buttonSize="small"
