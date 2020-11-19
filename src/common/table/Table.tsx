@@ -21,7 +21,6 @@ import {
   UseSortByColumnOptions,
   UseFiltersInstanceProps,
   UseGlobalFiltersOptions,
-  actions,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 
@@ -31,17 +30,13 @@ import RadioButton from '../radioButton/RadioButton';
 
 export type Column<D extends object> = ColumnType<D> & UseFiltersColumnOptions<D> & UseSortByColumnOptions<D>;
 
-interface TState<D extends object> extends TableState<D> {
-  selectedRows: Array<Row<D>['original']>;
-}
-
 interface Setters<D extends object> {
   setGlobalFilter: UseGlobalFiltersInstanceProps<D>['setGlobalFilter'];
   setFilter: UseFiltersInstanceProps<D>['setFilter'];
   resetSelectedRows: () => void;
 }
 
-type TableToolsFn<D extends object> = (tableState: TState<D>, setters: Setters<D>) => React.ReactNode;
+type TableToolsFn<D extends object> = (tableState: TableState<D>, setters: Setters<D>) => React.ReactNode;
 
 type TableProps<D extends object> = {
   className?: string;
@@ -63,6 +58,7 @@ type TableProps<D extends object> = {
     pageCount: number;
     goToPage(pageIndex: number): void;
   }) => React.ReactNode;
+  onSelectionChange?: (selectedRowIds: TableState<D>['selectedRowIds']) => void;
   onSortedColChange?: (sortedCol: TableState<D>['sortBy'][0] | undefined) => void;
   onSortedColsChange?: (sortedCol: TableState<D>['sortBy']) => void;
 } & TableOptions<D>;
@@ -101,6 +97,7 @@ const Table = <D extends { id: string }>({
   renderMainHeader,
   renderEmptyStateRow,
   renderPaginator,
+  onSelectionChange,
   onSortedColChange,
   onSortedColsChange,
   manualSortBy,
@@ -220,7 +217,6 @@ const Table = <D extends { id: string }>({
   const {
     headerGroups,
     state,
-    selectedFlatRows,
     page,
     rows,
     pageCount,
@@ -230,7 +226,7 @@ const Table = <D extends { id: string }>({
     prepareRow,
     setGlobalFilter,
     setFilter,
-    dispatch,
+    toggleAllRowsSelected,
   } = useTable(
     {
       columns: tableColumns,
@@ -254,10 +250,6 @@ const Table = <D extends { id: string }>({
     useRowSelect
   );
 
-  const resetSelectedRows = useCallback(() => {
-    dispatch({ type: actions.resetSelectedRows });
-  }, [dispatch]);
-
   useEffect(() => {
     gotoPage(0);
   }, [gotoPage, state.sortBy, state.filters, state.globalFilter]);
@@ -275,6 +267,10 @@ const Table = <D extends { id: string }>({
   useEffect(() => {
     onSortedColsChange?.(state.sortBy);
   }, [state.sortBy, onSortedColsChange]);
+
+  useEffect(() => {
+    onSelectionChange?.(state.selectedRowIds);
+  }, [state.selectedRowIds, onSelectionChange]);
 
   useEffect(() => {
     const updateData = (newData: D[]) => {
@@ -367,13 +363,7 @@ const Table = <D extends { id: string }>({
   };
 
   const renderTableTools = (fn?: TableToolsFn<D>) => {
-    return fn?.(
-      {
-        ...state,
-        selectedRows: selectedFlatRows.map((row) => row.original),
-      },
-      { setGlobalFilter, setFilter, resetSelectedRows }
-    );
+    return fn?.(state, { setGlobalFilter, setFilter, resetSelectedRows: () => toggleAllRowsSelected(false) });
   };
 
   return (
