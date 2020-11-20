@@ -34,12 +34,12 @@ export const getBillableAdditionalProducts = (data?: ADDITIONAL_SERVICES): Addit
 };
 
 export const getAdditionalProductService = (
-  order: CreateAddtionalInvoiceOrder | null | undefined
+  order?: CreateAddtionalInvoiceOrder | null
 ): ProductServiceType | undefined => {
   return order ? order.orderLines.edges[0]?.node?.product?.service : undefined;
 };
 
-export const getBerthLease = (order: CreateAddtionalInvoiceOrder | null | undefined): CreateOrderBerthLease => {
+export const getBerthLease = (order?: CreateAddtionalInvoiceOrder | null): CreateOrderBerthLease => {
   const lease = order?.lease as BerthLeaseNode;
 
   return {

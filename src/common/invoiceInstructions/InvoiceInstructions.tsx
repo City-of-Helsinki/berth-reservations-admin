@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styles from '../../features/invoiceCard/sendInvoiceForm/sendInvoiceForm.module.scss';
 
 interface Props {
-  email: string | null;
+  email?: string | null;
 }
 
 export const InvoiceInstructions = ({ email }: Props) => {

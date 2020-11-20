@@ -19,7 +19,7 @@ interface CreateAdditionalInvoiceProps {
   additionalProducts: AdditionalService[];
   onSubmit: (data: AdditionalInvoiceFormValues) => void;
   onCancel: () => void;
-  email: string | null | undefined;
+  email?: string | null;
 }
 
 export interface AdditionalInvoiceFormValues {

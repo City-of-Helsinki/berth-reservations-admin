@@ -25,8 +25,8 @@ type FormValues = {
 export type SendAdditionalInvoiceFormProps = {
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
-  order: CreateAddtionalInvoiceOrder | null | undefined;
-  email: string | null | undefined;
+  order?: CreateAddtionalInvoiceOrder | null;
+  email?: string | null;
 };
 
 const SendAdditionalInvoiceForm = ({ onSubmit, onCancel, order, email }: SendAdditionalInvoiceFormProps) => {
@@ -84,7 +84,7 @@ const SendAdditionalInvoiceForm = ({ onSubmit, onCancel, order, email }: SendAdd
             value={formatPrice(order?.totalPrice, language)}
           />
 
-          <InvoiceInstructions email={email as string} />
+          <InvoiceInstructions email={email} />
 
           <div className={styles.dueDate}>
             <TextInput

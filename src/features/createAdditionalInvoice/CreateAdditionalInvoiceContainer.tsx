@@ -28,10 +28,10 @@ import hdsToast from '../../common/toast/hdsToast';
 
 interface CreateAdditionalInvoiceContainerProps {
   customerId: string;
-  email?: string | null | undefined;
+  email?: string | null;
   closeModal: () => void;
   berthLeases: BerthLease[];
-  refetchQueries?: PureQueryOptions[] | string[];
+  refetchQueries: PureQueryOptions[];
 }
 
 const CreateAdditionalInvoiceContainer = ({
@@ -58,7 +58,7 @@ const CreateAdditionalInvoiceContainer = ({
   const [approveOrder, { loading: isSendingInvoice }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
     APPROVE_ORDERS_MUTATION,
     {
-      refetchQueries: refetchQueries ?? [],
+      refetchQueries: refetchQueries,
     }
   );
 
