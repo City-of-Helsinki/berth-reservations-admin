@@ -764,7 +764,9 @@
     "addtionalService": "Lisäpalvelut",
     "createInvoice": "Luo lasku",
     "dueDate": "Eräpäivä",
-    "invoiceProduct": "Laskun aihe"
+    "invoiceProduct": "Laskun aihe",
+    "noContract": "Laskua ei voi luoda mikäli maksettuja sopimuksia ei ole olemassa.",
+    "noEmail": "Laskua ei voida luoda, koska asiakkaalta puuttuu sähköpostiosoite."
   },
   "deleteButton": {
     "modalTitle": "Vahvistus",

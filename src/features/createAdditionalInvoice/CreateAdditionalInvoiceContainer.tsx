@@ -124,9 +124,9 @@ const CreateAdditionalInvoiceContainer = ({
           additionalProducts={additionalProducts}
           onSubmit={handleCreateInvoice}
           onCancel={closeModal}
+          email={email}
         />
       )}
-      {createdOrder && <div>Order id: {orderId}</div>}
     </>
   );
 };

@@ -12,12 +12,14 @@ import Select from '../../common/select/Select';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import FormHeader from '../../common/formHeader/FormHeader';
 import { formatDate } from '../../common/utils/format';
+import Text from '../../common/text/Text';
 
 interface CreateAdditionalInvoiceProps {
   berthLeases: BerthLease[];
   additionalProducts: AdditionalService[];
   onSubmit: (data: AdditionalInvoiceFormValues) => void;
   onCancel: () => void;
+  email: string | null | undefined;
 }
 
 export interface AdditionalInvoiceFormValues {
@@ -30,8 +32,12 @@ const CreateAdditionalInvoiceForm = ({
   additionalProducts,
   onSubmit,
   onCancel,
+  email,
 }: CreateAdditionalInvoiceProps) => {
   const { t, i18n } = useTranslation();
+
+  const hasPaidBerthLeases = berthLeases.length > 0;
+  const submitDisabled = !hasPaidBerthLeases || !email;
 
   const validationSchema = useMemo(
     () =>
@@ -65,8 +71,6 @@ const CreateAdditionalInvoiceForm = ({
     };
   };
 
-  const isSubmitting = false;
-
   return (
     <Formik
       initialValues={initial}
@@ -88,7 +92,6 @@ const CreateAdditionalInvoiceForm = ({
                 onChange={handleChange}
                 label={t('additionalInvoice.berthContract')}
                 required
-                disabled={false}
               />
             </Section>
 
@@ -102,15 +105,29 @@ const CreateAdditionalInvoiceForm = ({
                 onChange={handleChange}
                 label={t('additionalInvoice.addtionalService')}
                 required
-                disabled={false}
               />
             </Section>
 
+            {!email && (
+              <div>
+                <Text weight="normalWeight" as="strong" color="critical">
+                  {t('additionalInvoice.noEmail')}
+                </Text>
+              </div>
+            )}
+            {!hasPaidBerthLeases && (
+              <div>
+                <Text weight="normalWeight" as="strong" color="critical">
+                  {t('additionalInvoice.noContract')}
+                </Text>
+              </div>
+            )}
+
             <div className={styles.formActionButtons}>
-              <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
+              <Button variant="secondary" onClick={onCancel}>
                 {t('forms.common.cancel')}
               </Button>
-              <Button type="submit" disabled={isSubmitting}>
+              <Button type="submit" disabled={submitDisabled}>
                 {t('additionalInvoice.createInvoice')}
               </Button>
             </div>
