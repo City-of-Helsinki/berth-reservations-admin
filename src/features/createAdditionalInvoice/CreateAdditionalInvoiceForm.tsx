@@ -49,8 +49,8 @@ const CreateAdditionalInvoiceForm = ({
   );
 
   const initial: AdditionalInvoiceFormValues = {
-    additionalProductId: additionalProducts[0].id,
-    leaseId: berthLeases[0].id,
+    additionalProductId: additionalProducts[0]?.id,
+    leaseId: berthLeases[0]?.id,
   };
 
   const toLeaseOption = (berthLease: BerthLease) => {
