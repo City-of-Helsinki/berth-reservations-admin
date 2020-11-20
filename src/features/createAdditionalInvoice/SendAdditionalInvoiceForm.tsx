@@ -29,12 +29,7 @@ export type SendAdditionalInvoiceFormProps = {
   email: string | null | undefined;
 };
 
-const SendAdditionalInvoiceForm = ({
-  onSubmit,
-  onCancel,
-  order,
-  email,
-}: SendAdditionalInvoiceFormProps) => {
+const SendAdditionalInvoiceForm = ({ onSubmit, onCancel, order, email }: SendAdditionalInvoiceFormProps) => {
   const {
     t,
     i18n: { language },

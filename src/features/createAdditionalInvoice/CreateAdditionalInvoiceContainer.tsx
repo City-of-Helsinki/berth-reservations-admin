@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
+import { PureQueryOptions } from 'apollo-client';
 
 import CreateAdditionalInvoiceForm, { AdditionalInvoiceFormValues } from './CreateAdditionalInvoiceForm';
 import { BerthLease } from '../customerView/types';
@@ -30,6 +31,7 @@ interface CreateAdditionalInvoiceContainerProps {
   email?: string | null | undefined;
   closeModal: () => void;
   berthLeases: BerthLease[];
+  refetchQueries?: PureQueryOptions[] | string[];
 }
 
 const CreateAdditionalInvoiceContainer = ({
@@ -37,6 +39,7 @@ const CreateAdditionalInvoiceContainer = ({
   email,
   closeModal,
   berthLeases,
+  refetchQueries,
 }: CreateAdditionalInvoiceContainerProps) => {
   const { loading: loadingAdditionalProducts, data } = useQuery<ADDITIONAL_SERVICES>(ADDITIONAL_SERVICES_QUERY);
 
@@ -53,7 +56,10 @@ const CreateAdditionalInvoiceContainer = ({
   >(DELETE_ADDITIONAL_INVOICE_MUTATION);
 
   const [approveOrder, { loading: isSendingInvoice }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
-    APPROVE_ORDERS_MUTATION
+    APPROVE_ORDERS_MUTATION,
+    {
+      refetchQueries: refetchQueries ?? [],
+    }
   );
 
   const orderId = createdOrder ? (createdOrder?.createAdditionalProductOrder?.order?.id as string) : null;

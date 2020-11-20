@@ -110,6 +110,7 @@ const CustomerViewContainer = () => {
           email={customerProfile.primaryEmail}
           berthLeases={berthLeases as BerthLease[]}
           closeModal={() => setCreatingAdditionalInvoice(false)}
+          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
         />
       </Modal>
 
