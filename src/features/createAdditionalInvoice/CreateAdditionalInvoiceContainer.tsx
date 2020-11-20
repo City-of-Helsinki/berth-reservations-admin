@@ -112,7 +112,6 @@ const CreateAdditionalInvoiceContainer = ({
     <>
       {createdOrder ? (
         <SendAdditionalInvoiceForm
-          isSubmitting={false}
           onCancel={handleCancelSendInvoice}
           onSubmit={handleSendInvoice}
           order={createdOrder?.createAdditionalProductOrder?.order}

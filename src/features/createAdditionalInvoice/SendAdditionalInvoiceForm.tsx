@@ -23,7 +23,6 @@ type FormValues = {
 };
 
 export type SendAdditionalInvoiceFormProps = {
-  isSubmitting: boolean;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
   order: CreateAddtionalInvoiceOrder | null | undefined;
@@ -31,7 +30,6 @@ export type SendAdditionalInvoiceFormProps = {
 };
 
 const SendAdditionalInvoiceForm = ({
-  isSubmitting,
   onSubmit,
   onCancel,
   order,
@@ -107,12 +105,10 @@ const SendAdditionalInvoiceForm = ({
           </div>
 
           <div className={styles.formActionButtons}>
-            <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
+            <Button variant="secondary" onClick={onCancel}>
               {t('forms.common.cancel')}
             </Button>
-            <Button type="submit" disabled={isSubmitting}>
-              {t('forms.common.send')}
-            </Button>
+            <Button type="submit">{t('forms.common.send')}</Button>
           </div>
         </Form>
       )}
