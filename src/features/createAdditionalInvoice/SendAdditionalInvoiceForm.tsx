@@ -18,9 +18,9 @@ import { getAdditionalProductService, getBerthLease } from './utils';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import { ProductServiceType } from '../../@types/__generated__/globalTypes';
 
-type FormValues = {
+interface FormValues {
   dueDate: string;
-};
+}
 
 export type SendAdditionalInvoiceFormProps = {
   onCancel: () => void;

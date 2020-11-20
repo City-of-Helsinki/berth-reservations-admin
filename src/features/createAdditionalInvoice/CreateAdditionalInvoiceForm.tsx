@@ -14,7 +14,7 @@ import FormHeader from '../../common/formHeader/FormHeader';
 import { formatDate } from '../../common/utils/format';
 import Text from '../../common/text/Text';
 
-interface CreateAdditionalInvoiceProps {
+export interface CreateAdditionalInvoiceProps {
   berthLeases: BerthLease[];
   additionalProducts: AdditionalService[];
   onSubmit: (data: AdditionalInvoiceFormValues) => void;
