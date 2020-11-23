@@ -77,7 +77,9 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
         {additionalInvoiceFeatureFlag() && (
-          <Button onClick={onClickCreateAdditionalInvoice}>{t('additionalInvoice.create')}</Button>
+          <div>
+            <Button onClick={onClickCreateAdditionalInvoice}>{t('additionalInvoice.create')}</Button>
+          </div>
         )}
         {invoices.length > 0 ? (
           <Section>
@@ -91,7 +93,7 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
             </Grid>
           </Section>
         ) : (
-          t('customerView.invoicingHistory.noInvoicingHistory')
+          <Section>{t('customerView.invoicingHistory.noInvoicingHistory')}</Section>
         )}
       </CardBody>
     </Card>
