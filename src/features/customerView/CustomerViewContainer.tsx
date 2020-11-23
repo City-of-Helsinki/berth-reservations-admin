@@ -104,7 +104,11 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      <Modal isOpen={creatingAdditionalInvoice} toggleModal={() => setCreatingAdditionalInvoice(false)}>
+      <Modal
+        isOpen={creatingAdditionalInvoice}
+        toggleModal={() => setCreatingAdditionalInvoice(false)}
+        shouldCloseOnOverlayClick={false}
+      >
         <CreateAdditionalInvoiceContainer
           customerId={id}
           email={customerProfile.primaryEmail}
