@@ -389,8 +389,8 @@
       "acceptLibraryNews": "Tilaan tietoa kirjastopalveluista",
       "acceptOtherCultureNews": "Tilaan tietoa muista kulttuuripalveluista"
     },
-    "errors":{
-      "unhandledApplications":{
+    "errors": {
+      "unhandledApplications": {
         "label": "Kaikkia valittuja hakemuksia ei ole käsitelty",
         "description": "Tarjous tai ilmoitus paikatta jäämisestä voidaan lähettää vain hakemuksille, jotka on käsitelty."
       }
@@ -663,6 +663,10 @@
       "label": "Tarjous on lähetetty asiakkaalle",
       "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
     },
+    "additionalInvoiceSent": {
+      "label": "Lähetys onnistui",
+      "description": "Lisäpalvelulasku lähetetty asiakkaan sähköpostiin"
+    },
     "stickerNumChanged": {
       "label": "Muutokset tallennettu",
       "description": "Tarranumeron vaihto onnistui"
@@ -746,13 +750,23 @@
     "invoiceSent": "Tarjous lähetetty",
     "sendInvoice": {
       "title": "Lähetä lasku",
-      "instructions": {
-        "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
-        "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
-      },
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
+  },
+  "additionalInvoice": {
+    "create": "Luo uusi lisäpalvelulasku",
+    "createTitle": "Luo uusi lisäpalvelulasku",
+    "sendTitle": "Lähetä lisäpalvelulasku",
+    "berthContract": "Venepaikkasopimukset",
+    "berthPlace": "Venepaikka",
+    "contractPeriod": "Sopimuskausi",
+    "addtionalService": "Lisäpalvelut",
+    "createInvoice": "Luo lasku",
+    "dueDate": "Eräpäivä",
+    "invoiceProduct": "Laskun aihe",
+    "noContract": "Laskua ei voi luoda mikäli maksettuja sopimuksia ei ole olemassa.",
+    "noEmail": "Laskua ei voida luoda, koska asiakkaalta puuttuu sähköpostiosoite."
   },
   "deleteButton": {
     "modalTitle": "Vahvistus",
@@ -772,5 +786,9 @@
     "selectedRows": "{{count}} rivi valittu",
     "selectedRows_plural": "{{count}} riviä valittu",
     "clearSelectedRows": "Tyhjennä valinnat"
+  },
+  "invoiceInstructions": {
+    "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
+    "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
   }
 }

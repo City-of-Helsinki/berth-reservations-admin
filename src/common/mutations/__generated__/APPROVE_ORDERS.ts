@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ApproveOrderMutationInput } from "./../../../../@types/__generated__/globalTypes";
+import { ApproveOrderMutationInput } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: APPROVE_ORDERS
