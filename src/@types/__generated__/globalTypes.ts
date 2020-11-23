@@ -167,16 +167,6 @@ export enum WinterStorageApplicationAreaType {
   UNMARKED = "UNMARKED",
 }
 
-export enum YouthLanguage {
-  ARABIC = "ARABIC",
-  ENGLISH = "ENGLISH",
-  ESTONIAN = "ESTONIAN",
-  FINNISH = "FINNISH",
-  RUSSIAN = "RUSSIAN",
-  SOMALI = "SOMALI",
-  SWEDISH = "SWEDISH",
-}
-
 export interface AddBoatCertificateInput {
   file?: any | null;
   certificateType: BoatCertificateType;
@@ -194,13 +184,6 @@ export interface ApproveOrderMutationInput {
 export interface AssignNewStickerNumberMutationInput {
   leaseId: string;
   clientMutationId?: string | null;
-}
-
-export interface CreateAdditionalContactPersonInput {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
 }
 
 export interface CreateAdditionalProductMutationInput {
@@ -396,14 +379,6 @@ export interface SubscriptionInputType {
   enabled: boolean;
 }
 
-export interface UpdateAdditionalContactPersonInput {
-  id: string;
-  firstName?: string | null;
-  lastName?: string | null;
-  phone?: string | null;
-  email?: string | null;
-}
-
 export interface UpdateAdditionalProductMutationInput {
   service?: ProductServiceType | null;
   period?: PeriodType | null;
@@ -549,7 +524,6 @@ export interface UpdateProfileInput {
   addPhones?: (CreatePhoneInput | null)[] | null;
   addAddresses?: (CreateAddressInput | null)[] | null;
   subscriptions?: (SubscriptionInputType | null)[] | null;
-  youthProfile?: YouthProfileFields | null;
   sensitivedata?: SensitiveDataFields | null;
   id: string;
   updateEmails?: (UpdateEmailInput | null)[] | null;
@@ -577,21 +551,6 @@ export interface UpdateWinterStorageProductMutationInput {
   priceValue?: any | null;
   winterStorageAreaId?: string | null;
   clientMutationId?: string | null;
-}
-
-export interface YouthProfileFields {
-  schoolName?: string | null;
-  schoolClass?: string | null;
-  languageAtHome?: YouthLanguage | null;
-  approverFirstName?: string | null;
-  approverLastName?: string | null;
-  approverPhone?: string | null;
-  approverEmail?: string | null;
-  birthDate?: any | null;
-  photoUsageApproved?: boolean | null;
-  addAdditionalContactPersons?: (CreateAdditionalContactPersonInput | null)[] | null;
-  updateAdditionalContactPersons?: (UpdateAdditionalContactPersonInput | null)[] | null;
-  removeAdditionalContactPersons?: (string | null)[] | null;
 }
 
 //==============================================================

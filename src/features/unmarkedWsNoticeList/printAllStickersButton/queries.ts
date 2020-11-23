@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_QUERY = gql`
   query UNMARKED_WINTER_STORAGE_NOTICES_STICKERS {
-    winterStorageNotices: winterStorageApplications(areaTypes: [UNMARKED], statuses: [HANDLED]) {
+    winterStorageNotices: winterStorageApplications(areaTypes: [UNMARKED]) {
       count
       edges {
         node {
@@ -13,6 +13,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_QUERY = gql`
           address
           lease {
             id
+            status
             stickerNumber
             stickerSeason
           }

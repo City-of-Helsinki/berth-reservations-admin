@@ -117,7 +117,7 @@ export const getCustomersWithStickers = (
 ): CustomerInfo[] => {
   return (
     data?.winterStorageNotices?.edges.reduce<CustomerInfo[]>((acc, edge) => {
-      if (!edge?.node?.lease?.stickerNumber || !edge?.node?.lease?.id) {
+      if (!edge?.node?.lease?.stickerNumber || edge.node.lease.status !== LeaseStatus.PAID) {
         return acc;
       }
       const { firstName, lastName, address, municipality, zipCode, lease } = edge.node;
