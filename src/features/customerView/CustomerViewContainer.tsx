@@ -17,7 +17,7 @@ import {
   getInvoices,
   getWinterStorageLeases,
 } from './utils';
-import { Invoice, Boat } from './types';
+import { Invoice, Boat, BerthLease } from './types';
 import { OrderStatus } from '../../@types/__generated__/globalTypes';
 import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
@@ -30,11 +30,13 @@ import {
 } from '../applicationView/__generated__/REJECT_BERTH_APPLICATION';
 import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
+import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 
 const CustomerViewContainer = () => {
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
+  const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
   const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
@@ -72,7 +74,8 @@ const CustomerViewContainer = () => {
   const boats = getBoats(data.profile);
   const { boatTypes } = data;
   const customerProfile = getCustomerProfile(data.profile);
-  const leases = [...getBerthLeases(data.profile), ...getWinterStorageLeases(data.profile)];
+  const berthLeases = getBerthLeases(data.profile);
+  const leases = [...berthLeases, ...getWinterStorageLeases(data.profile)];
   const openInvoices = invoices.filter((invoice) => invoice.status === OrderStatus.WAITING);
 
   return (
@@ -86,6 +89,7 @@ const CustomerViewContainer = () => {
         invoices={invoices}
         leases={leases}
         onClickCreateBoat={() => setCreatingBoat(true)}
+        onClickCreateAdditionalInvoice={() => setCreatingAdditionalInvoice(true)}
         openInvoices={openInvoices}
         setBoatToEdit={setBoatToEdit}
         setOpenInvoice={setOpenInvoice}
@@ -119,6 +123,20 @@ const CustomerViewContainer = () => {
           boatTypes={boatTypes}
           onCancel={() => setCreatingBoat(false)}
           onSubmit={() => setCreatingBoat(false)}
+          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+        />
+      </Modal>
+
+      <Modal
+        isOpen={creatingAdditionalInvoice}
+        toggleModal={() => setCreatingAdditionalInvoice(false)}
+        shouldCloseOnOverlayClick={false}
+      >
+        <CreateAdditionalInvoiceContainer
+          customerId={id}
+          email={customerProfile.primaryEmail}
+          berthLeases={berthLeases as BerthLease[]}
+          closeModal={() => setCreatingAdditionalInvoice(false)}
           refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
         />
       </Modal>

@@ -10,6 +10,7 @@ export const customers = {
     selectedCount: Selector('div[class^="customerListTableTools_tableToolsLeft"] span[class^="text_gray"]'),
     deselectAll: Selector('div[class^="customerListTableTools_tableToolsLeft"] span[class^="text_brand"]'),
     paginationNextButton: Selector('ul[class^="pagination"] li[class^="pagination_nextBtn"] a'),
+    selectedPage: Selector('ul[class^="pagination"] li[class^="selected"] a'),
   },
   customerView: {
     firstDataLabel: Selector(

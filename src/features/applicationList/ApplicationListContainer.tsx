@@ -13,11 +13,6 @@ import { ApplicationData, getBerthApplicationData } from './utils';
 import { BERTH_APPLICATIONS_QUERY } from './queries';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 import { usePagination } from '../../common/utils/usePagination';
-import { APPROVE_ORDERS_MUTATION } from '../invoiceCard/sendInvoiceForm/mutations';
-import {
-  APPROVE_ORDERS,
-  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
-} from '../invoiceCard/sendInvoiceForm/__generated__/APPROVE_ORDERS';
 import hdsToast from '../../common/toast/hdsToast';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { orderByGetter } from '../../common/utils/recoil';
@@ -27,6 +22,11 @@ import {
   REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
 } from '../applicationView/__generated__/REJECT_BERTH_APPLICATION';
 import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
+import {
+  APPROVE_ORDERS,
+  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
+} from '../../common/mutations/__generated__/APPROVE_ORDERS';
+import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
 
 const onlySwitchAppsAtom = atom<boolean | undefined>({
   key: 'ApplicationListContainer_onlySwitchAppsAtom',

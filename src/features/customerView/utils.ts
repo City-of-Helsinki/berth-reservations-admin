@@ -61,6 +61,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
       pierIdentifier,
       startDate: edge.node.startDate,
       endDate: edge.node.endDate,
+      isActive: edge.node.isActive,
     };
 
     return [...acc, lease];

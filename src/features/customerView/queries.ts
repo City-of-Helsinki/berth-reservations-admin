@@ -67,6 +67,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             status
             startDate
             endDate
+            isActive
             berth {
               number
               pier {

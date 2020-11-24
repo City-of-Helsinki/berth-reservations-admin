@@ -24,6 +24,7 @@ export interface CustomerViewProps {
   invoices: Invoice[];
   leases: Lease[];
   onClickCreateBoat: () => void;
+  onClickCreateAdditionalInvoice: () => void;
   openInvoices: Invoice[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
@@ -38,6 +39,7 @@ const CustomerView = ({
   invoices,
   leases,
   onClickCreateBoat,
+  onClickCreateAdditionalInvoice,
   openInvoices,
   setBoatToEdit,
   setOpenInvoice,
@@ -55,7 +57,11 @@ const CustomerView = ({
 
         <OpenInvoicesCard invoices={openInvoices} handleShowInvoice={(invoice) => setOpenInvoice(invoice)} />
 
-        <InvoicingHistoryCard invoices={invoices} onClick={(invoice) => setOpenInvoice(invoice)} />
+        <InvoicingHistoryCard
+          invoices={invoices}
+          onClick={(invoice) => setOpenInvoice(invoice)}
+          onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
+        />
 
         <BerthLeasesCard
           leases={leases.filter(isBerthLease)}

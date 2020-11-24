@@ -10,6 +10,7 @@ Array [
       "name": "Puotilan venesatama",
     },
     "id": "e4876a7d-86fc-4c13-90fa-2b2e4e935431",
+    "isActive": undefined,
     "pierIdentifier": "A",
     "startDate": "2019-05-06",
   },

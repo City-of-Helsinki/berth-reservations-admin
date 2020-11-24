@@ -115,6 +115,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node {
   status: LeaseStatus;
   startDate: any;
   endDate: any;
+  isActive: boolean;
   berth: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth;
 }
 

@@ -88,6 +88,7 @@ export type BerthLease = LeaseBase & {
   harbor: { id: string; name: string } | null;
   berthNum: string | number;
   pierIdentifier: string | null;
+  isActive: boolean;
 };
 
 export type WinterStorageLease = LeaseBase & {

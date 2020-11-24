@@ -195,6 +195,13 @@ export interface CreateAdditionalProductMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface CreateAdditionalProductOrderMutationInput {
+  customerId: string;
+  leaseId: string;
+  additionalProductId: string;
+  clientMutationId?: string | null;
+}
+
 export interface CreateAddressInput {
   countryCode?: string | null;
   primary?: boolean | null;
@@ -331,6 +338,11 @@ export interface DeleteBoatMutationInput {
 }
 
 export interface DeleteOrderLineMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
+export interface DeleteOrderMutationInput {
   id: string;
   clientMutationId?: string | null;
 }
