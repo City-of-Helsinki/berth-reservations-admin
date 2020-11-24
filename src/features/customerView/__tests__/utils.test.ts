@@ -8,7 +8,7 @@ import {
   INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node as WINTER_STORAGE_LEASE_NODE,
 } from '../__generated__/INDIVIDUAL_CUSTOMER';
 import { emptyMockProfile } from '../__fixtures__/mockData';
-import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
+import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 const mockBerthLeases: BERTH_LEASE_EDGE[] = [
   {
@@ -19,9 +19,14 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
       status: LeaseStatus.PAID,
       startDate: '2019-05-06',
       endDate: '2019-09-14',
+      isActive: true,
       berth: {
         __typename: 'BerthNode',
         number: '30',
+        length: 6,
+        width: 2.5,
+        depth: 1,
+        mooringType: BerthMooringType.NO_STERN_TO_MOORING,
         pier: {
           __typename: 'PierNode',
           properties: {

@@ -16,6 +16,10 @@ const BerthLeasesCard = ({ leases, handleShowContract }: BerthLeasesCardProps) =
       id: lease.id,
       endDate: lease.endDate,
       startDate: lease.startDate,
+      length: lease.length,
+      width: lease.width,
+      depth: lease.depth,
+      mooringType: lease.mooringType,
       link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       address: [lease.harbor?.name || '', lease.pierIdentifier || '', lease.berthNum].filter(Boolean).join(' '),
     };
