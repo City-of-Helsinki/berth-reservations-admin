@@ -7,6 +7,8 @@ import List from '../../list/List';
 import ListItem from '../../list/ListItem';
 import Text from '../../text/Text';
 import InternalLink from '../../internalLink/InternalLink';
+import ButtonWithConfirmation from '../../buttonWithConfirmation/ButtonWithConfirmation';
+import styles from './applicationChoicesList.module.scss';
 
 interface Choice {
   priority: number;
@@ -26,11 +28,17 @@ interface ApplicationChoicesListProps {
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   applicationId: string;
   customerId?: string;
+  handleNoPlacesAvailable?: (id: string) => void;
 }
 
 const isHarborChoice = (choice: Choice): choice is HarborChoice => (choice as HarborChoice).harbor !== undefined;
 
-const ApplicationChoicesList = ({ choices, applicationId, customerId }: ApplicationChoicesListProps) => {
+const ApplicationChoicesList = ({
+  choices,
+  applicationId,
+  customerId,
+  handleNoPlacesAvailable,
+}: ApplicationChoicesListProps) => {
   const { t } = useTranslation();
   const routerQuery = new URLSearchParams(useLocation().search);
 
@@ -42,8 +50,8 @@ const ApplicationChoicesList = ({ choices, applicationId, customerId }: Applicat
     <Section
       title={
         isHarborChoice(choices[0])
-          ? t('applicationList.applicationDetails.selectedPorts')
-          : t('applicationList.applicationDetails.selectedWinterStorageAreas')
+          ? t('applicationDetails.applicationChoicesList.selectedPorts')
+          : t('applicationDetails.applicationChoicesList.selectedWinterStorageAreas')
       }
     >
       <List noBullets>
@@ -58,7 +66,7 @@ const ApplicationChoicesList = ({ choices, applicationId, customerId }: Applicat
             return (
               <ListItem key={i}>
                 <Text>
-                  {`${t('applicationList.applicationDetails.choice')} 
+                  {`${t('applicationDetails.applicationChoicesList.choice')} 
                       ${i + 1}: `}
                 </Text>
                 {!!customerId ? (
@@ -70,6 +78,20 @@ const ApplicationChoicesList = ({ choices, applicationId, customerId }: Applicat
             );
           })}
       </List>
+      {customerId && handleNoPlacesAvailable && (
+        <div className={styles.actions}>
+          <ButtonWithConfirmation
+            buttonSize="small"
+            buttonText={t('applicationDetails.applicationChoicesList.noPlaces')}
+            buttonVariant="danger"
+            infoText={t('applicationDetails.applicationChoicesList.noPlacesModalInfo')}
+            modalTitle={t('applicationDetails.applicationChoicesList.noPlacesModalTitle')}
+            onCancelText={t('common.cancel')}
+            onConfirm={() => handleNoPlacesAvailable(applicationId)}
+            onConfirmText={t('common.save')}
+          />
+        </div>
+      )}
     </Section>
   );
 };

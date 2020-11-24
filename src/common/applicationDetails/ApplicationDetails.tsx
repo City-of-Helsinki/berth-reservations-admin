@@ -18,7 +18,7 @@ import ApplicationChoicesList, {
   HarborChoice,
   WinterStorageAreaChoice,
 } from './applicationChoicesList/ApplicationChoicesList';
-import { queueFeatureFlag } from '../utils/featureFlags';
+import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 
@@ -63,6 +63,7 @@ export interface ApplicationDetailsProps {
   customerId?: string;
   isDeletingLease?: boolean;
   handleDeleteLease?: (id: string) => void;
+  handleNoPlacesAvailable?: (id: string) => void;
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
   lease?: Lease | null;
@@ -91,6 +92,7 @@ const ApplicationDetails = ({
   lease,
   isDeletingLease,
   handleDeleteLease,
+  handleNoPlacesAvailable,
   accessibilityRequired,
   summaryInformation,
 }: ApplicationDetailsProps) => {
@@ -219,17 +221,24 @@ const ApplicationDetails = ({
             )}
           </Section>
         ) : (
-          <ApplicationChoicesList choices={choices} applicationId={id} customerId={customerId} />
-        )}
-        <Section>
-          <Checkbox
-            id={'accessible'}
-            label={t('applicationList.applicationDetails.accessible')}
-            checked={accessibilityRequired}
-            readOnly
-            className={styles.accessibleCheckbox}
+          <ApplicationChoicesList
+            choices={choices}
+            applicationId={id}
+            customerId={customerId}
+            handleNoPlacesAvailable={handleNoPlacesAvailable}
           />
-        </Section>
+        )}
+        {berthAccessibilityFeatureFlag() && (
+          <Section>
+            <Checkbox
+              id={'accessible'}
+              label={t('applicationList.applicationDetails.accessible')}
+              checked={accessibilityRequired}
+              readOnly
+              className={styles.accessibleCheckbox}
+            />
+          </Section>
+        )}
       </div>
     </Grid>
   );

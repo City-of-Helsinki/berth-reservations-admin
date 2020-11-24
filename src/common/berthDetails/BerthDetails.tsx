@@ -11,6 +11,7 @@ import styles from './berthDetails.module.scss';
 import { IconAccessibility, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../icons';
 import Property from '../property/Property';
 import MaintenanceServicesPlaceholder from '../maintenancePlaceholders/MaintenanceServicesPlaceholder';
+import { berthAccessibilityFeatureFlag } from '../utils/featureFlags';
 
 interface Lease {
   customer: {
@@ -110,7 +111,7 @@ const BerthDetails = ({
               active={wasteCollection}
             />
           )}
-          {isDefined(isAccessible) && (
+          {berthAccessibilityFeatureFlag() && isDefined(isAccessible) && (
             <Property
               className={styles.property}
               icon={IconAccessibility}

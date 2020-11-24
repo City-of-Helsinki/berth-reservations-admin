@@ -518,32 +518,6 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
         </button>
       </section>
     </article>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div
-          class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
-        >
-          <input
-            checked=""
-            class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-            id="accessible"
-            readonly=""
-            type="checkbox"
-            value=""
-          />
-          <label
-            class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-            for="accessible"
-          >
-            Tarvitsen esteettömän paikan
-          </label>
-        </div>
-      </section>
-    </article>
   </div>
 </div>
 `;
@@ -810,31 +784,6 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
         </ul>
       </section>
     </article>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div
-          class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
-        >
-          <input
-            class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-            id="accessible"
-            readonly=""
-            type="checkbox"
-            value=""
-          />
-          <label
-            class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-            for="accessible"
-          >
-            Tarvitsen esteettömän paikan
-          </label>
-        </div>
-      </section>
-    </article>
   </div>
 </div>
 `;
@@ -1057,33 +1006,7 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
       </section>
     </article>
   </div>
-  <div>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div
-          class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
-        >
-          <input
-            class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-            id="accessible"
-            readonly=""
-            type="checkbox"
-            value=""
-          />
-          <label
-            class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-            for="accessible"
-          >
-            Tarvitsen esteettömän paikan
-          </label>
-        </div>
-      </section>
-    </article>
-  </div>
+  <div />
 </div>
 `;
 
@@ -1629,32 +1552,6 @@ exports[`ApplicationDetails renders normally with organization customer applican
         </ul>
       </section>
     </article>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div
-          class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
-        >
-          <input
-            checked=""
-            class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-            id="accessible"
-            readonly=""
-            type="checkbox"
-            value=""
-          />
-          <label
-            class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-            for="accessible"
-          >
-            Tarvitsen esteettömän paikan
-          </label>
-        </div>
-      </section>
-    </article>
   </div>
 </div>
 `;
@@ -2149,32 +2046,6 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
             </a>
           </li>
         </ul>
-      </section>
-    </article>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div
-          class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz accessibleCheckbox checkbox"
-        >
-          <input
-            checked=""
-            class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-            id="accessible"
-            readonly=""
-            type="checkbox"
-            value=""
-          />
-          <label
-            class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-            for="accessible"
-          >
-            Tarvitsen esteettömän paikan
-          </label>
-        </div>
       </section>
     </article>
   </div>
