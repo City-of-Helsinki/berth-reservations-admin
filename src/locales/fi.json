@@ -373,9 +373,6 @@
       "boatWeight": "Veneen paino",
       "boatName": "Nimi",
       "boatBrand": "Merkki",
-      "selectedPorts": "VALITUT SATAMAT",
-      "selectedWinterStorageAreas": "VALITUT TALVISÄILYTYSPAIKAT",
-      "choice": "Toive",
       "connectedLease": "Liitetty satamapaikka",
       "deleteLease": "Poista ehdotettu paikka",
       "accessible": "Tarvitsen esteettömän paikan",
@@ -516,8 +513,6 @@
       "boatWeight": "Veneen paino",
       "boatName": "Nimi",
       "boatBrand": "Merkki",
-      "selectedPorts": "VALITUT SATAMAT",
-      "choice": "Toive",
       "accessible": "Tarvitsen esteettömän paikan"
     },
     "customerInvoice": {
@@ -786,6 +781,16 @@
     "selectedRows": "{{count}} rivi valittu",
     "selectedRows_plural": "{{count}} riviä valittu",
     "clearSelectedRows": "Tyhjennä valinnat"
+  },
+  "applicationDetails": {
+    "applicationChoicesList": {
+      "choice": "Toive",
+      "selectedPorts": "VALITUT SATAMAT",
+      "selectedWinterStorageAreas": "VALITUT TALVISÄILYTYSPAIKAT",
+      "noPlaces": "Ei paikkoja",
+      "noPlacesModalInfo": "Asiakkaalle lähetetään sähköpostitse ilmoitus ettei haettuja paikkoja ole saatavilla.",
+      "noPlacesModalTitle": "Oletko varma että haluat jättää ilman paikkaa?"
+    }
   },
   "invoiceInstructions": {
     "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",

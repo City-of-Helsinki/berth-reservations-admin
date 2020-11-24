@@ -36,6 +36,7 @@ export interface ApplicationViewProps {
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
   handleLinkCustomer(customerId: string): void;
+  handleNoPlacesAvailable(id: string): void;
   handleUnlinkCustomer(): void;
 }
 
@@ -47,6 +48,7 @@ const ApplicationView = ({
   handleDeleteLease,
   handleEditCustomer,
   handleLinkCustomer,
+  handleNoPlacesAvailable,
   handleUnlinkCustomer,
   isDeletingApplication,
   isDeletingLease,
@@ -85,7 +87,11 @@ const ApplicationView = ({
       <Card className={styles.fullWidth}>
         <CardHeader title={t('applicationView.applicationDetails.title')} />
         <CardBody>
-          <ApplicationDetails {...applicationDetails} handleDeleteLease={handleDeleteLease} />
+          <ApplicationDetails
+            {...applicationDetails}
+            handleDeleteLease={handleDeleteLease}
+            handleNoPlacesAvailable={handleNoPlacesAvailable}
+          />
         </CardBody>
       </Card>
 

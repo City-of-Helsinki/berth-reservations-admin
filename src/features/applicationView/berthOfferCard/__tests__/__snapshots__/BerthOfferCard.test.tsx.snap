@@ -271,17 +271,6 @@ exports[`BerthOfferCard renders normally 1`] = `
             <section
               class="body"
             >
-              <span>
-                Esteetön paikka
-              </span>
-            </section>
-          </article>
-          <article
-            class="section"
-          >
-            <section
-              class="body"
-            >
               <div
                 class="labelValuePair"
               >

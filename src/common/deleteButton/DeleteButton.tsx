@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import ButtonWithConfirmation, { ButtonWithConfirmationProps } from '../buttonWithConfirmation/buttonWithConfirmation';
+import ButtonWithConfirmation, { ButtonWithConfirmationProps } from '../buttonWithConfirmation/ButtonWithConfirmation';
 import { ConfirmationModalProps } from '../confirmationModal/ConfirmationModal';
 
 export interface DeleteButtonProps extends Pick<ConfirmationModalProps, 'onConfirm' | 'warningText'> {

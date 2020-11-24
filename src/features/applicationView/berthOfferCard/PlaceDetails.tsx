@@ -6,6 +6,7 @@ import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import { formatDimension } from '../../../common/utils/format';
 import { LeaseDetails } from './types';
 import MaintenanceBriefPlaceholder from '../../../common/maintenancePlaceholders/MaintenanceBriefPlaceholder';
+import { berthAccessibilityFeatureFlag } from '../../../common/utils/featureFlags';
 
 export type PlaceDetailsProps = Pick<
   LeaseDetails,
@@ -36,7 +37,7 @@ const PlaceDetails = ({
         <LabelValuePair label={t('common.terminology.length')} value={formatDimension(berthLength, language)} />
         <LabelValuePair label={t('common.terminology.depth')} value={formatDimension(berthDepth, language)} />
       </Section>
-      {berthIsAccessible && (
+      {berthAccessibilityFeatureFlag() && berthIsAccessible && (
         <Section>
           <span>{t('common.terminology.accessiblePlace')}</span>
         </Section>

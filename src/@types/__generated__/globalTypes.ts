@@ -376,6 +376,11 @@ export interface OrganizationInput {
   city?: string | null;
 }
 
+export interface RejectBerthApplicationMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface SensitiveDataFields {
   ssn?: string | null;
 }
