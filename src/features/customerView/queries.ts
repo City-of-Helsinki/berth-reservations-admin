@@ -70,6 +70,10 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             isActive
             berth {
               number
+              length
+              width
+              depth
+              mooringType
               pier {
                 properties {
                   identifier
