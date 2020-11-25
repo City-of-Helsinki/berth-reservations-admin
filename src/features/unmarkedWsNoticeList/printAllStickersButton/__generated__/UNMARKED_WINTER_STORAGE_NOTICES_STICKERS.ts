@@ -3,12 +3,16 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { LeaseStatus } from "./../../../../@types/__generated__/globalTypes";
+
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICES_STICKERS
 // ====================================================
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_winterStorageNotices_edges_node_lease {
   __typename: "WinterStorageLeaseNode";
+  id: string;
+  status: LeaseStatus;
   stickerNumber: number | null;
   stickerSeason: string | null;
 }
