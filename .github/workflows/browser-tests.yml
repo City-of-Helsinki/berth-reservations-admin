@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: Run browser tests across different operating systems
+    name: Run browser tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
