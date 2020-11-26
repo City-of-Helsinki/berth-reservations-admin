@@ -39,5 +39,3 @@ jobs:
         run: yarn --prefer-offline
       - name: Run TestCafe tests
         run: yarn browser-test:ci
-        with:
-          args: 'chrome tests'
