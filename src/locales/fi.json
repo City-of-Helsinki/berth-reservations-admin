@@ -158,7 +158,7 @@
       "paid": "Maksettu",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua",
-      "error": "Vihre"
+      "error": "Virhe"
     },
     "unlinkCustomer": {
       "buttonText": "Poista asiakasliitos",
