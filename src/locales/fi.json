@@ -157,7 +157,8 @@
       "expired": "Erääntynyt",
       "paid": "Maksettu",
       "rejected": "Hylätty",
-      "waiting": "Odottaa maksua"
+      "waiting": "Odottaa maksua",
+      "error": "Vihre"
     },
     "unlinkCustomer": {
       "buttonText": "Poista asiakasliitos",
