@@ -14,6 +14,9 @@ import FormHeader from '../../../../common/formHeader/FormHeader';
 import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
 import Checkbox from '../../../../common/checkbox/Checkbox';
 import Button from '../../../../common/button/Button';
+import RadioButton from '../../../../common/radioButton/RadioButton';
+import { PriceTier } from '../../../../@types/__generated__/globalTypes';
+import { priceTierToString } from '../../utils';
 
 interface PierFormProps extends FormProps<Pier> {
   suitableBoatTypeOptions: BoatType[];
@@ -31,6 +34,7 @@ const getPierValidationSchema = (t: TFunction, suitableBoatTypeOptions: BoatType
     water: Yup.boolean(),
     gate: Yup.boolean(),
     personalElectricity: Yup.boolean(),
+    priceTier: Yup.string().required(t('forms.common.errors.required')),
   });
 };
 
@@ -57,6 +61,7 @@ const PierForm = ({
     gate: false,
     personalElectricity: false,
     water: false,
+    priceTier: PriceTier.TIER_1,
     ...initialValues,
   };
 
@@ -68,7 +73,7 @@ const PierForm = ({
       validateOnChange={false}
       validationSchema={validationSchema}
     >
-      {({ values, errors, handleChange, handleSubmit }) => (
+      {({ values, errors, handleChange, handleSubmit, setFieldValue }) => (
         <form onSubmit={handleSubmit} className={styles.form}>
           <FormHeader
             title={t('forms.pier.title')}
@@ -126,6 +131,26 @@ const PierForm = ({
               ))}
             </div>
           </Grid>
+
+          <div className={styles.priceTiers}>
+            <p>
+              <Text weight="bold">{t('forms.pier.priceTiers')} *</Text>
+            </p>
+            <Grid colsCount={3}>
+              {[PriceTier.TIER_1, PriceTier.TIER_2, PriceTier.TIER_3].map((priceTier) => (
+                <RadioButton
+                  className={styles.priceTier}
+                  key={`priceTier${priceTier}`}
+                  id={`priceTier${priceTier}`}
+                  label={`${t('common.terminology.priceTier')} ${priceTierToString(priceTier)}`}
+                  name="priceTier"
+                  checked={values.priceTier === priceTier}
+                  onChange={() => setFieldValue('priceTier', priceTier)}
+                  value={String(priceTier)}
+                />
+              ))}
+            </Grid>
+          </div>
 
           <Checkbox
             id="personalElectricity"

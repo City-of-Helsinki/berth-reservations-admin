@@ -6,3 +6,13 @@
     margin: units(0.5) 0;
   }
 }
+
+.priceTiers {
+  margin-bottom: units(2);
+}
+
+.priceTier,
+.priceTier:not(:first-of-type) // work-around for HDS styling
+{
+  margin-top: 0;
+}

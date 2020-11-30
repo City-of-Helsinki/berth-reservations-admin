@@ -130,6 +130,7 @@
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
+      "priceTier": "Maksuluokka",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
@@ -234,6 +235,7 @@
       "electricity": "Sähkö",
       "lighting": "Valaistus",
       "water": "Vesi",
+      "priceTiers": "Maksuluokat",
       "personalElectricity": "Erillinen sähkösopimus mahdollinen",
       "deleteConfirmation": {
         "infoText": "Oletko varma että haluat poistaa laiturin {{pierIdentifier}}?",

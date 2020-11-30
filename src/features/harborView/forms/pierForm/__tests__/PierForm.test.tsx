@@ -15,6 +15,6 @@ describe('features/harborView/PierForm', () => {
         ]}
       />
     );
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 });

@@ -1,5 +1,6 @@
 import { INDIVIDUAL_HARBOR } from './__generated__/INDIVIDUAL_HARBOR';
 import { Berth, IndividualHarborData, Lease, Map, Pier } from './types';
+import { PriceTier } from '../../@types/__generated__/globalTypes';
 
 export const getIndividualHarborData = (data: INDIVIDUAL_HARBOR | undefined): IndividualHarborData | null => {
   if (data?.harbor?.properties?.piers) {
@@ -89,7 +90,7 @@ export const getPiers = (data: INDIVIDUAL_HARBOR | undefined): Pier[] => {
   return data.harbor.properties.piers.edges.reduce<Pier[]>((acc, pierEdge) => {
     if (!pierEdge?.node?.properties) return acc;
 
-    const { identifier, electricity, wasteCollection, water, lighting, gate } = pierEdge.node.properties;
+    const { identifier, priceTier, electricity, wasteCollection, water, lighting, gate } = pierEdge.node.properties;
 
     const suitableBoatTypes = pierEdge.node.properties.suitableBoatTypes.reduce<string[]>((acc, suitableBoatType) => {
       if (!suitableBoatType.name) return acc;
@@ -100,6 +101,7 @@ export const getPiers = (data: INDIVIDUAL_HARBOR | undefined): Pier[] => {
       ...acc,
       {
         id: pierEdge.node.id,
+        priceTier,
         identifier,
         electricity,
         wasteCollection,
@@ -124,4 +126,15 @@ export const getMaps = (data: INDIVIDUAL_HARBOR | undefined): Map[] => {
     }
     return acc;
   }, []);
+};
+
+export const priceTierToString = (priceTier: PriceTier): string => {
+  switch (priceTier) {
+    case PriceTier.TIER_1:
+      return '1';
+    case PriceTier.TIER_2:
+      return '2';
+    case PriceTier.TIER_3:
+      return '3';
+  }
 };

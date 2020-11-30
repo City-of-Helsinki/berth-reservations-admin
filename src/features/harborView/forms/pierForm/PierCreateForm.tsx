@@ -10,6 +10,7 @@ import { BOAT_TYPES } from './__generated__/BOAT_TYPES';
 import { BOAT_TYPES_QUERY } from './queries';
 import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
 import { getBoatTypes } from './utils/utils';
+import { PriceTier } from '../../../../@types/__generated__/globalTypes';
 
 interface Props extends Omit<FormProps<Pier>, 'initialValues' | 'isSubmitting' | 'onDelete'> {
   harborId: string;
@@ -34,9 +35,9 @@ const PierCreateForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
     <PierForm
       onSubmitText={t('forms.common.create')}
       onCancel={onCancel}
-      onSubmit={(values) => {
-        createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values));
-      }}
+      onSubmit={(values: Pier & { priceTier: PriceTier }) =>
+        createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values))
+      }
       isSubmitting={isSubmitting}
       suitableBoatTypeOptions={suitableBoatTypeOptions}
     />
