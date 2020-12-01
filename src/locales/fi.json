@@ -154,6 +154,7 @@
     },
     "orderStatus": {
       "cancelled": "Peruutettu",
+      "error": "Virhe",
       "expired": "Erääntynyt",
       "paid": "Maksettu",
       "rejected": "Hylätty",

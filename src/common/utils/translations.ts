@@ -83,6 +83,8 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
   switch (orderStatus) {
     case OrderStatus.CANCELLED:
       return 'common.orderStatus.cancelled';
+    case OrderStatus.ERROR:
+      return 'common.orderStatus.error';
     case OrderStatus.EXPIRED:
       return 'common.orderStatus.expired';
     case OrderStatus.PAID:

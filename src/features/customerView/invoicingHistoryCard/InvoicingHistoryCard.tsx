@@ -33,6 +33,7 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
       case OrderStatus.PAID:
         return 'success';
       case OrderStatus.EXPIRED:
+      case OrderStatus.ERROR:
         return 'error';
       case OrderStatus.REJECTED:
       case OrderStatus.CANCELLED:
