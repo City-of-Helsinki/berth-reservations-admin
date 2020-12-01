@@ -6,28 +6,32 @@ import Button from '../button/Button';
 import Text from '../text/Text';
 
 export interface ButtonWithConfirmationProps extends Omit<ConfirmationModalProps, 'title' | 'isOpen' | 'onCancel'> {
-  buttonText: string;
-  modalTitle: string;
+  buttonClassName?: string;
+  buttonSize?: ButtonProps['size'];
   buttonStyle?: 'flat' | 'default';
+  buttonText: string;
+  buttonVariant?: ButtonProps['variant'];
   confirmButtonVariant?: ButtonProps['variant'];
   disabled?: boolean;
-  buttonClassName?: string;
   modalClassName?: string;
+  modalTitle: string;
 }
 
 const ButtonWithConfirmation = ({
-  modalTitle,
-  infoText,
-  onCancelText,
-  onConfirmText,
-  onConfirm,
-  disabled,
-  buttonText,
-  confirmButtonVariant = 'primary',
-  warningText,
-  buttonStyle = 'default',
   buttonClassName,
+  buttonSize,
+  buttonStyle = 'default',
+  buttonText,
+  buttonVariant = 'secondary',
+  confirmButtonVariant = 'primary',
+  disabled,
+  infoText,
   modalClassName,
+  modalTitle,
+  onCancelText,
+  onConfirm,
+  onConfirmText,
+  warningText,
 }: ButtonWithConfirmationProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,8 +40,9 @@ const ButtonWithConfirmation = ({
       case 'default':
         return (
           <Button
-            variant="secondary"
+            variant={buttonVariant}
             theme="coat"
+            size={buttonSize}
             onClick={() => setIsModalOpen(true)}
             disabled={disabled}
             className={buttonClassName}

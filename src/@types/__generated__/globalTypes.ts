@@ -91,6 +91,7 @@ export enum Language {
 
 export enum LeaseStatus {
   DRAFTED = "DRAFTED",
+  ERROR = "ERROR",
   EXPIRED = "EXPIRED",
   OFFERED = "OFFERED",
   PAID = "PAID",
@@ -105,6 +106,7 @@ export enum NotificationTemplateLanguage {
 
 export enum OrderStatus {
   CANCELLED = "CANCELLED",
+  ERROR = "ERROR",
   EXPIRED = "EXPIRED",
   PAID = "PAID",
   REJECTED = "REJECTED",
@@ -192,6 +194,13 @@ export interface CreateAdditionalProductMutationInput {
   priceValue: any;
   priceUnit?: PriceUnits | null;
   taxPercentage?: AdditionalProductTaxEnum | null;
+  clientMutationId?: string | null;
+}
+
+export interface CreateAdditionalProductOrderMutationInput {
+  customerId: string;
+  leaseId: string;
+  additionalProductId: string;
   clientMutationId?: string | null;
 }
 
@@ -335,6 +344,11 @@ export interface DeleteOrderLineMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface DeleteOrderMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface DeletePierMutationInput {
   id: string;
   clientMutationId?: string | null;
@@ -362,6 +376,11 @@ export interface OrganizationInput {
   address?: string | null;
   postalCode?: string | null;
   city?: string | null;
+}
+
+export interface RejectBerthApplicationMutationInput {
+  id: string;
+  clientMutationId?: string | null;
 }
 
 export interface SensitiveDataFields {

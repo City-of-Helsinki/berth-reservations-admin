@@ -51,6 +51,10 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
 
     const lease = {
       id: edge.node.id,
+      length: edge.node.berth.length,
+      width: edge.node.berth.width,
+      depth: edge.node.berth.depth,
+      mooringType: edge.node.berth.mooringType,
       harbor: harbor
         ? {
             id: harbor.id,
@@ -61,6 +65,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
       pierIdentifier,
       startDate: edge.node.startDate,
       endDate: edge.node.endDate,
+      isActive: edge.node.isActive,
     };
 
     return [...acc, lease];

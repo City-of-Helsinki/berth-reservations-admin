@@ -1,5 +1,6 @@
 import {
   ApplicationStatus,
+  BerthMooringType,
   BoatCertificateType,
   LeaseStatus,
   OrderStatus,
@@ -86,8 +87,13 @@ type LeaseBase = {
 
 export type BerthLease = LeaseBase & {
   harbor: { id: string; name: string } | null;
+  length: number;
+  width: number;
+  depth: number | null;
+  mooringType: BerthMooringType;
   berthNum: string | number;
   pierIdentifier: string | null;
+  isActive: boolean;
 };
 
 export type WinterStorageLease = LeaseBase & {

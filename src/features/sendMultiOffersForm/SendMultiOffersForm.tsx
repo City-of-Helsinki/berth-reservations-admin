@@ -8,7 +8,7 @@ import styles from './sendMultiOffersForm.module.scss';
 import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';
 import Text from '../../common/text/Text';
-import { addDaysToDate, getToday, mapDateToDateInputValue } from '../../common/utils/dates';
+import { getDefaultDueDate, getDueDateValidation } from '../../common/utils/dates';
 
 type FormValues = {
   dueDate: string;
@@ -27,15 +27,13 @@ const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: 
   const validationSchema = useMemo(
     () =>
       Yup.object<FormValues>().shape({
-        dueDate: Yup.date()
-          .min(new Date(getToday().toDateString()), t('forms.common.errors.date'))
-          .required(t('forms.common.errors.required')),
+        dueDate: getDueDateValidation(t),
       }),
     [t]
   );
 
   const initial: FormValues = {
-    dueDate: mapDateToDateInputValue(addDaysToDate(getToday(), 14)),
+    dueDate: getDefaultDueDate(),
   };
 
   return (

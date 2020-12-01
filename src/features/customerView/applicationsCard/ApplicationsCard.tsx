@@ -10,9 +10,10 @@ import { Application } from '../types';
 
 export interface ApplicationsCardProps {
   applications: Application[];
+  handleNoPlacesAvailable(id: string): void;
 }
 
-const ApplicationsCard = ({ applications }: ApplicationsCardProps) => {
+const ApplicationsCard = ({ applications, handleNoPlacesAvailable }: ApplicationsCardProps) => {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +21,7 @@ const ApplicationsCard = ({ applications }: ApplicationsCardProps) => {
       <CardHeader title={t('customerView.application.title')} />
       {applications.map((application) => (
         <CardBody key={application.id}>
-          <ApplicationDetails {...application} />
+          <ApplicationDetails {...application} handleNoPlacesAvailable={handleNoPlacesAvailable} />
         </CardBody>
       ))}
     </Card>

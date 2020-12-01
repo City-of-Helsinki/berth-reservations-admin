@@ -17,12 +17,14 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 
 export interface CustomerViewProps {
   applications: Application[];
-  invoices: Invoice[];
   boats: Boat[];
   customerProfile: CustomerProfileCardProps;
   handleEditCustomer: () => void;
+  handleNoPlacesAvailable: (id: string) => void;
+  invoices: Invoice[];
   leases: Lease[];
   onClickCreateBoat: () => void;
+  onClickCreateAdditionalInvoice: () => void;
   openInvoices: Invoice[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
@@ -30,12 +32,14 @@ export interface CustomerViewProps {
 
 const CustomerView = ({
   applications,
-  invoices,
   boats,
   customerProfile,
   handleEditCustomer,
+  handleNoPlacesAvailable,
+  invoices,
   leases,
   onClickCreateBoat,
+  onClickCreateAdditionalInvoice,
   openInvoices,
   setBoatToEdit,
   setOpenInvoice,
@@ -49,11 +53,15 @@ const CustomerView = ({
 
         <ActionHistoryCard />
 
-        <ApplicationsCard applications={applications} />
+        <ApplicationsCard applications={applications} handleNoPlacesAvailable={handleNoPlacesAvailable} />
 
         <OpenInvoicesCard invoices={openInvoices} handleShowInvoice={(invoice) => setOpenInvoice(invoice)} />
 
-        <InvoicingHistoryCard invoices={invoices} onClick={(invoice) => setOpenInvoice(invoice)} />
+        <InvoicingHistoryCard
+          invoices={invoices}
+          onClick={(invoice) => setOpenInvoice(invoice)}
+          onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
+        />
 
         <BerthLeasesCard
           leases={leases.filter(isBerthLease)}

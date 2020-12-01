@@ -12,11 +12,6 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICESVariables as UNMARKED_WINTER_STORAGE_NOTICES_VARS,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
-import { APPROVE_ORDERS_MUTATION } from '../invoiceCard/sendInvoiceForm/mutations';
-import {
-  APPROVE_ORDERS,
-  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
-} from '../invoiceCard/sendInvoiceForm/__generated__/APPROVE_ORDERS';
 import { generateAndSaveStickerPDF, getUnmarkedWinterStorageNotices } from './utils';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
@@ -27,6 +22,11 @@ import {
   SET_STICKERS_POSTED,
   SET_STICKERS_POSTEDVariables as SET_STICKERS_POSTED_VARS,
 } from './__generated__/SET_STICKERS_POSTED';
+import {
+  APPROVE_ORDERS,
+  APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
+} from '../../common/mutations/__generated__/APPROVE_ORDERS';
+import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'UnmarkedWsNoticeListContainer_sortByAtom',

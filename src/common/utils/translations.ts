@@ -1,5 +1,6 @@
 import {
   AdditionalProductTaxEnum,
+  BerthMooringType,
   CustomerGroup,
   OrderStatus,
   PeriodType,
@@ -7,6 +8,32 @@ import {
   ProductServiceType,
 } from '../../@types/__generated__/globalTypes';
 import { formatPercentage } from './format';
+
+export const getMooringTypeTKey = (mooringType: BerthMooringType) => {
+  switch (mooringType) {
+    case BerthMooringType.DINGHY_PLACE:
+      return 'common.mooringTypes.DINGHY_PLACE';
+    case BerthMooringType.NO_STERN_TO_MOORING:
+      return 'common.mooringTypes.NO_STERN_TO_MOORING';
+    case BerthMooringType.QUAYSIDE_MOORING:
+      return 'common.mooringTypes.QUAYSIDE_MOORING';
+    case BerthMooringType.SEA_BUOY_MOORING:
+      return 'common.mooringTypes.SEA_BUOY_MOORING';
+    case BerthMooringType.SIDE_SLIP_PLACE:
+      return 'common.mooringTypes.SIDE_SLIP_PLACE';
+    case BerthMooringType.SINGLE_SLIP_PLACE:
+      return 'common.mooringTypes.SINGLE_SLIP_PLACE';
+    case BerthMooringType.STERN_BUOY_PLACE:
+      return 'common.mooringTypes.STERN_BUOY_PLACE';
+    case BerthMooringType.STERN_POLE_MOORING:
+      return 'common.mooringTypes.STERN_POLE_MOORING';
+    case BerthMooringType.TRAWLER_PLACE:
+      return 'common.mooringTypes.TRAWLER_PLACE';
+
+    default:
+      return mooringType;
+  }
+};
 
 export const getPeriodTKey = (period: PeriodType) => {
   switch (period) {
@@ -56,6 +83,8 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
   switch (orderStatus) {
     case OrderStatus.CANCELLED:
       return 'common.orderStatus.cancelled';
+    case OrderStatus.ERROR:
+      return 'common.orderStatus.error';
     case OrderStatus.EXPIRED:
       return 'common.orderStatus.expired';
     case OrderStatus.PAID:

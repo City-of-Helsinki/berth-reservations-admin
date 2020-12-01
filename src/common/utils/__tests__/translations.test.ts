@@ -7,6 +7,7 @@ import {
   getPriceUnits,
   getOrderStatusTKey,
   getCustomerGroupKey,
+  getMooringTypeTKey,
 } from '../translations';
 import {
   PeriodType,
@@ -15,12 +16,32 @@ import {
   PriceUnits,
   OrderStatus,
   CustomerGroup,
+  BerthMooringType,
 } from '../../../@types/__generated__/globalTypes';
 import { formatPercentage } from '../format';
 
 jest.mock('../format');
 
 describe('translations', () => {
+  describe('getMooringTypeTKey', () => {
+    test('each provided value of type BerthMooringType should have a corresponding translated value', () => {
+      const mooringTypes = Object.values(BerthMooringType);
+      expect.assertions(mooringTypes.length);
+
+      mooringTypes.forEach((mooringType) => {
+        const tKey = getMooringTypeTKey(mooringType);
+        expect(i18n.exists(tKey)).toBe(true);
+      });
+    });
+
+    it('should fallback to the actual value from the backend if there is no match during the runtime', () => {
+      const randomValue = 'random' as BerthMooringType;
+      const tKey = getMooringTypeTKey(randomValue);
+
+      expect(tKey).toBe(randomValue);
+    });
+  });
+
   describe('getPeriodTKey', () => {
     test('each provided value of type PeriodType should have a corresponding translated value', () => {
       const periods = Object.values(PeriodType);
