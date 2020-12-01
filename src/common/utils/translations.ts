@@ -93,8 +93,6 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
       return 'common.orderStatus.rejected';
     case OrderStatus.WAITING:
       return 'common.orderStatus.waiting';
-    case OrderStatus.ERROR:
-      return 'common.orderStatus.error';
 
     default:
       return orderStatus;
