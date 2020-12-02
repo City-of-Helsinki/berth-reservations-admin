@@ -761,6 +761,15 @@
           "infoText": "Järjestelmä valitsee seuraavan vapaana olevan tarranumeron.\nOletko varma että haluat vaihtaa tarranumeron tälle hakemukselle?",
           "confirm": "Vaihda"
         }
+      },
+      "contractDetails": {
+        "title": "SOPIMUS",
+        "modifiedAt": "Muokattu",
+        "createdAt": "Luotu",
+        "signed": "Allekirjoitettu",
+        "unsigned": "Allekirjoitus puuttuu",
+        "status": "Tila",
+        "document": "Avaa asiakirja"
       }
     }
   },

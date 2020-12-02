@@ -62,6 +62,14 @@ export enum ContactMethod {
   SMS = "SMS",
 }
 
+export enum ContractStatus {
+  CANCELLED = "CANCELLED",
+  DELETED = "DELETED",
+  NEW = "NEW",
+  PENDING = "PENDING",
+  SIGNED = "SIGNED",
+}
+
 export enum CustomerGroup {
   COMPANY = "COMPANY",
   INTERNAL = "INTERNAL",
