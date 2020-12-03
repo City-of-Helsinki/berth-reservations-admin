@@ -15,6 +15,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_winterStorageNotices_e
   status: LeaseStatus;
   stickerNumber: number | null;
   stickerSeason: string | null;
+  stickerPosted: any | null;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_winterStorageNotices_edges_node {

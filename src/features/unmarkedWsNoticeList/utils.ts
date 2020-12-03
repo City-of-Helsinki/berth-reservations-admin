@@ -112,12 +112,15 @@ export const getDraftedOffers = (applications: UnmarkedWinterStorageNotice[]) =>
     ];
   }, []);
 
-export const getCustomersWithStickers = (
+export const getCustomersWithUnsentStickers = (
   data: UNMARKED_WINTER_STORAGE_NOTICES_STICKERS | undefined
 ): CustomerInfo[] => {
   return (
     data?.winterStorageNotices?.edges.reduce<CustomerInfo[]>((acc, edge) => {
       if (!edge?.node?.lease?.stickerNumber || edge.node.lease.status !== LeaseStatus.PAID) {
+        return acc;
+      }
+      if (edge.node.lease.stickerPosted) {
         return acc;
       }
       const { firstName, lastName, address, municipality, zipCode, lease } = edge.node;

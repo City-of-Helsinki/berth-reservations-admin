@@ -709,7 +709,7 @@
         "onClick": "Tulosta tarrakirjeet"
       },
       "allStickerPrint": {
-        "label": "Tulosta kaikki tarrakirjeet",
+        "label": "Tulosta tulostamattomat tarrakirjeet",
         "buttonText": "Tulosta",
         "loading": "Ladataan asiakastietoja"
       },

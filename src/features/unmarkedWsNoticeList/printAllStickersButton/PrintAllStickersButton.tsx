@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import Button from '../../../common/button/Button';
 import { UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_QUERY } from './queries';
-import { generateAndSaveStickerPDF, getCustomersWithStickers } from '../utils';
+import { generateAndSaveStickerPDF, getCustomersWithUnsentStickers } from '../utils';
 import { UNMARKED_WINTER_STORAGE_NOTICES_STICKERS } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES_STICKERS';
 import styles from './printAllStickersButton.module.scss';
 import {
@@ -21,7 +21,7 @@ const PrintAllStickersButton = () => {
   const [setStickersPosted] = useMutation<SET_STICKERS_POSTED, SET_STICKERS_POSTED_VARS>(SET_STICKERS_POSTED_MUTATION);
 
   const onClick = () => {
-    const customers = getCustomersWithStickers(data);
+    const customers = getCustomersWithUnsentStickers(data);
     generateAndSaveStickerPDF(customers);
     setStickersPosted({
       variables: {
