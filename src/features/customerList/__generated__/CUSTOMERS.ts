@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomerGroup, ServiceType, ContactMethod } from "./../../../@types/__generated__/globalTypes";
+import { CustomerGroup, ServiceType, ContactMethod, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: CUSTOMERS
@@ -124,6 +124,7 @@ export interface CUSTOMERS_profiles_edges_node_berthLeases_edges_node {
   __typename: "BerthLeaseNode";
   id: string;
   isActive: boolean;
+  status: LeaseStatus;
   berth: CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth;
 }
 

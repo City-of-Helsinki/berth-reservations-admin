@@ -1,4 +1,4 @@
-import { CustomerGroup } from '../../@types/__generated__/globalTypes';
+import { CustomerGroup, LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 export interface Organization {
   name: string;
@@ -31,6 +31,7 @@ export interface CustomerListBerthLeases {
   id: string;
   isActive: boolean;
   title: string;
+  status: LeaseStatus;
 }
 
 export interface CustomerListWinterStoragePlaces {
