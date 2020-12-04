@@ -7,13 +7,15 @@ import { formatPrice } from '../../common/utils/format';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import Text from '../../common/text/Text';
 import { Order } from './types';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 
 export interface OrderSectionProps {
+  applicationStatus: ApplicationStatus;
   order: Order;
   editAdditionalServices: () => void;
 }
 
-const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
+const OrderSection = ({ applicationStatus, order, editAdditionalServices }: OrderSectionProps) => {
   const {
     t,
     i18n: { language },
@@ -40,7 +42,10 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
         <LabelValuePair
           label={t('offer.invoicing.additionalServices')}
           value={
-            <button onClick={() => editAdditionalServices()}>
+            <button
+              onClick={() => editAdditionalServices()}
+              disabled={applicationStatus === ApplicationStatus.OFFER_SENT}
+            >
               <Text color="brand">{t('common.edit')}</Text>
             </button>
           }

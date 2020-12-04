@@ -98,7 +98,13 @@ const InvoiceCard = ({
           ) : (
             <div /> // Grid spacer
           )}
-          {order && <OrderSection order={order} editAdditionalServices={editAdditionalServices} />}
+          {order && (
+            <OrderSection
+              applicationStatus={applicationStatus}
+              order={order}
+              editAdditionalServices={editAdditionalServices}
+            />
+          )}
         </Grid>
         <hr />
         <div className={styles.buttonRow}>
