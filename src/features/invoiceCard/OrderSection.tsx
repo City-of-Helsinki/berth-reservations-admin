@@ -45,7 +45,9 @@ const OrderSection = ({ applicationStatus, order, editAdditionalServices }: Orde
             <Button
               size="small"
               onClick={() => editAdditionalServices()}
-              disabled={applicationStatus === ApplicationStatus.OFFER_SENT}
+              disabled={
+                applicationStatus === ApplicationStatus.OFFER_SENT || applicationStatus === ApplicationStatus.HANDLED
+              }
             >
               {t('common.edit')}
             </Button>
