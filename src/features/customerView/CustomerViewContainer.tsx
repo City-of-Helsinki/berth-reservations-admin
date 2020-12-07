@@ -40,7 +40,10 @@ const CustomerViewContainer = () => {
   const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, { variables: { id } });
+  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
+    variables: { id },
+    fetchPolicy: 'no-cache',
+  });
   const [rejectApplication] = useMutation<REJECT_BERTH_APPLICATION, REJECT_BERTH_APPLICATION_VARS>(
     REJECT_BERTH_APPLICATION_MUTATION,
     {
