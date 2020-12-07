@@ -21,3 +21,4 @@ export { default as IconTrestle } from './berthReservations/IconTrestle';
 export { default as IconUnregisteredBoat } from './berthReservations/IconUnregisteredBoat';
 export { default as IconWaterTap } from './berthReservations/IconWaterTap';
 export { default as IconWinter } from './berthReservations/IconWinter';
+export { default as IconDocumentCheck } from './berthReservations/IconDocumentCheck';
