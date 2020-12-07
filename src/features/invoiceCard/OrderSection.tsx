@@ -6,16 +6,16 @@ import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { formatPrice } from '../../common/utils/format';
 import { getProductServiceTKey } from '../../common/utils/translations';
 import { Order } from './types';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import Button from '../../common/button/Button';
 
 export interface OrderSectionProps {
-  applicationStatus: ApplicationStatus;
+  leaseStatus: LeaseStatus | null;
   order: Order;
   editAdditionalServices: () => void;
 }
 
-const OrderSection = ({ applicationStatus, order, editAdditionalServices }: OrderSectionProps) => {
+const OrderSection = ({ leaseStatus, order, editAdditionalServices }: OrderSectionProps) => {
   const {
     t,
     i18n: { language },
@@ -45,9 +45,7 @@ const OrderSection = ({ applicationStatus, order, editAdditionalServices }: Orde
             <Button
               size="small"
               onClick={() => editAdditionalServices()}
-              disabled={
-                applicationStatus === ApplicationStatus.OFFER_SENT || applicationStatus === ApplicationStatus.HANDLED
-              }
+              disabled={leaseStatus !== LeaseStatus.DRAFTED}
             >
               {t('common.edit')}
             </Button>

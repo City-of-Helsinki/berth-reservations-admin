@@ -2,10 +2,10 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 
 import InvoiceCard, { InvoiceCardProps } from '../InvoiceCard';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 describe('InvoiceCard', () => {
-  const defaultProps = {
+  const defaultProps: InvoiceCardProps = {
     editAdditionalServices: jest.fn(),
     sendInvoice: jest.fn(),
     order: {
@@ -20,6 +20,7 @@ describe('InvoiceCard', () => {
     placeName: 'place name',
     placeProperties: [],
     title: 'title',
+    leaseStatus: LeaseStatus.DRAFTED,
     applicationStatus: ApplicationStatus.OFFER_GENERATED,
   };
 
