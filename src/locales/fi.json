@@ -50,7 +50,8 @@
       "winterStorageApplications": "Talvisäilytyshakemukset",
       "unmarkedWsNotices": "Nostojärjestysilmoitukset",
       "customers": "Asiakkaat",
-      "pricing": "Hinnasto"
+      "pricing": "Hinnasto",
+      "recurringInvoices": "Kausilaskut"
     },
     "header": {
       "serviceName": "Venepaikat",
@@ -597,6 +598,28 @@
       "tax": "ALV",
       "period": "Aika"
     }
+  },
+  "recurringInvoices": {
+    "title": "Laskatus",
+    "sendInvoices": "Lähetä venepaikkojen laskut",
+    "failedInvoicesTable": {
+      "header": "Kausilasku ei lähetetty",
+      "name": "Nimi",
+      "harbor": "Satama",
+      "failureReason": "Virheen syy",
+      "emptyState": "Ei laskuja"
+    },
+    "summary": {
+      "customers": "Asiakkaita",
+      "sentSuccessfully": "Lähetys onnistui",
+      "failedInvoicing": "Lähetys epäonnistui"
+    },
+    "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ count }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",
+    "form": {
+      "title": "Lähetä lasku",
+      "description": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
+      "dueDate":"Laskun eräpäivä"
+    } 
   },
   "customerProfile": {
     "title": "Asiakastiedot",
