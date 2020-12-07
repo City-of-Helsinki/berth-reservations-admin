@@ -5,9 +5,9 @@ import Section from '../../common/section/Section';
 import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { formatPrice } from '../../common/utils/format';
 import { getProductServiceTKey } from '../../common/utils/translations';
-import Text from '../../common/text/Text';
 import { Order } from './types';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import Button from '../../common/button/Button';
 
 export interface OrderSectionProps {
   applicationStatus: ApplicationStatus;
@@ -42,12 +42,13 @@ const OrderSection = ({ applicationStatus, order, editAdditionalServices }: Orde
         <LabelValuePair
           label={t('offer.invoicing.additionalServices')}
           value={
-            <button
+            <Button
+              size="small"
               onClick={() => editAdditionalServices()}
               disabled={applicationStatus === ApplicationStatus.OFFER_SENT}
             >
-              <Text color="brand">{t('common.edit')}</Text>
-            </button>
+              {t('common.edit')}
+            </Button>
           }
           align={'right'}
         />
