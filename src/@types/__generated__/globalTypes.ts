@@ -180,6 +180,7 @@ export interface AddBoatCertificateInput {
 export interface ApproveOrderMutationInput {
   orders: (OrderApprovalInput | null)[];
   dueDate?: any | null;
+  profileToken?: string | null;
   clientMutationId?: string | null;
 }
 
@@ -380,6 +381,12 @@ export interface OrganizationInput {
 
 export interface RejectBerthApplicationMutationInput {
   id: string;
+  clientMutationId?: string | null;
+}
+
+export interface SendExistingBerthInvoicesMutationInput {
+  dueDate?: any | null;
+  profileToken: string;
   clientMutationId?: string | null;
 }
 
