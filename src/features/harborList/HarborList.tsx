@@ -14,8 +14,9 @@ import PageTitle from '../../common/pageTitle/PageTitle';
 import { HarborData } from './types';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../common/icons';
 import PageContent from '../../common/pageContent/PageContent';
-import BerthSummary from './berthSummary/BerthSummary';
 import { calculateBerthSummary } from './utils';
+import DataSummary from '../../common/dataSummary/DataSummary';
+import Section from '../../common/section/Section';
 
 type ColumnType = Column<HarborData> & { accessor: keyof HarborData };
 
@@ -105,16 +106,20 @@ const HarborList = ({ data, loading }: HarborListProps) => {
 
   const { berthCount, freeCount, reservedCount, otherCount, offeredCount } = calculateBerthSummary(data);
 
+  const dataSummaryPairs = [
+    { label: t('harborList.berthSummary.berthCount'), value: berthCount },
+    { label: t('harborList.berthSummary.freeCount'), value: freeCount },
+    { label: t('harborList.berthSummary.reservedCount'), value: reservedCount },
+    { label: t('harborList.berthSummary.otherCount'), value: otherCount },
+    { label: t('harborList.berthSummary.offeredCount'), value: offeredCount },
+  ];
+
   return (
     <PageContent>
       <PageTitle title={t('harborList.title')} />
-      <BerthSummary
-        berthCount={berthCount}
-        freeCount={freeCount}
-        reservedCount={reservedCount}
-        otherCount={otherCount}
-        offeredCount={offeredCount}
-      />
+      <Section>
+        <DataSummary labelValuePairs={dataSummaryPairs} />
+      </Section>
       <Table
         data={data}
         loading={loading}

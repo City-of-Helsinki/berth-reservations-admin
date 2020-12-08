@@ -6,7 +6,7 @@ import Layout from '../../common/layout/Layout';
 import Sidebar from '../../common/sidebar/Sidebar';
 import InternalNavLink from '../../common/internalNavLink/InternalNavLink';
 import PageHeader from './pageHeader/PageHeader';
-import { IconApplications, IconBoat, IconInvoice, IconWinter } from '../../common/icons';
+import { IconApplications, IconBoat, IconDocumentCheck, IconInvoice, IconWinter } from '../../common/icons';
 import HDSToastContainer from '../../common/toast/HDSToastContainer';
 import ExpandableNavItem from '../../common/expandableNavItem/ExpandableNavItem';
 
@@ -50,6 +50,9 @@ const Page = ({ children }: PageProps) => {
             </InternalNavLink>,
             <InternalNavLink key="pricing" to="/pricing" icon={<IconInvoice />}>
               {t('common.sidebar.pricing')}
+            </InternalNavLink>,
+            <InternalNavLink key="pricing" to="/recurring-invoices" icon={<IconDocumentCheck />}>
+              {t('common.sidebar.recurringInvoices')}
             </InternalNavLink>,
           ]}
         </Sidebar>

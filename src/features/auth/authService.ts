@@ -17,7 +17,7 @@ class AuthService {
       post_logout_redirect_uri: origin,
       response_type: 'id_token token',
       silent_redirect_uri: `${origin}/silent-callback.html`,
-      scope: process.env.REACT_APP_TUNNISTAMO_SCOPE,
+      scope: `openid ${process.env.REACT_APP_TUNNISTAMO_SCOPE_BERTHS} ${process.env.REACT_APP_TUNNISTAMO_SCOPE_PROFILE}`,
       /* eslint-enable @typescript-eslint/camelcase */
     };
 

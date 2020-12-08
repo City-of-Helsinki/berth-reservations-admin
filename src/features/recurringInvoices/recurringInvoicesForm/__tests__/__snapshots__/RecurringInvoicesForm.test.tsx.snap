@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendInvoiceForm renders normally 1`] = `
+exports[`RecurringInvoicesForm renders normally 1`] = `
 <form
   action="#"
   class="form"
@@ -9,30 +9,25 @@ exports[`SendInvoiceForm renders normally 1`] = `
     class="heading"
   >
     <h4
-      class="text brand h4"
+      class="text brand h4 upperCase"
     >
-      LÄHETÄ LASKU
+      Lähetä lasku
     </h4>
   </div>
   <p
-    class="instructions"
+    class="paragraph"
   >
-    Lasku lähetetään asiakkaan sähköpostiosoitteeseen (test@example.com) ja siihen merkitään alla oleva eräpäivä.
-  </p>
-  <p
-    class="instructions"
-  >
-    Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle
+    Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.
   </p>
   <div
-    class="dueDate"
+    class="centered"
   >
     <div
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
-        for="dueDate"
+        for="RecurringInvoicesForm_dueDate"
       >
         Laskun eräpäivä
         <span
@@ -47,7 +42,7 @@ exports[`SendInvoiceForm renders normally 1`] = `
       >
         <input
           class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
-          id="dueDate"
+          id="RecurringInvoicesForm_dueDate"
           required=""
           type="date"
           value="2020-10-07"

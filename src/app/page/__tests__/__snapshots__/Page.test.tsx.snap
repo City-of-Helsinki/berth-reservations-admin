@@ -329,6 +329,49 @@ exports[`Page renders normally 1`] = `
               </div>
             </a>
           </div>
+          <div
+            class="elementWrapper"
+          >
+            <a
+              class="internalNavLink standard"
+              href="#/recurring-invoices"
+            >
+              <div
+                class="icon"
+              >
+                <svg
+                  class="icon s"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  width="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>
+                    icons/document/24
+                  </title>
+                  <g
+                    fill="none"
+                    fill-rule="evenodd"
+                    id="icons/document/24"
+                    stroke="none"
+                    stroke-width="1"
+                  >
+                    <path
+                      d="M21,1 L21,23 L3,23 L3,9 L4.741,9 L4.7419366,21.3500004 L19.2580646,21.3500004 L19.2580646,2.65 L12,2.65 L12,1 L21,1 Z M17.6,18 L17.6,19.7 L6,19.7 L6,18 L17.6,18 Z M10,15 L10,16.7 L6,16.7 L6,15 L10,15 Z M4.26243563,3.08071012 L8.70639967,7.52507832 L11.7375646,4.49492357 L12.9497476,5.70710662 L9.9183807,8.73705934 L9.91928988,8.73756437 L8.70710678,9.94974747 L3.05025253,4.29289322 L4.26243563,3.08071012 Z"
+                      fill="#231F20"
+                      id="aggreements_icon"
+                      transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div
+                class="label"
+              >
+                Kausilaskut
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>

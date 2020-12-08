@@ -1,0 +1,23 @@
+@import 'colours';
+@import 'spacings';
+
+$cellsNum: 5;
+
+.dataSummary {
+  display: grid;
+  grid-template-columns: repeat($cellsNum, minmax(0, 1fr));
+  padding: units(0.5);
+  border: 1px solid $black-50;
+}
+
+.cell {
+  padding: units(0.5) units(1);
+
+  &:not(:nth-child(#{$cellsNum}n)) {
+    border-right: 1px solid $black-50;
+  }
+
+  &:nth-child(n + #{$cellsNum + 1}) {
+    border-top: 1px solid $black-50;
+  }
+}
