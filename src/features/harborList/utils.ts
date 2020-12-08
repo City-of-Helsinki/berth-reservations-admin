@@ -1,6 +1,5 @@
 import { HARBORS } from './__generated__/HARBORS';
 import { HarborData, Map } from './types';
-import { BerthSummaryProps } from './berthSummary/BerthSummary';
 
 export const getHarborsData = (data: HARBORS | undefined) => {
   if (data?.harbors?.edges) {
@@ -70,30 +69,39 @@ export const getHarborsData = (data: HARBORS | undefined) => {
   return [];
 };
 
+interface BerthSummary {
+  berthCount: number | undefined;
+  freeCount: number | undefined;
+  otherCount: number | undefined;
+  reservedCount: number | undefined;
+  offeredCount: number | undefined;
+}
+
 export const calculateBerthSummary = (
   data: { numberOfPlaces: number; numberOfInactivePlaces: number; numberOfFreePlaces: number }[]
-): BerthSummaryProps => {
+): BerthSummary => {
+  const initialValue = {
+    berthCount: undefined,
+    freeCount: undefined,
+    otherCount: undefined,
+    reservedCount: undefined,
+    offeredCount: undefined,
+  };
+
   if (data.length === 0) {
-    return {};
+    return initialValue;
   }
 
-  return data.reduce(
-    (acc, harbor) => {
-      const berthCount = acc.berthCount + harbor.numberOfPlaces;
-      const freeCount = acc.freeCount + harbor.numberOfFreePlaces;
-      const otherCount = acc.otherCount + harbor.numberOfInactivePlaces;
-      return {
-        berthCount,
-        freeCount,
-        otherCount,
-        reservedCount: berthCount - freeCount - otherCount,
-      };
-    },
-    {
-      berthCount: 0,
-      freeCount: 0,
-      otherCount: 0,
-      reservedCount: 0,
-    }
-  );
+  return data.reduce<BerthSummary>((acc, harbor) => {
+    const berthCount = (acc.berthCount ?? 0) + harbor.numberOfPlaces;
+    const freeCount = (acc.freeCount ?? 0) + harbor.numberOfFreePlaces;
+    const otherCount = (acc.otherCount ?? 0) + harbor.numberOfInactivePlaces;
+    return {
+      berthCount,
+      freeCount,
+      otherCount,
+      reservedCount: berthCount - freeCount - otherCount,
+      offeredCount: undefined,
+    };
+  }, initialValue);
 };
