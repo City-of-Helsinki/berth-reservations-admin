@@ -25,6 +25,7 @@ import {
 } from '../../common/mutations/__generated__/APPROVE_ORDERS';
 import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
 import hdsToast from '../../common/toast/hdsToast';
+import { getProfileToken } from '../../common/utils/auth';
 
 interface CreateAdditionalInvoiceContainerProps {
   customerId: string;
@@ -99,6 +100,7 @@ const CreateAdditionalInvoiceContainer = ({
               orderId: orderId as string,
             },
           ],
+          profileToken: getProfileToken(),
         },
       },
     }).then((res) => {

@@ -15,6 +15,9 @@ const mockProps: SendInvoiceFormContainerProps = {
   orderId: 'MOCK-ORDER',
 };
 
+// needs mock because mutation calls getProfileToken
+jest.mock('../../../../common/utils/auth');
+
 describe('SendInvoiceFormContainer', () => {
   const mockDate: Date = new Date('2020-09-23T00:00:00.000Z');
   const dateSpy = jest.spyOn(global.Date, 'now').mockImplementation(() => mockDate.valueOf());
