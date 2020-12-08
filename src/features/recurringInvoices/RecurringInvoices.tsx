@@ -80,6 +80,7 @@ const RecurringInvoices = ({
       <Table
         columns={failedInvoicesCols}
         data={failedInvoicesData}
+        initialState={{ sortBy: [{ id: 'customerName', desc: false }] }}
         renderMainHeader={() => t('recurringInvoices.failedInvoicesTable.header')}
         renderEmptyStateRow={() => t('recurringInvoices.failedInvoicesTable.emptyState')}
         renderPaginator={({ pageIndex, pageCount, goToPage }) => (
