@@ -610,7 +610,7 @@
       "emptyState": "Ei laskuja"
     },
     "summary": {
-      "customers": "Asiakkaita",
+      "invoicesLeft": "Lähettämättömiä jäljellä",
       "sentSuccessfully": "Lähetys onnistui",
       "failedInvoicing": "Lähetys epäonnistui"
     },

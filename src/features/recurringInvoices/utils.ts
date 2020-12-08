@@ -32,7 +32,7 @@ export const getSummaryData = (
 
   return [
     {
-      label: i18next.t('recurringInvoices.summary.customers'),
+      label: i18next.t('recurringInvoices.summary.invoicesLeft'),
       value: !loading ? totalCustomersCount : undefined,
     },
     {
