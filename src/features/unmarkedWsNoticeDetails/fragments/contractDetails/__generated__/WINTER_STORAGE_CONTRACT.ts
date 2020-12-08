@@ -13,7 +13,7 @@ export interface WINTER_STORAGE_CONTRACT_winterStorageLease_contract {
   __typename: "WinterStorageContractNode";
   createdAt: any;
   modifiedAt: any;
-  status: ContractStatus;
+  status: ContractStatus | null;
 }
 
 export interface WINTER_STORAGE_CONTRACT_winterStorageLease_order {

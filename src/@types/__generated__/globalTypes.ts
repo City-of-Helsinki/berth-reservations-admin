@@ -519,7 +519,6 @@ export interface UpdateHarborMutationInput {
   location?: any | null;
   imageLink?: string | null;
   municipalityId?: string | null;
-  imageFile?: any | null;
   addMapFiles?: (any | null)[] | null;
   availabilityLevelId?: string | null;
   name?: string | null;

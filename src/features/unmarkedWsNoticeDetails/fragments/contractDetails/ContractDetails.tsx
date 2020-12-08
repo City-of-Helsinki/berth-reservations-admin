@@ -1,6 +1,7 @@
-import Section from '../../../../common/section/Section';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import Section from '../../../../common/section/Section';
 import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
 import { ContractStatus } from '../../../../@types/__generated__/globalTypes';
 import { formatDate } from '../../../../common/utils/format';
@@ -9,7 +10,7 @@ import ExternalLink from '../../../../common/externalLink/ExternalLink';
 interface ContractDetailsProps {
   createdAt: string;
   modifiedAt: string;
-  status: ContractStatus;
+  status: ContractStatus | null;
   documentId: string;
 }
 
@@ -34,7 +35,7 @@ const ContractDetails = ({ createdAt, modifiedAt, status, documentId }: Contract
             : t('unmarkedWsNotices.noticeDetails.contractDetails.unsigned')
         }
       />
-      <ExternalLink href={`http://localhost:8000/contract_document/${documentId}`}>
+      <ExternalLink href={`${process.env.REACT_APP_BERTH_API_URL}contract_document/${documentId}`}>
         <span>{t('unmarkedWsNotices.noticeDetails.contractDetails.document')}</span>
       </ExternalLink>
     </Section>

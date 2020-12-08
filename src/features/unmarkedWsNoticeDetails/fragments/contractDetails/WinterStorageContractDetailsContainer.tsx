@@ -1,6 +1,7 @@
 import React from 'react';
-import ContractDetails from './ContractDetails';
 import { useQuery } from '@apollo/react-hooks';
+
+import ContractDetails from './ContractDetails';
 import { WINTER_STORAGE_CONTRACT_QUERY } from './queries';
 import {
   WINTER_STORAGE_CONTRACT,
@@ -11,7 +12,7 @@ interface ContractDetailsContainerProps {
   leaseId: string;
 }
 
-const ContractDetailsContainer = ({ leaseId }: ContractDetailsContainerProps) => {
+const WinterStorageContractDetailsContainer = ({ leaseId }: ContractDetailsContainerProps) => {
   const { data, loading } = useQuery<WINTER_STORAGE_CONTRACT, WINTER_STORAGE_CONTRACT_VARS>(
     WINTER_STORAGE_CONTRACT_QUERY,
     { variables: { leaseId } }
@@ -27,4 +28,4 @@ const ContractDetailsContainer = ({ leaseId }: ContractDetailsContainerProps) =>
   return <ContractDetails status={status} createdAt={createdAt} modifiedAt={modifiedAt} documentId={documentId} />;
 };
 
-export default ContractDetailsContainer;
+export default WinterStorageContractDetailsContainer;
