@@ -18,7 +18,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
     class="heading"
   >
     <h4
-      class="text brand h4 titleText"
+      class="text brand h4"
     >
       Venepaikka
     </h4>

@@ -8,7 +8,7 @@ exports[`BoatForm renders correctly 1`] = `
     class="heading"
   >
     <h4
-      class="text brand h4 titleText"
+      class="text brand h4"
     >
       Veneen tiedot
     </h4>
