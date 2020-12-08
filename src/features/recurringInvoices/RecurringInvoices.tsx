@@ -10,6 +10,7 @@ import Text from '../../common/text/Text';
 import InternalLink from '../../common/internalLink/InternalLink';
 import Section from '../../common/section/Section';
 import Pagination from '../../common/pagination/Pagination';
+import styles from './recurringInvoices.module.scss';
 
 export interface FailedInvoices {
   id: string;
@@ -38,18 +39,22 @@ const RecurringInvoices = ({
 
   const failedInvoicesCols: Column<FailedInvoices>[] = [
     {
-      Header: t('recurringInvoices.failedInvoicesTable.name') || '',
+      Header: <Text className={styles.marginLeft}>{t('recurringInvoices.failedInvoicesTable.name')}</Text>,
       accessor: 'customerName',
       width: COLUMN_WIDTH.L,
       minWidth: COLUMN_WIDTH.M,
-      Cell: ({ row, cell }) => <InternalLink to={`/customers/${row.original.customerId}`}>{cell.value}</InternalLink>,
+      Cell: ({ row, cell }) => (
+        <InternalLink className={styles.marginLeft} to={`/customers/${row.original.customerId}`}>
+          {cell.value}
+        </InternalLink>
+      ),
     },
     {
-      Header: t('recurringInvoices.failedInvoicesTable.harbor') || '',
+      Header: t('recurringInvoices.failedInvoicesTable.harbor') ?? '',
       accessor: 'harbor',
     },
     {
-      Header: t('recurringInvoices.failedInvoicesTable.failureReason') || '',
+      Header: t('recurringInvoices.failedInvoicesTable.failureReason') ?? '',
       accessor: 'failureReason',
       Cell: ({ cell }) => <Text color="critical">{cell.value}</Text>,
     },
@@ -65,13 +70,9 @@ const RecurringInvoices = ({
         <DataSummary labelValuePairs={dataSummary} />
       </Section>
       <p>
-        {loading ? (
-          '...'
-        ) : (
-          <Trans i18nKey="recurringInvoices.failureInstructions" count={failedInvoicesTotalCount}>
-            ... <Text as="strong">{{ count: failedInvoicesTotalCount ?? '-' }}</Text> ...
-          </Trans>
-        )}
+        <Trans i18nKey="recurringInvoices.failureInstructions" count={failedInvoicesTotalCount ?? 0}>
+          ... <Text as="strong">count</Text> ...
+        </Trans>
       </p>
       <Table
         columns={failedInvoicesCols}
