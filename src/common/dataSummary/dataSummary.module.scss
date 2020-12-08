@@ -13,8 +13,8 @@ $cellsNum: 5;
 .cell {
   padding: units(0.5) units(1);
 
-  &:not(:nth-child(#{$cellsNum}n + 1)) {
-    border-left: 1px solid $black-50;
+  &:not(:nth-child(#{$cellsNum}n)) {
+    border-right: 1px solid $black-50;
   }
 
   &:nth-child(n + #{$cellsNum + 1}) {
