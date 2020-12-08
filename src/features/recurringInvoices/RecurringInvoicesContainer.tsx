@@ -86,7 +86,7 @@ const RecurringInvoicesContainer = () => {
       <RecurringInvoices
         loading={loading}
         dataSummary={getSummaryData(data)}
-        failedInvoicesTotalCount={data?.berthLeases?.count}
+        failedInvoicesCount={data?.berthLeases?.count}
         failedInvoicesData={getFailedInvoicesData(data)}
         handleSend={() => setSendInvoiceModalOpen(true)}
       />

@@ -23,7 +23,7 @@ export interface FailedInvoices {
 export interface RecurringInvoicesProps {
   loading: boolean;
   dataSummary: DataSummaryProps['labelValuePairs'];
-  failedInvoicesTotalCount: number | undefined;
+  failedInvoicesCount: number | undefined;
   failedInvoicesData: FailedInvoices[];
   handleSend(dueDate: string | null): void;
 }
@@ -31,7 +31,7 @@ export interface RecurringInvoicesProps {
 const RecurringInvoices = ({
   loading,
   dataSummary,
-  failedInvoicesTotalCount,
+  failedInvoicesCount,
   failedInvoicesData,
   handleSend,
 }: RecurringInvoicesProps) => {
@@ -70,8 +70,11 @@ const RecurringInvoices = ({
         <DataSummary labelValuePairs={dataSummary} />
       </Section>
       <p>
-        <Trans i18nKey="recurringInvoices.failureInstructions" count={failedInvoicesTotalCount ?? 0}>
-          ... <Text as="strong">count</Text> ...
+        <Trans
+          i18nKey="recurringInvoices.failureInstructions"
+          values={{ failedInvoicesCount: failedInvoicesCount ?? '-' }}
+        >
+          ... <Text as="strong">failedInvoicesCount</Text> ...
         </Trans>
       </p>
       <Table

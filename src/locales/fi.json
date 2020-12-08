@@ -614,7 +614,7 @@
       "sentSuccessfully": "Lähetys onnistui",
       "failedInvoicing": "Lähetys epäonnistui"
     },
-    "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ count }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",
+    "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ failedInvoicesCount }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",
     "form": {
       "title": "Lähetä lasku",
       "description": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
