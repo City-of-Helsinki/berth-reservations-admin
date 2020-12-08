@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { useTranslation } from 'react-i18next';
 
 import RecurringInvoices from './RecurringInvoices';
 import Modal from '../../common/modal/Modal';
@@ -14,14 +13,13 @@ import {
 import { SEND_EXISTING_BERTH_INVOICES_MUTATION } from './mutations';
 import authService from '../auth/authService';
 import hdsToast from '../../common/toast/hdsToast';
-import { getFailedInvoicesData } from './utils';
+import { getFailedInvoicesData, getSummaryData } from './utils';
 
 const RecurringInvoicesContainer = () => {
-  const { t } = useTranslation();
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
   const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY);
-  const [sendExistingBerthInvoices, { data: sendInvoicesData, loading: isSubmitting }] = useMutation<
+  const [sendExistingBerthInvoices, { data: sentInvoicesData, loading: isSubmitting }] = useMutation<
     SEND_EXISTING_BERTH_INVOICES,
     SEND_EXISTING_BERTH_INVOICES_VARS
   >(SEND_EXISTING_BERTH_INVOICES_MUTATION);
@@ -50,23 +48,11 @@ const RecurringInvoicesContainer = () => {
     setSendInvoiceModalOpen(false);
   };
 
-  const summaryData = [
-    { label: t('recurringInvoices.summary.customers'), value: data?.profiles?.count },
-    {
-      label: t('recurringInvoices.summary.sentSuccessfully'),
-      value: sendInvoicesData?.sendExistingBerthInvoices?.result?.successfulOrders?.length,
-    },
-    {
-      label: t('recurringInvoices.summary.failedInvoicing'),
-      value: data?.berthLeases?.count,
-    },
-  ];
-
   return (
     <>
       <RecurringInvoices
         loading={loading}
-        dataSummary={summaryData}
+        dataSummary={getSummaryData(data, sentInvoicesData, loading)}
         failedInvoicesCount={data?.berthLeases?.count}
         failedInvoicesData={getFailedInvoicesData(data)}
         handleSend={() => setSendInvoiceModalOpen(true)}

@@ -7,9 +7,9 @@
 // GraphQL query operation: RECURRING_INVOICES
 // ====================================================
 
-export interface RECURRING_INVOICES_profiles {
-  __typename: "ProfileNodeConnection";
-  count: number;
+export interface RECURRING_INVOICES_sendBerthInvoicePreview {
+  __typename: "SendExistingInvoicesPreviewType";
+  expectedLeases: number;
 }
 
 export interface RECURRING_INVOICES_berthLeases_edges_node_customer {
@@ -67,6 +67,6 @@ export interface RECURRING_INVOICES_berthLeases {
 }
 
 export interface RECURRING_INVOICES {
-  profiles: RECURRING_INVOICES_profiles | null;
+  sendBerthInvoicePreview: RECURRING_INVOICES_sendBerthInvoicePreview | null;
   berthLeases: RECURRING_INVOICES_berthLeases | null;
 }

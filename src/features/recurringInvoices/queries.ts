@@ -2,8 +2,8 @@ import gql from 'graphql-tag';
 
 export const RECURRING_INVOICES_QUERY = gql`
   query RECURRING_INVOICES {
-    profiles(serviceType: BERTH) {
-      count
+    sendBerthInvoicePreview {
+      expectedLeases
     }
     berthLeases(statuses: [ERROR]) {
       count

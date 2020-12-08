@@ -1,5 +1,8 @@
+import i18next from 'i18next';
+
 import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
 import { FailedInvoices } from './RecurringInvoices';
+import { SEND_EXISTING_BERTH_INVOICES } from './__generated__/SEND_EXISTING_BERTH_INVOICES';
 
 export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
   if (!data?.berthLeases) return [];
@@ -16,4 +19,31 @@ export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
 
     return [...acc, failedInvoice];
   }, []);
+};
+
+export const getSummaryData = (
+  recurringInvoicesData: RECURRING_INVOICES | undefined,
+  sentInvoicesData: SEND_EXISTING_BERTH_INVOICES | undefined,
+  loading: boolean
+) => {
+  const totalCustomersCount =
+    (recurringInvoicesData?.sendBerthInvoicePreview?.expectedLeases ?? 0) +
+    (recurringInvoicesData?.berthLeases?.count ?? 0);
+  const sentSuccessfullyCount = sentInvoicesData?.sendExistingBerthInvoices?.result?.successfulOrders?.length;
+  const failedInvoicingCount = recurringInvoicesData?.berthLeases?.count;
+
+  return [
+    {
+      label: i18next.t('recurringInvoices.summary.customers'),
+      value: !loading ? totalCustomersCount : undefined,
+    },
+    {
+      label: i18next.t('recurringInvoices.summary.sentSuccessfully'),
+      value: !loading ? sentSuccessfullyCount : undefined,
+    },
+    {
+      label: i18next.t('recurringInvoices.summary.failedInvoicing'),
+      value: !loading ? failedInvoicingCount : undefined,
+    },
+  ];
 };
