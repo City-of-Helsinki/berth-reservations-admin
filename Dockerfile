@@ -54,6 +54,9 @@ CMD ["react-scripts", "start"]
 FROM appbase as staticbuilder
 # ===================================
 
+ARG REACT_APP_ENV=development
+ENV REACT_APP_ENV $REACT_APP_ENV
+
 ARG REACT_APP_API_URL
 ARG REACT_APP_SENTRY_DSN
 ARG REACT_APP_SENTRY_ENVIRONMENT

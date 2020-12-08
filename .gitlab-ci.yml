@@ -13,6 +13,7 @@ build-review:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: '$CI_PROJECT_NAME-review'
+    DOCKER_BUILD_ARG_REACT_APP_ENV: 'review'
     DOCKER_BUILD_ARG_REACT_APP_API_URL: 'https://venepaikka-federation.test.kuva.hel.ninja/'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: 'https://tunnistamo.test.kuva.hel.ninja'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: 'api-tokens'
@@ -30,6 +31,7 @@ build-staging:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: '$CI_PROJECT_NAME-staging'
+    DOCKER_BUILD_ARG_REACT_APP_ENV: 'staging'
     DOCKER_BUILD_ARG_REACT_APP_API_URL: 'https://venepaikka-federation.test.kuva.hel.ninja/'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: 'https://api.hel.fi/sso-test'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: 'api-tokens'
@@ -47,6 +49,7 @@ build-production:
   extends: .build
   variables:
     DOCKER_IMAGE_NAME: '$CI_PROJECT_NAME-production'
+    DOCKER_BUILD_ARG_REACT_APP_ENV: 'production'
     DOCKER_BUILD_ARG_REACT_APP_API_URL: 'https://api.hel.fi/berths-federation/'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: 'https://api.hel.fi/sso'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: 'api-tokens'
