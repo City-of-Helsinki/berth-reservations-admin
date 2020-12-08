@@ -26,9 +26,7 @@ export const getSummaryData = (
   sentInvoicesData: SEND_EXISTING_BERTH_INVOICES | undefined,
   loading: boolean
 ) => {
-  const totalCustomersCount =
-    (recurringInvoicesData?.sendBerthInvoicePreview?.expectedLeases ?? 0) +
-    (recurringInvoicesData?.berthLeases?.count ?? 0);
+  const totalCustomersCount = recurringInvoicesData?.sendBerthInvoicePreview?.expectedLeases;
   const sentSuccessfullyCount = sentInvoicesData?.sendExistingBerthInvoices?.result?.successfulOrders?.length;
   const failedInvoicingCount = recurringInvoicesData?.berthLeases?.count;
 
