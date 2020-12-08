@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { isBerthInvoice } from '../utils';
+import { isAdditionalProductInvoice } from '../utils';
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import Section from '../../../common/section/Section';
@@ -11,7 +11,7 @@ import { formatDate, formatPrice } from '../../../common/utils/format';
 import Text from '../../../common/text/Text';
 import styles from './invoicingHistoryCard.module.scss';
 import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/StatusLabel';
-import { getOrderStatusTKey } from '../../../common/utils/translations';
+import { getInvoiceTypeKey, getOrderStatusTKey } from '../../../common/utils/translations';
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 import { Invoice } from '../types';
 import Button from '../../../common/button/Button';
@@ -47,18 +47,16 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
     invoices.map((invoice, id) => (
       <React.Fragment key={id}>
         <button onClick={() => onClick(invoice)} className={styles.gridItem}>
-          <Text color="brand">
-            {isBerthInvoice(invoice)
-              ? t('common.terminology.berthRent')
-              : t('common.terminology.winterStoragePlaceRent')}
-          </Text>
+          <Text color="brand">{t(getInvoiceTypeKey(invoice))}</Text>
         </button>
         <div className={styles.gridItem}>
           <Text>
-            {`${formatDate(invoice.contractPeriod.startDate, i18n.language)} - ${formatDate(
-              invoice.contractPeriod.endDate,
-              i18n.language
-            )}`}
+            {isAdditionalProductInvoice(invoice)
+              ? '-'
+              : `${formatDate(invoice.contractPeriod.startDate, i18n.language)} - ${formatDate(
+                  invoice.contractPeriod.endDate,
+                  i18n.language
+                )}`}
           </Text>
         </div>
         <div className={styles.gridItem}>

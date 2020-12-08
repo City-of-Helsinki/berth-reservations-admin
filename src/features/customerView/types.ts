@@ -3,6 +3,7 @@ import {
   BerthMooringType,
   BoatCertificateType,
   LeaseStatus,
+  OrderOrderType,
   OrderStatus,
   PriceUnits,
   ProductServiceType,
@@ -113,6 +114,7 @@ export type OrderLine = {
 
 export type Invoice = {
   orderNumber?: string;
+  orderType: OrderOrderType;
   status: OrderStatus;
   contractPeriod: {
     startDate: string;

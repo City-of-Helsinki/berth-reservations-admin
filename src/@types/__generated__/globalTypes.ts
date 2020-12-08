@@ -104,6 +104,11 @@ export enum NotificationTemplateLanguage {
   SV = "SV",
 }
 
+export enum OrderOrderType {
+  ADDITIONAL_PRODUCT_ORDER = "ADDITIONAL_PRODUCT_ORDER",
+  LEASE_ORDER = "LEASE_ORDER",
+}
+
 export enum OrderStatus {
   CANCELLED = "CANCELLED",
   ERROR = "ERROR",

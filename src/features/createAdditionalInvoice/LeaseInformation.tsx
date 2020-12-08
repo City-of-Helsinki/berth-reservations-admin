@@ -15,7 +15,7 @@ export const LeaseInformation = ({ berthLease }: Props) => {
 
   return (
     <Section>
-      <LabelValuePair label={t('additionalInvoice.contract')} value={t('additionalInvoice.berthPlace')} />
+      <LabelValuePair label={t('common.terminology.contract')} value={t('additionalInvoice.berthPlace')} />
       <LabelValuePair label={t('additionalInvoice.berthPlace')} value={berthLease.harborName} />
       <LabelValuePair
         label={t('additionalInvoice.contractPeriod')}
