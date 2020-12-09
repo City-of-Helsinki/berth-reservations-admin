@@ -16,6 +16,7 @@ import {
   WinterStorageLease,
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
+import { OrderOrderType } from '../../@types/__generated__/globalTypes';
 
 export const getCustomerProfile = (
   profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
@@ -238,6 +239,7 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
         const { lease } = orderNode;
         const invoice = {
           orderNumber: orderNode.orderNumber,
+          orderType: orderNode.orderType,
           status: orderNode.status,
           contractPeriod: {
             startDate: lease.startDate,
@@ -282,6 +284,8 @@ export const isBerthInvoice = (invoice: Invoice): invoice is BerthInvoice =>
   (invoice as BerthInvoice).berthInformation !== undefined;
 export const isWinterStorageInvoice = (invoice: Invoice): invoice is WinterStorageInvoice =>
   (invoice as WinterStorageInvoice).winterStorageInformation !== undefined;
+export const isAdditionalProductInvoice = (invoice: Invoice): boolean =>
+  invoice.orderType === OrderOrderType.ADDITIONAL_PRODUCT_ORDER;
 
 export const isBerthLease = (lease: Lease): lease is BerthLease => (lease as BerthLease).harbor !== undefined;
 export const isWinterStorageLease = (lease: Lease): lease is WinterStorageLease =>

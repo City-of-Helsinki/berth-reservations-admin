@@ -9,6 +9,7 @@ import {
   APPROVE_ORDERS,
   APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
 } from '../../../common/mutations/__generated__/APPROVE_ORDERS';
+import { getProfileToken } from '../../../common/utils/auth';
 
 export type SendInvoiceFormContainerProps = {
   orderId: string;
@@ -44,6 +45,7 @@ const SendInvoiceFormContainer = ({
               orderId,
             },
           ],
+          profileToken: getProfileToken(),
         },
       },
     }).then((res) => {

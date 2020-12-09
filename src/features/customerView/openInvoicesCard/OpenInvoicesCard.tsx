@@ -8,7 +8,7 @@ import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../common/section/Section';
 import styles from './openInvoicesCard.module.scss';
 import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
-import { getProductServiceTKey } from '../../../common/utils/translations';
+import { getInvoiceTypeKey, getProductServiceTKey } from '../../../common/utils/translations';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
 import { Invoice } from '../types';
@@ -27,13 +27,7 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
 
     return (
       <CardBody key={id}>
-        <Section
-          title={
-            isBerthInvoice(invoice)
-              ? t('common.terminology.berthRent').toUpperCase()
-              : t('common.terminology.winterStoragePlaceRent').toUpperCase()
-          }
-        >
+        <Section title={t(getInvoiceTypeKey(invoice)).toUpperCase()}>
           {isBerthInvoice(invoice) && (
             <LabelValuePair
               label={t('common.terminology.berth')}

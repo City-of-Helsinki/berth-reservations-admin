@@ -99,6 +99,7 @@
       "basePrice": "Perushinta",
       "berth": "Venepaikka",
       "berthRent": "Venepaikan vuokra",
+      "additionalProductInvoice": "Lisäpalvelulasku",
       "berths": "Venepaikat",
       "boatSummerStorage": "Veneiden kesäsäilytys",
       "boats": "Veneet",
@@ -141,7 +142,8 @@
       "width": "Leveys",
       "winterStorageArea": "Talvisäilytysalue",
       "winterStoragePlaces": "Talvisäilytyspaikat",
-      "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra"
+      "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra",
+      "contract": "Sopimus"
     },
     "notification": {
       "noData": {

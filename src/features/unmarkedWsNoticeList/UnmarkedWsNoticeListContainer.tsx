@@ -27,6 +27,7 @@ import {
   APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
 } from '../../common/mutations/__generated__/APPROVE_ORDERS';
 import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
+import { getProfileToken } from '../../common/utils/auth';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'UnmarkedWsNoticeListContainer_sortByAtom',
@@ -115,6 +116,7 @@ const UnmarkedWsNoticeListContainer = () => {
       variables: {
         input: {
           orders,
+          profileToken: getProfileToken(),
         },
       },
     }).then(() => {
