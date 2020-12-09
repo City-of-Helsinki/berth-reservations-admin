@@ -1,7 +1,6 @@
 // @ts-ignore
 require('dotenv').config({ path: '.env.development.local' });
 
-const TEST_ENV_URL = 'https://venepaikka-admin.test.kuva.hel.ninja';
 const LOCAL_ENV_URL = 'http://localhost:3000';
 
 export const testUsername = (): string => {
@@ -18,13 +17,4 @@ export const testUserPassword = (): string => {
   return process.env.BROWSER_TESTS_PWD;
 };
 
-export const envUrl = (): string => {
-  switch (process.env.TEST_ENV) {
-    case 'local':
-      return LOCAL_ENV_URL;
-    case 'test':
-      return TEST_ENV_URL;
-    default:
-      return TEST_ENV_URL;
-  }
-};
+export const envUrl = (): string => LOCAL_ENV_URL;
