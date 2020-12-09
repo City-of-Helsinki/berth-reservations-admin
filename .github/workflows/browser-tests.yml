@@ -38,4 +38,6 @@ jobs:
       - name: Install dependencies
         run: yarn --prefer-offline
       - name: Run TestCafe tests
-        run: yarn browser-test:ci
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: chrome:headless --disable-gpu --window-size='1920,1080' browser-tests/ -s takeOnFails=true
