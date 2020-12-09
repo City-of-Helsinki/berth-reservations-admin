@@ -8,6 +8,10 @@ class AuthService {
   private userManager: UserManager;
 
   constructor() {
+    const {
+      REACT_APP_TUNNISTAMO_SCOPE_BERTHS: berthScope,
+      REACT_APP_TUNNISTAMO_SCOPE_PROFILE: profileScope,
+    } = process.env;
     const settings: UserManagerSettings = {
       /* eslint-disable @typescript-eslint/camelcase */
       authority: process.env.REACT_APP_TUNNISTAMO_URI,
@@ -17,7 +21,7 @@ class AuthService {
       post_logout_redirect_uri: origin,
       response_type: 'id_token token',
       silent_redirect_uri: `${origin}/silent-callback.html`,
-      scope: `openid ${process.env.REACT_APP_TUNNISTAMO_SCOPE_BERTHS} ${process.env.REACT_APP_TUNNISTAMO_SCOPE_PROFILE}`,
+      scope: `openid ${berthScope} ${profileScope}`,
       /* eslint-enable @typescript-eslint/camelcase */
     };
 
