@@ -27,5 +27,5 @@ export const berthAccessibilityFeatureFlag = () => {
 };
 
 export const additionalInvoiceFeatureFlag = () => {
-  return process.env.NODE_ENV !== 'production';
+  return process.env.REACT_APP_ENV !== 'production';
 };
