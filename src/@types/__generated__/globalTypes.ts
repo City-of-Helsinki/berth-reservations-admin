@@ -104,6 +104,11 @@ export enum NotificationTemplateLanguage {
   SV = "SV",
 }
 
+export enum OrderOrderType {
+  ADDITIONAL_PRODUCT_ORDER = "ADDITIONAL_PRODUCT_ORDER",
+  LEASE_ORDER = "LEASE_ORDER",
+}
+
 export enum OrderStatus {
   CANCELLED = "CANCELLED",
   ERROR = "ERROR",
@@ -180,6 +185,7 @@ export interface AddBoatCertificateInput {
 export interface ApproveOrderMutationInput {
   orders: (OrderApprovalInput | null)[];
   dueDate?: any | null;
+  profileToken?: string | null;
   clientMutationId?: string | null;
 }
 
@@ -380,6 +386,12 @@ export interface OrganizationInput {
 
 export interface RejectBerthApplicationMutationInput {
   id: string;
+  clientMutationId?: string | null;
+}
+
+export interface SendExistingBerthInvoicesMutationInput {
+  dueDate?: any | null;
+  profileToken: string;
   clientMutationId?: string | null;
 }
 

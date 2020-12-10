@@ -14,6 +14,7 @@ const minimumProps: UnmarkedWsNoticeDetailsProps = {
   createdAt: '2020-09-10T11:01:55Z',
   id: '1',
   status: ApplicationStatus.PENDING,
+  onStickerChange: jest.fn(),
 };
 
 const applicant = {

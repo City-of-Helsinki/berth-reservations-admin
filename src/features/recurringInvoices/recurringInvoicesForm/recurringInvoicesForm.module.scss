@@ -1,0 +1,18 @@
+@import 'containers';
+@import 'spacings';
+@import 'form';
+
+.instructions {
+  line-height: units(1.5);
+  margin-top: units(2);
+  margin-bottom: units(2);
+}
+
+.paragraph {
+  margin: units(2) 0 units(4);
+}
+
+.centered {
+  width: 50%;
+  margin: auto;
+}

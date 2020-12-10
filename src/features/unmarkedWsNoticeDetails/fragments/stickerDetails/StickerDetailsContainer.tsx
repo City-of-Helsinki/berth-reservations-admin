@@ -18,9 +18,10 @@ import hdsToast from '../../../../common/toast/hdsToast';
 interface StickerDetailsContainerProps {
   leaseId: string;
   leaseStatus: LeaseStatus;
+  onStickerChange?(): void;
 }
 
-const StickerDetailsContainer = ({ leaseId, leaseStatus }: StickerDetailsContainerProps) => {
+const StickerDetailsContainer = ({ leaseId, leaseStatus, onStickerChange }: StickerDetailsContainerProps) => {
   const { data, loading } = useQuery<UNMARKED_WINTER_STORAGE_STICKER, UNMARKED_WINTER_STORAGE_STICKER_VARS>(
     UNMARKED_WINTER_STORAGE_STICKER_QUERY,
     {
@@ -43,14 +44,16 @@ const StickerDetailsContainer = ({ leaseId, leaseStatus }: StickerDetailsContain
   const handleAssignNewStickerNumber =
     leaseStatus === LeaseStatus.PAID
       ? () =>
-          assignNewStickerNumber({ variables: { input: { leaseId: leaseId } } }).then(() => {
-            hdsToast({
-              translated: true,
-              labelText: 'toast.stickerNumChanged.label',
-              text: 'toast.stickerNumChanged.description',
-              type: 'success',
-            });
-          })
+          assignNewStickerNumber({ variables: { input: { leaseId: leaseId } } })
+            .then(() => {
+              hdsToast({
+                translated: true,
+                labelText: 'toast.stickerNumChanged.label',
+                text: 'toast.stickerNumChanged.description',
+                type: 'success',
+              });
+            })
+            .then(() => onStickerChange?.())
       : undefined;
 
   return (

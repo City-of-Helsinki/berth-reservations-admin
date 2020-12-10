@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, PriceUnits, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderOrderType, OrderStatus, ProductServiceType, PriceUnits, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_CUSTOMER
@@ -319,6 +319,7 @@ export type INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease = INDIVIDUAL_CUS
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node {
   __typename: "OrderNode";
   orderNumber: string;
+  orderType: OrderOrderType;
   dueDate: any;
   totalPrice: any;
   price: any;

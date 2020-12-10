@@ -9,7 +9,7 @@ exports[`SendInvoiceFormContainer renders normally 1`] = `
     class="heading"
   >
     <h4
-      class="text brand h4 titleText"
+      class="text brand h4"
     >
       LÄHETÄ LASKU
     </h4>

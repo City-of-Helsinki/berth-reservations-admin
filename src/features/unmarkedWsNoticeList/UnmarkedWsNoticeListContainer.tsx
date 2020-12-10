@@ -27,6 +27,7 @@ import {
   APPROVE_ORDERSVariables as APPROVE_ORDERS_VARS,
 } from '../../common/mutations/__generated__/APPROVE_ORDERS';
 import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
+import { getProfileToken } from '../../common/utils/auth';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'UnmarkedWsNoticeListContainer_sortByAtom',
@@ -56,17 +57,19 @@ const UnmarkedWsNoticeListContainer = () => {
   const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
 
-  const { loading, data } = useQuery<UNMARKED_WINTER_STORAGE_NOTICES, UNMARKED_WINTER_STORAGE_NOTICES_VARS>(
+  const queryVariables = {
+    first: pageSize,
+    after: cursor,
+    orderBy,
+    statuses: statusFilter ? [statusFilter] : undefined,
+    nameFilter,
+  };
+
+  const { loading, data, refetch } = useQuery<UNMARKED_WINTER_STORAGE_NOTICES, UNMARKED_WINTER_STORAGE_NOTICES_VARS>(
     UNMARKED_WINTER_STORAGE_NOTICES_QUERY,
     {
       fetchPolicy: 'no-cache',
-      variables: {
-        first: pageSize,
-        after: cursor,
-        orderBy,
-        statuses: statusFilter ? [statusFilter] : undefined,
-        nameFilter,
-      },
+      variables: queryVariables,
     }
   );
 
@@ -113,6 +116,7 @@ const UnmarkedWsNoticeListContainer = () => {
       variables: {
         input: {
           orders,
+          profileToken: getProfileToken(),
         },
       },
     }).then(() => {
@@ -148,6 +152,7 @@ const UnmarkedWsNoticeListContainer = () => {
         goToPage(0);
       }}
       onSavePdf={onSavePdf}
+      onStickerChange={() => refetch(queryVariables)}
     />
   );
 };

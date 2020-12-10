@@ -52,6 +52,7 @@ export interface UnmarkedWsNoticeListProps {
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   onNameFilterChange(nameFilter: string | undefined): void;
   onSavePdf(customers: CustomerInfo[]): void;
+  onStickerChange(): void;
 }
 
 type ColumnType = Column<UnmarkedWinterStorageNotice>;
@@ -77,6 +78,7 @@ const UnmarkedWsNoticeList = ({
   nameFilter,
   onNameFilterChange,
   onSavePdf,
+  onStickerChange,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<UnmarkedWinterStorageNotice>(
@@ -144,7 +146,7 @@ const UnmarkedWsNoticeList = ({
         initialState={{ sortBy, selectedRowIds: selectedRowIdsDict }}
         renderSubComponent={(row) => (
           <Grid colsCount={3}>
-            <UnmarkedWsNoticeDetails {...row.original} />
+            <UnmarkedWsNoticeDetails {...row.original} onStickerChange={onStickerChange} />
           </Grid>
         )}
         renderMainHeader={() => t('unmarkedWsNotices.list.title')}

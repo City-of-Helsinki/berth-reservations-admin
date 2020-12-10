@@ -238,6 +238,7 @@ const Table = <D extends { id: string }>({
       autoResetSortBy: !skipPageResetRef.current,
       autoResetSelectedRows: !skipPageResetRef.current,
       autoResetFilters: !skipPageResetRef.current,
+      autoResetExpanded: !skipPageResetRef.current,
       getRowId: useCallback((row: D, relativeIndex: number) => {
         return row.id ? row.id : `${relativeIndex}`;
       }, []),

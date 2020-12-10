@@ -24,6 +24,7 @@ import WinterStorageApplicationList from '../features/winterStorageApplicationLi
 import WinterStorageApplicationView from '../features/winterStorageApplicationView/WinterStorageApplicationViewContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
+import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
 
 const App = () => {
   return (
@@ -57,6 +58,7 @@ const App = () => {
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                     <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />
+                    <PrivateRoute exact path="/recurring-invoices" component={RecurringInvoices} />
                   </Switch>
                 </Page>
               </Switch>

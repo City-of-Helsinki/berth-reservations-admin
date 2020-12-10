@@ -8,6 +8,8 @@ import {
   ProductServiceType,
 } from '../../@types/__generated__/globalTypes';
 import { formatPercentage } from './format';
+import { Invoice } from '../../features/customerView/types';
+import { isAdditionalProductInvoice, isBerthInvoice } from '../../features/customerView/utils';
 
 export const getMooringTypeTKey = (mooringType: BerthMooringType) => {
   switch (mooringType) {
@@ -125,4 +127,14 @@ export const getPriceUnits = (unit: PriceUnits) => {
 
 export const getCustomerGroupKey = (customerGroup: CustomerGroup | null): string => {
   return customerGroup ? `common.customerGroups.${customerGroup}` : 'common.customerGroups.PRIVATE';
+};
+
+export const getInvoiceTypeKey = (invoice: Invoice): string => {
+  if (isAdditionalProductInvoice(invoice)) {
+    return 'common.terminology.additionalProductInvoice';
+  } else if (isBerthInvoice(invoice)) {
+    return 'common.terminology.berthRent';
+  } else {
+    return 'common.terminology.winterStoragePlaceRent';
+  }
 };

@@ -1,6 +1,11 @@
 # Berth Reservation Admin
 
-[![Build Status](https://travis-ci.com/City-of-Helsinki/berth-reservations-admin.svg?branch=develop)](https://travis-ci.com/City-of-Helsinki/berth-reservations-admin) [![Codecov](https://codecov.io/gh/City-of-Helsinki/berth-reservations-admin/branch/develop/graph/badge.svg)](https://codecov.io/gh/City-of-Helsinki/berth-reservations-admin/branch/develop/graph/badge.svg) [![Dependency Status](https://img.shields.io/david/City-of-Helsinki/berth-reservations-admin?branch=develop)](https://img.shields.io/david/City-of-Helsinki/berth-reservations-admin?branch=develop) [![devDependencies Status](https://david-dm.org/city-of-helsinki/berth-reservations-admin/dev-status.svg?branch=develop)](https://david-dm.org/city-of-helsinki/berth-reservations-admin?type=dev&branch=develop) [![GitHub license](https://img.shields.io/github/license/City-of-Helsinki/berth-reservations-admin)](https://img.shields.io/github/license/City-of-Helsinki/berth-reservations-admin)
+[![CI status](https://github.com/City-of-Helsinki/berth-reservations-admin/workflows/CI/badge.svg)](https://github.com/City-of-Helsinki/berth-reservations-admin/actions?query=workflow%3ACI)
+[![Browser Tests status](https://github.com/City-of-Helsinki/berth-reservations-admin/workflows/Browser%20Tests/badge.svg)](https://github.com/City-of-Helsinki/berth-reservations-admin/actions?query=workflow%3A%22Browser+Tests%22)
+[![Codecov](https://codecov.io/gh/City-of-Helsinki/berth-reservations-admin/branch/develop/graph/badge.svg)](https://codecov.io/gh/City-of-Helsinki/berth-reservations-admin/branch/develop/graph/badge.svg)
+[![Dependency Status](https://img.shields.io/david/City-of-Helsinki/berth-reservations-admin?branch=develop)](https://img.shields.io/david/City-of-Helsinki/berth-reservations-admin?branch=develop)
+[![devDependencies Status](https://david-dm.org/city-of-helsinki/berth-reservations-admin/dev-status.svg?branch=develop)](https://david-dm.org/city-of-helsinki/berth-reservations-admin?type=dev&branch=develop)
+[![GitHub license](https://img.shields.io/github/license/City-of-Helsinki/berth-reservations-admin)](https://img.shields.io/github/license/City-of-Helsinki/berth-reservations-admin)
 
 Staff interface for Venepaikka.
 
@@ -92,15 +97,15 @@ yarn test
 
 2. Build Docker image with:
 
-    ```bash
-    docker build -t berth-reservation-admin .
-    ```
+   ```bash
+   docker build -t berth-reservation-admin .
+   ```
 
 3. Start Docker container with:
 
-    ```bash
-    docker container run -p 80:80 -d berth-reservation-admin
-    ```
+   ```bash
+   docker container run -p 80:80 -d berth-reservation-admin
+   ```
 
 4. Open [http://localhost](http://localhost).
 
@@ -153,11 +158,12 @@ Staging deployment is handled by CI/CD pipeline for new commits on `develop` bra
 
 ## Browser tests
 
-Browser tests are written in TypeScript with [TestCafe](https://devexpress.github.io/testcafe/) framework and they are run against [test environment](https://venepaikka-admin.test.kuva.hel.ninja) in CI as Travis Cron Job (daily) with Chrome (headless mode).
+Browser tests are written in TypeScript with [TestCafe](https://devexpress.github.io/testcafe/) framework and they are run against [test environment](https://venepaikka-admin.test.kuva.hel.ninja) in CI as GitHub Actions Cron Job (daily) with Chrome (headless mode).
 
 ### How to run locally
 
 Set test user login credentials
+
 - Open `.env.development.local` and set `BROWSER_TESTS_UID` and `BROWSER_TESTS_PWD`
 - TBD: Link to values
 
@@ -171,4 +177,4 @@ Running against local environment
 
 ### CI setup
 
-Travis runs the `yarn browser-test:ci` script. Known issue: screen shots are taken on failure, but we cannot access them at the moment. We would need to setup Travis `artifacts` plugin for that, but it seems that there are no suitable AWS S3 we could use.
+GitHub Actions runs the `yarn browser-test:ci` script.

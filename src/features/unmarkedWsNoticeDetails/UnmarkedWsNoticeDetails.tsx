@@ -39,6 +39,7 @@ export interface UnmarkedWsNoticeDetailsProps {
   status: ApplicationStatus;
   leaseStatus?: LeaseStatus;
   summaryInformation?: SummaryInformation;
+  onStickerChange?(): void;
 }
 
 const UnmarkedWsNoticeDetails = ({
@@ -57,6 +58,7 @@ const UnmarkedWsNoticeDetails = ({
   summaryInformation,
   leaseStatus,
   leaseId,
+  onStickerChange,
 }: UnmarkedWsNoticeDetailsProps) => {
   return (
     <>
@@ -77,7 +79,9 @@ const UnmarkedWsNoticeDetails = ({
         />
         <SummaryDetails summaryInformation={summaryInformation} />
       </div>
-      {leaseId && leaseStatus && <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} />}
+      {leaseId && leaseStatus && (
+        <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} onStickerChange={onStickerChange} />
+      )}
     </>
   );
 };
