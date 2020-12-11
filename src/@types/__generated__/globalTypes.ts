@@ -62,6 +62,14 @@ export enum ContactMethod {
   SMS = "SMS",
 }
 
+export enum ContractStatus {
+  CANCELLED = "CANCELLED",
+  DELETED = "DELETED",
+  NEW = "NEW",
+  PENDING = "PENDING",
+  SIGNED = "SIGNED",
+}
+
 export enum CustomerGroup {
   COMPANY = "COMPANY",
   INTERNAL = "INTERNAL",
@@ -511,7 +519,6 @@ export interface UpdateHarborMutationInput {
   location?: any | null;
   imageLink?: string | null;
   municipalityId?: string | null;
-  imageFile?: any | null;
   addMapFiles?: (any | null)[] | null;
   availabilityLevelId?: string | null;
   name?: string | null;

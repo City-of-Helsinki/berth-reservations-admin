@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
+import { MockedProvider } from '@apollo/react-testing';
 
 import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetails';
 import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
@@ -85,9 +86,11 @@ const lease: ApplicationDetailsProps['lease'] = {
 describe('ApplicationDetails', () => {
   const getWrapper = (props?: Partial<ApplicationDetailsProps>) =>
     mount(
-      <HashRouter>
-        <ApplicationDetails {...minimumProps} {...props} />
-      </HashRouter>
+      <MockedProvider>
+        <HashRouter>
+          <ApplicationDetails {...minimumProps} {...props} />
+        </HashRouter>
+      </MockedProvider>
     );
 
   it('renders normally with minimum props', () => {
