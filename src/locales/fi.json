@@ -602,7 +602,7 @@
     }
   },
   "recurringInvoices": {
-    "title": "Laskatus",
+    "title": "Laskutus",
     "sendInvoices": "Lähetä venepaikkojen laskut",
     "failedInvoicesTable": {
       "header": "Kausilasku ei lähetetty",
