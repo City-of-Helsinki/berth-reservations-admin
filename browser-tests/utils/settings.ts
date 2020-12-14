@@ -15,4 +15,4 @@ export const testUserPassword = (): string => {
   return process.env.BROWSER_TESTS_PWD;
 };
 
-export const envUrl = (): string => process.env.REACT_APP_LOCAL_ENV_URL;
+export const envUrl = (): string => process.env.BROWSER_TESTS_LOCAL_ENV_URL;
