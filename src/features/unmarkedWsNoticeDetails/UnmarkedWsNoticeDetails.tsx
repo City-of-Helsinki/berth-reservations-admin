@@ -8,6 +8,7 @@ import ApplicantDetails from './fragments/applicantDetails/ApplicantDetails';
 import BoatDetails from './fragments/boatDetails/BoatDetails';
 import SummaryDetails from './fragments/summaryDetails/SummaryDetails';
 import StickerDetails from './fragments/stickerDetails/StickerDetailsContainer';
+import ContractDetails from './fragments/contractDetails/WinterStorageContractDetailsContainer';
 
 interface SummaryInformation {
   acceptBoatingNewsletter: boolean;
@@ -79,8 +80,13 @@ const UnmarkedWsNoticeDetails = ({
         />
         <SummaryDetails summaryInformation={summaryInformation} />
       </div>
-      {leaseId && leaseStatus && (
-        <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} onStickerChange={onStickerChange} />
+      {leaseId && (
+        <div>
+          {leaseStatus && (
+            <StickerDetails leaseId={leaseId} leaseStatus={leaseStatus} onStickerChange={onStickerChange} />
+          )}
+          <ContractDetails leaseId={leaseId} />
+        </div>
       )}
     </>
   );
