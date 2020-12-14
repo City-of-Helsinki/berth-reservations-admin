@@ -23,6 +23,7 @@ build-review:
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_CLIENT_ID: 'https://api.hel.fi/auth/berths-admin-ui'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_BERTHS: 'https://api.hel.fi/auth/berths'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_PROFILE: 'https://api.hel.fi/auth/helsinkiprofile'
+    DOCKER_BUILD_ARG_REACT_APP_LOCAL_ENV_URL: 'http://localhost:3000'
     DOCKER_BUILD_ARG_REACT_APP_SENTRY_ENVIRONMENT: 'review'
   only:
     refs:
@@ -42,6 +43,7 @@ build-staging:
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_CLIENT_ID: 'https://api.hel.fi/auth/berths-admin-ui'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_BERTHS: 'https://api.hel.fi/auth/berths'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_PROFILE: 'https://api.hel.fi/auth/helsinkiprofile'
+    DOCKER_BUILD_ARG_REACT_APP_LOCAL_ENV_URL: 'http://localhost:3000'
     DOCKER_BUILD_ARG_REACT_APP_SENTRY_ENVIRONMENT: 'staging'
   only:
     refs:
@@ -61,6 +63,7 @@ build-production:
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_CLIENT_ID: 'https://api.hel.fi/auth/berths-admin-ui'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_BERTHS: 'https://api.hel.fi/auth/berths'
     DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_SCOPE_PROFILE: 'https://api.hel.fi/auth/helsinkiprofile'
+    DOCKER_BUILD_ARG_REACT_APP_LOCAL_ENV_URL: 'http://localhost:3000'
     DOCKER_BUILD_ARG_REACT_APP_SENTRY_ENVIRONMENT: 'production'
   only:
     refs:
