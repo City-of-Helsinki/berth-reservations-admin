@@ -5,15 +5,18 @@ import { PureQueryOptions } from 'apollo-client';
 import styles from './pricing.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import BerthPricing, { BerthPricingProps } from './berthPricing/BerthPricing';
+import HarborTiers, { HarborTiersProps } from './harborTiers/HarborTiers';
 import WinterStoragePricing, { WinterStoragePricingProps } from './winterStoragePricing/WinterStoragePricing';
 import HarborServicePricing, { HarborServicePricingProps } from './harborServicePricing/HarborServicePricing';
 import AdditionalServicePricing, {
   AdditionalServicePricingProps,
 } from './additionalServicePricing/AdditionalServicePricing';
 import PageContent from '../../common/pageContent/PageContent';
+import Grid from '../../common/grid/Grid';
 
 export interface PricingProps {
   berthsData: BerthPricingProps['data'];
+  harborTiersData: HarborTiersProps['data'];
   winterStorageData: WinterStoragePricingProps['data'];
   harborServicesData: HarborServicePricingProps['data'];
   additionalServicesData: AdditionalServicePricingProps['data'];
@@ -27,6 +30,7 @@ export interface PricingProps {
 
 const Pricing = ({
   berthsData,
+  harborTiersData,
   winterStorageData,
   harborServicesData,
   additionalServicesData,
@@ -39,7 +43,10 @@ const Pricing = ({
   return (
     <PageContent className={styles.pricing}>
       <PageTitle title={t('pricing.title')} />
-      <BerthPricing data={berthsData} loading={loading} refetchQueries={refetchQueries} />
+      <Grid colsCount={2} className={styles.twoCols}>
+        <BerthPricing data={berthsData} loading={loading} refetchQueries={refetchQueries} />
+        <HarborTiers data={harborTiersData} loading={loading} />
+      </Grid>
       <WinterStoragePricing data={winterStorageData} loading={loading} />
       <HarborServicePricing data={harborServicesData} loading={loading} />
       <AdditionalServicePricing {...additionalServicesModal} data={additionalServicesData} loading={loading} />

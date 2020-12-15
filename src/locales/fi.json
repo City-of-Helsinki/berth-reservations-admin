@@ -571,10 +571,12 @@
     "berths": {
       "title": "Venepaikka",
       "description": "Perushinta. Hinnat sisältävät alv 24 %.",
-      "width": "Leveys",
-      "privateCustomer": "Yksityinen",
-      "company": "Yritys",
-      "period": "Aika"
+      "width": "Leveys"
+    },
+    "harborTiers": {
+      "title": "Satamaan liitetyt maksuluokat",
+      "harbor": "Satama",
+      "tiers": "Maksuluokat"
     },
     "winterStorage": {
       "title": "Talvisäilytyspaikka",
@@ -613,7 +615,6 @@
     },
     "summary": {
       "invoicesLeft": "Lähettämättömiä jäljellä",
-      "sentSuccessfully": "Lähetys onnistui",
       "failedInvoicing": "Lähetys epäonnistui"
     },
     "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ failedInvoicesCount }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",

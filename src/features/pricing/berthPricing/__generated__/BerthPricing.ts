@@ -3,32 +3,30 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { PriceUnits } from "./../../../../@types/__generated__/globalTypes";
+import { PriceUnits, PlaceProductTaxEnum } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: BerthPricing
 // ====================================================
 
-export interface BerthPricing_edges_node_defaultProduct {
+export interface BerthPricing_edges_node {
   __typename: "BerthProductNode";
   id: string;
+  minWidth: any;
+  maxWidth: any;
+  tier1Price: any;
+  tier2Price: any;
+  tier3Price: any;
   priceUnit: PriceUnits;
-  priceValue: any;
-}
-
-export interface BerthPricing_edges_node {
-  __typename: "BerthPriceGroupNode";
-  id: string;
-  name: string;
-  defaultProduct: BerthPricing_edges_node_defaultProduct | null;
+  taxPercentage: PlaceProductTaxEnum;
 }
 
 export interface BerthPricing_edges {
-  __typename: "BerthPriceGroupNodeEdge";
+  __typename: "BerthProductNodeEdge";
   node: BerthPricing_edges_node | null;
 }
 
 export interface BerthPricing {
-  __typename: "BerthPriceGroupNodeConnection";
+  __typename: "BerthProductNodeConnection";
   edges: (BerthPricing_edges | null)[];
 }

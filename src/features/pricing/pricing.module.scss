@@ -1,6 +1,10 @@
 @import 'spacings';
 
 .pricing {
+  .twoCols {
+    gap: units(2);
+  }
+
   > :not(:first-child) {
     margin-top: units(1);
   }
