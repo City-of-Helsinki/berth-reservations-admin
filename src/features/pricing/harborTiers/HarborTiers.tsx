@@ -28,6 +28,8 @@ const HarborTiers = ({ className, loading, data }: HarborTiersProps) => {
     {
       Header: t('pricing.harborTiers.harbor') || '',
       accessor: 'name',
+      width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
       Cell: ({ cell }) => <InternalLink to={`/harbors/${cell.row.original.id}`}>{cell.value}</InternalLink>,
     },
     {
