@@ -37,20 +37,24 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
       Header: t('pricing.berths.width') || '',
       accessor: 'name',
       width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
     },
     {
       Header: getPriceTier(PriceTier.TIER_1),
       accessor: PriceTier.TIER_1,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
     },
     {
       Header: getPriceTier(PriceTier.TIER_2),
       accessor: PriceTier.TIER_2,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
     },
     {
       Header: getPriceTier(PriceTier.TIER_3),
       accessor: PriceTier.TIER_3,
+      minWidth: COLUMN_WIDTH.S,
       Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
     },
   ];
