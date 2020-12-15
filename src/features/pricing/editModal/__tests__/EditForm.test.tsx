@@ -4,22 +4,12 @@ import { Form } from 'formik';
 import { act } from 'react-dom/test-utils';
 
 import EditForm, { EditPricingFormProps, EDIT_FORM_TYPE } from '../EditForm';
-import BerthsFields from '../fields/BerthsFields';
 import WinterStorageFields from '../fields/WinterStorageFields';
 import HarborServicesFields from '../fields/HarborServicesFields';
 import { BerthPrice } from '../../berthPricing/BerthPricing';
 import { WinterStoragePrice } from '../../winterStoragePricing/WinterStoragePricing';
 import { HarborService } from '../../harborServicePricing/HarborServicePricing';
 import { PeriodType, ProductServiceType, PriceUnits } from '../../../../@types/__generated__/globalTypes';
-
-const berthsData: BerthPrice = {
-  id: '1',
-  name: 'Product dot-com',
-  privateCustomer: 116,
-  company: 236,
-  period: PeriodType.SEASON,
-  productId: '632be637-304e-4501-8642-f24c5b3c5d5f',
-};
 
 const winterStorageData: WinterStoragePrice = {
   id: '1',
@@ -53,7 +43,6 @@ describe('EditForm', () => {
 
   // [name, component, data, formType]
   const cases: [string, () => JSX.Element, BerthPrice | WinterStoragePrice | HarborService, EDIT_FORM_TYPE][] = [
-    ['berths', BerthsFields, berthsData, EDIT_FORM_TYPE.BERTHS],
     ['winter storage', WinterStorageFields, winterStorageData, EDIT_FORM_TYPE.WINTER_STORAGE],
     ['harbor services', HarborServicesFields, harborServicesData, EDIT_FORM_TYPE.HARBOR_SERVICES],
   ];

@@ -151,6 +151,12 @@ export enum PlaceProductTaxEnum {
   TAX_24_00 = "TAX_24_00",
 }
 
+export enum PriceTier {
+  TIER_1 = "TIER_1",
+  TIER_2 = "TIER_2",
+  TIER_3 = "TIER_3",
+}
+
 export enum PriceUnits {
   AMOUNT = "AMOUNT",
   PERCENTAGE = "PERCENTAGE",
@@ -250,13 +256,6 @@ export interface CreateBerthMutationInput {
   clientMutationId?: string | null;
 }
 
-export interface CreateBerthProductMutationInput {
-  priceValue: any;
-  priceGroupId: string;
-  harborId?: string | null;
-  clientMutationId?: string | null;
-}
-
 export interface CreateBerthServicesProfileMutationInput {
   invoicingType?: InvoicingType | null;
   comment?: string | null;
@@ -313,6 +312,7 @@ export interface CreatePierMutationInput {
   wasteCollection?: boolean | null;
   lighting?: boolean | null;
   personalElectricity?: boolean | null;
+  priceTier: PriceTier;
   clientMutationId?: string | null;
 }
 
@@ -458,14 +458,6 @@ export interface UpdateBerthMutationInput {
   clientMutationId?: string | null;
 }
 
-export interface UpdateBerthProductMutationInput {
-  id: string;
-  priceValue?: any | null;
-  priceGroupId?: string | null;
-  harborId?: string | null;
-  clientMutationId?: string | null;
-}
-
 export interface UpdateBerthServicesProfileMutationInput {
   invoicingType?: InvoicingType | null;
   comment?: string | null;
@@ -547,6 +539,7 @@ export interface UpdatePierMutationInput {
   wasteCollection?: boolean | null;
   lighting?: boolean | null;
   personalElectricity?: boolean | null;
+  priceTier?: PriceTier | null;
   id: string;
   clientMutationId?: string | null;
 }
