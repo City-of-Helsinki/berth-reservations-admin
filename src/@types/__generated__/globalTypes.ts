@@ -256,15 +256,6 @@ export interface CreateBerthMutationInput {
   clientMutationId?: string | null;
 }
 
-export interface CreateBerthProductMutationInput {
-  minWidth: any;
-  maxWidth: any;
-  tier1Price: any;
-  tier2Price: any;
-  tier3Price: any;
-  clientMutationId?: string | null;
-}
-
 export interface CreateBerthServicesProfileMutationInput {
   invoicingType?: InvoicingType | null;
   comment?: string | null;
@@ -464,16 +455,6 @@ export interface UpdateBerthMutationInput {
   depth?: number | null;
   mooringType?: BerthMooringType | null;
   id: string;
-  clientMutationId?: string | null;
-}
-
-export interface UpdateBerthProductMutationInput {
-  id: string;
-  minWidth?: any | null;
-  maxWidth?: any | null;
-  tier1Price?: any | null;
-  tier2Price?: any | null;
-  tier3Price?: any | null;
   clientMutationId?: string | null;
 }
 
