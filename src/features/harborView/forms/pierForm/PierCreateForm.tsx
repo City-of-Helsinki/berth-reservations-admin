@@ -34,9 +34,10 @@ const PierCreateForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
     <PierForm
       onSubmitText={t('forms.common.create')}
       onCancel={onCancel}
-      onSubmit={(values) =>
-        createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values))
-      }
+      onSubmit={(values) => {
+        // TODO: to be fixed in https://github.com/City-of-Helsinki/berth-reservations-admin/pull/357
+        // createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values));
+      }}
       isSubmitting={isSubmitting}
       suitableBoatTypeOptions={suitableBoatTypeOptions}
     />
