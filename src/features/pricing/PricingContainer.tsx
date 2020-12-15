@@ -62,7 +62,8 @@ const PricingContainer = () => {
 
   return (
     <Pricing
-      berthsData={data?.berthPriceGroups}
+      berthsData={data?.berthProducts}
+      harborTiersData={data?.harbors}
       winterStorageData={data?.winterStorageAreas}
       harborServicesData={data?.additionalProducts}
       additionalServicesData={data?.optionalProducts}

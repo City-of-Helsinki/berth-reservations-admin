@@ -7,7 +7,7 @@ import { ADDITIONAL_SERVICE_PRICING_FRAGMENT } from './additionalServicePricing/
 
 export const PRICING_QUERY = gql`
   query PRICING {
-    berthPriceGroups {
+    berthProducts {
       ...BerthPricing
     }
     winterStorageAreas {
