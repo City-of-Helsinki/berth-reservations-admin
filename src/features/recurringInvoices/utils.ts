@@ -2,7 +2,6 @@ import i18next from 'i18next';
 
 import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
 import { FailedInvoices } from './RecurringInvoices';
-import { SEND_EXISTING_BERTH_INVOICES } from './__generated__/SEND_EXISTING_BERTH_INVOICES';
 
 export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
   if (!data?.berthLeases) return [];
