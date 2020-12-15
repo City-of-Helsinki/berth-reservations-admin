@@ -13,7 +13,7 @@ exports[`PricingPage renders normally 1`] = `
     class="grid cols2 twoCols"
   >
     <div
-      class="card"
+      class="card berthPricing"
     >
       <div
         class="cardHeader"
@@ -194,32 +194,44 @@ exports[`PricingPage renders normally 1`] = `
                     style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
                   >
                     <div
-                      class="tableCell"
+                      class="tableCell tableCell"
                       role="cell"
                       style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
                     >
                       3,0 m - 7,0 m
                     </div>
                     <div
-                      class="tableCell"
+                      class="tableCell tableCell"
                       role="cell"
                       style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                     >
-                      50,00 €
+                      <div
+                        class="grayCell"
+                      >
+                        50,00 €
+                      </div>
                     </div>
                     <div
-                      class="tableCell"
+                      class="tableCell tableCell"
                       role="cell"
                       style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                     >
-                      75,00 €
+                      <div
+                        class="grayCell"
+                      >
+                        75,00 €
+                      </div>
                     </div>
                     <div
-                      class="tableCell"
+                      class="tableCell tableCell"
                       role="cell"
                       style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                     >
-                      100,00 €
+                      <div
+                        class="grayCell"
+                      >
+                        100,00 €
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -252,7 +264,7 @@ exports[`PricingPage renders normally 1`] = `
             <div
               class="table basic noMainHeader"
               role="table"
-              style="min-width: 75px;"
+              style="min-width: 300px;"
             >
               <div
                 class="stickyHeaders"
@@ -260,13 +272,13 @@ exports[`PricingPage renders normally 1`] = `
                 <div
                   class="header"
                   role="row"
-                  style="display: flex; flex: 1 0 auto; min-width: 75px;"
+                  style="display: flex; flex: 1 0 auto; min-width: 300px;"
                 >
                   <div
                     class="headerCell"
                     colspan="1"
                     role="columnheader"
-                    style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
+                    style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     Satama
@@ -336,12 +348,12 @@ exports[`PricingPage renders normally 1`] = `
                 >
                   <div
                     role="row"
-                    style="display: flex; flex: 1 0 auto; min-width: 75px;"
+                    style="display: flex; flex: 1 0 auto; min-width: 300px;"
                   >
                     <div
                       class="tableCell"
                       role="cell"
-                      style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
+                      style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
                     >
                       <a
                         class="internalLink brand"
