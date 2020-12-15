@@ -25,7 +25,3 @@ export const queueFeatureFlag = () => {
 export const berthAccessibilityFeatureFlag = () => {
   return false;
 };
-
-export const additionalInvoiceFeatureFlag = () => {
-  return process.env.REACT_APP_ENV !== 'production';
-};
