@@ -4,6 +4,7 @@ import {
   CustomerGroup,
   OrderStatus,
   PeriodType,
+  PriceTier,
   PriceUnits,
   ProductServiceType,
 } from '../../@types/__generated__/globalTypes';
@@ -122,6 +123,20 @@ export const getPriceUnits = (unit: PriceUnits) => {
 
     default:
       return unit;
+  }
+};
+
+export const getPriceTier = (tier: PriceTier) => {
+  switch (tier) {
+    case PriceTier.TIER_1:
+      return '1';
+    case PriceTier.TIER_2:
+      return '2';
+    case PriceTier.TIER_3:
+      return '3';
+
+    default:
+      return tier;
   }
 };
 
