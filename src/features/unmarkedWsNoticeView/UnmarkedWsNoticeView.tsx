@@ -117,6 +117,7 @@ const UnmarkedWsNoticeView = ({
           }
           className={styles.fullWidth}
           customerEmail={customerProfile?.primaryEmail ?? null}
+          leaseStatus={leaseStatus}
           order={order}
           placeDetails={<p>{t('common.terminology.unmarkedWinterStoragePlace')}</p>}
           placeName={noticeDetails.choice.winterStorageAreaName}
