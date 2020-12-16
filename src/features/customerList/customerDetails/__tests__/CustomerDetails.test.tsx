@@ -1,16 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 
 import CustomerDetails, { CustomerDetailsProps } from '../CustomerDetails';
 import {
   customerListApplications,
   customerListBerthLeases,
-  customerListInvoices,
   customerListBoats,
   customerListEntry,
+  customerListInvoices,
   customerListWinterStoragePlaces,
 } from '../__mocks__/mockData';
 import { CustomerListBerthLeases } from '../../types';
+import { LeaseStatus } from '../../../../@types/__generated__/globalTypes';
 
 const mockProps = {
   ...customerListEntry,
@@ -30,29 +31,31 @@ describe('CustomerDetails', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
-  it('renders a horizontal rule if there are inactive berth leases', () => {
+  const pastBerthsTitleSelector = (wrapper: ReactWrapper) => wrapper.find('Section').at(4).find('h4').at(0).text();
+
+  it('renders past berths if there are inactive berth leases', () => {
     const berths: CustomerListBerthLeases[] = [
-      { id: '123', isActive: false, title: 'Pursilahdenranta B31' },
-      { id: '321', isActive: true, title: 'Strömsinlahdenranta B31' },
+      { id: '123', isActive: false, status: LeaseStatus.PAID, title: 'Pursilahdenranta B31' },
+      { id: '321', isActive: true, status: LeaseStatus.PAID, title: 'Strömsinlahdenranta B31' },
     ];
 
     const wrapper = getWrapper({
       berths,
     });
 
-    expect(wrapper.find('hr').exists()).toEqual(true);
+    expect(pastBerthsTitleSelector(wrapper)).toEqual('AIEMMAT VENEPAIKAT');
   });
 
-  it('renders no horizontal rule if there are no inactive berth leases', () => {
+  it('renders no past berths if there are no inactive berth leases', () => {
     const berths: CustomerListBerthLeases[] = [
-      { id: '123', isActive: true, title: 'Pursilahdenranta B31' },
-      { id: '321', isActive: true, title: 'Strömsinlahdenranta B31' },
+      { id: '123', isActive: true, status: LeaseStatus.PAID, title: 'Pursilahdenranta B31' },
+      { id: '321', isActive: true, status: LeaseStatus.PAID, title: 'Strömsinlahdenranta B31' },
     ];
 
     const wrapper = getWrapper({
       berths,
     });
 
-    expect(wrapper.find('hr').exists()).toEqual(false);
+    expect(pastBerthsTitleSelector(wrapper)).not.toEqual('AIEMMAT VENEPAIKAT');
   });
 });

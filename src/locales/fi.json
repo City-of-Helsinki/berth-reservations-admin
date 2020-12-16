@@ -472,6 +472,7 @@
   "customerList": {
     "title": "Asiakkaat",
     "addNewCustomer": "Lisää uusi asiakas",
+    "pastBerths": "Aiemmat venepaikat",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",
