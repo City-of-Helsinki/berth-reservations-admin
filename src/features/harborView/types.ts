@@ -1,4 +1,5 @@
 import { INDIVIDUAL_HARBOR_harbor_properties as HarborProperties } from './__generated__/INDIVIDUAL_HARBOR';
+import { PriceTier } from '../../@types/__generated__/globalTypes';
 
 interface PierProps {
   electricity: boolean;
@@ -60,6 +61,7 @@ export type Pier = {
   water: boolean;
   lighting: boolean;
   gate: boolean;
+  priceTier: PriceTier | null;
   suitableBoatTypes: string[];
 };
 

@@ -1,6 +1,6 @@
 import { PureQueryOptions } from 'apollo-client';
 
-import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
+import { BerthMooringType, PriceTier } from '../../../@types/__generated__/globalTypes';
 import { PersistedFile } from '../../../common/fileList/FileList';
 
 export interface FormProps<T> {
@@ -41,6 +41,7 @@ export type Pier = {
   water?: boolean;
   gate?: boolean;
   personalElectricity?: boolean;
+  priceTier?: PriceTier;
 };
 
 export interface Harbor {

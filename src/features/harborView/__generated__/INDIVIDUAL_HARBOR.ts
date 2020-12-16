@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthMooringType, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
+import { PriceTier, BerthMooringType, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_HARBOR
@@ -72,6 +72,7 @@ export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties
 export interface INDIVIDUAL_HARBOR_harbor_properties_piers_edges_node_properties {
   __typename: "PierProperties";
   identifier: string;
+  priceTier: PriceTier | null;
   electricity: boolean;
   wasteCollection: boolean;
   water: boolean;

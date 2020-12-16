@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { PriceTier } from "./../../../../../@types/__generated__/globalTypes";
+
 // ====================================================
 // GraphQL query operation: PIER_AND_BOAT_TYPES
 // ====================================================
@@ -15,6 +17,7 @@ export interface PIER_AND_BOAT_TYPES_pier_properties_suitableBoatTypes {
 export interface PIER_AND_BOAT_TYPES_pier_properties {
   __typename: "PierProperties";
   identifier: string;
+  priceTier: PriceTier | null;
   suitableBoatTypes: PIER_AND_BOAT_TYPES_pier_properties_suitableBoatTypes[];
   mooring: boolean;
   lighting: boolean;

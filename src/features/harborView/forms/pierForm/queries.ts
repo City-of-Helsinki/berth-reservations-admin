@@ -14,6 +14,7 @@ export const PIER_AND_BOAT_TYPES_QUERY = gql`
     pier(id: $id) {
       properties {
         identifier
+        priceTier
         suitableBoatTypes {
           id
         }

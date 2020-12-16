@@ -11,6 +11,7 @@ import { Pier } from '../../types';
 import Section from '../../../../common/section/Section';
 import Text from '../../../../common/text/Text';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../../common/icons';
+import { priceTierToString } from '../../utils';
 
 export interface PierPropertiesProps {
   pier: Pier;
@@ -27,7 +28,10 @@ const PierProperties = ({ pier }: PierPropertiesProps) => {
             <Text as="h2" size="xl">
               {`${t('harborView.pierProperties.pier')} ${pier.identifier}`}
             </Text>
-            <Text>{t('harborView.pierProperties.services')}</Text>
+            <p>{t('harborView.pierProperties.services')}</p>
+            <p>{`${t('common.terminology.priceTier')}: ${
+              pier.priceTier !== null ? priceTierToString(pier.priceTier) : '-'
+            }`}</p>
           </Section>
           <div className={styles.pierProperties}>
             <Grid colsCount={5} className={styles.propertiesGrid}>
