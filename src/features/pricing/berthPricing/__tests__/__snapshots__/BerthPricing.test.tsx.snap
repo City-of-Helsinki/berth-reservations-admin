@@ -2,7 +2,7 @@
 
 exports[`BerthPricing renders noData message when there is no data 1`] = `
 <div
-  class="card"
+  class="card berthPricing"
 >
   <div
     class="cardHeader"
@@ -196,7 +196,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
 
 exports[`BerthPricing renders normally 1`] = `
 <div
-  class="card"
+  class="card berthPricing"
 >
   <div
     class="cardHeader"
@@ -377,32 +377,44 @@ exports[`BerthPricing renders normally 1`] = `
                 style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
               >
                 <div
-                  class="tableCell"
+                  class="tableCell tableCell"
                   role="cell"
                   style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
                 >
                   3,0 m - 7,0 m
                 </div>
                 <div
-                  class="tableCell"
+                  class="tableCell tableCell"
                   role="cell"
                   style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                 >
-                  50,00 €
+                  <div
+                    class="grayCell"
+                  >
+                    50,00 €
+                  </div>
                 </div>
                 <div
-                  class="tableCell"
+                  class="tableCell tableCell"
                   role="cell"
                   style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                 >
-                  75,00 €
+                  <div
+                    class="grayCell"
+                  >
+                    75,00 €
+                  </div>
                 </div>
                 <div
-                  class="tableCell"
+                  class="tableCell tableCell"
                   role="cell"
                   style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
                 >
-                  100,00 €
+                  <div
+                    class="grayCell"
+                  >
+                    100,00 €
+                  </div>
                 </div>
               </div>
             </div>

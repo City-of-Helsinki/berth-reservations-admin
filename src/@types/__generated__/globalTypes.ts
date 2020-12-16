@@ -312,7 +312,7 @@ export interface CreatePierMutationInput {
   wasteCollection?: boolean | null;
   lighting?: boolean | null;
   personalElectricity?: boolean | null;
-  priceTier: PriceTier;
+  priceTier?: PriceTier | null;
   clientMutationId?: string | null;
 }
 

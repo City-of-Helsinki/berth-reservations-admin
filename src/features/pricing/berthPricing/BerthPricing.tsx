@@ -12,6 +12,7 @@ import { BerthPricing as BerthPricingData } from './__generated__/BerthPricing';
 import { getBerthsData } from './utils';
 import { PriceTier } from '../../../@types/__generated__/globalTypes';
 import { getPriceTier } from '../../../common/utils/translations';
+import styles from './berthPricing.module.scss';
 
 export interface BerthPrice {
   id: string;
@@ -23,13 +24,12 @@ export interface BerthPrice {
 }
 
 export interface BerthPricingProps {
-  className?: string;
   data: BerthPricingData | undefined | null;
   loading: boolean;
   refetchQueries?: PureQueryOptions[] | string[];
 }
 
-const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricingProps) => {
+const BerthPricing = ({ data, loading, refetchQueries }: BerthPricingProps) => {
   const { t, i18n } = useTranslation();
 
   const berthPricesCols: Column<BerthPrice>[] = [
@@ -43,24 +43,30 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
       Header: getPriceTier(PriceTier.TIER_1),
       accessor: PriceTier.TIER_1,
       minWidth: COLUMN_WIDTH.S,
-      Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
+      ),
     },
     {
       Header: getPriceTier(PriceTier.TIER_2),
       accessor: PriceTier.TIER_2,
       minWidth: COLUMN_WIDTH.S,
-      Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
+      ),
     },
     {
       Header: getPriceTier(PriceTier.TIER_3),
       accessor: PriceTier.TIER_3,
       minWidth: COLUMN_WIDTH.S,
-      Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
+      ),
     },
   ];
 
   return (
-    <Card className={className}>
+    <Card className={styles.berthPricing}>
       <CardHeader title={t('pricing.berths.title')} />
       <CardBody>
         <Section>{t('pricing.berths.description')}</Section>
@@ -70,6 +76,7 @@ const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricing
           data={getBerthsData(data)}
           loading={loading}
           theme="basic"
+          cellClassName={styles.tableCell}
           renderEmptyStateRow={() => t('common.notification.noData.description')}
         />
       </CardBody>

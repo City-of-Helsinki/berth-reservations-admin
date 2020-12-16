@@ -1,0 +1,14 @@
+@import 'colours';
+@import 'spacings';
+
+.berthPricing {
+  .tableCell {
+    padding: 0;
+  }
+
+  .grayCell {
+    padding: units(0.5);
+    width: 100%;
+    background: $black-5;
+  }
+}

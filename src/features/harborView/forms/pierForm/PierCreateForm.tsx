@@ -17,14 +17,12 @@ interface Props extends Omit<FormProps<Pier>, 'initialValues' | 'isSubmitting' |
 
 const PierCreateForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props) => {
   const { loading, error, data } = useQuery<BOAT_TYPES>(BOAT_TYPES_QUERY);
-  const [
-    // TODO: to be fixed in https://github.com/City-of-Helsinki/berth-reservations-admin/pull/357
-    // eslint-disable-next-line
-    createPier,
-    { loading: isSubmitting, error: createError },
-  ] = useMutation<CREATE_PIER, CREATE_PIER_VARS>(CREATE_PIER_MUTATION, {
-    refetchQueries: refetchQueries ?? [],
-  });
+  const [createPier, { loading: isSubmitting, error: createError }] = useMutation<CREATE_PIER, CREATE_PIER_VARS>(
+    CREATE_PIER_MUTATION,
+    {
+      refetchQueries: refetchQueries ?? [],
+    }
+  );
   const { t } = useTranslation();
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
@@ -37,8 +35,7 @@ const PierCreateForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
       onSubmitText={t('forms.common.create')}
       onCancel={onCancel}
       onSubmit={(values) => {
-        // TODO: to be fixed in https://github.com/City-of-Helsinki/berth-reservations-admin/pull/357
-        // createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values));
+        createPier({ variables: { input: { ...values, harborId } } }).then(() => onSubmit?.(values));
       }}
       isSubmitting={isSubmitting}
       suitableBoatTypeOptions={suitableBoatTypeOptions}
