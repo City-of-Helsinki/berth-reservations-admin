@@ -69,7 +69,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "pre-push": "yarn types:generate && yarn lint && yarn stylelint",
     "browser-test": "testcafe \"chrome --window-size='1920,1080'\" browser-tests/",
-    "browser-test:ci": "testcafe \"chrome:headless --disable-gpu --window-size='1920,1080'\" --app \"yarn start\" --app-init-delay=30000 browser-tests/ -s takeOnFails=true",
+    "browser-test:ci": "testcafe \"chrome:headless --disable-gpu --window-size='1920,1080'\" --app \"yarn start\" --app-init-delay=90000 browser-tests/ -s takeOnFails=true",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "prettier": "prettier --write \"./src/**/*.{js,ts,jsx,tsx}\""
