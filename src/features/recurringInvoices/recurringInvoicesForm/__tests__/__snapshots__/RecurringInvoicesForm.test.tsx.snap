@@ -27,7 +27,7 @@ exports[`RecurringInvoicesForm renders normally 1`] = `
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
-        for="RecurringInvoicesForm_dueDate"
+        for="dueDate"
       >
         Laskun eräpäivä
         <span
@@ -42,7 +42,7 @@ exports[`RecurringInvoicesForm renders normally 1`] = `
       >
         <input
           class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
-          id="RecurringInvoicesForm_dueDate"
+          id="dueDate"
           required=""
           type="date"
           value="2020-10-07"
