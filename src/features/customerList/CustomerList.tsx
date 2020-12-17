@@ -37,7 +37,11 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
     {
-      Cell: ({ cell }) => <InternalLink to={`/customers/${cell.row.original.id}`}>{cell.value}</InternalLink>,
+      Cell: ({ cell }) => (
+        <InternalLink to={`/customers/${cell.row.original.id}`}>
+          {cell.value.localeCompare(' ') !== 0 ? cell.value : t('common.emptyName')}
+        </InternalLink>
+      ),
       Header: t('customerList.tableHeaders.name') || '',
       accessor: 'name',
       sortType: 'toString',

@@ -59,7 +59,7 @@ const BerthDetails = ({
           <InternalLink to={`/customers/${customer.id}`}>
             {customer.firstName !== '' && customer.lastName !== ''
               ? `${customer.firstName} ${customer.lastName}`
-              : t('offer.berthDetails.emptyName')}
+              : t('common.emptyName')}
           </InternalLink>
         </div>
       );
