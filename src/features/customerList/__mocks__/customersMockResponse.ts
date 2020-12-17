@@ -1,5 +1,5 @@
 import { CUSTOMERS } from '../__generated__/CUSTOMERS';
-import { ContactMethod, CustomerGroup, ServiceType } from '../../../@types/__generated__/globalTypes';
+import { ContactMethod, CustomerGroup, LeaseStatus, ServiceType } from '../../../@types/__generated__/globalTypes';
 
 export const customersResponse: CUSTOMERS = {
   profiles: {
@@ -70,6 +70,7 @@ export const customersResponse: CUSTOMERS = {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6YThhNGNkOGEtMDcxYy00ZGU3LThkMGYtYTE5NmIyMDVmMWZi',
                   isActive: true,
+                  status: LeaseStatus.PAID,
                   berth: {
                     number: '37',
                     pier: {
@@ -93,6 +94,7 @@ export const customersResponse: CUSTOMERS = {
                 node: {
                   id: 'QmVydGhMZWFzZU5vZGU6MWE1ZTRkOGItNDQ2Yy00NTA1LThiMDgtNDc4NTkxYTFmZTQ3',
                   isActive: true,
+                  status: LeaseStatus.PAID,
                   berth: {
                     number: '6',
                     pier: {

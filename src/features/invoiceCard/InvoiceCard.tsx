@@ -12,7 +12,7 @@ import Property from '../../common/property/Property';
 import OrderSection from './OrderSection';
 import { Order, PlaceProperty } from './types';
 import Button from '../../common/button/Button';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 export interface InvoiceCardProps {
   applicationStatus: ApplicationStatus;
@@ -20,6 +20,7 @@ export interface InvoiceCardProps {
   className?: string;
   editAdditionalServices: () => void;
   invoicingDisabled?: boolean;
+  leaseStatus: LeaseStatus | null;
   order: Order | null;
   placeDetails?: React.ReactNode;
   placeName: React.ReactNode;
@@ -36,6 +37,7 @@ const InvoiceCard = ({
   className,
   editAdditionalServices,
   invoicingDisabled,
+  leaseStatus,
   order,
   placeDetails,
   placeName,
@@ -98,7 +100,9 @@ const InvoiceCard = ({
           ) : (
             <div /> // Grid spacer
           )}
-          {order && <OrderSection order={order} editAdditionalServices={editAdditionalServices} />}
+          {order && (
+            <OrderSection order={order} leaseStatus={leaseStatus} editAdditionalServices={editAdditionalServices} />
+          )}
         </Grid>
         <hr />
         <div className={styles.buttonRow}>

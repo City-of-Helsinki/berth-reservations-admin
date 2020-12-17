@@ -1,5 +1,5 @@
-import { CustomerListApplication, CustomerListBerthLeases, CustomerListInvoice, CustomerListBoat } from '../../types';
-import { CustomerGroup } from '../../../../@types/__generated__/globalTypes';
+import { CustomerListApplication, CustomerListBerthLeases, CustomerListBoat, CustomerListInvoice } from '../../types';
+import { CustomerGroup, LeaseStatus } from '../../../../@types/__generated__/globalTypes';
 import { CustomerDetailsProps } from '../CustomerDetails';
 
 export const customerListEntry: Omit<
@@ -28,6 +28,6 @@ export const customerListApplications: CustomerListApplication[] = [{ id: '123',
 export const customerListInvoices: CustomerListInvoice[] = [{ id: '123', date: '2020-01-21' }];
 
 export const customerListBerthLeases: CustomerListBerthLeases[] = [
-  { id: '123', isActive: true, title: 'Pursilahdenranta B31' },
-  { id: '321', isActive: true, title: 'Strömsinlahdenranta B31' },
+  { id: '123', isActive: true, status: LeaseStatus.PAID, title: 'Pursilahdenranta B31' },
+  { id: '321', isActive: true, status: LeaseStatus.PAID, title: 'Strömsinlahdenranta B31' },
 ];
