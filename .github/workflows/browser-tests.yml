@@ -40,3 +40,9 @@ jobs:
         run: yarn --prefer-offline
       - name: Run TestCafe tests
         run: yarn browser-test:ci
+      - name: Upload screenshots of failed tests
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: screenshots
+          path: screenshots/
