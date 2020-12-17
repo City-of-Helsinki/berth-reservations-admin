@@ -44,4 +44,5 @@ jobs:
         uses: actions/upload-artifact@v2
         if: failure()
         with:
+          name: screenshots
           path: screenshots/
