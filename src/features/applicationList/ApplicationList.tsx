@@ -85,7 +85,7 @@ const ApplicationList = ({
         },
       }) => (
         <InternalLink to={`/applications/${id}`}>
-          {firstName} {lastName}
+          {firstName !== '' && lastName !== '' ? `${firstName} ${lastName}` : t('common.emptyName')}
         </InternalLink>
       ),
       Header: t('common.name') as string,

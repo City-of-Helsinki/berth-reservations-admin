@@ -45,7 +45,7 @@ const RecurringInvoices = ({
       minWidth: COLUMN_WIDTH.M,
       Cell: ({ row, cell }) => (
         <InternalLink className={styles.marginLeft} to={`/customers/${row.original.customerId}`}>
-          {cell.value}
+          {cell.value.localeCompare(' ') !== 0 ? cell.value : t('common.emptyName')}
         </InternalLink>
       ),
     },

@@ -25,6 +25,7 @@
     "close": "Sulje",
     "edit": "Muokkaa",
     "email": "Sähköposti",
+    "emptyName": "Nimi puuttuu",
     "firstName": "Etunimi",
     "imageAltText": "Kuva kohteesta",
     "lastName": "Sukunimi",
@@ -441,8 +442,7 @@
     },
     "berthDetails": {
       "previousLeases": "Edelliset vuokralaiset",
-      "noSuitableBerths": "Ei sopivaa venepaikkaa",
-      "emptyName": "Ei nimeä"
+      "noSuitableBerths": "Ei sopivaa venepaikkaa"
     },
     "invoicing": {
       "additionalServices": "Lisäpalvelut",
