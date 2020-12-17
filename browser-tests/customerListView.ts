@@ -12,7 +12,7 @@ test('Selection of customers', async (t) => {
   // Select all customers from first page
   await t
     .click(navigation.customers)
-    .expect(customers.customerList.firstCustomerLink)
+    .expect(customers.customerList.firstCustomerLink.exists)
     .ok()
     .click(customers.customerList.selectAllToggle)
     .click(customers.customerList.paginationNextButton)
