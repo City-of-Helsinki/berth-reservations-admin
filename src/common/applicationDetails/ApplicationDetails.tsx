@@ -21,7 +21,7 @@ import ApplicationChoicesList, {
 import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
-import BerthContractDetails from '../../features/unmarkedWsNoticeDetails/fragments/contractDetails/BerthContractDetailsContainer';
+import BerthContractDetails from '../../features/contractDetails/BerthContractDetailsContainer';
 
 interface Lease {
   berthNum: string | number;

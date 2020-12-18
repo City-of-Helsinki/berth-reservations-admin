@@ -63,14 +63,8 @@ const CustomerView = ({
           onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
         />
 
-        <BerthLeasesCard
-          leases={leases.filter(isBerthLease)}
-          handleShowContract={(id) => alert(`Here's your contract for ${id}`)}
-        />
-        <WinterStorageLeasesCard
-          leases={leases.filter(isWinterStorageLease)}
-          handleShowContract={(id) => alert(`Here's your contract for ${id}`)}
-        />
+        <BerthLeasesCard leases={leases.filter(isBerthLease)} />
+        <WinterStorageLeasesCard leases={leases.filter(isWinterStorageLease)} />
 
         <BoatsCard boats={boats} onEdit={(boat) => setBoatToEdit(boat)} onCreate={onClickCreateBoat} />
       </div>
