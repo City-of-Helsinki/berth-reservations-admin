@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { BerthLease } from '../types';
 import LeasesCard from './LeasesCard';
+import BerthContractDetailsContainer from '../../contractDetails/BerthContractDetailsContainer';
 
 export interface BerthLeasesCardProps {
   leases: BerthLease[];
@@ -22,6 +23,7 @@ const BerthLeasesCard = ({ leases, handleShowContract }: BerthLeasesCardProps) =
       mooringType: lease.mooringType,
       link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       address: [lease.harbor?.name || '', lease.pierIdentifier || '', lease.berthNum].filter(Boolean).join(' '),
+      renderContractDetails: (leaseId: string) => <BerthContractDetailsContainer leaseId={leaseId} />,
     };
   });
 
@@ -31,7 +33,6 @@ const BerthLeasesCard = ({ leases, handleShowContract }: BerthLeasesCardProps) =
       title={t('customerView.leases.berth.title')}
       infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
       addressLabel={t('customerView.leases.berth.addressLabel')}
-      handleShowContract={handleShowContract}
     />
   );
 };

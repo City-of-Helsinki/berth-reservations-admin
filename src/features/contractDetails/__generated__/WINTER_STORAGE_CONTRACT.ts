@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ContractStatus } from "./../../../../../@types/__generated__/globalTypes";
+import { ContractStatus } from "../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: WINTER_STORAGE_CONTRACT

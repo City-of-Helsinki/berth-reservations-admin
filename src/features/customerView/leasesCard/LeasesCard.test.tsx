@@ -45,18 +45,4 @@ describe('LeasesCard', () => {
 
     expect(wrapper.render()).toMatchSnapshot();
   });
-
-  it('calls handleShowContract when "Näytä sopimus" button is clicked', () => {
-    const wrapper = mount(
-      <HashRouter>
-        <LeasesCard {...initialProps} />
-      </HashRouter>
-    );
-    const firstLeaseId = initialProps.leaseDetails[0].id;
-    const button = wrapper.find(Button).first();
-
-    button.simulate('click');
-
-    expect(initialProps.handleShowContract).toHaveBeenNthCalledWith(1, firstLeaseId);
-  });
 });

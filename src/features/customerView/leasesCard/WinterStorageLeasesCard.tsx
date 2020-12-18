@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { WinterStorageLease } from '../types';
 import LeasesCard from './LeasesCard';
+import WinterStorageContractDetailsContainer from '../../contractDetails/WinterStorageContractDetailsContainer';
 
 export interface WinterStorageLeasesCardProps {
   leases: WinterStorageLease[];
@@ -18,6 +19,7 @@ const WinterStorageLeasesCard = ({ leases, handleShowContract }: WinterStorageLe
       startDate: lease.startDate,
       link: lease?.winterStorageArea?.id ? `/winter-storage-areas/${lease?.winterStorageArea?.id}` : undefined,
       address: lease.winterStorageArea?.name || '',
+      renderContractDetails: (leaseId: string) => <WinterStorageContractDetailsContainer leaseId={leaseId} />,
     };
   });
 
@@ -27,7 +29,6 @@ const WinterStorageLeasesCard = ({ leases, handleShowContract }: WinterStorageLe
       title={t('customerView.leases.winterStorage.title')}
       infoSectionTitle={t('customerView.leases.winterStorage.infoSectionTitle')}
       addressLabel={t('customerView.leases.winterStorage.addressLabel')}
-      handleShowContract={handleShowContract}
     />
   );
 };
