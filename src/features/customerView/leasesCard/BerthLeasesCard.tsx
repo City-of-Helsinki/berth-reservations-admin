@@ -7,10 +7,9 @@ import BerthContractDetailsContainer from '../../contractDetails/BerthContractDe
 
 export interface BerthLeasesCardProps {
   leases: BerthLease[];
-  handleShowContract(leaseId: string): void;
 }
 
-const BerthLeasesCard = ({ leases, handleShowContract }: BerthLeasesCardProps) => {
+const BerthLeasesCard = ({ leases }: BerthLeasesCardProps) => {
   const { t } = useTranslation();
   const leaseDetails = leases.map((lease) => {
     return {

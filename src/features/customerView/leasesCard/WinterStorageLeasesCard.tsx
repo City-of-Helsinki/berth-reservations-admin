@@ -7,10 +7,9 @@ import WinterStorageContractDetailsContainer from '../../contractDetails/WinterS
 
 export interface WinterStorageLeasesCardProps {
   leases: WinterStorageLease[];
-  handleShowContract(leaseId: string): void;
 }
 
-const WinterStorageLeasesCard = ({ leases, handleShowContract }: WinterStorageLeasesCardProps) => {
+const WinterStorageLeasesCard = ({ leases }: WinterStorageLeasesCardProps) => {
   const { t } = useTranslation();
   const leaseDetails = leases.map((lease) => {
     return {
