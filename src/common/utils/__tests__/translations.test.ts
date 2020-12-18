@@ -8,6 +8,7 @@ import {
   getOrderStatusTKey,
   getCustomerGroupKey,
   getMooringTypeTKey,
+  getPriceTier,
 } from '../translations';
 import {
   PeriodType,
@@ -17,6 +18,7 @@ import {
   OrderStatus,
   CustomerGroup,
   BerthMooringType,
+  PriceTier,
 } from '../../../@types/__generated__/globalTypes';
 import { formatPercentage } from '../format';
 
@@ -139,6 +141,26 @@ describe('translations', () => {
       const unit = getPriceUnits(randomValue);
 
       expect(unit).toBe(randomValue);
+    });
+  });
+
+  describe('getPriceTier', () => {
+    test('each provided value of type PriceTier should have a corresponding value', () => {
+      const tiers = Object.values(PriceTier);
+      expect.assertions(tiers.length);
+
+      tiers.forEach((tier) => {
+        const priceTier = getPriceTier(tier);
+
+        expect(priceTier).not.toBe(tier);
+      });
+    });
+
+    it('should fallback to the actual value from the backend if there is no match during the runtime', () => {
+      const randomValue = 'random' as PriceTier;
+      const priceTier = getPriceTier(randomValue);
+
+      expect(priceTier).toBe(randomValue);
     });
   });
 

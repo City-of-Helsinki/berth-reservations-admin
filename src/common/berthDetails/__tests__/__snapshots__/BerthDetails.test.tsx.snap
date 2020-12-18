@@ -162,9 +162,9 @@ exports[`BerthDetails renders normally with all props 1`] = `
           <a
             class="internalLink brand"
             href="#/customers/0"
-            title="Ei nimeä"
+            title="Nimi puuttuu"
           >
-            Ei nimeä
+            Nimi puuttuu
           </a>
         </div>
         <div>

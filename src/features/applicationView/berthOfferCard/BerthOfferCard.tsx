@@ -84,6 +84,7 @@ const BerthOfferCard = ({
       className={className}
       customerEmail={customerEmail}
       invoicingDisabled={!berthInvoicingFeatureFlag()}
+      leaseStatus={status}
       order={order}
       placeDetails={
         <PlaceDetails

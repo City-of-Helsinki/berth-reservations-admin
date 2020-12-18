@@ -15,7 +15,6 @@ import { getInvoiceTypeKey, getOrderStatusTKey } from '../../../common/utils/tra
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 import { Invoice } from '../types';
 import Button from '../../../common/button/Button';
-import { additionalInvoiceFeatureFlag } from '../../../common/utils/featureFlags';
 
 interface InvoicingHistoryProps {
   invoices: Invoice[];
@@ -75,11 +74,9 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
     <Card>
       <CardHeader title={t('customerView.invoicingHistory.title')} />
       <CardBody>
-        {additionalInvoiceFeatureFlag() && (
-          <div>
-            <Button onClick={onClickCreateAdditionalInvoice}>{t('additionalInvoice.create')}</Button>
-          </div>
-        )}
+        <div>
+          <Button onClick={onClickCreateAdditionalInvoice}>{t('additionalInvoice.create')}</Button>
+        </div>
         {invoices.length > 0 ? (
           <Section>
             <Grid colsCount={5}>

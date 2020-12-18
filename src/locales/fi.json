@@ -25,6 +25,7 @@
     "close": "Sulje",
     "edit": "Muokkaa",
     "email": "Sähköposti",
+    "emptyName": "Nimi puuttuu",
     "firstName": "Etunimi",
     "imageAltText": "Kuva kohteesta",
     "lastName": "Sukunimi",
@@ -130,6 +131,7 @@
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
+      "priceTier": "Maksuluokka",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
@@ -234,6 +236,7 @@
       "electricity": "Sähkö",
       "lighting": "Valaistus",
       "water": "Vesi",
+      "priceTiers": "Maksuluokat",
       "personalElectricity": "Erillinen sähkösopimus mahdollinen",
       "deleteConfirmation": {
         "infoText": "Oletko varma että haluat poistaa laiturin {{pierIdentifier}}?",
@@ -439,8 +442,7 @@
     },
     "berthDetails": {
       "previousLeases": "Edelliset vuokralaiset",
-      "noSuitableBerths": "Ei sopivaa venepaikkaa",
-      "emptyName": "Ei nimeä"
+      "noSuitableBerths": "Ei sopivaa venepaikkaa"
     },
     "invoicing": {
       "additionalServices": "Lisäpalvelut",
@@ -470,6 +472,7 @@
   "customerList": {
     "title": "Asiakkaat",
     "addNewCustomer": "Lisää uusi asiakas",
+    "pastBerths": "Aiemmat venepaikat",
     "tableHeaders": {
       "name": "Nimi",
       "group": "Asiakasryhmä",
@@ -571,10 +574,12 @@
     "berths": {
       "title": "Venepaikka",
       "description": "Perushinta. Hinnat sisältävät alv 24 %.",
-      "width": "Leveys",
-      "privateCustomer": "Yksityinen",
-      "company": "Yritys",
-      "period": "Aika"
+      "width": "Leveys"
+    },
+    "harborTiers": {
+      "title": "Satamaan liitetyt maksuluokat",
+      "harbor": "Satama",
+      "tiers": "Maksuluokat"
     },
     "winterStorage": {
       "title": "Talvisäilytyspaikka",
@@ -602,7 +607,7 @@
     }
   },
   "recurringInvoices": {
-    "title": "Laskatus",
+    "title": "Laskutus",
     "sendInvoices": "Lähetä venepaikkojen laskut",
     "failedInvoicesTable": {
       "header": "Kausilasku ei lähetetty",
@@ -613,7 +618,6 @@
     },
     "summary": {
       "invoicesLeft": "Lähettämättömiä jäljellä",
-      "sentSuccessfully": "Lähetys onnistui",
       "failedInvoicing": "Lähetys epäonnistui"
     },
     "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ failedInvoicesCount }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",
@@ -761,6 +765,15 @@
           "infoText": "Järjestelmä valitsee seuraavan vapaana olevan tarranumeron.\nOletko varma että haluat vaihtaa tarranumeron tälle hakemukselle?",
           "confirm": "Vaihda"
         }
+      },
+      "contractDetails": {
+        "title": "SOPIMUS",
+        "modifiedAt": "Muokattu",
+        "createdAt": "Luotu",
+        "signed": "Allekirjoitettu",
+        "unsigned": "Allekirjoitus puuttuu",
+        "status": "Tila",
+        "document": "Avaa asiakirja"
       }
     }
   },

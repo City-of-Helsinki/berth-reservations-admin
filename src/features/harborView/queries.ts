@@ -25,6 +25,7 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
               id
               properties {
                 identifier
+                priceTier
                 electricity
                 wasteCollection
                 water

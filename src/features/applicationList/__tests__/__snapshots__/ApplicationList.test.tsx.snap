@@ -349,6 +349,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
                 <a
                   class="internalLink brand"
                   href="#/applications/MOCK-APPLICATION-0"
+                  title="Matti Meikäläinen"
                 >
                   Matti Meikäläinen
                 </a>
@@ -474,6 +475,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
                 <a
                   class="internalLink brand"
                   href="#/applications/MOCK-APPLICATION-1"
+                  title="Maija Meikäläinen"
                 >
                   Maija Meikäläinen
                 </a>
@@ -599,6 +601,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
                 <a
                   class="internalLink brand"
                   href="#/applications/MOCK-APPLICATION-2"
+                  title="Matti Möttönen"
                 >
                   Matti Möttönen
                 </a>

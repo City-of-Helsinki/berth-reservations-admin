@@ -3,7 +3,6 @@ import { Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 
 import styles from './editForm.module.scss';
-import BerthsFields, { getBerthsValidationSchema } from './fields/BerthsFields';
 import WinterStorageFields, { getWinterStorageValidationSchema } from './fields/WinterStorageFields';
 import HarborServicesFields, { getHarborServicesValidationSchema } from './fields/HarborServicesFields';
 import { HarborService } from '../harborServicePricing/HarborServicePricing';
@@ -12,7 +11,6 @@ import { BerthPrice } from '../berthPricing/BerthPricing';
 import Button from '../../../common/button/Button';
 
 export enum EDIT_FORM_TYPE {
-  BERTHS = 'BERTHS',
   HARBOR_SERVICES = 'HARBOR_SERVICES',
   WINTER_STORAGE = 'WINTER_STORAGE',
 }
@@ -26,11 +24,6 @@ export interface EditPricingFormProps<T extends BerthPrice | WinterStoragePrice 
 
 const getForm = (formType: EDIT_FORM_TYPE) => {
   switch (formType) {
-    case EDIT_FORM_TYPE.BERTHS:
-      return {
-        getValidationSchema: getBerthsValidationSchema,
-        component: <BerthsFields />,
-      };
     case EDIT_FORM_TYPE.WINTER_STORAGE:
       return {
         getValidationSchema: getWinterStorageValidationSchema,

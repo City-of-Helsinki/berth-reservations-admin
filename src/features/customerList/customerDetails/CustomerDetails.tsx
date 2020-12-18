@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Grid from '../../../common/grid/Grid';
 import Section from '../../../common/section/Section';
 import Text from '../../../common/text/Text';
-import { CustomerGroup } from '../../../@types/__generated__/globalTypes';
+import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import {
   CustomerListApplication,
   CustomerListBerthLeases,
-  CustomerListInvoice,
   CustomerListBoat,
+  CustomerListInvoice,
   CustomerListWinterStoragePlaces,
 } from '../types';
 import { formatDate } from '../../../common/utils/format';
@@ -49,8 +49,9 @@ const CustomerDetails = ({
   const { t, i18n } = useTranslation();
   const customerGroupKey = getCustomerGroupKey(customerGroup);
 
-  const activeBerths = berths.filter((berth) => berth.isActive);
-  const previousBerths = berths.filter((berth) => !berth.isActive);
+  const filterActiveBerths = (berth: CustomerListBerthLeases) => berth.isActive || berth.status === LeaseStatus.OFFERED;
+  const activeBerths = berths.filter(filterActiveBerths);
+  const pastBerths = berths.filter((berth) => !filterActiveBerths(berth));
   const renderBerthLine = (berth: CustomerListBerthLeases) => <div key={berth.id}>{berth.title}</div>;
 
   return (
@@ -72,13 +73,10 @@ const CustomerDetails = ({
           </Section>
         </div>
         <div>
-          <Section title={t('common.terminology.berths').toUpperCase()}>
-            <>
-              {activeBerths.map(renderBerthLine)}
-              {previousBerths.length > 0 && <hr />}
-              {previousBerths.map(renderBerthLine)}
-            </>
-          </Section>
+          <Section title={t('common.terminology.berths').toUpperCase()}>{activeBerths.map(renderBerthLine)}</Section>
+          {pastBerths.length > 0 && (
+            <Section title={t('customerList.pastBerths').toUpperCase()}>{pastBerths.map(renderBerthLine)}</Section>
+          )}
           <Section title={t('common.terminology.winterStoragePlaces').toUpperCase()}>
             {winterStoragePlaces.map((place) => (
               <div key={place.id}>{place.title}</div>

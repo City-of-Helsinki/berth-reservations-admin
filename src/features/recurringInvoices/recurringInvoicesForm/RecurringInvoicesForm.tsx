@@ -48,7 +48,7 @@ const RecurringInvoicesForm = ({ onSubmit, onCancel, isSubmitting }: RecurringIn
 
           <div className={styles.centered}>
             <TextInput
-              id="RecurringInvoicesForm_dueDate"
+              id="dueDate"
               type="date"
               value={values.dueDate}
               onChange={handleChange}

@@ -21,6 +21,7 @@ import ApplicationChoicesList, {
 import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featureFlags';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
+import BerthContractDetails from '../../features/unmarkedWsNoticeDetails/fragments/contractDetails/BerthContractDetailsContainer';
 
 interface Lease {
   berthNum: string | number;
@@ -208,18 +209,21 @@ const ApplicationDetails = ({
       </div>
       <div>
         {lease ? (
-          <Section title={t('applicationList.applicationDetails.connectedLease').toUpperCase()}>
-            {[lease.harborName, lease.pierIdentifier, lease.berthNum].filter(Boolean).join(' ')}
-            {handleDeleteLease && canDeleteLease(lease.status) && (
-              <DeleteButton
-                buttonText={t('applicationList.applicationDetails.deleteLease')}
-                onConfirm={() => handleDeleteLease(lease.id)}
-                disabled={isDeletingLease}
-                buttonClassName={styles.deleteButton}
-                buttonStyle="flat"
-              />
-            )}
-          </Section>
+          <>
+            <Section title={t('applicationList.applicationDetails.connectedLease').toUpperCase()}>
+              {[lease.harborName, lease.pierIdentifier, lease.berthNum].filter(Boolean).join(' ')}
+              {handleDeleteLease && canDeleteLease(lease.status) && (
+                <DeleteButton
+                  buttonText={t('applicationList.applicationDetails.deleteLease')}
+                  onConfirm={() => handleDeleteLease(lease.id)}
+                  disabled={isDeletingLease}
+                  buttonClassName={styles.deleteButton}
+                  buttonStyle="flat"
+                />
+              )}
+            </Section>
+            <BerthContractDetails leaseId={lease.id} />
+          </>
         ) : (
           <ApplicationChoicesList
             choices={choices}

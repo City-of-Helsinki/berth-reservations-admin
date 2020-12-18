@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Row } from 'react-table';
-import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
 
 import Card from '../../../common/card/Card';
@@ -9,130 +7,80 @@ import CardHeader from '../../../common/cardHeader/CardHeader';
 import CardBody from '../../../common/cardBody/CardBody';
 import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
 import Section from '../../../common/section/Section';
-import Text from '../../../common/text/Text';
 import { formatPrice } from '../../../common/utils/format';
-import EditForm, { EDIT_FORM_TYPE } from '../editModal/EditForm';
 import { BerthPricing as BerthPricingData } from './__generated__/BerthPricing';
 import { getBerthsData } from './utils';
-import { PeriodType } from '../../../@types/__generated__/globalTypes';
-import { getPeriodTKey } from '../../../common/utils/translations';
-import { UPDATE_BERTH_PRICE_MUTATION, CREATE_BERTH_PRODUCT_MUTATION } from './mutations';
-import {
-  UPDATE_BERTH_PRICE,
-  UPDATE_BERTH_PRICEVariables as UPDATE_BERTH_PRICE_VARS,
-} from './__generated__/UPDATE_BERTH_PRICE';
-import {
-  CREATE_BERTH_PRODUCT,
-  CREATE_BERTH_PRODUCTVariables as CREATE_BERTH_PRODUCT_VARS,
-} from './__generated__/CREATE_BERTH_PRODUCT';
-import Modal from '../../../common/modal/Modal';
+import { PriceTier } from '../../../@types/__generated__/globalTypes';
+import { getPriceTier } from '../../../common/utils/translations';
+import styles from './berthPricing.module.scss';
 
 export interface BerthPrice {
   id: string;
   productId: string | undefined;
   name: string;
-  privateCustomer: number | undefined;
-  company: number | undefined;
-  period: PeriodType;
+  [PriceTier.TIER_1]: number | undefined;
+  [PriceTier.TIER_2]: number | undefined;
+  [PriceTier.TIER_3]: number | undefined;
 }
 
 export interface BerthPricingProps {
-  className?: string;
   data: BerthPricingData | undefined | null;
   loading: boolean;
   refetchQueries?: PureQueryOptions[] | string[];
 }
 
-const BerthPricing = ({ className, data, loading, refetchQueries }: BerthPricingProps) => {
+const BerthPricing = ({ data, loading, refetchQueries }: BerthPricingProps) => {
   const { t, i18n } = useTranslation();
-  const [editRowValues, setEditRowValues] = useState<BerthPrice>();
-  const [updateBerthPrice] = useMutation<UPDATE_BERTH_PRICE, UPDATE_BERTH_PRICE_VARS>(UPDATE_BERTH_PRICE_MUTATION);
-  const [createBerthPrice] = useMutation<CREATE_BERTH_PRODUCT, CREATE_BERTH_PRODUCT_VARS>(
-    CREATE_BERTH_PRODUCT_MUTATION
-  );
 
-  const harborCols: Column<BerthPrice>[] = [
+  const berthPricesCols: Column<BerthPrice>[] = [
     {
       Header: t('pricing.berths.width') || '',
       accessor: 'name',
+      width: COLUMN_WIDTH.L,
+      minWidth: COLUMN_WIDTH.L,
     },
     {
-      Header: t('pricing.berths.privateCustomer') || '',
-      accessor: 'privateCustomer',
-      Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
-    },
-    {
-      Header: t('pricing.berths.company') || '',
-      accessor: 'company',
-      Cell: ({ cell: { value } }) => (value ? formatPrice(value, i18n.language) : '-'),
-    },
-    {
-      Header: t('pricing.berths.period') || '',
-      accessor: ({ period }) => t(getPeriodTKey(period)),
-      id: 'period',
-    },
-    {
-      id: 'edit',
-      Header: t('common.edit') || '',
-      sortType: 'none',
-      width: COLUMN_WIDTH.S,
+      Header: getPriceTier(PriceTier.TIER_1),
+      accessor: PriceTier.TIER_1,
       minWidth: COLUMN_WIDTH.S,
-      Cell: ({ row }: { row: Row<BerthPrice> }) => (
-        <button onClick={() => setEditRowValues(row.original)}>
-          <Text color="brand">{t('common.edit')}</Text>
-        </button>
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
+      ),
+    },
+    {
+      Header: getPriceTier(PriceTier.TIER_2),
+      accessor: PriceTier.TIER_2,
+      minWidth: COLUMN_WIDTH.S,
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
+      ),
+    },
+    {
+      Header: getPriceTier(PriceTier.TIER_3),
+      accessor: PriceTier.TIER_3,
+      minWidth: COLUMN_WIDTH.S,
+      Cell: ({ cell: { value } }) => (
+        <div className={styles.grayCell}>{value ? formatPrice(value, i18n.language) : '-'}</div>
       ),
     },
   ];
 
-  const handleSubmit = async ({
-    id: priceGroupId,
-    productId: defaultProductId,
-    privateCustomer: priceValue,
-  }: BerthPrice): Promise<void> => {
-    if (defaultProductId) {
-      await updateBerthPrice({
-        variables: { input: { id: defaultProductId, priceValue } },
-      });
-    } else {
-      await createBerthPrice({
-        variables: { input: { priceGroupId, priceValue } },
-        refetchQueries,
-      });
-    }
-
-    setEditRowValues(undefined);
-  };
-
-  const handleClose = () => setEditRowValues(undefined);
-
   return (
-    <>
-      <Card className={className}>
-        <CardHeader title={t('pricing.berths.title')} />
-        <CardBody>
-          <Section>{t('pricing.berths.description')}</Section>
-          <Table
-            columns={harborCols}
-            initialState={{ sortBy: [{ id: 'name', desc: false }] }}
-            data={getBerthsData(data)}
-            loading={loading}
-            theme="basic"
-            renderEmptyStateRow={() => t('common.notification.noData.description')}
-          />
-        </CardBody>
-      </Card>
-      {editRowValues && (
-        <Modal isOpen label={t('pricing.editModalHeading').toUpperCase()} toggleModal={handleClose}>
-          <EditForm
-            closeModal={handleClose}
-            formType={EDIT_FORM_TYPE.BERTHS}
-            initialValues={editRowValues}
-            onSubmit={handleSubmit}
-          />
-        </Modal>
-      )}
-    </>
+    <Card className={styles.berthPricing}>
+      <CardHeader title={t('pricing.berths.title')} />
+      <CardBody>
+        <Section>{t('pricing.berths.description')}</Section>
+        <Table
+          columns={berthPricesCols}
+          initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+          data={getBerthsData(data)}
+          loading={loading}
+          theme="basic"
+          cellClassName={styles.tableCell}
+          renderEmptyStateRow={() => t('common.notification.noData.description')}
+        />
+      </CardBody>
+    </Card>
   );
 };
 

@@ -34,6 +34,7 @@ function getBerthLeases(profile: ProfileNode): CustomerListBerthLeases[] | undef
     .map(({ node }) => {
       const { id, isActive } = node;
 
+      const status = node.status;
       const berth = node.berth;
       const berthNumber = berth.number;
       const harborName = berth.pier.properties?.harbor?.properties?.name ?? '';
@@ -44,6 +45,7 @@ function getBerthLeases(profile: ProfileNode): CustomerListBerthLeases[] | undef
         id,
         isActive,
         title,
+        status,
       };
     });
 }

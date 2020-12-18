@@ -45,6 +45,7 @@ type TableProps<D extends object> = {
   loading?: boolean;
   canSelectRows?: boolean;
   canSelectOneRow?: boolean;
+  cellClassName?: string;
   styleMainHeader?: boolean;
   theme?: 'basic' | 'primary';
   globalFilter?: UseGlobalFiltersOptions<D>['globalFilter'];
@@ -88,6 +89,7 @@ const Table = <D extends { id: string }>({
   loading,
   canSelectRows,
   canSelectOneRow,
+  cellClassName,
   styleMainHeader = true,
   theme = 'primary',
   globalFilter,
@@ -334,11 +336,15 @@ const Table = <D extends { id: string }>({
           {row.cells.map((cell) => (
             <div
               {...cell.getCellProps()}
-              className={classNames(styles.tableCell, {
-                [styles.selector]: cell.column.id === SELECTOR,
-                [styles.radioSelector]: cell.column.id === RADIO_SELECTOR,
-                [styles.expander]: cell.column.id === EXPANDER,
-              })}
+              className={classNames(
+                styles.tableCell,
+                {
+                  [styles.selector]: cell.column.id === SELECTOR,
+                  [styles.radioSelector]: cell.column.id === RADIO_SELECTOR,
+                  [styles.expander]: cell.column.id === EXPANDER,
+                },
+                cellClassName
+              )}
             >
               {loading ? <div className={styles.placeholder} /> : cell.render('Cell')}
             </div>

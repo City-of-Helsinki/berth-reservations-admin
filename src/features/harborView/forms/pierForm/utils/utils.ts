@@ -18,6 +18,7 @@ export const getPier = (data: PIER_AND_BOAT_TYPES | undefined): Pier => {
     water,
     gate,
     personalElectricity,
+    priceTier,
   } = data.pier.properties;
   return {
     identifier,
@@ -28,6 +29,7 @@ export const getPier = (data: PIER_AND_BOAT_TYPES | undefined): Pier => {
     water,
     gate,
     personalElectricity,
+    priceTier: priceTier || undefined,
     suitableBoatTypes: data.pier.properties.suitableBoatTypes.map((boatType) => boatType.id),
   };
 };

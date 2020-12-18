@@ -1,5 +1,5 @@
 import { INDIVIDUAL_HARBOR } from '../__generated__/INDIVIDUAL_HARBOR';
-import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
+import { BerthMooringType, PriceTier } from '../../../@types/__generated__/globalTypes';
 
 export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
   harbor: {
@@ -26,6 +26,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
               id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
               properties: {
                 identifier: '10',
+                priceTier: PriceTier.TIER_1,
                 electricity: true,
                 wasteCollection: true,
                 water: true,
@@ -573,6 +574,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
               id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
               properties: {
                 identifier: '11 a',
+                priceTier: PriceTier.TIER_1,
                 electricity: true,
                 wasteCollection: true,
                 water: true,
@@ -2056,6 +2058,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
               id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
               properties: {
                 identifier: '11 b',
+                priceTier: PriceTier.TIER_1,
                 electricity: true,
                 wasteCollection: true,
                 water: true,
@@ -2747,6 +2750,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
               id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
               properties: {
                 identifier: '19 a',
+                priceTier: PriceTier.TIER_1,
                 electricity: true,
                 wasteCollection: true,
                 water: true,
@@ -3312,6 +3316,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
               id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
               properties: {
                 identifier: '19 b',
+                priceTier: PriceTier.TIER_1,
                 electricity: true,
                 wasteCollection: true,
                 water: true,

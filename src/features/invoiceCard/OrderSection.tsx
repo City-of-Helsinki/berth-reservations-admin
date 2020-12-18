@@ -5,15 +5,17 @@ import Section from '../../common/section/Section';
 import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
 import { formatPrice } from '../../common/utils/format';
 import { getProductServiceTKey } from '../../common/utils/translations';
-import Text from '../../common/text/Text';
 import { Order } from './types';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
+import Button from '../../common/button/Button';
 
 export interface OrderSectionProps {
+  leaseStatus: LeaseStatus | null;
   order: Order;
   editAdditionalServices: () => void;
 }
 
-const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
+const OrderSection = ({ leaseStatus, order, editAdditionalServices }: OrderSectionProps) => {
   const {
     t,
     i18n: { language },
@@ -40,9 +42,13 @@ const OrderSection = ({ order, editAdditionalServices }: OrderSectionProps) => {
         <LabelValuePair
           label={t('offer.invoicing.additionalServices')}
           value={
-            <button onClick={() => editAdditionalServices()}>
-              <Text color="brand">{t('common.edit')}</Text>
-            </button>
+            <Button
+              size="small"
+              onClick={() => editAdditionalServices()}
+              disabled={leaseStatus !== LeaseStatus.DRAFTED}
+            >
+              {t('common.edit')}
+            </Button>
           }
           align={'right'}
         />
