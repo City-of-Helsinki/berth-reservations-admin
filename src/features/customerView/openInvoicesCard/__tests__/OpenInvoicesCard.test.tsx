@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { MockedProvider } from '@apollo/react-testing';
 
 import Button from '../../../../common/button/Button';
 import OpenInvoicesCard from '../OpenInvoicesCard';
@@ -14,7 +15,12 @@ describe('OpenInvoicesCard', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-  const getWrapper = (props = mockProps) => shallow(<OpenInvoicesCard {...props} />);
+  const getWrapper = (props = mockProps) =>
+    mount(
+      <MockedProvider>
+        <OpenInvoicesCard {...props} />
+      </MockedProvider>
+    );
 
   it('renders normally', () => {
     const wrapper = getWrapper();

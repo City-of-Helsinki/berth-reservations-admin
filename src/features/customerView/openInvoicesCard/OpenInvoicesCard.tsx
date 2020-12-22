@@ -13,6 +13,8 @@ import { formatDate, formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
 import { Invoice } from '../types';
 import { PriceUnits, OrderStatus } from '../../../@types/__generated__/globalTypes';
+import BerthContractDetails from '../../contractDetails/BerthContractDetailsContainer';
+import WinterStorageContractDetails from '../../contractDetails/WinterStorageContractDetailsContainer';
 
 export interface OpenInvoicesCardProps {
   invoices: Invoice[];
@@ -90,6 +92,8 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
             value={formatPrice(invoice.totalPrice, i18n.language)}
           />
         </Section>
+        {isBerthInvoice(invoice) && <BerthContractDetails leaseId={invoice.leaseId} />}
+        {isWinterStorageInvoice(invoice) && <WinterStorageContractDetails leaseId={invoice.leaseId} />}
         <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
           {t('customerView.customerInvoice.showInvoice')}
         </Button>
