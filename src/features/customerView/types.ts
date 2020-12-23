@@ -121,6 +121,7 @@ export type Invoice = {
     endDate: string;
   };
   dueDate: string;
+  paidAt: string;
   totalPrice: number;
   basePrice: number;
   orderLines: OrderLine[];
