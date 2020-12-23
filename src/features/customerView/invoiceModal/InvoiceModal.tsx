@@ -10,7 +10,7 @@ import { getOrderStatusTKey, getProductServiceTKey } from '../../../common/utils
 import Text from '../../../common/text/Text';
 import styles from './invoiceModal.module.scss';
 import { Invoice } from '../types';
-import { PriceUnits } from '../../../@types/__generated__/globalTypes';
+import { OrderStatus, PriceUnits } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 
 interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
@@ -64,6 +64,12 @@ const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps
           label={t('customerView.customerInvoice.dueDate')}
           value={formatDate(invoice.dueDate, i18n.language)}
         />
+        {invoice.status === OrderStatus.PAID && (
+          <LabelValuePair
+            label={t('customerView.customerInvoice.paidAt')}
+            value={formatDate(invoice.paidAt, i18n.language)}
+          />
+        )}
         <LabelValuePair
           label={t('customerView.customerInvoice.status')}
           value={t(getOrderStatusTKey(invoice.status))}

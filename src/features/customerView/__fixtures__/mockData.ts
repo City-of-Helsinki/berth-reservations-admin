@@ -37,6 +37,7 @@ export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
       endDate: '2020-09-14',
     },
     dueDate: '2020-07-10',
+    paidAt: '2020-07-01',
     basePrice: 96.67,
     totalPrice: 191.7,
     orderLines: [

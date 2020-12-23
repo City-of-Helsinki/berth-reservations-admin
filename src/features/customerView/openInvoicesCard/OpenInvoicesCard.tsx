@@ -12,7 +12,7 @@ import { getInvoiceTypeKey, getProductServiceTKey } from '../../../common/utils/
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
 import { Invoice } from '../types';
-import { PriceUnits } from '../../../@types/__generated__/globalTypes';
+import { PriceUnits, OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface OpenInvoicesCardProps {
   invoices: Invoice[];
@@ -57,6 +57,12 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
             label={t('customerView.customerInvoice.dueDate')}
             value={formatDate(invoice.dueDate, i18n.language)}
           />
+          {invoice.status === OrderStatus.PAID && (
+            <LabelValuePair
+              label={t('customerView.customerInvoice.paidAt')}
+              value={formatDate(invoice.paidAt, i18n.language)}
+            />
+          )}
         </Section>
         <Section className={styles.feesSection}>
           <LabelValuePair

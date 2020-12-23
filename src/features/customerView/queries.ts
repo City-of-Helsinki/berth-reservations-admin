@@ -129,6 +129,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             orderNumber
             orderType
             dueDate
+            paidAt
             totalPrice
             price
             status

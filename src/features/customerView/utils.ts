@@ -246,6 +246,7 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
             endDate: lease.endDate,
           },
           dueDate: orderNode.dueDate,
+          paidAt: orderNode.paidAt,
           basePrice: orderNode.price,
           totalPrice: orderNode.totalPrice,
           orderLines,
