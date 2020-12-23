@@ -1,13 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { Button } from 'hds-react';
+import { shallow } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import LeasesCard, { LeasesCardProps } from './LeasesCard';
 
 describe('LeasesCard', () => {
   const initialProps: LeasesCardProps = {
-    handleShowContract: jest.fn(),
     title: 'title',
     infoSectionTitle: 'infoSectionTitle',
     addressLabel: 'addressLabel',
