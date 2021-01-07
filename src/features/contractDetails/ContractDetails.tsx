@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Section from '../../../../common/section/Section';
-import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
-import { ContractStatus } from '../../../../@types/__generated__/globalTypes';
-import { formatDate } from '../../../../common/utils/format';
-import ExternalLink from '../../../../common/externalLink/ExternalLink';
+import Section from '../../common/section/Section';
+import LabelValuePair from '../../common/labelValuePair/LabelValuePair';
+import { ContractStatus } from '../../@types/__generated__/globalTypes';
+import { formatDate } from '../../common/utils/format';
+import ExternalLink from '../../common/externalLink/ExternalLink';
 
 interface ContractDetailsProps {
   createdAt: string;

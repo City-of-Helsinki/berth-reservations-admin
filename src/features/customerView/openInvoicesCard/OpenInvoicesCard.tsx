@@ -12,7 +12,9 @@ import { getInvoiceTypeKey, getProductServiceTKey } from '../../../common/utils/
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Button from '../../../common/button/Button';
 import { Invoice } from '../types';
-import { PriceUnits } from '../../../@types/__generated__/globalTypes';
+import { PriceUnits, OrderStatus } from '../../../@types/__generated__/globalTypes';
+import BerthContractDetails from '../../contractDetails/BerthContractDetailsContainer';
+import WinterStorageContractDetails from '../../contractDetails/WinterStorageContractDetailsContainer';
 
 export interface OpenInvoicesCardProps {
   invoices: Invoice[];
@@ -57,6 +59,12 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
             label={t('customerView.customerInvoice.dueDate')}
             value={formatDate(invoice.dueDate, i18n.language)}
           />
+          {invoice.status === OrderStatus.PAID && (
+            <LabelValuePair
+              label={t('customerView.customerInvoice.paidAt')}
+              value={formatDate(invoice.paidAt, i18n.language)}
+            />
+          )}
         </Section>
         <Section className={styles.feesSection}>
           <LabelValuePair
@@ -84,6 +92,8 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
             value={formatPrice(invoice.totalPrice, i18n.language)}
           />
         </Section>
+        {isBerthInvoice(invoice) && <BerthContractDetails leaseId={invoice.leaseId} />}
+        {isWinterStorageInvoice(invoice) && <WinterStorageContractDetails leaseId={invoice.leaseId} />}
         <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
           {t('customerView.customerInvoice.showInvoice')}
         </Button>

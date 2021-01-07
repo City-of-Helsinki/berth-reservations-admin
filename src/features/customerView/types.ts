@@ -113,6 +113,7 @@ export type OrderLine = {
 };
 
 export type Invoice = {
+  leaseId: string;
   orderNumber?: string;
   orderType: OrderOrderType;
   status: OrderStatus;
@@ -121,6 +122,7 @@ export type Invoice = {
     endDate: string;
   };
   dueDate: string;
+  paidAt: string;
   totalPrice: number;
   basePrice: number;
   orderLines: OrderLine[];

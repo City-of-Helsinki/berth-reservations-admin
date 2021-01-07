@@ -526,6 +526,7 @@
       "showInvoice": "Näytä lasku",
       "contractPeriod": "Sopimuskausi",
       "dueDate": "Eräpäivä",
+      "paidAt": "Maksettu",
       "noInvoice": "Ei avoimia laskuja",
       "invoiceType": "Laskun aihe",
       "status": "Laskun tila"
@@ -624,8 +625,8 @@
     "form": {
       "title": "Lähetä lasku",
       "description": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
-      "dueDate":"Laskun eräpäivä"
-    } 
+      "dueDate": "Laskun eräpäivä"
+    }
   },
   "customerProfile": {
     "title": "Asiakastiedot",

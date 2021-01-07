@@ -254,6 +254,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode {
   __typename: "BerthLeaseNode";
+  id: string;
   startDate: any;
   endDate: any;
   berth: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth;
@@ -308,6 +309,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStora
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode {
   __typename: "WinterStorageLeaseNode";
+  id: string;
   startDate: any;
   endDate: any;
   place: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place | null;
@@ -321,6 +323,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node {
   orderNumber: string;
   orderType: OrderOrderType;
   dueDate: any;
+  paidAt: any | null;
   totalPrice: any;
   price: any;
   status: OrderStatus;

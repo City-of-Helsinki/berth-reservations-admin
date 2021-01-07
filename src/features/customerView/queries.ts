@@ -129,6 +129,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             orderNumber
             orderType
             dueDate
+            paidAt
             totalPrice
             price
             status
@@ -146,6 +147,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             }
             lease {
               ... on BerthLeaseNode {
+                id
                 startDate
                 endDate
                 berth {
@@ -163,6 +165,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 }
               }
               ... on WinterStorageLeaseNode {
+                id
                 startDate
                 endDate
                 place {

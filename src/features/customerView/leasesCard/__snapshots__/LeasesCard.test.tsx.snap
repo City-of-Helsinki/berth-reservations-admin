@@ -16,16 +16,6 @@ exports[`LeasesCard renders normally 1`] = `
   <div
     class="cardBody"
   >
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
-      type="button"
-    >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-      >
-        Näytä sopimus
-      </span>
-    </button>
     <article
       class="section"
     >
@@ -77,16 +67,6 @@ exports[`LeasesCard renders normally 1`] = `
   <div
     class="cardBody"
   >
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
-      type="button"
-    >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-      >
-        Näytä sopimus
-      </span>
-    </button>
     <article
       class="section"
     >
