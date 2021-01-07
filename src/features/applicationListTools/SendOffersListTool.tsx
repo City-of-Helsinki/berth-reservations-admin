@@ -18,14 +18,14 @@ export interface SendOffersListToolProps<A, O> {
   handleApproveOffers(offers: O[]): void;
 }
 
-const SendOffersListTool = ({
+const SendOffersListTool = <A, O>({
   clearSelectedRows,
   filterUnhandledApplications,
   getDraftedOffers,
   handleApproveOffers,
   isSubmitting,
   selectedRows,
-}: SendOffersListToolProps<object, object>) => {
+}: SendOffersListToolProps<A, O>) => {
   const { t } = useTranslation();
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
   const toastId = 'multiApplicationsError';

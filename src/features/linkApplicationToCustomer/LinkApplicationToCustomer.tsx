@@ -92,8 +92,9 @@ const LinkApplicationToCustomer = ({
         loading={loadingCustomers}
         columns={columns}
         renderMainHeader={() => t('linkApplicationToCustomer.mainHeader')}
-        renderTableToolsTop={({ selectedRows }) => {
-          const onLinkCustomer = selectedRows.length ? () => handleLinkCustomer(selectedRows[0].id) : undefined;
+        renderTableToolsTop={({ selectedRowIds }) => {
+          const selection = Object.keys(selectedRowIds);
+          const onLinkCustomer = selection.length ? () => handleLinkCustomer(selection[0]) : undefined;
 
           return <CustomersTableTools {...customersTableTools} handleLinkCustomer={onLinkCustomer} />;
         }}

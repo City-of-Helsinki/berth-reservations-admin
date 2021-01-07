@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
+import { atom } from 'recoil';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
@@ -19,7 +20,7 @@ import { queueFeatureFlag } from '../../common/utils/featureFlags';
 import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 import ListActions from '../../common/listActions/ListActions';
-import { UnmarkedWinterStorageNotice } from '../unmarkedWsNoticeList/utils';
+import { usePreserveSelect } from '../../common/utils/usePreserveSelect';
 
 interface Order {
   orderId: string;
@@ -51,6 +52,11 @@ export interface ApplicationListProps {
 
 type ColumnType = Column<ApplicationData>;
 
+const selectedApplicationsAtom = atom<{ [x: string]: ApplicationData }>({
+  key: 'ApplicationList_selectedApplicationsAtom',
+  default: {},
+});
+
 const ApplicationList = ({
   count,
   data,
@@ -74,6 +80,9 @@ const ApplicationList = ({
   tableData,
 }: ApplicationListProps) => {
   const { t, i18n } = useTranslation();
+  const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<ApplicationData>(
+    selectedApplicationsAtom
+  );
 
   const rawColumns: (ColumnType | undefined)[] = [
     {
@@ -196,7 +205,7 @@ const ApplicationList = ({
             />
           );
         }}
-        renderTableToolsTop={({ selectedRows }, { resetSelectedRows }) => (
+        renderTableToolsTop={(_, { resetSelectedRows }) => (
           <>
             <ApplicationTableTools
               count={count}
@@ -210,12 +219,12 @@ const ApplicationList = ({
               resetSelectedRows={resetSelectedRows}
               listActions={[
                 {
-                  id: 'sendOffer',
+                  id: 'ApplicationList_sendOffer',
                   label: t('applicationList.tools.sendOffer'),
-                  renderComponent: (selectedRows, resetSelectedRows) => (
+                  renderComponent: () => (
                     <SendOffersListTool
                       clearSelectedRows={resetSelectedRows}
-                      filterUnhandledApplications={(row: UnmarkedWinterStorageNotice) => !row.leaseId}
+                      filterUnhandledApplications={(row) => !row.lease}
                       getDraftedOffers={getDraftedOffers}
                       handleApproveOffers={handleApproveOrders}
                       isSubmitting={isSubmittingApproveOrders}
@@ -235,8 +244,12 @@ const ApplicationList = ({
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
-        initialState={{ sortBy }}
+        initialState={{
+          sortBy,
+          selectedRowIds: selectedRowIdsDict,
+        }}
         onSortedColsChange={onSortedColsChange}
+        onSelectionChange={(selectedRowIds) => onSelectionChange(selectedRowIds, tableData)}
         manualSortBy
         canSelectRows
       />
