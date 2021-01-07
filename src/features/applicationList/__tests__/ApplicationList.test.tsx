@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { RecoilRoot } from 'recoil';
 import { HashRouter } from 'react-router-dom';
 import { IconAngleDown } from 'hds-react';
 
@@ -10,26 +11,31 @@ import TableFilters from '../../../common/tableFilters/TableFilters';
 
 const mockProps: ApplicationListProps = {
   sortBy: [],
-  onStatusFilterChange: jest.fn(),
   data: undefined,
+  isDeleting: false,
+  loading: false,
+  onlySwitchApps: false,
+  pageIndex: 0,
+  tableData: [],
+  isSubmittingApproveOrders: false,
+  handleApproveOrders: jest.fn(),
+  onNameFilterChange: jest.fn(),
+  onStatusFilterChange: jest.fn(),
   getPageCount: jest.fn(() => 0),
   goToPage: jest.fn(),
   handleDeleteLease: jest.fn(),
-  isDeleting: false,
-  loading: false,
   onSortedColsChange: jest.fn(),
-  onlySwitchApps: false,
-  pageIndex: 0,
   setOnlySwitchApps: jest.fn(),
-  tableData: [],
 };
 
 describe('ApplicationList', () => {
   const getWrapper = (props?: Partial<ApplicationListProps>) =>
     mount(
-      <HashRouter>
-        <ApplicationList {...mockProps} {...props} />
-      </HashRouter>
+      <RecoilRoot>
+        <HashRouter>
+          <ApplicationList {...mockProps} {...props} />
+        </HashRouter>
+      </RecoilRoot>
     );
 
   it('renders normally with minimum props', () => {
