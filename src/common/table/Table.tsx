@@ -21,6 +21,7 @@ import {
   UseSortByColumnOptions,
   UseFiltersInstanceProps,
   UseGlobalFiltersOptions,
+  actions,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 import equal from 'fast-deep-equal';
@@ -229,7 +230,7 @@ const Table = <D extends { id: string }>({
     prepareRow,
     setGlobalFilter,
     setFilter,
-    toggleAllRowsSelected,
+    dispatch,
   } = useTable(
     {
       columns: tableColumns,
@@ -253,6 +254,10 @@ const Table = <D extends { id: string }>({
     usePagination,
     useRowSelect
   );
+
+  const resetSelectedRows = useCallback(() => {
+    dispatch({ type: actions.resetSelectedRows });
+  }, [dispatch]);
 
   useEffect(() => {
     gotoPage(0);
@@ -369,7 +374,7 @@ const Table = <D extends { id: string }>({
   };
 
   const renderTableTools = (fn?: TableToolsFn<D>) => {
-    return fn?.(state, { setGlobalFilter, setFilter, resetSelectedRows: () => toggleAllRowsSelected(false) });
+    return fn?.(state, { setGlobalFilter, setFilter, resetSelectedRows });
   };
 
   return (
