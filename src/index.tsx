@@ -13,6 +13,12 @@ const { REACT_APP_SENTRY_DSN, REACT_APP_SENTRY_ENVIRONMENT } = process.env;
 Sentry.init({
   dsn: REACT_APP_SENTRY_DSN,
   environment: REACT_APP_SENTRY_ENVIRONMENT,
+  beforeBreadcrumb(breadcrumb) {
+    if (JSON.stringify(breadcrumb.data).includes('access_token')) {
+      delete breadcrumb.data;
+    }
+    return breadcrumb;
+  },
 });
 
 ReactDOM.render(<App />, document.getElementById('root'));
