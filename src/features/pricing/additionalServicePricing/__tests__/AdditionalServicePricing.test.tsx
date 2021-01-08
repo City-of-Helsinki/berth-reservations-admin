@@ -14,6 +14,7 @@ describe('AdditionalServicePricing', () => {
     onAddServiceClick: jest.fn(),
     onSubmitForm: jest.fn(),
     onCloseModal: jest.fn(),
+    onDelete: jest.fn(),
   };
 
   const getWrapper = (props: Partial<AdditionalServicePricingProps> = {}) =>

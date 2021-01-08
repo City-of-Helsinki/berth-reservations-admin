@@ -333,6 +333,11 @@ export interface CreateWinterStorageProductMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface DeleteAdditionalProductMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface DeleteBerthApplicationMutationInput {
   id: string;
   clientMutationId?: string | null;
