@@ -33,8 +33,8 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   customer: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_customer | null;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
+  boatWidth: any;
+  boatLength: any;
   boatName: string;
   boatModel: string;
   winterStorageAreaChoices: (WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices | null)[] | null;
