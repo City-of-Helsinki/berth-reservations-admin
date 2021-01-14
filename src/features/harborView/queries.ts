@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const INDIVIDUAL_HARBOR_QUERY = gql`
-  query INDIVIDUAL_HARBOR($id: ID!) {
-    harbor(id: $id) {
+  query INDIVIDUAL_HARBOR($harborId: ID!) {
+    harbor(id: $harborId) {
       id
       properties {
         name
@@ -19,51 +19,57 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
         }
         servicemapId
         maxWidth
-        piers {
-          edges {
-            node {
-              id
-              properties {
-                identifier
-                priceTier
-                electricity
-                wasteCollection
-                water
-                lighting
-                gate
-                suitableBoatTypes {
-                  name
+      }
+    }
+    piers(harbor: $harborId) {
+      edges {
+        node {
+          id
+          properties {
+            identifier
+            priceTier
+            electricity
+            wasteCollection
+            water
+            lighting
+            gate
+            suitableBoatTypes {
+              name
+            }
+          }
+        }
+      }
+    }
+    berths(harbor: $harborId) {
+      count
+      edges {
+        node {
+          id
+          isActive
+          number
+          width
+          length
+          depth
+          mooringType
+          comment
+          leases {
+            edges {
+              node {
+                customer {
+                  id
+                  firstName
+                  lastName
                 }
-                berths {
-                  edges {
-                    node {
-                      id
-                      isActive
-                      number
-                      width
-                      length
-                      depth
-                      mooringType
-                      comment
-                      leases {
-                        edges {
-                          node {
-                            customer {
-                              id
-                              firstName
-                              lastName
-                            }
-                            status
-                            startDate
-                            endDate
-                            isActive
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
+                status
+                startDate
+                endDate
+                isActive
               }
+            }
+          }
+          pier {
+            properties {
+              identifier
             }
           }
         }

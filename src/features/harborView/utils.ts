@@ -3,8 +3,8 @@ import { Berth, IndividualHarborData, Lease, Map, Pier } from './types';
 import { PriceTier } from '../../@types/__generated__/globalTypes';
 
 export const getIndividualHarborData = (data: INDIVIDUAL_HARBOR | undefined): IndividualHarborData | null => {
-  if (data?.harbor?.properties?.piers) {
-    const pierProps = data.harbor.properties.piers.edges.reduce(
+  if (data?.harbor?.properties && data?.piers) {
+    const pierProps = data.piers.edges.reduce(
       (prev, pier) => {
         if (pier?.node?.properties) {
           return {
@@ -48,46 +48,39 @@ export const getIndividualHarborData = (data: INDIVIDUAL_HARBOR | undefined): In
 };
 
 export const getBerths = (data: INDIVIDUAL_HARBOR | undefined): Berth[] => {
-  if (!data?.harbor?.properties?.piers) return [];
+  if (!data?.piers || !data?.berths) return [];
 
-  return data.harbor.properties.piers.edges.reduce<Berth[]>((acc, pierEdge) => {
-    if (!pierEdge?.node?.properties) return [];
+  return data.berths.edges.reduce<Berth[]>((acc, berthEdge) => {
+    if (!berthEdge || !berthEdge.node || !berthEdge.node.pier?.properties?.identifier) return acc;
 
-    const { identifier } = pierEdge.node.properties;
-    const berths = pierEdge.node.properties.berths.edges.reduce<Berth[]>((prev, berthEdge) => {
-      if (!berthEdge || !berthEdge.node) return prev;
+    const leases =
+      berthEdge?.node?.leases?.edges.reduce<Lease[]>((acc, leaseEdge) => {
+        if (!leaseEdge?.node) return acc;
+        return [...acc, { ...leaseEdge.node }];
+      }, []) ?? [];
 
-      const leases =
-        berthEdge?.node?.leases?.edges.reduce<Lease[]>((acc, leaseEdge) => {
-          if (!leaseEdge?.node) return acc;
-          return [...acc, { ...leaseEdge.node }];
-        }, []) ?? [];
-
-      return [
-        ...prev,
-        {
-          id: berthEdge.node.id,
-          identifier,
-          isActive: berthEdge.node.isActive,
-          length: berthEdge.node.length,
-          mooringType: berthEdge.node.mooringType,
-          number: berthEdge.node.number,
-          width: berthEdge.node.width,
-          depth: berthEdge.node.depth,
-          comment: berthEdge.node.comment,
-          leases,
-        },
-      ];
-    }, []);
-
-    return [...acc, ...berths];
+    return [
+      ...acc,
+      {
+        id: berthEdge.node.id,
+        identifier: berthEdge.node.pier.properties.identifier,
+        isActive: berthEdge.node.isActive,
+        length: berthEdge.node.length,
+        mooringType: berthEdge.node.mooringType,
+        number: berthEdge.node.number,
+        width: berthEdge.node.width,
+        depth: berthEdge.node.depth,
+        comment: berthEdge.node.comment,
+        leases,
+      },
+    ];
   }, []);
 };
 
 export const getPiers = (data: INDIVIDUAL_HARBOR | undefined): Pier[] => {
-  if (!data?.harbor?.properties?.piers) return [];
+  if (!data?.piers) return [];
 
-  return data.harbor.properties.piers.edges.reduce<Pier[]>((acc, pierEdge) => {
+  return data.piers.edges.reduce<Pier[]>((acc, pierEdge) => {
     if (!pierEdge?.node?.properties) return acc;
 
     const { identifier, priceTier, electricity, wasteCollection, water, lighting, gate } = pierEdge.node.properties;
