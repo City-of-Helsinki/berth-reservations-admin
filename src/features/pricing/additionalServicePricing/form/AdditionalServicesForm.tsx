@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { TextInput } from 'hds-react';
 import { Field, Form, Formik } from 'formik';
@@ -22,6 +22,8 @@ import {
 } from '../../../../common/utils/translations';
 import Button from '../../../../common/button/Button';
 import styles from './additionalServicesForm.module.scss';
+import FormHeader from '../../../../common/formHeader/FormHeader';
+import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
 
 const serviceOptions = Object.values(ProductServiceType);
 const taxOptions = Object.values(AdditionalProductTaxEnum);
@@ -38,8 +40,10 @@ export interface AdditionalServiceValues {
 
 export interface AdditionalServicesFormProps {
   initialValues?: AdditionalServiceValues | null;
+  editingServiceId?: string;
   onSubmit(values: AdditionalServiceValues): void;
   onCancel(): void;
+  onDelete(): void;
 }
 
 export const getAdditionalServicesValidationSchema = (t: TFunction) => {
@@ -66,8 +70,15 @@ const OPTIONAL_SERVICES = [
   ProductServiceType.STORAGE_ON_ICE,
 ];
 
-const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: AdditionalServicesFormProps) => {
+const AdditionalServicesForm = ({
+  editingServiceId,
+  initialValues,
+  onSubmit,
+  onCancel,
+  onDelete,
+}: AdditionalServicesFormProps) => {
   const { t, i18n } = useTranslation();
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const defaultValues: AdditionalServiceValues = {
     service: null,
     priceValue: '',
@@ -87,6 +98,12 @@ const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: Additiona
 
         return (
           <Form className={styles.form}>
+            <FormHeader
+              title={t('pricing.editModalHeading')}
+              isSubmitting={isSubmitting}
+              onDelete={editingServiceId ? () => setIsDeleteModalOpen(true) : undefined}
+              onDeleteText={t('forms.common.delete')}
+            />
             <div className={styles.row}>
               <FormTypeTitle label={t('common.terminology.dataEntry')} value={t('pricing.additionalServices.title')} />
             </div>
@@ -162,6 +179,18 @@ const AdditionalServicesForm = ({ initialValues, onSubmit, onCancel }: Additiona
                 {t('common.save')}
               </Button>
             </div>
+
+            <ConfirmationModal
+              isOpen={isDeleteModalOpen}
+              title={t('forms.additionalServices.title')}
+              infoText={t('forms.additionalServices.deleteConfirmation.infoText')}
+              onCancelText={t('forms.common.cancel')}
+              onConfirmText={t('forms.common.delete')}
+              warningText={t('forms.additionalServices.deleteConfirmation.warningText')}
+              onCancel={() => setIsDeleteModalOpen(false)}
+              onConfirm={onDelete}
+              className={styles.confirmationModal}
+            />
           </Form>
         );
       }}

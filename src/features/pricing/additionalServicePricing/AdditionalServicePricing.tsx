@@ -41,6 +41,7 @@ export interface AdditionalServicePricingProps {
   onAddServiceClick(): void;
   onSubmitForm(values: AdditionalServiceValues): void;
   onCloseModal(): void;
+  onDelete(): void;
 }
 
 const AdditionalServicePricing = ({
@@ -53,6 +54,7 @@ const AdditionalServicePricing = ({
   onAddServiceClick,
   onEditRowClick,
   onCloseModal,
+  onDelete,
 }: AdditionalServicePricingProps) => {
   const { t, i18n } = useTranslation();
 
@@ -109,7 +111,6 @@ const AdditionalServicePricing = ({
   ];
 
   const initialValues = data?.edges.find((edge) => edge?.node?.id === editingServiceId)?.node;
-  const modalLabelKey = editingServiceId ? 'pricing.editModalHeading' : 'common.addNew';
 
   return (
     <>
@@ -131,8 +132,14 @@ const AdditionalServicePricing = ({
           />
         </CardBody>
       </Card>
-      <Modal isOpen={isModalOpen} toggleModal={onCloseModal} label={t(modalLabelKey).toUpperCase()}>
-        <AdditionalServicesForm onCancel={onCloseModal} initialValues={initialValues} onSubmit={onSubmitForm} />
+      <Modal isOpen={isModalOpen} toggleModal={onCloseModal}>
+        <AdditionalServicesForm
+          onCancel={onCloseModal}
+          initialValues={initialValues}
+          onSubmit={onSubmitForm}
+          editingServiceId={editingServiceId}
+          onDelete={onDelete}
+        />
       </Modal>
     </>
   );

@@ -32,10 +32,10 @@ export interface OFFER_berthApplication {
   boatRegistrationNumber: string;
   boatName: string;
   boatModel: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
+  boatWidth: any;
+  boatLength: any;
+  boatDraught: any | null;
+  boatWeight: any | null;
 }
 
 export interface OFFER_boatTypes {

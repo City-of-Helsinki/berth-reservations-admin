@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-export const ADD_ADDITIONAL_SERVICE_MUTATION = gql`
-  mutation ADD_ADDITIONAL_SERVICE($input: CreateAdditionalProductMutationInput!) {
+export const ADD_ADDITIONAL_SERVICE_PRICE_MUTATION = gql`
+  mutation ADD_ADDITIONAL_SERVICE_PRICE($input: CreateAdditionalProductMutationInput!) {
     createAdditionalProduct(input: $input) {
       additionalProduct {
         id
@@ -28,6 +28,14 @@ export const UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION = gql`
         taxPercentage
         productType
       }
+    }
+  }
+`;
+
+export const DELETE_ADDITIONAL_SERVICE_PRICE_MUTATION = gql`
+  mutation DELETE_ADDITIONAL_SERVICE_PRICE($input: DeleteAdditionalProductMutationInput!) {
+    deleteAdditionalProduct(input: $input) {
+      clientMutationId
     }
   }
 `;

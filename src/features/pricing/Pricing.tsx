@@ -22,7 +22,13 @@ export interface PricingProps {
   additionalServicesData: AdditionalServicePricingProps['data'];
   additionalServicesModal: Pick<
     AdditionalServicePricingProps,
-    'isModalOpen' | 'onAddServiceClick' | 'onEditRowClick' | 'onCloseModal' | 'editingServiceId' | 'onSubmitForm'
+    | 'isModalOpen'
+    | 'onAddServiceClick'
+    | 'onEditRowClick'
+    | 'onCloseModal'
+    | 'editingServiceId'
+    | 'onSubmitForm'
+    | 'onDelete'
   >;
   loading: boolean;
   refetchQueries?: PureQueryOptions[] | string[];

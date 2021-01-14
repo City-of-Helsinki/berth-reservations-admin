@@ -407,10 +407,10 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node {
   lease: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease | null;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
+  boatWidth: any;
+  boatLength: any;
+  boatDraught: any | null;
+  boatWeight: any | null;
   boatName: string;
   boatModel: string;
   harborChoices: (INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices | null)[] | null;
