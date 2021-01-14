@@ -3,42 +3,57 @@ import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { getOperationName } from 'apollo-link';
+import { NetworkStatus } from 'apollo-client';
 
 import Pricing from './Pricing';
 import { PRICING_QUERY } from './queries';
 import { PRICING } from './__generated__/PRICING';
 import { AdditionalServiceValues } from './additionalServicePricing/form/AdditionalServicesForm';
 import {
-  ADD_ADDITIONAL_SERVICE,
-  ADD_ADDITIONAL_SERVICEVariables as ADD_ADDITIONAL_SERVICE_VARS,
-} from './additionalServicePricing/__generated__/ADD_ADDITIONAL_SERVICE';
+  ADD_ADDITIONAL_SERVICE_PRICE,
+  ADD_ADDITIONAL_SERVICE_PRICEVariables as ADD_ADDITIONAL_SERVICE_PRICE_VARS,
+} from './additionalServicePricing/__generated__/ADD_ADDITIONAL_SERVICE_PRICE';
 import {
-  ADD_ADDITIONAL_SERVICE_MUTATION,
+  UPDATE_ADDITIONAL_SERVICE_PRICE,
+  UPDATE_ADDITIONAL_SERVICE_PRICEVariables as UPDATE_ADDITIONAL_SERVICE_PRICE_VARS,
+} from './additionalServicePricing/__generated__/UPDATE_ADDITIONAL_SERVICE_PRICE';
+import {
+  DELETE_ADDITIONAL_SERVICE_PRICE,
+  DELETE_ADDITIONAL_SERVICE_PRICEVariables as DELETE_ADDITIONAL_SERVICE_PRICE_VARS,
+} from './additionalServicePricing/__generated__/DELETE_ADDITIONAL_SERVICE_PRICE';
+import {
+  ADD_ADDITIONAL_SERVICE_PRICE_MUTATION,
   UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION,
+  DELETE_ADDITIONAL_SERVICE_PRICE_MUTATION,
 } from './additionalServicePricing/mutations';
-import { UPDATE_ADDITIONAL_SERVICE_PRICE } from './additionalServicePricing/__generated__/UPDATE_ADDITIONAL_SERVICE_PRICE';
-import { UPDATE_HARBOR_SERVICE_PRICEVariables as UPDATE_HARBOR_SERVICE_PRICE_VARS } from './harborServicePricing/__generated__/UPDATE_HARBOR_SERVICE_PRICE';
 
 const PricingContainer = () => {
   const { t } = useTranslation();
 
-  const { loading, error, data } = useQuery<PRICING>(PRICING_QUERY);
+  const { loading, error, data, networkStatus, refetch: refetchPricing } = useQuery<PRICING>(PRICING_QUERY, {
+    notifyOnNetworkStatusChange: true,
+  });
+  const isLoading = loading || networkStatus === NetworkStatus.refetch;
+
   const [editingAdditionalServiceId, setEditingAdditionalServiceId] = useState<string>();
   const [isAddingAdditionalService, setIsAddingAdditionalService] = useState<boolean>(false);
-  const [addAdditionalService] = useMutation<ADD_ADDITIONAL_SERVICE, ADD_ADDITIONAL_SERVICE_VARS>(
-    ADD_ADDITIONAL_SERVICE_MUTATION,
-    { refetchQueries: [{ query: PRICING_QUERY }] }
+  const [addAdditionalServicePrice] = useMutation<ADD_ADDITIONAL_SERVICE_PRICE, ADD_ADDITIONAL_SERVICE_PRICE_VARS>(
+    ADD_ADDITIONAL_SERVICE_PRICE_MUTATION
   );
-  const [updateAdditionalServicePrice] = useMutation<UPDATE_ADDITIONAL_SERVICE_PRICE, UPDATE_HARBOR_SERVICE_PRICE_VARS>(
-    UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION,
-    { refetchQueries: [{ query: PRICING_QUERY }] }
-  );
+  const [updateAdditionalServicePrice] = useMutation<
+    UPDATE_ADDITIONAL_SERVICE_PRICE,
+    UPDATE_ADDITIONAL_SERVICE_PRICE_VARS
+  >(UPDATE_ADDITIONAL_SERVICE_PRICE_MUTATION);
+  const [deleteAdditionalServicePrice] = useMutation<
+    DELETE_ADDITIONAL_SERVICE_PRICE,
+    DELETE_ADDITIONAL_SERVICE_PRICE_VARS
+  >(DELETE_ADDITIONAL_SERVICE_PRICE_MUTATION);
   const isAdditionalServiceModalOpen = !!editingAdditionalServiceId || isAddingAdditionalService;
+
   const handleCloseAdditionalServiceModal = () => {
     setEditingAdditionalServiceId(undefined);
     setIsAddingAdditionalService(false);
   };
-
   const handleSubmitAdditionalService = async (values: AdditionalServiceValues) => {
     const { service, period, priceUnit, priceValue, taxPercentage } = values;
 
@@ -47,9 +62,22 @@ const PricingContainer = () => {
         variables: { input: { priceUnit, priceValue, taxPercentage, id: editingAdditionalServiceId } },
       });
       setEditingAdditionalServiceId(undefined);
+      await refetchPricing();
     } else if (service && period) {
-      await addAdditionalService({ variables: { input: { priceUnit, priceValue, taxPercentage, service, period } } });
+      await addAdditionalServicePrice({
+        variables: { input: { priceUnit, priceValue, taxPercentage, service, period } },
+      });
       setIsAddingAdditionalService(false);
+      await refetchPricing();
+    }
+  };
+  const handleDeleteAdditionalService = async () => {
+    if (editingAdditionalServiceId) {
+      await deleteAdditionalServicePrice({
+        variables: { input: { id: editingAdditionalServiceId } },
+      });
+      setEditingAdditionalServiceId(undefined);
+      await refetchPricing();
     }
   };
 
@@ -74,8 +102,9 @@ const PricingContainer = () => {
         onCloseModal: handleCloseAdditionalServiceModal,
         editingServiceId: editingAdditionalServiceId,
         onSubmitForm: handleSubmitAdditionalService,
+        onDelete: handleDeleteAdditionalService,
       }}
-      loading={loading}
+      loading={isLoading}
       refetchQueries={[getOperationName(PRICING_QUERY) || 'PRICING_QUERY']}
     />
   );

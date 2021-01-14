@@ -79,8 +79,8 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication 
   createdAt: any;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
+  boatWidth: any;
+  boatLength: any;
   boatName: string;
   boatModel: string;
   acceptBoatingNewsletter: boolean;

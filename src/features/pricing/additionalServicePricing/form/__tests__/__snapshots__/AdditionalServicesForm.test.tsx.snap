@@ -6,6 +6,15 @@ exports[`AdditionalServicesForm renders normally 1`] = `
   class="form"
 >
   <div
+    class="heading"
+  >
+    <h4
+      class="text brand h4"
+    >
+      Hinnaston muokkaus
+    </h4>
+  </div>
+  <div
     class="row"
   >
     <div>

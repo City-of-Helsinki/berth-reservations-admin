@@ -133,8 +133,8 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice {
   createdAt: any;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
+  boatWidth: any;
+  boatLength: any;
   boatName: string;
   boatModel: string;
   acceptBoatingNewsletter: boolean;

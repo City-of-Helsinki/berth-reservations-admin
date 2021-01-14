@@ -273,6 +273,13 @@
       "email": "Sähköpostiosoite",
       "comment": "Huomiot"
     },
+    "additionalServices": {
+      "title": "Lisäpalvelu",
+      "deleteConfirmation": {
+        "infoText": "Oletko varma että haluat poistaa tämän lisäpalvelun hinnan?",
+        "warningText": "Tätä toimenpidettä ei voi perua."
+      }
+    },
     "sendMultiOffers": {
       "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",

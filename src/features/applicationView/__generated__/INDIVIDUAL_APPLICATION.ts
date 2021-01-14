@@ -188,10 +188,10 @@ export interface INDIVIDUAL_APPLICATION_berthApplication {
   createdAt: any;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
+  boatWidth: any;
+  boatLength: any;
+  boatDraught: any | null;
+  boatWeight: any | null;
   boatName: string;
   boatModel: string;
   accessibilityRequired: boolean;

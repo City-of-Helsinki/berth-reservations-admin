@@ -89,10 +89,10 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node {
   municipality: string;
   boatType: string | null;
   boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
+  boatWidth: any;
+  boatLength: any;
+  boatDraught: any | null;
+  boatWeight: any | null;
   boatName: string;
   boatModel: string;
   accessibilityRequired: boolean;
