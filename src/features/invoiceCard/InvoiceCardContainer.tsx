@@ -6,6 +6,7 @@ import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 import EditForm from './editForm/EditForm';
 import InvoiceCard, { InvoiceCardProps } from './InvoiceCard';
 import { SelectedProduct } from './types';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 export interface InvoiceCardContainerProps extends Omit<InvoiceCardProps, 'sendInvoice' | 'editAdditionalServices'> {
   customerEmail: string | null;
@@ -40,6 +41,7 @@ const InvoiceCardContainer = ({
           <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
             <SendInvoiceForm
               orderId={order.id}
+              isResend={invoiceCardProps.leaseStatus === LeaseStatus.OFFERED}
               email={customerEmail}
               refetchQueries={refetchQueries}
               onSubmit={() => setSendInvoiceModalOpen(false)}

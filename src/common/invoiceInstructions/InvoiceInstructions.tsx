@@ -5,19 +5,22 @@ import styles from '../../features/invoiceCard/sendInvoiceForm/sendInvoiceForm.m
 
 interface Props {
   email?: string | null;
+  isResend?: boolean;
 }
 
-export const InvoiceInstructions = ({ email }: Props) => {
+export const InvoiceInstructions = ({ email, isResend }: Props) => {
   const { t } = useTranslation();
 
   return (
     <>
       <p className={styles.instructions}>
-        {t('invoiceInstructions.paragraph1', {
+        {t(isResend ? 'invoiceInstructions.resendParagraph1' : 'invoiceInstructions.paragraph1', {
           email: email,
         })}
       </p>
-      <p className={styles.instructions}>{t('invoiceInstructions.paragraph2')}</p>
+      <p className={styles.instructions}>
+        {t(isResend ? 'invoiceInstructions.resendParagraph2' : 'invoiceInstructions.paragraph2')}
+      </p>
     </>
   );
 };

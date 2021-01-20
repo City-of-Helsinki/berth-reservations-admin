@@ -126,6 +126,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
       orders {
         edges {
           node {
+            id
             orderNumber
             orderType
             dueDate

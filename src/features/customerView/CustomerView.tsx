@@ -28,6 +28,7 @@ export interface CustomerViewProps {
   openInvoices: Invoice[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
+  setOpenResendInvoice: (invoice: Invoice | undefined) => void;
 }
 
 const CustomerView = ({
@@ -43,6 +44,7 @@ const CustomerView = ({
   openInvoices,
   setBoatToEdit,
   setOpenInvoice,
+  setOpenResendInvoice,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   return (
@@ -55,7 +57,11 @@ const CustomerView = ({
 
         <ApplicationsCard applications={applications} handleNoPlacesAvailable={handleNoPlacesAvailable} />
 
-        <OpenInvoicesCard invoices={openInvoices} handleShowInvoice={(invoice) => setOpenInvoice(invoice)} />
+        <OpenInvoicesCard
+          invoices={openInvoices}
+          handleShowInvoice={(invoice) => setOpenInvoice(invoice)}
+          handleResendInvoice={(invoice) => setOpenResendInvoice(invoice)}
+        />
 
         <InvoicingHistoryCard
           invoices={invoices}

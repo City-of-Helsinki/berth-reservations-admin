@@ -531,6 +531,7 @@
     },
     "customerInvoice": {
       "showInvoice": "Näytä lasku",
+      "resendInvoice": "Lähetä lasku uudelleen",
       "contractPeriod": "Sopimuskausi",
       "dueDate": "Eräpäivä",
       "paidAt": "Maksettu",
@@ -790,8 +791,10 @@
       "title": "Paikan tiedot"
     },
     "invoiceSent": "Tarjous lähetetty",
+    "resendInvoice": "Lähetä tarjous uudelleen",
     "sendInvoice": {
       "title": "Lähetä lasku",
+      "resendTitle": "Lähetä lasku uudelleen",
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
@@ -841,6 +844,8 @@
   },
   "invoiceInstructions": {
     "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
-    "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
+    "paragraph2": "Lähetetyn laskun voi uudelleenlähettää ja sen voi perua.",
+    "resendParagraph1": "Lasku uudelleenlähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen päivitetään alla oleva eräpäivä. Lisäksi laskun hinta lasketaan uudelleen mikäli valitun paikan hinnoitteluun on tehty muutoksia.",
+    "resendParagraph2": "Uudelleenlähetetyn laskun voi edelleen uudelleenlähettää muokkauksien jälkeen ja sen voi perua."
   }
 }

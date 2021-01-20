@@ -25,6 +25,7 @@ export const emptyMockProfile: CUSTOMER_PROFILE = {
 export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
   {
     leaseId: 'MOCK-LEASE-ID',
+    orderId: 'MOCK-ORDER-ID',
     orderNumber: 'MOCK-INVOICE',
     orderType: OrderOrderType.LEASE_ORDER,
     status: OrderStatus.WAITING,

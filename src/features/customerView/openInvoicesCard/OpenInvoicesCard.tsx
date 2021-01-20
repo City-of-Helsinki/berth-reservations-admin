@@ -19,9 +19,10 @@ import WinterStorageContractDetails from '../../contractDetails/WinterStorageCon
 export interface OpenInvoicesCardProps {
   invoices: Invoice[];
   handleShowInvoice(invoice: Invoice): void;
+  handleResendInvoice(invoice: Invoice): void;
 }
 
-const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps) => {
+const OpenInvoicesCard = ({ invoices, handleShowInvoice, handleResendInvoice }: OpenInvoicesCardProps) => {
   const { t, i18n } = useTranslation();
 
   const renderInvoice = (invoice: Invoice, id: number) => {
@@ -94,9 +95,14 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice }: OpenInvoicesCardProps
         </Section>
         {isBerthInvoice(invoice) && <BerthContractDetails leaseId={invoice.leaseId} />}
         {isWinterStorageInvoice(invoice) && <WinterStorageContractDetails leaseId={invoice.leaseId} />}
-        <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
-          {t('customerView.customerInvoice.showInvoice')}
-        </Button>
+        <div className={styles.buttons}>
+          <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
+            {t('customerView.customerInvoice.showInvoice')}
+          </Button>
+          <Button variant="primary" theme="coat" onClick={() => handleResendInvoice(invoice)} className={styles.button}>
+            {t('customerView.customerInvoice.resendInvoice')}
+          </Button>
+        </div>
       </CardBody>
     );
   };
