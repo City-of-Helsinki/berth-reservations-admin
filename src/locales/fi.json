@@ -283,7 +283,8 @@
     "sendMultiOffers": {
       "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",
-      "berthOffers": "Venepaikkatarjouksia",
+      "draftedOffers": "Venepaikkatarjouksia",
+      "sentOffers": "Uudelleen lähetettäviä tarjouksia",
       "instructions": {
         "paragraph1": "Tarjoukset lähetetään asiakkaiden sähköpostiosoitteisiin ja niihin merkitään alla oleva eräpäivä.",
         "paragraph2": "Lähetettyä tarjousta ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle.",

@@ -9,7 +9,7 @@ import ApplicationDetails from '../../common/applicationDetails/ApplicationDetai
 import TableFilters from '../../common/tableFilters/TableFilters';
 import Pagination from '../../common/pagination/Pagination';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { ApplicationData, getDraftedOffers } from './utils';
+import { ApplicationData, getDraftedOffers, getSentOffers } from './utils';
 import { BERTH_APPLICATIONS } from './__generated__/BERTH_APPLICATIONS';
 import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDate } from '../../common/utils/format';
@@ -45,7 +45,7 @@ export interface ApplicationListProps {
   sortBy: SortingRule<ApplicationData>[];
   statusFilter?: ApplicationStatus;
   tableData: ApplicationData[];
-  handleApproveOrders(orders: Order[]): Promise<void>;
+  handleSendOffers(draftedOffers: Order[], sentOffers: Order[], dueDate: string): Promise<void>;
   onNameFilterChange(nameFilter: string | undefined): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
 }
@@ -62,7 +62,7 @@ const ApplicationList = ({
   data,
   getPageCount,
   goToPage,
-  handleApproveOrders,
+  handleSendOffers,
   handleDeleteLease,
   handleNoPlacesAvailable,
   isDeleting,
@@ -226,7 +226,8 @@ const ApplicationList = ({
                       clearSelectedRows={resetSelectedRows}
                       filterUnhandledApplications={(row) => !row.lease}
                       getDraftedOffers={getDraftedOffers}
-                      handleApproveOffers={handleApproveOrders}
+                      getSentOffers={getSentOffers}
+                      handleSendOffers={handleSendOffers}
                       isSubmitting={isSubmittingApproveOrders}
                       selectedRows={selectedRows}
                     />

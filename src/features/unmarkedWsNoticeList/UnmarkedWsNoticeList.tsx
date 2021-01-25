@@ -11,7 +11,7 @@ import { formatDate } from '../../common/utils/format';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { APPLICATION_STATUS } from '../../common/utils/constants';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import { getDraftedOffers, UnmarkedWinterStorageNotice } from './utils';
+import { getDraftedOffers, getSentOffers, UnmarkedWinterStorageNotice } from './utils';
 import UnmarkedWsNoticeDetails from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
 import Pagination from '../../common/pagination/Pagination';
 import Grid from '../../common/grid/Grid';
@@ -47,7 +47,7 @@ export interface UnmarkedWsNoticeListProps {
   statusFilter?: ApplicationStatus;
   nameFilter?: string;
   goToPage(page: number): void;
-  handleApproveOrders(orders: Order[]): Promise<void>;
+  handleSendOffers(draftedOffers: Order[], sentOffers: Order[], dueDate: string): Promise<void>;
   onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   onNameFilterChange(nameFilter: string | undefined): void;
@@ -74,7 +74,7 @@ const UnmarkedWsNoticeList = ({
   onStatusFilterChange,
   onSortedColsChange,
   sortBy,
-  handleApproveOrders,
+  handleSendOffers,
   nameFilter,
   onNameFilterChange,
   onSavePdf,
@@ -182,7 +182,8 @@ const UnmarkedWsNoticeList = ({
                       clearSelectedRows={resetSelectedRows}
                       filterUnhandledApplications={(row) => !row.leaseId}
                       getDraftedOffers={getDraftedOffers}
-                      handleApproveOffers={handleApproveOrders}
+                      getSentOffers={getSentOffers}
+                      handleSendOffers={handleSendOffers}
                       isSubmitting={isSubmittingApproveOrders}
                       selectedRows={selectedRows}
                     />

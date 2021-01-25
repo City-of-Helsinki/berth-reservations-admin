@@ -158,3 +158,17 @@ export const getDraftedOffers = (applications: ApplicationData[]) =>
       },
     ];
   }, []);
+
+export const getSentOffers = (applications: ApplicationData[]) =>
+  applications.reduce<Offer[]>((acc, application) => {
+    if (application.status !== ApplicationStatus.OFFER_SENT || !application.lease?.orderId || !application.email)
+      return acc;
+
+    return [
+      ...acc,
+      {
+        orderId: application.lease.orderId,
+        email: application.email,
+      },
+    ];
+  }, []);

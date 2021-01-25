@@ -15,14 +15,16 @@ export interface SendOffersListToolProps<A, O> {
   clearSelectedRows(): void;
   filterUnhandledApplications(offer: A): boolean;
   getDraftedOffers(rows: A[]): O[];
-  handleApproveOffers(offers: O[]): void;
+  getSentOffers(rows: A[]): O[];
+  handleSendOffers(draftedOffers: O[], sentOffers: O[], date: string): void;
 }
 
 const SendOffersListTool = <A, O>({
   clearSelectedRows,
   filterUnhandledApplications,
   getDraftedOffers,
-  handleApproveOffers,
+  getSentOffers,
+  handleSendOffers,
   isSubmitting,
   selectedRows,
 }: SendOffersListToolProps<A, O>) => {
@@ -30,7 +32,8 @@ const SendOffersListTool = <A, O>({
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
   const toastId = 'multiApplicationsError';
 
-  const offers = getDraftedOffers(selectedRows);
+  const draftedOffers = getDraftedOffers(selectedRows);
+  const sentOffers = getSentOffers(selectedRows);
   const unhandledApplicationsCount = selectedRows.filter(filterUnhandledApplications).length;
   const noSelection = selectedRows.length === 0;
 
@@ -50,8 +53,8 @@ const SendOffersListTool = <A, O>({
     setSendInvoiceModalOpen(true);
   };
 
-  const handleSubmit = () => {
-    handleApproveOffers(offers);
+  const handleSubmit = (values: { dueDate: string }) => {
+    handleSendOffers(draftedOffers, sentOffers, values.dueDate);
     clearSelectedRows();
     setSendInvoiceModalOpen(false);
   };
@@ -71,7 +74,8 @@ const SendOffersListTool = <A, O>({
       </div>
       <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
         <SendMultiOffersForm
-          offersCount={offers.length}
+          sentOffersCount={sentOffers.length}
+          draftedOffersCount={draftedOffers.length}
           onSubmit={handleSubmit}
           onCancel={() => setSendInvoiceModalOpen(false)}
           isSubmitting={isSubmitting}

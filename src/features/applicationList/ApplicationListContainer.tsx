@@ -28,6 +28,11 @@ import {
 } from '../../common/mutations/__generated__/APPROVE_ORDERS';
 import { APPROVE_ORDERS_MUTATION } from '../../common/mutations/approveOrders';
 import { getProfileToken } from '../../common/utils/auth';
+import {
+  RESEND_ORDER,
+  RESEND_ORDERVariables as RESEND_ORDER_VARS,
+} from '../../common/mutations/__generated__/RESEND_ORDER';
+import { RESEND_ORDER_MUTATION } from '../../common/mutations/resendOrder';
 
 const onlySwitchAppsAtom = atom<boolean | undefined>({
   key: 'ApplicationListContainer_onlySwitchAppsAtom',
@@ -87,6 +92,12 @@ const ApplicationListContainer = () => {
       refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
     }
   );
+  const [resendOrders, { loading: isSubmittingResendOrders }] = useMutation<RESEND_ORDER, RESEND_ORDER_VARS>(
+    RESEND_ORDER_MUTATION,
+    {
+      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+    }
+  );
 
   const handleDeleteLease = async (id: string) => {
     await deleteDraftedApplication({
@@ -105,15 +116,45 @@ const ApplicationListContainer = () => {
         },
       },
     });
-  const handleApproveOrders = async (orders: Array<{ orderId: string; email: string }>) => {
-    approveOrders({
-      variables: {
-        input: {
-          orders,
-          profileToken: getProfileToken(),
+
+  const handleSendOffers = async (
+    draftedOffers: Array<{ orderId: string; email: string }>,
+    sentOffers: Array<{ orderId: string; email: string }>,
+    dueDate: string
+  ) => {
+    const approveOffers = new Promise((resolve, reject) => {
+      if (draftedOffers.length === 0) return resolve();
+
+      return approveOrders({
+        variables: {
+          input: {
+            orders: draftedOffers,
+            profileToken: getProfileToken(),
+            dueDate,
+          },
         },
-      },
-    }).then(() => {
+      })
+        .then(resolve)
+        .catch(reject);
+    });
+
+    const resendOffers = new Promise((resolve, reject) => {
+      if (sentOffers.length === 0) return resolve();
+
+      return resendOrders({
+        variables: {
+          input: {
+            orders: sentOffers.map((sentOffer) => sentOffer.orderId),
+            profileToken: getProfileToken(),
+            dueDate,
+          },
+        },
+      })
+        .then(resolve)
+        .catch(reject);
+    });
+
+    Promise.all([approveOffers, resendOffers]).then(() => {
       hdsToast({
         type: 'success',
         labelText: 'applicationList.notifications.offersSent.label',
@@ -131,11 +172,11 @@ const ApplicationListContainer = () => {
       data={data}
       getPageCount={getPageCount}
       goToPage={goToPage}
-      handleApproveOrders={handleApproveOrders}
+      handleSendOffers={handleSendOffers}
       handleDeleteLease={handleDeleteLease}
       handleNoPlacesAvailable={handleNoPlacesAvailable}
       isDeleting={isDeleting}
-      isSubmittingApproveOrders={isSubmittingApproveOrders}
+      isSubmittingApproveOrders={isSubmittingApproveOrders || isSubmittingResendOrders}
       loading={loading}
       onNameFilterChange={(nameFilter) => {
         setNameFilter(nameFilter);
