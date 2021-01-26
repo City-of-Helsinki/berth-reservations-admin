@@ -22,6 +22,7 @@ class AuthService {
       response_type: 'id_token token',
       silent_redirect_uri: `${origin}/silent-callback.html`,
       scope: `openid ${berthScope} ${profileScope}`,
+      clockSkew: 600,
       /* eslint-enable @typescript-eslint/camelcase */
     };
 
