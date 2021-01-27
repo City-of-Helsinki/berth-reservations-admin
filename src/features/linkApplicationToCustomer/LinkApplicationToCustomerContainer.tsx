@@ -101,7 +101,7 @@ const LinkApplicationToCustomerContainer = ({
   const canCreateNewCustomer =
     !getFilteredCustomersData(exactlyFilteredCustomersData).length && !loadingExactlyFilteredCustomers;
 
-  const handleCreateCustomer = async () => {
+  const handleCreateCustomer = () => {
     createNewCustomer(application);
   };
 
