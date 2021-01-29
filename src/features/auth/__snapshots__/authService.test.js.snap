@@ -4,7 +4,7 @@ exports[`authService fetchApiTokens should call axios.get with the right argumen
 Array [
   "api-tokens/",
   Object {
-    "baseURL": "https://api.hel.fi/sso-test",
+    "baseURL": "https://tunnistamo.test.kuva.hel.ninja",
     "headers": Object {
       "Authorization": "bearer db237bc3-e197-43de-8c86-3feea4c5f886",
     },
