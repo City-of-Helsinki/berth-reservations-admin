@@ -7,7 +7,7 @@ import PageContent from '../../common/pageContent/PageContent';
 import HarborCard, { HarborCardProps } from '../../common/harborCard/HarborCard';
 import BoatCard from '../../common/boatCard/BoatCard';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import BerthDetails from '../../common/berthDetails/BerthDetails';
+import BerthDetails from '../berthDetails/BerthDetails';
 import TableFilters from '../../common/tableFilters/TableFilters';
 import TableTools from './tableTools/TableTools';
 import Button from '../../common/button/Button';

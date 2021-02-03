@@ -2,16 +2,16 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconTrash } from 'hds-react';
 
-import Text from '../text/Text';
-import Grid from '../grid/Grid';
-import InternalLink from '../internalLink/InternalLink';
-import Section from '../section/Section';
-import { formatDate } from '../utils/format';
+import Text from '../../common/text/Text';
+import Grid from '../../common/grid/Grid';
+import InternalLink from '../../common/internalLink/InternalLink';
+import Section from '../../common/section/Section';
+import { formatDate } from '../../common/utils/format';
 import styles from './berthDetails.module.scss';
-import { IconAccessibility, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../icons';
-import Property from '../property/Property';
-import MaintenanceServicesPlaceholder from '../maintenancePlaceholders/MaintenanceServicesPlaceholder';
-import { berthAccessibilityFeatureFlag } from '../utils/featureFlags';
+import { IconAccessibility, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../common/icons';
+import Property from '../../common/property/Property';
+import MaintenanceServicesPlaceholder from '../../common/maintenancePlaceholders/MaintenanceServicesPlaceholder';
+import { berthAccessibilityFeatureFlag } from '../../common/utils/featureFlags';
 
 export interface Lease {
   customer: {

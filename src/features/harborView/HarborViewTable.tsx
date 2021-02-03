@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import HarborViewTableTools from './harborViewTableTools/HarborViewTableTools';
 import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
-import BerthDetails from '../../common/berthDetails/BerthDetailsContainer';
+import BerthDetails from '../berthDetails/BerthDetailsContainer';
 import Table, { Column } from '../../common/table/Table';
 import { Berth, Pier } from './types';
 import StatusLabel from '../../common/statusLabel/StatusLabel';

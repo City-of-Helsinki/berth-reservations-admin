@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
 
 import BerthDetails from './BerthDetails';
-import LoadingSpinner from '../spinner/LoadingSpinner';
+import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { BERTH_DETAILS_QUERY } from './queries';
 import { BERTH_DETAILS } from './__generated__/BERTH_DETAILS';
 import { getBerthLeases } from './utils';
