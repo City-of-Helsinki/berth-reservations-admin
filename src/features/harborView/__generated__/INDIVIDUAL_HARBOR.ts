@@ -50,7 +50,7 @@ export interface INDIVIDUAL_HARBOR_piers_edges_node_properties {
   water: boolean;
   lighting: boolean;
   gate: boolean;
-  suitableBoatTypes: (INDIVIDUAL_HARBOR_piers_edges_node_properties_suitableBoatTypes | null)[];
+  suitableBoatTypes: INDIVIDUAL_HARBOR_piers_edges_node_properties_suitableBoatTypes[];
 }
 
 export interface INDIVIDUAL_HARBOR_piers_edges_node {
