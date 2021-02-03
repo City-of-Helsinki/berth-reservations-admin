@@ -315,8 +315,6 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
                 node: {
                   customer: {
                     id: 'UHJvZmlsZU5vZGU6YmY1NDI2OTctZWJmNC00YjEzLTkyNTMtNjE0MTNlOWIxNTU4',
-                    firstName: 'sdfh',
-                    lastName: 'sfhsdfh',
                     __typename: 'ProfileNode',
                   },
                   status: LeaseStatus.REFUSED,

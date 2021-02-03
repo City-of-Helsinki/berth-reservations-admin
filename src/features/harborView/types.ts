@@ -31,8 +31,6 @@ export type IndividualHarborData = {
 export type Lease = {
   customer: {
     id: string;
-    firstName: string;
-    lastName: string;
   };
   status: string;
   startDate: string;
