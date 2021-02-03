@@ -13,7 +13,7 @@ import Property from '../property/Property';
 import MaintenanceServicesPlaceholder from '../maintenancePlaceholders/MaintenanceServicesPlaceholder';
 import { berthAccessibilityFeatureFlag } from '../utils/featureFlags';
 
-interface Lease {
+export interface Lease {
   customer: {
     id: string;
     firstName: string;
@@ -55,7 +55,7 @@ const BerthDetails = ({
     .map(({ startDate, endDate, customer }, i) => {
       return (
         <div key={i}>
-          <Text>{`${formatDate(startDate, i18n.language)} - ${formatDate(endDate, i18n.language)}`}</Text>
+          <Text>{`${formatDate(startDate, i18n.language)} - ${formatDate(endDate, i18n.language)}`}</Text>{' '}
           <InternalLink to={`/customers/${customer.id}`}>
             {customer.firstName !== '' && customer.lastName !== ''
               ? `${customer.firstName} ${customer.lastName}`
