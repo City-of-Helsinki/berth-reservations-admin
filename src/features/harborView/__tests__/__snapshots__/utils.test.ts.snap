@@ -49,9 +49,7 @@ Array [
         "__typename": "BerthLeaseNode",
         "customer": Object {
           "__typename": "ProfileNode",
-          "firstName": "sdfh",
           "id": "UHJvZmlsZU5vZGU6YmY1NDI2OTctZWJmNC00YjEzLTkyNTMtNjE0MTNlOWIxNTU4",
-          "lastName": "sfhsdfh",
         },
         "endDate": "2021-09-14",
         "isActive": false,
