@@ -72,8 +72,6 @@ export interface INDIVIDUAL_HARBOR_piers {
 export interface INDIVIDUAL_HARBOR_berths_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
   id: string;
-  firstName: string;
-  lastName: string;
 }
 
 export interface INDIVIDUAL_HARBOR_berths_edges_node_leases_edges_node {
@@ -137,5 +135,5 @@ export interface INDIVIDUAL_HARBOR {
 }
 
 export interface INDIVIDUAL_HARBORVariables {
-  harborId?: string | null;
+  harborId: string;
 }

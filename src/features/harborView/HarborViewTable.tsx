@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 
 import HarborViewTableTools from './harborViewTableTools/HarborViewTableTools';
 import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
-import BerthDetails from '../../common/berthDetails/BerthDetails';
+import BerthDetails from '../berthDetails/BerthDetailsContainer';
 import Table, { Column } from '../../common/table/Table';
 import { Berth, Pier } from './types';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
-import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDimension } from '../../common/utils/format';
 import Pagination from '../../common/pagination/Pagination';
+import CustomerName from './customerName/CustomerName';
 
 interface Props {
   berths: Berth[];
@@ -44,16 +44,17 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
         if (!activeLease) {
           return cell.value;
         }
-        return <InternalLink to={`/customers/${activeLease.customer.id}}`}>{cell.value}</InternalLink>;
+        return <CustomerName id={cell.value} />;
       },
       Header: t('harborView.tableHeaders.customer') || '',
       accessor: ({ leases }) => {
         const activeLease = leases?.find((lease) => lease.isActive);
         if (!activeLease) return '';
-        return `${activeLease.customer.firstName} ${activeLease.customer.lastName}`;
+        return activeLease.customer.id;
       },
       id: 'leases',
-      filter: 'text',
+      disableFilters: true,
+      disableSortBy: true,
     },
     {
       Header: t('harborView.tableHeaders.length') || '',
@@ -109,13 +110,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
           />
         );
       }}
-      renderSubComponent={(row) => (
-        <BerthDetails
-          leases={row.original.leases ?? []}
-          comment={row.original.comment}
-          onEdit={() => onEditBerth(row.original)}
-        />
-      )}
+      renderSubComponent={(row) => <BerthDetails id={row.original.id} onEdit={() => onEditBerth(row.original)} />}
       renderPaginator={({ pageIndex, pageCount, goToPage }) => (
         <Pagination
           forcePage={pageIndex}

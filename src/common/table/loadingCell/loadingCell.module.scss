@@ -1,0 +1,22 @@
+@import 'colours';
+@import 'spacings';
+
+$bg-size: 1000px;
+
+@keyframes shimmer {
+  0% {
+    background-position: -#{$bg-size} 0;
+  }
+  100% {
+    background-position: $bg-size 0;
+  }
+}
+
+.loadingCell {
+  height: units(1.5);
+  width: calc(100% - #{units(0.5)});
+  margin: 0 units(0.25);
+  background: linear-gradient(90deg, $black-5, $black-10, $black-5);
+  background-size: $bg-size 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}

@@ -19,7 +19,10 @@ interface BerthEditFormProps extends Omit<FormProps<Berth>, 'initialValues' | 'o
 }
 
 const BerthEditForm = ({ berthId, onCancel, onSubmit, onDelete, refetchQueries, pierOptions }: BerthEditFormProps) => {
-  const { loading, error, data } = useQuery<INDIVIDUAL_BERTH>(INDIVIDUAL_BERTH_QUERY, { variables: { id: berthId } });
+  const { loading, error, data } = useQuery<INDIVIDUAL_BERTH>(INDIVIDUAL_BERTH_QUERY, {
+    variables: { id: berthId },
+    fetchPolicy: 'no-cache',
+  });
 
   const [updateBerth, { loading: isSubmitting }] = useMutation<UPDATE_BERTH, UPDATE_BERTH_VARS>(UPDATE_BERTH_MUTATION, {
     refetchQueries: [...(refetchQueries ?? []), { query: INDIVIDUAL_BERTH_QUERY, variables: { id: berthId } }],

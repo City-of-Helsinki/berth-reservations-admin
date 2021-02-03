@@ -29,6 +29,7 @@ import equal from 'fast-deep-equal';
 import styles from './table.module.scss';
 import Checkbox from '../checkbox/Checkbox';
 import RadioButton from '../radioButton/RadioButton';
+import LoadingCell from './loadingCell/LoadingCell';
 
 export type Column<D extends object> = ColumnType<D> & UseFiltersColumnOptions<D> & UseSortByColumnOptions<D>;
 
@@ -351,7 +352,7 @@ const Table = <D extends { id: string }>({
                 cellClassName
               )}
             >
-              {loading ? <div className={styles.placeholder} /> : cell.render('Cell')}
+              {loading ? <LoadingCell /> : cell.render('Cell')}
             </div>
           ))}
         </div>
@@ -364,7 +365,7 @@ const Table = <D extends { id: string }>({
     let emptyBodyContent: React.ReactNode = renderEmptyStateRow?.();
 
     if (state.globalFilter) emptyBodyContent = t('common.table.noMatches');
-    if (loading) emptyBodyContent = <div className={styles.placeholder} />;
+    if (loading) emptyBodyContent = <LoadingCell />;
 
     return (
       <div className={styles.rowWrapper} role="row">

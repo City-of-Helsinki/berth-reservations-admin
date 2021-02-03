@@ -57,8 +57,6 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
               node {
                 customer {
                   id
-                  firstName
-                  lastName
                 }
                 status
                 startDate
