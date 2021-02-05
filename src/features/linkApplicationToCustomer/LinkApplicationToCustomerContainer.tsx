@@ -54,11 +54,12 @@ const LinkApplicationToCustomerContainer = ({
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
   };
-  const [fetchFilteredCustomers, { data: customersData, called, loading: loadingCustomers }] = useLazyQuery<
-    FILTERED_CUSTOMERS,
-    FILTERED_CUSTOMERS_VARS
-  >(FILTERED_CUSTOMERS_QUERY, {
+  const [
+    fetchFilteredCustomers,
+    { data: customersData, called, loading: loadingCustomers, refetch: refetchCustomers },
+  ] = useLazyQuery<FILTERED_CUSTOMERS, FILTERED_CUSTOMERS_VARS>(FILTERED_CUSTOMERS_QUERY, {
     variables: filteredCustomersVars,
+    notifyOnNetworkStatusChange: true,
   });
 
   const exactlyFilteredCustomersVars: FILTERED_CUSTOMERS_VARS = {
@@ -67,23 +68,19 @@ const LinkApplicationToCustomerContainer = ({
     [SearchBy.LAST_NAME]: application.lastName,
     [SearchBy.EMAIL]: application.email,
   };
-  const { data: exactlyFilteredCustomersData, loading: loadingExactlyFilteredCustomers } = useQuery<
-    FILTERED_CUSTOMERS,
-    FILTERED_CUSTOMERS_VARS
-  >(FILTERED_CUSTOMERS_QUERY, {
+  const {
+    data: exactlyFilteredCustomersData,
+    loading: loadingExactlyFilteredCustomers,
+    refetch: refetchExactCustomers,
+  } = useQuery<FILTERED_CUSTOMERS, FILTERED_CUSTOMERS_VARS>(FILTERED_CUSTOMERS_QUERY, {
     variables: exactlyFilteredCustomersVars,
+    notifyOnNetworkStatusChange: true,
   });
 
-  const createNewCustomer = useCreateNewCustomer([
-    {
-      query: FILTERED_CUSTOMERS_QUERY,
-      variables: filteredCustomersVars,
-    },
-    {
-      query: FILTERED_CUSTOMERS_QUERY,
-      variables: exactlyFilteredCustomersVars,
-    },
-  ]);
+  const createNewCustomer = useCreateNewCustomer(undefined, async () => {
+    await refetchCustomers();
+    await refetchExactCustomers();
+  });
 
   useEffect(() => {
     setSearchVal(application[searchBy]);

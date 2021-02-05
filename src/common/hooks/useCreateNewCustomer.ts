@@ -27,12 +27,15 @@ export type CustomerInfo = {
   zipCode: string;
 };
 
-const useCreateNewCustomer = (refetchQueries?: Array<string | PureQueryOptions> | RefetchQueriesFunction) => {
+const useCreateNewCustomer = (
+  refetchQueries?: Array<string | PureQueryOptions> | RefetchQueriesFunction,
+  refetchFunction?: () => void
+) => {
   const [createNewCustomer] = useMutation<CREATE_NEW_PROFILE, CREATE_NEW_PROFILE_VARS>(CREATE_NEW_PROFILE_MUTATION);
 
   const [createNewBerthProfile] = useMutation<CREATE_BERTH_SERVICE_PROFILE, CREATE_BERTH_SERVICE_PROFILE_VARS>(
     CREATE_BERTH_SERVICE_PROFILE_MUTATION,
-    { refetchQueries }
+    { refetchQueries, onCompleted: () => refetchFunction?.() }
   );
 
   return (customerInfo: CustomerInfo) => {
