@@ -3,18 +3,20 @@ import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 
 import Button from '../../../../common/button/Button';
-import OpenInvoicesCard from '../OpenInvoicesCard';
+import OpenInvoicesCard, { OpenInvoicesCardProps } from '../OpenInvoicesCard';
 import { mockInvoices } from '../../__fixtures__/mockData';
 
-const mockProps = {
+const mockProps: OpenInvoicesCardProps = {
   invoices: mockInvoices,
   handleShowInvoice: jest.fn(),
+  handleResendInvoice: jest.fn(),
 };
 
 describe('OpenInvoicesCard', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   const getWrapper = (props = mockProps) =>
     mount(
       <MockedProvider>
@@ -30,8 +32,15 @@ describe('OpenInvoicesCard', () => {
 
   it('invokes handleShowInvoice method when the user clicks on the Show Invoice button', () => {
     const wrapper = getWrapper();
-    wrapper.find(Button).simulate('click');
+    wrapper.find(Button).at(0).simulate('click');
 
     expect(mockProps.handleShowInvoice).toHaveBeenCalledTimes(1);
+  });
+
+  it('invokes handleShowInvoice method when the user clicks on the Resend Invoice button', () => {
+    const wrapper = getWrapper();
+    wrapper.find(Button).at(1).simulate('click');
+
+    expect(mockProps.handleResendInvoice).toHaveBeenCalledTimes(1);
   });
 });

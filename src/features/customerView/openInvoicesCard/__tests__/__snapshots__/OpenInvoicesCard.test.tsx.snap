@@ -129,16 +129,30 @@ exports[`OpenInvoicesCard renders normally 1`] = `
         </div>
       </section>
     </article>
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
-      type="button"
+    <div
+      class="buttons"
     >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+        type="button"
       >
-        Näytä lasku
-      </span>
-    </button>
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Näytä lasku
+        </span>
+      </button>
+      <button
+        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+        type="button"
+      >
+        <span
+          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        >
+          Lähetä lasku uudelleen
+        </span>
+      </button>
+    </div>
   </div>
    
 </div>
