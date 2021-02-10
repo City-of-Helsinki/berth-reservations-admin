@@ -22,7 +22,7 @@ exports[`SendInvoiceFormContainer renders normally 1`] = `
   <p
     class="instructions"
   >
-    Lähetetyn laskun voi uudelleenlähettää ja sen voi perua.
+    Lähetetyn laskun voi lähettää uudelleen ja perua.
   </p>
   <div
     class="dueDate"
