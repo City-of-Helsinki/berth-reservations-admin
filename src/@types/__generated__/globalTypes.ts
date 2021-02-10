@@ -403,9 +403,9 @@ export interface RejectBerthApplicationMutationInput {
 }
 
 export interface ResendOrderMutationInput {
-  orderId: string;
-  dueDate: any;
-  profileToken: string;
+  orders?: string[] | null;
+  dueDate?: any | null;
+  profileToken?: string | null;
   clientMutationId?: string | null;
 }
 

@@ -56,7 +56,7 @@ const SendInvoiceFormContainer = ({
           input: {
             dueDate: values.dueDate,
             profileToken: getProfileToken(),
-            orderId,
+            orders: [orderId],
           },
         },
       }).then((res) => {
