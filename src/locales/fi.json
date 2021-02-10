@@ -846,7 +846,7 @@
   "invoiceInstructions": {
     "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
     "paragraph2": "Lähetetyn laskun voi lähettää uudelleen ja perua.",
-    "resendParagraph1": "Lasku uudelleenlähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen päivitetään alla oleva eräpäivä. Lisäksi laskun hinta lasketaan uudelleen mikäli valitun paikan hinnoitteluun on tehty muutoksia.",
-    "resendParagraph2": "Uudelleenlähetetyn laskun voi edelleen uudelleenlähettää muokkauksien jälkeen ja sen voi perua."
+    "resendParagraph1": "Lasku lähetetään uudelleen asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen päivitetään alla oleva eräpäivä. Lisäksi laskun hinta lasketaan uudelleen mikäli valitun paikan hinnoitteluun on tehty muutoksia.",
+    "resendParagraph2": "Laskun voi yhä lähettää uudelleen muokkauksien jälkeen ja sen voi perua."
   }
 }
