@@ -283,7 +283,7 @@
     "sendMultiOffers": {
       "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",
-      "draftedOffers": "Venepaikkatarjouksia",
+      "draftedOffers": "Uusia tarjouksia",
       "sentOffers": "Uudelleen lähetettäviä tarjouksia",
       "instructions": {
         "paragraph1": "Tarjoukset lähetetään asiakkaiden sähköpostiosoitteisiin ja niihin merkitään alla oleva eräpäivä.",
