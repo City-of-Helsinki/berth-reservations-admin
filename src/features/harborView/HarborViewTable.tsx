@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Cell } from 'react-table';
 import { useTranslation } from 'react-i18next';
 
@@ -23,6 +23,9 @@ interface Props {
 
 const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, onEditPier }: Props) => {
   const { t, i18n } = useTranslation();
+
+  const [tablePageIndex, setTablePageIndex] = useState(0);
+
   const columns: Column<Berth>[] = [
     {
       Header: t('harborView.tableHeaders.number') || '',
@@ -81,10 +84,12 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       filter: 'text',
     },
   ];
+
   return (
     <Table
       data={berths}
       columns={columns}
+      initialState={{ pageIndex: tablePageIndex }}
       canSelectRows
       renderTableToolsTop={(_, setters) => (
         <HarborViewTableTools
@@ -111,11 +116,14 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
         );
       }}
       renderSubComponent={(row) => <BerthDetails id={row.original.id} onEdit={() => onEditBerth(row.original)} />}
-      renderPaginator={({ pageIndex, pageCount, goToPage }) => (
+      renderPaginator={({ pageCount, goToPage }) => (
         <Pagination
-          forcePage={pageIndex}
+          forcePage={tablePageIndex}
           pageCount={pageCount || 1}
-          onPageChange={({ selected }) => goToPage(selected)}
+          onPageChange={({ selected }) => {
+            setTablePageIndex(selected);
+            goToPage(selected);
+          }}
         />
       )}
     />
