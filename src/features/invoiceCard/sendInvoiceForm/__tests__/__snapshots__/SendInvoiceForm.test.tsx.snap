@@ -17,7 +17,7 @@ exports[`SendInvoiceForm renders normally 1`] = `
   <p
     class="instructions"
   >
-    Lasku lähetetään asiakkaan sähköpostiosoitteeseen (test@example.com) ja siihen merkitään alla oleva eräpäivä.
+    Lasku lähetetään asiakkaalle ja siihen merkitään alla oleva eräpäivä.
   </p>
   <p
     class="instructions"
