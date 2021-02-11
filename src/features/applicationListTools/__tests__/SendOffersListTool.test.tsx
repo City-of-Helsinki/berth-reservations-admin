@@ -25,7 +25,8 @@ describe('SendOffersListTool', () => {
           orderId: String(i),
         };
       }),
-    handleApproveOffers: jest.fn(),
+    getSentOffers: () => [],
+    handleSendOffers: jest.fn(),
     isSubmitting: false,
     selectedRows: [
       { id: 'UNO', leaseId: 'EINS' },

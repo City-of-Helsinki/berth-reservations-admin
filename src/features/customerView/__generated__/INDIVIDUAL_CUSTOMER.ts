@@ -47,6 +47,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_boats_edges_node_boatType {
 
 export interface INDIVIDUAL_CUSTOMER_profile_boats_edges_node_certificates {
   __typename: "BoatCertificateNode";
+  id: string;
   file: string | null;
   certificateType: BoatCertificateType;
   validUntil: any | null;
@@ -100,11 +101,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier_p
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier {
   __typename: "PierNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier_properties | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   length: number;
   width: number;
@@ -152,11 +155,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_plac
 
 export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place_winterStorageSection {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place_winterStorageSection_properties | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place {
   __typename: "WinterStoragePlaceNode";
+  id: string;
   number: number;
   winterStorageSection: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_place_winterStorageSection;
 }
@@ -179,6 +184,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_sect
 
 export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node_section_properties | null;
 }
 
@@ -204,6 +210,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_winterStorageLeases {
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_orderLines_edges_node_product {
   __typename: "AdditionalProductNode";
+  id: string;
   service: ProductServiceType;
   priceUnit: PriceUnits;
   priceValue: any;
@@ -211,6 +218,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_orderLines_edges_
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_orderLines_edges_node {
   __typename: "OrderLineNode";
+  id: string;
   product: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_orderLines_edges_node_product | null;
   price: any;
 }
@@ -232,6 +240,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier_properties_harbor {
   __typename: "HarborNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier_properties_harbor_properties | null;
 }
 
@@ -243,11 +252,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier {
   __typename: "PierNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier_properties | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   pier: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier;
 }
@@ -278,11 +289,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStora
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place_winterStorageSection {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place_winterStorageSection_properties | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place {
   __typename: "WinterStoragePlaceNode";
+  id: string;
   winterStorageSection: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place_winterStorageSection;
 }
 
@@ -304,6 +317,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStora
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_section {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_section_properties | null;
 }
 
@@ -320,6 +334,7 @@ export type INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease = INDIVIDUAL_CUS
 
 export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node {
   __typename: "OrderNode";
+  id: string;
   orderNumber: string;
   orderType: OrderOrderType;
   dueDate: any;
@@ -343,15 +358,16 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders {
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_reason {
   __typename: "BerthSwitchReasonType";
+  id: string;
   title: string | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch {
   __typename: "BerthSwitchType";
+  id: string;
   berthNumber: string;
   harbor: string;
   harborName: string;
-  id: string;
   pier: string;
   reason: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_reason | null;
 }
@@ -375,11 +391,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth_pier {
   __typename: "PierNode";
+  id: string;
   properties: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth_pier_properties | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   pier: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth_pier;
 }
@@ -429,11 +447,11 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications {
 
 export interface INDIVIDUAL_CUSTOMER_profile {
   __typename: "ProfileNode";
+  id: string;
   comment: string | null;
   firstName: string;
   invoicingType: InvoicingType | null;
   lastName: string;
-  id: string;
   customerGroup: CustomerGroup | null;
   organization: INDIVIDUAL_CUSTOMER_profile_organization | null;
   primaryAddress: INDIVIDUAL_CUSTOMER_profile_primaryAddress | null;

@@ -60,7 +60,7 @@ const OfferContainer = () => {
 
   const applicationDate = formatDate(data.berthApplication?.createdAt, i18n.language);
   const applicationStatus = data.berthApplication.status;
-  const handleReturn = () => history.push('/applications');
+  const handleReturn = () => history.goBack();
   const applicationType = getApplicationType(!!data.berthApplication.berthSwitch);
   const piersIdentifiers = getAllPiersIdentifiers(data);
   const harbor = getHarbor(data);
@@ -75,7 +75,7 @@ const OfferContainer = () => {
         },
       },
     }).then(() => {
-      history.push('/applications');
+      history.goBack();
       hdsToast({
         type: 'success',
         autoDismiss: true,

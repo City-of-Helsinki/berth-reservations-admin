@@ -50,11 +50,11 @@ describe('InvoiceCard', () => {
       expect(sendButton.props().disabled).toBeFalsy();
     });
 
-    it('is displayed but disabled when application status is "sent"', () => {
+    it('is displayed but with a different text when application status is "sent"', () => {
       const wrapper = getWrapper({ ...defaultProps, applicationStatus: ApplicationStatus.OFFER_SENT });
       const sendButton = findSendButton(wrapper);
       expect(sendButton.length).toBe(1);
-      expect(sendButton.props().disabled).toBeTruthy();
+      expect(sendButton.text()).toEqual('Lähetä tarjous uudelleen');
     });
 
     it('calls sendInvoice on click', () => {

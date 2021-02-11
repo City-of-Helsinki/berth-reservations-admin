@@ -283,10 +283,11 @@
     "sendMultiOffers": {
       "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",
-      "berthOffers": "Venepaikkatarjouksia",
+      "draftedOffers": "Uusia tarjouksia",
+      "sentOffers": "Uudelleen lähetettäviä tarjouksia",
       "instructions": {
         "paragraph1": "Tarjoukset lähetetään asiakkaiden sähköpostiosoitteisiin ja niihin merkitään alla oleva eräpäivä.",
-        "paragraph2": "Lähetettyä tarjousta ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle.",
+        "paragraph2": "Lähetetyn tarjouksen voi lähettää uudelleen ja perua.",
         "paragraph3": "Jos hakemukseen ei ole tarjottu venepaikkaa, asiakkaalle lähetetään ilmoitus paikatta jäämisestä."
       }
     }
@@ -531,6 +532,7 @@
     },
     "customerInvoice": {
       "showInvoice": "Näytä lasku",
+      "resendInvoice": "Lähetä lasku uudelleen",
       "contractPeriod": "Sopimuskausi",
       "dueDate": "Eräpäivä",
       "paidAt": "Maksettu",
@@ -790,8 +792,10 @@
       "title": "Paikan tiedot"
     },
     "invoiceSent": "Tarjous lähetetty",
+    "resendInvoice": "Lähetä tarjous uudelleen",
     "sendInvoice": {
       "title": "Lähetä lasku",
+      "resendTitle": "Lähetä lasku uudelleen",
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
     }
@@ -840,7 +844,9 @@
     }
   },
   "invoiceInstructions": {
-    "paragraph1": "Lasku lähetetään asiakkaan sähköpostiosoitteeseen ({{email}}) ja siihen merkitään alla oleva eräpäivä.",
-    "paragraph2": "Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle"
+    "paragraph1": "Lasku lähetetään asiakkaalle ja siihen merkitään alla oleva eräpäivä.",
+    "paragraph2": "Lähetetyn laskun voi lähettää uudelleen ja perua.",
+    "resendParagraph1": "Lasku lähetetään uudelleen asiakkaalle ja siihen päivitetään alla oleva eräpäivä. Lisäksi laskun hinta lasketaan uudelleen mikäli valitun paikan hinnoitteluun on tehty muutoksia.",
+    "resendParagraph2": "Laskun voi yhä lähettää uudelleen muokkauksien jälkeen ja sen voi perua."
   }
 }

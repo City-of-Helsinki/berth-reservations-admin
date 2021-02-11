@@ -402,6 +402,13 @@ export interface RejectBerthApplicationMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface ResendOrderMutationInput {
+  orders?: string[] | null;
+  dueDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
 export interface SendExistingBerthInvoicesMutationInput {
   dueDate?: any | null;
   profileToken: string;

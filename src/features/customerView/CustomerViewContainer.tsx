@@ -31,16 +31,20 @@ import {
 import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
+import SendInvoiceFormContainer from '../invoiceCard/sendInvoiceForm/SendInvoiceFormContainer';
 
 const CustomerViewContainer = () => {
+  const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
   const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
   const [openInvoice, setOpenInvoice] = useState<Invoice>();
-  const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
+  const [openResendInvoice, setOpenResendInvoice] = useState<Invoice>();
+
+  const { loading, data, refetch } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
     variables: { id },
     fetchPolicy: 'no-cache',
   });
@@ -96,14 +100,18 @@ const CustomerViewContainer = () => {
         openInvoices={openInvoices}
         setBoatToEdit={setBoatToEdit}
         setOpenInvoice={setOpenInvoice}
+        setOpenResendInvoice={setOpenResendInvoice}
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
         <EditCustomerForm
           customerId={id}
           onCancel={() => setEditCustomer(false)}
-          onSubmit={() => setEditCustomer(false)}
-          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+          onSubmit={() => {
+            refetch();
+            setEditCustomer(false);
+          }}
+          refetchQueries={[]}
         />
       </Modal>
 
@@ -113,9 +121,15 @@ const CustomerViewContainer = () => {
             boatTypes={boatTypes}
             initialValues={boatToEdit}
             onCancel={() => setBoatToEdit(null)}
-            onDelete={() => setBoatToEdit(null)}
-            onSubmit={() => setBoatToEdit(null)}
-            refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+            onDelete={() => {
+              refetch();
+              setBoatToEdit(null);
+            }}
+            onSubmit={() => {
+              refetch();
+              setBoatToEdit(null);
+            }}
+            refetchQueries={[]}
           />
         </Modal>
       )}
@@ -125,8 +139,11 @@ const CustomerViewContainer = () => {
           ownerId={data.profile.id}
           boatTypes={boatTypes}
           onCancel={() => setCreatingBoat(false)}
-          onSubmit={() => setCreatingBoat(false)}
-          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+          onSubmit={() => {
+            refetch();
+            setCreatingBoat(false);
+          }}
+          refetchQueries={[]}
         />
       </Modal>
 
@@ -139,8 +156,25 @@ const CustomerViewContainer = () => {
           customerId={id}
           email={customerProfile.primaryEmail}
           berthLeases={berthLeases as BerthLease[]}
-          closeModal={() => setCreatingAdditionalInvoice(false)}
-          refetchQueries={[{ query: INDIVIDUAL_CUSTOMER_QUERY, variables: { id } }]}
+          closeModal={() => {
+            refetch();
+            setCreatingAdditionalInvoice(false);
+          }}
+          refetchQueries={[]}
+        />
+      </Modal>
+
+      <Modal isOpen={!!openResendInvoice} toggleModal={() => setOpenResendInvoice(undefined)}>
+        <SendInvoiceFormContainer
+          orderId={openResendInvoice?.orderId ?? ''}
+          email={customerProfile.primaryEmail ?? null}
+          isResend={true}
+          refetchQueries={[]}
+          onCancel={() => setOpenResendInvoice(undefined)}
+          onSubmit={() => {
+            refetch();
+            setOpenResendInvoice(undefined);
+          }}
         />
       </Modal>
 

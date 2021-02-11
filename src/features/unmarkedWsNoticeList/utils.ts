@@ -112,6 +112,18 @@ export const getDraftedOffers = (applications: UnmarkedWinterStorageNotice[]) =>
     ];
   }, []);
 
+export const getSentOffers = (applications: UnmarkedWinterStorageNotice[]) =>
+  applications.reduce<Offer[]>((acc, { status, orderId, email }) => {
+    if (status !== ApplicationStatus.OFFER_SENT || !orderId || !email) return acc;
+    return [
+      ...acc,
+      {
+        orderId,
+        email,
+      },
+    ];
+  }, []);
+
 export const getCustomersWithUnsentStickers = (
   data: UNMARKED_WINTER_STORAGE_NOTICES_STICKERS | undefined
 ): CustomerInfo[] => {

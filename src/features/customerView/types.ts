@@ -115,6 +115,7 @@ export type OrderLine = {
 export type Invoice = {
   leaseId: string;
   orderNumber?: string;
+  orderId: string;
   orderType: OrderOrderType;
   status: OrderStatus;
   contractPeriod: {

@@ -17,12 +17,12 @@ exports[`SendInvoiceFormContainer renders normally 1`] = `
   <p
     class="instructions"
   >
-    Lasku lähetetään asiakkaan sähköpostiosoitteeseen (test@example.com) ja siihen merkitään alla oleva eräpäivä.
+    Lasku lähetetään asiakkaalle ja siihen merkitään alla oleva eräpäivä.
   </p>
   <p
     class="instructions"
   >
-    Lähetettyä laskua ei voi enää muuttaa, mutta sen voi perua. Perumisesta lähetetään ilmoitus asiakkaalle
+    Lähetetyn laskun voi lähettää uudelleen ja perua.
   </p>
   <div
     class="dueDate"

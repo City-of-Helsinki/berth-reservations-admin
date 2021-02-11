@@ -18,11 +18,12 @@ type FormValues = {
 export type SendInvoiceFormProps = {
   email: string | null;
   isSubmitting: boolean;
+  isResend?: boolean;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoiceFormProps) => {
+const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting, isResend }: SendInvoiceFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(() => {
@@ -45,9 +46,11 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting }: SendInvoic
     >
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
-          <FormHeader title={t('invoiceCard.sendInvoice.title').toUpperCase()} />
+          <FormHeader
+            title={t(isResend ? 'invoiceCard.sendInvoice.resendTitle' : 'invoiceCard.sendInvoice.title').toUpperCase()}
+          />
 
-          <InvoiceInstructions email={email} />
+          <InvoiceInstructions email={email} isResend={isResend} />
 
           <div className={styles.dueDate}>
             <TextInput

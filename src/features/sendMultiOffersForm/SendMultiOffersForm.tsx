@@ -9,6 +9,7 @@ import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';
 import Text from '../../common/text/Text';
 import { getDefaultDueDate, getDueDateValidation } from '../../common/utils/dates';
+import Grid from '../../common/grid/Grid';
 
 type FormValues = {
   dueDate: string;
@@ -16,12 +17,19 @@ type FormValues = {
 
 export type SendMultiOffersFormProps = {
   isSubmitting: boolean;
-  offersCount: number;
+  sentOffersCount: number;
+  draftedOffersCount: number;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: SendMultiOffersFormProps) => {
+const SendMultiOffersForm = ({
+  isSubmitting,
+  draftedOffersCount,
+  onSubmit,
+  onCancel,
+  sentOffersCount,
+}: SendMultiOffersFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(
@@ -47,12 +55,20 @@ const SendMultiOffersForm = ({ isSubmitting, offersCount, onSubmit, onCancel }: 
       {({ values, errors, handleChange }) => (
         <Form className={styles.form}>
           <FormHeader title={t('forms.sendMultiOffers.title').toUpperCase()} />
-          <div className={styles.column}>
-            <Text as="strong" className={styles.header}>
-              {t('forms.sendMultiOffers.berthOffers')}
-            </Text>
-            <Text size="xl">{offersCount}</Text>
-          </div>
+          <Grid colsCount={2}>
+            <div className={styles.column}>
+              <Text as="strong" className={styles.header}>
+                {t('forms.sendMultiOffers.draftedOffers')}
+              </Text>
+              <Text size="xl">{draftedOffersCount}</Text>
+            </div>
+            <div className={styles.column}>
+              <Text as="strong" className={styles.header}>
+                {t('forms.sendMultiOffers.sentOffers')}
+              </Text>
+              <Text size="xl">{sentOffersCount}</Text>
+            </div>
+          </Grid>
 
           <div className={styles.instructions}>
             <p className={styles.paragraph}>{t('forms.sendMultiOffers.instructions.paragraph1')}</p>
