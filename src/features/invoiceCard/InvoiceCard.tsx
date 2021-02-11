@@ -72,7 +72,7 @@ const InvoiceCard = ({
       return null;
     }
     return (
-      <Button theme="coat" onClick={sendInvoice} disabled={order === null}>
+      <Button onClick={sendInvoice} disabled={order === null}>
         {applicationStatus === ApplicationStatus.OFFER_GENERATED
           ? sendButtonLabel ?? t('invoiceCard.sendInvoice.title')
           : t('invoiceCard.resendInvoice')}

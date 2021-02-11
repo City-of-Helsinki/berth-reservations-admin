@@ -113,14 +113,13 @@ export const getDraftedOffers = (applications: UnmarkedWinterStorageNotice[]) =>
   }, []);
 
 export const getSentOffers = (applications: UnmarkedWinterStorageNotice[]) =>
-  applications.reduce<Offer[]>((acc, application) => {
-    if (application.status !== ApplicationStatus.OFFER_SENT || !application.orderId || !application.email) return acc;
-
+  applications.reduce<Offer[]>((acc, { status, orderId, email }) => {
+    if (status !== ApplicationStatus.OFFER_SENT || !orderId || !email) return acc;
     return [
       ...acc,
       {
-        orderId: application.orderId,
-        email: application.email,
+        orderId,
+        email,
       },
     ];
   }, []);

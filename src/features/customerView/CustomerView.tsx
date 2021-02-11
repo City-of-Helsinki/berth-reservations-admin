@@ -59,8 +59,8 @@ const CustomerView = ({
 
         <OpenInvoicesCard
           invoices={openInvoices}
-          handleShowInvoice={(invoice) => setOpenInvoice(invoice)}
-          handleResendInvoice={(invoice) => setOpenResendInvoice(invoice)}
+          handleShowInvoice={setOpenInvoice}
+          handleResendInvoice={setOpenResendInvoice}
         />
 
         <InvoicingHistoryCard

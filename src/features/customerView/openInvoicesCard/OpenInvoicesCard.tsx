@@ -96,10 +96,10 @@ const OpenInvoicesCard = ({ invoices, handleShowInvoice, handleResendInvoice }: 
         {isBerthInvoice(invoice) && <BerthContractDetails leaseId={invoice.leaseId} />}
         {isWinterStorageInvoice(invoice) && <WinterStorageContractDetails leaseId={invoice.leaseId} />}
         <div className={styles.buttons}>
-          <Button variant="secondary" theme="coat" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
+          <Button variant="secondary" onClick={() => handleShowInvoice(invoice)} className={styles.button}>
             {t('customerView.customerInvoice.showInvoice')}
           </Button>
-          <Button variant="primary" theme="coat" onClick={() => handleResendInvoice(invoice)} className={styles.button}>
+          <Button variant="primary" onClick={() => handleResendInvoice(invoice)} className={styles.button}>
             {t('customerView.customerInvoice.resendInvoice')}
           </Button>
         </div>
