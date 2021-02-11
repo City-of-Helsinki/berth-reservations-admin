@@ -19,6 +19,7 @@ const BerthDetailsContainer = ({ id, onEdit }: BerthDetailsContainerProps) => {
     variables: {
       berthId: id,
     },
+    fetchPolicy: 'no-cache',
   });
 
   if (loading) return <LoadingSpinner isLoading={loading} />;

@@ -100,6 +100,7 @@ export interface INDIVIDUAL_HARBOR_berths_edges_node_pier_properties {
 
 export interface INDIVIDUAL_HARBOR_berths_edges_node_pier {
   __typename: "PierNode";
+  id: string;
   properties: INDIVIDUAL_HARBOR_berths_edges_node_pier_properties | null;
 }
 

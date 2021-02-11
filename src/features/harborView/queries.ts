@@ -66,6 +66,7 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
             }
           }
           pier {
+            id
             properties {
               identifier
             }
