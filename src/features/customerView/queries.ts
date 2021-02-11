@@ -3,11 +3,11 @@ import gql from 'graphql-tag';
 export const INDIVIDUAL_CUSTOMER_QUERY = gql`
   query INDIVIDUAL_CUSTOMER($id: ID!) {
     profile(id: $id, serviceType: BERTH) {
+      id
       comment
       firstName
       invoicingType
       lastName
-      id
       customerGroup
       organization {
         id
@@ -51,6 +51,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             hullMaterial
             intendedUse
             certificates {
+              id
               file
               certificateType
               validUntil
@@ -69,12 +70,14 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             endDate
             isActive
             berth {
+              id
               number
               length
               width
               depth
               mooringType
               pier {
+                id
                 properties {
                   identifier
                   harbor {
@@ -97,8 +100,10 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             startDate
             endDate
             place {
+              id
               number
               winterStorageSection {
+                id
                 properties {
                   identifier
                   area {
@@ -111,6 +116,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
               }
             }
             section {
+              id
               properties {
                 area {
                   id
@@ -137,7 +143,9 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             orderLines {
               edges {
                 node {
+                  id
                   product {
+                    id
                     service
                     priceUnit
                     priceValue
@@ -152,11 +160,14 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 startDate
                 endDate
                 berth {
+                  id
                   number
                   pier {
+                    id
                     properties {
                       identifier
                       harbor {
+                        id
                         properties {
                           name
                         }
@@ -170,7 +181,9 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 startDate
                 endDate
                 place {
+                  id
                   winterStorageSection {
+                    id
                     properties {
                       area {
                         id
@@ -182,6 +195,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                   }
                 }
                 section {
+                  id
                   properties {
                     area {
                       id
@@ -201,12 +215,13 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
           node {
             id
             berthSwitch {
+              id
               berthNumber
               harbor
               harborName
-              id
               pier
               reason {
+                id
                 title
               }
             }
@@ -216,8 +231,10 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
               id
               status
               berth {
+                id
                 number
                 pier {
+                  id
                   properties {
                     identifier
                     harbor {
