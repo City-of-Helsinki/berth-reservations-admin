@@ -7,13 +7,13 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
     properties: {
       name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
       numberOfPlaces: 189,
-      numberOfFreePlaces: 189,
+      numberOfFreePlaces: 11,
       streetAddress: 'Meripuistotie 1a',
       zipCode: '00210',
       municipality: 'Helsinki',
       wwwUrl:
         'https://www.hel.fi/helsinki/fi/kulttuuri-ja-vapaa-aika/ulkoilu/veneily/kaupungin-venepaikat/kaupungin-venesatamat/pajalahden-venesatama',
-      imageFile: 'https://venepaikat.hel.fi/img/helsinki_harbors/41359.jpg',
+      imageFile: 'https://venepaikka.test.kuva.hel.ninja/img/helsinki_harbors/41359.jpg',
       maps: [],
       servicemapId: '41359',
       maxWidth: 4,
@@ -184,7 +184,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
           properties: {
             identifier: '19 b',
-            priceTier: PriceTier.TIER_1,
+            priceTier: PriceTier.TIER_2,
             electricity: true,
             wasteCollection: true,
             water: true,
@@ -226,81 +226,6 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
     edges: [
       {
         node: {
-          id: 'QmVydGhOb2RlOjY4OTdkOTgyLTA2OTMtNDlhNy1hMzFiLWJhMjEyZDM5ZmJiOA==',
-          isActive: true,
-          number: '1',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg==',
-          isActive: true,
-          number: '1',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmUzMWQ4MjZkLWFhMzAtNDQ3Yy04ZDUwLTAyZjg4YTM5OGY5MQ==',
-          isActive: true,
-          number: '1',
-          width: 2.5,
-          length: 6,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
           id: 'QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA==',
           isActive: true,
           number: '1',
@@ -311,6 +236,34 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           comment: '',
           leases: {
             edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzVjOTQ1YWItZjNjMi00ZjgzLWJkYjItYmQ5N2U4M2ZhZTEy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzVjOTQ1YWItZjNjMi00ZjgzLWJkYjItYmQ5N2U4M2ZhZTEy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
               {
                 node: {
                   customer: {
@@ -329,8 +282,64 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjY4OTdkOTgyLTA2OTMtNDlhNy1hMzFiLWJhMjEyZDM5ZmJiOA==',
+          isActive: true,
+          number: '1',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2Q1NDI2MjctMTc0YS00MDdmLWJkZDEtNmEyZTZiYjFmODU4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2Q1NDI2MjctMTc0YS00MDdmLWJkZDEtNmEyZTZiYjFmODU4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -350,12 +359,152 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmMxMGZmNjEtYjhmNi00MzRlLThlNTMtMDZiYjkzZjY0NmRm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmMxMGZmNjEtYjhmNi00MzRlLThlNTMtMDZiYjkzZjY0NmRm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmUzMWQ4MjZkLWFhMzAtNDQ3Yy04ZDUwLTAyZjg4YTM5OGY5MQ==',
+          isActive: true,
+          number: '1',
+          width: 2.5,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDNjZDNkZTQtY2JiOC00YWFlLWE1ZjUtMzFlNDExNjU3NGI4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDNjZDNkZTQtY2JiOC00YWFlLWE1ZjUtMzFlNDExNjU3NGI4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg==',
+          isActive: true,
+          number: '1',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTcwMWQ0MGEtN2RmMC00NGRkLThlZjktYmQzZTc1MzA0ZTdm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTcwMWQ0MGEtN2RmMC00NGRkLThlZjktYmQzZTc1MzA0ZTdm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -375,10 +524,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzkyZDA5MTUtY2Q0Mi00ZGNjLTk4YzMtZjVkMDFmODMzYmVm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzkyZDA5MTUtY2Q0Mi00ZGNjLTk4YzMtZjVkMDFmODMzYmVm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -400,10 +579,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mjg0MWNhMTYtMmIxYi00N2EwLTk4MmMtZjUzODE4MzY4NmYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mjg0MWNhMTYtMmIxYi00N2EwLTk4MmMtZjUzODE4MzY4NmYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -425,37 +634,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWQyYzY0N2MtNTc4YS00ZTQ1LTliYTktNGVlMzRkMmFmMTMy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWQyYzY0N2MtNTc4YS00ZTQ1LTliYTktNGVlMzRkMmFmMTMy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ==',
-          isActive: true,
-          number: '2',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -475,12 +689,152 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjE0NjUwNTQtNGVlYi00NDkyLThlNDctNDEyZTQ1YTZlYmEw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjE0NjUwNTQtNGVlYi00NDkyLThlNDctNDEyZTQ1YTZlYmEw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ==',
+          isActive: true,
+          number: '2',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTQyZTAyMmQtODc0NS00NzVjLTk5MzEtODg4YTdiMDMzMDQ1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTQyZTAyMmQtODc0NS00NzVjLTk5MzEtODg4YTdiMDMzMDQ1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjM5N2Y4ZjZmLTQyMDktNGNjZi04MWZkLTBmYjYxYjE0NjMxZA==',
+          isActive: true,
+          number: '3',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTVkNWVhOGQtZjJmOC00YjI0LWE0ODMtOTc0YjQwNWM0Yzcx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTVkNWVhOGQtZjJmOC00YjI0LWE0ODMtOTc0YjQwNWM0Yzcx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -500,12 +854,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YmYzYzMyMGEtZTMwNC00YjZlLTg1MGQtOThiM2Q4Mjk5MGFl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YmYzYzMyMGEtZTMwNC00YjZlLTg1MGQtOThiM2Q4Mjk5MGFl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjcxZmQwYzNhLThkZWYtNDg5Ni05Y2IyLWQwZTRlZWRmZjM5NQ==',
+          isActive: true,
+          number: '3',
+          width: 2.5,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Yzg0ZGZkODMtMjViNy00ZDUzLWE3ZDgtNmE0MmI3ZTA0OGY4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Yzg0ZGZkODMtMjViNy00ZDUzLWE3ZDgtNmE0MmI3ZTA0OGY4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -529,58 +968,9 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjcxZmQwYzNhLThkZWYtNDg5Ni05Y2IyLWQwZTRlZWRmZjM5NQ==',
-          isActive: true,
-          number: '3',
-          width: 2.5,
-          length: 6,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjM5N2Y4ZjZmLTQyMDktNGNjZi04MWZkLTBmYjYxYjE0NjMxZA==',
-          isActive: true,
-          number: '3',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -600,37 +990,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDlmZTVjZGYtOTUyMy00MzdmLWIyN2YtNTQ4NWYzZjJlMjI5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDlmZTVjZGYtOTUyMy00MzdmLWIyN2YtNTQ4NWYzZjJlMjI5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjM3ODI2MjEyLTlmZGYtNDEyMy04NDFhLTA3ZmRhMTUyOTZhMQ==',
-          isActive: true,
-          number: '4',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -650,62 +1045,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDhmNzQ2NzYtZDhmOC00NzUzLThhOTMtY2M5OWY4Nzg0NWQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDhmNzQ2NzYtZDhmOC00NzUzLThhOTMtY2M5OWY4Nzg0NWQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjFkMmEyNzIwLTRiZTgtNDQ2NS1iODE2LTU3NGYwMWJkZmFhNA==',
-          isActive: true,
-          number: '4',
-          width: 2.5,
-          length: 6,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjc0NDExNDcyLTBiMTEtNGJiMi05ODc4LTk4OTdkOTU3YWQ5Nw==',
-          isActive: true,
-          number: '4',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -725,10 +1100,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTU0OTU5ZTktNmUwNy00N2IzLTlmYjAtNWFiMDE3YjRhNjI4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTU0OTU5ZTktNmUwNy00N2IzLTlmYjAtNWFiMDE3YjRhNjI4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -741,21 +1146,161 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjUzMGFhYzI0LWE4NjQtNDRhMi04NzU5LTczOTIzNTg3ZTZiMg==',
+          id: 'QmVydGhOb2RlOjc0NDExNDcyLTBiMTEtNGJiMi05ODc4LTk4OTdkOTU3YWQ5Nw==',
           isActive: true,
-          number: '5',
+          number: '4',
           width: 2.5,
           length: 5,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjIwYzhiZDctNzI4OC00OTQzLWFlNjYtOWNlZjJlODI1M2E4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjIwYzhiZDctNzI4OC00OTQzLWFlNjYtOWNlZjJlODI1M2E4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '11 a',
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjM3ODI2MjEyLTlmZGYtNDEyMy04NDFhLTA3ZmRhMTUyOTZhMQ==',
+          isActive: true,
+          number: '4',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTkxMTA0OTAtOGNkOC00YmU2LWI2NzItM2VhNTMxMDk5NzU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTkxMTA0OTAtOGNkOC00YmU2LWI2NzItM2VhNTMxMDk5NzU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjFkMmEyNzIwLTRiZTgtNDQ2NS1iODE2LTU3NGYwMWJkZmFhNA==',
+          isActive: true,
+          number: '4',
+          width: 2.5,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzdmZmI3OWMtMzBkOS00NTRkLWIxMDItM2IxMDM2YTU4ZDI2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzdmZmI3OWMtMzBkOS00NTRkLWIxMDItM2IxMDM2YTU4ZDI2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -775,62 +1320,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmM0NzJmZmItNzFhZC00MjE5LTlkZmUtNDUxYTY3MWU2Nzc2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmM0NzJmZmItNzFhZC00MjE5LTlkZmUtNDUxYTY3MWU2Nzc2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmUxZjcwYmJmLWNhNjQtNDU0My04ODA2LWRjM2E2MmIzNDY0MA==',
-          isActive: true,
-          number: '5',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmM5Nzk0YzY4LTg2ZDgtNGRlNy1iZDc5LWE1YWJhYWFmMzJjMA==',
-          isActive: true,
-          number: '5',
-          width: 2.5,
-          length: 6,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -854,6 +1379,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -866,19 +1392,159 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjg5YWQ0MmYxLTc0NTItNDIzZC1hNTY2LWUyYmYyMDEyZmE3OA==',
+          id: 'QmVydGhOb2RlOmM5Nzk0YzY4LTg2ZDgtNGRlNy1iZDc5LWE1YWJhYWFmMzJjMA==',
           isActive: true,
-          number: '6',
+          number: '5',
+          width: 2.5,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTA2MWUwY2UtNzQ2YS00YjY2LWIzZDQtYTYwYzBjYjBkMjA5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTA2MWUwY2UtNzQ2YS00YjY2LWIzZDQtYTYwYzBjYjBkMjA5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjUzMGFhYzI0LWE4NjQtNDRhMi04NzU5LTczOTIzNTg3ZTZiMg==',
+          isActive: true,
+          number: '5',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjQzMmYwNDktN2JjNy00YjhhLWE3MDctODA1NTcyNWM0ZDZi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjQzMmYwNDktN2JjNy00YjhhLWE3MDctODA1NTcyNWM0ZDZi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmUxZjcwYmJmLWNhNjQtNDU0My04ODA2LWRjM2E2MmIzNDY0MA==',
+          isActive: true,
+          number: '5',
           width: 3,
           length: 9,
           depth: null,
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjJlMTBmNmMtODIxOC00MzViLWFlZGQtYTY5NDY2NTI5MzFj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjJlMTBmNmMtODIxOC00MzViLWFlZGQtYTY5NDY2NTI5MzFj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
               __typename: 'PierProperties',
@@ -891,21 +1557,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmI1ODNjMjJkLTAwOTEtNGIzOS1iZjYyLWM5MDg2OTE1NzYzNQ==',
+          id: 'QmVydGhOb2RlOmYxYWI3MjgxLWJhNjgtNDkxZi1iNDNlLTE5ZDdhNTZlZTU0OA==',
           isActive: true,
           number: '6',
-          width: 3,
-          length: 6,
+          width: 2.5,
+          length: 5,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWNiZWU2MzMtNWE2Yi00NmM3LWFhNTgtN2NlM2QyMjg1NzVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWNiZWU2MzMtNWE2Yi00NmM3LWFhNTgtN2NlM2QyMjg1NzVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '19 a',
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -925,10 +1621,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGYxMGIyZTItYTIyMy00NTlkLWFlMzctOWM4MzA1YmE5MGFi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGYxMGIyZTItYTIyMy00NTlkLWFlMzctOWM4MzA1YmE5MGFi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -950,10 +1676,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTYyNGUxZWMtYWEyNC00ODc1LWFkOWYtNzU5YTg5YjE0YTc4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTYyNGUxZWMtYWEyNC00ODc1LWFkOWYtNzU5YTg5YjE0YTc4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -966,44 +1722,49 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmYxYWI3MjgxLWJhNjgtNDkxZi1iNDNlLTE5ZDdhNTZlZTU0OA==',
+          id: 'QmVydGhOb2RlOmI1ODNjMjJkLTAwOTEtNGIzOS1iZjYyLWM5MDg2OTE1NzYzNQ==',
           isActive: true,
           number: '6',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmIxYjhjYzY1LTY2ODYtNDRkZS05NWVjLWUyNzNhYWViNzQ2MA==',
-          isActive: true,
-          number: '7',
           width: 3,
           length: 6,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YmE5MGI0MWItYjcyMS00ZGI3LTkwMmItNzFjYzc0ZjE4NThk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YmE5MGI0MWItYjcyMS00ZGI3LTkwMmItNzFjYzc0ZjE4NThk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -1016,21 +1777,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmQ5YjA2ZWI4LWFlYjAtNDMxNC1hNWQ4LTYxMTdkMzRkZGU1Zg==',
+          id: 'QmVydGhOb2RlOjg5YWQ0MmYxLTc0NTItNDIzZC1hNTY2LWUyYmYyMDEyZmE3OA==',
           isActive: true,
-          number: '7',
-          width: 2.5,
-          length: 5,
+          number: '6',
+          width: 3,
+          length: 9,
           depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDNmMmM1NjMtNDQ2Yy00NTliLTk3YWItMTc4YTBhNGYyNWZk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDNmMmM1NjMtNDQ2Yy00NTliLTk3YWItMTc4YTBhNGYyNWZk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
-              identifier: '11 b',
+              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1050,10 +1841,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2E3MmU2YTctZGVkMi00ODg4LTlmMWQtM2UyZTM3ZDgxNDIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2E3MmU2YTctZGVkMi00ODg4LTlmMWQtM2UyZTM3ZDgxNDIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -1066,21 +1887,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmUzZmRiZTFlLTA4NWEtNDk3Ni1iZDNmLWZhM2UyZTA0OWIzYw==',
+          id: 'QmVydGhOb2RlOmQ5YjA2ZWI4LWFlYjAtNDMxNC1hNWQ4LTYxMTdkMzRkZGU1Zg==',
           isActive: true,
           number: '7',
           width: 2.5,
-          length: 8,
+          length: 5,
           depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDEyY2M1YmUtYzM2ZC00OTU0LTkzOGQtYTAxNzRjZWExYzYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDEyY2M1YmUtYzM2ZC00OTU0LTkzOGQtYTAxNzRjZWExYzYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '10',
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1100,10 +1951,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDA1NmYyNDUtYmYxOC00YzZjLWExYzItOGI5MDljOTNlMWNm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDA1NmYyNDUtYmYxOC00YzZjLWExYzItOGI5MDljOTNlMWNm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
               __typename: 'PierProperties',
@@ -1116,71 +1997,106 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmI2MDUyYzA1LTYwMjUtNGUxNC05MGQ3LWI1MzcwMjRmMzk2ZQ==',
+          id: 'QmVydGhOb2RlOmIxYjhjYzY1LTY2ODYtNDRkZS05NWVjLWUyNzNhYWViNzQ2MA==',
           isActive: true,
-          number: '8',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjdkMTFjNjhiLTVkYTYtNGEwYS05NWQ0LTVhNDQ3ZjQ1OTg3MA==',
-          isActive: true,
-          number: '8',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjUxOTQ3OTAzLThkNGMtNGE0ZS04ZDk2LTU2OGMxMjYwN2I4NQ==',
-          isActive: true,
-          number: '8',
+          number: '7',
           width: 3,
           length: 6,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTAwODQ1YzEtNDY5Ni00NjU2LWEyOTItZGQxMjY1M2Q0OWUz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTAwODQ1YzEtNDY5Ni00NjU2LWEyOTItZGQxMjY1M2Q0OWUz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmUzZmRiZTFlLTA4NWEtNDk3Ni1iZDNmLWZhM2UyZTA0OWIzYw==',
+          isActive: true,
+          number: '7',
+          width: 2.5,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDgyOTk3NzQtYmE0OC00ZmNjLTgwZjAtNjBhNjZkNWQ2MWFk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDgyOTk3NzQtYmE0OC00ZmNjLTgwZjAtNjBhNjZkNWQ2MWFk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1200,12 +2116,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTU1MjI2OTUtMjQxNS00ZjM0LThjNWEtYTEyNGFmNjM3Y2Nm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTU1MjI2OTUtMjQxNS00ZjM0LThjNWEtYTEyNGFmNjM3Y2Nm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjdkMTFjNjhiLTVkYTYtNGEwYS05NWQ0LTVhNDQ3ZjQ1OTg3MA==',
+          isActive: true,
+          number: '8',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjZkZGY4MTUtOTVkMy00MGQzLTg5OTMtODQxM2Y2ODIwYmNm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjZkZGY4MTUtOTVkMy00MGQzLTg5OTMtODQxM2Y2ODIwYmNm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1225,10 +2226,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODZlZDc2NGItNDcxZi00YzhkLTlkZDAtMWVmY2M5NmU3NWQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODZlZDc2NGItNDcxZi00YzhkLTlkZDAtMWVmY2M5NmU3NWQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
               __typename: 'PierProperties',
@@ -1241,96 +2272,106 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjY4NTE1NWE3LWRiNjEtNDIzNi04OGQzLTY3NDI3ODA2Y2NlMg==',
+          id: 'QmVydGhOb2RlOjUxOTQ3OTAzLThkNGMtNGE0ZS04ZDk2LTU2OGMxMjYwN2I4NQ==',
           isActive: true,
-          number: '9',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmEwNjljZjVhLTQwM2EtNDNjMi04ZjIzLWM1Y2JiNWMwMWQzMA==',
-          isActive: true,
-          number: '9',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjA1MTY3OWEzLTFjYzktNDdhYy05OTcxLThhZGI3ZWUwNzhiNg==',
-          isActive: true,
-          number: '9',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmE4NGMzOGExLTNlMjYtNDQ1ZC1hMTZhLTY0ZjY1NTRlZGFkZQ==',
-          isActive: true,
-          number: '9',
+          number: '8',
           width: 3,
           length: 6,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzQxNGRjY2UtNjE4YS00ZjMxLWI2OTgtZmFkNGYyYWU4NDgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzQxNGRjY2UtNjE4YS00ZjMxLWI2OTgtZmFkNGYyYWU4NDgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmI2MDUyYzA1LTYwMjUtNGUxNC05MGQ3LWI1MzcwMjRmMzk2ZQ==',
+          isActive: true,
+          number: '8',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjM0MWMwM2ItZmRkZi00MTdiLWJkYmMtYjliZDBlMWUwYzA5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjM0MWMwM2ItZmRkZi00MTdiLWJkYmMtYjliZDBlMWUwYzA5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1350,12 +2391,482 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmY3MTMxYWItYTE0YS00NDA2LWFhZTQtOTJmMmNlMzJmM2Zi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmY3MTMxYWItYTE0YS00NDA2LWFhZTQtOTJmMmNlMzJmM2Zi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjY4NTE1NWE3LWRiNjEtNDIzNi04OGQzLTY3NDI3ODA2Y2NlMg==',
+          isActive: true,
+          number: '9',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6N2EyZDU4NTktYTE0ZC00ZTUxLWJlMWYtY2EzN2RiODhmYjEx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6N2EyZDU4NTktYTE0ZC00ZTUxLWJlMWYtY2EzN2RiODhmYjEx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmE4NGMzOGExLTNlMjYtNDQ1ZC1hMTZhLTY0ZjY1NTRlZGFkZQ==',
+          isActive: true,
+          number: '9',
+          width: 3,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmMzNGU5NzEtZTc3Zi00NGRiLWE2ZjktMGRkYjIyMWQwY2U5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmMzNGU5NzEtZTc3Zi00NGRiLWE2ZjktMGRkYjIyMWQwY2U5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjA1MTY3OWEzLTFjYzktNDdhYy05OTcxLThhZGI3ZWUwNzhiNg==',
+          isActive: true,
+          number: '9',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGI5ZGQzNTktZWZlMS00OWVhLWJlM2YtOWJkN2MyN2FiNGI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGI5ZGQzNTktZWZlMS00OWVhLWJlM2YtOWJkN2MyN2FiNGI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmEwNjljZjVhLTQwM2EtNDNjMi04ZjIzLWM1Y2JiNWMwMWQzMA==',
+          isActive: true,
+          number: '9',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTZlYjc4Y2YtY2M1MC00NGM5LTkwNzMtM2JlNDU2NmZjMmM2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTZlYjc4Y2YtY2M1MC00NGM5LTkwNzMtM2JlNDU2NmZjMmM2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmRjNDc2NTEzLTIxZTgtNDVkMi05ZmEzLTkwMGM4OWFhYzUxYw==',
+          isActive: true,
+          number: '10',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzY1Yjk1NmItMjk0Zi00NmMzLTg0ZmEtMThiYzYzNTdiODRk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzY1Yjk1NmItMjk0Zi00NmMzLTg0ZmEtMThiYzYzNTdiODRk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjU5YTRmNmE4LWUxMjYtNDY2ZS1hODJhLWIwMmY3MmI2ZjNhMQ==',
+          isActive: true,
+          number: '10',
+          width: 3,
+          length: 6,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTEzMmI2ZmYtODBmMS00MWQ5LTgwNTEtYTJkN2MzMjdlMjQw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTEzMmI2ZmYtODBmMS00MWQ5LTgwNTEtYTJkN2MzMjdlMjQw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmI1MzVhN2U3LTNiM2ItNDliYS05NDE1LTg5YzhjY2I3ZDNmMg==',
+          isActive: true,
+          number: '10',
+          width: 3.5,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTFiZTM4MTUtYTI3Yi00MDkzLWIwZDYtNDU5ZTcxMDI1MDQ1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTFiZTM4MTUtYTI3Yi00MDkzLWIwZDYtNDU5ZTcxMDI1MDQ1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjkxZDEzODE0LTViMjAtNGIyMi05NDI0LTA4YjZlMzA3ZWQ2Ng==',
+          isActive: true,
+          number: '10',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM4NDM2ZDgtYWQ3Yi00Y2E3LWJlMTEtMTMyYmIxYTYwNjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM4NDM2ZDgtYWQ3Yi00Y2E3LWJlMTEtMTMyYmIxYTYwNjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1379,6 +2890,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -1391,94 +2903,49 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjkxZDEzODE0LTViMjAtNGIyMi05NDI0LTA4YjZlMzA3ZWQ2Ng==',
+          id: 'QmVydGhOb2RlOjg2YzMzNzAzLWM1ZWYtNGFjZC04NDkxLWMwZjlhZDEzZjNiOA==',
           isActive: true,
-          number: '10',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmRjNDc2NTEzLTIxZTgtNDVkMi05ZmEzLTkwMGM4OWFhYzUxYw==',
-          isActive: true,
-          number: '10',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmI1MzVhN2U3LTNiM2ItNDliYS05NDE1LTg5YzhjY2I3ZDNmMg==',
-          isActive: true,
-          number: '10',
-          width: 3.5,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjU5YTRmNmE4LWUxMjYtNDY2ZS1hODJhLWIwMmY3MmI2ZjNhMQ==',
-          isActive: true,
-          number: '10',
+          number: '11',
           width: 3,
           length: 6,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjA4MzM2NTktNTEzYS00YjI1LTg2YjYtNDBkYjE3YTZhMWE5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjA4MzM2NTktNTEzYS00YjI1LTg2YjYtNDBkYjE3YTZhMWE5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -1500,10 +2967,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzEzZjkwNTAtMzEzNy00MDM4LTgxMGItYjIxZTVhNjQ0Njk3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzEzZjkwNTAtMzEzNy00MDM4LTgxMGItYjIxZTVhNjQ0Njk3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -1525,62 +3022,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGNkZjc3NzItMTE5My00MGVmLWFlNTMtZmU0OGZiOTMyNTgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGNkZjc3NzItMTE5My00MGVmLWFlNTMtZmU0OGZiOTMyNTgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjg2YzMzNzAzLWM1ZWYtNGFjZC04NDkxLWMwZjlhZDEzZjNiOA==',
-          isActive: true,
-          number: '11',
-          width: 3,
-          length: 6,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmVlNjNkNGRjLTExNTctNDk5OS1hMzY1LTJiZjFjYTcxNGQ2Yw==',
-          isActive: true,
-          number: '11',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1600,10 +3077,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI3MWJiNGEtYTlkMS00M2Q0LTk4OWEtZmExMDdmY2FkODBk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI3MWJiNGEtYTlkMS00M2Q0LTk4OWEtZmExMDdmY2FkODBk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -1616,21 +3123,106 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmEyODA2OGM0LTU4YmYtNDdjMS04YmI5LTNhMTM2NWQzYzE1Mg==',
+          id: 'QmVydGhOb2RlOmVlNjNkNGRjLTExNTctNDk5OS1hMzY1LTJiZjFjYTcxNGQ2Yw==',
           isActive: true,
-          number: '12',
+          number: '11',
           width: 2.5,
           length: 5,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzllZTVhNWItOTFhNi00ODBiLTg4NzgtYzllYzI3YzQyZmU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzllZTVhNWItOTFhNi00ODBiLTg4NzgtYzllYzI3YzQyZmU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjgyMzMwY2Q1LTY2YjYtNGE3Yy04ZDA5LWE3YWI2ZTEzMjdkNA==',
+          isActive: true,
+          number: '12',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzhhNjZkOWItOTBlYy00OGU2LTkxMzktNGMwNjVmYWVjYTdk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzhhNjZkOWItOTBlYy00OGU2LTkxMzktNGMwNjVmYWVjYTdk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1650,10 +3242,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzA1OGM4ODYtMzE0ZS00ODEyLWE2ODUtYmRiYjMyYjczMzZk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzA1OGM4ODYtMzE0ZS00ODEyLWE2ODUtYmRiYjMyYjczMzZk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -1675,37 +3297,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6N2QxMGRhZTktYmVhZC00MzMwLThiNjItMjI0NDYwMzM1NmEz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6N2QxMGRhZTktYmVhZC00MzMwLThiNjItMjI0NDYwMzM1NmEz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjgyMzMwY2Q1LTY2YjYtNGE3Yy04ZDA5LWE3YWI2ZTEzMjdkNA==',
-          isActive: true,
-          number: '12',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1725,12 +3352,152 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzc2OGFkNTUtMjZlNC00ODU5LThjNmUtNjkwNmE3OTQzYzk0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzc2OGFkNTUtMjZlNC00ODU5LThjNmUtNjkwNmE3OTQzYzk0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmEyODA2OGM0LTU4YmYtNDdjMS04YmI5LTNhMTM2NWQzYzE1Mg==',
+          isActive: true,
+          number: '12',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDBjNDMyNDQtOTNhZi00YmFhLThjOGMtMWE1ZDU4MmEyMjI1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDBjNDMyNDQtOTNhZi00YmFhLThjOGMtMWE1ZDU4MmEyMjI1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjRlZTk2ZDEwLWRkNmItNDI1NS05MmEzLTUyNTNjZDIyZDdhMA==',
+          isActive: true,
+          number: '13',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzdlZDVhNDUtNDI2MC00OWRhLWIyMzktODg0MDE1Zjc4ZmYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: true,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzdlZDVhNDUtNDI2MC00OWRhLWIyMzktODg0MDE1Zjc4ZmYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1754,83 +3521,9 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmUzMmJmZjYyLTE2N2YtNDRmYS05M2M5LTA1NDNmNDBjNWViOA==',
-          isActive: true,
-          number: '13',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjRlZTk2ZDEwLWRkNmItNDI1NS05MmEzLTUyNTNjZDIyZDdhMA==',
-          isActive: true,
-          number: '13',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjc2MDJkMDkzLTUyNWQtNGUxZi05ZWY0LTUyOGY5MmU2MWE5OA==',
-          isActive: true,
-          number: '13',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1850,10 +3543,26 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDY5ZjJlN2YtZDQ5Yy00ODQ3LTk1ZjQtNzY4M2Q2ZTA3MjNl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -1866,21 +3575,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjYzODU5M2I2LTNiOGEtNDYxZS04MjI4LWVhYTZhZDcwYTdhNA==',
+          id: 'QmVydGhOb2RlOmUzMmJmZjYyLTE2N2YtNDRmYS05M2M5LTA1NDNmNDBjNWViOA==',
           isActive: true,
-          number: '14',
-          width: 3.5,
+          number: '13',
+          width: 3,
           length: 8,
           depth: null,
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTdjMTE0NWYtNzEwYi00YjE2LTgzN2ItODAwMGMwZDY2ZmVl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTdjMTE0NWYtNzEwYi00YjE2LTgzN2ItODAwMGMwZDY2ZmVl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '10',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1891,21 +3630,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjg2MTUwY2I1LWIxOGQtNDYyZC1hZDM5LWM2MDQxZTgxNjkxOA==',
+          id: 'QmVydGhOb2RlOjc2MDJkMDkzLTUyNWQtNGUxZi05ZWY0LTUyOGY5MmU2MWE5OA==',
           isActive: true,
-          number: '14',
+          number: '13',
           width: 2.5,
           length: 5,
           depth: null,
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2E2Y2VmNzMtNjNkYi00YmE3LTg2ZTYtODQxOTMyYmUyYjQ0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2E2Y2VmNzMtNjNkYi00YmE3LTg2ZTYtODQxOTMyYmUyYjQ0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '11 a',
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1925,12 +3694,152 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM4NDM2ZDgtYWQ3Yi00Y2E3LWJlMTEtMTMyYmIxYTYwNjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM4NDM2ZDgtYWQ3Yi00Y2E3LWJlMTEtMTMyYmIxYTYwNjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjg2MTUwY2I1LWIxOGQtNDYyZC1hZDM5LWM2MDQxZTgxNjkxOA==',
+          isActive: true,
+          number: '14',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjlmZDdiOTgtZGY3Yy00NmJiLWI4ZjUtMWM0ZWQyY2U2MTU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjlmZDdiOTgtZGY3Yy00NmJiLWI4ZjUtMWM0ZWQyY2U2MTU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjYzODU5M2I2LTNiOGEtNDYxZS04MjI4LWVhYTZhZDcwYTdhNA==',
+          isActive: true,
+          number: '14',
+          width: 3.5,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODBhYmEwZTUtZjE0Zi00ZDhlLTlhYzItZDAzNmU2YzJkMmJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODBhYmEwZTUtZjE0Zi00ZDhlLTlhYzItZDAzNmU2YzJkMmJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -1950,10 +3859,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MmRmMWU0MGEtNmEwNy00YTM4LWJiYzQtMTI2YmU1M2MxNGFh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MmRmMWU0MGEtNmEwNy00YTM4LWJiYzQtMTI2YmU1M2MxNGFh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
               identifier: '19 b',
               __typename: 'PierProperties',
@@ -1975,10 +3914,260 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDlmZTVjZGYtOTUyMy00MzdmLWIyN2YtNTQ4NWYzZjJlMjI5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDlmZTVjZGYtOTUyMy00MzdmLWIyN2YtNTQ4NWYzZjJlMjI5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjQzYjJkNDRlLTAzNGMtNDVhNi1iYjE2LWViYWY1MTc1N2RhOA==',
+          isActive: true,
+          number: '15',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTE2YjQzMjQtNWQyNS00YjE0LWE0MTAtY2Q3MDU1NTkyYzBk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTE2YjQzMjQtNWQyNS00YjE0LWE0MTAtY2Q3MDU1NTkyYzBk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjJiNjYyZjNiLWQwNTYtNDRkZi05NDQ2LWYwZjYwMzhiNDExMQ==',
+          isActive: true,
+          number: '15',
+          width: 3,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjA1ZDk1MzQtMjI1ZC00MjY1LWEyNjMtOTU3OTkxZDMzNWEw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjA1ZDk1MzQtMjI1ZC00MjY1LWEyNjMtOTU3OTkxZDMzNWEw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmJhZTUxM2Y4LTQ0OWMtNDRjYi1iODY4LTVlNjc5ZjNkZjU4OA==',
+          isActive: true,
+          number: '15',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDQxYzY3NWMtMTc1NC00YWQwLWE0MDItZGY2NjU0NTQwMDQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDQxYzY3NWMtMTc1NC00YWQwLWE0MDItZGY2NjU0NTQwMDQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmYxYzAxY2NlLTY0ZDQtNDhiZi04MjJmLWVlMWZmMDVkY2Q3ZQ==',
+          isActive: true,
+          number: '15',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjE4MTIwZmYtNTQwMy00ZjViLWJkM2YtYzU0NmNkNjI5MGNh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjE4MTIwZmYtNTQwMy00ZjViLWJkM2YtYzU0NmNkNjI5MGNh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -2000,162 +4189,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjYyODNlY2YtNDdmNy00OTcxLWJkYjAtMTljY2UwNDMzYmE3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjYyODNlY2YtNDdmNy00OTcxLWJkYjAtMTljY2UwNDMzYmE3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjQzYjJkNDRlLTAzNGMtNDVhNi1iYjE2LWViYWY1MTc1N2RhOA==',
-          isActive: true,
-          number: '15',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmYxYzAxY2NlLTY0ZDQtNDhiZi04MjJmLWVlMWZmMDVkY2Q3ZQ==',
-          isActive: true,
-          number: '15',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmJhZTUxM2Y4LTQ0OWMtNDRjYi1iODY4LTVlNjc5ZjNkZjU4OA==',
-          isActive: true,
-          number: '15',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjJiNjYyZjNiLWQwNTYtNDRkZi05NDQ2LWYwZjYwMzhiNDExMQ==',
-          isActive: true,
-          number: '15',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjc0MDM2YTc4LTMzZjAtNDM4MS04NjNhLTExZGYwNDI1MjkyNw==',
-          isActive: true,
-          number: '16',
-          width: 3,
-          length: 9,
-          depth: null,
-          mooringType: BerthMooringType.STERN_BUOY_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmRjNWQzNzQ1LWYzZjItNGE5Zi04MGRkLWQ0ZmU2ZTAwM2Y1Ng==',
-          isActive: true,
-          number: '16',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2179,6 +4248,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2191,21 +4261,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjMzZjlkMDgzLWQ5MmUtNDI2MC1hMDQxLTc1YzdiZGNhMWVlYg==',
+          id: 'QmVydGhOb2RlOmRjNWQzNzQ1LWYzZjItNGE5Zi04MGRkLWQ0ZmU2ZTAwM2Y1Ng==',
           isActive: true,
           number: '16',
-          width: 2.5,
-          length: 5,
+          width: 3,
+          length: 8,
           depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWJhNWM3OTQtNzAwYS00ODJhLWIyOGEtODI1NGFkZDU5NGVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWJhNWM3OTQtNzAwYS00ODJhLWIyOGEtODI1NGFkZDU5NGVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '11 b',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2225,12 +4325,262 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTBjMDdlZGYtMmNlZC00OWMyLTlkNDYtNzVhYTRlZTM2ZTNi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTBjMDdlZGYtMmNlZC00OWMyLTlkNDYtNzVhYTRlZTM2ZTNi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjc0MDM2YTc4LTMzZjAtNDM4MS04NjNhLTExZGYwNDI1MjkyNw==',
+          isActive: true,
+          number: '16',
+          width: 3,
+          length: 9,
+          depth: null,
+          mooringType: BerthMooringType.STERN_BUOY_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjAwOWUwOGMtZWJmNC00NjM4LThkOWMtNDNjZTA1MTA5YzYy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YjAwOWUwOGMtZWJmNC00NjM4LThkOWMtNDNjZTA1MTA5YzYy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
+            properties: {
+              identifier: '19 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjMzZjlkMDgzLWQ5MmUtNDI2MC1hMDQxLTc1YzdiZGNhMWVlYg==',
+          isActive: true,
+          number: '16',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTZjODFmOWQtNDU1NC00NGQ5LTg1MTctNzQ5YmI4Mjc1YWJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTZjODFmOWQtNDU1NC00NGQ5LTg1MTctNzQ5YmI4Mjc1YWJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmQxN2RhZjQxLTVmMGUtNGVkMC1iZGQxLTVkMjk5NGIzNWRhNA==',
+          isActive: true,
+          number: '17',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDNhN2VjZGEtZjkzYS00NDQxLWE4ZTMtZGE3MWRkNTQwMTYy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDNhN2VjZGEtZjkzYS00NDQxLWE4ZTMtZGE3MWRkNTQwMTYy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmM2YzBkODE4LTZkMTgtNGI1Yi05ZDRiLWYwYjJhNDIzNzQ1OQ==',
+          isActive: true,
+          number: '17',
+          width: 3,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2JiMTM3YjQtNTFhMi00OWFhLTljMjMtYjBlOGUwYmE2YTQ2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2JiMTM3YjQtNTFhMi00OWFhLTljMjMtYjBlOGUwYmE2YTQ2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2250,10 +4600,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzIyZDYwMGYtYTY5ZC00ZjMzLTg3M2MtNjAyMjI4MWJhZWQ2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzIyZDYwMGYtYTY5ZC00ZjMzLTg3M2MtNjAyMjI4MWJhZWQ2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -2275,112 +4655,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2YzOWQ2NzItMzZiOS00YjM4LWIwMGMtZWI4NTkyNTk2Zjc0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2YzOWQ2NzItMzZiOS00YjM4LWIwMGMtZWI4NTkyNTk2Zjc0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmM2YzBkODE4LTZkMTgtNGI1Yi05ZDRiLWYwYjJhNDIzNzQ1OQ==',
-          isActive: true,
-          number: '17',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmQxN2RhZjQxLTVmMGUtNGVkMC1iZGQxLTVkMjk5NGIzNWRhNA==',
-          isActive: true,
-          number: '17',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjJiYzI3Y2VmLTFjNGYtNDM1ZC05MGVhLWM0NWU5YmNiNzE1Ng==',
-          isActive: true,
-          number: '18',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjI3OWU2ZDFkLTAwZjMtNDdmZi1iZTczLTg3YmE0ZDU0NWYzZA==',
-          isActive: true,
-          number: '18',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2400,12 +4710,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTAwODQ1YzEtNDY5Ni00NjU2LWEyOTItZGQxMjY1M2Q0OWUz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTAwODQ1YzEtNDY5Ni00NjU2LWEyOTItZGQxMjY1M2Q0OWUz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjI3OWU2ZDFkLTAwZjMtNDdmZi1iZTczLTg3YmE0ZDU0NWYzZA==',
+          isActive: true,
+          number: '18',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDI5MGQwNGEtYjRmNi00YTIxLTkwNmYtZTVjMzkwYWRiNDY0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDI5MGQwNGEtYjRmNi00YTIxLTkwNmYtZTVjMzkwYWRiNDY0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2425,10 +4820,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzJkMGRkMGUtODA4Yi00ODRhLWJmZDktOTNlMjhlMjFmZWYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzJkMGRkMGUtODA4Yi00ODRhLWJmZDktOTNlMjhlMjFmZWYz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2441,21 +4866,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmVjNzBlODcxLWM1NDQtNDI1My1hMjRlLTRlZjFlZjI1M2YwNg==',
+          id: 'QmVydGhOb2RlOjJiYzI3Y2VmLTFjNGYtNDM1ZC05MGVhLWM0NWU5YmNiNzE1Ng==',
           isActive: true,
-          number: '19',
-          width: 2.5,
-          length: 5,
+          number: '18',
+          width: 3,
+          length: 8,
           depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDI1YzhmOGYtYWE2OC00ZWY2LWExNTEtOTI1OTFhODRkNTJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDI1YzhmOGYtYWE2OC00ZWY2LWExNTEtOTI1OTFhODRkNTJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '11 b',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2475,10 +4930,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWIyZTlmN2QtZDljOS00M2I3LTg2ZTgtN2Q2Nzk3MGNlMTQz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWIyZTlmN2QtZDljOS00M2I3LTg2ZTgtN2Q2Nzk3MGNlMTQz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -2491,21 +4976,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmIzZDFkMGNjLWJmNTktNDJiNC05MGIxLTUxOWY3ZTgyZDQxNQ==',
+          id: 'QmVydGhOb2RlOmVjNzBlODcxLWM1NDQtNDI1My1hMjRlLTRlZjFlZjI1M2YwNg==',
           isActive: true,
           number: '19',
-          width: 3.5,
-          length: 8,
+          width: 2.5,
+          length: 5,
           depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmY4ZjA3YjgtMmI1Ny00NTQxLWI2MjktYjQyNDc4M2FmYmQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NmY4ZjA3YjgtMmI1Ny00NTQxLWI2MjktYjQyNDc4M2FmYmQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '19 a',
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2525,10 +5040,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmI1MTkzNTMtYzZhNS00YmFiLWE2OGUtMDM1NDUyMmZjYmVl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmI1MTkzNTMtYzZhNS00YmFiLWE2OGUtMDM1NDUyMmZjYmVl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2541,21 +5086,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOmQwMjZiOTlmLTJmOWItNDlmMS1iY2Y5LTQyNDcxYmU2NDQ5Mg==',
+          id: 'QmVydGhOb2RlOmIzZDFkMGNjLWJmNTktNDJiNC05MGIxLTUxOWY3ZTgyZDQxNQ==',
           isActive: true,
-          number: '20',
+          number: '19',
           width: 3.5,
           length: 8,
           depth: null,
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjY0MGUwNTctZTExOC00ZDQ5LWFjNTItYzg1MWE4Yjk0YTU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjY0MGUwNTctZTExOC00ZDQ5LWFjNTItYzg1MWE4Yjk0YTU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '10',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2575,12 +5150,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2EzNmY3NzktZjYyZC00M2EzLTgwYTEtOTI0ZTMxMTMwYTkx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2EzNmY3NzktZjYyZC00M2EzLTgwYTEtOTI0ZTMxMTMwYTkx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmQwMjZiOTlmLTJmOWItNDlmMS1iY2Y5LTQyNDcxYmU2NDQ5Mg==',
+          isActive: true,
+          number: '20',
+          width: 3.5,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTEwN2JjMWYtOGVmNS00ODllLTlmZWYtZjMwYWZhODY5NDkx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTEwN2JjMWYtOGVmNS00ODllLTlmZWYtZjMwYWZhODY5NDkx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2600,10 +5260,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjBiNWNiNTctZDE1NC00YjNlLThiNWUtNjYyNzhmNDI3ZjRj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjBiNWNiNTctZDE1NC00YjNlLThiNWUtNjYyNzhmNDI3ZjRj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -2625,37 +5315,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzZlMzg4MTAtYzBiMS00ZDVkLWJmYmEtYjNmMTJmYzdkMDgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YzZlMzg4MTAtYzBiMS00ZDVkLWJmYmEtYjNmMTJmYzdkMDgz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjdmZTgyYmM4LTQ1OTEtNDFiZS1hODMwLWVmYmJlOGNjMjI2Mw==',
-          isActive: true,
-          number: '21',
-          width: 3.5,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2675,10 +5370,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWY5YjhhMmEtMWFkZC00ZjhiLWIzMDYtZTIzMjdlODg5OGYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWY5YjhhMmEtMWFkZC00ZjhiLWIzMDYtZTIzMjdlODg5OGYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2700,12 +5425,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODFjN2NmYjEtZTZlNC00OTM0LTlhZmItZGRmNWFiNmFkOGJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODFjN2NmYjEtZTZlNC00OTM0LTlhZmItZGRmNWFiNmFkOGJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjdmZTgyYmM4LTQ1OTEtNDFiZS1hODMwLWVmYmJlOGNjMjI2Mw==',
+          isActive: true,
+          number: '21',
+          width: 3.5,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGRiZmIyNDItM2YyYy00MjFlLWI2N2QtOTdmYjQ4NDA4Y2Y0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGRiZmIyNDItM2YyYy00MjFlLWI2N2QtOTdmYjQ4NDA4Y2Y0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
+            properties: {
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2725,60 +5535,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWJhYzRiMWMtZDZkZi00MTU0LWIyNjItZjBjYTE5MWNlMTQ4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWJhYzRiMWMtZDZkZi00MTU0LWIyNjItZjBjYTE5MWNlMTQ4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
-            properties: {
-              identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjE5OTg0NjQ2LWVjYzAtNDllNy04OTlkLWI3MzkwYmYwOGRhYw==',
-          isActive: true,
-          number: '22',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmFiY2NjYzQzLTJjZWUtNGQwNS1hY2IwLWJjNDRkZWU3NjRhZA==',
-          isActive: true,
-          number: '22',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -2800,10 +5590,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzAyNjhlMTMtZmM4MC00ZDgzLWE2MWYtYWVlNGE0NjAxMGM4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzAyNjhlMTMtZmM4MC00ZDgzLWE2MWYtYWVlNGE0NjAxMGM4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -2825,10 +5645,205 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI3ZjdhNmUtN2M3Ni00MjU1LTllMzktNTZmZjQ4Njc2YWE0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI3ZjdhNmUtN2M3Ni00MjU1LTllMzktNTZmZjQ4Njc2YWE0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjE5OTg0NjQ2LWVjYzAtNDllNy04OTlkLWI3MzkwYmYwOGRhYw==',
+          isActive: true,
+          number: '22',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWU0ZTIzZjMtOTEyZS00MDhmLWFhOWItYWU3MWVlMGMyOTQ0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWU0ZTIzZjMtOTEyZS00MDhmLWFhOWItYWU3MWVlMGMyOTQ0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmFiY2NjYzQzLTJjZWUtNGQwNS1hY2IwLWJjNDRkZWU3NjRhZA==',
+          isActive: true,
+          number: '22',
+          width: 3,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzJiZTViYmYtYWE5MC00Mzk3LTkxMDMtNWE5ZThmNjcxMGIx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzJiZTViYmYtYWE5MC00Mzk3LTkxMDMtNWE5ZThmNjcxMGIx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmE2YzYwNTJhLTg3NDMtNDliNi04YjJjLTNlYjczZGM5ZTZlNg==',
+          isActive: true,
+          number: '23',
+          width: 3,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjBhZWZjNzMtNDQwOC00YjY2LTg0MzYtMTNiYjc2MDQxM2Ex',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjBhZWZjNzMtNDQwOC00YjY2LTg0MzYtMTNiYjc2MDQxM2Ex',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2850,10 +5865,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzhlY2ZjYmYtMjYzMy00OGJlLThlOGYtNzVmZjAxMGMzZTkw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzhlY2ZjYmYtMjYzMy00OGJlLThlOGYtNzVmZjAxMGMzZTkw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -2875,37 +5920,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDE1NWYzMDMtYTgzZi00ZGJhLWJkYjctOTIyZWFlODQyYmZl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDE1NWYzMDMtYTgzZi00ZGJhLWJkYjctOTIyZWFlODQyYmZl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmE2YzYwNTJhLTg3NDMtNDliNi04YjJjLTNlYjczZGM5ZTZlNg==',
-          isActive: true,
-          number: '23',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -2925,10 +5975,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTI3Y2M2YzItMDg4ZS00N2NlLWFmMzMtMzI5OGM1YmNhOWE4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTI3Y2M2YzItMDg4ZS00N2NlLWFmMzMtMzI5OGM1YmNhOWE4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -2950,10 +6030,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDgzNDRmODgtMjU0YS00YjMzLWE1MWItYWQ3NmNmYjJiOTlh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDgzNDRmODgtMjU0YS00YjMzLWE1MWItYWQ3NmNmYjJiOTlh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -2975,10 +6085,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTM2M2UwMTktYzE4Yi00MGJjLWJjNTItNDEzZmVkY2VmN2M5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTM2M2UwMTktYzE4Yi00MGJjLWJjNTItNDEzZmVkY2VmN2M5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -3000,10 +6140,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWY1MmRkMTYtMmFhYy00YWY4LWFlNGEtNGY0MDk1NjRiMzUx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWY1MmRkMTYtMmFhYy00YWY4LWFlNGEtNGY0MDk1NjRiMzUx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3025,10 +6195,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI0ZjY0ZTItY2UxNy00OWNhLTg0ZjMtMzJjYmNhNTY1NGE3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWI0ZjY0ZTItY2UxNy00OWNhLTg0ZjMtMzJjYmNhNTY1NGE3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3050,10 +6250,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTc2Zjg0YWMtNzc2Yi00MThlLTk1YzgtNmU4MDk1YmY4YzAw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTc2Zjg0YWMtNzc2Yi00MThlLTk1YzgtNmU4MDk1YmY4YzAw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3075,12 +6305,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjM0MjZjMTUtNzU2ZS00YTVkLWI3Y2YtNzIxOTE1YzU1ZmFk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjM0MjZjMTUtNzU2ZS00YTVkLWI3Y2YtNzIxOTE1YzU1ZmFk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmZmMTA0ZDE1LTI3YjItNDhkMS04ZDg4LWM2ODkzMGZkYjVlMA==',
+          isActive: true,
+          number: '25',
+          width: 3,
+          length: 8,
+          depth: null,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWVkYmJjOTEtYTEyMS00MDE5LTk2MWYtOGYzZGQ0MzE3M2I1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWVkYmJjOTEtYTEyMS00MDE5LTk2MWYtOGYzZGQ0MzE3M2I1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
+            properties: {
+              identifier: '10',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3104,56 +6419,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
-            properties: {
-              identifier: '19 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmZmMTA0ZDE1LTI3YjItNDhkMS04ZDg4LWM2ODkzMGZkYjVlMA==',
-          isActive: true,
-          number: '25',
-          width: 3,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '10',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOmE1OTQwMDZlLWExMDctNDI5NS1iMzAzLThkMWM0OTY5ZDJkNg==',
-          isActive: true,
-          number: '26',
-          width: 3.5,
-          length: 8,
-          depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -3175,37 +6441,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTg0M2NkOTgtNjRiMy00ZGQwLTk1NzMtZTc5ZGUxMGJiNzJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTg0M2NkOTgtNjRiMy00ZGQwLTk1NzMtZTc5ZGUxMGJiNzJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjk2NjllNjJiLTdjMWMtNGVkYy1hYjcwLTE1MjA5OGM3YTYyNg==',
-          isActive: true,
-          number: '26',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3225,10 +6496,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDE4ZDllOTctNjBmOS00NThmLThlZWItOGZjNmI3NjRlNzc3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDE4ZDllOTctNjBmOS00NThmLThlZWItOGZjNmI3NjRlNzc3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -3241,19 +6542,104 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjRhNDk4N2EyLWMwNTEtNGJjZC05MWFhLTVmNjIzN2ExMzE5MQ==',
+          id: 'QmVydGhOb2RlOjk2NjllNjJiLTdjMWMtNGVkYy1hYjcwLTE1MjA5OGM3YTYyNg==',
           isActive: true,
-          number: '27',
+          number: '26',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzU2YjkwMjgtZTNlNC00NzU5LTliY2ItZDIxMmViOGJmZDY3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzU2YjkwMjgtZTNlNC00NzU5LTliY2ItZDIxMmViOGJmZDY3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOmE1OTQwMDZlLWExMDctNDI5NS1iMzAzLThkMWM0OTY5ZDJkNg==',
+          isActive: true,
+          number: '26',
           width: 3.5,
           length: 8,
           depth: null,
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDM5ZmQzZTgtN2Q1OC00NDFlLTg0YmYtYTI5YWMyMWMwYWIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDM5ZmQzZTgtN2Q1OC00NDFlLTg0YmYtYTI5YWMyMWMwYWIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -3275,10 +6661,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTg4M2U3NmMtOTA0YS00MzBlLWJhN2YtNTI2MDM3ZGJiYzcx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTg4M2U3NmMtOTA0YS00MzBlLWJhN2YtNTI2MDM3ZGJiYzcx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -3291,21 +6707,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjRmYmFkM2MwLWRlYjItNDA3Ny1hY2Q0LWExMDVkZmEwNDM0OA==',
+          id: 'QmVydGhOb2RlOjRhNDk4N2EyLWMwNTEtNGJjZC05MWFhLTVmNjIzN2ExMzE5MQ==',
           isActive: true,
           number: '27',
-          width: 2.5,
-          length: 5,
+          width: 3.5,
+          length: 8,
           depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjMyMzcyNzEtYWM1OC00ZjQ3LTg1NjgtMTJjOWI5ZWRiNzgw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjMyMzcyNzEtYWM1OC00ZjQ3LTg1NjgtMTJjOWI5ZWRiNzgw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '11 b',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3325,10 +6771,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2FkMWY4YzgtNjgxNi00NWFmLTgwODctNWMxNjc5N2Y1YzE4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6M2FkMWY4YzgtNjgxNi00NWFmLTgwODctNWMxNjc5N2Y1YzE4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3341,21 +6817,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjQ0OGRhZTU0LTFiZjctNDhlMy1iNzhmLTNiOTIxODdiYTU5MA==',
+          id: 'QmVydGhOb2RlOjRmYmFkM2MwLWRlYjItNDA3Ny1hY2Q0LWExMDVkZmEwNDM0OA==',
           isActive: true,
-          number: '28',
-          width: 3,
-          length: 8,
+          number: '27',
+          width: 2.5,
+          length: 5,
           depth: null,
-          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDM0ZjJlNzEtYWFiMC00MGZlLTk0MDctY2I1YmFlNDJkZjNh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDM0ZjJlNzEtYWFiMC00MGZlLTk0MDctY2I1YmFlNDJkZjNh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
-              identifier: '11 a',
+              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3375,10 +6881,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTMyYTc0OGUtNWJmMy00Y2Q3LWFhODctNDBjNTY3ZjhmYmJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTMyYTc0OGUtNWJmMy00Y2Q3LWFhODctNDBjNTY3ZjhmYmJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3391,21 +6927,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjdmZjk5NzFiLTQ1ZjItNDA5NS1iNDI4LTE3ZTgzMGZhNmJiNw==',
+          id: 'QmVydGhOb2RlOjQ0OGRhZTU0LTFiZjctNDhlMy1iNzhmLTNiOTIxODdiYTU5MA==',
           isActive: true,
           number: '28',
-          width: 3.5,
+          width: 3,
           length: 8,
           depth: null,
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzk3MzQxMTgtMzE3NS00Mzk5LWI3YjYtM2VjNmQzMzM4NTlm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzk3MzQxMTgtMzE3NS00Mzk5LWI3YjYtM2VjNmQzMzM4NTlm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
-              identifier: '19 a',
+              identifier: '11 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3425,10 +6991,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODc3YzM1OTctMzBiOS00M2MwLThkZDctNDQwN2RiODI2MmIz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODc3YzM1OTctMzBiOS00M2MwLThkZDctNDQwN2RiODI2MmIz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
               identifier: '10',
               __typename: 'PierProperties',
@@ -3441,21 +7037,51 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       },
       {
         node: {
-          id: 'QmVydGhOb2RlOjFmOTkwMjg0LTUzMTEtNDMwZi1iYTE1LWY0NzIwYjM0NWU4MA==',
+          id: 'QmVydGhOb2RlOjdmZjk5NzFiLTQ1ZjItNDA5NS1iNDI4LTE3ZTgzMGZhNmJiNw==',
           isActive: true,
-          number: '29',
-          width: 2.5,
-          length: 5,
+          number: '28',
+          width: 3.5,
+          length: 8,
           depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTJhZjczNGMtMjNlNi00YjQ0LThmYmUtZDM1YmMwYjIwMDBl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTJhZjczNGMtMjNlNi00YjQ0LThmYmUtZDM1YmMwYjIwMDBl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
-              identifier: '11 a',
+              identifier: '19 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3475,10 +7101,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.STERN_BUOY_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTMzNjFmYzktYzZkMS00YmJkLTgyMjktNjllN2VjNDU3MmJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTMzNjFmYzktYzZkMS00YmJkLTgyMjktNjllN2VjNDU3MmJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
               identifier: '19 a',
               __typename: 'PierProperties',
@@ -3500,12 +7156,97 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWIxYjhiZmQtMjg3Ny00ZTlmLTk1YjAtOWUwZjUwNjE1OTQ4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWIxYjhiZmQtMjg3Ny00ZTlmLTk1YjAtOWUwZjUwNjE1OTQ4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjFmOTkwMjg0LTUzMTEtNDMwZi1iYTE1LWY0NzIwYjM0NWU4MA==',
+          isActive: true,
+          number: '29',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGIyYjcwNjUtZmI5OC00ODM5LWJlMDYtMzhmODE4OWU5ZTA4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGIyYjcwNjUtZmI5OC00ODM5LWJlMDYtMzhmODE4OWU5ZTA4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
+            properties: {
+              identifier: '11 a',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3525,10 +7266,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWJiYjA1MTgtNTNhZC00MDNhLTlmMmEtOTQwM2UyNjU1YWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWJiYjA1MTgtNTNhZC00MDNhLTlmMmEtOTQwM2UyNjU1YWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3550,10 +7321,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDk4MzE3YTQtNGRkMy00NTJhLThhMTgtNjFjMTIzYWUyY2Vh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NDk4MzE3YTQtNGRkMy00NTJhLThhMTgtNjFjMTIzYWUyY2Vh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3575,10 +7376,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGY5N2Y5MWQtMWYyOS00ZWZmLWFiZmYtZjcxZjNlZDhlODA3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGY5N2Y5MWQtMWYyOS00ZWZmLWFiZmYtZjcxZjNlZDhlODA3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3600,10 +7431,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmIzNjUxOTYtNDFmMS00NTMzLTkxMzAtNzYwNTc5NTRmZWE5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmIzNjUxOTYtNDFmMS00NTMzLTkxMzAtNzYwNTc5NTRmZWE5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3625,10 +7486,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MmY1Yzg4ZDQtNGQ2MC00MTBjLWI3OWMtMjM2YTU2NDU1ZDc4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MmY1Yzg4ZDQtNGQ2MC00MTBjLWI3OWMtMjM2YTU2NDU1ZDc4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3650,10 +7541,95 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTk4ZmI3ZTctZmJlYy00MDdmLTllM2ItZGRmMWVjZDk3ZjQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTk4ZmI3ZTctZmJlYy00MDdmLTllM2ItZGRmMWVjZDk3ZjQy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
+            properties: {
+              identifier: '11 b',
+              __typename: 'PierProperties',
+            },
+            __typename: 'PierNode',
+          },
+          __typename: 'BerthNode',
+        },
+        __typename: 'BerthNodeEdge',
+      },
+      {
+        node: {
+          id: 'QmVydGhOb2RlOjFkODk3YTkwLTI4OTItNDRkOC05ZDExLWNmNjU3Nzc3OWRmMA==',
+          isActive: true,
+          number: '33',
+          width: 2.5,
+          length: 5,
+          depth: null,
+          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
+          comment: '',
+          leases: {
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTVlNWNhMTEtZmIyNS00ZGNlLTliOTYtNGE5NDNjMmM3MDU0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTVlNWNhMTEtZmIyNS00ZGNlLTliOTYtNGE5NDNjMmM3MDU0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
+            __typename: 'BerthLeaseNodeConnection',
+          },
+          pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3675,37 +7651,42 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NThjNTY0YzEtNzY0Ni00OTEzLTgzMTUtYzkxYzRmNmVhOGZh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NThjNTY0YzEtNzY0Ni00OTEzLTgzMTUtYzkxYzRmNmVhOGZh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
-              __typename: 'PierProperties',
-            },
-            __typename: 'PierNode',
-          },
-          __typename: 'BerthNode',
-        },
-        __typename: 'BerthNodeEdge',
-      },
-      {
-        node: {
-          id: 'QmVydGhOb2RlOjFkODk3YTkwLTI4OTItNDRkOC05ZDExLWNmNjU3Nzc3OWRmMA==',
-          isActive: true,
-          number: '33',
-          width: 2.5,
-          length: 5,
-          depth: null,
-          mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
-          comment: '',
-          leases: {
-            edges: [],
-            __typename: 'BerthLeaseNodeConnection',
-          },
-          pier: {
-            properties: {
-              identifier: '11 b',
               __typename: 'PierProperties',
             },
             __typename: 'PierNode',
@@ -3725,10 +7706,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2NhMDE2ZDgtOGYxZC00MzI5LTkzZjktYWVjZjM0MzY3ODBl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Y2NhMDE2ZDgtOGYxZC00MzI5LTkzZjktYWVjZjM0MzY3ODBl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3750,10 +7761,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTMyYmY4OTYtZWYxYi00YzQ4LWJhNjctZTMwMTY1OGZjYzQ5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YTMyYmY4OTYtZWYxYi00YzQ4LWJhNjctZTMwMTY1OGZjYzQ5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3775,10 +7816,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzVjOWI5YjEtYjVlMi00OGRhLTg1MDYtYmU5N2MxYjcwNjli',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzVjOWI5YjEtYjVlMi00OGRhLTg1MDYtYmU5N2MxYjcwNjli',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3800,10 +7871,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjQ3NzZiODctNTYwZi00MjA3LWFlMjMtODExMmVjNDdmN2Rl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjQ3NzZiODctNTYwZi00MjA3LWFlMjMtODExMmVjNDdmN2Rl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3825,10 +7926,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWVlN2NkMDYtMzk3Mi00Yjk0LWI2NTctZDljMTUzNmU2MDky',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.ERROR,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWVlN2NkMDYtMzk3Mi00Yjk0LWI2NTctZDljMTUzNmU2MDky',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3850,10 +7981,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTMxZGFhMDktNThkYi00ZjM4LTljN2ItN2I1YTVmZjU4NDY4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NTMxZGFhMDktNThkYi00ZjM4LTljN2ItN2I1YTVmZjU4NDY4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
               identifier: '11 b',
               __typename: 'PierProperties',
@@ -3875,10 +8036,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzRjZmE2ODgtN2Q4ZC00ZmJkLTk3OGYtMTk0ZTkxYzI0MjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzRjZmE2ODgtN2Q4ZC00ZmJkLTk3OGYtMTk0ZTkxYzI0MjRh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3904,6 +8095,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3929,6 +8121,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3950,10 +8143,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTgxZDM5YzktMWQyMC00ZDAxLTkzNWUtMTIzZGQ4NDhkNjdh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTgxZDM5YzktMWQyMC00ZDAxLTkzNWUtMTIzZGQ4NDhkNjdh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -3979,6 +8202,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4000,10 +8224,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWVkZTA0YjEtYjg4NC00NDAyLTk3MDktODJjZGVhZGExY2Rl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OWVkZTA0YjEtYjg4NC00NDAyLTk3MDktODJjZGVhZGExY2Rl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4025,10 +8279,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGI5ZGQzNTktZWZlMS00OWVhLWJlM2YtOWJkN2MyN2FiNGI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGI5ZGQzNTktZWZlMS00OWVhLWJlM2YtOWJkN2MyN2FiNGI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4050,10 +8334,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjdkNTk5NGMtYzczYS00ZjUwLWIxNDktOTI4ZTZhMmY3NjIz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjdkNTk5NGMtYzczYS00ZjUwLWIxNDktOTI4ZTZhMmY3NjIz',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4075,10 +8389,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWU2YzgwODItMGE1Zi00N2RhLWJjMTEtMGVjOWFmODBkOGYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWU2YzgwODItMGE1Zi00N2RhLWJjMTEtMGVjOWFmODBkOGYx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4100,10 +8444,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjVkNDI0MmEtYjI5OS00MTQ4LWI0ODctNmM3MTk0MmEwMmI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjVkNDI0MmEtYjI5OS00MTQ4LWI0ODctNmM3MTk0MmEwMmI0',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4125,10 +8499,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTQ2MzEyMzEtZjQxMi00MDBiLWI3MTktZWQ0OTRmMTAxYmIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTQ2MzEyMzEtZjQxMi00MDBiLWI3MTktZWQ0OTRmMTAxYmIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4150,10 +8554,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTQ0NTI3Y2YtMzY3NC00Yzc4LThmNjItMmIwY2ZmMzVhMTUy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MTQ0NTI3Y2YtMzY3NC00Yzc4LThmNjItMmIwY2ZmMzVhMTUy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4175,10 +8609,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDBiODcwZDQtNzY0MS00ZDY5LTgyYmEtYTYyNDg5MDNjNzVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDBiODcwZDQtNzY0MS00ZDY5LTgyYmEtYTYyNDg5MDNjNzVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4200,10 +8664,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTMzNDU0NjEtY2E3NS00MGE4LTk5OGMtZTljMjRjN2I4YmZj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTMzNDU0NjEtY2E3NS00MGE4LTk5OGMtZTljMjRjN2I4YmZj',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4225,10 +8719,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWUyNDYxYTItOTNkYi00NmJhLWE5Y2MtYTNmMjI5MjYzYmU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6YWUyNDYxYTItOTNkYi00NmJhLWE5Y2MtYTNmMjI5MjYzYmU1',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4250,10 +8774,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjZlYmYzZmQtNzc4Mi00ZTc2LWE5YmMtYmJjN2E3YzAyYTAy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjZlYmYzZmQtNzc4Mi00ZTc2LWE5YmMtYmJjN2E3YzAyYTAy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4275,10 +8829,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWYwYmJkZDQtMmY3My00MzI4LTk0MjgtNTk4YWMyMTFlMWIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MWYwYmJkZDQtMmY3My00MzI4LTk0MjgtNTk4YWMyMTFlMWIy',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4300,10 +8884,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGE2MzRkYjQtMTQ1OS00NzRhLTkxMGYtOTQwZDE0ZDFlOTU4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGE2MzRkYjQtMTQ1OS00NzRhLTkxMGYtOTQwZDE0ZDFlOTU4',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4325,10 +8939,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjBhNzY4YjYtYTE4Yy00MjU0LTk0YjQtZGMyNjA3MWQ3MWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjBhNzY4YjYtYTE4Yy00MjU0LTk0YjQtZGMyNjA3MWQ3MWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4350,10 +8994,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjY4MzMzZDctNTMxMS00ZTA4LTllMjQtZjVhNGQyMzUyZDgw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MjY4MzMzZDctNTMxMS00ZTA4LTllMjQtZjVhNGQyMzUyZDgw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4375,10 +9049,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjVhZjBiNzYtZGRlNC00YjExLThhNDQtMTk0NGRhYmZjM2Jm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjVhZjBiNzYtZGRlNC00YjExLThhNDQtMTk0NGRhYmZjM2Jm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4400,10 +9104,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWUwMGY5YTAtMjcyMC00NzI3LTgxNjItZjIyMDg2Y2Q0MzY3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NWUwMGY5YTAtMjcyMC00NzI3LTgxNjItZjIyMDg2Y2Q0MzY3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4425,10 +9159,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzM3NmJiZDktMWIyNi00YmE3LWIwOTMtN2NmZDUyYTMzNDJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzM3NmJiZDktMWIyNi00YmE3LWIwOTMtN2NmZDUyYTMzNDJm',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4450,10 +9214,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmIxMWFkOWQtMjExYS00MjYzLTk5NTUtNTRkMjdlZTY4ZmRk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmIxMWFkOWQtMjExYS00MjYzLTk5NTUtNTRkMjdlZTY4ZmRk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4475,10 +9269,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzc1MDg5NTQtMGY5Yi00OWE1LWFjMjAtOWU3NDEyZWJjODk2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6Mzc1MDg5NTQtMGY5Yi00OWE1LWFjMjAtOWU3NDEyZWJjODk2',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4500,10 +9324,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjgwNjQ3MDMtZjg4Ny00ZDEzLThiNjctMTRiMTBiY2IwYmI3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZjgwNjQ3MDMtZjg4Ny00ZDEzLThiNjctMTRiMTBiY2IwYmI3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4525,10 +9379,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWRjNzJlMzMtNzVhNi00Zjc3LWE0NTQtNTYyYTEwYWQ4MTM3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZWRjNzJlMzMtNzVhNi00Zjc3LWE0NTQtNTYyYTEwYWQ4MTM3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4550,10 +9434,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM0Yzc2NWYtNGMzNi00N2IyLWFiNzUtNDQ0NGRhMmY3Mjdh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGM0Yzc2NWYtNGMzNi00N2IyLWFiNzUtNDQ0NGRhMmY3Mjdh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4575,10 +9489,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmQzMWViYmItZTE3Yi00MDY1LTkwNzYtZGI2OTM4Nzg3ZWVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmQzMWViYmItZTE3Yi00MDY1LTkwNzYtZGI2OTM4Nzg3ZWVh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4600,10 +9544,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjBhNzY4YjYtYTE4Yy00MjU0LTk0YjQtZGMyNjA3MWQ3MWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NjBhNzY4YjYtYTE4Yy00MjU0LTk0YjQtZGMyNjA3MWQ3MWJl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4625,10 +9599,26 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZGY0NDUyYzQtMTY2YS00ZWE1LTk3NWQtMDA5ZTM1MmFlZWNi',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: true,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4650,10 +9640,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTRlMDQ5MmYtYzAwMC00MDRiLWEwY2YtOTJhYmE1NGU1ZTU3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZTRlMDQ5MmYtYzAwMC00MDRiLWEwY2YtOTJhYmE1NGU1ZTU3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4675,10 +9695,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmEyN2I1ZTgtODI1NS00YmNiLThhOWQtNzFjZmFmMmJlNDQw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZmEyN2I1ZTgtODI1NS00YmNiLThhOWQtNzFjZmFmMmJlNDQw',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4704,6 +9754,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4725,10 +9776,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGE0ZDRiOGUtZGIzMy00MjMzLTg4NWUtMTcxMmFjNmJhZDhl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NGE0ZDRiOGUtZGIzMy00MjMzLTg4NWUtMTcxMmFjNmJhZDhl',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4750,10 +9831,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzUwMTA4MDMtOTM0Mi00NDgyLWEzOTYtNzUxM2UwZWYwY2Q3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6MzUwMTA4MDMtOTM0Mi00NDgyLWEzOTYtNzUxM2UwZWYwY2Q3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4775,10 +9886,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTg0M2NkOTgtNjRiMy00ZGQwLTk1NzMtZTc5ZGUxMGJiNzJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OTg0M2NkOTgtNjRiMy00ZGQwLTk1NzMtZTc5ZGUxMGJiNzJk',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4804,6 +9945,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4825,10 +9967,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzgxZDNmNTktOTI5Ni00MWYyLTk5ZjQtOTYzNDIxMjExZWU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzgxZDNmNTktOTI5Ni00MWYyLTk5ZjQtOTYzNDIxMjExZWU5',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4850,10 +10022,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzVjOGExN2YtNDExNC00NGZiLWIxN2UtNzM0MzM2Mzk0YTA3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6NzVjOGExN2YtNDExNC00NGZiLWIxN2UtNzM0MzM2Mzk0YTA3',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4875,10 +10077,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODdjZDhmZWYtOGQxNC00ZGYzLTgwZjItNGEyMzE5NGU0MTll',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ODdjZDhmZWYtOGQxNC00ZGYzLTgwZjItNGEyMzE5NGU0MTll',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4900,10 +10132,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGYzYjEyOGEtMWJlZi00MTRjLTg1YzktYjFiN2MwMmFhMTAx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGYzYjEyOGEtMWJlZi00MTRjLTg1YzktYjFiN2MwMmFhMTAx',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4925,10 +10187,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGE2YzI2ZGEtMjM0My00MzU2LTg4YzgtMmMzZmMxOGZmYjJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6OGE2YzI2ZGEtMjM0My00MzU2LTg4YzgtMmMzZmMxOGZmYjJh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',
@@ -4950,10 +10242,40 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
           mooringType: BerthMooringType.SIDE_SLIP_PLACE,
           comment: '',
           leases: {
-            edges: [],
+            edges: [
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDQyMTc5MjgtNzEwMS00MTgxLWFmZDYtOTE1ZDIxZDY2MTlh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.OFFERED,
+                  startDate: '2021-06-10',
+                  endDate: '2021-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+              {
+                node: {
+                  customer: {
+                    id: 'UHJvZmlsZU5vZGU6ZDQyMTc5MjgtNzEwMS00MTgxLWFmZDYtOTE1ZDIxZDY2MTlh',
+                    __typename: 'ProfileNode',
+                  },
+                  status: LeaseStatus.PAID,
+                  startDate: '2020-06-10',
+                  endDate: '2020-09-14',
+                  isActive: false,
+                  __typename: 'BerthLeaseNode',
+                },
+                __typename: 'BerthLeaseNodeEdge',
+              },
+            ],
             __typename: 'BerthLeaseNodeConnection',
           },
           pier: {
+            id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
               identifier: '11 a',
               __typename: 'PierProperties',

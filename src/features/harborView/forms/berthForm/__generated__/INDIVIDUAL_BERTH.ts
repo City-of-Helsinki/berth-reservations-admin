@@ -22,6 +22,7 @@ export interface INDIVIDUAL_BERTH_berth_pier {
 
 export interface INDIVIDUAL_BERTH_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   comment: string;
   isActive: boolean;

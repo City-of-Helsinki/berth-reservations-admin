@@ -3,7 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
 import { INDIVIDUAL_HARBOR_QUERY } from './queries';
-import { INDIVIDUAL_HARBOR } from './__generated__/INDIVIDUAL_HARBOR';
+import {
+  INDIVIDUAL_HARBOR,
+  INDIVIDUAL_HARBORVariables as INDIVIDUAL_HARBOR_VARS,
+} from './__generated__/INDIVIDUAL_HARBOR';
 import { getIndividualHarborData, getBerths, getPiers, getMaps } from './utils';
 import HarborView from './HarborView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
@@ -21,10 +24,10 @@ const HarborViewContainer = () => {
   const [pierToEdit, setPierToEdit] = useState<string | null>(null);
   const [creatingPier, setCreatingPier] = useState<boolean>(false);
 
-  const { id } = useParams<{ id: string }>();
-  const { loading, data } = useQuery<INDIVIDUAL_HARBOR>(INDIVIDUAL_HARBOR_QUERY, {
+  const { id: harborId } = useParams<{ id: string }>();
+  const { loading, data } = useQuery<INDIVIDUAL_HARBOR, INDIVIDUAL_HARBOR_VARS>(INDIVIDUAL_HARBOR_QUERY, {
     variables: {
-      harborId: id,
+      harborId,
     },
   });
 
@@ -57,7 +60,7 @@ const HarborViewContainer = () => {
             onCancel={() => setBerthToEdit(null)}
             onDelete={() => setBerthToEdit(null)}
             onSubmit={() => setBerthToEdit(null)}
-            refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { id } }]}
+            refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { harborId } }]}
             pierOptions={piers}
           />
         </Modal>
@@ -67,17 +70,17 @@ const HarborViewContainer = () => {
         <BerthCreateForm
           onCancel={() => setCreatingBerth(false)}
           onSubmit={() => setCreatingBerth(false)}
-          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { id } }]}
+          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { harborId } }]}
           pierOptions={piers}
         />
       </Modal>
 
       <Modal isOpen={creatingPier} toggleModal={() => setCreatingPier(false)}>
         <PierCreateForm
-          harborId={id}
+          harborId={harborId}
           onCancel={() => setCreatingPier(false)}
           onSubmit={() => setCreatingPier(false)}
-          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { id } }]}
+          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { harborId } }]}
         />
       </Modal>
 
@@ -88,17 +91,17 @@ const HarborViewContainer = () => {
             onCancel={() => setPierToEdit(null)}
             onDelete={() => setPierToEdit(null)}
             onSubmit={() => setPierToEdit(null)}
-            refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { id } }]}
+            refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { harborId } }]}
           />
         </Modal>
       )}
 
       <Modal isOpen={editingHarbor} toggleModal={() => setEditingHarbor(false)}>
         <HarborEditForm
-          harborId={id}
+          harborId={harborId}
           onCancel={() => setEditingHarbor(false)}
           onSubmit={() => setEditingHarbor(false)}
-          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { id } }]}
+          refetchQueries={[{ query: INDIVIDUAL_HARBOR_QUERY, variables: { harborId } }]}
         />
       </Modal>
     </>

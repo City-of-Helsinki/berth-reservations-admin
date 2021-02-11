@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 export const INDIVIDUAL_BERTH_QUERY = gql`
   query INDIVIDUAL_BERTH($id: ID!) {
     berth(id: $id) {
+      id
       number
       comment
       isActive

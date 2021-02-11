@@ -50,7 +50,7 @@ exports[`HarborView renders normally 1`] = `
               <img
                 alt="Kuva kohteesta"
                 class="image"
-                src="https://venepaikat.hel.fi/img/helsinki_harbors/41359.jpg"
+                src="https://venepaikka.test.kuva.hel.ninja/img/helsinki_harbors/41359.jpg"
               />
             </div>
             <div>
@@ -134,7 +134,7 @@ exports[`HarborView renders normally 1`] = `
               <strong
                 class="text standard strong xxxl"
               >
-                189
+                11
               </strong>
               <span
                 class="text standard span s bold label"
@@ -793,6 +793,113 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <input
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+                    id="checkbox-QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA=="
+                    title="Toggle Row Selected"
+                    type="checkbox"
+                  />
+                  <label
+                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+                    for="checkbox-QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA=="
+                  />
+                </div>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                1
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                10
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              />
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                6,0 m
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                2,5 m
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                -
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                Aisapaikka
+              </div>
+              <div
+                class="tableCell expander"
+                role="cell"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
+              >
+                <div
+                  style="cursor:pointer"
+                  title="Toggle Row Expanded"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                      />
+                      <path
+                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rowWrapper"
+          >
+            <div
+              role="row"
+              style="display:flex;flex:1 0 auto;min-width:150px"
+            >
+              <div
+                class="tableCell selector"
+                role="cell"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
+              >
+                <div
+                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+                  style="cursor:pointer"
+                >
+                  <input
+                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjY4OTdkOTgyLTA2OTMtNDlhNy1hMzFiLWJhMjEyZDM5ZmJiOA=="
                     title="Toggle Row Selected"
                     type="checkbox"
@@ -848,7 +955,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                Kävelyaisapaikka
+                Aisapaikka
               </div>
               <div
                 class="tableCell expander"
@@ -900,13 +1007,13 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <input
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg=="
+                    id="checkbox-QmVydGhOb2RlOjU4OTY2MmQ5LTA3MGMtNDllNS1hNTIzLTFjZjhhYTkxY2IwYw=="
                     title="Toggle Row Selected"
                     type="checkbox"
                   />
                   <label
                     class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg=="
+                    for="checkbox-QmVydGhOb2RlOjU4OTY2MmQ5LTA3MGMtNDllNS1hNTIzLTFjZjhhYTkxY2IwYw=="
                   />
                 </div>
               </div>
@@ -922,7 +1029,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                11 a
+                19 b
               </div>
               <div
                 class="tableCell"
@@ -934,7 +1041,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                5,0 m
+                9,0 m
               </div>
               <div
                 class="tableCell"
@@ -955,7 +1062,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                Kävelyaisapaikka
+                Peräpoijupaikka
               </div>
               <div
                 class="tableCell expander"
@@ -1114,13 +1221,13 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <input
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA=="
+                    id="checkbox-QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg=="
                     title="Toggle Row Selected"
                     type="checkbox"
                   />
                   <label
                     class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-QmVydGhOb2RlOmU0MGFkNzI0LWIyOTEtNDg4MS04MmY2LWQzMTM3YzM2ZTQ1MA=="
+                    for="checkbox-QmVydGhOb2RlOmM1ZDFmM2E2LTc3MGItNDc1MS1iMWM2LTM3NjU2ZGY2MTRjNg=="
                   />
                 </div>
               </div>
@@ -1136,7 +1243,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                10
+                11 a
               </div>
               <div
                 class="tableCell"
@@ -1148,7 +1255,7 @@ exports[`HarborView renders normally 1`] = `
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
-                6,0 m
+                5,0 m
               </div>
               <div
                 class="tableCell"
@@ -1170,113 +1277,6 @@ exports[`HarborView renders normally 1`] = `
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
                 Aisapaikka
-              </div>
-              <div
-                class="tableCell expander"
-                role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
-              >
-                <div
-                  style="cursor:pointer"
-                  title="Toggle Row Expanded"
-                >
-                  <svg
-                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                      />
-                      <path
-                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
-                        fill="currentColor"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="rowWrapper"
-          >
-            <div
-              role="row"
-              style="display:flex;flex:1 0 auto;min-width:150px"
-            >
-              <div
-                class="tableCell selector"
-                role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
-              >
-                <div
-                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
-                  style="cursor:pointer"
-                >
-                  <input
-                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-QmVydGhOb2RlOjU4OTY2MmQ5LTA3MGMtNDllNS1hNTIzLTFjZjhhYTkxY2IwYw=="
-                    title="Toggle Row Selected"
-                    type="checkbox"
-                  />
-                  <label
-                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-QmVydGhOb2RlOjU4OTY2MmQ5LTA3MGMtNDllNS1hNTIzLTFjZjhhYTkxY2IwYw=="
-                  />
-                </div>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                1
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                19 b
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              />
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                9,0 m
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                2,5 m
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                -
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                Peräpoijupaikka
               </div>
               <div
                 class="tableCell expander"
@@ -1649,113 +1649,6 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <input
                     class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
-                    id="checkbox-QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ=="
-                    title="Toggle Row Selected"
-                    type="checkbox"
-                  />
-                  <label
-                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
-                    for="checkbox-QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ=="
-                  />
-                </div>
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                2
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                19 b
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              />
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                9,0 m
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                3,0 m
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                -
-              </div>
-              <div
-                class="tableCell"
-                role="cell"
-                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                Peräpoijupaikka
-              </div>
-              <div
-                class="tableCell expander"
-                role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
-              >
-                <div
-                  style="cursor:pointer"
-                  title="Toggle Row Expanded"
-                >
-                  <svg
-                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                      />
-                      <path
-                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
-                        fill="currentColor"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="rowWrapper"
-          >
-            <div
-              role="row"
-              style="display:flex;flex:1 0 auto;min-width:150px"
-            >
-              <div
-                class="tableCell selector"
-                role="cell"
-                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
-              >
-                <div
-                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
-                  style="cursor:pointer"
-                >
-                  <input
-                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
                     id="checkbox-QmVydGhOb2RlOjkxZDM4NTE5LWMzMTgtNDgyYy05OGIxLWE4YmU1NmIyNTMxYw=="
                     title="Toggle Row Selected"
                     type="checkbox"
@@ -1812,6 +1705,113 @@ exports[`HarborView renders normally 1`] = `
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
               >
                 Kävelyaisapaikka
+              </div>
+              <div
+                class="tableCell expander"
+                role="cell"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
+              >
+                <div
+                  style="cursor:pointer"
+                  title="Toggle Row Expanded"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv expandArrow"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                      />
+                      <path
+                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rowWrapper"
+          >
+            <div
+              role="row"
+              style="display:flex;flex:1 0 auto;min-width:150px"
+            >
+              <div
+                class="tableCell selector"
+                role="cell"
+                style="box-sizing:border-box;flex:75 0 auto;min-width:75px;width:75px"
+              >
+                <div
+                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+                  style="cursor:pointer"
+                >
+                  <input
+                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+                    id="checkbox-QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ=="
+                    title="Toggle Row Selected"
+                    type="checkbox"
+                  />
+                  <label
+                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+                    for="checkbox-QmVydGhOb2RlOjk4ZWNlNjZiLTIyY2MtNDY4My05OWQ1LTk2NTkwODEyOWVjNQ=="
+                  />
+                </div>
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                2
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                19 b
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              />
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                9,0 m
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                3,0 m
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                -
+              </div>
+              <div
+                class="tableCell"
+                role="cell"
+                style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
+              >
+                Peräpoijupaikka
               </div>
               <div
                 class="tableCell expander"
