@@ -11,5 +11,5 @@ export const login = async (t: TestController) => {
     .typeText(ssoLogin.password, testUserPassword())
     .click(ssoLogin.loginButton)
     .expect(navigation.sidebarContainer.exists)
-    .ok();
+    .ok({ timeout: 20000 });
 };
