@@ -1,23 +1,20 @@
 @import 'colours';
 @import 'spacings';
 
-$cellsNum: 5;
-
 .dataSummary {
-  display: grid;
-  grid-template-columns: repeat($cellsNum, minmax(0, 1fr));
-  padding: units(0.5);
-  border: 1px solid $black-50;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: $black-50;
+  border-width: 1px 0 0 1px;
 }
 
 .cell {
-  padding: units(0.5) units(1);
-
-  &:not(:nth-child(#{$cellsNum}n)) {
-    border-right: 1px solid $black-50;
-  }
-
-  &:nth-child(n + #{$cellsNum + 1}) {
-    border-top: 1px solid $black-50;
-  }
+  min-width: units(12);
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: units(1) units(1.5);
+  border-style: solid;
+  border-color: $black-50;
+  border-width: 0 1px 1px 0;
 }
