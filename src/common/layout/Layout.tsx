@@ -16,7 +16,7 @@ const Layout = ({ header, sidebar, children, footer }: LayoutProps) => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
   return (
-    <main className={classNames(styles.layout, { [styles.noSidebar]: !sidebar })}>
+    <main className={classNames(styles.layout)}>
       <header className={styles.header}>{header}</header>
       {sidebar && (
         <nav className={styles.side}>

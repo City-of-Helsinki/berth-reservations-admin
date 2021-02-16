@@ -2,7 +2,7 @@
 
 exports[`ErrorPage renders correctly 1`] = `
 <main
-  class="layout noSidebar"
+  class="layout"
 >
   <header
     class="header"
