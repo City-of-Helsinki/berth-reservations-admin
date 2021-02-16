@@ -21,17 +21,22 @@ export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
 };
 
 export const getSummaryData = (recurringInvoicesData: RECURRING_INVOICES | undefined, loading: boolean) => {
-  const totalCustomersCount = recurringInvoicesData?.sendBerthInvoicePreview?.expectedLeases;
-  const failedInvoicingCount = recurringInvoicesData?.berthLeases?.count;
-
   return [
     {
-      label: i18next.t('recurringInvoices.summary.invoicesLeft'),
-      value: !loading ? totalCustomersCount : undefined,
+      label: i18next.t('recurringInvoices.summary.sent'),
+      value: recurringInvoicesData?.sent?.count ?? undefined,
     },
     {
-      label: i18next.t('recurringInvoices.summary.failedInvoicing'),
-      value: !loading ? failedInvoicingCount : undefined,
+      label: i18next.t('recurringInvoices.summary.failed'),
+      value: recurringInvoicesData?.failed?.count ?? undefined,
+    },
+    {
+      label: i18next.t('recurringInvoices.summary.paid'),
+      value: recurringInvoicesData?.paid?.count ?? undefined,
+    },
+    {
+      label: i18next.t('recurringInvoices.summary.pending'),
+      value: recurringInvoicesData?.pending?.count ?? undefined,
     },
   ];
 };

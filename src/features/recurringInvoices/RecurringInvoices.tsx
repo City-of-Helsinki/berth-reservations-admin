@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -23,18 +23,11 @@ export interface FailedInvoices {
 export interface RecurringInvoicesProps {
   loading: boolean;
   dataSummary: DataSummaryProps['labelValuePairs'];
-  failedInvoicesCount: number | undefined;
   failedInvoicesData: FailedInvoices[];
   handleSend(dueDate: string | null): void;
 }
 
-const RecurringInvoices = ({
-  loading,
-  dataSummary,
-  failedInvoicesCount,
-  failedInvoicesData,
-  handleSend,
-}: RecurringInvoicesProps) => {
+const RecurringInvoices = ({ loading, dataSummary, failedInvoicesData, handleSend }: RecurringInvoicesProps) => {
   const { t } = useTranslation();
 
   const failedInvoicesCols: Column<FailedInvoices>[] = [
@@ -69,14 +62,7 @@ const RecurringInvoices = ({
       <Section>
         <DataSummary labelValuePairs={dataSummary} />
       </Section>
-      <p>
-        <Trans
-          i18nKey="recurringInvoices.failureInstructions"
-          values={{ failedInvoicesCount: failedInvoicesCount ?? '-' }}
-        >
-          ... <Text as="strong">failedInvoicesCount</Text> ...
-        </Trans>
-      </p>
+      <p className={styles.failureInstructions}>{t('recurringInvoices.failureInstructions')}</p>
       <Table
         columns={failedInvoicesCols}
         data={failedInvoicesData}

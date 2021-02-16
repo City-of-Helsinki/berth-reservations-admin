@@ -7,9 +7,24 @@
 // GraphQL query operation: RECURRING_INVOICES
 // ====================================================
 
-export interface RECURRING_INVOICES_sendBerthInvoicePreview {
-  __typename: "SendExistingInvoicesPreviewType";
-  expectedLeases: number;
+export interface RECURRING_INVOICES_sent {
+  __typename: "BerthLeaseNodeConnection";
+  count: number;
+}
+
+export interface RECURRING_INVOICES_failed {
+  __typename: "BerthLeaseNodeConnection";
+  count: number;
+}
+
+export interface RECURRING_INVOICES_paid {
+  __typename: "BerthLeaseNodeConnection";
+  count: number;
+}
+
+export interface RECURRING_INVOICES_pending {
+  __typename: "BerthLeaseNodeConnection";
+  count: number;
 }
 
 export interface RECURRING_INVOICES_berthLeases_edges_node_customer {
@@ -62,11 +77,17 @@ export interface RECURRING_INVOICES_berthLeases_edges {
 
 export interface RECURRING_INVOICES_berthLeases {
   __typename: "BerthLeaseNodeConnection";
-  count: number;
   edges: (RECURRING_INVOICES_berthLeases_edges | null)[];
 }
 
 export interface RECURRING_INVOICES {
-  sendBerthInvoicePreview: RECURRING_INVOICES_sendBerthInvoicePreview | null;
+  sent: RECURRING_INVOICES_sent | null;
+  failed: RECURRING_INVOICES_failed | null;
+  paid: RECURRING_INVOICES_paid | null;
+  pending: RECURRING_INVOICES_pending | null;
   berthLeases: RECURRING_INVOICES_berthLeases | null;
+}
+
+export interface RECURRING_INVOICESVariables {
+  seasonYear: number;
 }
