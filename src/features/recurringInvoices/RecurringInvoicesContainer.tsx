@@ -18,7 +18,11 @@ import { getFailedInvoicesData, getSummaryData } from './utils';
 const RecurringInvoicesContainer = () => {
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
-  const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY);
+  const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY, {
+    variables: {
+      seasonYear: new Date().getFullYear(),
+    },
+  });
   const [sendExistingBerthInvoices, { loading: isSubmitting }] = useMutation<
     SEND_EXISTING_BERTH_INVOICES,
     SEND_EXISTING_BERTH_INVOICES_VARS
@@ -50,7 +54,6 @@ const RecurringInvoicesContainer = () => {
       <RecurringInvoices
         loading={loading}
         dataSummary={getSummaryData(data, loading)}
-        failedInvoicesCount={data?.berthLeases?.count}
         failedInvoicesData={getFailedInvoicesData(data)}
         handleSend={() => setSendInvoiceModalOpen(true)}
       />

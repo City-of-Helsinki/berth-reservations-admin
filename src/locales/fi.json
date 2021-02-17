@@ -284,7 +284,7 @@
       "title": "Lähetä tarjous",
       "dueDate": "Tarjousten eräpäivä",
       "draftedOffers": "Uusia tarjouksia",
-      "sentOffers": "Uudelleen lähetettäviä tarjouksia",
+      "sentOffers": "Uudelleenlähetettäviä tarjouksia",
       "instructions": {
         "paragraph1": "Tarjoukset lähetetään asiakkaiden sähköpostiosoitteisiin ja niihin merkitään alla oleva eräpäivä.",
         "paragraph2": "Lähetetyn tarjouksen voi lähettää uudelleen ja perua.",
@@ -627,10 +627,12 @@
       "emptyState": "Ei laskuja"
     },
     "summary": {
-      "invoicesLeft": "Lähettämättömiä jäljellä",
-      "failedInvoicing": "Lähetys epäonnistui"
+      "sent": "Lähetetty",
+      "failed": "Lähetys epäonnistui",
+      "paid": "Maksettu",
+      "pending": "Maksamatta"
     },
-    "failureInstructions": "Laskua ei voitu lähettää yhteensä <1>{{ failedInvoicesCount }}</1> asiakkaalle. Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.",
+    "failureInstructions": "Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.\nKun olet korjannut virheitä, voit lähettää uuden erän laskuja tai vaihtoehtoisesti yksittäisiä laskuja asiakasnäkymästä.\nKorjatut virheet poistuvat taulukosta vasta uuden erän tai yksittäisen laskun uudelleenlähettämisen jälkeen.",
     "form": {
       "title": "Lähetä lasku",
       "description": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",

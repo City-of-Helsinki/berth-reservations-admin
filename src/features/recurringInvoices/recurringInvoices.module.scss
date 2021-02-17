@@ -3,3 +3,9 @@
 .marginLeft {
   margin-left: units(1);
 }
+
+.failureInstructions {
+  white-space: pre-wrap;
+  line-height: units(1.5);
+  margin-top: 0;
+}
