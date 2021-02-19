@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
+import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICE
@@ -105,6 +105,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease_order 
   orderNumber: string;
   price: any;
   totalPrice: any;
+  status: OrderStatus;
   orderLines: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_lease_order_orderLines;
 }
 

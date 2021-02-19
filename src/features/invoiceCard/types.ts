@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProductServiceType } from '../../@types/__generated__/globalTypes';
+import { OrderStatus, ProductServiceType } from '../../@types/__generated__/globalTypes';
 import { IconProps } from '../../common/icons';
 
 export interface SelectedProduct {
@@ -20,6 +20,7 @@ export interface Order {
   orderNumber: string;
   price: number;
   totalPrice: number;
+  status: OrderStatus;
   fixedProducts: Product[];
   optionalProducts: Product[];
 }

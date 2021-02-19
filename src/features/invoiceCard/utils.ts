@@ -32,6 +32,7 @@ export const getOrder = (order: BERTH_LEASE_ORDER | UNMARKED_WINTER_STORAGE_LEAS
     orderNumber: order.orderNumber,
     price: order.price,
     totalPrice: order.totalPrice,
+    status: order.status,
     ...products,
   };
 };

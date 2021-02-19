@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { LeaseStatus, BerthMooringType, ProductServiceType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
+import { LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: BerthLease
@@ -91,6 +91,7 @@ export interface BerthLease_lease_order {
   orderNumber: string;
   price: any;
   totalPrice: any;
+  status: OrderStatus;
   orderLines: BerthLease_lease_order_orderLines;
 }
 

@@ -3,6 +3,7 @@ import {
   AdditionalProductType,
   BerthMooringType,
   LeaseStatus,
+  OrderStatus,
   ProductServiceType,
 } from '../../../../@types/__generated__/globalTypes';
 
@@ -54,6 +55,7 @@ export const lease: BerthLease = {
     orderNumber: '123456',
     price: '96.67',
     totalPrice: '256.70',
+    status: OrderStatus.WAITING,
     orderLines: {
       edges: [
         {

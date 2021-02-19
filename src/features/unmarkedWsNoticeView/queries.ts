@@ -80,6 +80,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
           orderNumber
           price
           totalPrice
+          status
           orderLines {
             edges {
               node {

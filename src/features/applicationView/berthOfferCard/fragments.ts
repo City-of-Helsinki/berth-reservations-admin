@@ -43,6 +43,7 @@ export const BERTH_LEASE_FRAGMENT = gql`
         orderNumber
         price
         totalPrice
+        status
         orderLines {
           edges {
             node {
