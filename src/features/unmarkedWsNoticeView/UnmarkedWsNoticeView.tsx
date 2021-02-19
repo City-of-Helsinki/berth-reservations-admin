@@ -80,7 +80,7 @@ const UnmarkedWsNoticeView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} showCustomerNameAsLink />
           <ActionHistoryCard />
         </>
       ) : (
