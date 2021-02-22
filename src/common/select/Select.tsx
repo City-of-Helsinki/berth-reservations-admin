@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'hds-react';
+import { Select as HDSSelect } from 'hds-react';
 import classNames from 'classnames';
 
 import styles from './select.module.scss';
@@ -14,7 +14,7 @@ type Option<T extends OptionValue> = {
 type ConstructedChangeEvent<T extends OptionValue> = {
   target: {
     id?: string;
-    value: T;
+    value: T | null;
   };
 };
 
@@ -26,7 +26,7 @@ export type SelectProps<T extends OptionValue = string> = {
   onChange: (e: ConstructedChangeEvent<T>) => void;
   options: Option<T>[];
   required?: boolean;
-  value?: T;
+  value?: T | null;
   visibleOptions?: number;
 };
 
@@ -41,14 +41,14 @@ const Select = <T extends OptionValue = string>({
   value,
   visibleOptions,
 }: SelectProps<T>) => {
-  const selectedOption = options.find((option) => option.value === value);
+  const selectedOption = options.find((option) => option.value === value) ?? null;
 
-  const handleChange = (option: Option<T>) => {
-    if (!selectedOption || option.value !== selectedOption.value) {
+  const handleChange = (option: Option<T> | null) => {
+    if (!selectedOption || option?.value !== selectedOption.value) {
       const event: ConstructedChangeEvent<T> = {
         target: {
           id,
-          value: option.value,
+          value: option ? option.value : null,
         },
       };
 
@@ -57,17 +57,15 @@ const Select = <T extends OptionValue = string>({
   };
 
   return (
-    <Dropdown
+    <HDSSelect
       className={classNames(styles.select, className)}
       disabled={disabled}
       id={id}
       label={label}
-      onChange={(option) => {
-        handleChange(option as Option<T>);
-      }}
+      onChange={handleChange}
       options={options}
       required={required}
-      selectedOption={selectedOption}
+      value={selectedOption}
       visibleOptions={visibleOptions}
     />
   );
