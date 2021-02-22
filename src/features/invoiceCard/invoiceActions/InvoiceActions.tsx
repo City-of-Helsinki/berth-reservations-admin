@@ -5,23 +5,24 @@ import styles from './invoiceActions.module.scss';
 
 interface Action {
   label: string;
+  value: number;
   onClick(): void;
 }
 
 export interface InvoiceActionsProps {
   actions: Array<Action>;
+  selectedAction: Action['value'] | null;
   disabled?: boolean;
 }
 
-const InvoiceActions = ({ actions, disabled }: InvoiceActionsProps) => {
-  const options = actions.map(({ label }, index) => ({ label, value: index }));
-
+const InvoiceActions = ({ actions, disabled, selectedAction }: InvoiceActionsProps) => {
   return (
     <Select
       className={styles.invoiceActions}
       disabled={disabled}
-      options={options}
-      onChange={(args) => actions[args.target.value].onClick()}
+      options={actions}
+      value={selectedAction}
+      onChange={(args) => actions.find((action) => action.value === args.target.value)?.onClick()}
     />
   );
 };
