@@ -800,6 +800,12 @@
       "resendTitle": "Lähetä lasku uudelleen",
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
+    },
+    "markAsPaid": {
+      "label": "Merkitse maksetuksi muualla",
+      "title": "Muokkaa tarjous/lasku",
+      "description": "Merkitse lasku maksetuksi järjestelmän ulkopuolella.",
+      "paidElsewhere": "Maksettu muualla"
     }
   },
   "additionalInvoice": {
