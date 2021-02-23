@@ -20,6 +20,7 @@ const InvoiceCardContainer = ({
   customerEmail,
   refetchQueries,
   order,
+  invoicingDisabled,
   ...invoiceCardProps
 }: InvoiceCardContainerProps) => {
   const { t } = useTranslation();
