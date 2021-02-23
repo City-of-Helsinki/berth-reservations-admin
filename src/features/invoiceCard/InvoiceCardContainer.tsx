@@ -65,6 +65,7 @@ const InvoiceCardContainer = ({
         editAdditionalServices={() => setEditProductsModalOpen(true)}
         sendInvoice={() => setSendInvoiceModalOpen(true)}
         order={order}
+        invoicingDisabled={invoicingDisabled || actionsDisabled}
         {...invoiceCardProps}
       />
 
