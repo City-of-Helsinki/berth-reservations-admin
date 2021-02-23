@@ -595,7 +595,13 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
             <span
               class="value left"
             >
-              Hessu
+              <a
+                class="internalLink brand"
+                href="#/customers/1"
+                title="Hessu"
+              >
+                Hessu
+              </a>
             </span>
           </div>
           <div
@@ -609,7 +615,13 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
             <span
               class="value left"
             >
-              Hopo
+              <a
+                class="internalLink brand"
+                href="#/customers/1"
+                title="Hopo"
+              >
+                Hopo
+              </a>
             </span>
           </div>
         </section>
