@@ -796,6 +796,7 @@
     },
     "invoiceSent": "Tarjous lähetetty",
     "resendInvoice": "Lähetä tarjous uudelleen",
+    "edit": "Laskun muokkaus",
     "sendInvoice": {
       "title": "Lähetä lasku",
       "resendTitle": "Lähetä lasku uudelleen",
