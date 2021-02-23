@@ -27,7 +27,7 @@ const InvoiceCardContainer = ({
 
   const [editProductsModalOpen, setEditProductsModalOpen] = useState(false);
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
-  const [markAsPaidOpen, setMarkAsPaidOpen] = useState(false);
+  const [markAsPaidModalOpen, setMarkAsPaidModalOpen] = useState(false);
 
   const [selectedInvoiceAction, setSelectedInvoiceAction] = useState<number | null>(null);
 
@@ -36,8 +36,8 @@ const InvoiceCardContainer = ({
       return { productId: product.id, orderId: product.orderId };
     }) ?? [];
 
-  const handleMarkAsPaidClose = () => {
-    setMarkAsPaidOpen(false);
+  const closeMarkAsPaidModal = () => {
+    setMarkAsPaidModalOpen(false);
     setSelectedInvoiceAction(null);
   };
 
@@ -56,7 +56,7 @@ const InvoiceCardContainer = ({
             value: 0,
             label: t('invoiceCard.markAsPaid.label'),
             onClick: () => {
-              setMarkAsPaidOpen(true);
+              setMarkAsPaidModalOpen(true);
               setSelectedInvoiceAction(0);
             },
           },
@@ -72,8 +72,8 @@ const InvoiceCardContainer = ({
 
       {order && (
         <>
-          <Modal isOpen={markAsPaidOpen} toggleModal={handleMarkAsPaidClose}>
-            <MarkAsPaidForm orderId={order.id} onClose={handleMarkAsPaidClose} refetchQueries={refetchQueries} />
+          <Modal isOpen={markAsPaidModalOpen} toggleModal={closeMarkAsPaidModal}>
+            <MarkAsPaidForm orderId={order.id} onClose={closeMarkAsPaidModal} refetchQueries={refetchQueries} />
           </Modal>
           <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
             <SendInvoiceForm
