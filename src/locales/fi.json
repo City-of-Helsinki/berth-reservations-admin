@@ -162,6 +162,7 @@
       "error": "Virhe",
       "expired": "Erääntynyt",
       "paid": "Maksettu",
+      "paidManually": "Maksettu muualla",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua"
     },

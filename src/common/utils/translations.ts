@@ -92,6 +92,8 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
       return 'common.orderStatus.expired';
     case OrderStatus.PAID:
       return 'common.orderStatus.paid';
+    case OrderStatus.PAID_MANUALLY:
+      return 'common.orderStatus.paidManually';
     case OrderStatus.REJECTED:
       return 'common.orderStatus.rejected';
     case OrderStatus.WAITING:
