@@ -6,16 +6,19 @@ import InvoiceActions, { InvoiceActionsProps } from '../InvoiceActions';
 describe('InvoiceActions', () => {
   const actions = [
     {
+      value: 0,
       label: 'First action',
       onClick: jest.fn(),
     },
     {
+      value: 1,
       label: 'Second action',
       onClick: jest.fn(),
     },
   ];
 
   const initialProps: InvoiceActionsProps = {
+    selectedAction: null,
     actions,
   };
 
@@ -25,6 +28,6 @@ describe('InvoiceActions', () => {
   it('renders normally', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 });
