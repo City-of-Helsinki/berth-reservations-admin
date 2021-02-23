@@ -104,6 +104,7 @@ export enum LeaseStatus {
   OFFERED = "OFFERED",
   PAID = "PAID",
   REFUSED = "REFUSED",
+  TERMINATED = "TERMINATED",
 }
 
 export enum NotificationTemplateLanguage {
@@ -122,6 +123,7 @@ export enum OrderStatus {
   ERROR = "ERROR",
   EXPIRED = "EXPIRED",
   PAID = "PAID",
+  PAID_MANUALLY = "PAID_MANUALLY",
   REJECTED = "REJECTED",
   WAITING = "WAITING",
 }

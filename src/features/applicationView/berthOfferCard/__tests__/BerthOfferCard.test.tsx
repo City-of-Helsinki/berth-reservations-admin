@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import BerthOfferCard from '../BerthOfferCard';
-import { ApplicationStatus, BerthMooringType } from '../../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, BerthMooringType, LeaseStatus } from '../../../../@types/__generated__/globalTypes';
 
 describe('BerthOfferCard', () => {
   const getWrapper = (
@@ -26,7 +26,9 @@ describe('BerthOfferCard', () => {
         wasteCollection: true,
         water: true,
         order: null,
+        status: LeaseStatus.DRAFTED,
       },
+      isDeletingLease: false,
       handleDeleteLease: jest.fn(),
       refetchQueries: [],
       applicationStatus: ApplicationStatus.OFFER_GENERATED,

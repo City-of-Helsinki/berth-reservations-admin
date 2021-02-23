@@ -1,16 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select renders normally 1`] = `
+exports[`InvoiceActions renders normally 1`] = `
 <div
-  class="Select-module_root__Ka5uO select"
+  class="Select-module_root__Ka5uO select invoiceActions"
 >
-  <label
-    class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
-    for="hds-select-1-toggle-button"
-    id="hds-select-1-label"
-  >
-    Selector
-  </label>
   <div
     class="Select-module_wrapper__1WQXs"
   >
@@ -19,11 +12,10 @@ exports[`Select renders normally 1`] = `
       aria-haspopup="listbox"
       aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
       aria-owns="hds-select-1-menu"
-      class="Select-module_button__1aIsm"
+      class="Select-module_button__1aIsm Select-module_placeholder__21c0j"
       id="hds-select-1-toggle-button"
       type="button"
     >
-      First
       <svg
         aria-hidden="true"
         class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"

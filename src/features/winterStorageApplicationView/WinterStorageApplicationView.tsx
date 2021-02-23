@@ -56,7 +56,7 @@ const WinterStorageApplicationView = ({
 
       {customerProfile ? (
         <>
-          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} />
+          <CustomerProfileCard {...customerProfile} handleEditCustomer={handleEditCustomer} showCustomerNameAsLink />
           <ActionHistoryCard />
         </>
       ) : (

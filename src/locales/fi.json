@@ -162,6 +162,7 @@
       "error": "Virhe",
       "expired": "Erääntynyt",
       "paid": "Maksettu",
+      "paidManually": "Maksettu muualla",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua"
     },
@@ -800,6 +801,12 @@
       "resendTitle": "Lähetä lasku uudelleen",
       "missingEmail": "Sähköpostiosoite puuttuu",
       "dueDate": "Laskun eräpäivä"
+    },
+    "markAsPaid": {
+      "label": "Merkitse maksetuksi muualla",
+      "title": "Muokkaa tarjous/lasku",
+      "description": "Merkitse lasku maksetuksi järjestelmän ulkopuolella.",
+      "paidElsewhere": "Maksettu muualla"
     }
   },
   "additionalInvoice": {

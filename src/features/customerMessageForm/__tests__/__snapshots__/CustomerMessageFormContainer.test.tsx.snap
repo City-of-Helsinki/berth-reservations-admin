@@ -13,7 +13,7 @@ exports[`CustomerMessageFormContainer renders normally 1`] = `
     class="grid cols2"
   >
     <div
-      class="Dropdown-module_root__3ro8_ select"
+      class="Select-module_root__Ka5uO select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -29,23 +29,21 @@ exports[`CustomerMessageFormContainer renders normally 1`] = `
         </span>
       </label>
       <div
-        class="Dropdown-module_wrapper__1sFxz"
+        class="Select-module_wrapper__1WQXs"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-labelledby="templateId-label templateId-toggle-button"
-          class="Dropdown-module_buttonDropdown__2xA1D Dropdown-module_dropdown__34HBV"
+          aria-owns="templateId-menu"
+          class="Select-module_button__1aIsm"
           id="templateId-toggle-button"
           type="button"
         >
-          <span
-            class="Dropdown-module_buttonLabel__3y4eg"
-          >
-            berth_application_created
-          </span>
+          berth_application_created
           <svg
-            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Dropdown-module_angleIcon__3-f8N"
+            aria-hidden="true"
+            class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
             role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,15 +62,16 @@ exports[`CustomerMessageFormContainer renders normally 1`] = `
             </g>
           </svg>
         </button>
+        <ul
+          aria-labelledby="templateId-label"
+          aria-required="true"
+          class="Select-module_menu__1H2aU"
+          id="templateId-menu"
+          role="listbox"
+          style="max-height: 260px;"
+          tabindex="-1"
+        />
       </div>
-      <ul
-        aria-labelledby="templateId-label"
-        class="Dropdown-module_menu__3xwA0"
-        id="templateId-menu"
-        role="listbox"
-        style="max-height: calc(var(--dropdown-height) * 5);"
-        tabindex="-1"
-      />
     </div>
     <div
       class="recipientCount"

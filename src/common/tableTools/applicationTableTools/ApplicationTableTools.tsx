@@ -12,7 +12,7 @@ interface ApplicationTableToolsProps {
   nameFilter?: string;
   statusFilter?: ApplicationStatus;
   onNameFilterChange(nameFilter: string | undefined): void;
-  onStatusFilterChange(statusFilter?: ApplicationStatus): void;
+  onStatusFilterChange(statusFilter?: ApplicationStatus | null): void;
 }
 
 const ApplicationTableTools = ({

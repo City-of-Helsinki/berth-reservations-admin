@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Dropdown } from 'hds-react';
+import { Select as HDSSelect } from 'hds-react';
 
 import Select, { SelectProps } from '../Select';
 
@@ -32,7 +32,7 @@ describe('Select', () => {
 
     const option = { value: '2', label: 'Second' };
 
-    wrapper.find(Dropdown).simulate('change', option);
+    wrapper.find(HDSSelect).simulate('change', option);
 
     expect(onChange).toHaveBeenCalledWith({ target: { id: 'test', value: '2' } });
   });
@@ -47,7 +47,7 @@ describe('Select', () => {
 
     const option = { value: '2', label: 'Second' };
 
-    wrapper.find(Dropdown).simulate('change', option);
+    wrapper.find(HDSSelect).simulate('change', option);
 
     expect(onChange).not.toHaveBeenCalled();
   });

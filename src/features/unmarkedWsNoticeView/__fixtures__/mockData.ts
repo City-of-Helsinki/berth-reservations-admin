@@ -10,6 +10,7 @@ import {
   CustomerGroup,
   InvoicingType,
   Language,
+  OrderStatus,
 } from '../../../@types/__generated__/globalTypes';
 import { Order } from '../../invoiceCard/types';
 
@@ -132,5 +133,6 @@ export const mockOrder: Order = {
   optionalProducts: [],
   orderNumber: '1',
   price: 100,
+  status: OrderStatus.PAID,
   totalPrice: 100,
 };
