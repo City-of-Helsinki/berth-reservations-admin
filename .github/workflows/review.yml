@@ -34,6 +34,7 @@ jobs:
           DOCKER_IMAGE_NAME: ${{ env.REPO_NAME }}-review
           DOCKER_BUILD_ARG_REACT_APP_ENV: 'review'
           DOCKER_BUILD_ARG_REACT_APP_API_URL: 'https://venepaikka-federation.test.kuva.hel.ninja/'
+          DOCKER_BUILD_ARG_REACT_APP_BERTH_API_URL: 'https://venepaikka-api.test.kuva.hel.ninja/'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: 'https://tunnistamo.test.kuva.hel.ninja'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: 'api-tokens'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_RENEW_ENDPOINT: 'silent_renew'

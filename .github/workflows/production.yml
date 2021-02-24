@@ -35,6 +35,7 @@ jobs:
           DOCKER_IMAGE_NAME: ${{ env.REPO_NAME }}-production
           DOCKER_BUILD_ARG_REACT_APP_ENV: 'production'
           DOCKER_BUILD_ARG_REACT_APP_API_URL: 'https://api.hel.fi/berths-federation/'
+          DOCKER_BUILD_ARG_REACT_APP_BERTH_API_URL: 'https://api.hel.fi/berths/'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_URI: 'https://api.hel.fi/sso'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_ENDPOINT: 'api-tokens'
           DOCKER_BUILD_ARG_REACT_APP_TUNNISTAMO_API_TOKEN_RENEW_ENDPOINT: 'silent_renew'
