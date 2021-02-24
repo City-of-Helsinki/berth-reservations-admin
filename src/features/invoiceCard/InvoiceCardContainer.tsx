@@ -41,10 +41,7 @@ const InvoiceCardContainer = ({
     setSelectedInvoiceAction(null);
   };
 
-  const actionsDisabled =
-    order?.status === OrderStatus.CANCELLED ||
-    order?.status === OrderStatus.REJECTED ||
-    order?.status === OrderStatus.PAID;
+  const actionsDisabled = !(order?.status === OrderStatus.ERROR || order?.status === OrderStatus.WAITING);
 
   return (
     <>

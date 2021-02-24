@@ -3,7 +3,7 @@
 exports[`BerthOfferCard renders normally 1`] = `
 Array [
   <div
-    class="Select-module_root__Ka5uO select invoiceActions"
+    class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select invoiceActions"
   >
     <div
       class="Select-module_wrapper__1WQXs"
@@ -14,9 +14,11 @@ Array [
         aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
         aria-owns="hds-select-1-menu"
         class="Select-module_button__1aIsm Select-module_placeholder__21c0j"
+        disabled=""
         id="hds-select-1-toggle-button"
         type="button"
       >
+        Laskun muokkaus
         <svg
           aria-hidden="true"
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -369,19 +371,7 @@ Array [
       <div
         class="buttonRow"
       >
-        <div>
-          <button
-            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
-            disabled=""
-            type="button"
-          >
-            <span
-              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-            >
-              Hyväksy ja lähetä tarjous
-            </span>
-          </button>
-        </div>
+        <div />
         <div>
           <button
             class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
