@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import LeasesCard, { LeasesCardProps } from './LeasesCard';
@@ -25,10 +25,12 @@ describe('LeasesCard', () => {
         link: 'link',
       },
     ],
+    cancelLease: jest.fn(),
+    customerName: 'Tester McTestington',
   };
 
   const getWrapper = (props?: Partial<LeasesCardProps>) =>
-    shallow(
+    mount(
       <HashRouter>
         <LeasesCard {...initialProps} {...props} />
       </HashRouter>

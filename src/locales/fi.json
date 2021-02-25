@@ -573,6 +573,11 @@
     "leases": {
       "showContract": "Näytä sopimus",
       "valid": "Voimassa",
+      "cancelLease": "Irtisano sopimus",
+      "cancelConfirmation": {
+        "warningText": "Toiminto on peruuttamaton!",
+        "infoText": "Haluatko varmasti irtisanoa asiakkaan {{customerName}} sopimuksen kohteeseen {{address}}?"
+      },
       "berth": {
         "title": "VENEPAIKAT",
         "infoSectionTitle": "VENEPAIKKA",

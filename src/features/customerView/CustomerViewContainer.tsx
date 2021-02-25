@@ -32,6 +32,15 @@ import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations'
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 import SendInvoiceFormContainer from '../invoiceCard/sendInvoiceForm/SendInvoiceFormContainer';
+import { CANCEL_BERTH_LEASE_MUTATION, CANCEL_WINTER_STORAGE_LEASE_MUTATION } from './mutations';
+import {
+  CANCEL_BERTH_LEASE,
+  CANCEL_BERTH_LEASEVariables as CANCEL_BERTH_LEASE_VARS,
+} from './__generated__/CANCEL_BERTH_LEASE';
+import {
+  CANCEL_WINTER_STORAGE_LEASE,
+  CANCEL_WINTER_STORAGE_LEASEVariables as CANCEL_WINTER_STORAGE_LEASE_VARS,
+} from './__generated__/CANCEL_WINTER_STORAGE_LEASE';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
@@ -54,6 +63,12 @@ const CustomerViewContainer = () => {
       refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
     }
   );
+  const [cancelBerthApplication] = useMutation<CANCEL_BERTH_LEASE, CANCEL_BERTH_LEASE_VARS>(
+    CANCEL_BERTH_LEASE_MUTATION
+  );
+  const [cancelWinterStorageApplication] = useMutation<CANCEL_WINTER_STORAGE_LEASE, CANCEL_WINTER_STORAGE_LEASE_VARS>(
+    CANCEL_WINTER_STORAGE_LEASE_MUTATION
+  );
 
   const handleNoPlacesAvailable = async (id: string) =>
     rejectApplication({
@@ -63,6 +78,28 @@ const CustomerViewContainer = () => {
         },
       },
     });
+  const handleCancelLease = async (id: string, type: 'berth' | 'winterStorage') => {
+    if (type === 'berth') {
+      cancelBerthApplication({
+        variables: {
+          input: {
+            id: id,
+          },
+        },
+      });
+      refetch();
+    }
+    if (type === 'winterStorage') {
+      cancelWinterStorageApplication({
+        variables: {
+          input: {
+            id,
+          },
+        },
+      });
+      refetch();
+    }
+  };
 
   if (loading) return <LoadingSpinner isLoading={loading} />;
   if (!data?.profile || !data?.boatTypes)
@@ -90,6 +127,7 @@ const CustomerViewContainer = () => {
       <CustomerView
         applications={applications}
         boats={boats}
+        cancelLease={handleCancelLease}
         customerProfile={customerProfile}
         handleEditCustomer={() => setEditCustomer(true)}
         handleNoPlacesAvailable={handleNoPlacesAvailable}
