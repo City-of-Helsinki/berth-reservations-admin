@@ -12,7 +12,9 @@ import Property from '../../common/property/Property';
 import OrderSection from './OrderSection';
 import { Order, PlaceProperty } from './types';
 import Button from '../../common/button/Button';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { ORDER_STATUS } from '../../common/utils/constants';
 
 export interface InvoiceCardProps {
   applicationStatus: ApplicationStatus;
@@ -82,7 +84,9 @@ const InvoiceCard = ({
 
   return (
     <Card className={classNames(styles.offerCard, className)}>
-      <CardHeader title={title} />
+      <CardHeader title={title}>
+        {order && <StatusLabel type={ORDER_STATUS[order.status].type} label={t(ORDER_STATUS[order.status].label)} />}
+      </CardHeader>
       <CardBody>
         <Grid colsCount={3}>
           <Section title={placeType}>
