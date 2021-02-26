@@ -79,7 +79,7 @@ exports[`ApplicationTableTools renders correctly 1`] = `
           class="Select-module_menu__1H2aU"
           id="hds-select-1-menu"
           role="listbox"
-          style="max-height:468px"
+          style="max-height:520px"
           tabindex="-1"
         />
       </div>
