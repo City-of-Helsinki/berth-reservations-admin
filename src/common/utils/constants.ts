@@ -22,4 +22,5 @@ export const APPLICATION_STATUS: ApplicationStatusType = {
     label: 'applicationList.status.noSuitableNotified',
     type: 'warning',
   },
+  REJECTED: { label: 'applicationList.status.rejected', type: 'error' },
 };
