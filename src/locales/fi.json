@@ -364,7 +364,8 @@
       "handled": "Tarjous maksettu",
       "expired": "Vanhentunut",
       "noSuitable": "Ei paikkaa",
-      "noSuitableNotified": "Ei paikkaa, lähetetty"
+      "noSuitableNotified": "Ei paikkaa, lähetetty",
+      "rejected": "Tarjous hylätty"
     },
     "applicationType": {
       "newApplication": "Uusi",
