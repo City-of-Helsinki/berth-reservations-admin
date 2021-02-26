@@ -543,7 +543,12 @@
     },
     "invoicingHistory": {
       "title": "LASKUHISTORIA",
-      "noInvoicingHistory": "Ei laskuhistoriaa"
+      "noInvoicingHistory": "Ei laskuhistoriaa",
+      "type": "Tyyppi",
+      "season": "Kausi",
+      "dueDate": "Eräpäivä",
+      "amount": "Summa",
+      "status": "Tila"
     },
     "customerBoats": {
       "title": "ASIAKKAAN VENEET",

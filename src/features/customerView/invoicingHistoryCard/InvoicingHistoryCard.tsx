@@ -63,11 +63,11 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
         {invoices.length > 0 ? (
           <Section>
             <Grid colsCount={5}>
-              <div className={styles.gridHeader}>Tyyppi</div>
-              <div className={styles.gridHeader}>Kausi</div>
-              <div className={styles.gridHeader}>Eräpäivä</div>
-              <div className={styles.gridHeader}>Summa</div>
-              <div className={styles.gridHeader}>Tila</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.type')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.season')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.dueDate')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.amount')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.status')}</div>
               {getRows()}
             </Grid>
           </Section>
