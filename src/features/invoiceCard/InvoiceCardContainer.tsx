@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Modal from '../../common/modal/Modal';
 import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 import MarkAsPaidForm from './markAsPaidForm/MarkAsPaidFormContainer';
+import CancelInvoice from './cancelInvoice/CancelInvoiceContainer';
 import EditForm from './editForm/EditForm';
 import InvoiceCard, { InvoiceCardProps } from './InvoiceCard';
 import InvoiceActions from './invoiceActions/InvoiceActions';
@@ -28,6 +29,7 @@ const InvoiceCardContainer = ({
   const [editProductsModalOpen, setEditProductsModalOpen] = useState(false);
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
   const [markAsPaidModalOpen, setMarkAsPaidModalOpen] = useState(false);
+  const [cancelInvoiceModalOpen, setCancelInvoiceModalOpen] = useState(false);
 
   const [selectedInvoiceAction, setSelectedInvoiceAction] = useState<number | null>(null);
 
@@ -38,6 +40,11 @@ const InvoiceCardContainer = ({
 
   const closeMarkAsPaidModal = () => {
     setMarkAsPaidModalOpen(false);
+    setSelectedInvoiceAction(null);
+  };
+
+  const closeCancelInvoice = () => {
+    setCancelInvoiceModalOpen(false);
     setSelectedInvoiceAction(null);
   };
 
@@ -57,6 +64,14 @@ const InvoiceCardContainer = ({
               setSelectedInvoiceAction(0);
             },
           },
+          {
+            value: 1,
+            label: t('invoiceCard.cancelInvoice.label'),
+            onClick: () => {
+              setCancelInvoiceModalOpen(true);
+              setSelectedInvoiceAction(1);
+            },
+          },
         ]}
       />
       <InvoiceCard
@@ -69,6 +84,9 @@ const InvoiceCardContainer = ({
 
       {order && (
         <>
+          <Modal isOpen={cancelInvoiceModalOpen} toggleModal={closeCancelInvoice}>
+            <CancelInvoice orderId={order.id} onClose={closeCancelInvoice} refetchQueries={refetchQueries} />
+          </Modal>
           <Modal isOpen={markAsPaidModalOpen} toggleModal={closeMarkAsPaidModal}>
             <MarkAsPaidForm orderId={order.id} onClose={closeMarkAsPaidModal} refetchQueries={refetchQueries} />
           </Modal>
