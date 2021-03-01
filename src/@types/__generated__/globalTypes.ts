@@ -32,6 +32,7 @@ export enum ApplicationStatus {
   OFFER_GENERATED = "OFFER_GENERATED",
   OFFER_SENT = "OFFER_SENT",
   PENDING = "PENDING",
+  REJECTED = "REJECTED",
 }
 
 export enum BerthApplicationLanguage {

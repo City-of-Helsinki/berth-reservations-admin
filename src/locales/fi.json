@@ -364,7 +364,8 @@
       "handled": "Tarjous maksettu",
       "expired": "Vanhentunut",
       "noSuitable": "Ei paikkaa",
-      "noSuitableNotified": "Ei paikkaa, lähetetty"
+      "noSuitableNotified": "Ei paikkaa, lähetetty",
+      "rejected": "Tarjous hylätty"
     },
     "applicationType": {
       "newApplication": "Uusi",
@@ -543,7 +544,12 @@
     },
     "invoicingHistory": {
       "title": "LASKUHISTORIA",
-      "noInvoicingHistory": "Ei laskuhistoriaa"
+      "noInvoicingHistory": "Ei laskuhistoriaa",
+      "type": "Tyyppi",
+      "season": "Kausi",
+      "dueDate": "Eräpäivä",
+      "amount": "Summa",
+      "status": "Tila"
     },
     "customerBoats": {
       "title": "ASIAKKAAN VENEET",

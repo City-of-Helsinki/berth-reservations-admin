@@ -10,11 +10,11 @@ import CardBody from '../../../common/cardBody/CardBody';
 import { formatDate, formatPrice } from '../../../common/utils/format';
 import Text from '../../../common/text/Text';
 import styles from './invoicingHistoryCard.module.scss';
-import StatusLabel, { StatusLabelProps } from '../../../common/statusLabel/StatusLabel';
-import { getInvoiceTypeKey, getOrderStatusTKey } from '../../../common/utils/translations';
-import { OrderStatus } from '../../../@types/__generated__/globalTypes';
+import StatusLabel from '../../../common/statusLabel/StatusLabel';
+import { getInvoiceTypeKey } from '../../../common/utils/translations';
 import { Invoice } from '../types';
 import Button from '../../../common/button/Button';
+import { ORDER_STATUS } from '../../../common/utils/constants';
 
 interface InvoicingHistoryProps {
   invoices: Invoice[];
@@ -24,23 +24,6 @@ interface InvoicingHistoryProps {
 
 const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoice }: InvoicingHistoryProps) => {
   const { t, i18n } = useTranslation();
-
-  const invoiceStatusToType = (invoiceStatus: OrderStatus): StatusLabelProps['type'] => {
-    switch (invoiceStatus) {
-      case OrderStatus.WAITING:
-        return 'warning';
-      case OrderStatus.PAID:
-        return 'success';
-      case OrderStatus.EXPIRED:
-      case OrderStatus.ERROR:
-        return 'error';
-      case OrderStatus.REJECTED:
-      case OrderStatus.CANCELLED:
-        return 'neutral';
-      default:
-        return 'neutral';
-    }
-  };
 
   const getRows = () =>
     invoices.map((invoice, id) => (
@@ -65,7 +48,7 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
           <Text>{formatPrice(invoice.totalPrice, i18n.language)}</Text>
         </div>
         <div className={styles.gridItem}>
-          <StatusLabel type={invoiceStatusToType(invoice.status)} label={t(getOrderStatusTKey(invoice.status))} />
+          <StatusLabel type={ORDER_STATUS[invoice.status].type} label={t(ORDER_STATUS[invoice.status].label)} />
         </div>
       </React.Fragment>
     ));
@@ -80,11 +63,11 @@ const InvoicingHistoryCard = ({ invoices, onClick, onClickCreateAdditionalInvoic
         {invoices.length > 0 ? (
           <Section>
             <Grid colsCount={5}>
-              <div className={styles.gridHeader}>Tyyppi</div>
-              <div className={styles.gridHeader}>Kausi</div>
-              <div className={styles.gridHeader}>Eräpäivä</div>
-              <div className={styles.gridHeader}>Summa</div>
-              <div className={styles.gridHeader}>Tila</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.type')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.season')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.dueDate')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.amount')}</div>
+              <div className={styles.gridHeader}>{t('customerView.invoicingHistory.status')}</div>
               {getRows()}
             </Grid>
           </Section>
