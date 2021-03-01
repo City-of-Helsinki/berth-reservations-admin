@@ -1,0 +1,16 @@
+@import 'spacings';
+@import 'containers';
+
+.cancelInvoice {
+  width: container(s);
+
+  .description {
+    margin: units(2) 0;
+  }
+
+  .buttons {
+    margin-top: units(3);
+    display: flex;
+    justify-content: space-between;
+  }
+}

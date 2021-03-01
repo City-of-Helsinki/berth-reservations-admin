@@ -814,6 +814,12 @@
       "title": "Muokkaa tarjous/lasku",
       "description": "Merkitse lasku maksetuksi järjestelmän ulkopuolella.",
       "paidElsewhere": "Maksettu muualla"
+    },
+    "cancelInvoice": {
+      "label": "Peru lasku",
+      "title": "Muokkaa tarjous/lasku",
+      "description": "Huom. Muokatun laskun tiedot lähetetään asiakkaalle uudelleen sähköpostitse.",
+      "cancelInvoice": "Peru lasku"
     }
   },
   "additionalInvoice": {
