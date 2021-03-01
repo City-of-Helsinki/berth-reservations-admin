@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 
 import InvoiceCard, { InvoiceCardProps } from '../InvoiceCard';
-import { ApplicationStatus, LeaseStatus } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus, OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 describe('InvoiceCard', () => {
   const defaultProps: InvoiceCardProps = {
@@ -15,6 +15,7 @@ describe('InvoiceCard', () => {
       totalPrice: 2,
       fixedProducts: [],
       optionalProducts: [],
+      status: OrderStatus.WAITING,
     },
     placeType: 'place type',
     placeName: 'place name',

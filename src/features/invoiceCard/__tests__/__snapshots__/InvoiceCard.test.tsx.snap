@@ -12,6 +12,15 @@ exports[`InvoiceCard renders normally 1`] = `
     >
       title
     </span>
+    <div
+      class="widgets"
+    >
+      <span
+        class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX warning"
+      >
+        Odottaa maksua
+      </span>
+    </div>
   </div>
   <div
     class="cardBody"
