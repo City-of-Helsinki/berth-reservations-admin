@@ -64,7 +64,7 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
@@ -600,7 +600,7 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
@@ -880,7 +880,7 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
@@ -1116,7 +1116,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
@@ -1676,7 +1676,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
