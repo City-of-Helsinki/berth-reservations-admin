@@ -112,12 +112,26 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
                 <span
                   class="label standard"
                 >
-                  Status:
+                  Tila:
                 </span>
                 <span
                   class="value left"
                 >
                   Käsitelty
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Hakukoodi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
                 </span>
               </div>
             </section>
@@ -880,12 +894,26 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
                 <span
                   class="label standard"
                 >
-                  Status:
+                  Tila:
                 </span>
                 <span
                   class="value left"
                 >
                   Käsitelty
+                </span>
+              </div>
+              <div
+                class="labelValuePair"
+              >
+                <span
+                  class="label standard"
+                >
+                  Hakukoodi:
+                </span>
+                <span
+                  class="value left"
+                >
+                  -
                 </span>
               </div>
             </section>

@@ -20,6 +20,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
       edges {
         node {
           areaType
+          applicationCode
           boatLength
           boatModel
           boatName

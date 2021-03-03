@@ -48,6 +48,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
           boatName
           boatModel
           accessibilityRequired
+          applicationCode
           status
           lease {
             id

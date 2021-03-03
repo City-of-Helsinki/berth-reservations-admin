@@ -105,10 +105,13 @@ const ApplicationList = ({
       minWidth: COLUMN_WIDTH.M,
     },
     {
-      Cell: ({ cell: { value } }) =>
-        value
+      Cell: ({ cell: { value }, row }) => {
+        if (row.original.applicationCode) return t('applicationList.applicationDetails.applicationCode');
+
+        return value
           ? t('applicationList.applicationType.switchApplication')
-          : t('applicationList.applicationType.newApplication'),
+          : t('applicationList.applicationType.newApplication');
+      },
       Header: t('applicationList.tableHeaders.applicationType') as string,
       accessor: 'isSwitch',
       filter: 'exact',

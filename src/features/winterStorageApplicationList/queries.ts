@@ -20,6 +20,7 @@ export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
       edges {
         node {
           areaType
+          applicationCode
           id
           status
           createdAt

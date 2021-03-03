@@ -355,7 +355,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
                 role="cell"
                 style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
-                Vaihto
+                Hakukoodi
               </div>
               <div
                 class="tableCell"
@@ -607,7 +607,7 @@ exports[`ApplicationList renders normally with all props 1`] = `
                 role="cell"
                 style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px;"
               >
-                Uusi
+                Hakukoodi
               </div>
               <div
                 class="tableCell"

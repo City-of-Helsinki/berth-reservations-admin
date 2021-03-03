@@ -20,6 +20,7 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
 } = {
   winterStorageNotice: {
     id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox',
+    applicationCode: '',
     firstName: 'test',
     lastName: 'test',
     address: 'test',

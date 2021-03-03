@@ -8,6 +8,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T10:54:21.746387+00:00',
           municipality: 'helsinki',
@@ -42,6 +43,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToy',
+          applicationCode: 'code',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T12:30:10.157726+00:00',
           municipality: 'helsinki',
@@ -70,6 +72,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToz',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T12:30:27.609740+00:00',
           municipality: 'helsinki',
@@ -98,6 +101,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo1',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:07:28.521970+00:00',
           municipality: 'helsinki',
@@ -119,6 +123,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo2',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:08:28.383257+00:00',
           municipality: 'helsinki',
@@ -140,6 +145,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo3',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:08:38.133569+00:00',
           municipality: 'helsinki',
@@ -161,6 +167,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo4',
+          applicationCode: 'code',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:09:44.953722+00:00',
           municipality: 'helsinki',
@@ -182,6 +189,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTo5',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:09:56.820368+00:00',
           municipality: 'helsinki',
@@ -203,6 +211,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMA==',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-06T13:12:02.766890+00:00',
           municipality: 'helsinki',
@@ -224,6 +233,7 @@ export const winterStorageApplicationMockData: WINTER_STORAGE_APPLICATIONS = {
       {
         node: {
           id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZToxMQ==',
+          applicationCode: '',
           status: ApplicationStatus.PENDING,
           createdAt: '2019-05-07T18:29:18.066260+00:00',
           municipality: 'helsinki',

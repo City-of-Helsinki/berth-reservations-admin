@@ -51,6 +51,7 @@ interface SummaryInformation {
 export interface ApplicationDetailsProps {
   accessibilityRequired?: boolean;
   applicant?: PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps;
+  applicationCode: string;
   berthSwitch?: BerthSwitch | null;
   boatDraught?: number | null;
   boatLength: number;
@@ -77,6 +78,7 @@ const ApplicationDetails = ({
   id,
   customerId,
   applicant,
+  applicationCode,
   berthSwitch,
   createdAt,
   queue,
@@ -122,6 +124,7 @@ const ApplicationDetails = ({
             label={t('applicationList.applicationDetails.status')}
             value={t(APPLICATION_STATUS[status]?.label)}
           />
+          <LabelValuePair label={t('applicationList.applicationDetails.applicationCode')} value={applicationCode} />
         </Section>
         {berthSwitch && (
           <Section title={t('applicationList.applicationDetails.currentBerth')}>

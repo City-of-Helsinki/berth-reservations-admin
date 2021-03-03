@@ -95,6 +95,7 @@ export const getApplicationDetailsData = (
 
   const {
     accessibilityRequired,
+    applicationCode,
     boatDraught,
     boatLength,
     boatModel,
@@ -130,6 +131,7 @@ export const getApplicationDetailsData = (
   return {
     accessibilityRequired,
     applicant: getApplicantDetails(berthApplication),
+    applicationCode,
     berthSwitch,
     queue: 0, // TODO
     choices,

@@ -24,6 +24,7 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node {
   __typename: "WinterStorageApplicationNode";
   areaType: WinterStorageApplicationAreaType | null;
+  applicationCode: string;
   id: string;
   status: ApplicationStatus;
   createdAt: any;

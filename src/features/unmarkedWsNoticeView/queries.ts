@@ -48,6 +48,7 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
       }
       createdAt
       municipality
+      applicationCode
       boatType
       boatRegistrationNumber
       boatWidth

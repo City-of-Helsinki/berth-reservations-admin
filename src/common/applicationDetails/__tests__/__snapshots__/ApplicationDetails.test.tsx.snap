@@ -64,12 +64,26 @@ exports[`ApplicationDetails renders normally with a lease 1`] = `
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
           >
             Odottaa käsittelyä
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Hakukoodi:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
@@ -586,12 +600,26 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
           >
             Odottaa käsittelyä
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Hakukoodi:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
@@ -852,12 +880,26 @@ exports[`ApplicationDetails renders normally with minimum props 1`] = `
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
           >
             Odottaa käsittelyä
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Hakukoodi:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
@@ -1074,12 +1116,26 @@ exports[`ApplicationDetails renders normally with organization customer applican
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
           >
             Odottaa käsittelyä
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Hakukoodi:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
@@ -1620,12 +1676,26 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
           <span
             class="label standard"
           >
-            Status:
+            Tila:
           </span>
           <span
             class="value left"
           >
             Odottaa käsittelyä
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Hakukoodi:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
