@@ -182,11 +182,6 @@ const ApplicationDetails = ({
         </Section>
         {summaryInformation && (
           <Section title={t('applicationList.applicationDetails.winterStorageApplicationSummary')}>
-            <LabelValuePair
-              label={t('applicationList.applicationDetails.applicationCode')}
-              value={summaryInformation.applicationCode}
-            />
-            <br />
             {summaryInformation.acceptBoatingNewsletter && (
               <div>
                 <Text>{t('applicationList.applicationDetails.acceptBoatingNewsletter')}</Text>
