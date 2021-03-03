@@ -10,6 +10,7 @@ import InternalLink from '../../../common/internalLink/InternalLink';
 import { formatDate, formatDimension } from '../../../common/utils/format';
 import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
 import { getMooringTypeTKey } from '../../../common/utils/translations';
+import ButtonWithConfirmation from '../../../common/buttonWithConfirmation/ButtonWithConfirmation';
 
 interface LeaseDetail {
   id: string;
@@ -25,13 +26,22 @@ interface LeaseDetail {
 }
 
 export interface LeasesCardProps {
+  addressLabel: string;
+  cancelLease: (id: string) => void;
+  customerName: string;
+  infoSectionTitle: string;
   leaseDetails: LeaseDetail[];
   title: string;
-  infoSectionTitle: string;
-  addressLabel: string;
 }
 
-const LeasesCard = ({ leaseDetails, title, infoSectionTitle, addressLabel }: LeasesCardProps) => {
+const LeasesCard = ({
+  addressLabel,
+  cancelLease,
+  customerName,
+  infoSectionTitle,
+  leaseDetails,
+  title,
+}: LeasesCardProps) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -69,6 +79,21 @@ const LeasesCard = ({ leaseDetails, title, infoSectionTitle, addressLabel }: Lea
                 <LabelValuePair label={t('customerView.leases.valid')} value={leaseDate} />
               </Section>
               {renderContractDetails?.(id)}
+              <ButtonWithConfirmation
+                buttonSize="small"
+                buttonVariant="danger"
+                buttonText={t('customerView.leases.cancelLease')}
+                infoText={t('customerView.leases.cancelConfirmation.infoText', {
+                  customerName,
+                  address,
+                })}
+                modalTitle={t('customerView.leases.cancelLease')}
+                onCancelText={t('common.cancel')}
+                onConfirm={() => cancelLease(id)}
+                onConfirmText={t('customerView.leases.cancelLease')}
+                confirmButtonVariant="danger"
+                warningText={t('customerView.leases.cancelConfirmation.warningText')}
+              />
             </CardBody>
           );
         }

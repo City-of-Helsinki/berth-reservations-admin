@@ -6,32 +6,36 @@ import LeasesCard from './LeasesCard';
 import BerthContractDetailsContainer from '../../contractDetails/BerthContractDetailsContainer';
 
 export interface BerthLeasesCardProps {
+  cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
+  customerName: string;
   leases: BerthLease[];
 }
 
-const BerthLeasesCard = ({ leases }: BerthLeasesCardProps) => {
+const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardProps) => {
   const { t } = useTranslation();
   const leaseDetails = leases.map((lease) => {
     return {
-      id: lease.id,
-      endDate: lease.endDate,
-      startDate: lease.startDate,
-      length: lease.length,
-      width: lease.width,
-      depth: lease.depth,
-      mooringType: lease.mooringType,
-      link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       address: [lease.harbor?.name || '', lease.pierIdentifier || '', lease.berthNum].filter(Boolean).join(' '),
+      depth: lease.depth,
+      endDate: lease.endDate,
+      id: lease.id,
+      length: lease.length,
+      link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
+      mooringType: lease.mooringType,
       renderContractDetails: (leaseId: string) => <BerthContractDetailsContainer leaseId={leaseId} />,
+      startDate: lease.startDate,
+      width: lease.width,
     };
   });
 
   return (
     <LeasesCard
+      addressLabel={t('customerView.leases.berth.addressLabel')}
+      customerName={customerName}
+      cancelLease={(id) => cancelLease(id, 'berth')}
+      infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
       leaseDetails={leaseDetails}
       title={t('customerView.leases.berth.title')}
-      infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
-      addressLabel={t('customerView.leases.berth.addressLabel')}
     />
   );
 };

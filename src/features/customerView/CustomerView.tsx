@@ -18,13 +18,14 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 export interface CustomerViewProps {
   applications: Application[];
   boats: Boat[];
+  cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
   customerProfile: CustomerProfileCardProps;
   handleEditCustomer: () => void;
   handleNoPlacesAvailable: (id: string) => void;
   invoices: Invoice[];
   leases: Lease[];
-  onClickCreateBoat: () => void;
   onClickCreateAdditionalInvoice: () => void;
+  onClickCreateBoat: () => void;
   openInvoices: Invoice[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
@@ -34,19 +35,21 @@ export interface CustomerViewProps {
 const CustomerView = ({
   applications,
   boats,
+  cancelLease,
   customerProfile,
   handleEditCustomer,
   handleNoPlacesAvailable,
   invoices,
   leases,
-  onClickCreateBoat,
   onClickCreateAdditionalInvoice,
+  onClickCreateBoat,
   openInvoices,
   setBoatToEdit,
   setOpenInvoice,
   setOpenResendInvoice,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
+  const customerName = `${customerProfile.firstName} ${customerProfile.lastName}`;
   return (
     <PageContent>
       <PageTitle title={t('customerView.title')} />
@@ -69,8 +72,12 @@ const CustomerView = ({
           onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
         />
 
-        <BerthLeasesCard leases={leases.filter(isBerthLease)} />
-        <WinterStorageLeasesCard leases={leases.filter(isWinterStorageLease)} />
+        <BerthLeasesCard customerName={customerName} cancelLease={cancelLease} leases={leases.filter(isBerthLease)} />
+        <WinterStorageLeasesCard
+          customerName={customerName}
+          cancelLease={cancelLease}
+          leases={leases.filter(isWinterStorageLease)}
+        />
 
         <BoatsCard boats={boats} onEdit={(boat) => setBoatToEdit(boat)} onCreate={onClickCreateBoat} />
       </div>

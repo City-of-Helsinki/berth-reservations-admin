@@ -433,6 +433,20 @@ export interface SubscriptionInputType {
   enabled: boolean;
 }
 
+export interface TerminateBerthLeaseMutationInput {
+  id: string;
+  endDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface TerminateWinterStorageLeaseMutationInput {
+  id: string;
+  endDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
 export interface UpdateAdditionalProductMutationInput {
   service?: ProductServiceType | null;
   period?: PeriodType | null;
