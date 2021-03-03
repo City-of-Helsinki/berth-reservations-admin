@@ -13,6 +13,7 @@ interface UnmarkedWinterStorageChoice {
 }
 
 export type UnmarkedWinterStorageNotice = {
+  applicationCode: string;
   boatLength: number;
   boatModel: string;
   boatName: string;
@@ -45,6 +46,7 @@ export const getUnmarkedWinterStorageNotices = (
       if (!edge?.node) return acc;
 
       const {
+        applicationCode,
         boatLength,
         boatModel,
         boatName,
@@ -65,19 +67,20 @@ export const getUnmarkedWinterStorageNotices = (
       } = edge.node;
 
       const applicationData: UnmarkedWinterStorageNotice = {
-        boatLength: boatLength,
-        boatModel: boatModel,
-        boatName: boatName,
-        boatRegistrationNumber: boatRegistrationNumber,
+        applicationCode,
+        boatLength,
+        boatModel,
+        boatName,
+        boatRegistrationNumber,
         boatType: data.boatTypes?.find(({ id }) => id === boatType)?.name,
-        boatWidth: boatWidth,
+        boatWidth,
         choice: getChoiceFromWinterStorageAreaChoices(winterStorageAreaChoices),
-        createdAt: createdAt,
-        firstName: firstName,
-        email: email,
-        id: id,
-        lastName: lastName,
-        status: status,
+        createdAt,
+        firstName,
+        email,
+        id,
+        lastName,
+        status,
         leaseId: lease?.id,
         orderId: lease?.order?.id,
         leaseStatus: lease?.status,

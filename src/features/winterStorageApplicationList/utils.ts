@@ -8,6 +8,7 @@ interface WinterStorageAreaChoice {
 }
 
 export type WinterStorageApplication = {
+  applicationCode: string;
   boatLength: number;
   boatModel: string;
   boatName: string;
@@ -35,6 +36,7 @@ export const getWinterStorageApplicationData = (
       if (!edge?.node) return acc;
 
       const {
+        applicationCode,
         boatLength,
         boatModel,
         boatName,
@@ -63,6 +65,7 @@ export const getWinterStorageApplicationData = (
       // TODO: lease
 
       const applicationData = {
+        applicationCode,
         boatLength,
         boatModel,
         boatName,

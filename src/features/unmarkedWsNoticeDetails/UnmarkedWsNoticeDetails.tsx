@@ -20,6 +20,7 @@ interface SummaryInformation {
 export interface UnmarkedWsNoticeDetailsProps {
   accessibilityRequired?: boolean;
   applicant?: PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps;
+  applicationCode: string;
   boatDraught?: number | null;
   boatLength: number;
   boatModel: string;
@@ -45,6 +46,7 @@ export interface UnmarkedWsNoticeDetailsProps {
 
 const UnmarkedWsNoticeDetails = ({
   applicant,
+  applicationCode,
   createdAt,
   status,
   boatType,
@@ -64,7 +66,7 @@ const UnmarkedWsNoticeDetails = ({
   return (
     <>
       <div>
-        <NoticeDetails createdAt={createdAt} choice={choice} status={status} />
+        <NoticeDetails applicationCode={applicationCode} createdAt={createdAt} choice={choice} status={status} />
         <ApplicantDetails applicant={applicant} />
       </div>
       <div>

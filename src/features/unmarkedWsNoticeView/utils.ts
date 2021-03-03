@@ -42,6 +42,7 @@ export const getNoticeDetailsData = (
     acceptFitnessNews,
     acceptLibraryNews,
     acceptOtherCultureNews,
+    applicationCode,
     boatLength,
     boatModel,
     boatName,
@@ -56,6 +57,7 @@ export const getNoticeDetailsData = (
 
   return {
     applicant: getApplicantDetails({ ...winterStorageNotice, applicationCode: '' }),
+    applicationCode,
     boatLength,
     boatModel,
     boatName,

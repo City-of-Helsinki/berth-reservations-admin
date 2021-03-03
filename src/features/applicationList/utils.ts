@@ -27,6 +27,7 @@ interface BerthSwitch {
 
 export interface ApplicationData {
   accessibilityRequired: boolean;
+  applicationCode: string;
   berthSwitch: BerthSwitch | null;
   boatDraught: number | null;
   boatLength: number;
@@ -59,6 +60,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
 
       const {
         accessibilityRequired,
+        applicationCode,
         berthSwitch,
         boatDraught,
         boatLength,
@@ -112,6 +114,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
 
       const applicationData = {
         accessibilityRequired,
+        applicationCode,
         berthSwitch: berthSwitchProps,
         boatDraught,
         boatLength,

@@ -3,6 +3,7 @@
 exports[`winterStorageApplicationList utils getWinterStorageApplicationData correctly parses response data 1`] = `
 Array [
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -31,6 +32,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "code",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -54,6 +56,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -77,6 +80,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -94,6 +98,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -111,6 +116,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -128,6 +134,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "code",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -145,6 +152,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -162,6 +170,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -179,6 +188,7 @@ Array [
     "status": "PENDING",
   },
   Object {
+    "applicationCode": "",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",

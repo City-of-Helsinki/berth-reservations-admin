@@ -7,9 +7,9 @@ import { formatDate } from '../../../../common/utils/format';
 import { APPLICATION_STATUS } from '../../../../common/utils/constants';
 import { UnmarkedWsNoticeDetailsProps } from '../../UnmarkedWsNoticeDetails';
 
-type NoticeDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'choice' | 'createdAt' | 'status'>;
+type NoticeDetailsProps = Pick<UnmarkedWsNoticeDetailsProps, 'applicationCode' | 'choice' | 'createdAt' | 'status'>;
 
-const NoticeDetails = ({ choice, createdAt, status }: NoticeDetailsProps) => {
+const NoticeDetails = ({ applicationCode, choice, createdAt, status }: NoticeDetailsProps) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -23,6 +23,7 @@ const NoticeDetails = ({ choice, createdAt, status }: NoticeDetailsProps) => {
         label={t('applicationList.applicationDetails.status')}
         value={t(APPLICATION_STATUS[status]?.label)}
       />
+      <LabelValuePair label={t('applicationList.applicationDetails.applicationCode')} value={applicationCode} />
     </Section>
   );
 };

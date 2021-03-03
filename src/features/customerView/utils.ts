@@ -140,6 +140,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
       if (edge?.node) {
         const {
           id,
+          applicationCode,
           berthSwitch,
           createdAt,
           status,
@@ -187,6 +188,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
 
         const applicationData = {
           id,
+          applicationCode,
           customerId: profile.id,
           berthSwitch: berthSwitchProps,
           queue: 0, // TODO

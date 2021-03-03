@@ -4,6 +4,7 @@ exports[`utils getBerthApplicationData should return berth application data 1`] 
 Array [
   Object {
     "accessibilityRequired": false,
+    "applicationCode": "test",
     "berthSwitch": Object {
       "berthNum": "1",
       "harborId": "MOCK-HARBOR-0",
@@ -48,6 +49,7 @@ Array [
   },
   Object {
     "accessibilityRequired": false,
+    "applicationCode": "",
     "berthSwitch": Object {
       "berthNum": "2",
       "harborId": "MOCK-HARBOR-0",
@@ -86,6 +88,7 @@ Array [
   },
   Object {
     "accessibilityRequired": false,
+    "applicationCode": "code",
     "berthSwitch": null,
     "boatDraught": 5,
     "boatLength": 6,
