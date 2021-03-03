@@ -34,6 +34,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node {
   __typename: "WinterStorageApplicationNode";
   areaType: WinterStorageApplicationAreaType | null;
+  applicationCode: string;
   boatLength: any;
   boatModel: string;
   boatName: string;

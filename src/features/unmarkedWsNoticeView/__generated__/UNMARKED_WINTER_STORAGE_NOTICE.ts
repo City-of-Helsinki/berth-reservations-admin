@@ -132,6 +132,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice {
   language: BerthApplicationLanguage;
   customer: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer | null;
   createdAt: any;
+  applicationCode: string;
   boatType: string | null;
   boatRegistrationNumber: string;
   boatWidth: any;

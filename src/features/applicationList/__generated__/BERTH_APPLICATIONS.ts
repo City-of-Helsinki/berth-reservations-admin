@@ -96,6 +96,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node {
   boatName: string;
   boatModel: string;
   accessibilityRequired: boolean;
+  applicationCode: string;
   status: ApplicationStatus;
   lease: BERTH_APPLICATIONS_berthApplications_edges_node_lease | null;
   harborChoices: (BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices | null)[] | null;

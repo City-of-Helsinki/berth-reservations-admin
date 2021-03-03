@@ -214,6 +214,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
         edges {
           node {
             id
+            applicationCode
             berthSwitch {
               id
               berthNumber

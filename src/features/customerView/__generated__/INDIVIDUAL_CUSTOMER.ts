@@ -419,6 +419,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harbor
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node {
   __typename: "BerthApplicationNode";
   id: string;
+  applicationCode: string;
   berthSwitch: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch | null;
   createdAt: any;
   status: ApplicationStatus;

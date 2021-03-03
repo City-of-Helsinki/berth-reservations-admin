@@ -13,6 +13,7 @@ export const mockData: BERTH_APPLICATIONS = {
         node: {
           __typename: 'BerthApplicationNode',
           accessibilityRequired: false,
+          applicationCode: 'test',
           berthSwitch: {
             __typename: 'BerthSwitchType',
             berthNumber: '1',
@@ -75,6 +76,7 @@ export const mockData: BERTH_APPLICATIONS = {
         node: {
           __typename: 'BerthApplicationNode',
           accessibilityRequired: false,
+          applicationCode: '',
           berthSwitch: {
             __typename: 'BerthSwitchType',
             berthNumber: '2',
@@ -140,6 +142,7 @@ export const mockData: BERTH_APPLICATIONS = {
         node: {
           __typename: 'BerthApplicationNode',
           accessibilityRequired: false,
+          applicationCode: 'code',
           berthSwitch: null,
           boatLength: 6,
           boatModel: 'Marine',
