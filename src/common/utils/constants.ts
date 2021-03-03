@@ -18,10 +18,6 @@ export const APPLICATION_STATUS: ApplicationStatusType = {
   HANDLED: { label: 'applicationList.status.handled', type: 'info' },
   EXPIRED: { label: 'applicationList.status.expired', type: 'neutral' },
   NO_SUITABLE_BERTHS: { label: 'applicationList.status.noSuitable', type: 'error' },
-  NO_SUITABLE_BERTHS_NOTIFIED: {
-    label: 'applicationList.status.noSuitableNotified',
-    type: 'warning',
-  },
   REJECTED: { label: 'applicationList.status.rejected', type: 'error' },
 };
 
