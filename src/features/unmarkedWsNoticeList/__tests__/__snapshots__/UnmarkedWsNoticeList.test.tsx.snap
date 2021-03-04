@@ -88,7 +88,7 @@ exports[`UnmarkedWsNoticeList renders normally with data 1`] = `
               class="Select-module_menu__1H2aU"
               id="hds-select-1-menu"
               role="listbox"
-              style="max-height: 520px;"
+              style="max-height: 468px;"
               tabindex="-1"
             />
           </div>
@@ -1440,7 +1440,7 @@ exports[`UnmarkedWsNoticeList renders normally without data 1`] = `
               class="Select-module_menu__1H2aU"
               id="hds-select-7-menu"
               role="listbox"
-              style="max-height: 520px;"
+              style="max-height: 468px;"
               tabindex="-1"
             />
           </div>
