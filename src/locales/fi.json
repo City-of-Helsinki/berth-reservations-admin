@@ -719,6 +719,10 @@
     "stickerNumChanged": {
       "label": "Muutokset tallennettu",
       "description": "Tarranumeron vaihto onnistui"
+    },
+    "leaseCancelled": {
+      "label": "Sopimus irtisanottu",
+      "description": "Sopimuksen irtisanominen onnistui"
     }
   },
   "winterStorageAreaList": {

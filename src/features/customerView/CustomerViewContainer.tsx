@@ -42,6 +42,7 @@ import {
   CANCEL_WINTER_STORAGE_LEASEVariables as CANCEL_WINTER_STORAGE_LEASE_VARS,
 } from './__generated__/CANCEL_WINTER_STORAGE_LEASE';
 import { getProfileToken } from '../../common/utils/auth';
+import hdsToast from '../../common/toast/hdsToast';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
@@ -88,6 +89,13 @@ const CustomerViewContainer = () => {
             profileToken: getProfileToken(),
           },
         },
+      }).then(() => {
+        hdsToast({
+          type: 'success',
+          labelText: 'toast.leaseCancelled.label',
+          text: 'toast.leaseCancelled.description',
+          translated: true,
+        });
       });
       refetch();
     }
@@ -99,6 +107,13 @@ const CustomerViewContainer = () => {
             profileToken: getProfileToken(),
           },
         },
+      }).then(() => {
+        hdsToast({
+          type: 'success',
+          labelText: 'toast.leaseCancelled.label',
+          text: 'toast.leaseCancelled.description',
+          translated: true,
+        });
       });
       refetch();
     }
