@@ -41,6 +41,7 @@ import {
   CANCEL_WINTER_STORAGE_LEASE,
   CANCEL_WINTER_STORAGE_LEASEVariables as CANCEL_WINTER_STORAGE_LEASE_VARS,
 } from './__generated__/CANCEL_WINTER_STORAGE_LEASE';
+import { getProfileToken } from '../../common/utils/auth';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
@@ -84,6 +85,7 @@ const CustomerViewContainer = () => {
         variables: {
           input: {
             id: id,
+            profileToken: getProfileToken(),
           },
         },
       });
@@ -94,6 +96,7 @@ const CustomerViewContainer = () => {
         variables: {
           input: {
             id,
+            profileToken: getProfileToken(),
           },
         },
       });
