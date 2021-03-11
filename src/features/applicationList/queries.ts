@@ -4,6 +4,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
   query BERTH_APPLICATIONS(
     $first: Int!
     $after: String
+    $applicationCode: Boolean
     $switchApplications: Boolean
     $orderBy: String
     $statuses: [ApplicationStatus]
@@ -13,6 +14,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
       first: $first
       after: $after
       switchApplications: $switchApplications
+      applicationCode: $applicationCode
       orderBy: $orderBy
       statuses: $statuses
       name: $nameFilter

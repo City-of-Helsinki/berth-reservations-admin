@@ -251,6 +251,7 @@ export interface CreateBerthMutationInput {
   pierId: string;
   comment?: string | null;
   isAccessible?: boolean | null;
+  isInvoiceable?: boolean | null;
   width: number;
   length: number;
   depth?: number | null;
@@ -478,6 +479,7 @@ export interface UpdateBerthMutationInput {
   pierId?: string | null;
   comment?: string | null;
   isAccessible?: boolean | null;
+  isInvoiceable?: boolean | null;
   width?: number | null;
   length?: number | null;
   depth?: number | null;
@@ -594,7 +596,7 @@ export interface UpdateProfileInput {
 }
 
 export interface UpdateProfileMutationInput {
-  serviceType: ServiceType;
+  serviceType?: ServiceType | null;
   profile: UpdateProfileInput;
   clientMutationId?: string | null;
 }

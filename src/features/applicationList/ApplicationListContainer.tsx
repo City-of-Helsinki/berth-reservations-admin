@@ -39,6 +39,11 @@ const onlySwitchAppsAtom = atom<boolean | undefined>({
   default: undefined,
 });
 
+const onlyAppsWithCodeAtom = atom<boolean | undefined>({
+  key: 'ApplicationListContainer_onlyAppsWithCode',
+  default: undefined,
+});
+
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'ApplicationListContainer_sortByAtom',
   default: [{ id: 'createdAt', desc: true }],
@@ -62,6 +67,7 @@ const nameFilterAtom = atom<string | undefined>({
 const ApplicationListContainer = () => {
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const [onlySwitchApps, setOnlySwitchApps] = useRecoilState(onlySwitchAppsAtom);
+  const [onlyAppsWithCode, setOnlyAppsWithCode] = useRecoilState(onlyAppsWithCodeAtom);
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
   const orderBy = useRecoilValue(orderBySelector);
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
@@ -71,6 +77,7 @@ const ApplicationListContainer = () => {
     first: pageSize,
     after: cursor,
     switchApplications: onlySwitchApps,
+    applicationCode: onlyAppsWithCode,
     orderBy,
     statuses: statusFilter ? [statusFilter] : undefined,
     nameFilter,
