@@ -211,41 +211,39 @@ const ApplicationList = ({
             },
           ];
 
-          return (
-            <TableFilters
-              filters={filters}
-              activeFilters={filters
-                .map((filter) => filter.value)
-                .filter((value) => {
-                  if (
-                    (value === Filters.SWITCH_APPLICATION && onlySwitchApps) ||
-                    (value === Filters.NEW_APPLICATION && onlySwitchApps === false) ||
-                    (value === Filters.HAS_APPLICATION_CODE && onlyAppsWithCode)
-                  )
-                    return true;
+          const handleSetFilter = (filter: Filters | undefined): void => {
+            switch (filter) {
+              case Filters.SWITCH_APPLICATION:
+                setOnlySwitchApps(!onlySwitchApps ? true : undefined);
+                break;
+              case Filters.NEW_APPLICATION:
+                setOnlySwitchApps(onlySwitchApps || onlySwitchApps === undefined ? false : undefined);
+                break;
+              case Filters.HAS_APPLICATION_CODE:
+                setOnlyAppsWithCode(onlyAppsWithCode ? undefined : true);
+                break;
+              default:
+                setOnlyAppsWithCode(undefined);
+                setOnlySwitchApps(undefined);
+                break;
+            }
+            goToPage(0);
+          };
 
-                  return false;
-                })}
-              handleSetFilter={(filter) => {
-                switch (filter) {
-                  case Filters.SWITCH_APPLICATION:
-                    setOnlySwitchApps(!onlySwitchApps ? true : undefined);
-                    break;
-                  case Filters.NEW_APPLICATION:
-                    setOnlySwitchApps(onlySwitchApps || onlySwitchApps === undefined ? false : undefined);
-                    break;
-                  case Filters.HAS_APPLICATION_CODE:
-                    setOnlyAppsWithCode(onlyAppsWithCode ? undefined : true);
-                    break;
-                  default:
-                    setOnlyAppsWithCode(undefined);
-                    setOnlySwitchApps(undefined);
-                    break;
-                }
-                goToPage(0);
-              }}
-            />
-          );
+          const activeFilters = filters
+            .map((filter) => filter.value)
+            .filter((value) => {
+              if (
+                (value === Filters.SWITCH_APPLICATION && onlySwitchApps) ||
+                (value === Filters.NEW_APPLICATION && onlySwitchApps === false) ||
+                (value === Filters.HAS_APPLICATION_CODE && onlyAppsWithCode)
+              )
+                return true;
+
+              return false;
+            });
+
+          return <TableFilters filters={filters} activeFilters={activeFilters} handleSetFilter={handleSetFilter} />;
         }}
         renderTableToolsTop={(_, { resetSelectedRows }) => (
           <>
