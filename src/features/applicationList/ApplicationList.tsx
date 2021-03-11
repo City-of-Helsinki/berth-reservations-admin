@@ -45,6 +45,8 @@ export interface ApplicationListProps {
   sortBy: SortingRule<ApplicationData>[];
   statusFilter?: ApplicationStatus;
   tableData: ApplicationData[];
+  onlyAppsWithCode?: boolean;
+  setOnlyAppsWithCode(onlyAppsWithCode?: boolean): void;
   handleSendOffers(draftedOffers: Order[], sentOffers: Order[], dueDate: string): Promise<void>;
   onNameFilterChange(nameFilter: string | undefined): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
@@ -73,8 +75,10 @@ const ApplicationList = ({
   onSortedColsChange,
   onStatusFilterChange,
   onlySwitchApps,
+  onlyAppsWithCode,
   pageIndex,
   setOnlySwitchApps,
+  setOnlyAppsWithCode,
   sortBy,
   statusFilter,
   tableData,
@@ -186,24 +190,59 @@ const ApplicationList = ({
           />
         )}
         renderMainHeader={() => {
+          enum Filters {
+            SWITCH_APPLICATION = 'SWITCH_FILTER',
+            NEW_APPLICATION = 'NEW_APPLICATION',
+            HAS_APPLICATION_CODE = 'HAS_APPLICATION_CODE',
+          }
+
           const filters = [
             {
-              value: true,
+              value: Filters.SWITCH_APPLICATION,
               label: t('applicationList.tableHeaders.switchFilter'),
             },
             {
-              value: false,
+              value: Filters.NEW_APPLICATION,
               label: t('applicationList.tableHeaders.newApplicationFilter'),
+            },
+            {
+              value: Filters.HAS_APPLICATION_CODE,
+              label: t('applicationList.tableHeaders.applicationHasCodeFilter'),
             },
           ];
 
           return (
             <TableFilters
               filters={filters}
-              activeFilters={filters.map((filter) => filter.value).filter((value) => value === onlySwitchApps)}
+              activeFilters={filters
+                .map((filter) => filter.value)
+                .filter((value) => {
+                  if (
+                    (value === Filters.SWITCH_APPLICATION && onlySwitchApps) ||
+                    (value === Filters.NEW_APPLICATION && onlySwitchApps === false) ||
+                    (value === Filters.HAS_APPLICATION_CODE && onlyAppsWithCode)
+                  )
+                    return true;
+
+                  return false;
+                })}
               handleSetFilter={(filter) => {
+                switch (filter) {
+                  case Filters.SWITCH_APPLICATION:
+                    setOnlySwitchApps(!onlySwitchApps ? true : undefined);
+                    break;
+                  case Filters.NEW_APPLICATION:
+                    setOnlySwitchApps(onlySwitchApps || onlySwitchApps === undefined ? false : undefined);
+                    break;
+                  case Filters.HAS_APPLICATION_CODE:
+                    setOnlyAppsWithCode(onlyAppsWithCode ? undefined : true);
+                    break;
+                  default:
+                    setOnlyAppsWithCode(undefined);
+                    setOnlySwitchApps(undefined);
+                    break;
+                }
                 goToPage(0);
-                setOnlySwitchApps(filter);
               }}
             />
           );

@@ -18,8 +18,8 @@ interface ApplicationTableToolsProps {
 const ApplicationTableTools = ({
   count,
   nameFilter,
-  onNameFilterChange,
   statusFilter,
+  onNameFilterChange,
   onStatusFilterChange,
 }: ApplicationTableToolsProps) => {
   const { t } = useTranslation();
@@ -42,9 +42,7 @@ const ApplicationTableTools = ({
         <Select
           label={t('applicationStateTableTools.selectLabel')}
           className={styles.select}
-          onChange={(e) =>
-            (e.target.value as string) === '' ? onStatusFilterChange(undefined) : onStatusFilterChange(e.target.value)
-          }
+          onChange={(e) => onStatusFilterChange(e.target.value || undefined)}
           value={statusFilter ?? ('' as ApplicationStatus)}
           options={options}
           visibleOptions={options.length + 1}

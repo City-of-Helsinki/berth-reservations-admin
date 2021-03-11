@@ -183,6 +183,11 @@ exports[`ApplicationListContainer renders normally 1`] = `
               >
                  Uudet hakemukset
               </button>
+              <button
+                class="filterBtn"
+              >
+                 Hakukoodi
+              </button>
             </div>
           </div>
           <div

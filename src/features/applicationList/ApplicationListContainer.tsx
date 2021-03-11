@@ -197,6 +197,8 @@ const ApplicationListContainer = () => {
       onlySwitchApps={onlySwitchApps}
       pageIndex={pageIndex}
       setOnlySwitchApps={setOnlySwitchApps}
+      onlyAppsWithCode={onlyAppsWithCode}
+      setOnlyAppsWithCode={setOnlyAppsWithCode}
       sortBy={sortBy}
       statusFilter={statusFilter}
       tableData={tableData}

@@ -350,6 +350,7 @@
     "tableHeaders": {
       "switchFilter": "Vaihtohakemukset",
       "newApplicationFilter": "Uudet hakemukset",
+      "applicationHasCodeFilter": "Hakukoodi",
       "applicationType": "Tyyppi",
       "queue": "Jono",
       "pvm": "PVM",
