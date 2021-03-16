@@ -124,6 +124,7 @@ export enum OrderStatus {
   EXPIRED = "EXPIRED",
   PAID = "PAID",
   PAID_MANUALLY = "PAID_MANUALLY",
+  REFUNDED = "REFUNDED",
   REJECTED = "REJECTED",
   WAITING = "WAITING",
 }
@@ -240,7 +241,8 @@ export interface CreateBerthLeaseMutationInput {
   startDate?: any | null;
   endDate?: any | null;
   comment?: string | null;
-  applicationId: string;
+  applicationId?: string | null;
+  customerId?: string | null;
   berthId: string;
   clientMutationId?: string | null;
 }
@@ -251,6 +253,7 @@ export interface CreateBerthMutationInput {
   pierId: string;
   comment?: string | null;
   isAccessible?: boolean | null;
+  isInvoiceable?: boolean | null;
   width: number;
   length: number;
   depth?: number | null;
@@ -478,6 +481,7 @@ export interface UpdateBerthMutationInput {
   pierId?: string | null;
   comment?: string | null;
   isAccessible?: boolean | null;
+  isInvoiceable?: boolean | null;
   width?: number | null;
   length?: number | null;
   depth?: number | null;
@@ -594,7 +598,7 @@ export interface UpdateProfileInput {
 }
 
 export interface UpdateProfileMutationInput {
-  serviceType: ServiceType;
+  serviceType?: ServiceType | null;
   profile: UpdateProfileInput;
   clientMutationId?: string | null;
 }

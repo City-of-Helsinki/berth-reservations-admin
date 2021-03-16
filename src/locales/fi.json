@@ -163,6 +163,7 @@
       "expired": "Erääntynyt",
       "paid": "Maksettu",
       "paidManually": "Maksettu muualla",
+      "refunded": "Maksu palautettu",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua"
     },
@@ -350,6 +351,7 @@
     "tableHeaders": {
       "switchFilter": "Vaihtohakemukset",
       "newApplicationFilter": "Uudet hakemukset",
+      "applicationHasCodeFilter": "Hakukoodi",
       "applicationType": "Tyyppi",
       "queue": "Jono",
       "pvm": "PVM",

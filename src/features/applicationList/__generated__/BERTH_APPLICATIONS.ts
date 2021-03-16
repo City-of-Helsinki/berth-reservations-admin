@@ -127,6 +127,7 @@ export interface BERTH_APPLICATIONS {
 export interface BERTH_APPLICATIONSVariables {
   first: number;
   after?: string | null;
+  applicationCode?: boolean | null;
   switchApplications?: boolean | null;
   orderBy?: string | null;
   statuses?: (ApplicationStatus | null)[] | null;

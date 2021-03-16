@@ -49,6 +49,10 @@ export const ORDER_STATUS: OrderStatusType = {
     label: 'common.orderStatus.paidManually',
     type: 'success',
   },
+  REFUNDED: {
+    label: 'common.orderStatus.refunded',
+    type: 'warning',
+  },
   REJECTED: {
     label: 'common.orderStatus.rejected',
     type: 'error',
