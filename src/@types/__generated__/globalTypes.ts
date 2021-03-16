@@ -124,6 +124,7 @@ export enum OrderStatus {
   EXPIRED = "EXPIRED",
   PAID = "PAID",
   PAID_MANUALLY = "PAID_MANUALLY",
+  REFUNDED = "REFUNDED",
   REJECTED = "REJECTED",
   WAITING = "WAITING",
 }
@@ -240,7 +241,8 @@ export interface CreateBerthLeaseMutationInput {
   startDate?: any | null;
   endDate?: any | null;
   comment?: string | null;
-  applicationId: string;
+  applicationId?: string | null;
+  customerId?: string | null;
   berthId: string;
   clientMutationId?: string | null;
 }
