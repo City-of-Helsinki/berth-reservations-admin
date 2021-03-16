@@ -21,6 +21,7 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
       endDate: '2019-09-14',
       isActive: true,
       berth: {
+        id: 'd04e1414-f959-47df-968b-ab37a7c920b7',
         __typename: 'BerthNode',
         number: '30',
         length: 6,
@@ -28,6 +29,7 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
         depth: 1,
         mooringType: BerthMooringType.NO_STERN_TO_MOORING,
         pier: {
+          id: 'a1c1831c-5eb8-48ba-8460-c9730662aa52',
           __typename: 'PierNode',
           properties: {
             __typename: 'PierProperties',
@@ -55,8 +57,10 @@ const mockWinterStorageLeases: WINTER_STORAGE_LEASE_EDGE[] = [
       startDate: '2020-09-15',
       endDate: '2021-06-10',
       place: {
-        number: '1',
+        id: '529c167f-1cdf-4307-a8e6-32953f3723f9',
+        number: 1,
         winterStorageSection: {
+          id: '54bb1037-ee6b-4900-85d4-83c90c916c49',
           properties: {
             identifier: '-',
             area: {
@@ -179,27 +183,6 @@ describe('utils', () => {
       expect(leases).toEqual(expect.not.arrayContaining([null]));
     });
 
-    it('should remove the berthLease node that has any status other than PAID', () => {
-      const refusedMockLease: BERTH_LEASE_EDGE = {
-        __typename: 'BerthLeaseNodeEdge',
-        node: {
-          ...(mockBerthLeases[0].node as BERTH_LEASE_NODE),
-          status: LeaseStatus.REFUSED,
-        },
-      };
-      const profile: CUSTOMER_PROFILE = {
-        ...emptyMockProfile,
-        berthLeases: {
-          __typename: 'BerthLeaseNodeConnection',
-          edges: [refusedMockLease, ...mockBerthLeases],
-        },
-      };
-
-      const leases = getBerthLeases(profile);
-
-      expect(leases).toHaveLength(mockBerthLeases.length);
-    });
-
     it('should return an empty array when the provided profile only contains winter storage leases', () => {
       const profile: CUSTOMER_PROFILE = {
         ...emptyMockProfile,
@@ -310,27 +293,6 @@ describe('utils', () => {
       const leases = getWinterStorageLeases(profile);
 
       expect(leases).toEqual(expect.not.arrayContaining([null]));
-    });
-
-    it('should remove the winter storage lease nodes that have any status other than PAID', () => {
-      const refusedMockLease: WINTER_STORAGE_LEASE_EDGE = {
-        __typename: 'WinterStorageLeaseNodeEdge',
-        node: {
-          ...(mockWinterStorageLeases[0].node as WINTER_STORAGE_LEASE_NODE),
-          status: LeaseStatus.REFUSED,
-        },
-      };
-      const profile: CUSTOMER_PROFILE = {
-        ...emptyMockProfile,
-        winterStorageLeases: {
-          __typename: 'WinterStorageLeaseNodeConnection',
-          edges: [refusedMockLease, ...mockWinterStorageLeases],
-        },
-      };
-
-      const leases = getWinterStorageLeases(profile);
-
-      expect(leases).toHaveLength(mockBerthLeases.length);
     });
   });
 });

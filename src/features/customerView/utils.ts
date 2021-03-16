@@ -44,8 +44,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
   if (!profile.berthLeases?.edges) return [];
 
   return profile.berthLeases.edges.reduce<Lease[]>((acc, edge) => {
-    if (!edge?.node || edge?.node?.status !== 'PAID') return acc;
-
+    if (!edge?.node) return acc;
     const berthNum = edge.node.berth.number;
     const pierIdentifier = edge.node.berth.pier.properties?.identifier || null;
     const harbor = edge.node.berth.pier.properties?.harbor;
@@ -77,8 +76,6 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
   if (!profile.winterStorageLeases?.edges) return [];
 
   return profile.winterStorageLeases.edges.reduce<Lease[]>((acc, edge) => {
-    if (edge?.node?.status !== 'PAID') return acc;
-
     if (edge?.node?.place) {
       const placeNum = edge.node.place.number.toString(10);
       const sectionIdentifier = edge.node.place.winterStorageSection.properties?.identifier || null;
@@ -292,6 +289,9 @@ export const isWinterStorageInvoice = (invoice: Invoice): invoice is WinterStora
 export const isAdditionalProductInvoice = (invoice: Invoice): boolean =>
   invoice.orderType === OrderOrderType.ADDITIONAL_PRODUCT_ORDER;
 
-export const isBerthLease = (lease: Lease): lease is BerthLease => (lease as BerthLease).harbor !== undefined;
+export const isBerthLease = (lease: Lease): lease is BerthLease => {
+  console.log('lease', lease);
+  return (lease as BerthLease).harbor !== undefined;
+};
 export const isWinterStorageLease = (lease: Lease): lease is WinterStorageLease =>
   (lease as WinterStorageLease).winterStorageArea !== undefined;
