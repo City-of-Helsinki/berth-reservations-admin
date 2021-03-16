@@ -289,9 +289,6 @@ export const isWinterStorageInvoice = (invoice: Invoice): invoice is WinterStora
 export const isAdditionalProductInvoice = (invoice: Invoice): boolean =>
   invoice.orderType === OrderOrderType.ADDITIONAL_PRODUCT_ORDER;
 
-export const isBerthLease = (lease: Lease): lease is BerthLease => {
-  console.log('lease', lease);
-  return (lease as BerthLease).harbor !== undefined;
-};
+export const isBerthLease = (lease: Lease): lease is BerthLease => (lease as BerthLease).harbor !== undefined;
 export const isWinterStorageLease = (lease: Lease): lease is WinterStorageLease =>
   (lease as WinterStorageLease).winterStorageArea !== undefined;

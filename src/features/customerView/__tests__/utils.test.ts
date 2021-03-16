@@ -3,9 +3,7 @@ import {
   INDIVIDUAL_CUSTOMER_profile as CUSTOMER_PROFILE,
   INDIVIDUAL_CUSTOMER_profile_boats_edges as BOAT_EDGE,
   INDIVIDUAL_CUSTOMER_profile_berthLeases_edges as BERTH_LEASE_EDGE,
-  INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node as BERTH_LEASE_NODE,
   INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges as WINTER_STORAGE_LEASE_EDGE,
-  INDIVIDUAL_CUSTOMER_profile_winterStorageLeases_edges_node as WINTER_STORAGE_LEASE_NODE,
 } from '../__generated__/INDIVIDUAL_CUSTOMER';
 import { emptyMockProfile } from '../__fixtures__/mockData';
 import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
