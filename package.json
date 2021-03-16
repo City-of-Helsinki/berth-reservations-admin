@@ -74,9 +74,6 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "prettier": "prettier --write \"./src/**/*.{js,ts,jsx,tsx}\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
