@@ -163,6 +163,7 @@
       "expired": "Erääntynyt",
       "paid": "Maksettu",
       "paidManually": "Maksettu muualla",
+      "refunded": "Maksu palautettu",
       "rejected": "Hylätty",
       "waiting": "Odottaa maksua"
     },
