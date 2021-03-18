@@ -1,5 +1,5 @@
 import { StatusLabelProps } from '../statusLabel/StatusLabel';
-import { ApplicationStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
 
 type ApplicationStatusType = {
   [key in ApplicationStatus]: {
@@ -60,5 +60,43 @@ export const ORDER_STATUS: OrderStatusType = {
   WAITING: {
     label: 'common.orderStatus.waiting',
     type: 'warning',
+  },
+};
+
+type LeaseStatusType = {
+  [key in LeaseStatus]: {
+    label: string;
+    type: StatusLabelProps['type'];
+  };
+};
+
+export const LEASE_STATUS: LeaseStatusType = {
+  DRAFTED: {
+    label: 'common.leaseStatus.drafted',
+    type: 'neutral',
+  },
+  OFFERED: {
+    label: 'common.leaseStatus.offered',
+    type: 'success',
+  },
+  REFUSED: {
+    label: 'common.leaseStatus.refused',
+    type: 'error',
+  },
+  EXPIRED: {
+    label: 'common.leaseStatus.expired',
+    type: 'error',
+  },
+  ERROR: {
+    label: 'common.leaseStatus.error',
+    type: 'error',
+  },
+  PAID: {
+    label: 'common.leaseStatus.paid',
+    type: 'success',
+  },
+  TERMINATED: {
+    label: 'common.leaseStatus.terminated',
+    type: 'error',
   },
 };
