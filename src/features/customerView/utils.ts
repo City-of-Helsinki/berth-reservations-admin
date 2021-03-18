@@ -16,7 +16,7 @@ import {
   WinterStorageLease,
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import { OrderOrderType } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus, OrderOrderType } from '../../@types/__generated__/globalTypes';
 
 export const getCustomerProfile = (
   profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
@@ -38,6 +38,17 @@ export const getCustomerProfile = (
       organization: profile.organization,
     }),
   };
+};
+
+export const canLeaseBeTerminated = (status: LeaseStatus) => {
+  switch (status) {
+    case LeaseStatus.PAID:
+    case LeaseStatus.OFFERED:
+    case LeaseStatus.ERROR:
+      return true;
+    default:
+      return false;
+  }
 };
 
 export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
@@ -65,6 +76,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
       pierIdentifier,
       startDate: edge.node.startDate,
       endDate: edge.node.endDate,
+      status: edge.node.status,
       isActive: edge.node.isActive,
     };
 
@@ -92,6 +104,7 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
         placeNum,
         sectionIdentifier,
         startDate: edge.node.startDate,
+        status: edge.node.status,
         endDate: edge.node.endDate,
       };
 
@@ -113,6 +126,7 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
         sectionIdentifier: null,
         startDate: edge.node.startDate,
         endDate: edge.node.endDate,
+        status: edge.node.status,
       };
       return [...acc, lease];
     }

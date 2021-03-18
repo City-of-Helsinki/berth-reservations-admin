@@ -16,6 +16,11 @@ exports[`LeasesCard renders normally 1`] = `
   <div
     class="cardBody"
   >
+    <span
+      class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI status"
+    >
+      Luotu
+    </span>
     <article
       class="section"
     >
@@ -63,20 +68,15 @@ exports[`LeasesCard renders normally 1`] = `
         </div>
       </section>
     </article>
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_danger__aFUe2 button_hds-button--danger__dEREN Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 Button-module_size-small__2u97E button_hds-button--small__2NFef"
-      type="button"
-    >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-      >
-        Irtisano sopimus
-      </span>
-    </button>
   </div>
   <div
     class="cardBody"
   >
+    <span
+      class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_error__zNgn8 status-label_hds-status-label--error__2EYi4 status"
+    >
+      Irtisanottu
+    </span>
     <article
       class="section"
     >
@@ -124,16 +124,6 @@ exports[`LeasesCard renders normally 1`] = `
         </div>
       </section>
     </article>
-    <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_danger__aFUe2 button_hds-button--danger__dEREN Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 Button-module_size-small__2u97E button_hds-button--small__2NFef"
-      type="button"
-    >
-      <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
-      >
-        Irtisano sopimus
-      </span>
-    </button>
   </div>
    
 </div>

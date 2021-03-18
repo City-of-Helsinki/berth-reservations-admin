@@ -157,6 +157,15 @@
         "description": "Tapahtui virhe"
       }
     },
+    "leaseStatus": {
+      "drafted" : "Luotu",
+      "offered" : "Tarjous Lähetetty",
+      "refused" : "Tarjous Hylätty",
+      "expired" : "Vanhentunut",
+      "error" : "Virhe",
+      "paid" : "Maksettu",
+      "terminated" : "Irtisanottu"
+    },
     "orderStatus": {
       "cancelled": "Peruutettu",
       "error": "Virhe",
