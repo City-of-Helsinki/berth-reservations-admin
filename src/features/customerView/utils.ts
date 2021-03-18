@@ -16,7 +16,7 @@ import {
   WinterStorageLease,
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import { OrderOrderType } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus, OrderOrderType } from '../../@types/__generated__/globalTypes';
 
 export const getCustomerProfile = (
   profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
@@ -38,6 +38,17 @@ export const getCustomerProfile = (
       organization: profile.organization,
     }),
   };
+};
+
+export const canLeaseBeTerminated = (status: LeaseStatus) => {
+  switch (status) {
+    case LeaseStatus.PAID:
+    case LeaseStatus.OFFERED:
+    case LeaseStatus.ERROR:
+      return true;
+    default:
+      return false;
+  }
 };
 
 export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {

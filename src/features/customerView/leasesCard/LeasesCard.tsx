@@ -101,21 +101,23 @@ const LeasesCard = ({
                 <LabelValuePair label={t('customerView.leases.valid')} value={leaseDate} />
               </Section>
               {renderContractDetails?.(id)}
-              <ButtonWithConfirmation
-                buttonSize="small"
-                buttonVariant="danger"
-                buttonText={t('customerView.leases.cancelLease')}
-                infoText={t('customerView.leases.cancelConfirmation.infoText', {
-                  customerName,
-                  address,
-                })}
-                modalTitle={t('customerView.leases.cancelLease')}
-                onCancelText={t('common.cancel')}
-                onConfirm={() => cancelLease(id)}
-                onConfirmText={t('customerView.leases.cancelLease')}
-                confirmButtonVariant="danger"
-                warningText={t('customerView.leases.cancelConfirmation.warningText')}
-              />
+              {canLeaseBeTerminated(status) && (
+                <ButtonWithConfirmation
+                  buttonSize="small"
+                  buttonVariant="danger"
+                  buttonText={t('customerView.leases.cancelLease')}
+                  infoText={t('customerView.leases.cancelConfirmation.infoText', {
+                    customerName,
+                    address,
+                  })}
+                  modalTitle={t('customerView.leases.cancelLease')}
+                  onCancelText={t('common.cancel')}
+                  onConfirm={() => cancelLease(id)}
+                  onConfirmText={t('customerView.leases.cancelLease')}
+                  confirmButtonVariant="danger"
+                  warningText={t('customerView.leases.cancelConfirmation.warningText')}
+                />
+              )}
             </CardBody>
           );
         }
