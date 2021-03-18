@@ -65,6 +65,7 @@ export const getBerthLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
       pierIdentifier,
       startDate: edge.node.startDate,
       endDate: edge.node.endDate,
+      status: edge.node.status,
       isActive: edge.node.isActive,
     };
 
@@ -92,6 +93,7 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
         placeNum,
         sectionIdentifier,
         startDate: edge.node.startDate,
+        status: edge.node.status,
         endDate: edge.node.endDate,
       };
 
@@ -113,6 +115,7 @@ export const getWinterStorageLeases = (profile: CUSTOMER_PROFILE): Lease[] => {
         sectionIdentifier: null,
         startDate: edge.node.startDate,
         endDate: edge.node.endDate,
+        status: edge.node.status,
       };
       return [...acc, lease];
     }

@@ -54,6 +54,7 @@ const mockWinterStorageLeases: WINTER_STORAGE_LEASE_EDGE[] = [
       status: LeaseStatus.PAID,
       startDate: '2020-09-15',
       endDate: '2021-06-10',
+      section: null,
       place: {
         id: '529c167f-1cdf-4307-a8e6-32953f3723f9',
         number: 1,

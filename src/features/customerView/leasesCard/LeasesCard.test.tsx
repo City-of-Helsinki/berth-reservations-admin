@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import LeasesCard, { LeasesCardProps } from './LeasesCard';
+import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 describe('LeasesCard', () => {
   const initialProps: LeasesCardProps = {
@@ -16,6 +17,7 @@ describe('LeasesCard', () => {
         startDate: '2019-06-14',
         endDate: '2019-09-10',
         link: 'link',
+        status: LeaseStatus.DRAFTED,
       },
       {
         id: '4321',
@@ -23,6 +25,7 @@ describe('LeasesCard', () => {
         startDate: '2019-05-20',
         endDate: '2020-06-15',
         link: 'link',
+        status: LeaseStatus.TERMINATED,
       },
     ],
     cancelLease: jest.fn(),

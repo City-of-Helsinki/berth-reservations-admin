@@ -25,6 +25,7 @@ const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardP
       renderContractDetails: (leaseId: string) => <BerthContractDetailsContainer leaseId={leaseId} />,
       startDate: lease.startDate,
       width: lease.width,
+      status: lease.status,
     };
   });
 

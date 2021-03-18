@@ -95,6 +95,7 @@ export type BerthLease = LeaseBase & {
   mooringType: BerthMooringType;
   berthNum: string | number;
   pierIdentifier: string | null;
+  status: LeaseStatus;
   isActive: boolean;
 };
 
@@ -102,6 +103,7 @@ export type WinterStorageLease = LeaseBase & {
   winterStorageArea: { id: string; name: string } | null;
   placeNum: string | number;
   sectionIdentifier: string | null;
+  status: LeaseStatus;
 };
 
 export type Lease = BerthLease | WinterStorageLease;

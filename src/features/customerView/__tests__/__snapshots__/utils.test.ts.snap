@@ -16,6 +16,7 @@ Array [
     "mooringType": "NO_STERN_TO_MOORING",
     "pierIdentifier": "A",
     "startDate": "2019-05-06",
+    "status": "PAID",
     "width": 2.5,
   },
 ]

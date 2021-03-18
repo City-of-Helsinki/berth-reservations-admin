@@ -8,9 +8,13 @@ import CardHeader from '../../../common/cardHeader/CardHeader';
 import CardBody from '../../../common/cardBody/CardBody';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import { formatDate, formatDimension } from '../../../common/utils/format';
-import { BerthMooringType } from '../../../@types/__generated__/globalTypes';
+import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { getMooringTypeTKey } from '../../../common/utils/translations';
 import ButtonWithConfirmation from '../../../common/buttonWithConfirmation/ButtonWithConfirmation';
+import { canLeaseBeTerminated } from '../utils';
+import StatusLabel from '../../../common/statusLabel/StatusLabel';
+import { LEASE_STATUS } from '../../../common/utils/constants';
+import styles from './leasesCard.module.scss';
 
 interface LeaseDetail {
   id: string;
@@ -22,6 +26,7 @@ interface LeaseDetail {
   startDate: string;
   endDate: string;
   link?: string;
+  status: LeaseStatus;
   renderContractDetails?(leaseId: string): React.ReactNode;
 }
 
@@ -48,11 +53,28 @@ const LeasesCard = ({
     <Card>
       <CardHeader title={title} />
       {leaseDetails?.map(
-        ({ id, address, length, width, depth, mooringType, startDate, endDate, link, renderContractDetails }) => {
+        ({
+          id,
+          address,
+          length,
+          width,
+          depth,
+          mooringType,
+          startDate,
+          endDate,
+          link,
+          renderContractDetails,
+          status,
+        }) => {
           const leaseDate = `${formatDate(startDate, i18n.language)} - ${formatDate(endDate, i18n.language)}`;
 
           return (
             <CardBody key={id}>
+              <StatusLabel
+                className={styles.status}
+                type={LEASE_STATUS[status].type}
+                label={t(LEASE_STATUS[status].label)}
+              />
               <Section title={infoSectionTitle}>
                 <LabelValuePair
                   label={addressLabel}
