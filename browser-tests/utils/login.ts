@@ -9,7 +9,15 @@ export const login = async (t: TestController) => {
     .click(ssoLogin.loginLink)
     .typeText(ssoLogin.username, testUsername())
     .typeText(ssoLogin.password, testUserPassword())
-    .click(ssoLogin.loginButton)
-    .expect(navigation.sidebarContainer.exists)
-    .ok({ timeout: 20000 });
+    .click(ssoLogin.loginButton);
+
+  try {
+    if (await ssoLogin.permissionRequestHeading.exists) {
+      await t.click(ssoLogin.allowButton);
+    }
+  } catch {
+    // all is well, do nothing
+  }
+
+  await t.expect(navigation.sidebarContainer.exists).ok({ timeout: 20000 });
 };
