@@ -159,8 +159,8 @@
     },
     "leaseStatus": {
       "drafted" : "Luotu",
-      "offered" : "Tarjous Lähetetty",
-      "refused" : "Tarjous Hylätty",
+      "offered" : "Tarjous lähetetty",
+      "refused" : "Tarjous hylätty",
       "expired" : "Vanhentunut",
       "error" : "Virhe",
       "paid" : "Maksettu",
