@@ -18,7 +18,6 @@ import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard'
 export interface CustomerViewProps {
   applications: Application[];
   boats: Boat[];
-  cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
   customerProfile: CustomerProfileCardProps;
   handleEditCustomer: () => void;
   handleNoPlacesAvailable: (id: string) => void;
@@ -30,12 +29,15 @@ export interface CustomerViewProps {
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
   setOpenResendInvoice: (invoice: Invoice | undefined) => void;
+  cancelLease(id: string, type: 'berth' | 'winterStorage'): void;
+  createLease(): void;
 }
 
 const CustomerView = ({
   applications,
   boats,
   cancelLease,
+  createLease,
   customerProfile,
   handleEditCustomer,
   handleNoPlacesAvailable,
@@ -72,7 +74,12 @@ const CustomerView = ({
           onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
         />
 
-        <BerthLeasesCard customerName={customerName} cancelLease={cancelLease} leases={leases.filter(isBerthLease)} />
+        <BerthLeasesCard
+          customerName={customerName}
+          cancelLease={cancelLease}
+          createLease={createLease}
+          leases={leases.filter(isBerthLease)}
+        />
         <WinterStorageLeasesCard
           customerName={customerName}
           cancelLease={cancelLease}

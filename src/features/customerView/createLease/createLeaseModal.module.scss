@@ -1,0 +1,25 @@
+@import 'containers';
+@import 'spacings';
+
+.createLeaseModal {
+  width: container(m);
+
+  > :not(:first-child) {
+    margin-top: units(1);
+    width: 100%;
+  }
+}
+
+.harborOptions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  > div[class^='RadioButton'] {
+    margin-top: units(0.5);
+    padding-right: units(1);
+
+    flex-basis: 33.33%;
+  }
+}

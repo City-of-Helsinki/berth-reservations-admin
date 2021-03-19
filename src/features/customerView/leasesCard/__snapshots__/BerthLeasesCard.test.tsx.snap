@@ -243,6 +243,17 @@ exports[`BerthLeasesCard renders normally 1`] = `
       Mocked
     </div>
   </div>
+  <div
+    class="cardBody createLease"
+  >
+    <button>
+      <span
+        class="text brand span"
+      >
+        Lisää uusi
+      </span>
+    </button>
+  </div>
    
 </div>
 `;

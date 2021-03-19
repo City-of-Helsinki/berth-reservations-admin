@@ -43,6 +43,7 @@ import {
 } from './__generated__/CANCEL_WINTER_STORAGE_LEASE';
 import { getProfileToken } from '../../common/utils/auth';
 import hdsToast from '../../common/toast/hdsToast';
+import useCreateLease from './createLease/useCreateLease';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
@@ -54,6 +55,7 @@ const CustomerViewContainer = () => {
   const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
   const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const [openResendInvoice, setOpenResendInvoice] = useState<Invoice>();
+  const { createLease, renderCreateLeaseModal } = useCreateLease(id);
 
   const { loading, data, refetch } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
     variables: { id },
@@ -146,6 +148,7 @@ const CustomerViewContainer = () => {
         applications={applications}
         boats={boats}
         cancelLease={handleCancelLease}
+        createLease={createLease}
         customerProfile={customerProfile}
         handleEditCustomer={() => setEditCustomer(true)}
         handleNoPlacesAvailable={handleNoPlacesAvailable}
@@ -220,6 +223,7 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
+      {/* TODO: Send invoices for berth leases */}
       <Modal isOpen={!!openResendInvoice} toggleModal={() => setOpenResendInvoice(undefined)}>
         <SendInvoiceFormContainer
           orderId={openResendInvoice?.orderId ?? ''}
@@ -233,6 +237,8 @@ const CustomerViewContainer = () => {
           }}
         />
       </Modal>
+
+      {renderCreateLeaseModal()}
 
       {openInvoice && <InvoiceModal isOpen invoice={openInvoice} toggleModal={() => setOpenInvoice(undefined)} />}
     </>

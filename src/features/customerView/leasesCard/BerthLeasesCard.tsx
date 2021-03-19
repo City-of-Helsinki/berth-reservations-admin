@@ -7,14 +7,18 @@ import { Lease } from './types';
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import LeaseDetails from './leaseDetails/LeaseDetails';
+import Text from '../../../common/text/Text';
+import CardBody from '../../../common/cardBody/CardBody';
+import styles from './berthLeasesCard.module.scss';
 
 export interface BerthLeasesCardProps {
   cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
   customerName: string;
   leases: BerthLease[];
+  createLease: () => void;
 }
 
-const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardProps) => {
+const BerthLeasesCard = ({ customerName, cancelLease, createLease, leases }: BerthLeasesCardProps) => {
   const { t } = useTranslation();
   const mapLeaseDetails = (lease: BerthLease): Lease => {
     return {
@@ -46,6 +50,11 @@ const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardP
           {...mapLeaseDetails(lease)}
         />
       ))}
+      <CardBody className={styles.createLease}>
+        <button onClick={() => createLease()}>
+          <Text color="brand">{t('common.addNew')}</Text>
+        </button>
+      </CardBody>
     </Card>
   );
 };
