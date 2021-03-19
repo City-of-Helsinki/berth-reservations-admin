@@ -1,9 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { BerthLease } from '../types';
-import LeasesCard from './LeasesCard';
 import BerthContractDetailsContainer from '../../contractDetails/BerthContractDetailsContainer';
+import { BerthLease } from '../types';
+import { Lease } from './types';
+import Card from '../../../common/card/Card';
+import CardHeader from '../../../common/cardHeader/CardHeader';
+import LeaseDetails from './leaseDetails/LeaseDetails';
 
 export interface BerthLeasesCardProps {
   cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
@@ -13,7 +16,7 @@ export interface BerthLeasesCardProps {
 
 const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardProps) => {
   const { t } = useTranslation();
-  const leaseDetails = leases.map((lease) => {
+  const mapLeaseDetails = (lease: BerthLease): Lease => {
     return {
       address: [lease.harbor?.name || '', lease.pierIdentifier || '', lease.berthNum].filter(Boolean).join(' '),
       depth: lease.depth,
@@ -22,22 +25,28 @@ const BerthLeasesCard = ({ customerName, cancelLease, leases }: BerthLeasesCardP
       length: lease.length,
       link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       mooringType: lease.mooringType,
-      renderContractDetails: (leaseId: string) => <BerthContractDetailsContainer leaseId={leaseId} />,
       startDate: lease.startDate,
       width: lease.width,
       status: lease.status,
+      renderContractDetails: () => <BerthContractDetailsContainer leaseId={lease.id} />,
     };
-  });
+  };
 
   return (
-    <LeasesCard
-      addressLabel={t('customerView.leases.berth.addressLabel')}
-      customerName={customerName}
-      cancelLease={(id) => cancelLease(id, 'berth')}
-      infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
-      leaseDetails={leaseDetails}
-      title={t('customerView.leases.berth.title')}
-    />
+    <Card>
+      <CardHeader title={t('customerView.leases.berth.title')} />
+      {leases.map((lease) => (
+        <LeaseDetails
+          key={lease.id}
+          addressLabel={t('customerView.leases.berth.addressLabel')}
+          cancelLease={(id) => cancelLease(id, 'berth')}
+          createLease={() => undefined}
+          customerName={customerName}
+          infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
+          {...mapLeaseDetails(lease)}
+        />
+      ))}
+    </Card>
   );
 };
 
