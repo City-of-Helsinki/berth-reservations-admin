@@ -174,3 +174,5 @@ export const getBoat = (data: OFFER | undefined): Boat | null => {
     boatWeight,
   };
 };
+
+export const isSuitableBerthLength = (berthLength: number, boatLength: number) => berthLength >= boatLength;

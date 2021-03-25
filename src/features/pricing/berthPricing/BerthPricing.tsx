@@ -76,7 +76,9 @@ const BerthPricing = ({ data, loading, refetchQueries }: BerthPricingProps) => {
           data={getBerthsData(data)}
           loading={loading}
           theme="basic"
-          cellClassName={styles.tableCell}
+          getCellProps={() => ({
+            className: styles.tableCell,
+          })}
           renderEmptyStateRow={() => t('common.notification.noData.description')}
         />
       </CardBody>
