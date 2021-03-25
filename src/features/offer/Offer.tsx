@@ -16,6 +16,7 @@ import { formatDimension } from '../../common/utils/format';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { Boat } from '../../common/boatCard/types';
 import { BerthData, PierTab } from './types';
+import { isSuitableBerthLength } from './utils';
 
 interface OfferProps {
   applicationDate: string;
@@ -122,6 +123,12 @@ const Offer = ({
           const { properties, leases, comment } = row.original;
           return <BerthDetails leases={leases} comment={comment} {...properties} />;
         }}
+          getCellProps={(cell) => ({
+            className: classNames({
+              [styles.highlight]:
+                cell.column.id === 'length' && !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength)),
+            }),
+          })}
         renderMainHeader={(props) => (
           <TableFilters
             activeFilters={props.state.filters.map((filter) => filter.value)}
