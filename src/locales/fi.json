@@ -302,7 +302,7 @@
         "paragraph3": "Jos hakemukseen ei ole tarjottu venepaikkaa, asiakkaalle lähetetään ilmoitus paikatta jäämisestä."
       }
     }
-  },
+    },
   "harborList": {
     "title": "Venepaikat",
     "berthSummary": {
@@ -456,6 +456,10 @@
     "title": "Tarjous",
     "tableCells": {
       "select": "Valitse"
+    },
+    "confirmation": {
+      "title": "Varmista venepaikka",
+      "info": "Venepaikka on lyhyempi kuin veneen pituus. Oletko varma etta haluat tarjota tata paikkaa?"
     },
     "tableTools": {
       "berths": "Venepaikat",
