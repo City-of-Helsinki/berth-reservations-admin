@@ -33,7 +33,9 @@ interface OfferProps {
   tableData: BerthData[];
 }
 
-type ColumnType = Column<BerthData> & { accessor: keyof BerthData };
+type ColumnType = Column<BerthData>;
+
+const LENGTH_ACCESSOR = 'length';
 
 const Offer = ({
   applicationDate,
@@ -103,7 +105,7 @@ const Offer = ({
     {
       Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
       Header: t('common.terminology.length') || '',
-      accessor: 'length',
+      accessor: LENGTH_ACCESSOR,
       width: COLUMN_WIDTH.XS,
       minWidth: COLUMN_WIDTH.XS,
     },
@@ -139,7 +141,8 @@ const Offer = ({
           getCellProps={(cell) => ({
             className: classNames({
               [styles.highlight]:
-                cell.column.id === 'length' && !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength)),
+                cell.column.id === LENGTH_ACCESSOR &&
+                !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength)),
             }),
           })}
           renderMainHeader={(props) => (
