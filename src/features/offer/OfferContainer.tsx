@@ -8,7 +8,7 @@ import { getOperationName } from 'apollo-link';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { OFFER_QUERY } from './queries';
 import Offer from './Offer';
-import { OFFER } from './__generated__/OFFER';
+import { OFFER, OFFERVariables as OFFER_VARS } from './__generated__/OFFER';
 import { getOfferData, getAllPiersIdentifiers, getBoat, getHarbor } from './utils';
 import { formatDate } from '../../common/utils/format';
 import { CREATE_LEASE_MUTATION } from './mutations';
@@ -26,8 +26,8 @@ const OfferContainer = () => {
   const { applicationId } = useParams<{ applicationId: string }>();
   const history = useHistory();
 
-  const { loading, error, data } = useQuery<OFFER>(OFFER_QUERY, {
-    variables: { applicationId, servicemapId: routerQuery.get('harbor') },
+  const { loading, error, data } = useQuery<OFFER, OFFER_VARS>(OFFER_QUERY, {
+    variables: { applicationId, servicemapId: routerQuery.get('harbor') || '' },
   });
   const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_LEASE, CREATE_LEASE_VARS>(
     CREATE_LEASE_MUTATION,

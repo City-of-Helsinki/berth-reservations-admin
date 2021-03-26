@@ -2,6 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import {
+  Cell,
   useTable,
   useExpanded,
   useSortBy,
@@ -22,6 +23,7 @@ import {
   UseFiltersInstanceProps,
   UseGlobalFiltersOptions,
   actions,
+  TableCellProps,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 import equal from 'fast-deep-equal';
@@ -47,10 +49,10 @@ type TableProps<D extends object> = {
   loading?: boolean;
   canSelectRows?: boolean;
   canSelectOneRow?: boolean;
-  cellClassName?: string;
   styleMainHeader?: boolean;
   theme?: 'basic' | 'primary';
   globalFilter?: UseGlobalFiltersOptions<D>['globalFilter'];
+  getCellProps?: (cell: Cell<D>) => Partial<TableCellProps>;
   renderTableToolsTop?: TableToolsFn<D>;
   renderTableToolsBottom?: TableToolsFn<D>;
   renderSubComponent?: (row: Row<D>) => React.ReactNode;
@@ -91,11 +93,11 @@ const Table = <D extends { id: string }>({
   loading,
   canSelectRows,
   canSelectOneRow,
-  cellClassName,
   styleMainHeader = true,
   theme = 'primary',
   globalFilter,
   initialState,
+  getCellProps = () => ({}),
   renderTableToolsTop,
   renderTableToolsBottom,
   renderSubComponent,
@@ -341,16 +343,16 @@ const Table = <D extends { id: string }>({
         <div {...row.getRowProps()}>
           {row.cells.map((cell) => (
             <div
-              {...cell.getCellProps()}
-              className={classNames(
-                styles.tableCell,
+              {...cell.getCellProps([
                 {
-                  [styles.selector]: cell.column.id === SELECTOR,
-                  [styles.radioSelector]: cell.column.id === RADIO_SELECTOR,
-                  [styles.expander]: cell.column.id === EXPANDER,
+                  className: classNames(styles.tableCell, {
+                    [styles.selector]: cell.column.id === SELECTOR,
+                    [styles.radioSelector]: cell.column.id === RADIO_SELECTOR,
+                    [styles.expander]: cell.column.id === EXPANDER,
+                  }),
                 },
-                cellClassName
-              )}
+                getCellProps(cell),
+              ])}
             >
               {loading ? <LoadingCell /> : cell.render('Cell')}
             </div>

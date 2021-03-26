@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import styles from './offer.module.scss';
@@ -15,7 +16,9 @@ import InternalLink from '../../common/internalLink/InternalLink';
 import { formatDimension } from '../../common/utils/format';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { Boat } from '../../common/boatCard/types';
+import ConfirmationModal from '../../common/confirmationModal/ConfirmationModal';
 import { BerthData, PierTab } from './types';
+import { isSuitableBerthLength } from './utils';
 
 interface OfferProps {
   applicationDate: string;
@@ -30,7 +33,9 @@ interface OfferProps {
   tableData: BerthData[];
 }
 
-type ColumnType = Column<BerthData> & { accessor: keyof BerthData };
+type ColumnType = Column<BerthData>;
+
+const LENGTH_ACCESSOR = 'length';
 
 const Offer = ({
   applicationDate,
@@ -46,10 +51,20 @@ const Offer = ({
 }: OfferProps) => {
   const { t, i18n } = useTranslation();
 
+  const [isBerthChosen, setIsBerthChosen] = useState<BerthData | null>(null);
+
   const columns: ColumnType[] = [
     {
       Cell: ({ row }) => (
-        <Button onClick={() => handleClickSelect(row.original)} disabled={isSubmitting}>
+        <Button
+          onClick={useCallback(() => {
+            if (isSuitableBerthLength(Number(row.original.length), Number(boat?.boatLength)))
+              return handleClickSelect(row.original);
+
+            return setIsBerthChosen(row.original);
+          }, [row])}
+          disabled={isSubmitting}
+        >
           {t('offer.tableCells.select')}
         </Button>
       ),
@@ -90,7 +105,7 @@ const Offer = ({
     {
       Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
       Header: t('common.terminology.length') || '',
-      accessor: 'length',
+      accessor: LENGTH_ACCESSOR,
       width: COLUMN_WIDTH.XS,
       minWidth: COLUMN_WIDTH.XS,
     },
@@ -111,36 +126,58 @@ const Offer = ({
   ];
 
   return (
-    <PageContent className={styles.offer}>
-      <PageTitle title={t('offer.title')} />
-      {harbor && <HarborCard {...harbor} className={styles.card} />}
-      {boat && <BoatCard boat={boat} />}
-      <Table
-        data={tableData}
-        columns={columns}
-        renderSubComponent={(row) => {
-          const { properties, leases, comment } = row.original;
-          return <BerthDetails leases={leases} comment={comment} {...properties} />;
+    <>
+      <PageContent className={styles.offer}>
+        <PageTitle title={t('offer.title')} />
+        {harbor && <HarborCard {...harbor} className={styles.card} />}
+        {boat && <BoatCard boat={boat} />}
+        <Table
+          data={tableData}
+          columns={columns}
+          renderSubComponent={(row) => {
+            const { properties, leases, comment } = row.original;
+            return <BerthDetails leases={leases} comment={comment} {...properties} />;
+          }}
+          getCellProps={(cell) => ({
+            className: classNames({
+              [styles.highlight]:
+                cell.column.id === LENGTH_ACCESSOR &&
+                !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength)),
+            }),
+          })}
+          renderMainHeader={(props) => (
+            <TableFilters
+              activeFilters={props.state.filters.map((filter) => filter.value)}
+              filters={piersIdentifiers}
+              handleSetFilter={(filter) => props.setFilter('pier', filter)}
+              filterPrefix={t('common.terminology.pier')}
+            />
+          )}
+          renderTableToolsTop={() => (
+            <TableTools
+              applicationDate={applicationDate}
+              applicationType={applicationType}
+              applicationStatus={applicationStatus}
+              handleReturn={handleReturn}
+            />
+          )}
+          renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
+        />
+      </PageContent>
+      <ConfirmationModal
+        isOpen={!!isBerthChosen}
+        title={t('offer.confirmation.title')}
+        infoText={t('offer.confirmation.info')}
+        confirmButtonVariant="primary"
+        onCancelText={t('common.cancel')}
+        onCancel={() => setIsBerthChosen(null)}
+        onConfirmText={t('common.yes')}
+        onConfirm={() => {
+          isBerthChosen && handleClickSelect(isBerthChosen);
+          setIsBerthChosen(null);
         }}
-        renderMainHeader={(props) => (
-          <TableFilters
-            activeFilters={props.state.filters.map((filter) => filter.value)}
-            filters={piersIdentifiers}
-            handleSetFilter={(filter) => props.setFilter('pier', filter)}
-            filterPrefix={t('common.terminology.pier')}
-          />
-        )}
-        renderTableToolsTop={() => (
-          <TableTools
-            applicationDate={applicationDate}
-            applicationType={applicationType}
-            applicationStatus={applicationStatus}
-            handleReturn={handleReturn}
-          />
-        )}
-        renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
       />
-    </PageContent>
+    </>
   );
 };
 
