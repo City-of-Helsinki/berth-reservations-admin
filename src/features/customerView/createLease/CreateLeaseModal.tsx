@@ -26,10 +26,7 @@ const CreateLeaseModal = ({ customerId, isOpen, closeModal }: CreateLeaseModalPr
   const [selectedHarbor, setSelectedHarbor] = useState<string | null>(null);
 
   const harborOptions = getHarborOptions(data);
-  const openOfferForm = () => {
-    // TODO: Make Offer work with customerId instead of application, or create a new component
-    history.push(`/offer/?customerId=${customerId}&harbor=${selectedHarbor}`);
-  };
+  const openOfferForm = () => history.push(`/offer?customer=${customerId}&harbor=${selectedHarbor}`);
 
   return (
     <Modal isOpen={isOpen} toggleModal={closeModal}>
@@ -44,6 +41,7 @@ const CreateLeaseModal = ({ customerId, isOpen, closeModal }: CreateLeaseModalPr
             {harborOptions.map((option) => (
               <RadioButton
                 id={option.value}
+                key={option.value}
                 checked={option.value === selectedHarbor}
                 value={option.value}
                 label={option.label}
