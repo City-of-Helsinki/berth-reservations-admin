@@ -65,7 +65,7 @@ const ApplicationChoicesList = ({
             routerQuery.set(isHarborChoice(choice) ? 'harbor' : 'winter-storage-area', target);
 
             return (
-              <ListItem key={i}>
+              <ListItem key={i} className={styles.listItem}>
                 <Text>
                   {`${t('applicationDetails.applicationChoicesList.choice')} 
                       ${i + 1}: `}
