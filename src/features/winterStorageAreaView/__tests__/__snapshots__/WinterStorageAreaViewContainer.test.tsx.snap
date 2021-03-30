@@ -263,7 +263,6 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
           </div>
         </div>
       </div>
-       
     </div>
     <div
       class="card"
@@ -335,7 +334,6 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
           </section>
         </article>
       </div>
-       
     </div>
     <div
       class="card actionHistoryCard"
@@ -378,7 +376,6 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
           </a>
         </div>
       </div>
-       
     </div>
     <div
       class="fullWidth"

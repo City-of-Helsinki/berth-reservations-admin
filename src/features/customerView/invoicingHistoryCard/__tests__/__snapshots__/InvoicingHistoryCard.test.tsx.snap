@@ -111,6 +111,5 @@ exports[`InvoicingHistoryCard renders correctly 1`] = `
       </section>
     </article>
   </div>
-   
 </div>
 `;

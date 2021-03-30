@@ -254,6 +254,5 @@ exports[`BerthLeasesCard renders normally 1`] = `
       </span>
     </button>
   </div>
-   
 </div>
 `;

@@ -783,7 +783,9 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
         <ul
           class="list standard noBullets"
         >
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -796,7 +798,9 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
               Eka satama
             </span>
           </li>
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -1575,7 +1579,9 @@ exports[`ApplicationDetails renders normally with organization customer applican
         <ul
           class="list standard noBullets"
         >
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -1584,13 +1590,15 @@ exports[`ApplicationDetails renders normally with organization customer applican
             </span>
             <a
               class="internalLink brand"
-              href="#/offer/54321?harbor=123"
+              href="#/offer?application=54321&harbor=123"
               title="Eka satama"
             >
               Eka satama
             </a>
           </li>
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -1599,7 +1607,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
             </span>
             <a
               class="internalLink brand"
-              href="#/offer/54321?harbor=321"
+              href="#/offer?application=54321&harbor=321"
               title="Kolmas satama"
             >
               Kolmas satama
@@ -2085,7 +2093,9 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
         <ul
           class="list standard noBullets"
         >
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -2094,13 +2104,15 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
             </span>
             <a
               class="internalLink brand"
-              href="#/offer/54321?harbor=123"
+              href="#/offer?application=54321&harbor=123"
               title="Eka satama"
             >
               Eka satama
             </a>
           </li>
-          <li>
+          <li
+            class="listItem"
+          >
             <span
               class="text standard span"
             >
@@ -2109,7 +2121,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
             </span>
             <a
               class="internalLink brand"
-              href="#/offer/54321?harbor=321"
+              href="#/offer?application=54321&harbor=321"
               title="Kolmas satama"
             >
               Kolmas satama

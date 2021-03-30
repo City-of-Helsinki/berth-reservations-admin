@@ -51,9 +51,7 @@ Array [
     "leases": Array [
       Object {
         "customer": Object {
-          "firstName": "Sample",
           "id": "1",
-          "lastName": "McSampleface",
         },
         "endDate": null,
         "isActive": true,

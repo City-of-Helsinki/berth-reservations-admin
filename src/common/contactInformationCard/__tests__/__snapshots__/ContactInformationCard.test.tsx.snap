@@ -71,6 +71,5 @@ exports[`ContactInformationCard renders normally with all props 1`] = `
       </section>
     </article>
   </div>
-   
 </div>
 `;

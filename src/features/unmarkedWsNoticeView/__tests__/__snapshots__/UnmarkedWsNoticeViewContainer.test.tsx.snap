@@ -869,7 +869,6 @@ exports[`UnmarkedWsNoticeViewContainer renders normally 1`] = `
         />
       </div>
     </div>
-     
   </div>
 </div>
 `;

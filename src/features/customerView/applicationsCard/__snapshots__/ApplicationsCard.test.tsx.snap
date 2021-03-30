@@ -303,7 +303,9 @@ exports[`ApplicationsCard renders normally 1`] = `
             <ul
               class="list standard noBullets"
             >
-              <li>
+              <li
+                class="listItem"
+              >
                 <span
                   class="text standard span"
                 >
@@ -312,13 +314,15 @@ exports[`ApplicationsCard renders normally 1`] = `
                 </span>
                 <a
                   class="internalLink brand"
-                  href="#/offer/54321?harbor=123"
+                  href="#/offer?application=54321&harbor=123"
                   title="first choice"
                 >
                   first choice
                 </a>
               </li>
-              <li>
+              <li
+                class="listItem"
+              >
                 <span
                   class="text standard span"
                 >
@@ -327,7 +331,7 @@ exports[`ApplicationsCard renders normally 1`] = `
                 </span>
                 <a
                   class="internalLink brand"
-                  href="#/offer/54321?harbor=321"
+                  href="#/offer?application=54321&harbor=321"
                   title="second choice"
                 >
                   second choice
@@ -339,6 +343,5 @@ exports[`ApplicationsCard renders normally 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

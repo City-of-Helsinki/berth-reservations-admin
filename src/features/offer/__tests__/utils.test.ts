@@ -4,7 +4,7 @@ import { OfferQueryData } from '../__fixtures__/mockData';
 describe('utils', () => {
   describe('getOfferData', () => {
     it('should return offer data', () => {
-      const berthData = getOfferData(OfferQueryData);
+      const berthData = getOfferData(OfferQueryData['harborByServicemapId']);
 
       expect(berthData).toMatchSnapshot();
     });
@@ -12,7 +12,7 @@ describe('utils', () => {
 
   describe('getAllPiersIdentifiers', () => {
     it('should return pier tabs', () => {
-      const harbor = getAllPiersIdentifiers(OfferQueryData);
+      const harbor = getAllPiersIdentifiers(OfferQueryData['harborByServicemapId']?.properties?.piers?.edges);
 
       expect(harbor).toMatchSnapshot();
     });
@@ -24,7 +24,7 @@ describe('utils', () => {
     });
 
     it('should return harbor', () => {
-      const harbor = getHarbor(OfferQueryData);
+      const harbor = getHarbor(OfferQueryData.harborByServicemapId);
 
       expect(harbor).toMatchSnapshot();
     });
