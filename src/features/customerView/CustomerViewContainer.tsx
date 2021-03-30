@@ -32,6 +32,7 @@ import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations'
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 import SendInvoiceFormContainer from '../invoiceCard/sendInvoiceForm/SendInvoiceFormContainer';
+import CreateLeaseModal from './createLease/CreateLeaseModal';
 import { CANCEL_BERTH_LEASE_MUTATION, CANCEL_WINTER_STORAGE_LEASE_MUTATION } from './mutations';
 import {
   CANCEL_BERTH_LEASE,
@@ -55,7 +56,7 @@ const CustomerViewContainer = () => {
   const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
   const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const [openResendInvoice, setOpenResendInvoice] = useState<Invoice>();
-  const { createLease, renderCreateLeaseModal } = useCreateLease(id);
+  const [creatingLease, setCreatingLease] = useState<boolean>(false);
 
   const { loading, data, refetch } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
     variables: { id },
@@ -238,7 +239,9 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      {renderCreateLeaseModal()}
+      {creatingLease && (
+        <CreateLeaseModal customerId={id} isOpen={creatingLease} closeModal={() => setCreatingLease(false)} />
+      )}
 
       {openInvoice && <InvoiceModal isOpen invoice={openInvoice} toggleModal={() => setOpenInvoice(undefined)} />}
     </>
