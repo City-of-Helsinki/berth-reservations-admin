@@ -12,7 +12,7 @@ describe('utils', () => {
 
   describe('getAllPiersIdentifiers', () => {
     it('should return pier tabs', () => {
-      const harbor = getAllPiersIdentifiers(OfferQueryData['harborByServicemapId']?.properties?.piers?.edges);
+      const harbor = getAllPiersIdentifiers(OfferQueryData['harborByServicemapId']?.properties?.piers);
 
       expect(harbor).toMatchSnapshot();
     });

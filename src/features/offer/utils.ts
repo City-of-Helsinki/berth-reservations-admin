@@ -1,15 +1,10 @@
-import {
-  OFFER,
-  OFFER_harborByServicemapId as Harbor,
-  OFFER_harborByServicemapId_properties_piers as Piers,
-} from './__generated__/OFFER';
+import { OFFER } from './__generated__/OFFER';
 import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { HarborCardProps } from '../../common/harborCard/HarborCard';
 import { Boat } from '../../common/boatCard/types';
-import { BerthData, Lease, PierTab } from './types';
-import { OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats_edges_node as BoatNode } from './__generated__/OFFER_WITHOUT_APPLICATION_PROFILE';
+import { HarborData, BerthData, PiersData, BoatData, Lease, PierTab } from './types';
 
-export const getOfferData = (data: Harbor | null | undefined): BerthData[] => {
+export const getOfferData = (data: HarborData | null | undefined): BerthData[] => {
   if (!data?.properties?.piers) return [];
 
   const harborId = data.id;
@@ -70,8 +65,8 @@ export const getOfferData = (data: Harbor | null | undefined): BerthData[] => {
   }, []);
 };
 
-export const getAllPiersIdentifiers = (data: Piers['edges'] | null | undefined): PierTab[] => {
-  const piers = data ?? [];
+export const getAllPiersIdentifiers = (data: PiersData | null | undefined): PierTab[] => {
+  const piers = data?.edges ?? [];
 
   return piers.reduce<PierTab[]>((acc, pier) => {
     if (!pier?.node?.properties) return acc;
@@ -176,7 +171,7 @@ export const getBoat = (
   };
 };
 
-export const getCustomerBoat = (data: BoatNode | null | undefined): Boat | null => {
+export const getCustomerBoat = (data: BoatData | null | undefined): Boat | null => {
   if (!data) return null;
 
   return {

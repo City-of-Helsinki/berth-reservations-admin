@@ -106,7 +106,7 @@ const OfferContainer = () => {
 
   const tableData = getOfferData(data);
   const harbor = getHarbor(data);
-  const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers?.edges);
+  const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
   const boatNode = customerData?.profile?.boats?.edges?.find((edge) => edge?.node?.id === boatId)?.node;
 
   const customerBoat = getCustomerBoat(boatNode);
