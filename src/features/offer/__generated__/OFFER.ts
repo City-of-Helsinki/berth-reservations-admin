@@ -17,8 +17,6 @@ export interface OFFER_berthApplication_berthSwitch {
 export interface OFFER_berthApplication_customer {
   __typename: "ProfileNode";
   id: string;
-  firstName: string;
-  lastName: string;
 }
 
 export interface OFFER_berthApplication {

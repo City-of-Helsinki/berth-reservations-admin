@@ -82,7 +82,6 @@ const OfferContainer = () => {
         autoDismissTime: 5000,
         labelText: t('offer.notifications.berthLeaseCreated.label'),
         text: t('offer.notifications.berthLeaseCreated.description', {
-          name: `${data.berthApplication?.customer?.firstName} ${data.berthApplication?.customer?.lastName}`,
           harbor: berth.harbor,
           pier: berth.pier,
           berth: berth.berth,

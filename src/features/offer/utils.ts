@@ -29,8 +29,6 @@ export const getOfferData = (data: OFFER | undefined): BerthData[] => {
               isActive: edge.node.isActive,
               customer: {
                 id: edge.node.customer.id,
-                firstName: edge.node.customer.firstName,
-                lastName: edge.node.customer.lastName,
               },
             },
           ];

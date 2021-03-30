@@ -13,8 +13,6 @@ export const OFFER_QUERY = gql`
       }
       customer {
         id
-        firstName
-        lastName
       }
       boatType
       boatRegistrationNumber
