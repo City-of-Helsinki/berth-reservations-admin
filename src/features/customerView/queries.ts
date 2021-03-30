@@ -1,5 +1,7 @@
 import gql from 'graphql-tag';
 
+import { BERTH_LEASE_FRAGMENT } from '../applicationView/berthOfferCard/fragments';
+
 export const INDIVIDUAL_CUSTOMER_QUERY = gql`
   query INDIVIDUAL_CUSTOMER($id: ID!) {
     profile(id: $id, serviceType: BERTH) {
@@ -64,31 +66,10 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
       berthLeases {
         edges {
           node {
-            id
-            status
             startDate
             endDate
             isActive
-            berth {
-              id
-              number
-              length
-              width
-              depth
-              mooringType
-              pier {
-                id
-                properties {
-                  identifier
-                  harbor {
-                    id
-                    properties {
-                      name
-                    }
-                  }
-                }
-              }
-            }
+            ...BerthLease
           }
         }
       }
@@ -271,4 +252,5 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
       name
     }
   }
+  ${BERTH_LEASE_FRAGMENT}
 `;

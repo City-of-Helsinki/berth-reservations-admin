@@ -79,7 +79,9 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
       acceptLibraryNews
       acceptOtherCultureNews
       applicationCode
-      ...BerthLease
+      lease {
+        ...BerthLease
+      }
     }
     boatTypes {
       id

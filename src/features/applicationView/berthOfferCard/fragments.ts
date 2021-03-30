@@ -1,59 +1,59 @@
 import gql from 'graphql-tag';
 
 export const BERTH_LEASE_FRAGMENT = gql`
-  fragment BerthLease on BerthApplicationNode {
-    lease {
+  fragment BerthLease on BerthLeaseNode {
+    id
+    status
+    berth {
       id
-      status
-      berth {
-        depth
-        length
-        mooringType
-        width
-        comment
-        isAccessible
-        number
-        pier {
-          properties {
-            identifier
-            electricity
-            gate
-            lighting
-            mooring
-            wasteCollection
-            water
-            harbor {
-              id
-              properties {
-                name
-              }
+      depth
+      length
+      mooringType
+      width
+      comment
+      isAccessible
+      number
+      pier {
+        id
+        properties {
+          identifier
+          electricity
+          gate
+          lighting
+          mooring
+          wasteCollection
+          water
+          harbor {
+            id
+            properties {
+              name
             }
           }
         }
       }
-      customer {
+    }
+    customer {
+      id
+      primaryEmail {
         id
-        primaryEmail {
-          id
-          email
-        }
+        email
       }
-      order {
-        id
-        orderNumber
-        price
-        totalPrice
-        status
-        orderLines {
-          edges {
-            node {
+    }
+    order {
+      id
+      orderNumber
+      price
+      totalPrice
+      status
+      orderLines {
+        edges {
+          node {
+            id
+            price
+            product {
               id
-              price
-              product {
-                id
-                service
-                productType
-              }
+              service
+              productType
             }
           }
         }
