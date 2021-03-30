@@ -1,5 +1,5 @@
 import { CREATE_LEASE_HARBORS } from './__generated__/CREATE_LEASE_HARBORS';
-import { HarborOption } from './types';
+import { BoatOption, HarborOption } from './types';
 
 const sortHarborOptions = (a: HarborOption, b: HarborOption) => {
   if (a.label < b.label) {
@@ -26,3 +26,9 @@ export const getHarborOptions = (data: CREATE_LEASE_HARBORS | undefined): Harbor
       return acc;
     }, [])
     .sort(sortHarborOptions) || [];
+
+export const getBoatsOptions = (data: CREATE_LEASE_HARBORS | undefined): BoatOption[] =>
+  data?.profile?.boats?.edges.reduce<BoatOption[]>((acc, edge) => {
+    if (!edge?.node) return acc;
+    return [...acc, { label: edge.node.name, value: edge.node.id }];
+  }, []) ?? [];

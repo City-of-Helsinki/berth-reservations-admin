@@ -9,7 +9,7 @@ export interface CardProps {
 }
 
 const Card = ({ children, className }: CardProps) => (
-  <div className={classNames(styles.card, className)}>{children} </div>
+  <div className={classNames(styles.card, className)}>{children}</div>
 );
 
 export default Card;

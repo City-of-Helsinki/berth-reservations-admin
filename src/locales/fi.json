@@ -607,7 +607,8 @@
     },
     "createLease": {
       "title": "Lisää venepaikan vuokrasopimus",
-      "selectHarbor": "Valitse satama"
+      "selectHarbor": "Valitse satama",
+      "selectBoat": "Valitse vene"
     }
   },
   "pricing": {
