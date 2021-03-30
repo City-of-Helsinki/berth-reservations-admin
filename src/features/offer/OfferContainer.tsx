@@ -121,8 +121,8 @@ const OfferContainer = () => {
     createBerthLease({
       variables: {
         input: {
-          applicationId: applicationId || '',
-          customerId: customerId || '',
+          applicationId: applicationId || undefined,
+          customerId: customerId || undefined,
           berthId: berth.id,
         },
       },
