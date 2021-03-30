@@ -492,6 +492,9 @@
       "berthLeaseCreated": {
         "label": "Hakemus käsitelty",
         "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+      },
+      "noBoat": {
+        "description": "Asiakkaalla ei ole venettä."
       }
     }
   },

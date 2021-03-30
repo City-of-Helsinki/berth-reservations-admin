@@ -1,15 +1,27 @@
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useParams, useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { Notification } from 'hds-react';
 import { getOperationName } from 'apollo-link';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
-import { OFFER_QUERY } from './queries';
+import {
+  OFFER_QUERY,
+  OFFER_WITHOUT_APPLICATION_PROFILE_QUERY,
+  OFFER_WITHOUT_APPLICATION_HARBOR_QUERY,
+} from './queries';
 import Offer from './Offer';
 import { OFFER, OFFERVariables as OFFER_VARS } from './__generated__/OFFER';
-import { getOfferData, getAllPiersIdentifiers, getBoat, getHarbor } from './utils';
+import {
+  OFFER_WITHOUT_APPLICATION_HARBOR,
+  OFFER_WITHOUT_APPLICATION_HARBORVariables as OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
+} from './__generated__/OFFER_WITHOUT_APPLICATION_HARBOR';
+import {
+  OFFER_WITHOUT_APPLICATION_PROFILE,
+  OFFER_WITHOUT_APPLICATION_PROFILEVariables as OFFER_WITHOUT_APPLICATION_PROFILE_VARS,
+} from './__generated__/OFFER_WITHOUT_APPLICATION_PROFILE';
+import { getOfferData, getAllPiersIdentifiers, getBoat, getHarbor, getCustomerBoat } from './utils';
 import { formatDate } from '../../common/utils/format';
 import { CREATE_LEASE_MUTATION } from './mutations';
 import { CREATE_LEASE, CREATE_LEASEVariables as CREATE_LEASE_VARS } from './__generated__/CREATE_LEASE';
@@ -23,11 +35,36 @@ function useRouterQuery() {
 
 const OfferContainer = () => {
   const routerQuery = useRouterQuery();
-  const { applicationId } = useParams<{ applicationId: string }>();
   const history = useHistory();
 
-  const { loading, error, data } = useQuery<OFFER, OFFER_VARS>(OFFER_QUERY, {
-    variables: { applicationId, servicemapId: routerQuery.get('harbor') || '' },
+  const harborId = routerQuery.get('harbor') || '';
+  const applicationId = routerQuery.get('application') || '';
+  const customerId = routerQuery.get('customer') || '';
+  const boatId = routerQuery.get('boat') || '';
+
+  const { loading: applicationLoading, error: applicationError, data: applicationData } = useQuery<OFFER, OFFER_VARS>(
+    OFFER_QUERY,
+    {
+      variables: { applicationId, servicemapId: harborId },
+      skip: !applicationId,
+    }
+  );
+  const { loading: customerLoading, error: customerError, data: customerData } = useQuery<
+    OFFER_WITHOUT_APPLICATION_PROFILE,
+    OFFER_WITHOUT_APPLICATION_PROFILE_VARS
+  >(OFFER_WITHOUT_APPLICATION_PROFILE_QUERY, {
+    variables: { customerId },
+    skip: !customerId,
+  });
+
+  const boatWidth = getCustomerBoat(customerData?.profile?.boats?.edges[0]?.node)?.boatWidth;
+
+  const { loading: harborLoading, error: harborError, data: harborData } = useQuery<
+    OFFER_WITHOUT_APPLICATION_HARBOR,
+    OFFER_WITHOUT_APPLICATION_HARBOR_VARS
+  >(OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
+    variables: { harborId },
+    skip: !boatWidth,
   });
   const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_LEASE, CREATE_LEASE_VARS>(
     CREATE_LEASE_MUTATION,
@@ -37,40 +74,57 @@ const OfferContainer = () => {
   );
   const { t, i18n } = useTranslation();
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
-  if (!data?.berthApplication)
+  if (applicationLoading || customerLoading || harborLoading) return <LoadingSpinner isLoading />;
+
+  const data = applicationData?.harborByServicemapId || harborData?.harbor;
+
+  if (!data && !customerData)
     return (
       <Notification label={t('common.notification.noData.label')}>
         {t('common.notification.noData.description')}
       </Notification>
     );
-  if (error)
+  if (applicationError || customerError || harborError)
     return (
       <Notification label={t('common.notification.error.label')} type="error">
         {t('common.notification.error.description')}
       </Notification>
     );
 
-  const tableData = getOfferData(data);
-
   const getApplicationType = (isSwitch: boolean) =>
     isSwitch
       ? t('applicationList.applicationType.switchApplication')
       : t('applicationList.applicationType.newApplication');
 
-  const applicationDate = formatDate(data.berthApplication?.createdAt, i18n.language);
-  const applicationStatus = data.berthApplication.status;
+  const application = applicationData?.berthApplication && {
+    date: formatDate(applicationData.berthApplication.createdAt, i18n.language),
+    status: applicationData.berthApplication.status,
+    type: getApplicationType(!!applicationData.berthApplication.berthSwitch),
+  };
+
   const handleReturn = () => history.goBack();
-  const applicationType = getApplicationType(!!data.berthApplication.berthSwitch);
-  const piersIdentifiers = getAllPiersIdentifiers(data);
+
+  const tableData = getOfferData(data);
   const harbor = getHarbor(data);
-  const boat = getBoat(data);
+  const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers?.edges);
+  const boatNode = customerData?.profile?.boats?.edges?.find((edge) => edge?.node?.id === boatId)?.node;
+
+  const customerBoat = getCustomerBoat(boatNode);
+  const boat = getBoat(applicationData?.berthApplication, applicationData?.boatTypes) || customerBoat;
+
+  if (!boat)
+    return (
+      <Notification label={t('common.notification.error.label')} type="error">
+        {t('offer.notifications.noBoat.description')}
+      </Notification>
+    );
 
   const handleClickSelect = (berth: BerthData) => {
     createBerthLease({
       variables: {
         input: {
           applicationId: applicationId || '',
+          customerId: customerId || '',
           berthId: berth.id,
         },
       },
@@ -92,9 +146,7 @@ const OfferContainer = () => {
 
   return (
     <Offer
-      applicationDate={applicationDate}
-      applicationStatus={applicationStatus}
-      applicationType={applicationType}
+      application={application}
       boat={boat}
       handleClickSelect={handleClickSelect}
       handleReturn={handleReturn}

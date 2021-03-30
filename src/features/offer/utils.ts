@@ -1,15 +1,20 @@
-import { OFFER } from './__generated__/OFFER';
+import {
+  OFFER,
+  OFFER_harborByServicemapId as Harbor,
+  OFFER_harborByServicemapId_properties_piers as Piers,
+} from './__generated__/OFFER';
 import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { HarborCardProps } from '../../common/harborCard/HarborCard';
 import { Boat } from '../../common/boatCard/types';
 import { BerthData, Lease, PierTab } from './types';
+import { OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats_edges_node as BoatNode } from './__generated__/OFFER_WITHOUT_APPLICATION_PROFILE';
 
-export const getOfferData = (data: OFFER | undefined): BerthData[] => {
-  if (!data?.harborByServicemapId?.properties?.piers) return [];
+export const getOfferData = (data: Harbor | null | undefined): BerthData[] => {
+  if (!data?.properties?.piers) return [];
 
-  const harborId = data.harborByServicemapId.id;
-  const harbor = data.harborByServicemapId.properties.name || '';
-  return data.harborByServicemapId.properties.piers.edges.reduce<BerthData[]>((acc, pier) => {
+  const harborId = data.id;
+  const harbor = data.properties.name || '';
+  return data.properties.piers.edges.reduce<BerthData[]>((acc, pier) => {
     if (!pier?.node?.properties) return acc;
 
     const { properties } = pier.node;
@@ -65,8 +70,8 @@ export const getOfferData = (data: OFFER | undefined): BerthData[] => {
   }, []);
 };
 
-export const getAllPiersIdentifiers = (data: OFFER | undefined): PierTab[] => {
-  const piers = data?.harborByServicemapId?.properties?.piers?.edges ?? [];
+export const getAllPiersIdentifiers = (data: Piers['edges'] | null | undefined): PierTab[] => {
+  const piers = data ?? [];
 
   return piers.reduce<PierTab[]>((acc, pier) => {
     if (!pier?.node?.properties) return acc;
@@ -81,17 +86,12 @@ export const getAllPiersIdentifiers = (data: OFFER | undefined): PierTab[] => {
   }, []);
 };
 
-export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
-  if (
-    !data ||
-    !data.harborByServicemapId ||
-    !data.harborByServicemapId.properties ||
-    !data.harborByServicemapId.properties.piers
-  ) {
+export const getHarbor = (data: OFFER['harborByServicemapId'] | undefined): HarborCardProps['harbor'] | null => {
+  if (!data || !data || !data.properties || !data.properties.piers) {
     return null;
   }
 
-  const pierProps = data.harborByServicemapId.properties.piers.edges.reduce(
+  const pierProps = data.properties.piers.edges.reduce(
     (prev, pier) => {
       if (pier?.node?.properties) {
         return {
@@ -118,7 +118,7 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
     url: string;
   };
 
-  const maps = data.harborByServicemapId.properties.maps.reduce<Map[]>((acc, map) => {
+  const maps = data.properties.maps.reduce<Map[]>((acc, map) => {
     if (map !== null) {
       return acc.concat({
         id: map.id,
@@ -128,7 +128,7 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
     return acc;
   }, []);
 
-  const { properties } = data.harborByServicemapId;
+  const { properties } = data;
   return {
     imageUrl: properties.imageFile,
     maps,
@@ -147,10 +147,12 @@ export const getHarbor = (data: OFFER | undefined): HarborCardProps | null => {
   };
 };
 
-export const getBoat = (data: OFFER | undefined): Boat | null => {
-  if (!data || !data.berthApplication) return null;
+export const getBoat = (
+  berthApplication: OFFER['berthApplication'] | undefined,
+  boatTypes: OFFER['boatTypes'] | undefined
+): Boat | null => {
+  if (!berthApplication) return null;
 
-  const boatTypes = data.boatTypes;
   const {
     boatType,
     boatRegistrationNumber,
@@ -160,7 +162,8 @@ export const getBoat = (data: OFFER | undefined): Boat | null => {
     boatLength,
     boatDraught,
     boatWeight,
-  } = data.berthApplication;
+  } = berthApplication;
+
   return {
     boatType: boatTypes?.find(({ id }) => id === boatType)?.name ?? null,
     boatRegistrationNumber,
@@ -170,6 +173,21 @@ export const getBoat = (data: OFFER | undefined): Boat | null => {
     boatLength,
     boatDraught,
     boatWeight,
+  };
+};
+
+export const getCustomerBoat = (data: BoatNode | null | undefined): Boat | null => {
+  if (!data) return null;
+
+  return {
+    boatRegistrationNumber: data.registrationNumber,
+    boatType: data.boatType.name,
+    boatName: data.name,
+    boatWidth: data.width,
+    boatDraught: data.draught,
+    boatLength: data.length,
+    boatWeight: data.weight,
+    boatModel: data.model,
   };
 };
 

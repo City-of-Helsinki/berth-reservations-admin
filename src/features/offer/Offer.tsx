@@ -25,7 +25,7 @@ interface OfferProps {
     date: string;
     status: ApplicationStatus;
     type: string;
-  };
+  } | null;
   boat: Boat;
   handleClickSelect: (berth: BerthData) => void;
   handleReturn: () => void;

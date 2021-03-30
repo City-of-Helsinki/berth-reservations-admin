@@ -14,7 +14,7 @@ export interface TableToolsProps {
     date: string;
     type: string;
     status: ApplicationStatus;
-  };
+  } | null;
   handleReturn(): void;
 }
 
