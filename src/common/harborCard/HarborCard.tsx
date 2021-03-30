@@ -20,44 +20,36 @@ import { queueFeatureFlag } from '../utils/featureFlags';
 
 export interface HarborCardProps {
   className?: string;
-  imageUrl: string | null;
-  maps: {
-    id: string;
-    url: string;
-  }[];
-  name: string;
-  streetAddress: string | null;
-  zipCode: string;
-  municipality: string | null;
-  servicemapId: string;
-  properties: {
-    electricity: boolean;
-    gate: boolean;
-    maxWidth: number;
-    queue: number;
-    numberOfFreePlaces: number;
-    numberOfPlaces: number;
-    water: boolean;
-    wasteCollection: boolean;
-    lighting: boolean;
+  harbor: {
+    imageUrl: string | null;
+    maps: {
+      id: string;
+      url: string;
+    }[];
+    name: string;
+    streetAddress: string | null;
+    zipCode: string;
+    municipality: string | null;
+    servicemapId: string;
+    properties: {
+      electricity: boolean;
+      gate: boolean;
+      maxWidth: number;
+      queue: number;
+      numberOfFreePlaces: number;
+      numberOfPlaces: number;
+      water: boolean;
+      wasteCollection: boolean;
+      lighting: boolean;
+    };
   };
   editHarbor?: () => void;
 }
 
-const HarborCard = ({
-  className,
-  name,
-  streetAddress,
-  zipCode,
-  municipality,
-  imageUrl,
-  maps,
-  servicemapId,
-  properties,
-  editHarbor,
-}: HarborCardProps) => {
+const HarborCard = ({ className, harbor, editHarbor }: HarborCardProps) => {
   const { t } = useTranslation();
 
+  const { name, streetAddress, zipCode, municipality, imageUrl, maps, servicemapId, properties } = harbor;
   const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URL}${servicemapId}`;
 
   return (

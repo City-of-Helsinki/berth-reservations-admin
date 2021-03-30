@@ -41,23 +41,25 @@ const HarborView = ({
       <div className={styles.grid}>
         <HarborCard
           className={styles.fullWidth}
-          name={harbor.name || ''}
-          imageUrl={harbor.imageFile}
-          maps={maps}
-          servicemapId={harbor.servicemapId || ''}
-          streetAddress={harbor.streetAddress}
-          zipCode={harbor.zipCode}
-          municipality={harbor.municipality}
-          properties={{
-            electricity: harbor.electricity,
-            gate: harbor.gate,
-            lighting: harbor.lighting,
-            maxWidth: harbor.maxWidth || 0,
-            numberOfPlaces: harbor.numberOfPlaces || 0,
-            numberOfFreePlaces: harbor.numberOfFreePlaces || 0,
-            queue: harbor.numberOfPlacesInQueue || 0,
-            wasteCollection: harbor.wasteCollection,
-            water: harbor.water,
+          harbor={{
+            name: harbor.name || '',
+            imageUrl: harbor.imageFile,
+            maps: maps,
+            servicemapId: harbor.servicemapId || '',
+            streetAddress: harbor.streetAddress,
+            zipCode: harbor.zipCode,
+            municipality: harbor.municipality,
+            properties: {
+              electricity: harbor.electricity,
+              gate: harbor.gate,
+              lighting: harbor.lighting,
+              maxWidth: harbor.maxWidth || 0,
+              numberOfPlaces: harbor.numberOfPlaces || 0,
+              numberOfFreePlaces: harbor.numberOfFreePlaces || 0,
+              queue: harbor.numberOfPlacesInQueue || 0,
+              wasteCollection: harbor.wasteCollection,
+              water: harbor.water,
+            },
           }}
           editHarbor={() => setEditingHarbor(true)}
         />
