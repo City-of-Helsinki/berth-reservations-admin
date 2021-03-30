@@ -67,12 +67,11 @@ export const OFFER_WITHOUT_APPLICATION_PROFILE_QUERY = gql`
 `;
 
 export const OFFER_WITHOUT_APPLICATION_HARBOR_QUERY = gql`
-  query OFFER_WITHOUT_APPLICATION_HARBOR($harborId: ID!) {
+  query OFFER_WITHOUT_APPLICATION_HARBOR($harborId: ID!, $boatWidth: Float!) {
     harbor(id: $harborId) {
       ...OfferHarbor
       properties {
-        piers {
-          # piers(minBerthWidth: $boatWidth) {
+        piers(minBerthWidth: $boatWidth) {
           ...OfferPiers
         }
       }

@@ -116,4 +116,5 @@ export interface OFFER_WITHOUT_APPLICATION_HARBOR {
 
 export interface OFFER_WITHOUT_APPLICATION_HARBORVariables {
   harborId: string;
+  boatWidth: number;
 }

@@ -57,13 +57,16 @@ const OfferContainer = () => {
     skip: !customerId,
   });
 
-  const boatWidth = getCustomerBoat(customerData?.profile?.boats?.edges[0]?.node)?.boatWidth;
+  const boatNode = customerData?.profile?.boats?.edges?.find((edge) => edge?.node?.id === boatId)?.node;
+  const customerBoat = getCustomerBoat(boatNode);
+  const boat = getBoat(applicationData?.berthApplication, applicationData?.boatTypes) || customerBoat;
+  const boatWidth = boat?.boatWidth ?? 0;
 
   const { loading: harborLoading, error: harborError, data: harborData } = useQuery<
     OFFER_WITHOUT_APPLICATION_HARBOR,
     OFFER_WITHOUT_APPLICATION_HARBOR_VARS
   >(OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
-    variables: { harborId },
+    variables: { harborId, boatWidth: Number(boatWidth) },
     skip: !boatWidth,
   });
   const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_LEASE, CREATE_LEASE_VARS>(
@@ -90,6 +93,12 @@ const OfferContainer = () => {
         {t('common.notification.error.description')}
       </Notification>
     );
+  if (!boat)
+    return (
+      <Notification label={t('common.notification.error.label')} type="error">
+        {t('offer.notifications.noBoat.description')}
+      </Notification>
+    );
 
   const getApplicationType = (isSwitch: boolean) =>
     isSwitch
@@ -107,17 +116,6 @@ const OfferContainer = () => {
   const tableData = getOfferData(data);
   const harbor = getHarbor(data);
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
-  const boatNode = customerData?.profile?.boats?.edges?.find((edge) => edge?.node?.id === boatId)?.node;
-
-  const customerBoat = getCustomerBoat(boatNode);
-  const boat = getBoat(applicationData?.berthApplication, applicationData?.boatTypes) || customerBoat;
-
-  if (!boat)
-    return (
-      <Notification label={t('common.notification.error.label')} type="error">
-        {t('offer.notifications.noBoat.description')}
-      </Notification>
-    );
 
   const handleClickSelect = (berth: BerthData) => {
     createBerthLease({
