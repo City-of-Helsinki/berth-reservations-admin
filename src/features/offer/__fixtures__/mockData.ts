@@ -96,8 +96,6 @@ export const OfferQueryData: OFFER = {
                                 customer: {
                                   __typename: 'ProfileNode',
                                   id: '1',
-                                  firstName: 'Sample',
-                                  lastName: 'McSampleface',
                                 },
                               },
                             },

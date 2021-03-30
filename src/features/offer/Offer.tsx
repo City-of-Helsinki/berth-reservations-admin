@@ -8,7 +8,7 @@ import PageContent from '../../common/pageContent/PageContent';
 import HarborCard, { HarborCardProps } from '../../common/harborCard/HarborCard';
 import BoatCard from '../../common/boatCard/BoatCard';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import BerthDetails from '../berthDetails/BerthDetails';
+import BerthDetails from '../berthDetails/BerthDetailsContainer';
 import TableFilters from '../../common/tableFilters/TableFilters';
 import TableTools from './tableTools/TableTools';
 import Button from '../../common/button/Button';
@@ -21,13 +21,15 @@ import { BerthData, PierTab } from './types';
 import { isSuitableBerthLength } from './utils';
 
 interface OfferProps {
-  applicationDate: string;
-  applicationStatus: ApplicationStatus;
-  applicationType: string;
-  boat: Boat | null;
+  application?: {
+    date: string;
+    status: ApplicationStatus;
+    type: string;
+  };
+  boat: Boat;
   handleClickSelect: (berth: BerthData) => void;
   handleReturn: () => void;
-  harbor: HarborCardProps | null;
+  harbor: HarborCardProps['harbor'] | null;
   isSubmitting: boolean;
   piersIdentifiers: PierTab[];
   tableData: BerthData[];
@@ -38,9 +40,7 @@ type ColumnType = Column<BerthData>;
 const LENGTH_ACCESSOR = 'length';
 
 const Offer = ({
-  applicationDate,
-  applicationStatus,
-  applicationType,
+  application,
   boat,
   handleClickSelect,
   handleReturn,
@@ -129,15 +129,12 @@ const Offer = ({
     <>
       <PageContent className={styles.offer}>
         <PageTitle title={t('offer.title')} />
-        {harbor && <HarborCard {...harbor} className={styles.card} />}
-        {boat && <BoatCard boat={boat} />}
+        {harbor && <HarborCard harbor={harbor} className={styles.card} />}
+        <BoatCard boat={boat} />
         <Table
           data={tableData}
           columns={columns}
-          renderSubComponent={(row) => {
-            const { properties, leases, comment } = row.original;
-            return <BerthDetails leases={leases} comment={comment} {...properties} />;
-          }}
+          renderSubComponent={(row) => <BerthDetails id={row.original.id} />}
           getCellProps={(cell) => ({
             className: classNames({
               [styles.highlight]:
@@ -153,14 +150,7 @@ const Offer = ({
               filterPrefix={t('common.terminology.pier')}
             />
           )}
-          renderTableToolsTop={() => (
-            <TableTools
-              applicationDate={applicationDate}
-              applicationType={applicationType}
-              applicationStatus={applicationStatus}
-              handleReturn={handleReturn}
-            />
-          )}
+          renderTableToolsTop={() => <TableTools application={application} handleReturn={handleReturn} />}
           renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
         />
       </PageContent>

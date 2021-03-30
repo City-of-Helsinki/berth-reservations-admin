@@ -53,8 +53,6 @@ export interface OFFER_harborByServicemapId_properties_maps {
 export interface OFFER_harborByServicemapId_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
   id: string;
-  firstName: string;
-  lastName: string;
 }
 
 export interface OFFER_harborByServicemapId_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node {
