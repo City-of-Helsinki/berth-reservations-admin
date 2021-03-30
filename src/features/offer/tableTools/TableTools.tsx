@@ -10,27 +10,38 @@ import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 
 export interface TableToolsProps {
-  applicationDate: string;
-  applicationType: string;
-  applicationStatus: ApplicationStatus;
+  application?: {
+    date: string;
+    type: string;
+    status: ApplicationStatus;
+  };
   handleReturn(): void;
 }
 
-const TableTools = ({ applicationDate, applicationType, applicationStatus, handleReturn }: TableToolsProps) => {
+const TableTools = ({ application, handleReturn }: TableToolsProps) => {
   const { t } = useTranslation();
+
+  const renderTitle = () => {
+    if (!application) return <Text size="l">{t('common.terminology.berths').toUpperCase()}</Text>;
+
+    return (
+      <>
+        <Text size="l">
+          {t('common.terminology.berths').toUpperCase()}: {application.type} {application.date}
+        </Text>
+
+        <StatusLabel
+          className={styles.statusLabel}
+          type={APPLICATION_STATUS[application.status].type}
+          label={t(APPLICATION_STATUS[application.status].label)}
+        />
+      </>
+    );
+  };
 
   return (
     <div className={styles.tableTools}>
-      <div>
-        <Text size="l">
-          {t('common.terminology.berths').toUpperCase()}: {applicationType} {applicationDate}
-        </Text>
-        <StatusLabel
-          className={styles.statusLabel}
-          type={APPLICATION_STATUS[applicationStatus].type}
-          label={t(APPLICATION_STATUS[applicationStatus].label)}
-        />
-      </div>
+      <div>{renderTitle()}</div>
       <div>
         <Button variant="secondary" className={classNames(styles.button)} onClick={handleReturn}>
           {t('offer.tableTools.return')}
