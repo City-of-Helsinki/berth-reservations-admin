@@ -14,10 +14,6 @@ export const harborMooringFeatureFlag = () => {
   return process.env.NODE_ENV !== 'production';
 };
 
-export const berthInvoicingFeatureFlag = () => {
-  return process.env.REACT_APP_ENV !== 'production';
-};
-
 export const queueFeatureFlag = () => {
   return process.env.NODE_ENV !== 'production';
 };
