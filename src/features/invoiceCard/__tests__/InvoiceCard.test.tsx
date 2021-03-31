@@ -34,7 +34,7 @@ describe('InvoiceCard', () => {
   describe('send button', () => {
     const findSendButton = (wrapper: ReactWrapper) => wrapper.find('.buttonRow').find('div').find('button');
 
-    it('is not displayed when application status not "DRAFTED" or "OFFERED"', () => {
+    it('is not displayed when lease status not "DRAFTED" or "OFFERED"', () => {
       Object.values(LeaseStatus)
         .filter((status) => status !== LeaseStatus.DRAFTED && status !== LeaseStatus.OFFERED)
         .forEach((status) => {
