@@ -12,8 +12,6 @@ import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
 import { canDeleteLease } from '../../../common/utils/leaseUtils';
-import { berthInvoicingFeatureFlag } from '../../../common/utils/featureFlags';
-
 export interface BerthOfferCardProps {
   className?: string;
   leaseDetails: LeaseDetails;
@@ -79,7 +77,6 @@ const BerthOfferCard = ({
       }
       className={className}
       customerEmail={customerEmail}
-      invoicingDisabled={!berthInvoicingFeatureFlag()}
       leaseStatus={status}
       order={order}
       placeDetails={
