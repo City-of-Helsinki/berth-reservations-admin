@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 
 import InvoiceCard, { InvoiceCardProps } from '../InvoiceCard';
-import { ApplicationStatus, LeaseStatus, OrderStatus } from '../../../@types/__generated__/globalTypes';
+import { LeaseStatus, OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 describe('InvoiceCard', () => {
   const defaultProps: InvoiceCardProps = {
@@ -22,7 +22,6 @@ describe('InvoiceCard', () => {
     placeProperties: [],
     title: 'title',
     leaseStatus: LeaseStatus.DRAFTED,
-    applicationStatus: ApplicationStatus.OFFER_GENERATED,
   };
 
   const getWrapper = (props: InvoiceCardProps) => mount(<InvoiceCard {...props} />);
@@ -35,24 +34,24 @@ describe('InvoiceCard', () => {
   describe('send button', () => {
     const findSendButton = (wrapper: ReactWrapper) => wrapper.find('.buttonRow').find('div').find('button');
 
-    it('is not displayed when application status not "generated" or "sent"', () => {
-      Object.values(ApplicationStatus)
-        .filter((status) => status !== ApplicationStatus.OFFER_GENERATED && status !== ApplicationStatus.OFFER_SENT)
+    it('is not displayed when application status not "DRAFTED" or "OFFERED"', () => {
+      Object.values(LeaseStatus)
+        .filter((status) => status !== LeaseStatus.DRAFTED && status !== LeaseStatus.OFFERED)
         .forEach((status) => {
-          const wrapper = getWrapper({ ...defaultProps, applicationStatus: status });
+          const wrapper = getWrapper({ ...defaultProps, leaseStatus: status });
           expect(findSendButton(wrapper).length).toBe(0);
         });
     });
 
-    it('is displayed and enabled when application status is "generated"', () => {
-      const wrapper = getWrapper({ ...defaultProps, applicationStatus: ApplicationStatus.OFFER_GENERATED });
+    it('is displayed and enabled when lease status is "DRAFTED"', () => {
+      const wrapper = getWrapper({ ...defaultProps, leaseStatus: LeaseStatus.DRAFTED });
       const sendButton = findSendButton(wrapper);
       expect(sendButton.length).toBe(1);
       expect(sendButton.props().disabled).toBeFalsy();
     });
 
-    it('is displayed but with a different text when application status is "sent"', () => {
-      const wrapper = getWrapper({ ...defaultProps, applicationStatus: ApplicationStatus.OFFER_SENT });
+    it('is displayed but with a different text when lease status is "OFFERED"', () => {
+      const wrapper = getWrapper({ ...defaultProps, leaseStatus: LeaseStatus.OFFERED });
       const sendButton = findSendButton(wrapper);
       expect(sendButton.length).toBe(1);
       expect(sendButton.text()).toEqual('Lähetä tarjous uudelleen');
@@ -62,7 +61,7 @@ describe('InvoiceCard', () => {
       const sendInvoiceMock = jest.fn();
       const wrapper = getWrapper({
         ...defaultProps,
-        applicationStatus: ApplicationStatus.OFFER_GENERATED,
+        leaseStatus: LeaseStatus.DRAFTED,
         sendInvoice: sendInvoiceMock,
       });
       const sendButton = findSendButton(wrapper);

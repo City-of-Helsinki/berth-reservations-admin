@@ -7,15 +7,24 @@ import { privateCustomerProfile } from '../../../common/privateCustomerDetails/_
 
 const mockProps: CustomerViewProps = {
   applications: [],
-  invoices: [],
   boats: [],
+  cancelLease: jest.fn(),
+  createLease: jest.fn(),
   customerProfile: privateCustomerProfile,
+  handleDeleteOffer: jest.fn(),
   handleEditCustomer: jest.fn(),
+  handleNoPlacesAvailable: jest.fn(),
+  invoices: [],
+  isDeletingOffer: false,
   leases: [],
+  offers: [],
+  onClickCreateAdditionalInvoice: jest.fn(),
+  onClickCreateBoat: jest.fn(),
   openInvoices: [],
+  refetchQueries: [],
+  setOpenResendInvoice: jest.fn(),
   setBoatToEdit: jest.fn(),
   setOpenInvoice: jest.fn(),
-  onClickCreateBoat: jest.fn(),
 };
 
 describe('CustomerView', () => {
