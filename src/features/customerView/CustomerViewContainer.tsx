@@ -240,7 +240,6 @@ const CustomerViewContainer = () => {
         />
       </Modal>
 
-      {/* TODO: Send invoices for berth leases */}
       <Modal isOpen={!!openResendInvoice} toggleModal={() => setOpenResendInvoice(undefined)}>
         <SendInvoiceFormContainer
           orderId={openResendInvoice?.orderId ?? ''}
