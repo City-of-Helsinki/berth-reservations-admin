@@ -290,7 +290,6 @@ exports[`WinterStorageAreaCard renders correctly with all props 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;
 
@@ -546,6 +545,5 @@ exports[`WinterStorageAreaCard renders correctly with minimum props 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

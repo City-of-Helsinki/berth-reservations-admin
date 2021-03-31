@@ -53,7 +53,9 @@ const EditForm: React.FC<EditFormProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const { data, loading } = useQuery<ORDER_OPTIONAL_PRODUCTS>(ORDER_OPTIONAL_PRODUCTS_QUERY);
-  const [createOrderLine] = useMutation<CREATE_ORDER_LINE, CREATE_ORDER_LINE_VARS>(CREATE_ORDER_LINE_MUTATION);
+  const [createOrderLine] = useMutation<CREATE_ORDER_LINE, CREATE_ORDER_LINE_VARS>(CREATE_ORDER_LINE_MUTATION, {
+    refetchQueries: refetchQueries ?? [],
+  });
   const [deleteOrderLine] = useMutation<DELETE_ORDER_LINE, DELETE_ORDER_LINE_VARS>(DELETE_ORDER_LINE_MUTATION, {
     refetchQueries: refetchQueries ?? [],
   });

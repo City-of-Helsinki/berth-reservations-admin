@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderOrderType, OrderStatus, ProductServiceType, PriceUnits, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, AdditionalProductType, OrderOrderType, PriceUnits, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_CUSTOMER
@@ -96,6 +96,12 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier_p
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier_properties {
   __typename: "PierProperties";
   identifier: string;
+  electricity: boolean;
+  gate: boolean;
+  lighting: boolean;
+  mooring: boolean;
+  wasteCollection: boolean;
+  water: boolean;
   harbor: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier_properties_harbor;
 }
 
@@ -108,22 +114,72 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier {
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth {
   __typename: "BerthNode";
   id: string;
-  number: string;
-  length: number;
-  width: number;
   depth: number | null;
+  length: number;
   mooringType: BerthMooringType;
+  width: number;
+  comment: string;
+  isAccessible: boolean | null;
+  number: string;
   pier: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth_pier;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_customer_primaryEmail {
+  __typename: "EmailNode";
+  id: string;
+  email: string;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_customer {
+  __typename: "ProfileNode";
+  id: string;
+  primaryEmail: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_customer_primaryEmail | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges_node_product {
+  __typename: "AdditionalProductNode";
+  id: string;
+  service: ProductServiceType;
+  productType: AdditionalProductType;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges_node {
+  __typename: "OrderLineNode";
+  id: string;
+  price: any;
+  product: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges_node_product | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges {
+  __typename: "OrderLineNodeEdge";
+  node: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges_node | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines {
+  __typename: "OrderLineNodeConnection";
+  edges: (INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines_edges | null)[];
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order {
+  __typename: "OrderNode";
+  id: string;
+  orderNumber: string;
+  price: any;
+  totalPrice: any;
+  status: OrderStatus;
+  orderLines: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order_orderLines;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node {
   __typename: "BerthLeaseNode";
-  id: string;
-  status: LeaseStatus;
   startDate: any;
   endDate: any;
   isActive: boolean;
+  id: string;
+  status: LeaseStatus;
   berth: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_berth;
+  customer: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_customer;
+  order: INDIVIDUAL_CUSTOMER_profile_berthLeases_edges_node_order | null;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthLeases_edges {
@@ -268,6 +324,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
   id: string;
   startDate: any;
   endDate: any;
+  status: LeaseStatus;
   berth: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth;
 }
 
@@ -326,6 +383,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStora
   id: string;
   startDate: any;
   endDate: any;
+  status: LeaseStatus;
   place: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place | null;
   section: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_section | null;
 }

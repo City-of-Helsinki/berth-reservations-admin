@@ -190,7 +190,6 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;
 
@@ -423,6 +422,5 @@ exports[`BerthPricing renders normally 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

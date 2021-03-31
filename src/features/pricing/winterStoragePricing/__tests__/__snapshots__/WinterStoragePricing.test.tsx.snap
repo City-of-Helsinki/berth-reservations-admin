@@ -198,7 +198,6 @@ exports[`WinterStoragePricing renders noData message when there is no data 1`] =
       </div>
     </div>
   </div>
-   
 </div>
 `;
 
@@ -440,6 +439,5 @@ exports[`WinterStoragePricing renders normally 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

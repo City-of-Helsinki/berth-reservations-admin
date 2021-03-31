@@ -149,7 +149,6 @@ exports[`BoatCard renders correctly 1`] = `
       </article>
     </div>
   </div>
-   
 </div>
 `;
 
@@ -302,6 +301,5 @@ exports[`BoatCard renders missing fields correctly 1`] = `
       </article>
     </div>
   </div>
-   
 </div>
 `;

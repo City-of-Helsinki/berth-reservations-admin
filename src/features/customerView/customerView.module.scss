@@ -6,3 +6,7 @@
   grid-auto-rows: max-content;
   grid-gap: units(1.5);
 }
+
+.fullWidth {
+  grid-column: 1 / -1;
+}

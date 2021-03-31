@@ -22,6 +22,7 @@
     "addNew": "Lisää uusi",
     "address": "Osoite",
     "cancel": "Peruuta",
+    "continue": "Jatka",
     "close": "Sulje",
     "edit": "Muokkaa",
     "email": "Sähköposti",
@@ -159,8 +160,8 @@
     },
     "leaseStatus": {
       "drafted" : "Luotu",
-      "offered" : "Tarjous Lähetetty",
-      "refused" : "Tarjous Hylätty",
+      "offered" : "Tarjous lähetetty",
+      "refused" : "Tarjous hylätty",
       "expired" : "Vanhentunut",
       "error" : "Virhe",
       "paid" : "Maksettu",
@@ -490,7 +491,10 @@
     "notifications": {
       "berthLeaseCreated": {
         "label": "Hakemus käsitelty",
-        "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle {{name}}."
+        "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+      },
+      "noBoat": {
+        "description": "Asiakkaalla ei ole venettä."
       }
     }
   },
@@ -603,6 +607,11 @@
         "infoSectionTitle": "TALVISÄILYTYSPAIKKA",
         "addressLabel": "Talvisäilytysalue"
       }
+    },
+    "createLease": {
+      "title": "Lisää venepaikan vuokrasopimus",
+      "selectHarbor": "Valitse satama",
+      "selectBoat": "Valitse vene"
     }
   },
   "pricing": {

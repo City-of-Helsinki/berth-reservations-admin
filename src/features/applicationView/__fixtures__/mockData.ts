@@ -57,6 +57,7 @@ export const mockLease: LEASE = {
   status: LeaseStatus.DRAFTED,
   berth: {
     __typename: 'BerthNode',
+    id: '57b29b9a-f78f-487e-a883-e12f37219212',
     comment: '',
     depth: null,
     isAccessible: null,
@@ -65,6 +66,7 @@ export const mockLease: LEASE = {
     number: '1',
     pier: {
       __typename: 'PierNode',
+      id: 'ca79f48b-3e02-4abf-b48d-0cb4bb5b6e4d',
       properties: {
         __typename: 'PierProperties',
         electricity: false,

@@ -1,8 +1,8 @@
-import { BerthLease_lease as BerthLease } from './__generated__/BerthLease';
+import { BerthLease } from './__generated__/BerthLease';
 import { LeaseDetails } from './types';
 import { getOrder } from '../../invoiceCard/utils';
 
-export const getOfferDetailsData = (lease: BerthLease | null): LeaseDetails | null => {
+export const getOfferDetailsData = (lease: BerthLease | null | undefined): LeaseDetails | null => {
   if (!lease) return null;
 
   const order: LeaseDetails['order'] = lease.order ? getOrder(lease.order) : null;

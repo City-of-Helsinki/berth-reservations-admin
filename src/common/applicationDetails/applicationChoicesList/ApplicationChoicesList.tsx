@@ -61,16 +61,17 @@ const ApplicationChoicesList = ({
             const target = isHarborChoice(choice) ? choice.harbor : choice.winterStorageArea;
             const targetName = isHarborChoice(choice) ? choice.harborName : choice.winterStorageAreaName;
 
+            routerQuery.set('application', applicationId);
             routerQuery.set(isHarborChoice(choice) ? 'harbor' : 'winter-storage-area', target);
 
             return (
-              <ListItem key={i}>
+              <ListItem key={i} className={styles.listItem}>
                 <Text>
                   {`${t('applicationDetails.applicationChoicesList.choice')} 
                       ${i + 1}: `}
                 </Text>
                 {!!customerId ? (
-                  <InternalLink to={`/offer/${applicationId}?${routerQuery}`}>{targetName}</InternalLink>
+                  <InternalLink to={`/offer?${routerQuery}`}>{targetName}</InternalLink>
                 ) : (
                   <Text>{targetName}</Text>
                 )}

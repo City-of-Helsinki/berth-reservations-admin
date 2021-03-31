@@ -1,4 +1,4 @@
-import { BerthLease_lease as BerthLease } from '../__generated__/BerthLease';
+import { BerthLease } from '../__generated__/BerthLease';
 import {
   AdditionalProductType,
   BerthMooringType,
@@ -11,6 +11,7 @@ export const lease: BerthLease = {
   id: '165023f5-5b74-4656-9315-d4e1a22f111d',
   status: LeaseStatus.DRAFTED,
   berth: {
+    id: '23977d2f-0988-4569-8ccc-03d06f0b003c',
     depth: null,
     length: 6,
     mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
@@ -19,6 +20,7 @@ export const lease: BerthLease = {
     isAccessible: null,
     number: '1',
     pier: {
+      id: '274307ca-a8c4-4f12-bf78-c23e13e949a6',
       properties: {
         identifier: 'C',
         electricity: true,

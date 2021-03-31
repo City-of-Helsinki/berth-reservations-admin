@@ -171,6 +171,5 @@ exports[`InvoiceCard renders normally 1`] = `
       <div />
     </div>
   </div>
-   
 </div>
 `;

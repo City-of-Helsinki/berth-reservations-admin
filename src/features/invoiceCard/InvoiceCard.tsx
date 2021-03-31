@@ -13,11 +13,10 @@ import OrderSection from './OrderSection';
 import { Order, PlaceProperty } from './types';
 import Button from '../../common/button/Button';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
-import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { ORDER_STATUS } from '../../common/utils/constants';
 
 export interface InvoiceCardProps {
-  applicationStatus: ApplicationStatus;
   buttonsRight?: React.ReactNode;
   className?: string;
   editAdditionalServices: () => void;
@@ -34,7 +33,6 @@ export interface InvoiceCardProps {
 }
 
 const InvoiceCard = ({
-  applicationStatus,
   buttonsRight,
   className,
   editAdditionalServices,
@@ -67,15 +65,12 @@ const InvoiceCard = ({
     );
 
   const renderSendButton = () => {
-    if (
-      invoicingDisabled ||
-      (applicationStatus !== ApplicationStatus.OFFER_GENERATED && applicationStatus !== ApplicationStatus.OFFER_SENT)
-    ) {
+    if (invoicingDisabled || (leaseStatus !== LeaseStatus.DRAFTED && leaseStatus !== LeaseStatus.OFFERED)) {
       return null;
     }
     return (
       <Button onClick={sendInvoice} disabled={order === null}>
-        {applicationStatus === ApplicationStatus.OFFER_GENERATED
+        {leaseStatus === LeaseStatus.DRAFTED
           ? sendButtonLabel ?? t('invoiceCard.sendInvoice.title')
           : t('invoiceCard.resendInvoice')}
       </Button>

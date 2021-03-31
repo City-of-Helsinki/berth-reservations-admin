@@ -1,4 +1,10 @@
-import { OrderOrderType, OrderStatus, PriceUnits, ProductServiceType } from '../../../@types/__generated__/globalTypes';
+import {
+  LeaseStatus,
+  OrderOrderType,
+  OrderStatus,
+  PriceUnits,
+  ProductServiceType,
+} from '../../../@types/__generated__/globalTypes';
 import { BerthInvoice, WinterStorageInvoice } from '../types';
 import { INDIVIDUAL_CUSTOMER_profile as CUSTOMER_PROFILE } from '../__generated__/INDIVIDUAL_CUSTOMER';
 
@@ -25,6 +31,7 @@ export const emptyMockProfile: CUSTOMER_PROFILE = {
 export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
   {
     leaseId: 'MOCK-LEASE-ID',
+    leaseStatus: LeaseStatus.OFFERED,
     orderId: 'MOCK-ORDER-ID',
     orderNumber: 'MOCK-INVOICE',
     orderType: OrderOrderType.LEASE_ORDER,

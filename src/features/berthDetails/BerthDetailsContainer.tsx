@@ -10,7 +10,7 @@ import { getBerthLeases } from './utils';
 
 interface BerthDetailsContainerProps {
   id: string;
-  onEdit(): void;
+  onEdit?(): void;
 }
 
 const BerthDetailsContainer = ({ id, onEdit }: BerthDetailsContainerProps) => {

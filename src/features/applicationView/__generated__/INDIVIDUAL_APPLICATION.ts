@@ -101,11 +101,13 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth_pier_proper
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth_pier {
   __typename: "PierNode";
+  id: string;
   properties: INDIVIDUAL_APPLICATION_berthApplication_lease_berth_pier_properties | null;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth {
   __typename: "BerthNode";
+  id: string;
   depth: number | null;
   length: number;
   mooringType: BerthMooringType;

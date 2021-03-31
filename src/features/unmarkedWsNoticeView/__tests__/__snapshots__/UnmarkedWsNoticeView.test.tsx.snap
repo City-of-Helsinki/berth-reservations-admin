@@ -511,7 +511,6 @@ exports[`UnmarkedWsNoticeView renders normally 1`] = `
         />
       </div>
     </div>
-     
   </div>
 </div>
 `;
@@ -785,7 +784,6 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
         </section>
       </article>
     </div>
-     
   </div>
   <div
     class="card actionHistoryCard"
@@ -828,7 +826,6 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
         </a>
       </div>
     </div>
-     
   </div>
   <div
     class="card fullWidth"
@@ -1304,7 +1301,6 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
         </div>
       </div>
     </div>
-     
   </div>
 </div>
 `;

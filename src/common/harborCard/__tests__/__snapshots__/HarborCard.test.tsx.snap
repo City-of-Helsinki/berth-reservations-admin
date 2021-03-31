@@ -320,6 +320,5 @@ exports[`HarborCard renders normally 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

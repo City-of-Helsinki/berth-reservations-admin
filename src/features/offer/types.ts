@@ -1,8 +1,14 @@
+/* eslint-disable @typescript-eslint/camelcase */
+export type {
+  OFFER_harborByServicemapId as HarborData,
+  OFFER_harborByServicemapId_properties_piers as PiersData,
+} from './__generated__/OFFER';
+export type { OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats_edges_node as BoatData } from './__generated__/OFFER_WITHOUT_APPLICATION_PROFILE';
+/* eslint-enable @typescript-eslint/camelcase */
+
 export type Lease = {
   customer: {
     id: string;
-    firstName: string;
-    lastName: string;
   };
   status: string;
   startDate: string;

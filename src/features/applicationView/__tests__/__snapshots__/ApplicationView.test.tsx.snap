@@ -293,7 +293,6 @@ exports[`ApplicationView renders normally with minimum props 1`] = `
         <div />
       </div>
     </div>
-     
   </div>
 </div>
 `;

@@ -42,6 +42,5 @@ exports[`ActionHistoryCard renders normally 1`] = `
       </a>
     </div>
   </div>
-   
 </div>
 `;

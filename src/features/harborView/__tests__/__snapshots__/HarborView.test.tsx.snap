@@ -304,7 +304,6 @@ exports[`HarborView renders normally 1`] = `
           </div>
         </div>
       </div>
-       
     </div>
     <div
       class="card"
@@ -376,7 +375,6 @@ exports[`HarborView renders normally 1`] = `
           </section>
         </article>
       </div>
-       
     </div>
     <div
       class="card actionHistoryCard"
@@ -419,7 +417,6 @@ exports[`HarborView renders normally 1`] = `
           </a>
         </div>
       </div>
-       
     </div>
   </div>
   <div>

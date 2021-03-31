@@ -240,7 +240,6 @@ exports[`PricingPage renders normally 1`] = `
           </div>
         </div>
       </div>
-       
     </div>
     <div
       class="card"
@@ -377,7 +376,6 @@ exports[`PricingPage renders normally 1`] = `
           </div>
         </div>
       </div>
-       
     </div>
   </div>
   <div
@@ -617,7 +615,6 @@ exports[`PricingPage renders normally 1`] = `
         </div>
       </div>
     </div>
-     
   </div>
   <div
     class="card"
@@ -817,7 +814,6 @@ exports[`PricingPage renders normally 1`] = `
         </div>
       </div>
     </div>
-     
   </div>
   <div
     class="card additionalServicePricing"
@@ -1056,7 +1052,6 @@ exports[`PricingPage renders normally 1`] = `
         </button>
       </div>
     </div>
-     
   </div>
 </div>
 `;

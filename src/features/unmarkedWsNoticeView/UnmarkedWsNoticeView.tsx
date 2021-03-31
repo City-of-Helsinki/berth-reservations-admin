@@ -105,7 +105,6 @@ const UnmarkedWsNoticeView = ({
 
       {order && (
         <InvoiceCard
-          applicationStatus={noticeDetails.status}
           buttonsRight={
             canDeleteLease(leaseStatus) && (
               <DeleteButton

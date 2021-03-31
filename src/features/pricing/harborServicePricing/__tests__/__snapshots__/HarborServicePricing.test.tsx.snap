@@ -166,7 +166,6 @@ exports[`HarborServicePricing renders noData message when there is no data 1`] =
       </div>
     </div>
   </div>
-   
 </div>
 `;
 
@@ -369,6 +368,5 @@ exports[`HarborServicePricing renders normally 1`] = `
       </div>
     </div>
   </div>
-   
 </div>
 `;

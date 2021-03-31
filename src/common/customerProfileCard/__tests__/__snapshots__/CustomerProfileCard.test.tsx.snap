@@ -214,7 +214,6 @@ exports[`CustomerProfileCard with a private customer profile renders normally 1`
       </section>
     </article>
   </div>
-   
 </div>
 `;
 
@@ -482,7 +481,6 @@ exports[`CustomerProfileCard with an organization customer profile renders norma
       </section>
     </article>
   </div>
-   
 </div>
 `;
 
@@ -716,7 +714,6 @@ exports[`CustomerProfileCard with the minimum organization customer profile fiel
       </section>
     </article>
   </div>
-   
 </div>
 `;
 
@@ -908,6 +905,5 @@ exports[`CustomerProfileCard with the minimum private customer profile fields re
       </section>
     </article>
   </div>
-   
 </div>
 `;

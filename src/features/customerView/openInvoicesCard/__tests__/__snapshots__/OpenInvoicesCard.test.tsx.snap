@@ -154,6 +154,5 @@ exports[`OpenInvoicesCard renders normally 1`] = `
       </button>
     </div>
   </div>
-   
 </div>
 `;
