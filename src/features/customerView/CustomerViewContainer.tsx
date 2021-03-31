@@ -18,7 +18,7 @@ import {
   getWinterStorageLeases,
 } from './utils';
 import { Invoice, Boat, BerthLease } from './types';
-import { OrderStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
 import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
 import InvoiceModal from './invoiceModal/InvoiceModal';
@@ -29,7 +29,6 @@ import {
   REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
 } from '../applicationView/__generated__/REJECT_BERTH_APPLICATION';
 import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
-import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 import SendInvoiceFormContainer from '../invoiceCard/sendInvoiceForm/SendInvoiceFormContainer';
 import CreateLeaseModal from './createLease/CreateLeaseModal';
@@ -44,7 +43,8 @@ import {
 } from './__generated__/CANCEL_WINTER_STORAGE_LEASE';
 import { getProfileToken } from '../../common/utils/auth';
 import hdsToast from '../../common/toast/hdsToast';
-import useCreateLease from './createLease/useCreateLease';
+import { getOfferDetailsData } from '../applicationView/berthOfferCard/utils';
+import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
@@ -65,7 +65,7 @@ const CustomerViewContainer = () => {
   const [rejectApplication] = useMutation<REJECT_BERTH_APPLICATION, REJECT_BERTH_APPLICATION_VARS>(
     REJECT_BERTH_APPLICATION_MUTATION,
     {
-      refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
+      refetchQueries: [getOperationName(INDIVIDUAL_CUSTOMER_QUERY) || 'INDIVIDUAL_CUSTOMER_QUERY'],
     }
   );
   const [cancelBerthApplication] = useMutation<CANCEL_BERTH_LEASE, CANCEL_BERTH_LEASE_VARS>(
@@ -74,6 +74,7 @@ const CustomerViewContainer = () => {
   const [cancelWinterStorageApplication] = useMutation<CANCEL_WINTER_STORAGE_LEASE, CANCEL_WINTER_STORAGE_LEASE_VARS>(
     CANCEL_WINTER_STORAGE_LEASE_MUTATION
   );
+  const [deleteOffer, { loading: isDeletingOffer }] = useDeleteBerthApplication();
 
   const handleNoPlacesAvailable = async (id: string) =>
     rejectApplication({
@@ -142,22 +143,37 @@ const CustomerViewContainer = () => {
   const berthLeases = getBerthLeases(data.profile);
   const leases = [...berthLeases, ...getWinterStorageLeases(data.profile)];
   const openInvoices = invoices.filter((invoice) => invoice.status === OrderStatus.WAITING);
+  const offersData = data.profile.berthLeases?.edges.filter((edge) => edge?.node?.status === LeaseStatus.DRAFTED) ?? [];
+  const offers = offersData.map((offerData) => getOfferDetailsData(offerData?.node));
 
+  const handleDeleteOffer = (id: string) =>
+    deleteOffer({
+      variables: {
+        input: {
+          id,
+        },
+      },
+      refetchQueries: [getOperationName(INDIVIDUAL_CUSTOMER_QUERY) || 'INDIVIDUAL_CUSTOMER_QUERY'],
+    });
   return (
     <>
       <CustomerView
         applications={applications}
         boats={boats}
         cancelLease={handleCancelLease}
-        createLease={createLease}
+        createLease={() => setCreatingLease(true)}
         customerProfile={customerProfile}
+        handleDeleteOffer={handleDeleteOffer}
         handleEditCustomer={() => setEditCustomer(true)}
         handleNoPlacesAvailable={handleNoPlacesAvailable}
+        isDeletingOffer={isDeletingOffer}
         invoices={invoices}
         leases={leases}
+        offers={offers}
         onClickCreateBoat={() => setCreatingBoat(true)}
         onClickCreateAdditionalInvoice={() => setCreatingAdditionalInvoice(true)}
         openInvoices={openInvoices}
+        refetchQueries={[getOperationName(INDIVIDUAL_CUSTOMER_QUERY) || 'INDIVIDUAL_CUSTOMER_QUERY']}
         setBoatToEdit={setBoatToEdit}
         setOpenInvoice={setOpenInvoice}
         setOpenResendInvoice={setOpenResendInvoice}

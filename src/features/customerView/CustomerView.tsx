@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { PureQueryOptions } from 'apollo-client';
 
 import styles from './customerView.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -14,18 +15,23 @@ import BerthLeasesCard from './leasesCard/BerthLeasesCard';
 import WinterStorageLeasesCard from './leasesCard/WinterStorageLeasesCard';
 import { isBerthLease, isWinterStorageLease } from './utils';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
+import BerthOfferCard, { BerthOfferCardProps } from '../applicationView/berthOfferCard/BerthOfferCard';
 
 export interface CustomerViewProps {
   applications: Application[];
   boats: Boat[];
   customerProfile: CustomerProfileCardProps;
+  handleDeleteOffer: (id: string) => void;
   handleEditCustomer: () => void;
   handleNoPlacesAvailable: (id: string) => void;
+  isDeletingOffer: boolean;
   invoices: Invoice[];
   leases: Lease[];
+  offers: Array<BerthOfferCardProps['leaseDetails'] | null>;
   onClickCreateAdditionalInvoice: () => void;
   onClickCreateBoat: () => void;
   openInvoices: Invoice[];
+  refetchQueries: PureQueryOptions[] | string[];
   setBoatToEdit: (boat: Boat | null) => void;
   setOpenInvoice: (invoice: Invoice | undefined) => void;
   setOpenResendInvoice: (invoice: Invoice | undefined) => void;
@@ -39,19 +45,24 @@ const CustomerView = ({
   cancelLease,
   createLease,
   customerProfile,
+  handleDeleteOffer,
   handleEditCustomer,
   handleNoPlacesAvailable,
+  isDeletingOffer,
   invoices,
   leases,
+  offers,
   onClickCreateAdditionalInvoice,
   onClickCreateBoat,
   openInvoices,
+  refetchQueries,
   setBoatToEdit,
   setOpenInvoice,
   setOpenResendInvoice,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   const customerName = `${customerProfile.firstName} ${customerProfile.lastName}`;
+
   return (
     <PageContent>
       <PageTitle title={t('customerView.title')} />
@@ -61,6 +72,19 @@ const CustomerView = ({
         <ActionHistoryCard />
 
         <ApplicationsCard applications={applications} handleNoPlacesAvailable={handleNoPlacesAvailable} />
+
+        {offers
+          .filter((offer): offer is BerthOfferCardProps['leaseDetails'] => !!offer)
+          .map((offer) => (
+            <BerthOfferCard
+              key={offer.id}
+              className={styles.fullWidth}
+              leaseDetails={offer}
+              handleDeleteLease={handleDeleteOffer}
+              isDeletingLease={isDeletingOffer}
+              refetchQueries={refetchQueries}
+            />
+          ))}
 
         <OpenInvoicesCard
           invoices={openInvoices}
