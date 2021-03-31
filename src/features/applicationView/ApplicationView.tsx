@@ -98,7 +98,6 @@ const ApplicationView = ({
       {leaseDetails && (
         <BerthOfferCard
           className={styles.fullWidth}
-          applicationStatus={applicationDetails.status}
           leaseDetails={leaseDetails}
           handleDeleteLease={handleDeleteLease}
           isDeletingLease={isDeletingLease}

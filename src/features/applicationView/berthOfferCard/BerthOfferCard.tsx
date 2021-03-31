@@ -10,14 +10,12 @@ import InvoiceCard from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
 import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
 import { canDeleteLease } from '../../../common/utils/leaseUtils';
 import { berthInvoicingFeatureFlag } from '../../../common/utils/featureFlags';
 
 export interface BerthOfferCardProps {
   className?: string;
-  applicationStatus: ApplicationStatus;
   leaseDetails: LeaseDetails;
   refetchQueries: PureQueryOptions[] | string[];
   isDeletingLease: boolean;
@@ -26,7 +24,6 @@ export interface BerthOfferCardProps {
 
 const BerthOfferCard = ({
   className,
-  applicationStatus,
   leaseDetails: {
     id,
     status,
@@ -63,7 +60,6 @@ const BerthOfferCard = ({
 
   return (
     <InvoiceCard
-      applicationStatus={applicationStatus}
       buttonsRight={
         <>
           <Button variant="supplementary" disabled>
