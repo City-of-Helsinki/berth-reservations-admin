@@ -140,6 +140,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 id
                 startDate
                 endDate
+                status
                 berth {
                   id
                   number
@@ -161,6 +162,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 id
                 startDate
                 endDate
+                status
                 place {
                   id
                   winterStorageSection {

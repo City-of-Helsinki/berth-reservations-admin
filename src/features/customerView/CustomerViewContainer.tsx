@@ -142,7 +142,9 @@ const CustomerViewContainer = () => {
   const customerProfile = getCustomerProfile(data.profile);
   const berthLeases = getBerthLeases(data.profile);
   const leases = [...berthLeases, ...getWinterStorageLeases(data.profile)];
-  const openInvoices = invoices.filter((invoice) => invoice.status === OrderStatus.WAITING);
+  const openInvoices = invoices.filter(
+    (invoice) => invoice.status === OrderStatus.WAITING && invoice.leaseStatus !== LeaseStatus.DRAFTED
+  );
   const offersData = data.profile.berthLeases?.edges.filter((edge) => edge?.node?.status === LeaseStatus.DRAFTED) ?? [];
   const offers = offersData.map((offerData) => getOfferDetailsData(offerData?.node));
 

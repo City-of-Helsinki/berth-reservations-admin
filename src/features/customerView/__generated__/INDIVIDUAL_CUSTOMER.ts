@@ -324,6 +324,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
   id: string;
   startDate: any;
   endDate: any;
+  status: LeaseStatus;
   berth: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth;
 }
 
@@ -382,6 +383,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStora
   id: string;
   startDate: any;
   endDate: any;
+  status: LeaseStatus;
   place: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_place | null;
   section: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_WinterStorageLeaseNode_section | null;
 }
