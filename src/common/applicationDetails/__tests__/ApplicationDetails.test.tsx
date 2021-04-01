@@ -3,85 +3,30 @@ import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { MockedProvider } from '@apollo/react-testing';
+import { act } from 'react-dom/test-utils';
 
 import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetails';
-import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
-import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
-import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
+import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../deleteButton/DeleteButton';
 import ConfirmationModal from '../../confirmationModal/ConfirmationModal';
 import { canDeleteLease } from '../../utils/leaseUtils';
+import {
+  lease,
+  minimumProps,
+  moreProps,
+  organizationCustomerProfile,
+  privateCustomerProfile,
+} from '../__fixtures__/mockData';
 
-const minimumProps: ApplicationDetailsProps = {
-  accessibilityRequired: false,
-  berthSwitch: null,
-  boatDraught: null,
-  boatLength: 6,
-  boatModel: 'Marine',
-  boatName: 'Cama la Yano',
-  boatRegistrationNumber: 'A 12345',
-  boatType: null,
-  boatWeight: null,
-  boatWidth: 3.2,
-  createdAt: 'Wed Oct 23 2019 15:15:05 GMT+0300 (Eastern European Summer Time)',
-  choices: [],
-  id: '54321',
-  queue: 0,
-  status: ApplicationStatus.PENDING,
-};
+// BerthContractDetailsContainer is mocked to limit the test scope
+jest.mock('../../../features/contractDetails/BerthContractDetailsContainer', () => {
+  const BerthContractDetailsContainer = () => <div>BerthContractDetailsContainer</div>;
 
-const moreProps: Partial<ApplicationDetailsProps> = {
-  accessibilityRequired: true,
-  berthSwitch: {
-    berthNum: 'berth',
-    harborId: '123',
-    harborName: 'harbor',
-    pierIdentifier: 'pier',
-    reason: 'reason',
-  },
-  boatDraught: 0.8,
-  boatType: 'Purjevene / moottoripursi',
-  boatWeight: 350,
-  customerId: '47',
-  choices: [
-    { harborName: 'Eka satama', harbor: '123', priority: 1 },
-    { harborName: 'Kolmas satama', harbor: '321', priority: 3 },
-  ],
-};
-
-const privateCustomerProfile: PrivateCustomerDetailsProps = {
-  firstName: 'Testi',
-  lastName: 'Käyttäjä',
-  primaryAddress: {
-    address: 'Testikatu 1',
-    postalCode: '00100',
-    city: 'Helsinki',
-  },
-  primaryEmail: 'test@example.com',
-  primaryPhone: '0504391742',
-  language: Language.FINNISH,
-};
-
-const organizationCustomerProfile: OrganizationCustomerDetailsProps = {
-  ...privateCustomerProfile,
-  organization: {
-    address: 'Liiketoimintaraitti 12',
-    businessId: '1234567-8',
-    city: 'Helsinki',
-    name: 'Liikeyritys Oy',
-    postalCode: '00100',
-  },
-  customerGroup: CustomerGroup.COMPANY,
-};
-
-const lease: ApplicationDetailsProps['lease'] = {
-  berthNum: '1',
-  harborId: 'harborId',
-  harborName: 'Testisatama',
-  id: 'id',
-  pierIdentifier: '2',
-  status: LeaseStatus.DRAFTED,
-};
+  return {
+    __esModule: true,
+    default: BerthContractDetailsContainer,
+  };
+});
 
 describe('ApplicationDetails', () => {
   const getWrapper = (props?: Partial<ApplicationDetailsProps>) =>
@@ -172,8 +117,14 @@ describe('ApplicationDetails', () => {
 
     expect(wrapper.find(DeleteButton).length).toBe(1);
 
-    wrapper.find(DeleteButton).find('button').simulate('click');
-    wrapper.find(ConfirmationModal).find('button').last().simulate('click');
+    act(() => {
+      wrapper.find(DeleteButton).find('button').simulate('click');
+    });
+    wrapper.update();
+    act(() => {
+      wrapper.find(ConfirmationModal).find('button').last().simulate('click');
+    });
+
     expect(handleDeleteLease).toHaveBeenCalled();
   });
 });

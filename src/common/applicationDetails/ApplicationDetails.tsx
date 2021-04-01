@@ -23,7 +23,7 @@ import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 import BerthContractDetails from '../../features/contractDetails/BerthContractDetailsContainer';
 
-interface Lease {
+export interface Lease {
   berthNum: string | number;
   harborId: string;
   harborName: string;
