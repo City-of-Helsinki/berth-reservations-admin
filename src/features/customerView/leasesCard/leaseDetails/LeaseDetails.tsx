@@ -17,7 +17,6 @@ import styles from './leaseDetails.module.scss';
 type LeaseDetailsProps = Lease & {
   addressLabel: string;
   cancelLease: (id: string) => void;
-  createLease?: () => void;
   customerName: string;
   infoSectionTitle: string;
 };

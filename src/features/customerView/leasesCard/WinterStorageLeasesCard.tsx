@@ -36,7 +36,6 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
           key={lease.id}
           addressLabel={t('customerView.leases.winterStorage.addressLabel')}
           cancelLease={(id) => cancelLease(id, 'winterStorage')}
-          createLease={() => undefined}
           customerName={customerName}
           infoSectionTitle={t('customerView.leases.winterStorage.infoSectionTitle')}
           {...mapLeaseDetails(lease)}
