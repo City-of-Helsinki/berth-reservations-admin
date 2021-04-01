@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import waitForExpect from 'wait-for-expect';
 import { act } from 'react-dom/test-utils';
@@ -8,36 +8,51 @@ import BerthEditForm from '../BerthEditForm';
 import { INDIVIDUAL_BERTH_QUERY } from '../queries';
 import { UPDATE_BERTH_MUTATION } from '../mutations';
 import LoadingSpinner from '../../../../../common/spinner/LoadingSpinner';
+import { BerthMooringType, PriceTier } from '../../../../../@types/__generated__/globalTypes';
+import { Pier } from '../../../types';
 
-const pierOptions = [{ id: 'a', identifier: 'A' }];
+const pierOptions: Pier[] = [
+  {
+    id: 'a',
+    identifier: 'A',
+    electricity: true,
+    wasteCollection: true,
+    water: true,
+    lighting: true,
+    gate: true,
+    priceTier: PriceTier.TIER_1,
+    suitableBoatTypes: [],
+  },
+];
 const queryMock = {
   request: { query: INDIVIDUAL_BERTH_QUERY, variables: { id: 'a' } },
   result: {
     data: {
       berth: {
+        __typename: 'BerthNode',
+        id: 'MOCK-BERTH',
         number: '2',
         comment: '',
         isActive: true,
         pier: {
+          __typename: 'PierNode',
           id: pierOptions[0].id,
           properties: {
-            identifier: pierOptions[0].identifier,
             __typename: 'PierProperties',
+            identifier: pierOptions[0].identifier,
           },
-          __typename: 'PierNode',
         },
-        mooringType: 'SINGLE_SLIP_PLACE',
+        mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
         width: 2.25,
         length: 5,
         depth: 1,
-        __typename: 'BerthNode',
       },
     },
   },
 };
 
 describe('features/harborView/BerthEditForm', () => {
-  const waitForContent = async (wrapper) => {
+  const waitForContent = async (wrapper: ReactWrapper) => {
     await act(async () => {
       await waitForExpect(() => {
         wrapper.update();
