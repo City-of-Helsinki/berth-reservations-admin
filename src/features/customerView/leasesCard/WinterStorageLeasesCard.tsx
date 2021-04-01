@@ -38,7 +38,7 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
           cancelLease={(id) => cancelLease(id, 'winterStorage')}
           customerName={customerName}
           infoSectionTitle={t('customerView.leases.winterStorage.infoSectionTitle')}
-          {...mapLeaseDetails(lease)}
+          lease={mapLeaseDetails(lease)}
         />
       ))}
     </Card>

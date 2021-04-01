@@ -14,29 +14,20 @@ import { formatDate, formatDimension } from '../../../../common/utils/format';
 import { getMooringTypeTKey } from '../../../../common/utils/translations';
 import styles from './leaseDetails.module.scss';
 
-type LeaseDetailsProps = Lease & {
+type LeaseDetailsProps = {
   addressLabel: string;
   cancelLease: (id: string) => void;
   customerName: string;
   infoSectionTitle: string;
+  lease: Lease;
 };
 
 const LeaseDetails = ({
-  address,
   addressLabel,
   cancelLease,
   customerName,
-  depth,
-  endDate,
-  id,
   infoSectionTitle,
-  length,
-  link,
-  mooringType,
-  renderContractDetails,
-  startDate,
-  status,
-  width,
+  lease: { address, depth, endDate, id, length, link, mooringType, renderContractDetails, startDate, status, width },
 }: LeaseDetailsProps) => {
   const {
     t,

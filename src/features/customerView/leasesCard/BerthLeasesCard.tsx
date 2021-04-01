@@ -46,7 +46,7 @@ const BerthLeasesCard = ({ customerName, cancelLease, createLease, leases }: Ber
           cancelLease={(id) => cancelLease(id, 'berth')}
           customerName={customerName}
           infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
-          {...mapLeaseDetails(lease)}
+          lease={mapLeaseDetails(lease)}
         />
       ))}
       <CardBody className={styles.createLease}>
