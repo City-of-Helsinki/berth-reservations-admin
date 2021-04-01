@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
+import { act } from 'react-dom/test-utils';
 
 import Button from '../../../../common/button/Button';
 import OpenInvoicesCard, { OpenInvoicesCardProps } from '../OpenInvoicesCard';
@@ -11,6 +12,16 @@ const mockProps: OpenInvoicesCardProps = {
   handleShowInvoice: jest.fn(),
   handleResendInvoice: jest.fn(),
 };
+
+// BerthContractDetailsContainer is mocked to limit the test scope
+jest.mock('../../../contractDetails/BerthContractDetailsContainer', () => {
+  const BerthContractDetailsContainer = () => <div>BerthContractDetailsContainer</div>;
+
+  return {
+    __esModule: true,
+    default: BerthContractDetailsContainer,
+  };
+});
 
 describe('OpenInvoicesCard', () => {
   beforeEach(() => {
@@ -32,14 +43,22 @@ describe('OpenInvoicesCard', () => {
 
   it('invokes handleShowInvoice method when the user clicks on the Show Invoice button', () => {
     const wrapper = getWrapper();
-    wrapper.find(Button).at(0).simulate('click');
+
+    act(() => {
+      wrapper.find(Button).at(0).simulate('click');
+    });
+    wrapper.update();
 
     expect(mockProps.handleShowInvoice).toHaveBeenCalledTimes(1);
   });
 
   it('invokes handleShowInvoice method when the user clicks on the Resend Invoice button', () => {
     const wrapper = getWrapper();
-    wrapper.find(Button).at(1).simulate('click');
+
+    act(() => {
+      wrapper.find(Button).at(1).simulate('click');
+    });
+    wrapper.update();
 
     expect(mockProps.handleResendInvoice).toHaveBeenCalledTimes(1);
   });

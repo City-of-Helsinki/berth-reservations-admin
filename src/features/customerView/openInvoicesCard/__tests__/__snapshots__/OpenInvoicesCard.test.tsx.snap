@@ -129,6 +129,9 @@ exports[`OpenInvoicesCard renders normally 1`] = `
         </div>
       </section>
     </article>
+    <div>
+      BerthContractDetailsContainer
+    </div>
     <div
       class="buttons"
     >
