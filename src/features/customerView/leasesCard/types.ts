@@ -12,6 +12,7 @@ export type Lease = {
   mooringType?: BerthMooringType;
   startDate: string;
   status: LeaseStatus;
+  type: 'berth' | 'winterStorage';
   width?: number;
   renderContractDetails(): React.ReactNode;
 };

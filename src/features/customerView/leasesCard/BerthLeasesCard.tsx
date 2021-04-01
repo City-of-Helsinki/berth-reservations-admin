@@ -30,8 +30,9 @@ const BerthLeasesCard = ({ customerName, cancelLease, createLease, leases }: Ber
       link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       mooringType: lease.mooringType,
       startDate: lease.startDate,
-      width: lease.width,
       status: lease.status,
+      type: 'berth',
+      width: lease.width,
       renderContractDetails: () => <BerthContractDetailsContainer leaseId={lease.id} />,
     };
   };

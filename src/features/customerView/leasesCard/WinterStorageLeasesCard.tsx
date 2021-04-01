@@ -24,6 +24,7 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
       link: lease?.winterStorageArea?.id ? `/winter-storage-areas/${lease?.winterStorageArea?.id}` : undefined,
       startDate: lease.startDate,
       status: lease.status,
+      type: 'winterStorage',
       renderContractDetails: () => <WinterStorageContractDetailsContainer leaseId={lease.id} />,
     };
   };
