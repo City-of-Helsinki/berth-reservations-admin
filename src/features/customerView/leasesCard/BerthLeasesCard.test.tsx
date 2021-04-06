@@ -17,6 +17,7 @@ jest.mock('../../contractDetails/BerthContractDetailsContainer', () => {
 describe('BerthLeasesCard', () => {
   const initialProps: BerthLeasesCardProps = {
     cancelLease: jest.fn(),
+    createLease: jest.fn(),
     customerName: 'Tester McTestington',
     leases: [
       {
