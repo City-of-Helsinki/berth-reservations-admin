@@ -18,12 +18,13 @@
 .modal {
   background-color: $white;
   box-shadow: 0 0 units(0.25) $black;
-  padding: units(3);
   display: flex;
   flex-direction: column;
+  max-height: 100%;
+  overflow-y: visible; // To allow dropdowns to overflow from small modals
+  padding: units(3);
+  position: relative;
   &:focus {
     outline: none;
   }
-  max-height: 100%;
-  overflow-y: auto;
 }

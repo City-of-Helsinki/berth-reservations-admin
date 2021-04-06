@@ -9,7 +9,6 @@ import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
 import Select from '../../../../common/select/Select';
 import { getHarborOptions } from './utils';
 import Button from '../../../../common/button/Button';
-import FormHeader from '../../../../common/formHeader/FormHeader';
 import styles from './switchPlaceModal.module.scss';
 
 export interface SwitchPlaceModalProps {
@@ -28,10 +27,8 @@ const SwitchPlaceModal = ({ closeModal }: SwitchPlaceModalProps) => {
   const openOfferForm = () => undefined;
 
   return (
-    <Modal isOpen toggleModal={closeModal}>
+    <Modal isOpen toggleModal={closeModal} label={t('customerView.leases.switchPlace.switchBerth').toUpperCase()}>
       <div className={styles.switchPlaceModal}>
-        <FormHeader title={t('customerView.leases.switchPlace.switchBerth')} upperCase />
-
         <p className={styles.instructions}>{t('customerView.leases.switchPlace.berthSwitchInstructions')}</p>
 
         {loading ? (
