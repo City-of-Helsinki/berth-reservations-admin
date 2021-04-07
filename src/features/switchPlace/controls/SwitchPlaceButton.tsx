@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonProps } from 'hds-react';
 
-import Button from '../../../../common/button/Button';
+import Button from '../../../common/button/Button';
 
 export interface SwitchPlaceButtonProps {
   onClick: ButtonProps['onClick'];

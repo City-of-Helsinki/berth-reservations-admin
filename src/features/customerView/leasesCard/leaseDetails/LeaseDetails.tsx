@@ -13,7 +13,7 @@ import { canLeaseBeTerminated } from '../../utils';
 import { formatDate, formatDimension } from '../../../../common/utils/format';
 import { getMooringTypeTKey } from '../../../../common/utils/translations';
 import styles from './leaseDetails.module.scss';
-import SwitchPlace from '../switchPlace/SwitchPlace';
+import SwitchPlaceControls from '../../../switchPlace/controls/SwitchPlaceControls';
 
 type LeaseDetailsProps = {
   addressLabel: string;
@@ -69,7 +69,7 @@ const LeaseDetails = ({ addressLabel, customerName, infoSectionTitle, lease, can
         {canLeaseBeTerminated(status) && (
           <CancelLeaseButton customerName={customerName} cancelLease={cancelLease} id={id} address={address} />
         )}
-        <SwitchPlace id={id} type={type} status={status} />
+        <SwitchPlaceControls id={id} type={type} status={status} />
       </div>
     </CardBody>
   );

@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 
 import SwitchPlaceModal from './SwitchPlaceModal';
-import { canLeaseBeTerminated } from '../../utils';
-import { LeaseStatus } from '../../../../@types/__generated__/globalTypes';
+import { canLeaseBeTerminated } from '../../customerView/utils';
+import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import SwitchPlaceButton from './SwitchPlaceButton';
-import { Lease } from '../types';
+import { Lease } from '../../customerView/leasesCard/types';
 
 export type SwitchPlaceProps = Pick<Lease, 'id' | 'type' | 'status'>;
 
-const SwitchPlace = ({ id, type, status }: SwitchPlaceProps) => {
+const SwitchPlaceControls = ({ id, type, status }: SwitchPlaceProps) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const canPlaceBeSwitched = (status: LeaseStatus) => canLeaseBeTerminated(status);
 
-  // Not implemented for winter storage
-  if (type === 'winterStorage') return null;
+  if (type === 'winterStorage') return null; // Not implemented for winter storage
   return (
     <>
       {canPlaceBeSwitched(status) && <SwitchPlaceButton onClick={() => setModalVisible(true)} />}
-      {modalVisible && <SwitchPlaceModal closeModal={() => setModalVisible(false)} id={id} />}
+      {modalVisible && <SwitchPlaceModal closeModal={() => setModalVisible(false)} leaseId={id} />}
     </>
   );
 };
 
-export default SwitchPlace;
+export default SwitchPlaceControls;
