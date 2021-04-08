@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
+import { useHistory } from 'react-router-dom';
 
 import Modal from '../../../common/modal/Modal';
 import { SWITCH_PLACE_HARBORS } from '../__generated__/SWITCH_PLACE_HARBORS';
@@ -10,7 +11,6 @@ import Select from '../../../common/select/Select';
 import { getHarborOptions } from '../utils';
 import Button from '../../../common/button/Button';
 import styles from './switchPlaceModal.module.scss';
-import { useHistory } from 'react-router-dom';
 
 export interface SwitchPlaceModalProps {
   leaseId: string;
