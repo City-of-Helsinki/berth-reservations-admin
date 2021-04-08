@@ -3,7 +3,7 @@ import { HarborOption } from './types';
 import { Boat } from '../../common/boatCard/types';
 import { SWITCH_PLACE_BERTH_LEASE } from './__generated__/SWITCH_PLACE_BERTH_LEASE';
 
-const sortHarborOptions = (a: HarborOption, b: HarborOption) => {
+export const sortHarborOptions = (a: HarborOption, b: HarborOption) => {
   if (a.label < b.label) {
     return -1;
   }
