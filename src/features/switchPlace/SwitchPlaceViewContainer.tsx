@@ -93,8 +93,8 @@ const SwitchPlaceViewContainer = () => {
         type: 'success',
         autoDismiss: true,
         autoDismissTime: 5000,
-        labelText: t('offer.notifications.berthLeaseCreated.label'),
-        text: t('offer.notifications.berthLeaseCreated.description', {
+        labelText: t('customerView.leases.switchPlace.notifications.berthSwitched.label'),
+        text: t('customerView.leases.switchPlace.notifications.berthSwitched.description', {
           harbor: berth.harbor,
           pier: berth.pier,
           berth: berth.berth,
