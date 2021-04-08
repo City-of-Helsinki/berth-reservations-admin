@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
+import { Notification } from 'hds-react';
 
 import styles from './offer.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -130,7 +131,13 @@ const Offer = ({
       <PageContent className={styles.offer}>
         <PageTitle title={t('offer.title')} />
         {harbor && <HarborCard harbor={harbor} className={styles.card} />}
-        {boat && <BoatCard boat={boat} />}
+        {boat ? (
+          <BoatCard boat={boat} />
+        ) : (
+          <Notification label={t('common.alert')} type="alert" className={styles.card}>
+            {t('offer.notifications.noBoatInfo.description')}
+          </Notification>
+        )}
         <Table
           data={tableData}
           columns={columns}

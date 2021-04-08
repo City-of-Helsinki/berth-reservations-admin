@@ -435,6 +435,13 @@ export interface SubscriptionInputType {
   enabled: boolean;
 }
 
+export interface SwitchBerthMutationInput {
+  oldLeaseId: string;
+  newBerthId: string;
+  switchDate?: any | null;
+  clientMutationId?: string | null;
+}
+
 export interface TerminateBerthLeaseMutationInput {
   id: string;
   endDate?: any | null;

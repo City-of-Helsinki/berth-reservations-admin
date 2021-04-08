@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory, useLocation } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
 
 import Offer from '../offer/Offer';
@@ -18,6 +18,13 @@ import {
   SWITCH_PLACE_BERTH_LEASEVariables as SWITCH_PLACE_BERTH_LEASE_VARS,
 } from './__generated__/SWITCH_PLACE_BERTH_LEASE';
 import { getLeaseBoat } from './utils';
+import { BerthData } from '../offer/types';
+import {
+  SWITCH_LEASE_BERTH,
+  SWITCH_LEASE_BERTHVariables as SWITCH_LEASE_BERTH_VARS,
+} from './__generated__/SWITCH_LEASE_BERTH';
+import { SWITCH_LEASE_BERTH_MUTATION } from './mutations';
+import hdsToast from '../../common/toast/hdsToast';
 
 function useRouterQuery() {
   return new URLSearchParams(useLocation().search);
@@ -47,8 +54,9 @@ const SwitchPlaceViewContainer = () => {
     variables: { harborId, boatWidth },
   });
 
-  // TODO: Submit switchBerth mutation with leaseId and berthId
-  // const [switchBerth, { loading: isSubmitting }] = useMutation<>();
+  const [switchBerth, { loading: isSubmitting }] = useMutation<SWITCH_LEASE_BERTH, SWITCH_LEASE_BERTH_VARS>(
+    SWITCH_LEASE_BERTH_MUTATION
+  );
 
   if (leaseLoading || harborLoading) return <LoadingSpinner isLoading />;
   if (!leaseData)
@@ -71,8 +79,29 @@ const SwitchPlaceViewContainer = () => {
 
   const handleReturn = () => history.goBack();
 
-  // TODO: Call switchBerth
-  const handleClickSelect = () => undefined;
+  const handleClickSelect = (berth: BerthData) => {
+    switchBerth({
+      variables: {
+        input: {
+          oldLeaseId: leaseId,
+          newBerthId: berth.id,
+        },
+      },
+    }).then(() => {
+      history.goBack();
+      hdsToast({
+        type: 'success',
+        autoDismiss: true,
+        autoDismissTime: 5000,
+        labelText: t('offer.notifications.berthLeaseCreated.label'),
+        text: t('offer.notifications.berthLeaseCreated.description', {
+          harbor: berth.harbor,
+          pier: berth.pier,
+          berth: berth.berth,
+        }),
+      });
+    });
+  };
 
   return (
     <Offer
@@ -80,7 +109,7 @@ const SwitchPlaceViewContainer = () => {
       handleClickSelect={handleClickSelect}
       handleReturn={handleReturn}
       harbor={harbor}
-      isSubmitting={false}
+      isSubmitting={isSubmitting}
       piersIdentifiers={piersIdentifiers}
       tableData={tableData}
     />
