@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
-import apolloClient from './apolloClient';
 import ApplicationList from '../features/applicationList/ApplicationListContainer';
 import ApplicationView from '../features/applicationView/ApplicationViewContainer';
 import CallbackPage from '../features/auth/callbackPage/CallbackPage';
@@ -18,13 +17,15 @@ import Offer from '../features/offer/OfferContainer';
 import Page from './page/Page';
 import Pricing from '../features/pricing/PricingContainer';
 import PrivateRoute from '../features/auth/privateRoute/PrivateRoute';
-import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStorageAreaListContainer';
-import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
-import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
-import WinterStorageApplicationView from '../features/winterStorageApplicationView/WinterStorageApplicationViewContainer';
+import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
+import SwitchPlaceViewContainer from '../features/switchPlace/SwitchPlaceViewContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
-import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
+import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
+import WinterStorageApplicationView from '../features/winterStorageApplicationView/WinterStorageApplicationViewContainer';
+import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStorageAreaListContainer';
+import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
+import apolloClient from './apolloClient';
 
 const App = () => {
   return (
@@ -55,6 +56,7 @@ const App = () => {
                     <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
                     <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
                     <PrivateRoute exact path="/offer" component={Offer} />
+                    <PrivateRoute exact path="/switch-place" component={SwitchPlaceViewContainer} />
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                     <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />

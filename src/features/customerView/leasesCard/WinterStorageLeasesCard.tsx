@@ -24,6 +24,7 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
       link: lease?.winterStorageArea?.id ? `/winter-storage-areas/${lease?.winterStorageArea?.id}` : undefined,
       startDate: lease.startDate,
       status: lease.status,
+      type: 'winterStorage',
       renderContractDetails: () => <WinterStorageContractDetailsContainer leaseId={lease.id} />,
     };
   };
@@ -36,10 +37,9 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
           key={lease.id}
           addressLabel={t('customerView.leases.winterStorage.addressLabel')}
           cancelLease={(id) => cancelLease(id, 'winterStorage')}
-          createLease={() => undefined}
           customerName={customerName}
           infoSectionTitle={t('customerView.leases.winterStorage.infoSectionTitle')}
-          {...mapLeaseDetails(lease)}
+          lease={mapLeaseDetails(lease)}
         />
       ))}
     </Card>

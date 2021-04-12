@@ -11,6 +11,7 @@ import DeleteButton from '../../../common/deleteButton/DeleteButton';
 const mockProps: ApplicationViewProps = {
   applicationDetails: {
     accessibilityRequired: false,
+    applicationCode: '',
     berthSwitch: null,
     boatDraught: null,
     boatLength: 5,
@@ -42,6 +43,7 @@ const mockProps: ApplicationViewProps = {
   handleDeleteLease: jest.fn(),
   handleEditCustomer: jest.fn(),
   handleLinkCustomer: jest.fn(),
+  handleNoPlacesAvailable: jest.fn(),
   handleUnlinkCustomer: jest.fn(),
   isDeletingApplication: false,
   isDeletingLease: false,

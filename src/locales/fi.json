@@ -21,6 +21,7 @@
     "add": "Lisää",
     "addNew": "Lisää uusi",
     "address": "Osoite",
+    "alert": "Huomio",
     "cancel": "Peruuta",
     "continue": "Jatka",
     "close": "Sulje",
@@ -495,6 +496,9 @@
       },
       "noBoat": {
         "description": "Asiakkaalla ei ole venettä."
+      },
+      "noBoatInfo": {
+        "description": "Asiakkaan veneen tietoja ei ole saatavilla."
       }
     }
   },
@@ -593,6 +597,18 @@
       "showContract": "Näytä sopimus",
       "valid": "Voimassa",
       "cancelLease": "Irtisano sopimus",
+      "switchPlace": {
+        "switchBerth": "Vaihda venepaikka",
+        "berthSwitchInstructions": "Huom! Venepaikan vaihtaminen ei luo uutta laskua eikä sopimusta.\nNykyinen venepaikka vapautuu ja uusi valittu paikka astuu voimaan heti.",
+        "selectHarbor": "Valitse satama",
+        "continueToBerthSelection": "Siirry venepaikan valintaan",
+        "notifications": {
+          "berthSwitched": {
+            "label": "Venepaikka vaihdettu",
+            "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+          }
+        }
+      },
       "cancelConfirmation": {
         "warningText": "Toiminto on peruuttamaton!",
         "infoText": "Haluatko varmasti irtisanoa asiakkaan {{customerName}} sopimuksen kohteeseen {{address}}?"

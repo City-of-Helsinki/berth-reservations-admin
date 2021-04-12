@@ -30,8 +30,9 @@ const BerthLeasesCard = ({ customerName, cancelLease, createLease, leases }: Ber
       link: lease.harbor ? `/harbors/${lease.harbor.id}` : undefined,
       mooringType: lease.mooringType,
       startDate: lease.startDate,
-      width: lease.width,
       status: lease.status,
+      type: 'berth',
+      width: lease.width,
       renderContractDetails: () => <BerthContractDetailsContainer leaseId={lease.id} />,
     };
   };
@@ -44,10 +45,9 @@ const BerthLeasesCard = ({ customerName, cancelLease, createLease, leases }: Ber
           key={lease.id}
           addressLabel={t('customerView.leases.berth.addressLabel')}
           cancelLease={(id) => cancelLease(id, 'berth')}
-          createLease={() => undefined}
           customerName={customerName}
           infoSectionTitle={t('customerView.leases.berth.infoSectionTitle')}
-          {...mapLeaseDetails(lease)}
+          lease={mapLeaseDetails(lease)}
         />
       ))}
       <CardBody className={styles.createLease}>

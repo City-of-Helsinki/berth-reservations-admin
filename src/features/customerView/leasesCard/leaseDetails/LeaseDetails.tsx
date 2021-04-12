@@ -13,36 +13,35 @@ import { canLeaseBeTerminated } from '../../utils';
 import { formatDate, formatDimension } from '../../../../common/utils/format';
 import { getMooringTypeTKey } from '../../../../common/utils/translations';
 import styles from './leaseDetails.module.scss';
+import SwitchPlaceControls from '../../../switchPlace/controls/SwitchPlaceControls';
 
-type LeaseDetailsProps = Lease & {
+type LeaseDetailsProps = {
   addressLabel: string;
-  cancelLease: (id: string) => void;
-  createLease?: () => void;
   customerName: string;
   infoSectionTitle: string;
+  lease: Lease;
+  cancelLease(id: string): void;
 };
 
-const LeaseDetails = ({
-  address,
-  addressLabel,
-  cancelLease,
-  customerName,
-  depth,
-  endDate,
-  id,
-  infoSectionTitle,
-  length,
-  link,
-  mooringType,
-  renderContractDetails,
-  startDate,
-  status,
-  width,
-}: LeaseDetailsProps) => {
+const LeaseDetails = ({ addressLabel, customerName, infoSectionTitle, lease, cancelLease }: LeaseDetailsProps) => {
   const {
     t,
     i18n: { language },
   } = useTranslation();
+  const {
+    address,
+    depth,
+    endDate,
+    id,
+    length,
+    link,
+    mooringType,
+    renderContractDetails,
+    startDate,
+    status,
+    type,
+    width,
+  } = lease;
   const leaseDate = `${formatDate(startDate, language)} - ${formatDate(endDate, language)}`;
 
   return (
@@ -63,10 +62,15 @@ const LeaseDetails = ({
         )}
         <LabelValuePair label={t('customerView.leases.valid')} value={leaseDate} />
       </Section>
+
       {renderContractDetails()}
-      {canLeaseBeTerminated(status) && (
-        <CancelLeaseButton customerName={customerName} cancelLease={cancelLease} id={id} address={address} />
-      )}
+
+      <div className={styles.buttons}>
+        {canLeaseBeTerminated(status) && (
+          <CancelLeaseButton customerName={customerName} cancelLease={cancelLease} id={id} address={address} />
+        )}
+        <SwitchPlaceControls id={id} type={type} status={status} />
+      </div>
     </CardBody>
   );
 };

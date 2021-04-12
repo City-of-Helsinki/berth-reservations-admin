@@ -4,3 +4,10 @@
   display: inline-block;
   margin-bottom: units(0.5);
 }
+
+.buttons {
+  > * {
+    margin-top: units(1);
+    margin-right: units(1);
+  }
+}

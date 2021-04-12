@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
+import { Notification } from 'hds-react';
 
 import styles from './offer.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
@@ -26,7 +27,7 @@ interface OfferProps {
     status: ApplicationStatus;
     type: string;
   } | null;
-  boat: Boat;
+  boat?: Boat;
   handleClickSelect: (berth: BerthData) => void;
   handleReturn: () => void;
   harbor: HarborCardProps['harbor'] | null;
@@ -58,7 +59,7 @@ const Offer = ({
       Cell: ({ row }) => (
         <Button
           onClick={useCallback(() => {
-            if (isSuitableBerthLength(Number(row.original.length), Number(boat?.boatLength)))
+            if (isSuitableBerthLength(Number(row.original.length), Number(boat?.boatLength ?? 0)))
               return handleClickSelect(row.original);
 
             return setIsBerthChosen(row.original);
@@ -130,7 +131,13 @@ const Offer = ({
       <PageContent className={styles.offer}>
         <PageTitle title={t('offer.title')} />
         {harbor && <HarborCard harbor={harbor} className={styles.card} />}
-        <BoatCard boat={boat} />
+        {boat ? (
+          <BoatCard boat={boat} />
+        ) : (
+          <Notification label={t('common.alert')} type="alert" className={styles.card}>
+            {t('offer.notifications.noBoatInfo.description')}
+          </Notification>
+        )}
         <Table
           data={tableData}
           columns={columns}
@@ -139,7 +146,7 @@ const Offer = ({
             className: classNames({
               [styles.highlight]:
                 cell.column.id === LENGTH_ACCESSOR &&
-                !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength)),
+                !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength ?? 0)),
             }),
           })}
           renderMainHeader={(props) => (
