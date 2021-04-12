@@ -48,6 +48,7 @@ Array [
     "harbor": "Pajalahden venesatama (Meripuistotie) / Venesatama",
     "harborId": "SGFyYm9yTm9kZTpmN2M2YTQwZjAtOWViMi0zZjgyMTI0YjY0OGI=",
     "id": "1",
+    "isActive": true,
     "leases": Array [
       Object {
         "customer": Object {

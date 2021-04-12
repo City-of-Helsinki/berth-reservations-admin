@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthMooringType, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
+import { LeaseStatus, BerthMooringType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: OFFER_WITHOUT_APPLICATION_HARBOR
@@ -41,15 +41,16 @@ export interface OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_
 
 export interface OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node {
   __typename: "BerthNode";
+  comment: string;
+  depth: number | null;
   id: string;
+  isAccessible: boolean | null;
+  isActive: boolean;
+  leases: OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases | null;
+  length: number;
+  mooringType: BerthMooringType;
   number: string;
   width: number;
-  length: number;
-  depth: number | null;
-  mooringType: BerthMooringType;
-  comment: string;
-  isAccessible: boolean | null;
-  leases: OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases | null;
 }
 
 export interface OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges {

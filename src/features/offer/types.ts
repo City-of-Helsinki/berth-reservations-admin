@@ -17,18 +17,18 @@ export type Lease = {
 };
 
 export type BerthData = {
-  id: string;
-  harborId: string;
-  harbor: string;
-  pier: string;
   berth: string | number;
   berthId: string;
-  width: number | null;
-  length: number | null;
-  draught: number | null;
-  mooringType: string;
-  leases: Lease[];
   comment: string;
+  draught: number | null;
+  harbor: string;
+  harborId: string;
+  id: string;
+  isActive: boolean;
+  leases: Lease[];
+  length: number | null;
+  mooringType: string;
+  pier: string;
   properties: {
     lighting: boolean | null;
     water: boolean | null;
@@ -37,6 +37,7 @@ export type BerthData = {
     wasteCollection: boolean | null;
     isAccessible: boolean | null;
   };
+  width: number | null;
 };
 
 export type PierTab = {
