@@ -36,14 +36,11 @@ export const OFFER_PIERS_FRAGMENT = gql`
           berths(isAvailable: true) {
             edges {
               node {
-                id
-                number
-                width
-                length
-                depth
-                mooringType
                 comment
+                depth
+                id
                 isAccessible
+                isActive
                 leases {
                   edges {
                     node {
@@ -57,6 +54,10 @@ export const OFFER_PIERS_FRAGMENT = gql`
                     }
                   }
                 }
+                length
+                mooringType
+                number
+                width
               }
             }
           }

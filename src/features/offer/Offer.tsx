@@ -63,7 +63,7 @@ const Offer = ({
 
             return setIsBerthChosen(row.original);
           }, [row])}
-          disabled={isSubmitting}
+          disabled={!row.original.isActive || isSubmitting}
         >
           {t('offer.tableCells.select')}
         </Button>

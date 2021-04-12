@@ -72,14 +72,11 @@ export const OfferQueryData: OFFER = {
                       __typename: 'BerthNodeEdge',
                       node: {
                         __typename: 'BerthNode',
-                        id: '1',
-                        number: '1',
-                        width: 5,
-                        length: 10,
-                        depth: 5,
-                        mooringType: BerthMooringType.DINGHY_PLACE,
                         comment: 'No comments',
+                        depth: 5,
+                        id: '1',
                         isAccessible: true,
+                        isActive: true,
                         leases: {
                           __typename: 'BerthLeaseNodeConnection',
                           edges: [
@@ -99,6 +96,10 @@ export const OfferQueryData: OFFER = {
                             },
                           ],
                         },
+                        length: 10,
+                        mooringType: BerthMooringType.DINGHY_PLACE,
+                        number: '1',
+                        width: 5,
                       },
                     },
                   ],

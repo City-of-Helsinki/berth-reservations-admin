@@ -37,18 +37,18 @@ export const getOfferData = (data: HarborData | null | undefined): BerthData[] =
       return [
         ...acc,
         {
-          id: berth.node.id,
-          harborId,
-          harbor,
-          pier: properties.identifier,
           berth: berth.node.number,
           berthId: berth.node.id,
-          width: berth.node.width,
-          length: berth.node.length,
-          draught: berth.node.depth,
-          mooringType: berth.node.mooringType,
-          leases,
           comment: berth.node.comment,
+          draught: berth.node.depth,
+          harbor,
+          harborId,
+          id: berth.node.id,
+          isActive: berth.node.isActive,
+          leases,
+          length: berth.node.length,
+          mooringType: berth.node.mooringType,
+          pier: properties.identifier,
           properties: {
             lighting: properties.lighting,
             water: properties.water,
@@ -57,6 +57,7 @@ export const getOfferData = (data: HarborData | null | undefined): BerthData[] =
             wasteCollection: properties.wasteCollection,
             isAccessible: berth.node.isAccessible,
           },
+          width: berth.node.width,
         },
       ];
     }, []);
