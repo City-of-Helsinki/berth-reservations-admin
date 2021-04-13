@@ -1,25 +1,17 @@
-import React, { useCallback, useState } from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Notification } from 'hds-react';
 
-import styles from './berthOffer.module.scss';
-import PageTitle from '../../../common/pageTitle/PageTitle';
-import PageContent from '../../../common/pageContent/PageContent';
-import HarborCard, { HarborCardProps } from '../../../common/harborCard/HarborCard';
+import BerthOfferTable from './BerthOfferTable';
 import BoatCard from '../../../common/boatCard/BoatCard';
-import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
-import BerthDetails from '../../berthDetails/BerthDetailsContainer';
-import TableFilters from '../../../common/tableFilters/TableFilters';
-import TableTools from './tableTools/TableTools';
-import Button from '../../../common/button/Button';
-import InternalLink from '../../../common/internalLink/InternalLink';
-import { formatDimension } from '../../../common/utils/format';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
-import { Boat } from '../../../common/boatCard/types';
 import ConfirmationModal from '../../../common/confirmationModal/ConfirmationModal';
+import HarborCard, { HarborCardProps } from '../../../common/harborCard/HarborCard';
+import PageContent from '../../../common/pageContent/PageContent';
+import PageTitle from '../../../common/pageTitle/PageTitle';
+import styles from './berthOffer.module.scss';
+import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import { BerthData, PierTab } from '../types';
-import { isSuitableBerthLength } from '../utils';
+import { Boat } from '../../../common/boatCard/types';
+import { NoBoatAlertNotification } from './notifications';
 
 interface BerthOfferProps {
   application?: {
@@ -36,10 +28,6 @@ interface BerthOfferProps {
   tableData: BerthData[];
 }
 
-type ColumnType = Column<BerthData>;
-
-const LENGTH_ACCESSOR = 'length';
-
 const BerthOffer = ({
   application,
   boat,
@@ -50,117 +38,31 @@ const BerthOffer = ({
   piersIdentifiers,
   tableData,
 }: BerthOfferProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [isBerthChosen, setIsBerthChosen] = useState<BerthData | null>(null);
-
-  const columns: ColumnType[] = [
-    {
-      Cell: ({ row }) => (
-        <Button
-          onClick={useCallback(() => {
-            if (isSuitableBerthLength(Number(row.original.length), Number(boat?.boatLength ?? 0)))
-              return handleClickSelect(row.original);
-
-            return setIsBerthChosen(row.original);
-          }, [row])}
-          disabled={!row.original.isActive || isSubmitting}
-        >
-          {t('offer.tableCells.select')}
-        </Button>
-      ),
-      Header: t('common.terminology.selection') || '',
-      accessor: 'berthId',
-      width: COLUMN_WIDTH.S,
-      minWidth: COLUMN_WIDTH.S,
-      disableFilters: true,
-      disableSortBy: true,
-    },
-    {
-      Cell: ({ cell }) => <InternalLink to={`/harbors/${cell.row.original.harborId}}`}>{cell.value}</InternalLink>,
-      Header: t('common.terminology.harbor') || '',
-      accessor: 'harbor',
-      width: COLUMN_WIDTH.XL,
-      minWidth: COLUMN_WIDTH.XL,
-    },
-    {
-      Header: t('common.terminology.pier') || '',
-      accessor: 'pier',
-      filter: 'exactText',
-      width: COLUMN_WIDTH.S,
-      minWidth: COLUMN_WIDTH.S,
-    },
-    {
-      Header: t('common.terminology.berth') || '',
-      accessor: 'berth',
-      width: COLUMN_WIDTH.XS,
-      minWidth: COLUMN_WIDTH.XS,
-    },
-    {
-      Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('common.terminology.width') || '',
-      accessor: 'width',
-      width: COLUMN_WIDTH.XS,
-      minWidth: COLUMN_WIDTH.XS,
-    },
-    {
-      Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('common.terminology.length') || '',
-      accessor: LENGTH_ACCESSOR,
-      width: COLUMN_WIDTH.XS,
-      minWidth: COLUMN_WIDTH.XS,
-    },
-    {
-      Cell: ({ cell }) => formatDimension(cell.value, i18n.language),
-      Header: t('common.terminology.draught') || '',
-      accessor: 'draught',
-      width: COLUMN_WIDTH.XS,
-      minWidth: COLUMN_WIDTH.XS,
-    },
-    {
-      Cell: ({ cell }) => t([`common.mooringTypes.${cell.value}`, cell.value]),
-      Header: t('common.terminology.mooringType') || '',
-      accessor: 'mooringType',
-      width: COLUMN_WIDTH.S,
-      minWidth: COLUMN_WIDTH.S,
-    },
-  ];
 
   return (
     <>
       <PageContent className={styles.offer}>
         <PageTitle title={t('offer.title')} />
+
         {harbor && <HarborCard harbor={harbor} className={styles.card} />}
-        {boat ? (
-          <BoatCard boat={boat} />
-        ) : (
-          <Notification label={t('common.alert')} type="alert" className={styles.card}>
-            {t('offer.notifications.noBoatInfo.description')}
-          </Notification>
-        )}
-        <Table
-          data={tableData}
-          columns={columns}
-          renderSubComponent={(row) => <BerthDetails id={row.original.id} />}
-          getCellProps={(cell) => ({
-            className: classNames({
-              [styles.highlight]:
-                cell.column.id === LENGTH_ACCESSOR &&
-                !isSuitableBerthLength(Number(cell?.value), Number(boat?.boatLength ?? 0)),
-            }),
-          })}
-          renderMainHeader={(props) => (
-            <TableFilters
-              activeFilters={props.state.filters.map((filter) => filter.value)}
-              filters={piersIdentifiers}
-              handleSetFilter={(filter) => props.setFilter('pier', filter)}
-              filterPrefix={t('common.terminology.pier')}
-            />
-          )}
-          renderTableToolsTop={() => <TableTools application={application} handleReturn={handleReturn} />}
-          renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
+
+        {boat ? <BoatCard boat={boat} /> : <NoBoatAlertNotification className={styles.card} />}
+
+        <BerthOfferTable
+          application={application}
+          boat={boat}
+          handleClickSelect={handleClickSelect}
+          handleReturn={handleReturn}
+          isSubmitting={isSubmitting}
+          piersIdentifiers={piersIdentifiers}
+          setIsBerthChosen={setIsBerthChosen}
+          tableData={tableData}
         />
       </PageContent>
+
       <ConfirmationModal
         isOpen={!!isBerthChosen}
         title={t('offer.confirmation.title')}

@@ -22,7 +22,7 @@ import {
   showBerthSuccessToast,
   ErrorNotification,
   NoDataNotification,
-  NoBoatNotification,
+  NoBoatErrorNotification,
 } from './components/notifications';
 
 const BerthOfferContainer = () => {
@@ -55,7 +55,7 @@ const BerthOfferContainer = () => {
 
   if (!data) return <NoDataNotification />;
   if (applicationError) return <ErrorNotification />;
-  if (!boat) return <NoBoatNotification />;
+  if (!boat) return <NoBoatErrorNotification />;
 
   const application = applicationData?.berthApplication && {
     date: formatDate(applicationData.berthApplication.createdAt, i18n.language),

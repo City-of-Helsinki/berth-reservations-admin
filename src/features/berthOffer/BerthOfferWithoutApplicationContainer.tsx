@@ -26,7 +26,7 @@ import { BerthData } from './types';
 import useRouterQuery from '../../common/hooks/useRouterQuery';
 import {
   ErrorNotification,
-  NoBoatNotification,
+  NoBoatErrorNotification,
   NoDataNotification,
   showBerthSuccessToast,
 } from './components/notifications';
@@ -71,7 +71,7 @@ const BerthOfferWithoutApplicationContainer = () => {
 
   if (!data && !customerData) return <NoDataNotification />;
   if (customerError || harborError) return <ErrorNotification />;
-  if (!boat) return <NoBoatNotification />;
+  if (!boat) return <NoBoatErrorNotification />;
 
   const tableData = getBerthData(data);
   const harbor = getHarbor(data);

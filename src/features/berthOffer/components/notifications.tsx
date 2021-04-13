@@ -24,11 +24,20 @@ export const ErrorNotification = () => {
   );
 };
 
-export const NoBoatNotification = () => {
+export const NoBoatErrorNotification = () => {
   const { t } = useTranslation();
   return (
     <Notification label={t('common.notification.error.label')} type="error">
       {t('offer.notifications.noBoat.description')}
+    </Notification>
+  );
+};
+
+export const NoBoatAlertNotification = ({ className }: { className?: string }) => {
+  const { t } = useTranslation();
+  return (
+    <Notification label={t('common.alert')} type="alert" className={className}>
+      {t('offer.notifications.noBoatInfo.description')}
     </Notification>
   );
 };
