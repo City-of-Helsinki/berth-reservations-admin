@@ -1,10 +1,10 @@
-import { getAllPiersIdentifiers, getHarbor, getOfferData } from '../utils';
-import { OfferQueryData } from '../__fixtures__/mockData';
+import { getAllPiersIdentifiers, getHarbor, getBerthData } from '../utils';
+import { berthOfferQueryData } from '../__fixtures__/mockData';
 
 describe('utils', () => {
   describe('getOfferData', () => {
     it('should return offer data', () => {
-      const berthData = getOfferData(OfferQueryData['harborByServicemapId']);
+      const berthData = getBerthData(berthOfferQueryData['harborByServicemapId']);
 
       expect(berthData).toMatchSnapshot();
     });
@@ -12,7 +12,7 @@ describe('utils', () => {
 
   describe('getAllPiersIdentifiers', () => {
     it('should return pier tabs', () => {
-      const harbor = getAllPiersIdentifiers(OfferQueryData['harborByServicemapId']?.properties?.piers);
+      const harbor = getAllPiersIdentifiers(berthOfferQueryData['harborByServicemapId']?.properties?.piers);
 
       expect(harbor).toMatchSnapshot();
     });
@@ -24,7 +24,7 @@ describe('utils', () => {
     });
 
     it('should return harbor', () => {
-      const harbor = getHarbor(OfferQueryData.harborByServicemapId);
+      const harbor = getHarbor(berthOfferQueryData.harborByServicemapId);
 
       expect(harbor).toMatchSnapshot();
     });

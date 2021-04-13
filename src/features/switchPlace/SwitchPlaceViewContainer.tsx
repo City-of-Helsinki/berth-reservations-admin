@@ -1,16 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
 
-import Offer from '../offer/Offer';
+import BerthOffer from '../berthOffer/BerthOffer';
 import {
-  OFFER_WITHOUT_APPLICATION_HARBOR,
-  OFFER_WITHOUT_APPLICATION_HARBORVariables as OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
-} from '../offer/__generated__/OFFER_WITHOUT_APPLICATION_HARBOR';
-import { OFFER_WITHOUT_APPLICATION_HARBOR_QUERY } from '../offer/queries';
-import { getAllPiersIdentifiers, getHarbor, getOfferData } from '../offer/utils';
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBORVariables as BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
+} from '../berthOffer/__generated__/BERTH_OFFER_WITHOUT_APPLICATION_HARBOR';
+import { BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY } from '../berthOffer/queries';
+import { getAllPiersIdentifiers, getHarbor, getBerthData } from '../berthOffer/utils';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { SWITCH_PLACE_BERTH_LEASE_QUERY } from './queries';
 import {
@@ -18,17 +18,14 @@ import {
   SWITCH_PLACE_BERTH_LEASEVariables as SWITCH_PLACE_BERTH_LEASE_VARS,
 } from './__generated__/SWITCH_PLACE_BERTH_LEASE';
 import { getLeaseBoat } from './utils';
-import { BerthData } from '../offer/types';
+import { BerthData } from '../berthOffer/types';
 import {
   SWITCH_LEASE_BERTH,
   SWITCH_LEASE_BERTHVariables as SWITCH_LEASE_BERTH_VARS,
 } from './__generated__/SWITCH_LEASE_BERTH';
 import { SWITCH_LEASE_BERTH_MUTATION } from './mutations';
 import hdsToast from '../../common/toast/hdsToast';
-
-function useRouterQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import useRouterQuery from '../../common/hooks/useRouterQuery';
 
 // Implemented only for berths
 const SwitchPlaceViewContainer = () => {
@@ -48,9 +45,9 @@ const SwitchPlaceViewContainer = () => {
   const boatWidth = boat?.boatWidth ?? 0;
 
   const { data: harborData, error: harborError, loading: harborLoading } = useQuery<
-    OFFER_WITHOUT_APPLICATION_HARBOR,
-    OFFER_WITHOUT_APPLICATION_HARBOR_VARS
-  >(OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS
+  >(BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
     variables: { harborId, boatWidth },
   });
 
@@ -73,7 +70,7 @@ const SwitchPlaceViewContainer = () => {
     );
 
   const data = harborData?.harbor;
-  const tableData = getOfferData(data);
+  const tableData = getBerthData(data);
   const harbor = getHarbor(data);
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
 
@@ -104,7 +101,7 @@ const SwitchPlaceViewContainer = () => {
   };
 
   return (
-    <Offer
+    <BerthOffer
       boat={boat}
       handleClickSelect={handleClickSelect}
       handleReturn={handleReturn}

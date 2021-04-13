@@ -35,7 +35,7 @@ const CreateLeaseModal = ({ customerId, isOpen, closeModal }: CreateLeaseModalPr
   const harborOptions = getHarborOptions(data);
   const customerBoats = getBoatsOptions(data);
   const openOfferForm = () =>
-    history.push(`/offer?customer=${customerId}&harbor=${selectedHarbor}&boat=${selectedBoat}`);
+    history.push(`/berth-offer?customer=${customerId}&harbor=${selectedHarbor}&boat=${selectedBoat}`);
 
   return (
     <Modal isOpen={isOpen} toggleModal={closeModal}>

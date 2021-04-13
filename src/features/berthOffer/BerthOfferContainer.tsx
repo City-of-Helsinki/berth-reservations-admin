@@ -1,39 +1,39 @@
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Notification } from 'hds-react';
 import { getOperationName } from 'apollo-link';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import {
-  OFFER_QUERY,
-  OFFER_WITHOUT_APPLICATION_PROFILE_QUERY,
-  OFFER_WITHOUT_APPLICATION_HARBOR_QUERY,
+  BERTH_OFFER_QUERY,
+  BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_QUERY,
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY,
 } from './queries';
-import Offer from './Offer';
-import { OFFER, OFFERVariables as OFFER_VARS } from './__generated__/OFFER';
+import BerthOffer from './BerthOffer';
+import { BERTH_OFFER, BERTH_OFFERVariables as BERTH_OFFER_VARS } from './__generated__/BERTH_OFFER';
 import {
-  OFFER_WITHOUT_APPLICATION_HARBOR,
-  OFFER_WITHOUT_APPLICATION_HARBORVariables as OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
-} from './__generated__/OFFER_WITHOUT_APPLICATION_HARBOR';
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBORVariables as BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
+} from './__generated__/BERTH_OFFER_WITHOUT_APPLICATION_HARBOR';
 import {
-  OFFER_WITHOUT_APPLICATION_PROFILE,
-  OFFER_WITHOUT_APPLICATION_PROFILEVariables as OFFER_WITHOUT_APPLICATION_PROFILE_VARS,
-} from './__generated__/OFFER_WITHOUT_APPLICATION_PROFILE';
-import { getOfferData, getAllPiersIdentifiers, getBoat, getHarbor, getCustomerBoat } from './utils';
+  BERTH_OFFER_WITHOUT_APPLICATION_PROFILE,
+  BERTH_OFFER_WITHOUT_APPLICATION_PROFILEVariables as BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_VARS,
+} from './__generated__/BERTH_OFFER_WITHOUT_APPLICATION_PROFILE';
+import { getBerthData, getAllPiersIdentifiers, getBoat, getHarbor, getCustomerBoat } from './utils';
 import { formatDate } from '../../common/utils/format';
-import { CREATE_LEASE_MUTATION } from './mutations';
-import { CREATE_LEASE, CREATE_LEASEVariables as CREATE_LEASE_VARS } from './__generated__/CREATE_LEASE';
+import { CREATE_BERTH_LEASE_MUTATION } from './mutations';
+import {
+  CREATE_BERTH_LEASE,
+  CREATE_BERTH_LEASEVariables as CREATE_BERTH_LEASE_VARS,
+} from './__generated__/CREATE_BERTH_LEASE';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import hdsToast from '../../common/toast/hdsToast';
 import { BerthData } from './types';
+import useRouterQuery from '../../common/hooks/useRouterQuery';
 
-function useRouterQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
-const OfferContainer = () => {
+const BerthOfferContainer = () => {
   const routerQuery = useRouterQuery();
   const history = useHistory();
 
@@ -42,17 +42,17 @@ const OfferContainer = () => {
   const customerId = routerQuery.get('customer') || '';
   const boatId = routerQuery.get('boat') || '';
 
-  const { loading: applicationLoading, error: applicationError, data: applicationData } = useQuery<OFFER, OFFER_VARS>(
-    OFFER_QUERY,
-    {
-      variables: { applicationId, servicemapId: harborId },
-      skip: !applicationId,
-    }
-  );
+  const { loading: applicationLoading, error: applicationError, data: applicationData } = useQuery<
+    BERTH_OFFER,
+    BERTH_OFFER_VARS
+  >(BERTH_OFFER_QUERY, {
+    variables: { applicationId, servicemapId: harborId },
+    skip: !applicationId,
+  });
   const { loading: customerLoading, error: customerError, data: customerData } = useQuery<
-    OFFER_WITHOUT_APPLICATION_PROFILE,
-    OFFER_WITHOUT_APPLICATION_PROFILE_VARS
-  >(OFFER_WITHOUT_APPLICATION_PROFILE_QUERY, {
+    BERTH_OFFER_WITHOUT_APPLICATION_PROFILE,
+    BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_VARS
+  >(BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_QUERY, {
     variables: { customerId },
     skip: !customerId,
   });
@@ -63,14 +63,14 @@ const OfferContainer = () => {
   const boatWidth = boat?.boatWidth ?? 0;
 
   const { loading: harborLoading, error: harborError, data: harborData } = useQuery<
-    OFFER_WITHOUT_APPLICATION_HARBOR,
-    OFFER_WITHOUT_APPLICATION_HARBOR_VARS
-  >(OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS
+  >(BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
     variables: { harborId, boatWidth: Number(boatWidth) },
     skip: !boatWidth,
   });
-  const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_LEASE, CREATE_LEASE_VARS>(
-    CREATE_LEASE_MUTATION,
+  const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_BERTH_LEASE, CREATE_BERTH_LEASE_VARS>(
+    CREATE_BERTH_LEASE_MUTATION,
     {
       refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS'],
     }
@@ -113,7 +113,7 @@ const OfferContainer = () => {
 
   const handleReturn = () => history.goBack();
 
-  const tableData = getOfferData(data);
+  const tableData = getBerthData(data);
   const harbor = getHarbor(data);
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
 
@@ -143,7 +143,7 @@ const OfferContainer = () => {
   };
 
   return (
-    <Offer
+    <BerthOffer
       application={application}
       boat={boat}
       handleClickSelect={handleClickSelect}
@@ -156,4 +156,4 @@ const OfferContainer = () => {
   );
 };
 
-export default OfferContainer;
+export default BerthOfferContainer;

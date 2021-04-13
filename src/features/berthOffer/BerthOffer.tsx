@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Notification } from 'hds-react';
 
-import styles from './offer.module.scss';
+import styles from './berthOffer.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import HarborCard, { HarborCardProps } from '../../common/harborCard/HarborCard';
@@ -21,7 +21,7 @@ import ConfirmationModal from '../../common/confirmationModal/ConfirmationModal'
 import { BerthData, PierTab } from './types';
 import { isSuitableBerthLength } from './utils';
 
-interface OfferProps {
+interface BerthOfferProps {
   application?: {
     date: string;
     status: ApplicationStatus;
@@ -40,7 +40,7 @@ type ColumnType = Column<BerthData>;
 
 const LENGTH_ACCESSOR = 'length';
 
-const Offer = ({
+const BerthOffer = ({
   application,
   boat,
   handleClickSelect,
@@ -49,7 +49,7 @@ const Offer = ({
   isSubmitting,
   piersIdentifiers,
   tableData,
-}: OfferProps) => {
+}: BerthOfferProps) => {
   const { t, i18n } = useTranslation();
 
   const [isBerthChosen, setIsBerthChosen] = useState<BerthData | null>(null);
@@ -178,4 +178,4 @@ const Offer = ({
   );
 };
 
-export default Offer;
+export default BerthOffer;

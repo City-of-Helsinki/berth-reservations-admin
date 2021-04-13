@@ -4,21 +4,21 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: OfferHarbor
+// GraphQL fragment: BerthOfferHarbor
 // ====================================================
 
-export interface OfferHarbor_properties_maps {
+export interface BerthOfferHarbor_properties_maps {
   __typename: "HarborMapType";
   id: any;
   url: string;
 }
 
-export interface OfferHarbor_properties {
+export interface BerthOfferHarbor_properties {
   __typename: "HarborProperties";
   name: string | null;
   servicemapId: string | null;
   imageFile: string | null;
-  maps: (OfferHarbor_properties_maps | null)[];
+  maps: (BerthOfferHarbor_properties_maps | null)[];
   streetAddress: string | null;
   municipality: string | null;
   zipCode: string;
@@ -27,8 +27,8 @@ export interface OfferHarbor_properties {
   numberOfFreePlaces: number;
 }
 
-export interface OfferHarbor {
+export interface BerthOfferHarbor {
   __typename: "HarborNode";
   id: string;
-  properties: OfferHarbor_properties | null;
+  properties: BerthOfferHarbor_properties | null;
 }

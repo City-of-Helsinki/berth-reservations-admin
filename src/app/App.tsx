@@ -13,7 +13,7 @@ import ErrorPage from '../features/errorPage/ErrorPage';
 import HarborList from '../features/harborList/HarborListContainer';
 import HarborView from '../features/harborView/HarborViewContainer';
 import LoginPage from '../features/auth/loginPage/LoginPage';
-import Offer from '../features/offer/OfferContainer';
+import BerthOfferContainer from '../features/berthOffer/BerthOfferContainer';
 import Page from './page/Page';
 import Pricing from '../features/pricing/PricingContainer';
 import PrivateRoute from '../features/auth/privateRoute/PrivateRoute';
@@ -55,8 +55,10 @@ const App = () => {
                     <PrivateRoute exact path="/winter-storage-applications" component={WinterStorageApplicationList} />
                     <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
                     <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
-                    <PrivateRoute exact path="/offer" component={Offer} />
-                    <PrivateRoute exact path="/switch-place" component={SwitchPlaceViewContainer} />
+
+                    <PrivateRoute exact path="/berth-offer" component={BerthOfferContainer} />
+                    <PrivateRoute exact path="/switch-berth" component={SwitchPlaceViewContainer} />
+
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                     <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />

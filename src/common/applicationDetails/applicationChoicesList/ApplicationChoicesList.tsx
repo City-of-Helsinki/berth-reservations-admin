@@ -71,7 +71,7 @@ const ApplicationChoicesList = ({
                       ${i + 1}: `}
                 </Text>
                 {!!customerId ? (
-                  <InternalLink to={`/offer?${routerQuery}`}>{targetName}</InternalLink>
+                  <InternalLink to={`/berth-offer?${routerQuery}`}>{targetName}</InternalLink>
                 ) : (
                   <Text>{targetName}</Text>
                 )}

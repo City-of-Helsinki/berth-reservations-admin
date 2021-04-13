@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
 
-import { OFFER_HARBOR_FRAGMENT, OFFER_PIERS_FRAGMENT } from './fragments';
+import { BERTH_OFFER_HARBOR_FRAGMENT, BERTH_OFFER_PIERS_FRAGMENT } from './fragments';
 
-export const OFFER_QUERY = gql`
-  query OFFER($applicationId: ID!, $servicemapId: String!) {
+export const BERTH_OFFER_QUERY = gql`
+  query BERTH_OFFER($applicationId: ID!, $servicemapId: String!) {
     berthApplication(id: $applicationId) {
       id
       createdAt
@@ -28,20 +28,20 @@ export const OFFER_QUERY = gql`
       name
     }
     harborByServicemapId(servicemapId: $servicemapId) {
-      ...OfferHarbor
+      ...BerthOfferHarbor
       properties {
         piers(forApplication: $applicationId) {
-          ...OfferPiers
+          ...BerthOfferPiers
         }
       }
     }
   }
-  ${OFFER_HARBOR_FRAGMENT}
-  ${OFFER_PIERS_FRAGMENT}
+  ${BERTH_OFFER_HARBOR_FRAGMENT}
+  ${BERTH_OFFER_PIERS_FRAGMENT}
 `;
 
-export const OFFER_WITHOUT_APPLICATION_PROFILE_QUERY = gql`
-  query OFFER_WITHOUT_APPLICATION_PROFILE($customerId: ID!) {
+export const BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_QUERY = gql`
+  query BERTH_OFFER_WITHOUT_APPLICATION_PROFILE($customerId: ID!) {
     profile(id: $customerId, serviceType: BERTH) {
       id
       boats {
@@ -66,17 +66,17 @@ export const OFFER_WITHOUT_APPLICATION_PROFILE_QUERY = gql`
   }
 `;
 
-export const OFFER_WITHOUT_APPLICATION_HARBOR_QUERY = gql`
-  query OFFER_WITHOUT_APPLICATION_HARBOR($harborId: ID!, $boatWidth: Float!) {
+export const BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY = gql`
+  query BERTH_OFFER_WITHOUT_APPLICATION_HARBOR($harborId: ID!, $boatWidth: Float!) {
     harbor(id: $harborId) {
-      ...OfferHarbor
+      ...BerthOfferHarbor
       properties {
         piers(minBerthWidth: $boatWidth) {
-          ...OfferPiers
+          ...BerthOfferPiers
         }
       }
     }
   }
-  ${OFFER_HARBOR_FRAGMENT}
-  ${OFFER_PIERS_FRAGMENT}
+  ${BERTH_OFFER_HARBOR_FRAGMENT}
+  ${BERTH_OFFER_PIERS_FRAGMENT}
 `;

@@ -1,10 +1,10 @@
-import { OFFER } from './__generated__/OFFER';
+import { BERTH_OFFER } from './__generated__/BERTH_OFFER';
 import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { HarborCardProps } from '../../common/harborCard/HarborCard';
 import { Boat } from '../../common/boatCard/types';
 import { HarborData, BerthData, PiersData, BoatData, Lease, PierTab } from './types';
 
-export const getOfferData = (data: HarborData | null | undefined): BerthData[] => {
+export const getBerthData = (data: HarborData | null | undefined): BerthData[] => {
   if (!data?.properties?.piers) return [];
 
   const harborId = data.id;
@@ -82,7 +82,7 @@ export const getAllPiersIdentifiers = (data: PiersData | null | undefined): Pier
   }, []);
 };
 
-export const getHarbor = (data: OFFER['harborByServicemapId'] | undefined): HarborCardProps['harbor'] | null => {
+export const getHarbor = (data: BERTH_OFFER['harborByServicemapId'] | undefined): HarborCardProps['harbor'] | null => {
   if (!data || !data || !data.properties || !data.properties.piers) {
     return null;
   }
@@ -144,8 +144,8 @@ export const getHarbor = (data: OFFER['harborByServicemapId'] | undefined): Harb
 };
 
 export const getBoat = (
-  berthApplication: OFFER['berthApplication'] | undefined,
-  boatTypes: OFFER['boatTypes'] | undefined
+  berthApplication: BERTH_OFFER['berthApplication'] | undefined,
+  boatTypes: BERTH_OFFER['boatTypes'] | undefined
 ): Boat | null => {
   if (!berthApplication) return null;
 
