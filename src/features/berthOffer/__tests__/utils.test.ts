@@ -1,5 +1,6 @@
-import { getAllPiersIdentifiers, getHarbor, getBerthData } from '../utils';
-import { berthOfferQueryData } from '../__fixtures__/mockData';
+import { getAllPiersIdentifiers, getHarbor, getBerthData, getLeaseBoat } from '../utils';
+import { berthOfferQueryData, mockSwitchBerthLease } from '../__fixtures__/mockData';
+import { SWITCH_BERTH_LEASE } from '../__generated__/SWITCH_BERTH_LEASE';
 
 describe('utils', () => {
   describe('getOfferData', () => {
@@ -27,6 +28,33 @@ describe('utils', () => {
       const harbor = getHarbor(berthOfferQueryData.harborByServicemapId);
 
       expect(harbor).toMatchSnapshot();
+    });
+  });
+
+  describe('getLeaseBoat', () => {
+    it('should map the lease boat correctly', () => {
+      expect(getLeaseBoat(mockSwitchBerthLease)).toEqual({
+        boatDraught: 0.5,
+        boatLength: 3,
+        boatModel: 'MODEL',
+        boatName: 'BOAT',
+        boatRegistrationNumber: '',
+        boatType: 'Soutuvene',
+        boatWeight: 100,
+        boatWidth: 1,
+      });
+    });
+
+    it('should return undefined is no boat exists', () => {
+      const noBoat: SWITCH_BERTH_LEASE = {
+        berthLease: {
+          __typename: 'BerthLeaseNode',
+          boat: null,
+          id: 'MOCK-LEASE',
+        },
+      };
+
+      expect(getLeaseBoat(noBoat)).toEqual(undefined);
     });
   });
 });

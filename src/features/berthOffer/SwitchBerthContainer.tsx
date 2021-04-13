@@ -9,26 +9,20 @@ import {
   BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
   BERTH_OFFER_WITHOUT_APPLICATION_HARBORVariables as BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
 } from '../berthOffer/__generated__/BERTH_OFFER_WITHOUT_APPLICATION_HARBOR';
-import { BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY } from '../berthOffer/queries';
-import { getAllPiersIdentifiers, getHarbor, getBerthData } from '../berthOffer/utils';
+import { BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, SWITCH_BERTH_LEASE_QUERY } from '../berthOffer/queries';
+import { getAllPiersIdentifiers, getHarbor, getBerthData, getLeaseBoat } from '../berthOffer/utils';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
-import { SWITCH_PLACE_BERTH_LEASE_QUERY } from './queries';
-import {
-  SWITCH_PLACE_BERTH_LEASE,
-  SWITCH_PLACE_BERTH_LEASEVariables as SWITCH_PLACE_BERTH_LEASE_VARS,
-} from './__generated__/SWITCH_PLACE_BERTH_LEASE';
-import { getLeaseBoat } from './utils';
 import { BerthData } from '../berthOffer/types';
-import {
-  SWITCH_LEASE_BERTH,
-  SWITCH_LEASE_BERTHVariables as SWITCH_LEASE_BERTH_VARS,
-} from './__generated__/SWITCH_LEASE_BERTH';
-import { SWITCH_LEASE_BERTH_MUTATION } from './mutations';
 import hdsToast from '../../common/toast/hdsToast';
 import useRouterQuery from '../../common/hooks/useRouterQuery';
+import {
+  SWITCH_BERTH_LEASE,
+  SWITCH_BERTH_LEASEVariables as SWITCH_BERTH_LEASE_VARS,
+} from './__generated__/SWITCH_BERTH_LEASE';
+import { SWITCH_BERTH, SWITCH_BERTHVariables as SWITCH_BERTH_VARS } from './__generated__/SWITCH_BERTH';
+import { SWITCH_BERTH_MUTATION } from './mutations';
 
-// Implemented only for berths
-const SwitchPlaceViewContainer = () => {
+const SwitchBerthContainer = () => {
   const { t } = useTranslation();
   const routerQuery = useRouterQuery();
   const history = useHistory();
@@ -37,9 +31,9 @@ const SwitchPlaceViewContainer = () => {
   const leaseId = routerQuery.get('lease') || '';
 
   const { data: leaseData, error: leaseError, loading: leaseLoading } = useQuery<
-    SWITCH_PLACE_BERTH_LEASE,
-    SWITCH_PLACE_BERTH_LEASE_VARS
-  >(SWITCH_PLACE_BERTH_LEASE_QUERY, { variables: { leaseId } });
+    SWITCH_BERTH_LEASE,
+    SWITCH_BERTH_LEASE_VARS
+  >(SWITCH_BERTH_LEASE_QUERY, { variables: { leaseId } });
 
   const boat = getLeaseBoat(leaseData);
   const boatWidth = boat?.boatWidth ?? 0;
@@ -51,9 +45,7 @@ const SwitchPlaceViewContainer = () => {
     variables: { harborId, boatWidth },
   });
 
-  const [switchBerth, { loading: isSubmitting }] = useMutation<SWITCH_LEASE_BERTH, SWITCH_LEASE_BERTH_VARS>(
-    SWITCH_LEASE_BERTH_MUTATION
-  );
+  const [switchBerth, { loading: isSubmitting }] = useMutation<SWITCH_BERTH, SWITCH_BERTH_VARS>(SWITCH_BERTH_MUTATION);
 
   if (leaseLoading || harborLoading) return <LoadingSpinner isLoading />;
   if (!leaseData)
@@ -113,4 +105,4 @@ const SwitchPlaceViewContainer = () => {
   );
 };
 
-export default SwitchPlaceViewContainer;
+export default SwitchBerthContainer;

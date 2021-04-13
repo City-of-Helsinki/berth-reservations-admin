@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import SwitchPlaceModal from './SwitchPlaceModal';
+import SwitchBerthModal from './SwitchBerthModal';
 import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
-import { Lease } from '../../customerView/leasesCard/types';
+import { Lease } from '../leasesCard/types';
 import Button from '../../../common/button/Button';
 
-export type SwitchPlaceProps = Pick<Lease, 'id' | 'type' | 'status'>;
+export type SwitchBerthProps = Pick<Lease, 'id' | 'type' | 'status'>;
 
-const SwitchPlaceControls = ({ id, type, status }: SwitchPlaceProps) => {
+const SwitchBerth = ({ id, type, status }: SwitchBerthProps) => {
   const { t } = useTranslation();
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -22,9 +22,9 @@ const SwitchPlaceControls = ({ id, type, status }: SwitchPlaceProps) => {
           {t('customerView.leases.switchPlace.switchBerth')}
         </Button>
       )}
-      {modalVisible && <SwitchPlaceModal closeModal={() => setModalVisible(false)} leaseId={id} />}
+      {modalVisible && <SwitchBerthModal closeModal={() => setModalVisible(false)} leaseId={id} />}
     </>
   );
 };
 
-export default SwitchPlaceControls;
+export default SwitchBerth;

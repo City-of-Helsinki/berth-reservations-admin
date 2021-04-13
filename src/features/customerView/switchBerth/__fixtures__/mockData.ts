@@ -1,6 +1,5 @@
 import { HarborOption } from '../types';
-import { SWITCH_PLACE_HARBORS } from '../__generated__/SWITCH_PLACE_HARBORS';
-import { SWITCH_PLACE_BERTH_LEASE } from '../__generated__/SWITCH_PLACE_BERTH_LEASE';
+import { SWITCH_BERTH_HARBORS } from '../__generated__/SWITCH_BERTH_HARBORS';
 
 export const mockOption1: HarborOption = {
   label: 'Aataminsatama',
@@ -22,7 +21,7 @@ export const mockOption4: HarborOption = {
   value: '1',
 };
 
-export const mockSwitchPlaceHarbors: SWITCH_PLACE_HARBORS = {
+export const mockSwitchBerthHarbors: SWITCH_BERTH_HARBORS = {
   harbors: {
     __typename: 'HarborNodeConnection',
     edges: [
@@ -59,24 +58,5 @@ export const mockSwitchPlaceHarbors: SWITCH_PLACE_HARBORS = {
         },
       },
     ],
-  },
-};
-
-export const mockSwitchPlaceBerthLease: SWITCH_PLACE_BERTH_LEASE = {
-  berthLease: {
-    __typename: 'BerthLeaseNode',
-    boat: {
-      __typename: 'BoatNode',
-      boatType: { id: '2', name: 'Soutuvene', __typename: 'BoatTypeType' },
-      draught: 0.5,
-      id: 'MOCK-BOAT',
-      length: 3,
-      model: 'MODEL',
-      name: 'BOAT',
-      registrationNumber: '',
-      weight: 100,
-      width: 1,
-    },
-    id: 'MOCK-LEASE',
   },
 };

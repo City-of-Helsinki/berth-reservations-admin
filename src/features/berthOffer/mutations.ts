@@ -10,3 +10,11 @@ export const CREATE_BERTH_LEASE_MUTATION = gql`
     }
   }
 `;
+
+export const SWITCH_BERTH_MUTATION = gql`
+  mutation SWITCH_BERTH($input: SwitchBerthMutationInput!) {
+    switchBerth(input: $input) {
+      clientMutationId
+    }
+  }
+`;

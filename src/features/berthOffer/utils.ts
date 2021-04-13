@@ -3,6 +3,7 @@ import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { HarborCardProps } from '../../common/harborCard/HarborCard';
 import { Boat } from '../../common/boatCard/types';
 import { HarborData, BerthData, PiersData, BoatData, Lease, PierTab } from './types';
+import { SWITCH_BERTH_LEASE } from './__generated__/SWITCH_BERTH_LEASE';
 
 export const getBerthData = (data: HarborData | null | undefined): BerthData[] => {
   if (!data?.properties?.piers) return [];
@@ -143,32 +144,37 @@ export const getHarbor = (data: BERTH_OFFER['harborByServicemapId'] | undefined)
   };
 };
 
-export const getBoat = (
-  berthApplication: BERTH_OFFER['berthApplication'] | undefined,
+export const getApplicationBoat = (
+  application: BERTH_OFFER['berthApplication'] | undefined,
   boatTypes: BERTH_OFFER['boatTypes'] | undefined
 ): Boat | null => {
-  if (!berthApplication) return null;
-
-  const {
-    boatType,
-    boatRegistrationNumber,
-    boatName,
-    boatModel,
-    boatWidth,
-    boatLength,
-    boatDraught,
-    boatWeight,
-  } = berthApplication;
+  if (!application) return null;
 
   return {
-    boatType: boatTypes?.find(({ id }) => id === boatType)?.name ?? null,
-    boatRegistrationNumber,
-    boatName,
-    boatModel,
-    boatWidth,
-    boatLength,
-    boatDraught,
-    boatWeight,
+    boatType: boatTypes?.find(({ id }) => id === application.boatType)?.name ?? null,
+    boatRegistrationNumber: application.boatRegistrationNumber,
+    boatName: application.boatName,
+    boatModel: application.boatModel,
+    boatWidth: application.boatWidth,
+    boatLength: application.boatLength,
+    boatDraught: application.boatDraught,
+    boatWeight: application.boatWeight,
+  };
+};
+
+export const getLeaseBoat = (data: SWITCH_BERTH_LEASE | undefined): Boat | undefined => {
+  const boat = data?.berthLease?.boat;
+  if (!boat) return undefined;
+
+  return {
+    boatRegistrationNumber: boat.registrationNumber,
+    boatType: boat.boatType.name,
+    boatName: boat.name,
+    boatWidth: boat.width,
+    boatDraught: boat.draught,
+    boatLength: boat.length,
+    boatWeight: boat.weight,
+    boatModel: boat.model,
   };
 };
 

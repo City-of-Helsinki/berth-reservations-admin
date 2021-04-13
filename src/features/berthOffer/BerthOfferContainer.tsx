@@ -8,7 +8,7 @@ import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { BERTH_OFFER_QUERY } from './queries';
 import BerthOffer from './components/BerthOffer';
 import { BERTH_OFFER, BERTH_OFFERVariables as BERTH_OFFER_VARS } from './__generated__/BERTH_OFFER';
-import { getBerthData, getAllPiersIdentifiers, getBoat, getHarbor, getApplicationTypeTKey } from './utils';
+import { getBerthData, getAllPiersIdentifiers, getApplicationBoat, getHarbor, getApplicationTypeTKey } from './utils';
 import { formatDate } from '../../common/utils/format';
 import { CREATE_BERTH_LEASE_MUTATION } from './mutations';
 import {
@@ -51,7 +51,7 @@ const BerthOfferContainer = () => {
   if (applicationLoading) return <LoadingSpinner isLoading />;
 
   const data = applicationData?.harborByServicemapId;
-  const boat = getBoat(applicationData?.berthApplication, applicationData?.boatTypes);
+  const boat = getApplicationBoat(applicationData?.berthApplication, applicationData?.boatTypes);
 
   if (!data) return <NoDataNotification />;
   if (applicationError) return <ErrorNotification />;

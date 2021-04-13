@@ -4,31 +4,31 @@ import { useQuery } from '@apollo/react-hooks';
 import { useHistory } from 'react-router-dom';
 
 import Modal from '../../../common/modal/Modal';
-import { SWITCH_PLACE_HARBORS } from '../__generated__/SWITCH_PLACE_HARBORS';
-import { SWITCH_PLACE_HARBORS_QUERY } from '../queries';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import Select from '../../../common/select/Select';
-import { getHarborOptions } from '../utils';
 import Button from '../../../common/button/Button';
-import styles from './switchPlaceModal.module.scss';
+import styles from './switchBerthModal.module.scss';
+import { getHarborOptions } from './utils';
+import { SWITCH_BERTH_HARBORS_QUERY } from './queries';
+import { SWITCH_BERTH_HARBORS } from './__generated__/SWITCH_BERTH_HARBORS';
 
-export interface SwitchPlaceModalProps {
+export interface SwitchBerthModalProps {
   leaseId: string;
   closeModal(): void;
 }
 
-const SwitchPlaceModal = ({ closeModal, leaseId }: SwitchPlaceModalProps) => {
+const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
   const { t } = useTranslation();
   const history = useHistory();
-  const { loading, data } = useQuery<SWITCH_PLACE_HARBORS>(SWITCH_PLACE_HARBORS_QUERY);
+  const { loading, data } = useQuery<SWITCH_BERTH_HARBORS>(SWITCH_BERTH_HARBORS_QUERY);
   const [selectedHarbor, setSelectedHarbor] = useState<string | null>(null);
 
   const harborOptions = getHarborOptions(data);
-  const openOfferForm = () => history.push(`/switch-place?lease=${leaseId}&harbor=${selectedHarbor}`);
+  const openOfferForm = () => history.push(`/switch-berth?lease=${leaseId}&harbor=${selectedHarbor}`);
 
   return (
     <Modal isOpen toggleModal={closeModal} label={t('customerView.leases.switchPlace.switchBerth').toUpperCase()}>
-      <div className={styles.switchPlaceModal}>
+      <div className={styles.switchBerthModal}>
         <p className={styles.instructions}>{t('customerView.leases.switchPlace.berthSwitchInstructions')}</p>
 
         {loading ? (
@@ -59,4 +59,4 @@ const SwitchPlaceModal = ({ closeModal, leaseId }: SwitchPlaceModalProps) => {
   );
 };
 
-export default SwitchPlaceModal;
+export default SwitchBerthModal;

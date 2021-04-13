@@ -6,18 +6,18 @@
 import { SwitchBerthMutationInput } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
-// GraphQL mutation operation: SWITCH_LEASE_BERTH
+// GraphQL mutation operation: SWITCH_BERTH
 // ====================================================
 
-export interface SWITCH_LEASE_BERTH_switchBerth {
+export interface SWITCH_BERTH_switchBerth {
   __typename: "SwitchBerthMutationPayload";
   clientMutationId: string | null;
 }
 
-export interface SWITCH_LEASE_BERTH {
-  switchBerth: SWITCH_LEASE_BERTH_switchBerth | null;
+export interface SWITCH_BERTH {
+  switchBerth: SWITCH_BERTH_switchBerth | null;
 }
 
-export interface SWITCH_LEASE_BERTHVariables {
+export interface SWITCH_BERTHVariables {
   input: SwitchBerthMutationInput;
 }

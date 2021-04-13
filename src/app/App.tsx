@@ -18,7 +18,6 @@ import Page from './page/Page';
 import Pricing from '../features/pricing/PricingContainer';
 import PrivateRoute from '../features/auth/privateRoute/PrivateRoute';
 import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
-import SwitchPlaceViewContainer from '../features/switchPlace/SwitchPlaceViewContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
 import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
@@ -27,6 +26,7 @@ import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStora
 import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
 import apolloClient from './apolloClient';
 import BerthOfferWithoutApplicationContainer from '../features/berthOffer/BerthOfferWithoutApplicationContainer';
+import SwitchBerthContainer from '../features/berthOffer/SwitchBerthContainer';
 
 const App = () => {
   return (
@@ -63,7 +63,7 @@ const App = () => {
                       path="/berth-offer-without-application"
                       component={BerthOfferWithoutApplicationContainer}
                     />
-                    <PrivateRoute exact path="/switch-berth" component={SwitchPlaceViewContainer} />
+                    <PrivateRoute exact path="/switch-berth" component={SwitchBerthContainer} />
 
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />

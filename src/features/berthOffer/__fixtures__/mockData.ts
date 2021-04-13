@@ -1,5 +1,6 @@
 import { BERTH_OFFER } from '../__generated__/BERTH_OFFER';
 import { ApplicationStatus, BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
+import { SWITCH_BERTH_LEASE } from '../__generated__/SWITCH_BERTH_LEASE';
 
 export const berthOfferQueryData: BERTH_OFFER = {
   berthApplication: {
@@ -110,5 +111,24 @@ export const berthOfferQueryData: BERTH_OFFER = {
         ],
       },
     },
+  },
+};
+
+export const mockSwitchBerthLease: SWITCH_BERTH_LEASE = {
+  berthLease: {
+    __typename: 'BerthLeaseNode',
+    boat: {
+      __typename: 'BoatNode',
+      boatType: { id: '2', name: 'Soutuvene', __typename: 'BoatTypeType' },
+      draught: 0.5,
+      id: 'MOCK-BOAT',
+      length: 3,
+      model: 'MODEL',
+      name: 'BOAT',
+      registrationNumber: '',
+      weight: 100,
+      width: 1,
+    },
+    id: 'MOCK-LEASE',
   },
 };

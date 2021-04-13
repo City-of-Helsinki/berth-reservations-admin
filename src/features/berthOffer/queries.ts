@@ -80,3 +80,25 @@ export const BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY = gql`
   ${BERTH_OFFER_HARBOR_FRAGMENT}
   ${BERTH_OFFER_PIERS_FRAGMENT}
 `;
+
+export const SWITCH_BERTH_LEASE_QUERY = gql`
+  query SWITCH_BERTH_LEASE($leaseId: ID!) {
+    berthLease(id: $leaseId) {
+      id
+      boat {
+        boatType {
+          id
+          name
+        }
+        draught
+        id
+        length
+        model
+        name
+        registrationNumber
+        weight
+        width
+      }
+    }
+  }
+`;
