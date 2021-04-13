@@ -4,22 +4,22 @@ import { useTranslation } from 'react-i18next';
 import { Notification } from 'hds-react';
 
 import styles from './berthOffer.module.scss';
-import PageTitle from '../../common/pageTitle/PageTitle';
-import PageContent from '../../common/pageContent/PageContent';
-import HarborCard, { HarborCardProps } from '../../common/harborCard/HarborCard';
-import BoatCard from '../../common/boatCard/BoatCard';
-import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import BerthDetails from '../berthDetails/BerthDetailsContainer';
-import TableFilters from '../../common/tableFilters/TableFilters';
+import PageTitle from '../../../common/pageTitle/PageTitle';
+import PageContent from '../../../common/pageContent/PageContent';
+import HarborCard, { HarborCardProps } from '../../../common/harborCard/HarborCard';
+import BoatCard from '../../../common/boatCard/BoatCard';
+import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
+import BerthDetails from '../../berthDetails/BerthDetailsContainer';
+import TableFilters from '../../../common/tableFilters/TableFilters';
 import TableTools from './tableTools/TableTools';
-import Button from '../../common/button/Button';
-import InternalLink from '../../common/internalLink/InternalLink';
-import { formatDimension } from '../../common/utils/format';
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
-import { Boat } from '../../common/boatCard/types';
-import ConfirmationModal from '../../common/confirmationModal/ConfirmationModal';
-import { BerthData, PierTab } from './types';
-import { isSuitableBerthLength } from './utils';
+import Button from '../../../common/button/Button';
+import InternalLink from '../../../common/internalLink/InternalLink';
+import { formatDimension } from '../../../common/utils/format';
+import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import { Boat } from '../../../common/boatCard/types';
+import ConfirmationModal from '../../../common/confirmationModal/ConfirmationModal';
+import { BerthData, PierTab } from '../types';
+import { isSuitableBerthLength } from '../utils';
 
 interface BerthOfferProps {
   application?: {

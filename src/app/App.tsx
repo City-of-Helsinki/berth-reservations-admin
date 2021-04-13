@@ -26,6 +26,7 @@ import WinterStorageApplicationView from '../features/winterStorageApplicationVi
 import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStorageAreaListContainer';
 import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
 import apolloClient from './apolloClient';
+import BerthOfferWithoutApplicationContainer from '../features/berthOffer/BerthOfferWithoutApplicationContainer';
 
 const App = () => {
   return (
@@ -57,6 +58,11 @@ const App = () => {
                     <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
 
                     <PrivateRoute exact path="/berth-offer" component={BerthOfferContainer} />
+                    <PrivateRoute
+                      exact
+                      path="/berth-offer-without-application"
+                      component={BerthOfferWithoutApplicationContainer}
+                    />
                     <PrivateRoute exact path="/switch-berth" component={SwitchPlaceViewContainer} />
 
                     <PrivateRoute exact path="/pricing" component={Pricing} />

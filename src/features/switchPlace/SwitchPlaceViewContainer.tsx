@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
 
-import BerthOffer from '../berthOffer/BerthOffer';
+import BerthOffer from '../berthOffer/components/BerthOffer';
 import {
   BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
   BERTH_OFFER_WITHOUT_APPLICATION_HARBORVariables as BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS,

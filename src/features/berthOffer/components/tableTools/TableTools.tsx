@@ -3,11 +3,11 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import styles from './tableTools.module.scss';
-import Text from '../../../common/text/Text';
-import StatusLabel from '../../../common/statusLabel/StatusLabel';
-import { APPLICATION_STATUS } from '../../../common/utils/constants';
-import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
-import Button from '../../../common/button/Button';
+import Text from '../../../../common/text/Text';
+import StatusLabel from '../../../../common/statusLabel/StatusLabel';
+import { APPLICATION_STATUS } from '../../../../common/utils/constants';
+import { ApplicationStatus } from '../../../../@types/__generated__/globalTypes';
+import Button from '../../../../common/button/Button';
 
 export interface TableToolsProps {
   application?: {

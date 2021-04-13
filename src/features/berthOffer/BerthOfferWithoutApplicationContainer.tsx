@@ -5,11 +5,17 @@ import { useHistory } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
 
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
-import { BERTH_OFFER_QUERY } from './queries';
+import { BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_QUERY, BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY } from './queries';
 import BerthOffer from './components/BerthOffer';
-import { BERTH_OFFER, BERTH_OFFERVariables as BERTH_OFFER_VARS } from './__generated__/BERTH_OFFER';
-import { getBerthData, getAllPiersIdentifiers, getBoat, getHarbor, getApplicationTypeTKey } from './utils';
-import { formatDate } from '../../common/utils/format';
+import {
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+  BERTH_OFFER_WITHOUT_APPLICATION_HARBORVariables as BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS,
+} from './__generated__/BERTH_OFFER_WITHOUT_APPLICATION_HARBOR';
+import {
+  BERTH_OFFER_WITHOUT_APPLICATION_PROFILE,
+  BERTH_OFFER_WITHOUT_APPLICATION_PROFILEVariables as BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_VARS,
+} from './__generated__/BERTH_OFFER_WITHOUT_APPLICATION_PROFILE';
+import { getBerthData, getAllPiersIdentifiers, getHarbor, getCustomerBoat } from './utils';
 import { CREATE_BERTH_LEASE_MUTATION } from './mutations';
 import {
   CREATE_BERTH_LEASE,
@@ -19,28 +25,39 @@ import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
 import { BerthData } from './types';
 import useRouterQuery from '../../common/hooks/useRouterQuery';
 import {
-  showBerthSuccessToast,
   ErrorNotification,
-  NoDataNotification,
   NoBoatNotification,
+  NoDataNotification,
+  showBerthSuccessToast,
 } from './components/notifications';
 
-const BerthOfferContainer = () => {
-  const { t, i18n } = useTranslation();
+const BerthOfferWithoutApplicationContainer = () => {
+  const { t } = useTranslation();
   const routerQuery = useRouterQuery();
   const history = useHistory();
 
   const harborId = routerQuery.get('harbor') || '';
-  const applicationId = routerQuery.get('application') || '';
   const customerId = routerQuery.get('customer') || '';
+  const boatId = routerQuery.get('boat') || '';
 
-  const { loading: applicationLoading, error: applicationError, data: applicationData } = useQuery<
-    BERTH_OFFER,
-    BERTH_OFFER_VARS
-  >(BERTH_OFFER_QUERY, {
-    variables: { applicationId, servicemapId: harborId },
+  const { loading: customerLoading, error: customerError, data: customerData } = useQuery<
+    BERTH_OFFER_WITHOUT_APPLICATION_PROFILE,
+    BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_VARS
+  >(BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_QUERY, {
+    variables: { customerId },
+    skip: !customerId,
   });
+  const boatNode = customerData?.profile?.boats?.edges?.find((edge) => edge?.node?.id === boatId)?.node;
+  const boat = getCustomerBoat(boatNode);
 
+  const boatWidth = boat?.boatWidth ?? 0;
+  const { loading: harborLoading, error: harborError, data: harborData } = useQuery<
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,
+    BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_VARS
+  >(BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_QUERY, {
+    variables: { harborId, boatWidth: Number(boatWidth) },
+    skip: !boatWidth,
+  });
   const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_BERTH_LEASE, CREATE_BERTH_LEASE_VARS>(
     CREATE_BERTH_LEASE_MUTATION,
     {
@@ -48,20 +65,14 @@ const BerthOfferContainer = () => {
     }
   );
 
-  if (applicationLoading) return <LoadingSpinner isLoading />;
+  if (customerLoading || harborLoading) return <LoadingSpinner isLoading />;
 
-  const data = applicationData?.harborByServicemapId;
-  const boat = getBoat(applicationData?.berthApplication, applicationData?.boatTypes);
+  const data = harborData?.harbor;
 
-  if (!data) return <NoDataNotification />;
-  if (applicationError) return <ErrorNotification />;
+  if (!data && !customerData) return <NoDataNotification />;
+  if (customerError || harborError) return <ErrorNotification />;
   if (!boat) return <NoBoatNotification />;
 
-  const application = applicationData?.berthApplication && {
-    date: formatDate(applicationData.berthApplication.createdAt, i18n.language),
-    status: applicationData.berthApplication.status,
-    type: t(getApplicationTypeTKey(!!applicationData.berthApplication.berthSwitch)),
-  };
   const tableData = getBerthData(data);
   const harbor = getHarbor(data);
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
@@ -71,7 +82,7 @@ const BerthOfferContainer = () => {
     createBerthLease({
       variables: {
         input: {
-          applicationId: applicationId,
+          applicationId: undefined,
           customerId: customerId,
           berthId: berth.id,
         },
@@ -84,7 +95,6 @@ const BerthOfferContainer = () => {
 
   return (
     <BerthOffer
-      application={application}
       boat={boat}
       handleClickSelect={handleClickSelect}
       handleReturn={handleReturn}
@@ -96,4 +106,4 @@ const BerthOfferContainer = () => {
   );
 };
 
-export default BerthOfferContainer;
+export default BerthOfferWithoutApplicationContainer;

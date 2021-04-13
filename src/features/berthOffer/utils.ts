@@ -188,3 +188,6 @@ export const getCustomerBoat = (data: BoatData | null | undefined): Boat | null 
 };
 
 export const isSuitableBerthLength = (berthLength: number, boatLength: number) => berthLength >= boatLength;
+
+export const getApplicationTypeTKey = (isSwitch: boolean): string =>
+  isSwitch ? 'applicationList.applicationType.switchApplication' : 'applicationList.applicationType.newApplication';
