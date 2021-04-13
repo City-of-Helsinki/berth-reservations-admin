@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-import { Notification } from 'hds-react';
 
 import BerthOffer from '../berthOffer/components/BerthOffer';
 import {
@@ -21,6 +20,7 @@ import {
 } from './__generated__/SWITCH_BERTH_LEASE';
 import { SWITCH_BERTH, SWITCH_BERTHVariables as SWITCH_BERTH_VARS } from './__generated__/SWITCH_BERTH';
 import { SWITCH_BERTH_MUTATION } from './mutations';
+import { ErrorNotification, NoDataNotification } from './components/notifications';
 
 const SwitchBerthContainer = () => {
   const { t } = useTranslation();
@@ -48,18 +48,8 @@ const SwitchBerthContainer = () => {
   const [switchBerth, { loading: isSubmitting }] = useMutation<SWITCH_BERTH, SWITCH_BERTH_VARS>(SWITCH_BERTH_MUTATION);
 
   if (leaseLoading || harborLoading) return <LoadingSpinner isLoading />;
-  if (!leaseData)
-    return (
-      <Notification label={t('common.notification.noData.label')}>
-        {t('common.notification.noData.description')}
-      </Notification>
-    );
-  if (leaseError || harborError)
-    return (
-      <Notification label={t('common.notification.error.label')} type="error">
-        {t('common.notification.error.description')}
-      </Notification>
-    );
+  if (!leaseData) return <NoDataNotification />;
+  if (leaseError || harborError) return <ErrorNotification />;
 
   const data = harborData?.harbor;
   const tableData = getBerthData(data);
@@ -67,7 +57,6 @@ const SwitchBerthContainer = () => {
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
 
   const handleReturn = () => history.goBack();
-
   const handleClickSelect = (berth: BerthData) => {
     switchBerth({
       variables: {
