@@ -19,7 +19,7 @@ const SwitchBerth = ({ id, type, status }: SwitchBerthProps) => {
     <>
       {canPlaceBeSwitched(status) && (
         <Button onClick={() => setModalVisible(true)} size="small">
-          {t('customerView.leases.switchPlace.switchBerth')}
+          {t('customerView.switchBerth.title')}
         </Button>
       )}
       {modalVisible && <SwitchBerthModal closeModal={() => setModalVisible(false)} leaseId={id} />}

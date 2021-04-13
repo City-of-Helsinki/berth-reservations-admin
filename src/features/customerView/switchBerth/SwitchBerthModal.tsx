@@ -27,9 +27,9 @@ const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
   const openOfferForm = () => history.push(`/switch-berth?lease=${leaseId}&harbor=${selectedHarbor}`);
 
   return (
-    <Modal isOpen toggleModal={closeModal} label={t('customerView.leases.switchPlace.switchBerth').toUpperCase()}>
+    <Modal isOpen toggleModal={closeModal} label={t('customerView.switchBerth.title').toUpperCase()}>
       <div className={styles.switchBerthModal}>
-        <p className={styles.instructions}>{t('customerView.leases.switchPlace.berthSwitchInstructions')}</p>
+        <p className={styles.instructions}>{t('customerView.switchBerth.instructions')}</p>
 
         {loading ? (
           <div className={styles.spinnerWrapper}>
@@ -41,7 +41,7 @@ const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
             options={harborOptions}
             value={selectedHarbor}
             visibleOptions={3}
-            placeholder={t('customerView.leases.switchPlace.selectHarbor')}
+            placeholder={t('customerView.switchBerth.selectHarbor')}
             onChange={(e) => setSelectedHarbor(e.target.value)}
           />
         )}
@@ -51,7 +51,7 @@ const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
             {t('common.cancel')}
           </Button>
           <Button disabled={!selectedHarbor} onClick={openOfferForm}>
-            {t('customerView.leases.switchPlace.continueToBerthSelection')}
+            {t('customerView.switchBerth.proceed')}
           </Button>
         </div>
       </div>
