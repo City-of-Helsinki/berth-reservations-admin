@@ -58,7 +58,7 @@ const BerthOfferTable = ({
           }, [row])}
           disabled={!row.original.isActive || isSubmitting}
         >
-          {t('offer.tableCells.select')}
+          {t('common.select')}
         </Button>
       ),
       Header: t('common.terminology.selection') || '',

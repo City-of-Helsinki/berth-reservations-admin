@@ -98,7 +98,7 @@ const BerthOfferCard = ({
       placeType={t('common.terminology.berth').toUpperCase()}
       refetchQueries={refetchQueries}
       sendButtonLabel={t('offer.invoicing.acceptAndSend')}
-      title={t('offer.title').toUpperCase()}
+      title={t('common.terminology.offer').toUpperCase()}
     />
   );
 };

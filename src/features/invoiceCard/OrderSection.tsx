@@ -40,7 +40,7 @@ const OrderSection = ({ leaseStatus, order, editAdditionalServices }: OrderSecti
       </Section>
       <Section>
         <LabelValuePair
-          label={t('offer.invoicing.additionalServices')}
+          label={t('common.terminology.additionalServices')}
           value={
             <Button
               size="small"

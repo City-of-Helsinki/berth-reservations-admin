@@ -98,17 +98,22 @@
     },
     "terminology": {
       "accessiblePlace": "Esteetön paikka",
+      "additionalProductInvoice": "Lisäpalvelulasku",
+      "additionalServices": "Lisäpalvelut",
       "applications": "Hakemukset",
       "basePrice": "Perushinta",
       "berth": "Venepaikka",
       "berthRent": "Venepaikan vuokra",
-      "additionalProductInvoice": "Lisäpalvelulasku",
       "berths": "Venepaikat",
       "boatSummerStorage": "Veneiden kesäsäilytys",
+      "boatModel": "Merkki",
+      "boatType": "Veneen tyyppi",
       "boats": "Veneet",
       "comments": "Huomiot",
       "contactInformation": "Yhteystiedot",
+      "contract": "Sopimus",
       "customer": "Asiakas",
+      "customerBoat": "Asiakkaan vene",
       "dataEntry": "Tietue",
       "depth": "Syvyys",
       "dinghyPlace": "Jollapaikka",
@@ -129,11 +134,13 @@
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
       "mooringType": "Kiinnitystapa",
+      "offer": "Tarjous",
       "openInvoices": "Avoimet laskut",
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
       "priceTier": "Maksuluokka",
+      "registrationNumber": "Rekisterinumero",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
@@ -143,11 +150,11 @@
       "waste": "Jäte",
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
+      "weight": "Paino",
       "width": "Leveys",
       "winterStorageArea": "Talvisäilytysalue",
-      "winterStoragePlaces": "Talvisäilytyspaikat",
       "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra",
-      "contract": "Sopimus"
+      "winterStoragePlaces": "Talvisäilytyspaikat"
     },
     "notification": {
       "noData": {
@@ -456,16 +463,11 @@
     "emptyState": "Rajauksella ei löytynyt asiakastietoja"
   },
   "offer": {
-    "title": "Tarjous",
-    "tableCells": {
-      "select": "Valitse"
-    },
     "confirmation": {
       "title": "Varmista venepaikka",
       "info": "Venepaikka on lyhyempi kuin veneen pituus. Oletko varma etta haluat tarjota tata paikkaa?"
     },
     "tableTools": {
-      "berths": "Venepaikat",
       "return": "Palaa valitsematta"
     },
     "berthDetails": {
@@ -473,22 +475,10 @@
       "noSuitableBerths": "Ei sopivaa venepaikkaa"
     },
     "invoicing": {
-      "additionalServices": "Lisäpalvelut",
       "acceptAndSend": "Hyväksy ja lähetä tarjous",
       "showInvoice": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"
-    },
-    "boatCard": {
-      "heading": "ASIAKKAAN VENE",
-      "type": "Veneen tyyppi",
-      "boatRegistrationNumber": "Rekisterinumero",
-      "boatName": "Nimi",
-      "boatModel": "Merkki",
-      "boatWidth": "Veneen leveys",
-      "boatLength": "Veneen pituus",
-      "boatDraught": "Veneen syväys",
-      "boatWeight": "Veneen paino"
     },
     "notifications": {
       "berthLeaseCreated": {

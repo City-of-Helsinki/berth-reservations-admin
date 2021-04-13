@@ -95,7 +95,7 @@ exports[`BoatCard renders correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen leveys:
+              Leveys:
             </span>
             <span
               class="value left"
@@ -109,7 +109,7 @@ exports[`BoatCard renders correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen pituus:
+              Pituus:
             </span>
             <span
               class="value left"
@@ -123,7 +123,7 @@ exports[`BoatCard renders correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen syväys:
+              Syväys:
             </span>
             <span
               class="value left"
@@ -137,7 +137,7 @@ exports[`BoatCard renders correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen paino:
+              Paino:
             </span>
             <span
               class="value left"
@@ -247,7 +247,7 @@ exports[`BoatCard renders missing fields correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen leveys:
+              Leveys:
             </span>
             <span
               class="value left"
@@ -261,7 +261,7 @@ exports[`BoatCard renders missing fields correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen pituus:
+              Pituus:
             </span>
             <span
               class="value left"
@@ -275,7 +275,7 @@ exports[`BoatCard renders missing fields correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen syväys:
+              Syväys:
             </span>
             <span
               class="value left"
@@ -289,7 +289,7 @@ exports[`BoatCard renders missing fields correctly 1`] = `
             <span
               class="label standard"
             >
-              Veneen paino:
+              Paino:
             </span>
             <span
               class="value left"

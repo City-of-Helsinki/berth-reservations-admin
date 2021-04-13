@@ -45,7 +45,7 @@ const BerthOffer = ({
   return (
     <>
       <PageContent className={styles.offer}>
-        <PageTitle title={t('offer.title')} />
+        <PageTitle title={t('common.terminology.offer')} />
 
         {harbor && <HarborCard harbor={harbor} className={styles.card} />}
 
