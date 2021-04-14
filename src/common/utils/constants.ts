@@ -33,6 +33,10 @@ export const ORDER_STATUS: OrderStatusType = {
     label: 'common.orderStatus.cancelled',
     type: 'error',
   },
+  DRAFTED: {
+    label: 'common.orderStatus.drafted',
+    type: 'warning',
+  },
   ERROR: {
     label: 'common.orderStatus.error',
     type: 'error',
@@ -40,6 +44,10 @@ export const ORDER_STATUS: OrderStatusType = {
   EXPIRED: {
     label: 'common.orderStatus.expired',
     type: 'error',
+  },
+  OFFERED: {
+    label: 'common.orderStatus.offered',
+    type: 'warning',
   },
   PAID: {
     label: 'common.orderStatus.paid',
@@ -56,10 +64,6 @@ export const ORDER_STATUS: OrderStatusType = {
   REJECTED: {
     label: 'common.orderStatus.rejected',
     type: 'error',
-  },
-  WAITING: {
-    label: 'common.orderStatus.waiting',
-    type: 'warning',
   },
 };
 

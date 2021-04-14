@@ -170,13 +170,14 @@
     },
     "orderStatus": {
       "cancelled": "Peruutettu",
+      "drafted": "Luotu",
       "error": "Virhe",
       "expired": "Erääntynyt",
+      "offered": "Tarjottu",
       "paid": "Maksettu",
       "paidManually": "Maksettu muualla",
       "refunded": "Maksu palautettu",
-      "rejected": "Hylätty",
-      "waiting": "Odottaa maksua"
+      "rejected": "Hylätty"
     },
     "unlinkCustomer": {
       "buttonText": "Poista asiakasliitos",

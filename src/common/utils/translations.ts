@@ -86,10 +86,14 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
   switch (orderStatus) {
     case OrderStatus.CANCELLED:
       return 'common.orderStatus.cancelled';
+    case OrderStatus.DRAFTED:
+      return 'common.orderStatus.drafted';
     case OrderStatus.ERROR:
       return 'common.orderStatus.error';
     case OrderStatus.EXPIRED:
       return 'common.orderStatus.expired';
+    case OrderStatus.OFFERED:
+      return 'common.orderStatus.offered';
     case OrderStatus.PAID:
       return 'common.orderStatus.paid';
     case OrderStatus.PAID_MANUALLY:
@@ -98,8 +102,6 @@ export const getOrderStatusTKey = (orderStatus: OrderStatus): string => {
       return 'common.orderStatus.refunded';
     case OrderStatus.REJECTED:
       return 'common.orderStatus.rejected';
-    case OrderStatus.WAITING:
-      return 'common.orderStatus.waiting';
 
     default:
       return orderStatus;
