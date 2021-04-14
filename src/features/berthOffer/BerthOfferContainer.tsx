@@ -32,7 +32,6 @@ const BerthOfferContainer = () => {
 
   const harborId = routerQuery.get('harbor') || '';
   const applicationId = routerQuery.get('application') || '';
-  const customerId = routerQuery.get('customer') || '';
 
   const { loading: applicationLoading, error: applicationError, data: applicationData } = useQuery<
     BERTH_OFFER,
@@ -72,7 +71,7 @@ const BerthOfferContainer = () => {
       variables: {
         input: {
           applicationId: applicationId,
-          customerId: customerId,
+          customerId: undefined,
           berthId: berth.id,
         },
       },
