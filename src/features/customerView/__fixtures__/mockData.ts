@@ -35,7 +35,7 @@ export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
     orderId: 'MOCK-ORDER-ID',
     orderNumber: 'MOCK-INVOICE',
     orderType: OrderOrderType.LEASE_ORDER,
-    status: OrderStatus.WAITING,
+    status: OrderStatus.OFFERED,
     berthInformation: {
       number: '1',
       pierIdentifier: 'C',

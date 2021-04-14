@@ -120,13 +120,14 @@ export enum OrderOrderType {
 
 export enum OrderStatus {
   CANCELLED = "CANCELLED",
+  DRAFTED = "DRAFTED",
   ERROR = "ERROR",
   EXPIRED = "EXPIRED",
+  OFFERED = "OFFERED",
   PAID = "PAID",
   PAID_MANUALLY = "PAID_MANUALLY",
   REFUNDED = "REFUNDED",
   REJECTED = "REJECTED",
-  WAITING = "WAITING",
 }
 
 export enum OrganizationType {

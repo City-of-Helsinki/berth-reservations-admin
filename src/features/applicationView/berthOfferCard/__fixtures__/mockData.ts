@@ -57,7 +57,7 @@ export const lease: BerthLease = {
     orderNumber: '123456',
     price: '96.67',
     totalPrice: '256.70',
-    status: OrderStatus.WAITING,
+    status: OrderStatus.OFFERED,
     orderLines: {
       edges: [
         {
