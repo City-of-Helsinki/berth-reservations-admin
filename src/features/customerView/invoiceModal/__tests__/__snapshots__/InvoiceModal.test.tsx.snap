@@ -101,7 +101,7 @@ exports[`InvoiceModal renders correctly 1`] = `
           <span
             class="value left"
           >
-            Odottaa maksua
+            Tarjottu
           </span>
         </div>
       </section>

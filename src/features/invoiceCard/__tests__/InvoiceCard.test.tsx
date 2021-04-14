@@ -15,7 +15,7 @@ describe('InvoiceCard', () => {
       totalPrice: 2,
       fixedProducts: [],
       optionalProducts: [],
-      status: OrderStatus.WAITING,
+      status: OrderStatus.OFFERED,
     },
     placeType: 'place type',
     placeName: 'place name',

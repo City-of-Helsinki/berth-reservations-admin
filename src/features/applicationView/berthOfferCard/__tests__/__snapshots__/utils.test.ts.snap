@@ -65,7 +65,7 @@ Object {
     ],
     "orderNumber": "123456",
     "price": "96.67",
-    "status": "WAITING",
+    "status": "OFFERED",
     "totalPrice": "256.70",
   },
   "pierIdentifier": "C",
