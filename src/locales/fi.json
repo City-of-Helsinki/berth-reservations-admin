@@ -144,6 +144,7 @@
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
+      "switchOffer": "Vaihtotarjous",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "unnamedBoat": "Nimetön vene",
@@ -476,9 +477,15 @@
     },
     "invoicing": {
       "acceptAndSend": "Hyväksy ja lähetä tarjous",
+      "send": "Lähetä tarjous",
       "showInvoice": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"
+    },
+    "selectBerthLease": {
+      "title": "VALITSE NYKYINEN VENEPAIKKA",
+      "message": "Järjestelmä ei löydä hakemuksen tietoja vastaavaa irtisanottavaa (nykyistä) venepaikkaa. Valitse venepaikka listalta.",
+      "errorMessage": "Asiakkaalla ei ole voimassaolevia venepaikkoja. Vaihtohakemusta ei voida käsitellä."
     },
     "notifications": {
       "berthLeaseCreated": {

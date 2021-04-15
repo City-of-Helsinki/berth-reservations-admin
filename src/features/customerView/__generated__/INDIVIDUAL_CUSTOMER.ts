@@ -395,7 +395,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node {
   id: string;
   orderNumber: string;
   orderType: OrderOrderType;
-  dueDate: any;
+  dueDate: any | null;
   paidAt: any | null;
   totalPrice: any;
   price: any;

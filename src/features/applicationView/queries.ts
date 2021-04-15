@@ -57,6 +57,46 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
           title
         }
       }
+      switchOffers {
+        edges {
+          node {
+            id
+            lease {
+              id
+            }
+            customerEmail
+            berth {
+              id
+              depth
+              length
+              mooringType
+              width
+              comment
+              isAccessible
+              number
+              pier {
+                id
+                properties {
+                  identifier
+                  electricity
+                  gate
+                  lighting
+                  mooring
+                  wasteCollection
+                  water
+                  harbor {
+                    id
+                    properties {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+            status
+          }
+        }
+      }
       createdAt
       municipality
       boatType

@@ -314,7 +314,7 @@ exports[`ApplicationsCard renders normally 1`] = `
                 </span>
                 <a
                   class="internalLink brand"
-                  href="#/berth-offer?application=54321&harbor=123"
+                  href="#/berth-switch-offer?application=54321&harbor=123"
                   title="first choice"
                 >
                   first choice
@@ -331,7 +331,7 @@ exports[`ApplicationsCard renders normally 1`] = `
                 </span>
                 <a
                   class="internalLink brand"
-                  href="#/berth-offer?application=54321&harbor=321"
+                  href="#/berth-switch-offer?application=54321&harbor=321"
                   title="second choice"
                 >
                   second choice

@@ -29,6 +29,7 @@ interface ApplicationChoicesListProps {
   applicationId: string;
   customerId?: string;
   handleNoPlacesAvailable?: (id: string) => void;
+  isSwitchApplication: boolean;
 }
 
 const isHarborChoice = (choice: Choice): choice is HarborChoice => (choice as HarborChoice).harbor !== undefined;
@@ -38,9 +39,11 @@ const ApplicationChoicesList = ({
   applicationId,
   customerId,
   handleNoPlacesAvailable,
+  isSwitchApplication,
 }: ApplicationChoicesListProps) => {
   const { t } = useTranslation();
   const routerQuery = new URLSearchParams(useLocation().search);
+  const offerPageUrl = isSwitchApplication ? '/berth-switch-offer' : '/berth-offer';
 
   if (choices.length === 0) {
     return null;
@@ -71,7 +74,7 @@ const ApplicationChoicesList = ({
                       ${i + 1}: `}
                 </Text>
                 {!!customerId ? (
-                  <InternalLink to={`/berth-offer?${routerQuery}`}>{targetName}</InternalLink>
+                  <InternalLink to={`${offerPageUrl}?${routerQuery}`}>{targetName}</InternalLink>
                 ) : (
                   <Text>{targetName}</Text>
                 )}

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, InvoicingType, CustomerGroup, Language, ApplicationStatus, LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, AdditionalProductType, PriceUnits, PeriodType } from "./../../../@types/__generated__/globalTypes";
+import { BerthApplicationLanguage, InvoicingType, CustomerGroup, Language, BerthMooringType, OfferStatus, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType, PriceUnits, PeriodType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_APPLICATION
@@ -67,6 +67,72 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch {
   id: string;
   pier: string;
   reason: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_lease {
+  __typename: "BerthLeaseNode";
+  id: string;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties_harbor_properties | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties {
+  __typename: "PierProperties";
+  identifier: string;
+  electricity: boolean;
+  gate: boolean;
+  lighting: boolean;
+  mooring: boolean;
+  wasteCollection: boolean;
+  water: boolean;
+  harbor: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties_harbor;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier {
+  __typename: "PierNode";
+  id: string;
+  properties: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier_properties | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth {
+  __typename: "BerthNode";
+  id: string;
+  depth: number | null;
+  length: number;
+  mooringType: BerthMooringType;
+  width: number;
+  comment: string;
+  isAccessible: boolean | null;
+  number: string;
+  pier: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth_pier;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node {
+  __typename: "BerthSwitchOfferNode";
+  id: string;
+  lease: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_lease;
+  customerEmail: string | null;
+  berth: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth;
+  status: OfferStatus;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges {
+  __typename: "BerthSwitchOfferNodeEdge";
+  node: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers {
+  __typename: "BerthSwitchOfferNodeConnection";
+  edges: (INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges | null)[];
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_harborChoices {
@@ -188,6 +254,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication {
   language: BerthApplicationLanguage;
   customer: INDIVIDUAL_APPLICATION_berthApplication_customer | null;
   berthSwitch: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch | null;
+  switchOffers: INDIVIDUAL_APPLICATION_berthApplication_switchOffers;
   createdAt: any;
   boatType: string | null;
   boatRegistrationNumber: string;

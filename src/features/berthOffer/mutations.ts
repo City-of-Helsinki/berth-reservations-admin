@@ -11,6 +11,17 @@ export const CREATE_BERTH_LEASE_MUTATION = gql`
   }
 `;
 
+export const CREATE_BERTH_SWITCH_OFFER_MUTATION = gql`
+  mutation CREATE_BERTH_SWITCH_OFFER($input: CreateBerthSwitchOfferMutationInput!) {
+    createBerthSwitchOffer(input: $input) {
+      berthSwitchOffer {
+        id
+        status
+      }
+    }
+  }
+`;
+
 export const SWITCH_BERTH_MUTATION = gql`
   mutation SWITCH_BERTH($input: SwitchBerthMutationInput!) {
     switchBerth(input: $input) {

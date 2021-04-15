@@ -1593,7 +1593,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
             </span>
             <a
               class="internalLink brand"
-              href="#/berth-offer?application=54321&harbor=123"
+              href="#/berth-switch-offer?application=54321&harbor=123"
               title="Eka satama"
             >
               Eka satama
@@ -1610,7 +1610,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
             </span>
             <a
               class="internalLink brand"
-              href="#/berth-offer?application=54321&harbor=321"
+              href="#/berth-switch-offer?application=54321&harbor=321"
               title="Kolmas satama"
             >
               Kolmas satama
@@ -2107,7 +2107,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
             </span>
             <a
               class="internalLink brand"
-              href="#/berth-offer?application=54321&harbor=123"
+              href="#/berth-switch-offer?application=54321&harbor=123"
               title="Eka satama"
             >
               Eka satama
@@ -2124,7 +2124,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
             </span>
             <a
               class="internalLink brand"
-              href="#/berth-offer?application=54321&harbor=321"
+              href="#/berth-switch-offer?application=54321&harbor=321"
               title="Kolmas satama"
             >
               Kolmas satama

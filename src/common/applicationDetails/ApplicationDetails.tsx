@@ -228,6 +228,7 @@ const ApplicationDetails = ({
             applicationId={id}
             customerId={customerId}
             handleNoPlacesAvailable={handleNoPlacesAvailable}
+            isSwitchApplication={!!berthSwitch}
           />
         )}
         {berthAccessibilityFeatureFlag() && (

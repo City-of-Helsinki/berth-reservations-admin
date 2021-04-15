@@ -6,7 +6,7 @@ import { PureQueryOptions } from 'apollo-client';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import Button from '../../../common/button/Button';
-import InvoiceCard from '../../invoiceCard/InvoiceCardContainer';
+import InvoiceCardContainer from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
 import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
@@ -57,7 +57,7 @@ const BerthOfferCard = ({
   ];
 
   return (
-    <InvoiceCard
+    <InvoiceCardContainer
       buttonsRight={
         <>
           <Button variant="supplementary" disabled>
