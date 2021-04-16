@@ -48,17 +48,19 @@ const InvoiceCardContainer = ({
     setSelectedInvoiceAction(null);
   };
 
-  const actionsDisabled = !(order?.status === OrderStatus.ERROR || order?.status === OrderStatus.OFFERED);
-
   return (
     <>
       <InvoiceActions
-        disabled={actionsDisabled}
         selectedAction={selectedInvoiceAction}
         actions={[
           {
             value: 0,
             label: t('invoiceCard.markAsPaid.label'),
+            disabled: !(
+              order?.status === OrderStatus.ERROR ||
+              order?.status === OrderStatus.OFFERED ||
+              order?.status === OrderStatus.DRAFTED
+            ),
             onClick: () => {
               setMarkAsPaidModalOpen(true);
               setSelectedInvoiceAction(0);
@@ -67,6 +69,7 @@ const InvoiceCardContainer = ({
           {
             value: 1,
             label: t('invoiceCard.cancelInvoice.label'),
+            disabled: !(order?.status === OrderStatus.ERROR || order?.status === OrderStatus.OFFERED),
             onClick: () => {
               setCancelInvoiceModalOpen(true);
               setSelectedInvoiceAction(1);
@@ -78,7 +81,13 @@ const InvoiceCardContainer = ({
         editAdditionalServices={() => setEditProductsModalOpen(true)}
         sendInvoice={() => setSendInvoiceModalOpen(true)}
         order={order}
-        invoicingDisabled={invoicingDisabled || actionsDisabled}
+        invoicingDisabled={
+          !(
+            order?.status === OrderStatus.DRAFTED ||
+            order?.status === OrderStatus.OFFERED ||
+            order?.status === OrderStatus.ERROR
+          ) || invoicingDisabled
+        }
         {...invoiceCardProps}
       />
 
