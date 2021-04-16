@@ -1,5 +1,5 @@
 import { StatusLabelProps } from '../statusLabel/StatusLabel';
-import { ApplicationStatus, LeaseStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus, OfferStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
 
 type ApplicationStatusType = {
   [key in ApplicationStatus]: {
@@ -60,6 +60,40 @@ export const ORDER_STATUS: OrderStatusType = {
   REFUNDED: {
     label: 'common.orderStatus.refunded',
     type: 'warning',
+  },
+  REJECTED: {
+    label: 'common.orderStatus.rejected',
+    type: 'error',
+  },
+};
+
+type OfferStatusType = {
+  [key in OfferStatus]: {
+    label: string;
+    type: StatusLabelProps['type'];
+  };
+};
+
+export const OFFER_STATUS: OfferStatusType = {
+  ACCEPTED: {
+    label: 'common.orderStatus.accepted',
+    type: 'success',
+  },
+  CANCELLED: {
+    label: 'common.orderStatus.cancelled',
+    type: 'error',
+  },
+  DRAFTED: {
+    label: 'common.orderStatus.drafted',
+    type: 'alert',
+  },
+  EXPIRED: {
+    label: 'common.orderStatus.expired',
+    type: 'error',
+  },
+  OFFERED: {
+    label: 'common.orderStatus.offered',
+    type: 'alert',
   },
   REJECTED: {
     label: 'common.orderStatus.rejected',

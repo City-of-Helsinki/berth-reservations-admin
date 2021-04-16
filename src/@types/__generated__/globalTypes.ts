@@ -433,6 +433,13 @@ export interface ResendOrderMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface SendBerthSwitchOfferMutationInput {
+  offers: (string | null)[];
+  dueDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
 export interface SendExistingBerthInvoicesMutationInput {
   dueDate?: any | null;
   profileToken: string;

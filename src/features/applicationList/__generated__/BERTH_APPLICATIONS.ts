@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ApplicationStatus, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
+import { ApplicationStatus, OfferStatus, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: BERTH_APPLICATIONS
@@ -27,6 +27,22 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch {
   id: string;
   pier: string;
   reason: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers_edges_node {
+  __typename: "BerthSwitchOfferNode";
+  id: string;
+  status: OfferStatus;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers_edges {
+  __typename: "BerthSwitchOfferNodeEdge";
+  node: BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers_edges_node | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers {
+  __typename: "BerthSwitchOfferNodeConnection";
+  edges: (BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers_edges | null)[];
 }
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease_order {
@@ -84,6 +100,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node {
   lastName: string;
   customer: BERTH_APPLICATIONS_berthApplications_edges_node_customer | null;
   berthSwitch: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch | null;
+  switchOffers: BERTH_APPLICATIONS_berthApplications_edges_node_switchOffers;
   email: string;
   createdAt: any;
   municipality: string;

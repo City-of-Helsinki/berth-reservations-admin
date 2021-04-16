@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, AdditionalProductType, OrderOrderType, PriceUnits, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { InvoicingType, CustomerGroup, Language, BoatCertificateType, LeaseStatus, BerthMooringType, OrderStatus, ProductServiceType, AdditionalProductType, OrderOrderType, PriceUnits, OfferStatus, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_CUSTOMER
@@ -430,6 +430,22 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthS
   reason: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_reason | null;
 }
 
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers_edges_node {
+  __typename: "BerthSwitchOfferNode";
+  id: string;
+  status: OfferStatus;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers_edges {
+  __typename: "BerthSwitchOfferNodeEdge";
+  node: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers_edges_node | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers {
+  __typename: "BerthSwitchOfferNodeConnection";
+  edges: (INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers_edges | null)[];
+}
+
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth_pier_properties_harbor_properties {
   __typename: "HarborProperties";
   name: string | null;
@@ -479,6 +495,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node {
   id: string;
   applicationCode: string;
   berthSwitch: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch | null;
+  switchOffers: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_switchOffers;
   createdAt: any;
   status: ApplicationStatus;
   lease: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease | null;

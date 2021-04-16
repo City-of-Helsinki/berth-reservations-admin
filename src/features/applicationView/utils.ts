@@ -106,6 +106,7 @@ export const getApplicationDetailsData = (
     createdAt,
     id,
     status,
+    switchOffers,
   } = berthApplication;
 
   const lease: Lease | null = berthApplication.lease
@@ -133,6 +134,7 @@ export const getApplicationDetailsData = (
     applicant: getApplicantDetails(berthApplication),
     applicationCode,
     berthSwitch,
+    berthSwitchOffered: switchOffers.edges.length > 0,
     queue: 0, // TODO
     choices,
     lease,

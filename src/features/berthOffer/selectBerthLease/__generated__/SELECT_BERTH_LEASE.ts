@@ -55,6 +55,7 @@ export interface SELECT_BERTH_LEASE_profile_berthLeases {
 
 export interface SELECT_BERTH_LEASE_profile {
   __typename: "ProfileNode";
+  id: string;
   berthLeases: SELECT_BERTH_LEASE_profile_berthLeases | null;
 }
 

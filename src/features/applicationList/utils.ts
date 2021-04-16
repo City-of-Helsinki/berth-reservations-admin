@@ -80,6 +80,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         lease,
         municipality,
         status,
+        switchOffers,
       } = edge.node;
 
       const choices =
@@ -116,6 +117,7 @@ export const getBerthApplicationData = (data: BERTH_APPLICATIONS | undefined): A
         accessibilityRequired,
         applicationCode,
         berthSwitch: berthSwitchProps,
+        berthSwitchOffered: switchOffers.edges.length > 0,
         boatDraught,
         boatLength,
         boatModel,

@@ -27,6 +27,7 @@ const mockProps: ApplicationListProps = {
   handleDeleteLease: jest.fn(),
   onSortedColsChange: jest.fn(),
   setOnlySwitchApps: jest.fn(),
+  setOnlyAppsWithCode: jest.fn(),
 };
 
 describe('ApplicationList', () => {

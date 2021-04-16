@@ -209,6 +209,14 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 title
               }
             }
+            switchOffers {
+              edges {
+                node {
+                  id
+                  status
+                }
+              }
+            }
             createdAt
             status
             lease {
