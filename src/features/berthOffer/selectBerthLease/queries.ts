@@ -10,6 +10,7 @@ export const SELECT_BERTH_LEASE_QUERY = gql`
             id
             isActive
             berth {
+              id
               number
               pier {
                 id

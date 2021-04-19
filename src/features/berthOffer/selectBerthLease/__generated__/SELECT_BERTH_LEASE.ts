@@ -32,6 +32,7 @@ export interface SELECT_BERTH_LEASE_profile_berthLeases_edges_node_berth_pier {
 
 export interface SELECT_BERTH_LEASE_profile_berthLeases_edges_node_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   pier: SELECT_BERTH_LEASE_profile_berthLeases_edges_node_berth_pier;
 }

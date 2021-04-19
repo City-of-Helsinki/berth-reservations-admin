@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
-import classNames from 'classnames';
 import { IconTrash } from 'hds-react';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -93,11 +92,10 @@ const BerthSwitchOfferCard = ({
     });
   };
 
-  const isNotNull = (property: boolean | null): property is boolean => property !== null;
   const mapPlaceProperties = (placeProperties: PlaceProperty[]) =>
     placeProperties.map(
       ({ prop, key, icon }) =>
-        isNotNull(prop) && (
+        prop !== null && (
           <Property
             className={styles.property}
             key={key}
@@ -117,7 +115,7 @@ const BerthSwitchOfferCard = ({
 
   return (
     <>
-      <Card className={classNames(className)}>
+      <Card className={className}>
         <CardHeader title={t('common.terminology.switchOffer').toUpperCase()}>
           <StatusLabel type={OFFER_STATUS[status].type} label={t(OFFER_STATUS[status].label)} />
         </CardHeader>
