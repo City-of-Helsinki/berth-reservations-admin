@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
 import classNames from 'classnames';
@@ -25,6 +25,8 @@ import hdsToast from '../../../common/toast/hdsToast';
 import StatusLabel from '../../../common/statusLabel/StatusLabel';
 import { OFFER_STATUS } from '../../../common/utils/constants';
 import { getProfileToken } from '../../../common/utils/auth';
+import Modal from '../../../common/modal/Modal';
+import SendSwitchOfferForm from './sendSwitchOfferForm/SendSwitchOfferForm';
 
 export interface BerthSwitchOfferCardProps {
   className?: string;
@@ -56,22 +58,31 @@ const BerthSwitchOfferCard = ({
 }: BerthSwitchOfferCardProps) => {
   const { t } = useTranslation();
 
+  const [sendOfferModalOpen, setSendOfferModalOpen] = useState<boolean>(false);
   const [sendBerthSwitchOfferMutation, { loading: isSubmitting }] = useMutation<
     SEND_BERTH_SWITCH_OFFER,
     SEND_BERTH_SWITCH_OFFER_VARS
   >(SEND_BERTH_SWITCH_OFFER_MUTATION, {
     refetchQueries: refetchQueries,
   });
-  const sendBerthSwitchOffer = () => {
+  const sendBerthSwitchOffer = ({ dueDate }: { dueDate: string }) => {
     sendBerthSwitchOfferMutation({
       variables: {
         input: {
           offers: [id],
           profileToken: getProfileToken(),
+          dueDate: dueDate,
         },
       },
     }).then((res) => {
-      if (!res.errors) {
+      if (res.data?.sendBerthSwitchOffer?.failedOffers && res.data?.sendBerthSwitchOffer?.failedOffers.length > 0) {
+        hdsToast({
+          type: 'error',
+          labelText: 'toast.invoiceError.label',
+          text: 'toast.invoiceError.description',
+          translated: true,
+        });
+      } else if (!res.errors) {
         hdsToast({
           type: 'success',
           labelText: 'toast.invoiceSent.label',
@@ -131,12 +142,23 @@ const BerthSwitchOfferCard = ({
           </Grid>
           <hr />
           <div>
-            <Button disabled={isSubmitting} onClick={() => sendBerthSwitchOffer()}>
-              {t('offer.invoicing.send')}
+            <Button disabled={isSubmitting} onClick={() => setSendOfferModalOpen(true)}>
+              {t('applicationView.berthSwitchOffer.sendOffer')}
             </Button>
           </div>
         </CardBody>
       </Card>
+
+      <Modal isOpen={sendOfferModalOpen} toggleModal={() => setSendOfferModalOpen(false)}>
+        <SendSwitchOfferForm
+          isSubmitting={isSubmitting}
+          onCancel={() => setSendOfferModalOpen(false)}
+          onSubmit={(formData) => {
+            setSendOfferModalOpen(false);
+            sendBerthSwitchOffer(formData);
+          }}
+        />
+      </Modal>
     </>
   );
 };

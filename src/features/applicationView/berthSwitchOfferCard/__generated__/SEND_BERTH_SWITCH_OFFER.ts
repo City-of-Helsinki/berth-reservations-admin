@@ -9,9 +9,16 @@ import { SendBerthSwitchOfferMutationInput } from "./../../../../@types/__genera
 // GraphQL mutation operation: SEND_BERTH_SWITCH_OFFER
 // ====================================================
 
+export interface SEND_BERTH_SWITCH_OFFER_sendBerthSwitchOffer_failedOffers {
+  __typename: "FailedOfferType";
+  id: string;
+  error: string | null;
+}
+
 export interface SEND_BERTH_SWITCH_OFFER_sendBerthSwitchOffer {
   __typename: "SendBerthSwitchOfferMutationPayload";
-  clientMutationId: string | null;
+  failedOffers: (SEND_BERTH_SWITCH_OFFER_sendBerthSwitchOffer_failedOffers | null)[] | null;
+  sentOffers: (string | null)[] | null;
 }
 
 export interface SEND_BERTH_SWITCH_OFFER {

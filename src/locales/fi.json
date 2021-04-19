@@ -25,6 +25,7 @@
     "cancel": "Peruuta",
     "continue": "Jatka",
     "close": "Sulje",
+    "dueDate": "Eräpäivä",
     "edit": "Muokkaa",
     "email": "Sähköposti",
     "emptyName": "Nimi puuttuu",
@@ -455,6 +456,9 @@
     },
     "applicationDetails": {
       "title": "HAKEMUS"
+    },
+    "berthSwitchOffer": {
+      "sendOffer": "Lähetä tarjous"
     }
   },
   "linkApplicationToCustomer": {
@@ -755,6 +759,10 @@
     "invoiceSent": {
       "label": "Tarjous on lähetetty asiakkaalle",
       "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
+    },
+    "invoiceError": {
+      "label": "Tarjousta ei lähetetty asiakkaalle",
+      "description": "Tarjouksen lähettämisessä tapahtui virhe."
     },
     "additionalInvoiceSent": {
       "label": "Lähetys onnistui",
