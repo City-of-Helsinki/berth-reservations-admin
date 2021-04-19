@@ -3,7 +3,7 @@
 exports[`BerthOfferCard renders normally 1`] = `
 Array [
   <div
-    class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select invoiceActions"
+    class="Select-module_root__Ka5uO select invoiceActions"
   >
     <div
       class="Select-module_wrapper__1WQXs"
@@ -14,7 +14,6 @@ Array [
         aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
         aria-owns="hds-select-1-menu"
         class="Select-module_button__1aIsm Select-module_placeholder__21c0j"
-        disabled=""
         id="hds-select-1-toggle-button"
         type="button"
       >
