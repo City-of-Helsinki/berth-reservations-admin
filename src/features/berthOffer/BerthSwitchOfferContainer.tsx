@@ -110,7 +110,11 @@ const BerthSwitchOfferContainer = () => {
 
       {showSelectLease && (
         <SelectBerthLease
-          confirm={(oldLeaseId: string) => createBerthSwitchOffer(selectedBerth as BerthData, oldLeaseId)}
+          confirm={(oldLeaseId: string) => {
+            createBerthSwitchOffer(selectedBerth as BerthData, oldLeaseId).then(() => {
+              history.goBack();
+            });
+          }}
           closeModal={() => setShowSelectLease(false)}
           customerId={customerId}
           isSubmitting={isSubmitting}
