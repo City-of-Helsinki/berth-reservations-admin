@@ -27,8 +27,13 @@ const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
   const openOfferForm = () => history.push(`/switch-berth?lease=${leaseId}&harbor=${selectedHarbor}`);
 
   return (
-    <Modal isOpen toggleModal={closeModal} label={t('customerView.switchBerth.title').toUpperCase()}>
-      <div className={styles.switchBerthModal}>
+    <Modal
+      className={styles.switchBerthModal}
+      isOpen
+      toggleModal={closeModal}
+      label={t('customerView.switchBerth.title').toUpperCase()}
+    >
+      <div className={styles.content}>
         <p className={styles.instructions}>{t('customerView.switchBerth.instructions')}</p>
 
         {loading ? (

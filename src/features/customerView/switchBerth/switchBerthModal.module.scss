@@ -2,24 +2,28 @@
 @import 'spacings';
 
 .switchBerthModal {
+  overflow-y: visible;
+}
+
+.content {
   width: container(s);
+}
 
-  .instructions {
-    white-space: pre-wrap;
-    margin-bottom: units(2);
-  }
+.instructions {
+  white-space: pre-wrap;
+  margin-bottom: units(2);
+}
 
-  .spinnerWrapper {
-    margin-bottom: units(2);
-  }
+.spinnerWrapper {
+  margin-bottom: units(2);
+}
 
-  .select {
-    width: 100%;
-    margin-bottom: units(2);
-  }
+.select {
+  width: 100%;
+  margin-bottom: units(2);
+}
 
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
