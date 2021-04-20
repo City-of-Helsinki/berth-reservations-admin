@@ -38,6 +38,14 @@ export const BERTH_APPLICATIONS_QUERY = gql`
               title
             }
           }
+          switchOffers {
+            edges {
+              node {
+                id
+                status
+              }
+            }
+          }
           email
           createdAt
           municipality

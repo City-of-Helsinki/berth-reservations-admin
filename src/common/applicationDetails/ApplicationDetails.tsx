@@ -53,6 +53,7 @@ export interface ApplicationDetailsProps {
   applicant?: PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps;
   applicationCode: string;
   berthSwitch?: BerthSwitch | null;
+  berthSwitchOffered?: boolean;
   boatDraught?: number | null;
   boatLength: number;
   boatModel: string;
@@ -61,13 +62,13 @@ export interface ApplicationDetailsProps {
   boatType?: string | null;
   boatWeight?: number | null;
   boatWidth: number;
+  choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   createdAt: string;
   customerId?: string;
-  isDeletingLease?: boolean;
   handleDeleteLease?: (id: string) => void;
   handleNoPlacesAvailable?: (id: string) => void;
-  choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   id: string;
+  isDeletingLease?: boolean;
   lease?: Lease | null;
   queue: number;
   status: ApplicationStatus;
@@ -75,28 +76,29 @@ export interface ApplicationDetailsProps {
 }
 
 const ApplicationDetails = ({
-  id,
-  customerId,
+  accessibilityRequired,
   applicant,
   applicationCode,
   berthSwitch,
-  createdAt,
-  queue,
-  status,
-  boatType,
-  boatRegistrationNumber,
-  boatWidth,
-  boatLength,
+  berthSwitchOffered,
   boatDraught,
-  boatWeight,
-  boatName,
+  boatLength,
   boatModel,
+  boatName,
+  boatRegistrationNumber,
+  boatType,
+  boatWeight,
+  boatWidth,
   choices,
-  lease,
-  isDeletingLease,
+  createdAt,
+  customerId,
   handleDeleteLease,
   handleNoPlacesAvailable,
-  accessibilityRequired,
+  id,
+  isDeletingLease,
+  lease,
+  queue,
+  status,
   summaryInformation,
 }: ApplicationDetailsProps) => {
   const { t, i18n } = useTranslation();
@@ -227,7 +229,9 @@ const ApplicationDetails = ({
             choices={choices}
             applicationId={id}
             customerId={customerId}
+            disableChoices={berthSwitchOffered}
             handleNoPlacesAvailable={handleNoPlacesAvailable}
+            isSwitchApplication={!!berthSwitch}
           />
         )}
         {berthAccessibilityFeatureFlag() && (

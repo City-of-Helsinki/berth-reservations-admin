@@ -25,22 +25,27 @@ export interface WinterStorageAreaChoice extends Choice {
 }
 
 interface ApplicationChoicesListProps {
-  choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   applicationId: string;
+  choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   customerId?: string;
+  disableChoices?: boolean;
   handleNoPlacesAvailable?: (id: string) => void;
+  isSwitchApplication: boolean;
 }
 
 const isHarborChoice = (choice: Choice): choice is HarborChoice => (choice as HarborChoice).harbor !== undefined;
 
 const ApplicationChoicesList = ({
-  choices,
   applicationId,
+  choices,
   customerId,
+  disableChoices,
   handleNoPlacesAvailable,
+  isSwitchApplication,
 }: ApplicationChoicesListProps) => {
   const { t } = useTranslation();
   const routerQuery = new URLSearchParams(useLocation().search);
+  const offerPageUrl = isSwitchApplication ? '/berth-switch-offer' : '/berth-offer';
 
   if (choices.length === 0) {
     return null;
@@ -70,8 +75,8 @@ const ApplicationChoicesList = ({
                   {`${t('applicationDetails.applicationChoicesList.choice')} 
                       ${i + 1}: `}
                 </Text>
-                {!!customerId ? (
-                  <InternalLink to={`/offer?${routerQuery}`}>{targetName}</InternalLink>
+                {!!customerId && !disableChoices ? (
+                  <InternalLink to={`${offerPageUrl}?${routerQuery}`}>{targetName}</InternalLink>
                 ) : (
                   <Text>{targetName}</Text>
                 )}
@@ -79,7 +84,7 @@ const ApplicationChoicesList = ({
             );
           })}
       </List>
-      {customerId && handleNoPlacesAvailable && (
+      {customerId && handleNoPlacesAvailable && !disableChoices && (
         <div className={styles.actions}>
           <ButtonWithConfirmation
             buttonSize="small"

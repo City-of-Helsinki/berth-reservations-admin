@@ -118,8 +118,13 @@ const additionalProducts: ADDITIONAL_PRODUCTS = {
 
 const berthApplication: BERTH_APPLICATION = {
   __typename: 'BerthApplicationNode',
+  acceptBoatingNewsletter: true,
+  acceptFitnessNews: false,
+  acceptLibraryNews: false,
+  acceptOtherCultureNews: true,
   accessibilityRequired: false,
   address: 'Testikatu 1',
+  applicationCode: '1234',
   berthSwitch: null,
   boatDraught: 1,
   boatLength: 1,
@@ -145,12 +150,11 @@ const berthApplication: BERTH_APPLICATION = {
   municipality: 'Helsinki',
   phoneNumber: '+358 00 000 0000',
   status: ApplicationStatus.PENDING,
+  switchOffers: {
+    __typename: 'BerthSwitchOfferNodeConnection',
+    edges: [],
+  },
   zipCode: '00100',
-  acceptBoatingNewsletter: true,
-  acceptFitnessNews: false,
-  acceptLibraryNews: false,
-  acceptOtherCultureNews: true,
-  applicationCode: '1234',
 };
 
 const boatTypes: BOAT_TYPES[] = [

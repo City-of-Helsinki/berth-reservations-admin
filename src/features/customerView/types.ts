@@ -64,6 +64,7 @@ export type Application = {
   id: string;
   customerId: string;
   berthSwitch: BerthSwitch | null;
+  berthSwitchOffered: boolean;
   applicationCode: string;
   createdAt: string;
   queue: number;

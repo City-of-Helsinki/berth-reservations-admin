@@ -1,0 +1,11 @@
+@import 'spacings';
+
+.control {
+  margin-top: units(2);
+}
+
+.buttons {
+  @extend .control;
+  display: flex;
+  justify-content: space-between;
+}

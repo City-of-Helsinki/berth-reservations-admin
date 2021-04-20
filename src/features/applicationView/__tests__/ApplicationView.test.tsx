@@ -49,6 +49,7 @@ const mockProps: ApplicationViewProps = {
   isDeletingLease: false,
   leaseDetails: null,
   refetchQueries: [],
+  switchOffers: [],
 };
 
 // LinkApplicationToCustomer is mocked to limit the test scope

@@ -13,12 +13,11 @@ import ErrorPage from '../features/errorPage/ErrorPage';
 import HarborList from '../features/harborList/HarborListContainer';
 import HarborView from '../features/harborView/HarborViewContainer';
 import LoginPage from '../features/auth/loginPage/LoginPage';
-import Offer from '../features/offer/OfferContainer';
+import BerthOfferContainer from '../features/berthOffer/BerthOfferContainer';
 import Page from './page/Page';
 import Pricing from '../features/pricing/PricingContainer';
 import PrivateRoute from '../features/auth/privateRoute/PrivateRoute';
 import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
-import SwitchPlaceViewContainer from '../features/switchPlace/SwitchPlaceViewContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
 import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
@@ -26,6 +25,9 @@ import WinterStorageApplicationView from '../features/winterStorageApplicationVi
 import WinterStorageAreaList from '../features/winterStorageAreaList/WinterStorageAreaListContainer';
 import WinterStorageAreaView from '../features/winterStorageAreaView/WinterStorageAreaViewContainer';
 import apolloClient from './apolloClient';
+import BerthOfferWithoutApplicationContainer from '../features/berthOffer/BerthOfferWithoutApplicationContainer';
+import SwitchBerthContainer from '../features/berthOffer/SwitchBerthContainer';
+import BerthSwitchOfferContainer from '../features/berthOffer/BerthSwitchOfferContainer';
 
 const App = () => {
   return (
@@ -55,8 +57,16 @@ const App = () => {
                     <PrivateRoute exact path="/winter-storage-applications" component={WinterStorageApplicationList} />
                     <PrivateRoute exact path="/unmarked-ws-notices/:id" component={UnmarkedWsNoticeView} />
                     <PrivateRoute exact path="/unmarked-ws-notices" component={UnmarkedWsNoticeList} />
-                    <PrivateRoute exact path="/offer" component={Offer} />
-                    <PrivateRoute exact path="/switch-place" component={SwitchPlaceViewContainer} />
+
+                    <PrivateRoute exact path="/berth-offer" component={BerthOfferContainer} />
+                    <PrivateRoute exact path="/berth-switch-offer" component={BerthSwitchOfferContainer} />
+                    <PrivateRoute
+                      exact
+                      path="/berth-offer-without-application"
+                      component={BerthOfferWithoutApplicationContainer}
+                    />
+                    <PrivateRoute exact path="/switch-berth" component={SwitchBerthContainer} />
+
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                     <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />

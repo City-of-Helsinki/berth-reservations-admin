@@ -6,7 +6,7 @@ import { PureQueryOptions } from 'apollo-client';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import Button from '../../../common/button/Button';
-import InvoiceCard from '../../invoiceCard/InvoiceCardContainer';
+import InvoiceCardContainer from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
 import PlaceDetails from './PlaceDetails';
 import { LeaseDetails } from './types';
@@ -57,7 +57,7 @@ const BerthOfferCard = ({
   ];
 
   return (
-    <InvoiceCard
+    <InvoiceCardContainer
       buttonsRight={
         <>
           <Button variant="supplementary" disabled>
@@ -98,7 +98,7 @@ const BerthOfferCard = ({
       placeType={t('common.terminology.berth').toUpperCase()}
       refetchQueries={refetchQueries}
       sendButtonLabel={t('offer.invoicing.acceptAndSend')}
-      title={t('offer.title').toUpperCase()}
+      title={t('common.terminology.offer').toUpperCase()}
     />
   );
 };

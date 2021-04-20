@@ -31,6 +31,7 @@ import {
   REJECT_BERTH_APPLICATION,
   REJECT_BERTH_APPLICATIONVariables as REJECT_BERTH_APPLICATION_VARS,
 } from './__generated__/REJECT_BERTH_APPLICATION';
+import { getSwitchOffers } from './berthSwitchOfferCard/utils';
 
 const ApplicationViewContainer = () => {
   const history = useHistory();
@@ -117,6 +118,7 @@ const ApplicationViewContainer = () => {
   const customerProfile = customer ? getCustomerProfile(customer) : null;
   const applicationDetails = getApplicationDetailsData(data.berthApplication, data.boatTypes || []);
   const leaseDetails = getOfferDetailsData(data.berthApplication.lease);
+  const switchOffers = getSwitchOffers(data.berthApplication.switchOffers);
 
   return (
     <>
@@ -134,6 +136,7 @@ const ApplicationViewContainer = () => {
         isDeletingLease={isDeletingLease}
         leaseDetails={leaseDetails}
         refetchQueries={[getOperationName(INDIVIDUAL_APPLICATION_QUERY) || 'INDIVIDUAL_APPLICATION']}
+        switchOffers={switchOffers}
       />
 
       {customerProfile && (

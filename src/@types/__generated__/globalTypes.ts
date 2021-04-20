@@ -113,6 +113,15 @@ export enum NotificationTemplateLanguage {
   SV = "SV",
 }
 
+export enum OfferStatus {
+  ACCEPTED = "ACCEPTED",
+  CANCELLED = "CANCELLED",
+  DRAFTED = "DRAFTED",
+  EXPIRED = "EXPIRED",
+  OFFERED = "OFFERED",
+  REJECTED = "REJECTED",
+}
+
 export enum OrderOrderType {
   ADDITIONAL_PRODUCT_ORDER = "ADDITIONAL_PRODUCT_ORDER",
   LEASE_ORDER = "LEASE_ORDER",
@@ -270,6 +279,15 @@ export interface CreateBerthServicesProfileMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface CreateBerthSwitchOfferMutationInput {
+  applicationId: string;
+  newBerthId: string;
+  oldLeaseId?: string | null;
+  dueDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
 export interface CreateBoatMutationInput {
   boatTypeId: string;
   registrationNumber?: string | null;
@@ -409,7 +427,14 @@ export interface RejectBerthApplicationMutationInput {
 }
 
 export interface ResendOrderMutationInput {
-  orders?: string[] | null;
+  orders: (string | null)[];
+  dueDate?: any | null;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface SendBerthSwitchOfferMutationInput {
+  offers: (string | null)[];
   dueDate?: any | null;
   profileToken?: string | null;
   clientMutationId?: string | null;

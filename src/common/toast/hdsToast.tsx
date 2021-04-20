@@ -87,6 +87,8 @@ const hdsToast = ({
 
 hdsToast.graphQLErrors = (errors: ReadonlyArray<GraphQLError>) => {
   errors.forEach((error) => {
+    if (error.message === 'NO_LEASE') return; // Exemption for berth switch offers
+
     if (error.extensions?.type === 'VENEPAIKKA_ERROR' || error.extensions?.type === 'VENEPAIKKA_WARNING') {
       hdsToast({
         autoDismiss: false,

@@ -24,6 +24,7 @@ Object {
     "pierIdentifier": "A",
     "reason": "Reason",
   },
+  "berthSwitchOffered": false,
   "boatDraught": 1,
   "boatLength": 1,
   "boatModel": "Marine",

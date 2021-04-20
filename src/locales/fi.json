@@ -25,6 +25,7 @@
     "cancel": "Peruuta",
     "continue": "Jatka",
     "close": "Sulje",
+    "dueDate": "Eräpäivä",
     "edit": "Muokkaa",
     "email": "Sähköposti",
     "emptyName": "Nimi puuttuu",
@@ -98,17 +99,22 @@
     },
     "terminology": {
       "accessiblePlace": "Esteetön paikka",
+      "additionalProductInvoice": "Lisäpalvelulasku",
+      "additionalServices": "Lisäpalvelut",
       "applications": "Hakemukset",
       "basePrice": "Perushinta",
       "berth": "Venepaikka",
       "berthRent": "Venepaikan vuokra",
-      "additionalProductInvoice": "Lisäpalvelulasku",
       "berths": "Venepaikat",
       "boatSummerStorage": "Veneiden kesäsäilytys",
+      "boatModel": "Merkki",
+      "boatType": "Veneen tyyppi",
       "boats": "Veneet",
       "comments": "Huomiot",
       "contactInformation": "Yhteystiedot",
+      "contract": "Sopimus",
       "customer": "Asiakas",
+      "customerBoat": "Asiakkaan vene",
       "dataEntry": "Tietue",
       "depth": "Syvyys",
       "dinghyPlace": "Jollapaikka",
@@ -129,25 +135,28 @@
       "maxWidth": "Suurin leveys",
       "mooring": "Kiinnitys",
       "mooringType": "Kiinnitystapa",
+      "offer": "Tarjous",
       "openInvoices": "Avoimet laskut",
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
       "priceTier": "Maksuluokka",
+      "registrationNumber": "Rekisterinumero",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
+      "switchOffer": "Vaihtotarjous",
       "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "unnamedBoat": "Nimetön vene",
       "waste": "Jäte",
       "wasteCollection": "Jätehuolto",
       "water": "Vesi",
+      "weight": "Paino",
       "width": "Leveys",
       "winterStorageArea": "Talvisäilytysalue",
-      "winterStoragePlaces": "Talvisäilytyspaikat",
       "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra",
-      "contract": "Sopimus"
+      "winterStoragePlaces": "Talvisäilytyspaikat"
     },
     "notification": {
       "noData": {
@@ -177,6 +186,14 @@
       "paid": "Maksettu",
       "paidManually": "Maksettu muualla",
       "refunded": "Maksu palautettu",
+      "rejected": "Hylätty"
+    },
+    "offerStatus": {
+      "accepted": "Hyväksytty",
+      "cancelled": "Peruutettu",
+      "drafted": "Luotu",
+      "expired": "Erääntynyt",
+      "offered": "Tarjottu",
       "rejected": "Hylätty"
     },
     "unlinkCustomer": {
@@ -439,6 +456,9 @@
     },
     "applicationDetails": {
       "title": "HAKEMUS"
+    },
+    "berthSwitchOffer": {
+      "sendOffer": "Lähetä tarjous"
     }
   },
   "linkApplicationToCustomer": {
@@ -456,16 +476,11 @@
     "emptyState": "Rajauksella ei löytynyt asiakastietoja"
   },
   "offer": {
-    "title": "Tarjous",
-    "tableCells": {
-      "select": "Valitse"
-    },
     "confirmation": {
       "title": "Varmista venepaikka",
       "info": "Venepaikka on lyhyempi kuin veneen pituus. Oletko varma etta haluat tarjota tata paikkaa?"
     },
     "tableTools": {
-      "berths": "Venepaikat",
       "return": "Palaa valitsematta"
     },
     "berthDetails": {
@@ -473,26 +488,24 @@
       "noSuitableBerths": "Ei sopivaa venepaikkaa"
     },
     "invoicing": {
-      "additionalServices": "Lisäpalvelut",
       "acceptAndSend": "Hyväksy ja lähetä tarjous",
+      "send": "Lähetä tarjous",
       "showInvoice": "Näytä lasku",
       "showContract": "Näytä sopimus",
       "removeOffer": "Poista tarjous"
     },
-    "boatCard": {
-      "heading": "ASIAKKAAN VENE",
-      "type": "Veneen tyyppi",
-      "boatRegistrationNumber": "Rekisterinumero",
-      "boatName": "Nimi",
-      "boatModel": "Merkki",
-      "boatWidth": "Veneen leveys",
-      "boatLength": "Veneen pituus",
-      "boatDraught": "Veneen syväys",
-      "boatWeight": "Veneen paino"
+    "selectBerthLease": {
+      "title": "VALITSE NYKYINEN VENEPAIKKA",
+      "message": "Järjestelmä ei löydä hakemuksen tietoja vastaavaa irtisanottavaa (nykyistä) venepaikkaa. Valitse venepaikka listalta.",
+      "errorMessage": "Asiakkaalla ei ole voimassaolevia venepaikkoja. Vaihtohakemusta ei voida käsitellä."
     },
     "notifications": {
       "berthLeaseCreated": {
         "label": "Hakemus käsitelty",
+        "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+      },
+      "berthSwitched": {
+        "label": "Venepaikka vaihdettu",
         "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
       },
       "noBoat": {
@@ -598,18 +611,6 @@
       "showContract": "Näytä sopimus",
       "valid": "Voimassa",
       "cancelLease": "Irtisano sopimus",
-      "switchPlace": {
-        "switchBerth": "Vaihda venepaikka",
-        "berthSwitchInstructions": "Huom! Venepaikan vaihtaminen ei luo uutta laskua eikä sopimusta.\nNykyinen venepaikka vapautuu ja uusi valittu paikka astuu voimaan heti.",
-        "selectHarbor": "Valitse satama",
-        "continueToBerthSelection": "Siirry venepaikan valintaan",
-        "notifications": {
-          "berthSwitched": {
-            "label": "Venepaikka vaihdettu",
-            "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
-          }
-        }
-      },
       "cancelConfirmation": {
         "warningText": "Toiminto on peruuttamaton!",
         "infoText": "Haluatko varmasti irtisanoa asiakkaan {{customerName}} sopimuksen kohteeseen {{address}}?"
@@ -629,6 +630,12 @@
       "title": "Lisää venepaikan vuokrasopimus",
       "selectHarbor": "Valitse satama",
       "selectBoat": "Valitse vene"
+    },
+    "switchBerth": {
+      "title": "Vaihda venepaikka",
+      "instructions": "Huom! Venepaikan vaihtaminen ei luo uutta laskua eikä sopimusta.\nNykyinen venepaikka vapautuu ja uusi valittu paikka astuu voimaan heti.",
+      "selectHarbor": "Valitse satama",
+      "proceed": "Siirry venepaikan valintaan"
     }
   },
   "pricing": {
@@ -752,6 +759,10 @@
     "invoiceSent": {
       "label": "Tarjous on lähetetty asiakkaalle",
       "description": "Hakemuksen tila on päivitetty ja se odottaa asiakkaan toimenpiteitä"
+    },
+    "invoiceError": {
+      "label": "Tarjousta ei lähetetty asiakkaalle",
+      "description": "Tarjouksen lähettämisessä tapahtui virhe."
     },
     "additionalInvoiceSent": {
       "label": "Lähetys onnistui",

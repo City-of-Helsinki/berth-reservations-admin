@@ -68,6 +68,10 @@ export const mockData: BERTH_APPLICATIONS = {
           },
           municipality: 'Helsinki',
           status: ApplicationStatus.PENDING,
+          switchOffers: {
+            __typename: 'BerthSwitchOfferNodeConnection',
+            edges: [],
+          },
         },
       },
       // Most structure and nulled fields
@@ -134,6 +138,10 @@ export const mockData: BERTH_APPLICATIONS = {
           },
           municipality: 'Helsinki',
           status: ApplicationStatus.PENDING,
+          switchOffers: {
+            __typename: 'BerthSwitchOfferNodeConnection',
+            edges: [],
+          },
         },
       },
       // Minimum fields
@@ -167,6 +175,10 @@ export const mockData: BERTH_APPLICATIONS = {
           lease: null,
           municipality: 'Helsinki',
           status: ApplicationStatus.PENDING,
+          switchOffers: {
+            __typename: 'BerthSwitchOfferNodeConnection',
+            edges: [],
+          },
         },
       },
     ],

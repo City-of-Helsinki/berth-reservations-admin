@@ -12,7 +12,7 @@ import Button from '../../common/button/Button';
 export interface OrderSectionProps {
   leaseStatus: LeaseStatus | null;
   order: Order;
-  editAdditionalServices: () => void;
+  editAdditionalServices?(): void;
 }
 
 const OrderSection = ({ leaseStatus, order, editAdditionalServices }: OrderSectionProps) => {
@@ -39,19 +39,21 @@ const OrderSection = ({ leaseStatus, order, editAdditionalServices }: OrderSecti
         ))}
       </Section>
       <Section>
-        <LabelValuePair
-          label={t('offer.invoicing.additionalServices')}
-          value={
-            <Button
-              size="small"
-              onClick={() => editAdditionalServices()}
-              disabled={leaseStatus !== LeaseStatus.DRAFTED}
-            >
-              {t('common.edit')}
-            </Button>
-          }
-          align={'right'}
-        />
+        {editAdditionalServices && (
+          <LabelValuePair
+            label={t('common.terminology.additionalServices')}
+            value={
+              <Button
+                size="small"
+                onClick={() => editAdditionalServices()}
+                disabled={leaseStatus !== LeaseStatus.DRAFTED}
+              >
+                {t('common.edit')}
+              </Button>
+            }
+            align={'right'}
+          />
+        )}
         {order.optionalProducts.map((product, i) => (
           <LabelValuePair
             key={i}

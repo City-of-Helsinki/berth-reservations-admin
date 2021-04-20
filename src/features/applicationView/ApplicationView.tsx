@@ -16,6 +16,8 @@ import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../linkApplicationToCustomer/LinkApplicationToCustomerContainer';
 import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
+import BerthSwitchOfferCard from './berthSwitchOfferCard/BerthSwitchOfferCard';
+import { BerthSwitchOfferDetails } from './berthSwitchOfferCard/types';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -32,6 +34,7 @@ export interface ApplicationViewProps {
   isDeletingLease: boolean;
   leaseDetails: BerthOfferCardProps['leaseDetails'] | null;
   refetchQueries: PureQueryOptions[] | string[];
+  switchOffers: BerthSwitchOfferDetails[];
   handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
   handleEditCustomer(): void;
@@ -54,6 +57,7 @@ const ApplicationView = ({
   isDeletingLease,
   leaseDetails,
   refetchQueries,
+  switchOffers,
 }: ApplicationViewProps) => {
   const { t } = useTranslation();
 
@@ -104,6 +108,15 @@ const ApplicationView = ({
           refetchQueries={refetchQueries}
         />
       )}
+
+      {switchOffers.map((switchOffer) => (
+        <BerthSwitchOfferCard
+          key={switchOffer.id}
+          className={styles.fullWidth}
+          refetchQueries={refetchQueries}
+          switchOffer={switchOffer}
+        />
+      ))}
     </PageContent>
   );
 };
