@@ -113,6 +113,7 @@ const ApplicationView = ({
         <BerthSwitchOfferCard
           key={switchOffer.id}
           className={styles.fullWidth}
+          customerName={`${customerProfile?.firstName} ${customerProfile?.lastName}`}
           refetchQueries={refetchQueries}
           switchOffer={switchOffer}
         />

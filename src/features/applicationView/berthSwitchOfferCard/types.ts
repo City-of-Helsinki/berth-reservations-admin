@@ -19,7 +19,6 @@ export interface BerthSwitchOfferDetails {
   berthMooringType: BerthMooringType | null;
   berthNum: number | string;
   berthWidth: number | null;
-  customerEmail: string | null;
   electricity: boolean;
   gate: boolean;
   harborName: string;

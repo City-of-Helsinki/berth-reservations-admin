@@ -15,7 +15,7 @@ import styles from './berthSwitchOfferCard.module.scss';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import PlaceDetails from '../berthOfferCard/PlaceDetails';
 import Button from '../../../common/button/Button';
-import { SEND_BERTH_SWITCH_OFFER_MUTATION } from './mutations';
+import { SEND_BERTH_SWITCH_OFFER_MUTATION, UPDATE_BERTH_SWITCH_OFFER_MUTATION } from './mutations';
 import {
   SEND_BERTH_SWITCH_OFFER,
   SEND_BERTH_SWITCH_OFFERVariables as SEND_BERTH_SWITCH_OFFER_VARS,
@@ -26,15 +26,23 @@ import { OFFER_STATUS } from '../../../common/utils/constants';
 import { getProfileToken } from '../../../common/utils/auth';
 import Modal from '../../../common/modal/Modal';
 import SendSwitchOfferForm from './sendSwitchOfferForm/SendSwitchOfferForm';
+import ButtonWithConfirmation from '../../../common/buttonWithConfirmation/ButtonWithConfirmation';
+import {
+  UPDATE_BERTH_SWITCH_OFFER,
+  UPDATE_BERTH_SWITCH_OFFERVariables as UPDATE_BERTH_SWITCH_OFFER_VARS,
+} from './__generated__/UPDATE_BERTH_SWITCH_OFFER';
+import { OfferStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface BerthSwitchOfferCardProps {
   className?: string;
+  customerName: string;
   refetchQueries: PureQueryOptions[] | string[];
   switchOffer: BerthSwitchOfferDetails;
 }
 
 const BerthSwitchOfferCard = ({
   className,
+  customerName,
   refetchQueries,
   switchOffer: {
     berthComment,
@@ -58,7 +66,7 @@ const BerthSwitchOfferCard = ({
   const { t } = useTranslation();
 
   const [sendOfferModalOpen, setSendOfferModalOpen] = useState<boolean>(false);
-  const [sendBerthSwitchOfferMutation, { loading: isSubmitting }] = useMutation<
+  const [sendBerthSwitchOfferMutation, { loading: isSending }] = useMutation<
     SEND_BERTH_SWITCH_OFFER,
     SEND_BERTH_SWITCH_OFFER_VARS
   >(SEND_BERTH_SWITCH_OFFER_MUTATION, {
@@ -92,6 +100,39 @@ const BerthSwitchOfferCard = ({
     });
   };
 
+  const [updateBerthSwitchOfferMutation, { loading: isUpdating }] = useMutation<
+    UPDATE_BERTH_SWITCH_OFFER,
+    UPDATE_BERTH_SWITCH_OFFER_VARS
+  >(UPDATE_BERTH_SWITCH_OFFER_MUTATION, {
+    refetchQueries: refetchQueries,
+  });
+  const cancelBerthSwitchOffer = () => {
+    updateBerthSwitchOfferMutation({
+      variables: {
+        input: {
+          id: id,
+          status: OfferStatus.CANCELLED,
+        },
+      },
+    }).then((res) => {
+      if (res.errors) {
+        hdsToast({
+          type: 'error',
+          labelText: 'toast.changesError.label',
+          text: 'toast.changesError.description',
+          translated: true,
+        });
+      } else {
+        hdsToast({
+          type: 'success',
+          labelText: 'toast.offerCancelled.label',
+          text: 'toast.offerCancelled.description',
+          translated: true,
+        });
+      }
+    });
+  };
+
   const mapPlaceProperties = (placeProperties: PlaceProperty[]) =>
     placeProperties.map(
       ({ prop, key, icon }) =>
@@ -112,6 +153,8 @@ const BerthSwitchOfferCard = ({
     { prop: gate, key: 'gate', icon: IconFence },
     { prop: water, key: 'water', icon: IconWaterTap },
   ];
+  const address = [harborName, pierIdentifier, berthNum].filter(Boolean).join(' ');
+  const isSubmitting = isSending || isUpdating;
 
   return (
     <>
@@ -122,7 +165,7 @@ const BerthSwitchOfferCard = ({
         <CardBody>
           <Grid colsCount={3}>
             <Section title={t('common.terminology.berth').toUpperCase()}>
-              <Section>{[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}</Section>
+              <Section>{address}</Section>
               <Section>
                 <div className={styles.properties}>{mapPlaceProperties(properties)}</div>
               </Section>
@@ -138,11 +181,29 @@ const BerthSwitchOfferCard = ({
               />
             </Section>
           </Grid>
+
           <hr />
-          <div>
-            <Button disabled={isSubmitting} onClick={() => setSendOfferModalOpen(true)}>
+
+          <div className={styles.buttonRow}>
+            <Button
+              disabled={isSubmitting || status === OfferStatus.CANCELLED}
+              onClick={() => setSendOfferModalOpen(true)}
+            >
               {t('applicationView.berthSwitchOffer.sendOffer')}
             </Button>
+            <ButtonWithConfirmation
+              disabled={isSubmitting || !(status === OfferStatus.OFFERED || status === OfferStatus.EXPIRED)}
+              onConfirm={() => cancelBerthSwitchOffer()}
+              buttonText={t('applicationView.berthSwitchOffer.cancelOffer')}
+              infoText={t('applicationView.berthSwitchOffer.cancelConfirmation.infoText', {
+                customerName: customerName,
+                address: address,
+              })}
+              warningText={t('applicationView.berthSwitchOffer.cancelConfirmation.warningText')}
+              modalTitle={t('applicationView.berthSwitchOffer.cancelOffer').toUpperCase()}
+              onCancelText={t('common.close')}
+              onConfirmText={t('applicationView.berthSwitchOffer.cancelOffer')}
+            />
           </div>
         </CardBody>
       </Card>

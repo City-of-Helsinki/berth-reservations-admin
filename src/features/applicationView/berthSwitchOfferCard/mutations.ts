@@ -11,3 +11,11 @@ export const SEND_BERTH_SWITCH_OFFER_MUTATION = gql`
     }
   }
 `;
+
+export const UPDATE_BERTH_SWITCH_OFFER_MUTATION = gql`
+  mutation UPDATE_BERTH_SWITCH_OFFER($input: UpdateBerthSwitchOfferMutationInput!) {
+    updateBerthSwitchOffer(input: $input) {
+      clientMutationId
+    }
+  }
+`;

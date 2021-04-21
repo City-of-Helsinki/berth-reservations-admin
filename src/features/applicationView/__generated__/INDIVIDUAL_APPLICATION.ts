@@ -120,7 +120,6 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node
   __typename: "BerthSwitchOfferNode";
   id: string;
   lease: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_lease;
-  customerEmail: string | null;
   berth: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth;
   status: OfferStatus;
 }

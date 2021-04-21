@@ -15,7 +15,6 @@ export const getSwitchOffers = (switchOffersData: BerthSwitchOffersData): BerthS
         berthMooringType: switchOffer.berth.mooringType,
         berthNum: switchOffer.berth.number,
         berthWidth: switchOffer.berth.width,
-        customerEmail: switchOffer.customerEmail,
         electricity: switchOffer.berth.pier.properties?.electricity ?? false,
         gate: switchOffer.berth.pier.properties?.gate ?? false,
         harborName: switchOffer.berth.pier.properties?.harbor.properties?.name ?? '',

@@ -459,7 +459,12 @@
       "title": "HAKEMUS"
     },
     "berthSwitchOffer": {
-      "sendOffer": "Lähetä tarjous"
+      "cancelOffer": "Peruuta tarjous",
+      "sendOffer": "Lähetä tarjous",
+      "cancelConfirmation": {
+        "infoText": "Haluatko varmasti peruuttaa asiakkaan {{customerName}} tarjouksen kohteeseen {{address}}?",
+        "warningText": "Tätä toimintoa ei voi perua"
+      }
     }
   },
   "linkApplicationToCustomer": {
@@ -753,6 +758,10 @@
       "label": "Muutokset tallennettu",
       "description": "Muutokset on tallennettu"
     },
+    "changesError": {
+      "label": "Muutoksia ei tallennettu",
+      "description": "Muutosten tallentaminen epäonnistui"
+    },
     "noticeDeleted": {
       "label": "Ilmoitus poistettu",
       "description": "Ilmoitus on poistettu"
@@ -776,6 +785,10 @@
     "leaseCancelled": {
       "label": "Sopimus irtisanottu",
       "description": "Sopimuksen irtisanominen onnistui"
+    },
+    "offerCancelled": {
+      "label": "Tarjous peruutettu",
+      "description": "Tarjouksen peruuttaminen onnistui"
     }
   },
   "winterStorageAreaList": {
