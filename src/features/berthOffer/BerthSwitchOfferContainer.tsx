@@ -82,13 +82,16 @@ const BerthSwitchOfferContainer = () => {
   const piersIdentifiers = getAllPiersIdentifiers(data?.properties?.piers);
 
   const handleReturn = () => history.goBack();
+  const onSuccess = (berth: BerthData) => {
+    history.goBack();
+    showBerthSuccessToast(berth, t);
+  };
   const handleClickSelect = (berth: BerthData) => {
     setSelectedBerth(berth);
     createBerthSwitchOffer(berth)
       .then((result) => {
         if (result.errors) return;
-        history.goBack();
-        showBerthSuccessToast(berth, t);
+        onSuccess(berth);
       })
       .catch(() => {
         setShowSelectLease(true);
@@ -111,8 +114,9 @@ const BerthSwitchOfferContainer = () => {
       {showSelectLease && (
         <SelectBerthLease
           confirm={(oldLeaseId: string) => {
-            createBerthSwitchOffer(selectedBerth as BerthData, oldLeaseId).then(() => {
-              history.goBack();
+            createBerthSwitchOffer(selectedBerth as BerthData, oldLeaseId).then((result) => {
+              if (result.errors) return;
+              onSuccess(selectedBerth as BerthData);
             });
           }}
           closeModal={() => setShowSelectLease(false)}
