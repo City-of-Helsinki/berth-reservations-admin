@@ -41,6 +41,7 @@
     "select": "Valitse",
     "total": "Yhteensä",
     "yes": "Kyllä",
+    "deleteApplication": "Poista hakemus",
     "table": {
       "minimizeAll": "Pienennä kaikki",
       "all": "Kaikki",

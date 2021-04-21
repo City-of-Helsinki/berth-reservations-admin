@@ -28,7 +28,7 @@ exports[`ApplicationHeader renders correctly 1`] = `
       <span
         class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
       >
-        Poista ilmoitus
+        Poista hakemus
       </span>
     </button>
   </div>

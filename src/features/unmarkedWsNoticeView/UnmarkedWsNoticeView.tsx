@@ -70,6 +70,7 @@ const UnmarkedWsNoticeView = ({
 
       <ApplicationHeader
         text={t('applicationList.applicationType.notice')}
+        deleteApplicationLabel={t('unmarkedWsNotices.view.deleteNotice')}
         createdAt={noticeDetails.createdAt}
         status={noticeDetails.status}
         customerId={noticeDetails.customerId}
