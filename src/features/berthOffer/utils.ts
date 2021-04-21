@@ -170,10 +170,10 @@ export const getLeaseBoat = (data: SWITCH_BERTH_LEASE | undefined): Boat | undef
     boatRegistrationNumber: boat.registrationNumber,
     boatType: boat.boatType.name,
     boatName: boat.name,
-    boatWidth: boat.width,
-    boatDraught: boat.draught,
-    boatLength: boat.length,
-    boatWeight: boat.weight,
+    boatWidth: boat.width ? Number(boat.width) : boat.width,
+    boatDraught: boat.draught ? Number(boat.draught) : boat.draught,
+    boatLength: boat.length ? Number(boat.length) : boat.length,
+    boatWeight: boat.weight ? Number(boat.weight) : boat.weight,
     boatModel: boat.model,
   };
 };
@@ -185,10 +185,10 @@ export const getCustomerBoat = (data: BoatData | null | undefined): Boat | null 
     boatRegistrationNumber: data.registrationNumber,
     boatType: data.boatType.name,
     boatName: data.name,
-    boatWidth: data.width,
-    boatDraught: data.draught,
-    boatLength: data.length,
-    boatWeight: data.weight,
+    boatWidth: data.width ? Number(data.width) : data.width,
+    boatDraught: data.draught ? Number(data.draught) : data.draught,
+    boatLength: data.length ? Number(data.length) : data.length,
+    boatWeight: data.weight ? Number(data.weight) : data.weight,
     boatModel: data.model,
   };
 };
