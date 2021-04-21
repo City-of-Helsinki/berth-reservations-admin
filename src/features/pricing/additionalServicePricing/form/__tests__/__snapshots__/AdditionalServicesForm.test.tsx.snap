@@ -254,7 +254,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols3 row"
   >
     <div
-      class="Select-module_root__Ka5uO select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
     >
       <label
         class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
@@ -278,6 +278,7 @@ exports[`AdditionalServicesForm renders normally 1`] = `
           aria-labelledby="period-label period-toggle-button"
           aria-owns="period-menu"
           class="Select-module_button__1aIsm"
+          disabled=""
           id="period-toggle-button"
           type="button"
         >

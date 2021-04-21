@@ -165,6 +165,7 @@ const AdditionalServicesForm = ({
                 id="period"
                 name="period"
                 label={t('pricing.additionalServices.period')}
+                disabled={initialValues?.period}
                 options={periodOptions.map((option) => ({
                   value: option,
                   label: t(getPeriodTKey(option)),
