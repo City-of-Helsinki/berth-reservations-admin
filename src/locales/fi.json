@@ -919,9 +919,9 @@
   "applicationDetails": {
     "applicationChoicesList": {
       "choice": "Toive",
-      "selectedPorts": "VALITUT SATAMAT",
+      "selectedPorts": "HAETUT SATAMAT",
       "selectedWinterStorageAreas": "VALITUT TALVISÄILYTYSPAIKAT",
-      "noPlaces": "Ei paikkoja",
+      "noPlaces": "Jätä ilman paikkaa",
       "noPlacesModalInfo": "Asiakkaalle lähetetään sähköpostitse ilmoitus ettei haettuja paikkoja ole saatavilla.",
       "noPlacesModalTitle": "Oletko varma että haluat jättää ilman paikkaa?"
     }
