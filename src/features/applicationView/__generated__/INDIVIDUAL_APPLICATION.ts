@@ -119,6 +119,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node
 export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node {
   __typename: "BerthSwitchOfferNode";
   id: string;
+  offerNumber: string;
   lease: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_lease;
   berth: INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges_node_berth;
   status: OfferStatus;

@@ -61,6 +61,7 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
         edges {
           node {
             id
+            offerNumber
             lease {
               id
             }

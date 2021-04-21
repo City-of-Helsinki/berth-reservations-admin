@@ -10,8 +10,6 @@ export type PlaceProperty = {
 };
 
 export interface BerthSwitchOfferDetails {
-  id: string;
-  status: OfferStatus;
   berthComment: string;
   berthDepth: number | null;
   berthIsAccessible: boolean;
@@ -22,8 +20,11 @@ export interface BerthSwitchOfferDetails {
   electricity: boolean;
   gate: boolean;
   harborName: string;
+  id: string;
   lighting: boolean;
+  offerNumber: string;
   pierIdentifier: string;
+  status: OfferStatus;
   wasteCollection: boolean;
   water: boolean;
 }

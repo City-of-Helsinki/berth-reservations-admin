@@ -16,7 +16,7 @@ import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../linkApplicationToCustomer/LinkApplicationToCustomerContainer';
 import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
-import BerthSwitchOfferCard from './berthSwitchOfferCard/BerthSwitchOfferCard';
+import BerthSwitchOfferCardContainer from './berthSwitchOfferCard/BerthSwitchOfferCardContainer';
 import { BerthSwitchOfferDetails } from './berthSwitchOfferCard/types';
 
 export enum SearchBy {
@@ -110,7 +110,7 @@ const ApplicationView = ({
       )}
 
       {switchOffers.map((switchOffer) => (
-        <BerthSwitchOfferCard
+        <BerthSwitchOfferCardContainer
           key={switchOffer.id}
           className={styles.fullWidth}
           customerName={`${customerProfile?.firstName} ${customerProfile?.lastName}`}
