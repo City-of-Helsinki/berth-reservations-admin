@@ -25,8 +25,8 @@ const ApplicationTableTools = ({
   const { t } = useTranslation();
   const options = [
     { label: t('common.all'), value: '' as ApplicationStatus },
-    ...Object.values(ApplicationStatus).map((status) => {
-      return { label: t(APPLICATION_STATUS[status].label), value: status };
+    ...Object.entries(APPLICATION_STATUS).map(([key, value]) => {
+      return { label: t(value.label), value: ApplicationStatus[key as ApplicationStatus] };
     }),
   ];
   return (
