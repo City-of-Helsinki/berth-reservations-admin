@@ -295,7 +295,7 @@ exports[`ApplicationsCard renders normally 1`] = `
           <h4
             class="text standard h4 m title"
           >
-            VALITUT SATAMAT
+            HAETUT SATAMAT
           </h4>
           <section
             class="body"

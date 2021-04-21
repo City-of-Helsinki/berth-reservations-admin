@@ -778,7 +778,7 @@ exports[`ApplicationDetails renders normally with harborChoices and no customerI
       <h4
         class="text standard h4 m title"
       >
-        VALITUT SATAMAT
+        HAETUT SATAMAT
       </h4>
       <section
         class="body"
@@ -1574,7 +1574,7 @@ exports[`ApplicationDetails renders normally with organization customer applican
       <h4
         class="text standard h4 m title"
       >
-        VALITUT SATAMAT
+        HAETUT SATAMAT
       </h4>
       <section
         class="body"
@@ -2088,7 +2088,7 @@ exports[`ApplicationDetails renders normally with private customer applicant 1`]
       <h4
         class="text standard h4 m title"
       >
-        VALITUT SATAMAT
+        HAETUT SATAMAT
       </h4>
       <section
         class="body"
