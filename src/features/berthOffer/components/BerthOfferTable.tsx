@@ -140,6 +140,7 @@ const BerthOfferTable = ({
       )}
       renderTableToolsTop={() => <TableTools application={application} handleReturn={handleReturn} />}
       renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
+      loading={isSubmitting}
     />
   );
 };

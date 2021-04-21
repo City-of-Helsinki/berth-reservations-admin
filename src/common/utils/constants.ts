@@ -76,27 +76,27 @@ type OfferStatusType = {
 
 export const OFFER_STATUS: OfferStatusType = {
   ACCEPTED: {
-    label: 'common.orderStatus.accepted',
+    label: 'common.offerStatus.accepted',
     type: 'success',
   },
   CANCELLED: {
-    label: 'common.orderStatus.cancelled',
+    label: 'common.offerStatus.cancelled',
     type: 'error',
   },
   DRAFTED: {
-    label: 'common.orderStatus.drafted',
+    label: 'common.offerStatus.drafted',
     type: 'alert',
   },
   EXPIRED: {
-    label: 'common.orderStatus.expired',
+    label: 'common.offerStatus.expired',
     type: 'error',
   },
   OFFERED: {
-    label: 'common.orderStatus.offered',
+    label: 'common.offerStatus.offered',
     type: 'alert',
   },
   REJECTED: {
-    label: 'common.orderStatus.rejected',
+    label: 'common.offerStatus.rejected',
     type: 'error',
   },
 };

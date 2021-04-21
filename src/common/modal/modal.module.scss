@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   max-height: 100%;
-  overflow-y: visible; // To allow dropdowns to overflow from small modals
+  overflow-y: auto;
   padding: units(3);
   position: relative;
   &:focus {
