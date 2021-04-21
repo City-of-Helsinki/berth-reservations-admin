@@ -11,23 +11,25 @@ import DeleteButton from '../deleteButton/DeleteButton';
 import styles from './applicationHeader.module.scss';
 
 interface ApplicationHeaderProps {
-  text: string;
   createdAt: string;
-  status: ApplicationStatus;
   customerId?: string;
+  deleteApplicationLabel?: string;
   isDeletingApplication?: boolean;
+  status: ApplicationStatus;
+  text: string;
   handleUnlinkCustomer?(): void;
   handleDeleteApplication?(): void;
 }
 
 const ApplicationHeader = ({
-  text,
   createdAt,
-  status,
   customerId,
-  isDeletingApplication,
+  deleteApplicationLabel,
   handleDeleteApplication,
   handleUnlinkCustomer,
+  isDeletingApplication,
+  status,
+  text,
 }: ApplicationHeaderProps) => {
   const { t, i18n } = useTranslation();
   return (
@@ -48,7 +50,7 @@ const ApplicationHeader = ({
         )}
         {canDeleteApplication(status) && handleDeleteApplication && (
           <DeleteButton
-            buttonText={t('unmarkedWsNotices.view.deleteNotice')}
+            buttonText={deleteApplicationLabel ?? t('common.deleteApplication')}
             onConfirm={handleDeleteApplication}
             disabled={isDeletingApplication}
           />
