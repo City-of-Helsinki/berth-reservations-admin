@@ -9,6 +9,7 @@ type ApplicationStatusType = {
 };
 
 export const APPLICATION_STATUS: ApplicationStatusType = {
+  // Note: Changing the order affects the status filters in application list view
   PENDING: { label: 'applicationList.status.pending', type: 'alert' },
   OFFER_GENERATED: {
     label: 'applicationList.status.offerGenerated',
@@ -16,9 +17,9 @@ export const APPLICATION_STATUS: ApplicationStatusType = {
   },
   OFFER_SENT: { label: 'applicationList.status.offerSent', type: 'success' },
   HANDLED: { label: 'applicationList.status.handled', type: 'info' },
-  EXPIRED: { label: 'applicationList.status.expired', type: 'neutral' },
   NO_SUITABLE_BERTHS: { label: 'applicationList.status.noSuitable', type: 'error' },
   REJECTED: { label: 'applicationList.status.rejected', type: 'error' },
+  EXPIRED: { label: 'applicationList.status.expired', type: 'neutral' },
 };
 
 type OrderStatusType = {
