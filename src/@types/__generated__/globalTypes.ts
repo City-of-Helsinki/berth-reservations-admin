@@ -532,6 +532,13 @@ export interface UpdateBerthServicesProfileMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateBerthSwitchOfferMutationInput {
+  status?: OfferStatus | null;
+  dueDate?: any | null;
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface UpdateBoatCertificateInput {
   file?: any | null;
   certificateType?: BoatCertificateType | null;

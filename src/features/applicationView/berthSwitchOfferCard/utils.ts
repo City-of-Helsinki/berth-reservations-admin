@@ -6,8 +6,6 @@ export const getSwitchOffers = (switchOffersData: BerthSwitchOffersData): BerthS
     const switchOffer = edge?.node;
     if (switchOffer) {
       const berthSwitchOffer = {
-        id: switchOffer.id,
-        status: switchOffer.status,
         berthComment: switchOffer.berth.comment,
         berthDepth: switchOffer.berth.depth,
         berthIsAccessible: switchOffer.berth.isAccessible ?? false,
@@ -15,12 +13,14 @@ export const getSwitchOffers = (switchOffersData: BerthSwitchOffersData): BerthS
         berthMooringType: switchOffer.berth.mooringType,
         berthNum: switchOffer.berth.number,
         berthWidth: switchOffer.berth.width,
-        customerEmail: switchOffer.customerEmail,
         electricity: switchOffer.berth.pier.properties?.electricity ?? false,
         gate: switchOffer.berth.pier.properties?.gate ?? false,
         harborName: switchOffer.berth.pier.properties?.harbor.properties?.name ?? '',
+        id: switchOffer.id,
         lighting: switchOffer.berth.pier.properties?.lighting ?? false,
+        offerNumber: switchOffer.offerNumber,
         pierIdentifier: switchOffer.berth.pier.properties?.identifier ?? '',
+        status: switchOffer.status,
         wasteCollection: switchOffer.berth.pier.properties?.wasteCollection ?? false,
         water: switchOffer.berth.pier.properties?.water ?? false,
       };
