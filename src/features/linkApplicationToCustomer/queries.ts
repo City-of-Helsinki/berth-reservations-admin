@@ -33,14 +33,18 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
             city
           }
           organization {
+            id
             businessId
           }
           berthLeases {
             edges {
               node {
+                id
                 berth {
+                  id
                   number
                   pier {
+                    id
                     properties {
                       identifier
                       harbor {
@@ -61,9 +65,12 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
                 id
                 isActive
                 place {
+                  id
                   winterStorageSection {
+                    id
                     properties {
                       area {
+                        id
                         properties {
                           name
                         }
@@ -72,8 +79,10 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
                   }
                 }
                 section {
+                  id
                   properties {
                     area {
+                      id
                       properties {
                         name
                       }
@@ -86,7 +95,9 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
           berthApplications {
             edges {
               node {
+                id
                 berthSwitch {
+                  id
                   harborName
                 }
               }

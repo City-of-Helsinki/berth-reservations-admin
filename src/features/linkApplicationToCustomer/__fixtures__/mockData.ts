@@ -14,8 +14,10 @@ const berthApplications: BERTH_APPLICATIONS = {
       __typename: 'BerthApplicationNodeEdge',
       node: {
         __typename: 'BerthApplicationNode',
+        id: 'dfa51568-7a2a-4e04-bb95-70625059d8d5',
         berthSwitch: {
           __typename: 'BerthSwitchType',
+          id: '2a6a17e0-8ecc-4ae8-81ba-22bf1b02ce86',
           harborName: 'Test Harbor',
         },
       },
@@ -30,11 +32,14 @@ const berthLeases: BERTH_LEASES = {
       __typename: 'BerthLeaseNodeEdge',
       node: {
         __typename: 'BerthLeaseNode',
+        id: '1388d48d-cada-4171-9772-62a28e3c5e1a',
         berth: {
           __typename: 'BerthNode',
+          id: 'cf16edea-5d9d-4e81-88af-cb4feeceef2d',
           number: '1',
           pier: {
             __typename: 'PierNode',
+            id: '9b533377-55db-4199-b4c3-a5199a23fb80',
             properties: {
               __typename: 'PierProperties',
               harbor: {
@@ -67,10 +72,12 @@ export const mockWinterStorageLeases: WINTER_STORAGE_LEASES = {
         place: null,
         section: {
           __typename: 'WinterStorageSectionNode',
+          id: '0db7f1fa-ad28-4303-86b3-7afb952fcc0d',
           properties: {
             __typename: 'WinterStorageSectionProperties',
             area: {
               __typename: 'WinterStorageAreaNode',
+              id: '27138bba-2a85-479c-8762-b44836a94a54',
               properties: {
                 __typename: 'WinterStorageAreaProperties',
                 name: 'Nostojärjestysalue 0',
@@ -88,12 +95,15 @@ export const mockWinterStorageLeases: WINTER_STORAGE_LEASES = {
         isActive: false,
         place: {
           __typename: 'WinterStoragePlaceNode',
+          id: '206f135a-0c0d-4c40-a10f-aaf69275ff8c',
           winterStorageSection: {
             __typename: 'WinterStorageSectionNode',
+            id: '24ce2563-5b31-4a65-86b9-141a5de3c686',
             properties: {
               __typename: 'WinterStorageSectionProperties',
               area: {
                 __typename: 'WinterStorageAreaNode',
+                id: '77e46f7f-8f3d-4956-ac23-bbc447bcb0ef',
                 properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue 0' },
               },
             },
@@ -111,10 +121,12 @@ export const mockWinterStorageLeases: WINTER_STORAGE_LEASES = {
         place: null,
         section: {
           __typename: 'WinterStorageSectionNode',
+          id: '26e02991-3e7b-4078-84ef-25e57ee16ba0',
           properties: {
             __typename: 'WinterStorageSectionProperties',
             area: {
               __typename: 'WinterStorageAreaNode',
+              id: '18d4d225-9107-4092-8ec6-00bfa5eb40cc',
               properties: {
                 __typename: 'WinterStorageAreaProperties',
                 name: 'Nostojärjestysalue',
@@ -132,12 +144,15 @@ export const mockWinterStorageLeases: WINTER_STORAGE_LEASES = {
         isActive: true,
         place: {
           __typename: 'WinterStoragePlaceNode',
+          id: '420a6d19-4f74-4410-994a-cef31155eea3',
           winterStorageSection: {
             __typename: 'WinterStorageSectionNode',
+            id: 'df7bc1ea-e3ae-4649-83c1-69c518696e01',
             properties: {
               __typename: 'WinterStorageSectionProperties',
               area: {
                 __typename: 'WinterStorageAreaNode',
+                id: 'd7be8041-f0f8-4bd7-9d4f-989bce0824fd',
                 properties: { __typename: 'WinterStorageAreaProperties', name: 'Talvisäilytysalue' },
               },
             },
