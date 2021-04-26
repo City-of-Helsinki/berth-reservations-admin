@@ -6,6 +6,7 @@ import Modal from '../../common/modal/Modal';
 import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 import MarkAsPaidForm from './markAsPaidForm/MarkAsPaidFormContainer';
 import CancelInvoice from './cancelInvoice/CancelInvoiceContainer';
+import RefundOrder from './refundOrder/RefundOrderContainer';
 import EditForm from './editForm/EditForm';
 import InvoiceCard, { InvoiceCardProps } from './InvoiceCard';
 import InvoiceActions from './invoiceActions/InvoiceActions';
@@ -30,6 +31,7 @@ const InvoiceCardContainer = ({
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
   const [markAsPaidModalOpen, setMarkAsPaidModalOpen] = useState(false);
   const [cancelInvoiceModalOpen, setCancelInvoiceModalOpen] = useState(false);
+  const [refundModalOpen, setRefundModalOpen] = useState(false);
 
   const [selectedInvoiceAction, setSelectedInvoiceAction] = useState<number | null>(null);
 
@@ -40,6 +42,11 @@ const InvoiceCardContainer = ({
 
   const closeMarkAsPaidModal = () => {
     setMarkAsPaidModalOpen(false);
+    setSelectedInvoiceAction(null);
+  };
+
+  const closeRefundModal = () => {
+    setRefundModalOpen(false);
     setSelectedInvoiceAction(null);
   };
 
@@ -75,6 +82,15 @@ const InvoiceCardContainer = ({
               setSelectedInvoiceAction(1);
             },
           },
+          {
+            value: 2,
+            label: t('invoiceCard.refund.label'),
+            disabled: order?.status !== OrderStatus.PAID || invoiceCardProps.leaseStatus !== LeaseStatus.PAID,
+            onClick: () => {
+              setRefundModalOpen(true);
+              setSelectedInvoiceAction(2);
+            },
+          },
         ]}
       />
       <InvoiceCard
@@ -98,6 +114,14 @@ const InvoiceCardContainer = ({
           </Modal>
           <Modal isOpen={markAsPaidModalOpen} toggleModal={closeMarkAsPaidModal}>
             <MarkAsPaidForm orderId={order.id} onClose={closeMarkAsPaidModal} refetchQueries={refetchQueries} />
+          </Modal>
+          <Modal isOpen={refundModalOpen} toggleModal={closeRefundModal}>
+            <RefundOrder
+              amount={order.totalPrice}
+              orderId={order.id}
+              onClose={closeRefundModal}
+              refetchQueries={refetchQueries}
+            />
           </Modal>
           <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
             <SendInvoiceForm

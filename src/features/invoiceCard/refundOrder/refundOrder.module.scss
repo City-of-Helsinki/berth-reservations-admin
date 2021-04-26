@@ -1,0 +1,12 @@
+@import 'spacings';
+@import 'containers';
+
+.refundOrder {
+  width: container(s);
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: units(2.5);
+  }
+}
