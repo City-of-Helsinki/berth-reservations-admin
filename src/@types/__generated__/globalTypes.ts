@@ -127,6 +127,12 @@ export enum OrderOrderType {
   LEASE_ORDER = "LEASE_ORDER",
 }
 
+export enum OrderRefundStatus {
+  ACCEPTED = "ACCEPTED",
+  PENDING = "PENDING",
+  REJECTED = "REJECTED",
+}
+
 export enum OrderStatus {
   CANCELLED = "CANCELLED",
   DRAFTED = "DRAFTED",
@@ -419,6 +425,12 @@ export interface OrganizationInput {
   address?: string | null;
   postalCode?: string | null;
   city?: string | null;
+}
+
+export interface RefundOrderMutationInput {
+  orderId: string;
+  profileToken?: string | null;
+  clientMutationId?: string | null;
 }
 
 export interface RejectBerthApplicationMutationInput {

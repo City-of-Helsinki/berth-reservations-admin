@@ -896,6 +896,11 @@
       "title": "Muokkaa tarjous/lasku",
       "description": "Huom. Muokatun laskun tiedot lähetetään asiakkaalle uudelleen sähköpostitse.",
       "cancelInvoice": "Peru lasku"
+    },
+    "refund": {
+      "label": "Maksunpalautus",
+      "title": "Maksunpalautus",
+      "description": "Oletko varma että haluat palauttaa {{ amount }}?"
     }
   },
   "additionalInvoice": {
