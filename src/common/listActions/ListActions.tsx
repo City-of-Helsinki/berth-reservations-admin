@@ -56,7 +56,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
           <Button
             onClick={() => selectedAction.onClick?.(selectedRows)}
             variant="secondary"
-            disabled={!hasSelectedRows || selectedAction.buttonDisabled}
+            disabled={selectedAction.buttonDisabled || !hasSelectedRows}
           >
             {!hasSelectedRows ? t('buttonWithSelectedRows.noSelection') : selectedAction.buttonText}
           </Button>
