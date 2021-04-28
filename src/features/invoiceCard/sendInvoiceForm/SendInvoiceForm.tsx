@@ -9,7 +9,7 @@ import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 // import Text from '../../../common/text/Text';
 import { getDefaultDueDate, getDueDateValidation } from '../../../common/utils/dates';
-// import { InvoiceInstructions } from '../../../common/invoiceInstructions/InvoiceInstructions';
+import { InvoiceInstructions } from '../../../common/invoiceInstructions/InvoiceInstructions';
 
 type FormValues = {
   dueDate: string;
@@ -56,8 +56,10 @@ const SendInvoiceForm = ({
             title={t(isResend ? 'invoiceCard.sendInvoice.resendTitle' : 'invoiceCard.sendInvoice.title').toUpperCase()}
           />
 
-          {/* TODO: re-enable this warning once agreed on the design for sending multiple offers */}
-          {/* <InvoiceInstructions email={email} isResend={isResend} /> */}
+          <InvoiceInstructions
+            email={null} // TODO: re-enable this warning once agreed on the design for sending multiple offers
+            isResend={isResend}
+          />
 
           <div className={styles.dueDate}>
             <TextInput
