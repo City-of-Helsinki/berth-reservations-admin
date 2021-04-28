@@ -5,17 +5,18 @@ import { PureQueryOptions } from 'apollo-client';
 import MarkAsPaidForm from './MarkAsPaidForm';
 import { MARK_AS_PAID_MUTATION } from './mutations';
 import { MARK_AS_PAID, MARK_AS_PAIDVariables as MARK_AS_PAID_VARS } from './__generated__/MARK_AS_PAID';
+import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface MarkAsPaidContainerProps {
-  orderId: string;
+  ordersId: string[];
   refetchQueries?: PureQueryOptions[] | string[];
   onClose(): void;
 }
 
-const MarkAsPaidFormContainer = ({ orderId, onClose, refetchQueries }: MarkAsPaidContainerProps) => {
+const MarkAsPaidFormContainer = ({ ordersId, onClose, refetchQueries }: MarkAsPaidContainerProps) => {
   const [markAsPaid, { loading: isSubmitting }] = useMutation<MARK_AS_PAID, MARK_AS_PAID_VARS>(MARK_AS_PAID_MUTATION, {
     variables: {
-      orderId,
+      orders: ordersId.map((id) => ({ id, status: OrderStatus.PAID_MANUALLY })),
     },
     refetchQueries: refetchQueries ?? [],
   });
