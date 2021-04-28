@@ -13,7 +13,7 @@ type ListActionItem<T> = {
   buttonText?: string;
   buttonDisabled?: boolean;
   onClick?(selectedRows: T[]): void;
-  renderComponent?(deselect: () => void): React.ReactNode;
+  renderComponent?(resetSelection: () => void): React.ReactNode;
 };
 
 interface ListActionsProps<T> {
@@ -41,6 +41,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
   ];
 
   const selectedAction = listActions.find((action) => action.id === selectedActionId);
+  const resetSelection = () => setSelectedActionId(undefined);
 
   return (
     <div className={classNames(styles.container, className)}>
@@ -50,7 +51,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
         options={options}
         className={styles.select}
       />
-      {selectedAction?.renderComponent?.(() => setSelectedActionId(undefined))}
+      {selectedAction?.renderComponent?.(resetSelection)}
       {selectedAction?.onClick && (
         <div className={styles.buttonContainer}>
           <Button

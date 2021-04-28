@@ -156,14 +156,14 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
                   {
                     id: 'InvoiceCard_onCreateAdditionalService',
                     label: t('additionalInvoice.create'),
-                    renderComponent: (deselect) => {
+                    renderComponent: (resetSelection) => {
                       return (
-                        <Modal isOpen={true} toggleModal={deselect} shouldCloseOnOverlayClick={false}>
+                        <Modal isOpen={true} toggleModal={resetSelection} shouldCloseOnOverlayClick={false}>
                           <CreateAdditionalInvoiceContainer
                             customerId={customer.id}
                             email={customer.email}
                             berthLeases={berthLeases}
-                            closeModal={deselect}
+                            closeModal={resetSelection}
                             refetchQueries={refetchQueries}
                           />
                         </Modal>
