@@ -190,6 +190,10 @@
       "refunded": "Maksu palautettu",
       "rejected": "Hylätty"
     },
+    "orderType": {
+      "lease": "Lasku",
+      "additionalService": "Lisäpalvelulasku"
+    },
     "offerStatus": {
       "accepted": "Hyväksytty",
       "cancelled": "Peruutettu",

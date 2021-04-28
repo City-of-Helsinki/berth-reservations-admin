@@ -19,6 +19,7 @@ import MarkAsPaidForm from '../../invoiceCard/markAsPaidForm/MarkAsPaidFormConta
 import RefundOrder from '../../invoiceCard/refundOrder/RefundOrderContainer';
 import CreateAdditionalInvoiceContainer from '../../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 import { CreateAdditionalInvoiceProps } from '../../createAdditionalInvoice/CreateAdditionalInvoiceForm';
+import { getOrderTypeTKey } from '../../../common/utils/translations';
 
 export interface InvoiceCardProps {
   className?: string;
@@ -51,7 +52,7 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
   const columns: ColumnType[] = [
     {
       Header: t('customerView.invoiceCard.tableHeaders.type') || '',
-      accessor: (row) => row.orderType,
+      accessor: (row) => t(getOrderTypeTKey(row.orderType)),
       id: 'orderType',
       width: COLUMN_WIDTH.XS,
       minWidth: COLUMN_WIDTH.XS,
