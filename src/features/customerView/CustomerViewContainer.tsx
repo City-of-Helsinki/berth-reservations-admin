@@ -244,8 +244,7 @@ const CustomerViewContainer = () => {
 
       <Modal isOpen={!!openResendInvoice} toggleModal={() => setOpenResendInvoice(undefined)}>
         <SendInvoiceFormContainer
-          orderId={openResendInvoice?.orderId ?? ''}
-          email={customerProfile.primaryEmail ?? null}
+          orders={[{ orderId: openResendInvoice?.orderId ?? '', email: openResendInvoice?.customer.email ?? null }]}
           isResend={true}
           refetchQueries={[]}
           onCancel={() => setOpenResendInvoice(undefined)}

@@ -253,6 +253,10 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
           }, []);
         const { lease } = orderNode;
         const invoice = {
+          customer: {
+            email: profile.primaryEmail?.email ?? null,
+          },
+          id: orderNode.id,
           leaseId: lease.id,
           leaseStatus: lease.status,
           orderId: orderNode.id,

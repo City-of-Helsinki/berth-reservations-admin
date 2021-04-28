@@ -3,21 +3,22 @@ import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
 
 import CancelInvoice from './CancelInvoice';
-import { CANCEL_INVOICE_MUTATION } from './mutations';
-import { CANCEL_INVOICE, CANCEL_INVOICEVariables as CANCEL_INVOICE_VARS } from './__generated__/CANCEL_INVOICE';
+import { CANCEL_INVOICES_MUTATION } from './mutations';
+import { CANCEL_INVOICES, CANCEL_INVOICESVariables as CANCEL_INVOICES_VARS } from './__generated__/CANCEL_INVOICES';
+import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface CancelInvoiceContainerProps {
-  orderId: string;
+  orderIds: string[];
   refetchQueries?: PureQueryOptions[] | string[];
   onClose(): void;
 }
 
-const CancelInvoiceContainer = ({ orderId, refetchQueries, onClose }: CancelInvoiceContainerProps) => {
-  const [cancelInvoice, { loading: isSubmitting }] = useMutation<CANCEL_INVOICE, CANCEL_INVOICE_VARS>(
-    CANCEL_INVOICE_MUTATION,
+const CancelInvoiceContainer = ({ orderIds, refetchQueries, onClose }: CancelInvoiceContainerProps) => {
+  const [cancelInvoice, { loading: isSubmitting }] = useMutation<CANCEL_INVOICES, CANCEL_INVOICES_VARS>(
+    CANCEL_INVOICES_MUTATION,
     {
       variables: {
-        orderId,
+        orders: orderIds.map((id) => ({ id, status: OrderStatus.CANCELLED })),
       },
       refetchQueries: refetchQueries ?? [],
     }

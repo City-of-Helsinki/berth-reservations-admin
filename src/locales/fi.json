@@ -190,6 +190,10 @@
       "refunded": "Maksu palautettu",
       "rejected": "Hylätty"
     },
+    "orderType": {
+      "lease": "Lasku",
+      "additionalService": "Lisäpalvelulasku"
+    },
     "offerStatus": {
       "accepted": "Hyväksytty",
       "cancelled": "Peruutettu",
@@ -594,6 +598,17 @@
       "dueDate": "Eräpäivä",
       "amount": "Summa",
       "status": "Tila"
+    },
+    "invoiceCard": {
+      "tableHeaders" : {
+        "type": "Tyyppi",
+        "place": "Satama / Alue",
+        "season": "Kausi",
+        "dueDate": "Eräpäivä",
+        "totalPrice": "Summa",
+        "orderNumber": "Tilaustunnus",
+        "status": "Tila"
+      }
     },
     "customerBoats": {
       "title": "ASIAKKAAN VENEET",

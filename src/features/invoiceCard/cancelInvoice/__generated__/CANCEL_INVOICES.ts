@@ -6,30 +6,30 @@
 import { UpdateOrderInput, OrderStatus } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
-// GraphQL mutation operation: MARK_AS_PAID
+// GraphQL mutation operation: CANCEL_INVOICES
 // ====================================================
 
-export interface MARK_AS_PAID_updateOrders_successfulOrders {
+export interface CANCEL_INVOICES_updateOrders_successfulOrders {
   __typename: "OrderNode";
   id: string;
   status: OrderStatus;
 }
 
-export interface MARK_AS_PAID_updateOrders_failedOrders {
+export interface CANCEL_INVOICES_updateOrders_failedOrders {
   __typename: "FailedOrderType";
   id: string;
 }
 
-export interface MARK_AS_PAID_updateOrders {
+export interface CANCEL_INVOICES_updateOrders {
   __typename: "UpdateOrdersMutationPayload";
-  successfulOrders: (MARK_AS_PAID_updateOrders_successfulOrders | null)[] | null;
-  failedOrders: (MARK_AS_PAID_updateOrders_failedOrders | null)[] | null;
+  successfulOrders: (CANCEL_INVOICES_updateOrders_successfulOrders | null)[] | null;
+  failedOrders: (CANCEL_INVOICES_updateOrders_failedOrders | null)[] | null;
 }
 
-export interface MARK_AS_PAID {
-  updateOrders: MARK_AS_PAID_updateOrders | null;
+export interface CANCEL_INVOICES {
+  updateOrders: CANCEL_INVOICES_updateOrders | null;
 }
 
-export interface MARK_AS_PAIDVariables {
+export interface CANCEL_INVOICESVariables {
   orders: (UpdateOrderInput | null)[];
 }

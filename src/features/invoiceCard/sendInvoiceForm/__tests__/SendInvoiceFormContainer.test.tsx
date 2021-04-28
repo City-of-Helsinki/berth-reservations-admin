@@ -8,11 +8,15 @@ import SendInvoiceFormContainer, { SendInvoiceFormContainerProps } from '../Send
 import { APPROVE_ORDERS_MUTATION } from '../../../../common/mutations/approveOrders';
 
 const mockProps: SendInvoiceFormContainerProps = {
-  email: 'test@example.com',
+  orders: [
+    {
+      orderId: 'MOCK-ORDER',
+      email: 'test@example.com',
+    },
+  ],
   refetchQueries: [],
   onCancel: jest.fn(),
   onSubmit: jest.fn(),
-  orderId: 'MOCK-ORDER',
 };
 
 // needs mock because mutation calls getProfileToken
@@ -47,12 +51,7 @@ describe('SendInvoiceFormContainer', () => {
         variables: {
           input: {
             dueDate: '2020-10-07',
-            orders: [
-              {
-                email: mockProps.email,
-                orderId: mockProps.orderId,
-              },
-            ],
+            orders: mockProps.orders,
           },
         },
       },
@@ -90,12 +89,7 @@ describe('SendInvoiceFormContainer', () => {
         variables: {
           input: {
             dueDate: '2020-09-23',
-            orders: [
-              {
-                email: null,
-                orderId: mockProps.orderId,
-              },
-            ],
+            orders: mockProps.orders,
           },
         },
       },
@@ -114,7 +108,7 @@ describe('SendInvoiceFormContainer', () => {
 
     const onSubmit = jest.fn();
 
-    const wrapper = getWrapper({ onSubmit, email: null }, [mutationMock]);
+    const wrapper = getWrapper({ onSubmit }, [mutationMock]);
     await act(async () => {
       wrapper.find('Form').simulate('submit');
       await waitForExpect(() => {

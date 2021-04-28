@@ -32,7 +32,7 @@ interface CreateAdditionalInvoiceContainerProps {
   email?: string | null;
   closeModal: () => void;
   berthLeases: BerthLease[];
-  refetchQueries: PureQueryOptions[];
+  refetchQueries: PureQueryOptions[] | string[];
 }
 
 const CreateAdditionalInvoiceContainer = ({
