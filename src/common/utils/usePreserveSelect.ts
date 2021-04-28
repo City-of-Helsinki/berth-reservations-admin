@@ -39,7 +39,7 @@ export const usePreserveSelect = <D extends { id: string }>(atom: RecoilState<{ 
   };
 
   const selectedRows = Object.values(selectedRowsDict);
-  const selectedRowIdsDict = Object.keys(selectedRowsDict).reduce((acc, selectedRow) => {
+  const selectedRowIdsDict: { [key: string]: true } = Object.keys(selectedRowsDict).reduce((acc, selectedRow) => {
     return { [selectedRow]: true, ...acc };
   }, {});
 
