@@ -7,8 +7,6 @@ import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import ApplicationsCard from './applicationsCard/ApplicationsCard';
-// import OpenInvoicesCard from './openInvoicesCard/OpenInvoicesCard';
-// import InvoicingHistoryCard from './invoicingHistoryCard/InvoicingHistoryCard';
 import BoatsCard from './boatsCard/BoatsCard';
 import { Application, Invoice, Boat, Lease } from './types';
 import BerthLeasesCard from './leasesCard/BerthLeasesCard';
