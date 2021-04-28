@@ -92,7 +92,6 @@ const InvoiceCardContainer = ({
             <SendInvoiceForm
               orders={[{ orderId: order.id, email: customerEmail }]}
               isResend={invoiceCardProps.leaseStatus === LeaseStatus.OFFERED}
-              // email={customerEmail}
               refetchQueries={refetchQueries}
               onSubmit={onDeselect}
               onCancel={onDeselect}

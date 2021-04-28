@@ -18,7 +18,6 @@ import { RESEND_ORDER_MUTATION } from '../../../common/mutations/resendOrder';
 
 export type SendInvoiceFormContainerProps = {
   orders: Array<{ orderId: string; email: string | null }>;
-  // email: string | null;
   refetchQueries: PureQueryOptions[] | string[];
   isResend?: boolean;
   onCancel: () => void;
@@ -99,13 +98,7 @@ const SendInvoiceFormContainer = ({
   };
 
   return (
-    <SendInvoiceForm
-      // email={email}
-      onSubmit={handleSubmit}
-      onCancel={onCancel}
-      isSubmitting={isSubmitting}
-      isResend={isResend}
-    />
+    <SendInvoiceForm onSubmit={handleSubmit} onCancel={onCancel} isSubmitting={isSubmitting} isResend={isResend} />
   );
 };
 
