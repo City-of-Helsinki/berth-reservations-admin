@@ -637,7 +637,9 @@ exports[`CustomerView renders normally 1`] = `
               >
                 <div
                   class="tableCell"
-                />
+                >
+                  Ei tietoja
+                </div>
               </div>
             </div>
           </div>
