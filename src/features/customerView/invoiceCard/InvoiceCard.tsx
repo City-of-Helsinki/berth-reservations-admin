@@ -174,6 +174,7 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
               />
             );
           }}
+          renderEmptyStateRow={() => t('common.notification.noData.description')}
           onSelectionChange={(selectedRowIds) => onSelectionChange(selectedRowIds, invoiceData)}
           className={className}
           columns={columns}
