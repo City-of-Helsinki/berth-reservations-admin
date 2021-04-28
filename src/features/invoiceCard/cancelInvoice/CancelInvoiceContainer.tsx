@@ -8,17 +8,17 @@ import { CANCEL_INVOICES, CANCEL_INVOICESVariables as CANCEL_INVOICES_VARS } fro
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface CancelInvoiceContainerProps {
-  ordersId: string[];
+  orderIds: string[];
   refetchQueries?: PureQueryOptions[] | string[];
   onClose(): void;
 }
 
-const CancelInvoiceContainer = ({ ordersId, refetchQueries, onClose }: CancelInvoiceContainerProps) => {
+const CancelInvoiceContainer = ({ orderIds, refetchQueries, onClose }: CancelInvoiceContainerProps) => {
   const [cancelInvoice, { loading: isSubmitting }] = useMutation<CANCEL_INVOICES, CANCEL_INVOICES_VARS>(
     CANCEL_INVOICES_MUTATION,
     {
       variables: {
-        orders: ordersId.map((id) => ({ id, status: OrderStatus.CANCELLED })),
+        orders: orderIds.map((id) => ({ id, status: OrderStatus.CANCELLED })),
       },
       refetchQueries: refetchQueries ?? [],
     }

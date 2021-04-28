@@ -8,15 +8,15 @@ import { MARK_AS_PAID, MARK_AS_PAIDVariables as MARK_AS_PAID_VARS } from './__ge
 import { OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 export interface MarkAsPaidContainerProps {
-  ordersId: string[];
+  orderIds: string[];
   refetchQueries?: PureQueryOptions[] | string[];
   onClose(): void;
 }
 
-const MarkAsPaidFormContainer = ({ ordersId, onClose, refetchQueries }: MarkAsPaidContainerProps) => {
+const MarkAsPaidFormContainer = ({ orderIds, onClose, refetchQueries }: MarkAsPaidContainerProps) => {
   const [markAsPaid, { loading: isSubmitting }] = useMutation<MARK_AS_PAID, MARK_AS_PAID_VARS>(MARK_AS_PAID_MUTATION, {
     variables: {
-      orders: ordersId.map((id) => ({ id, status: OrderStatus.PAID_MANUALLY })),
+      orders: orderIds.map((id) => ({ id, status: OrderStatus.PAID_MANUALLY })),
     },
     refetchQueries: refetchQueries ?? [],
   });

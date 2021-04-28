@@ -113,7 +113,7 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
     },
   ];
 
-  const ordersId = selectedRows.map((row) => row.orderId);
+  const orderIds = selectedRows.map((row) => row.orderId);
 
   return (
     <>
@@ -193,10 +193,10 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
         />
       </Modal>
       <Modal isOpen={actions.cancelInvoice.state} toggleModal={onDeselect}>
-        <CancelInvoice ordersId={ordersId} onClose={onDeselect} refetchQueries={refetchQueries} />
+        <CancelInvoice orderIds={orderIds} onClose={onDeselect} refetchQueries={refetchQueries} />
       </Modal>
       <Modal isOpen={actions.markAsPaid.state} toggleModal={onDeselect}>
-        <MarkAsPaidForm ordersId={ordersId} onClose={onDeselect} refetchQueries={refetchQueries} />
+        <MarkAsPaidForm orderIds={orderIds} onClose={onDeselect} refetchQueries={refetchQueries} />
       </Modal>
       <Modal isOpen={actions.refund.state} toggleModal={onDeselect}>
         <RefundOrder

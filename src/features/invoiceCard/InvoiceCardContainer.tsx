@@ -75,10 +75,10 @@ const InvoiceCardContainer = ({
       {order && (
         <>
           <Modal isOpen={actions.cancelInvoice.state} toggleModal={onDeselect}>
-            <CancelInvoice ordersId={[order.id]} onClose={onDeselect} refetchQueries={refetchQueries} />
+            <CancelInvoice orderIds={[order.id]} onClose={onDeselect} refetchQueries={refetchQueries} />
           </Modal>
           <Modal isOpen={actions.markAsPaid.state} toggleModal={onDeselect}>
-            <MarkAsPaidForm ordersId={[order.id]} onClose={onDeselect} refetchQueries={refetchQueries} />
+            <MarkAsPaidForm orderIds={[order.id]} onClose={onDeselect} refetchQueries={refetchQueries} />
           </Modal>
           <Modal isOpen={actions.refund.state} toggleModal={onDeselect}>
             <RefundOrder
