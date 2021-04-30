@@ -94,7 +94,7 @@ describe('ApplicationList', () => {
       getPageCount,
     });
 
-    wrapper.find('Pagination').find('div.icnBtn').at(1).simulate('click');
+    wrapper.find('Pagination').find('button').at(1).simulate('click');
     wrapper.update();
 
     expect(goToPage).toHaveBeenCalledWith(1);
