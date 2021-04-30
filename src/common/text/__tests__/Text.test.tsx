@@ -37,4 +37,9 @@ describe('Text', () => {
     const wrapper = getWrapper({ children: 'test', italic: true });
     expect(wrapper.hasClass('italic')).toBe(true);
   });
+
+  it('should add underlined as a className if the supplied underlined prop is true', () => {
+    const wrapper = getWrapper({ children: 'test', underlined: true });
+    expect(wrapper.hasClass('underlined')).toBe(true);
+  });
 });
