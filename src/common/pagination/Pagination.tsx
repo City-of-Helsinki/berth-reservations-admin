@@ -1,48 +1,69 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ReactPaginate, { ReactPaginateProps } from 'react-paginate';
 import { IconArrowLeft, IconArrowRight } from 'hds-react';
 
 import Text from '../text/Text';
 import styles from './pagination.module.scss';
 
-export type PaginationProps = Pick<ReactPaginateProps, 'pageCount' | 'onPageChange' | 'initialPage' | 'forcePage'> & {
+export interface PaginationProps {
   className?: string;
-};
+  forcePage: number;
+  pageCount: number;
+  onPageChange(selectedItem: { selected: number }): void;
+}
 
-const Pagination = ({ className, ...rest }: PaginationProps) => {
+const Pagination = ({ className, forcePage, pageCount, onPageChange }: PaginationProps) => {
   const { t } = useTranslation();
 
+  const options: JSX.Element[] = [];
+
+  for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
+    options.push(
+      <option key={pageIndex} value={pageIndex}>
+        {pageIndex + 1}
+      </option>
+    );
+  }
+
+  const isFirstPage = forcePage === 0;
+  const isLastPage = pageCount - 1 === forcePage;
+
+  const handlePrev = () => onPageChange?.({ selected: forcePage - 1 });
+  const handleNext = () => onPageChange?.({ selected: forcePage + 1 });
+
   return (
-    <ReactPaginate
-      {...rest}
-      previousLabel={
-        <div className={styles.icnBtn}>
-          <IconArrowLeft size="m" />
-          <Text>{t('common.previous')}</Text>
-        </div>
-      }
-      nextLabel={
-        <div className={styles.icnBtn}>
-          <Text>{t('common.next')}</Text>
-          <IconArrowRight size="m" />
-        </div>
-      }
-      previousClassName={styles.prevBtn}
-      nextClassName={styles.nextBtn}
-      previousLinkClassName={styles.navLink}
-      nextLinkClassName={styles.navLink}
-      disabledClassName={styles.disabled}
-      pageLinkClassName={classNames(styles.navLink, styles.pageLink)}
-      pageClassName={styles.pageBtn}
-      breakLabel={'...'}
-      breakClassName={styles.break}
-      marginPagesDisplayed={1}
-      pageRangeDisplayed={3}
-      activeLinkClassName={styles.active}
-      containerClassName={classNames(styles.pagination, className)}
-    />
+    <div className={classNames(styles.pagination, className)}>
+      <button
+        className={classNames(styles.prevBtn, { [styles.disabled]: isFirstPage })}
+        onClick={handlePrev}
+        disabled={isFirstPage}
+      >
+        <IconArrowLeft size="m" className={styles.icon} />
+        <Text>{t('common.previous')}</Text>
+      </button>
+      <div>
+        <select
+          className={styles.select}
+          value={forcePage}
+          onChange={(e) => onPageChange?.({ selected: Number(e.target.value) })}
+        >
+          {options}
+        </select>
+        /{' '}
+        <button onClick={() => onPageChange?.({ selected: pageCount - 1 })}>
+          <Text underlined>{pageCount}</Text>
+        </button>
+      </div>
+      <button
+        className={classNames(styles.nextBtn, { [styles.disabled]: isLastPage })}
+        onClick={handleNext}
+        disabled={isLastPage}
+      >
+        <Text>{t('common.next')}</Text>
+        <IconArrowRight size="m" className={styles.icon} />
+      </button>
+    </div>
   );
 };
 
