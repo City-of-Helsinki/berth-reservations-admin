@@ -279,7 +279,7 @@ const ApplicationList = ({
         )}
         renderTableToolsBottom={() => (
           <Pagination
-            forcePage={pageIndex}
+            pageIndex={pageIndex}
             pageCount={getPageCount(data?.berthApplications?.count)}
             onPageChange={({ selected }) => goToPage(selected)}
           />

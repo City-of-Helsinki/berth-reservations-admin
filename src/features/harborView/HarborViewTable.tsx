@@ -118,7 +118,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       renderSubComponent={(row) => <BerthDetails id={row.original.id} onEdit={() => onEditBerth(row.original)} />}
       renderPaginator={({ pageCount, goToPage }) => (
         <Pagination
-          forcePage={tablePageIndex}
+          pageIndex={tablePageIndex}
           pageCount={pageCount || 1}
           onPageChange={({ selected }) => {
             setTablePageIndex(selected);

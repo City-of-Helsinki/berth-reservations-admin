@@ -8,12 +8,12 @@ import styles from './pagination.module.scss';
 
 export interface PaginationProps {
   className?: string;
-  forcePage: number;
+  pageIndex: number;
   pageCount: number;
   onPageChange(selectedItem: { selected: number }): void;
 }
 
-const Pagination = ({ className, forcePage, pageCount, onPageChange }: PaginationProps) => {
+const Pagination = ({ className, pageIndex, pageCount, onPageChange }: PaginationProps) => {
   const { t } = useTranslation();
 
   const options: JSX.Element[] = [];
@@ -26,11 +26,11 @@ const Pagination = ({ className, forcePage, pageCount, onPageChange }: Paginatio
     );
   }
 
-  const isFirstPage = forcePage === 0;
-  const isLastPage = pageCount - 1 === forcePage;
+  const isFirstPage = pageIndex === 0;
+  const isLastPage = pageCount - 1 === pageIndex;
 
-  const handlePrev = () => onPageChange?.({ selected: forcePage - 1 });
-  const handleNext = () => onPageChange?.({ selected: forcePage + 1 });
+  const handlePrev = () => onPageChange?.({ selected: pageIndex - 1 });
+  const handleNext = () => onPageChange?.({ selected: pageIndex + 1 });
 
   return (
     <div className={classNames(styles.pagination, className)}>
@@ -46,7 +46,7 @@ const Pagination = ({ className, forcePage, pageCount, onPageChange }: Paginatio
         <div className={styles.selectContainer}>
           <select
             className={styles.select}
-            value={forcePage}
+            value={pageIndex}
             onChange={(e) => onPageChange?.({ selected: Number(e.target.value) })}
           >
             {options}

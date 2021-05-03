@@ -7,7 +7,7 @@ describe('Pagination', () => {
   const initialProps: PaginationProps = {
     pageCount: 10,
     onPageChange: jest.fn(),
-    forcePage: 3,
+    pageIndex: 3,
   };
 
   beforeEach(() => {
