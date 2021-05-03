@@ -1286,15 +1286,19 @@ exports[`UnmarkedWsNoticeList renders normally with data 1`] = `
         </span>
       </button>
       <div>
-        <select
-          class="select"
+        <div
+          class="selectContainer"
         >
-          <option
-            value="0"
+          <select
+            class="select"
           >
-            1
-          </option>
-        </select>
+            <option
+              value="0"
+            >
+              1
+            </option>
+          </select>
+        </div>
         / 
         <button>
           <span
@@ -1654,15 +1658,19 @@ exports[`UnmarkedWsNoticeList renders normally without data 1`] = `
         </span>
       </button>
       <div>
-        <select
-          class="select"
+        <div
+          class="selectContainer"
         >
-          <option
-            value="0"
+          <select
+            class="select"
           >
-            1
-          </option>
-        </select>
+            <option
+              value="0"
+            >
+              1
+            </option>
+          </select>
+        </div>
         / 
         <button>
           <span

@@ -10,10 +10,39 @@ $buttons-spacing: units(2);
   padding: units(0.5) 0;
   justify-content: center;
 
+  .selectContainer {
+    position: relative;
+    display: inline;
+
+    &::after {
+      content: '\2304';
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &::after {
+      top: 50%;
+      right: units(0.75);
+      transform: translate(0, -70%);
+      margin-right: units(0.25);
+    }
+  }
+
   .select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border: solid 2px $black-50;
+    border-radius: 2px;
+    background: $white;
+    font-size: 1em;
+    padding: units(0.5) units(1.5) units(0.5) units(0.75);
     margin-right: units(0.5);
-    padding: units(0.5);
-    border: solid 1px $black-50;
+
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   .prevBtn,

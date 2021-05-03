@@ -43,13 +43,15 @@ const Pagination = ({ className, forcePage, pageCount, onPageChange }: Paginatio
         <Text>{t('common.previous')}</Text>
       </button>
       <div>
-        <select
-          className={styles.select}
-          value={forcePage}
-          onChange={(e) => onPageChange?.({ selected: Number(e.target.value) })}
-        >
-          {options}
-        </select>
+        <div className={styles.selectContainer}>
+          <select
+            className={styles.select}
+            value={forcePage}
+            onChange={(e) => onPageChange?.({ selected: Number(e.target.value) })}
+          >
+            {options}
+          </select>
+        </div>
         /{' '}
         <button onClick={() => onPageChange?.({ selected: pageCount - 1 })}>
           <Text underlined>{pageCount}</Text>

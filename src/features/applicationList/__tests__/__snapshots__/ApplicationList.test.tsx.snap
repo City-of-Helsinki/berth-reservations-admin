@@ -719,9 +719,13 @@ exports[`ApplicationList renders normally with all props 1`] = `
         </span>
       </button>
       <div>
-        <select
-          class="select"
-        />
+        <div
+          class="selectContainer"
+        >
+          <select
+            class="select"
+          />
+        </div>
         / 
         <button>
           <span
@@ -1123,9 +1127,13 @@ exports[`ApplicationList renders normally with minimum props 1`] = `
         </span>
       </button>
       <div>
-        <select
-          class="select"
-        />
+        <div
+          class="selectContainer"
+        >
+          <select
+            class="select"
+          />
+        </div>
         / 
         <button>
           <span
