@@ -98,7 +98,7 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
       styleMainHeader={false}
       renderPaginator={({ pageIndex, pageCount, goToPage }) => (
         <Pagination
-          forcePage={pageIndex}
+          pageIndex={pageIndex}
           pageCount={pageCount || 1}
           onPageChange={({ selected }) => goToPage(selected)}
         />

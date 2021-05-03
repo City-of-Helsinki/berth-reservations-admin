@@ -127,7 +127,7 @@ const LinkApplicationToCustomerContainer = ({
       }}
       loadingCustomers={loadingCustomers}
       pagination={{
-        forcePage: pageIndex,
+        pageIndex: pageIndex,
         pageCount: getPageCount(customersData?.profiles?.count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}

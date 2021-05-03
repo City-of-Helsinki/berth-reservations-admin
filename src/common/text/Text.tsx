@@ -11,6 +11,7 @@ export interface TextProps {
   size?: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxl' | 'xxxl';
   weight?: 'bold' | 'normalWeight' | 'light';
   italic?: boolean;
+  underlined?: boolean;
   uppercase?: boolean;
 }
 
@@ -21,6 +22,7 @@ const Text = ({
   as: Element = 'span',
   weight,
   italic,
+  underlined,
   uppercase,
   children,
 }: TextProps) => {
@@ -34,6 +36,7 @@ const Text = ({
         weight && styles[weight],
         {
           [styles.italic]: italic,
+          [styles.underlined]: underlined,
           [styles.uppercase]: uppercase,
         },
         className

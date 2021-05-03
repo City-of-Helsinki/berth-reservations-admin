@@ -1,64 +1,72 @@
 @import 'spacings';
 @import 'colours';
 
+$icon-spacing: units(0.5);
+$buttons-spacing: units(2);
+
 .pagination {
   display: flex;
-  align-items: baseline;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.prevBtn,
-.nextBtn {
-  flex-grow: 1;
-  margin: 0 units(1);
-}
-
-.nextBtn {
-  text-align: right;
-}
-
-.navLink {
-  display: inline-block;
-  padding: units(1) 0;
-  vertical-align: middle;
-  color: $blue;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.icnBtn {
-  display: flex;
   align-items: center;
+  padding: units(0.5) 0;
+  justify-content: center;
 
-  :not(:last-child) {
+  .selectContainer {
+    position: relative;
+    display: inline;
+
+    &::after {
+      content: '\2304';
+      position: absolute;
+      pointer-events: none;
+      top: 50%;
+      right: units(0.75);
+      transform: translate(0, -70%);
+      margin-right: units(0.25);
+    }
+  }
+
+  .select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border: solid 2px $black-50;
+    border-radius: 2px;
+    background: $white;
+    font-size: 1em;
+    padding: units(0.5) units(1.5) units(0.5) units(0.75);
     margin-right: units(0.5);
-  }
-}
 
-.pageLink {
-  min-width: units(3);
-  text-align: center;
-
-  &:hover {
-    background-color: $black-10;
+    &::-ms-expand {
+      display: none;
+    }
   }
 
-  &.active {
-    background-color: $blue-light-20;
+  .prevBtn,
+  .nextBtn {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: $blue;
   }
-}
 
-.disabled .navLink {
-  color: $black-50;
-  pointer-events: none;
+  .nextBtn {
+    margin-left: $buttons-spacing;
 
-  svg {
-    fill: $black-50;
+    .icon {
+      margin-left: $icon-spacing;
+    }
   }
-}
 
-.break {
-  pointer-events: none;
+  .prevBtn {
+    margin-right: $buttons-spacing;
+
+    .icon {
+      margin-right: $icon-spacing;
+    }
+  }
+
+  .disabled {
+    color: $black-50;
+  }
 }
