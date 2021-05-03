@@ -18,9 +18,6 @@ $buttons-spacing: units(2);
       content: '\2304';
       position: absolute;
       pointer-events: none;
-    }
-
-    &::after {
       top: 50%;
       right: units(0.75);
       transform: translate(0, -70%);
