@@ -18,10 +18,10 @@ const Pagination = ({ className, pageIndex, pageCount, onPageChange }: Paginatio
 
   const options: JSX.Element[] = [];
 
-  for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
+  for (let index = 0; index < pageCount; index += 1) {
     options.push(
-      <option key={pageIndex} value={pageIndex}>
-        {pageIndex + 1}
+      <option key={index} value={index}>
+        {index + 1}
       </option>
     );
   }
