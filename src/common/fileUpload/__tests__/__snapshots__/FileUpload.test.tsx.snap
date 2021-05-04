@@ -35,12 +35,13 @@ exports[`FileUpload renders normally with multiple files props 1`] = `
                 fill="none"
                 fill-rule="evenodd"
               >
-                <path
-                  d="M0 0h24v24H0z"
+                <rect
+                  height="24"
+                  width="24"
                 />
-                <path
-                  d="M17.657 7.757L13.414 12l4.243 4.243-1.414 1.414L12 13.414l-4.243 4.243-1.414-1.414L10.586 12 6.343 7.757l1.414-1.414L12 10.586l4.243-4.243z"
+                <polygon
                   fill="currentColor"
+                  points="18 7.5 13.5 12 18 16.5 16.5 18 12 13.5 7.5 18 6 16.5 10.5 12 6 7.5 7.5 6 12 10.5 16.5 6"
                 />
               </g>
             </svg>
@@ -61,11 +62,11 @@ exports[`FileUpload renders normally with multiple files props 1`] = `
           type="file"
         />
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 Button-module_size-small__2u97E button_hds-button--small__2NFef"
+          class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 Button-module_size-small__3lizH button_hds-button--small__2NFef"
           type="button"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
           >
             Lisää...
           </span>
@@ -111,12 +112,13 @@ exports[`FileUpload renders normally with single file props 1`] = `
                 fill="none"
                 fill-rule="evenodd"
               >
-                <path
-                  d="M0 0h24v24H0z"
+                <rect
+                  height="24"
+                  width="24"
                 />
-                <path
-                  d="M17.657 7.757L13.414 12l4.243 4.243-1.414 1.414L12 13.414l-4.243 4.243-1.414-1.414L10.586 12 6.343 7.757l1.414-1.414L12 10.586l4.243-4.243z"
+                <polygon
                   fill="currentColor"
+                  points="18 7.5 13.5 12 18 16.5 16.5 18 12 13.5 7.5 18 6 16.5 10.5 12 6 7.5 7.5 6 12 10.5 16.5 6"
                 />
               </g>
             </svg>
@@ -136,11 +138,11 @@ exports[`FileUpload renders normally with single file props 1`] = `
           type="file"
         />
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 Button-module_size-small__2u97E button_hds-button--small__2NFef"
+          class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 Button-module_size-small__3lizH button_hds-button--small__2NFef"
           type="button"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
           >
             Valitse...
           </span>

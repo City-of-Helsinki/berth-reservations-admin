@@ -19,6 +19,7 @@ Array [
           role="heading"
         >
           <svg
+            aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Notification-module_icon__1ans7 notification_hds-icon__29HQM"
             role="img"
             viewBox="0 0 24 24"
@@ -28,11 +29,12 @@ Array [
               fill="none"
               fill-rule="evenodd"
             >
-              <path
-                d="M0 0h24v24H0z"
+              <rect
+                height="24"
+                width="24"
               />
               <path
-                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm1 12v2h-2v-2h2zm0-10v8h-2V6h2z"
+                d="M12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 Z M13,16 L13,18 L11,18 L11,16 L13,16 Z M13,6 L13,14 L11,14 L11,6 L13,6 Z"
                 fill="currentColor"
               />
             </g>
@@ -54,7 +56,7 @@ Array [
       class="customersTableTools"
     >
       <div
-        class="Select-module_root__Ka5uO select select"
+        class="Select-module_root__Ka5uO select"
       >
         <div
           class="Select-module_wrapper__1WQXs"
@@ -115,22 +117,23 @@ Array [
         </div>
       </div>
       <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        aria-disabled="true"
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
         disabled=""
         type="button"
       >
         <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
         >
           Liitä valittuun
         </span>
       </button>
       <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
         type="button"
       >
         <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
         >
           Luo uusi asiakas
         </span>
@@ -195,12 +198,13 @@ Array [
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -427,12 +431,13 @@ Array [
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+            <polygon
               fill="currentColor"
+              points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
             />
           </g>
         </svg>
@@ -483,12 +488,14 @@ Array [
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M12.586 7.05L14 5.636 20.364 12 14 18.364l-1.414-1.414 3.95-3.95H4v-2h12.535z"
+            <polygon
               fill="currentColor"
+              points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12"
+              transform="matrix(-1 0 0 1 24.5 0)"
             />
           </g>
         </svg>
@@ -517,6 +524,7 @@ Array [
           role="heading"
         >
           <svg
+            aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Notification-module_icon__1ans7 notification_hds-icon__29HQM"
             role="img"
             viewBox="0 0 24 24"
@@ -526,11 +534,12 @@ Array [
               fill="none"
               fill-rule="evenodd"
             >
-              <path
-                d="M0 0h24v24H0z"
+              <rect
+                height="24"
+                width="24"
               />
               <path
-                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm1 12v2h-2v-2h2zm0-10v8h-2V6h2z"
+                d="M12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 Z M13,16 L13,18 L11,18 L11,16 L13,16 Z M13,6 L13,14 L11,14 L11,6 L13,6 Z"
                 fill="currentColor"
               />
             </g>
@@ -552,7 +561,7 @@ Array [
       class="customersTableTools"
     >
       <div
-        class="Select-module_root__Ka5uO select select"
+        class="Select-module_root__Ka5uO select"
       >
         <div
           class="Select-module_wrapper__1WQXs"
@@ -613,22 +622,23 @@ Array [
         </div>
       </div>
       <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        aria-disabled="true"
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
         disabled=""
         type="button"
       >
         <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
         >
           Liitä valittuun
         </span>
       </button>
       <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
         type="button"
       >
         <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
         >
           Luo uusi asiakas
         </span>
@@ -693,12 +703,13 @@ Array [
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -780,12 +791,13 @@ Array [
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+            <polygon
               fill="currentColor"
+              points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
             />
           </g>
         </svg>
@@ -836,12 +848,14 @@ Array [
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M12.586 7.05L14 5.636 20.364 12 14 18.364l-1.414-1.414 3.95-3.95H4v-2h12.535z"
+            <polygon
               fill="currentColor"
+              points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12"
+              transform="matrix(-1 0 0 1 24.5 0)"
             />
           </g>
         </svg>

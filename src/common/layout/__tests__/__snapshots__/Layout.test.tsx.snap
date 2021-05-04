@@ -25,11 +25,11 @@ exports[`Layout renders normally 1`] = `
       class="sidebarToggleArea"
     >
       <button
-        class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 sidebarToggle"
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 sidebarToggle"
         type="button"
       >
         <span
-          class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
         >
           <svg
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik"
@@ -41,12 +41,12 @@ exports[`Layout renders normally 1`] = `
               fill="none"
               fill-rule="evenodd"
             >
-              <path
-                d="M24 0v24H0V0z"
+              <polygon
+                points="24 0 24 24 0 24 0 0"
               />
-              <path
-                d="M10.5 12l5 5-1.5 1.5L7.5 12 14 5.5 15.5 7z"
+              <polygon
                 fill="currentColor"
+                points="10.5 12 15.5 17 14 18.5 7.5 12 14 5.5 15.5 7"
               />
             </g>
           </svg>

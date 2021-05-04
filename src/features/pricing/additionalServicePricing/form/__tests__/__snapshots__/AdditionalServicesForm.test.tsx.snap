@@ -35,19 +35,18 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols1 row"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="service-toggle-button"
         id="service-label"
       >
         Palvelu
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -103,15 +102,14 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="priceValue"
       >
         Hinta
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -128,19 +126,18 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
     </div>
     <div
-      class="Select-module_root__Ka5uO select"
+      class="Select-module_root__Ka5uO"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="priceUnit-toggle-button"
         id="priceUnit-label"
       >
         Yksikkö
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -155,7 +152,11 @@ exports[`AdditionalServicesForm renders normally 1`] = `
           id="priceUnit-toggle-button"
           type="button"
         >
-          €
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            €
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -189,19 +190,18 @@ exports[`AdditionalServicesForm renders normally 1`] = `
       </div>
     </div>
     <div
-      class="Select-module_root__Ka5uO select"
+      class="Select-module_root__Ka5uO"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="taxPercentage-toggle-button"
         id="taxPercentage-label"
       >
         ALV
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -216,7 +216,11 @@ exports[`AdditionalServicesForm renders normally 1`] = `
           id="taxPercentage-toggle-button"
           type="button"
         >
-          24 %
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            24 %
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -254,19 +258,18 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="grid cols3 row"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="period-toggle-button"
         id="period-label"
       >
         Aika
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -282,7 +285,11 @@ exports[`AdditionalServicesForm renders normally 1`] = `
           id="period-toggle-button"
           type="button"
         >
-          Kausi
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            Kausi
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -320,23 +327,24 @@ exports[`AdditionalServicesForm renders normally 1`] = `
     class="buttonRow"
   >
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       id="cancel"
       type="button"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Peruuta
       </span>
     </button>
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      aria-disabled="true"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       disabled=""
       type="submit"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Tallenna
       </span>

@@ -54,12 +54,13 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -86,12 +87,13 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -118,12 +120,13 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -150,12 +153,13 @@ exports[`AdditionalServicePricing renders noData message when there is no data 1
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -255,12 +259,13 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -287,12 +292,13 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -319,12 +325,13 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>
@@ -351,12 +358,13 @@ exports[`AdditionalServicePricing renders normally 1`] = `
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <path
-                        d="M0 0h24v24H0z"
+                      <rect
+                        height="24"
+                        width="24"
                       />
-                      <path
-                        d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                      <polygon
                         fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                       />
                     </g>
                   </svg>

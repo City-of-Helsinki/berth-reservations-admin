@@ -14,19 +14,18 @@ exports[`BoatForm renders correctly 1`] = `
     </h4>
   </div>
   <div
-    class="Select-module_root__Ka5uO select"
+    class="Select-module_root__Ka5uO"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="boatType.id-toggle-button"
       id="boatType.id-label"
     >
       Veneen tyyppi
       <span
-        aria-hidden="true"
         class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
       >
-        *
+         *
       </span>
     </label>
     <div
@@ -41,7 +40,11 @@ exports[`BoatForm renders correctly 1`] = `
         id="boatType.id-toggle-button"
         type="button"
       >
-        Purjevene
+        <span
+          class="Select-module_buttonLabel__1fqu5"
+        >
+          Purjevene
+        </span>
         <svg
           aria-hidden="true"
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -78,7 +81,7 @@ exports[`BoatForm renders correctly 1`] = `
     class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="registrationNumber"
     >
       Rekisterinumero
@@ -102,7 +105,7 @@ exports[`BoatForm renders correctly 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="width"
       >
         Leveys (m)
@@ -122,7 +125,7 @@ exports[`BoatForm renders correctly 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="length"
       >
         Pituus (m)
@@ -142,7 +145,7 @@ exports[`BoatForm renders correctly 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="draught"
       >
         Syväys (m)
@@ -162,7 +165,7 @@ exports[`BoatForm renders correctly 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="weight"
       >
         Paino (kg)
@@ -184,7 +187,7 @@ exports[`BoatForm renders correctly 1`] = `
     class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="name"
     >
       Nimi
@@ -204,7 +207,7 @@ exports[`BoatForm renders correctly 1`] = `
     class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="model"
     >
       Merkki
@@ -224,22 +227,22 @@ exports[`BoatForm renders correctly 1`] = `
     class="formActionButtons"
   >
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       color="supplementary"
       type="button"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Peruuta
       </span>
     </button>
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       type="submit"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Tallenna
       </span>

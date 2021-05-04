@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders snapshot correctly 1`] = `null`;
+exports[`renders snapshot correctly 1`] = `
+<div
+  class="spinnerWrapper"
+>
+  <div
+    class="LoadingSpinner-module_loadingSpinner__2xHT_"
+  >
+    <div />
+    <div />
+    <div />
+  </div>
+</div>
+`;

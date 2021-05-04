@@ -14,7 +14,7 @@ exports[`ApplicationTableTools renders correctly 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="applicationStateTableTools_nameFilter"
       >
         Asiakkaan nimi
@@ -31,10 +31,10 @@ exports[`ApplicationTableTools renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="Select-module_root__Ka5uO select select"
+      class="Select-module_root__Ka5uO select"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="hds-select-1-toggle-button"
         id="hds-select-1-label"
       >
@@ -52,7 +52,11 @@ exports[`ApplicationTableTools renders correctly 1`] = `
           id="hds-select-1-toggle-button"
           type="button"
         >
-          Kaikki
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            Kaikki
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"

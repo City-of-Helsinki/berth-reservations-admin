@@ -23,19 +23,18 @@ Array [
     class="grid cols1 row"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="service-toggle-button"
         id="service-label"
       >
         Palvelu
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -51,7 +50,11 @@ Array [
           id="service-toggle-button"
           type="button"
         >
-          Kiinnitys
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            Kiinnitys
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -92,15 +95,14 @@ Array [
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="price"
       >
         Hinta
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -117,10 +119,10 @@ Array [
       </div>
     </div>
     <div
-      class="Select-module_root__Ka5uO select"
+      class="Select-module_root__Ka5uO"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="unit-toggle-button"
         id="unit-label"
       >
@@ -138,7 +140,11 @@ Array [
           id="unit-toggle-button"
           type="button"
         >
-          %
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            %
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -175,10 +181,10 @@ Array [
     class="grid cols2 row"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="period-toggle-button"
         id="period-label"
       >
@@ -197,7 +203,11 @@ Array [
           id="period-toggle-button"
           type="button"
         >
-          Kausi
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            Kausi
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"

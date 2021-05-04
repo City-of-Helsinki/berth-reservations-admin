@@ -26,7 +26,7 @@ Array [
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="area"
       >
         Alue
@@ -52,15 +52,14 @@ Array [
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="privateCustomer"
       >
         Yksityinen (€)
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -80,7 +79,7 @@ Array [
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="company"
       >
         Yritys (€)
@@ -103,10 +102,10 @@ Array [
     class="grid cols2 row"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="period-toggle-button"
         id="period-label"
       >
@@ -125,7 +124,11 @@ Array [
           id="period-toggle-button"
           type="button"
         >
-          Kausi
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            Kausi
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"

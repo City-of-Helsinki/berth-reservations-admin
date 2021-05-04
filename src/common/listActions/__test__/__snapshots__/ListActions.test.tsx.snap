@@ -5,7 +5,7 @@ exports[`ListActions renders normally 1`] = `
   class="container"
 >
   <div
-    class="Select-module_root__Ka5uO select select"
+    class="Select-module_root__Ka5uO select"
   >
     <div
       class="Select-module_wrapper__1WQXs"
@@ -19,7 +19,11 @@ exports[`ListActions renders normally 1`] = `
         id="hds-select-1-toggle-button"
         type="button"
       >
-        Toiminnot
+        <span
+          class="Select-module_buttonLabel__1fqu5"
+        >
+          Toiminnot
+        </span>
         <svg
           aria-hidden="true"
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
