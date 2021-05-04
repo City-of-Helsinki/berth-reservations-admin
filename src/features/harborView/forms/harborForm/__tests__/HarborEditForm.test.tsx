@@ -64,7 +64,7 @@ describe('HarborEditForm', () => {
       </MockedProvider>
     );
     await waitForContent(wrapper);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('calls update mutation on save', async () => {

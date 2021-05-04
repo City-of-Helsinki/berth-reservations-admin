@@ -21,6 +21,6 @@ const validValues = {
 describe('features/harborView/BerthForm', () => {
   it('renders correctly', () => {
     const wrapper = mount(<BerthForm initialValues={validValues} pierOptions={pierOptions} />);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 });
