@@ -112,7 +112,7 @@ const ApplicationViewContainer = () => {
       },
     });
 
-  if (loading || !data?.berthApplication) return <LoadingSpinner isLoading={true} />;
+  if (loading || !data?.berthApplication) return <LoadingSpinner />;
 
   const { customer } = data.berthApplication;
   const customerProfile = customer ? getCustomerProfile(customer) : null;

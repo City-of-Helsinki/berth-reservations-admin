@@ -96,7 +96,7 @@ const WinterStorageApplicationViewContainer = () => {
   };
   const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
 
-  if (loading || !data?.winterStorageApplication) return <LoadingSpinner isLoading={true} />;
+  if (loading || !data?.winterStorageApplication) return <LoadingSpinner />;
 
   const customer = data?.winterStorageApplication?.customer;
   const customerProfile = customer ? getCustomerProfile(customer) : null;

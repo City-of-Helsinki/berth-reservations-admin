@@ -22,7 +22,7 @@ const BerthDetailsContainer = ({ id, onEdit }: BerthDetailsContainerProps) => {
     fetchPolicy: 'no-cache',
   });
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (!data?.berth) return <span>{t('common.notification.noData.description')}</span>;
 
   const leases = getBerthLeases(data.berth.leases);

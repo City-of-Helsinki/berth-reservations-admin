@@ -35,7 +35,7 @@ const CallbackPage = ({ history }: CallbackPageProps) => {
         </Header>
       }
     >
-      <LoadingSpinner isLoading />
+      <LoadingSpinner />
     </Layout>
   );
 };

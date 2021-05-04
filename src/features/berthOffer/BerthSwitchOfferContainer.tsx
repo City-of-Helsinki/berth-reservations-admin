@@ -61,7 +61,7 @@ const BerthSwitchOfferContainer = () => {
       },
     });
 
-  if (applicationLoading) return <LoadingSpinner isLoading />;
+  if (applicationLoading) return <LoadingSpinner />;
 
   const data = applicationData?.harborByServicemapId;
   const boat = getApplicationBoat(applicationData?.berthApplication, applicationData?.boatTypes);

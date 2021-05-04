@@ -1,21 +1,23 @@
 import React from 'react';
+import classNames from 'classnames';
+import { LoadingSpinner as HDSLoadingSpinner, LoadingSpinnerProps as HDSLoadingSpinnerProps } from 'hds-react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './loadingSpinner.module.scss';
 
 export interface LoadingSpinnerProps {
-  children?: React.ReactNode;
-  isLoading: boolean;
+  className?: string;
+  size?: HDSLoadingSpinnerProps['size'];
 }
 
-const LoadingSpinner = ({ isLoading, children }: LoadingSpinnerProps) => {
-  if (isLoading === true) {
-    return (
-      <div className={styles.spinnerWrapper}>
-        <div className={styles.spinner} />
-      </div>
-    );
-  }
-  return <>{children}</>;
+const LoadingSpinner = ({ className, size }: LoadingSpinnerProps) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className={classNames(styles.spinnerWrapper, className)}>
+      <HDSLoadingSpinner size={size} loadingText={t('common.loading')} />
+    </div>
+  );
 };
 
 export default LoadingSpinner;

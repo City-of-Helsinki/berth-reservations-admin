@@ -37,7 +37,7 @@ const BoatEditForm = ({
     refetchQueries: refetchQueries ?? [],
   });
 
-  if (!initialValues) return <LoadingSpinner isLoading={true} />;
+  if (!initialValues) return <LoadingSpinner />;
 
   const boatId = initialValues.id;
 

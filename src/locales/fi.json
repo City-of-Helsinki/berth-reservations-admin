@@ -32,6 +32,7 @@
     "firstName": "Etunimi",
     "imageAltText": "Kuva kohteesta",
     "lastName": "Sukunimi",
+    "loading": "Ladataan",
     "name": "Nimi",
     "next": "Seuraava",
     "no": "Ei",

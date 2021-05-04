@@ -45,7 +45,7 @@ const HarborEditForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
   const { t } = useTranslation();
   const validationSchema = getValidationSchema(t);
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (error || updateError) return <div>{t('forms.common.error')}</div>;
 
   const initial: Harbor = getHarbor(data) ?? {

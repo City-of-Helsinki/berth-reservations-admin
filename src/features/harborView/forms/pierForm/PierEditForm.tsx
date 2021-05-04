@@ -31,7 +31,7 @@ const PierEditForm = ({ pierId, onCancel, onSubmit, onDelete, refetchQueries }: 
   });
   const { t } = useTranslation();
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (error || updateError || deleteError) return <div>{t('forms.common.error')}</div>;
 
   const suitableBoatTypeOptions = getBoatTypes(data);
