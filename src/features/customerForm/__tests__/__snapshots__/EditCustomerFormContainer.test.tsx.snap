@@ -5,8 +5,12 @@ exports[`EditCustomerForm initially renders loading spinner 1`] = `
   class="spinnerWrapper"
 >
   <div
-    class="spinner"
-  />
+    class="LoadingSpinner-module_loadingSpinner__2xHT_"
+  >
+    <div />
+    <div />
+    <div />
+  </div>
 </div>
 `;
 

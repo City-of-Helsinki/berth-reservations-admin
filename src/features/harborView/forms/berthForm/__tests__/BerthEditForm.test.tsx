@@ -56,7 +56,7 @@ describe('features/harborView/BerthEditForm', () => {
     await act(async () => {
       await waitForExpect(() => {
         wrapper.update();
-        expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeFalsy();
+        expect(wrapper.contains(<LoadingSpinner />)).toBeFalsy();
       });
     });
   };
@@ -67,7 +67,7 @@ describe('features/harborView/BerthEditForm', () => {
         <BerthEditForm berthId="a" pierOptions={pierOptions} />
       </MockedProvider>
     );
-    expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeTruthy();
+    expect(wrapper.contains(<LoadingSpinner />)).toBeTruthy();
     expect(wrapper.render()).toMatchSnapshot();
   });
 

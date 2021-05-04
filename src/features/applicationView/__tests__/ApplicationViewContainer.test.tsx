@@ -55,7 +55,7 @@ describe('ApplicationViewContainer', () => {
     await act(async () => {
       await waitForExpect(() => {
         wrapper.update();
-        expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeFalsy();
+        expect(wrapper.contains(<LoadingSpinner />)).toBeFalsy();
       });
     });
   };
