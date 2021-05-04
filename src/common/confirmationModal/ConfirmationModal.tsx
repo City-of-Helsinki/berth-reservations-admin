@@ -11,7 +11,7 @@ export interface ConfirmationModalProps {
   isOpen: boolean;
   title: string;
   infoText: string;
-  confirmButtonVariant?: ButtonProps['variant'];
+  confirmButtonVariant?: Exclude<ButtonProps['variant'], 'supplementary'>;
   warningText?: string;
   onCancelText: string;
   onConfirmText: string;
