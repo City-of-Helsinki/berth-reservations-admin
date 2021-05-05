@@ -51,9 +51,16 @@ const Page = ({ children }: PageProps) => {
             <InternalNavLink key="pricing" to="/pricing" icon={<IconInvoice />}>
               {t('common.sidebar.pricing')}
             </InternalNavLink>,
-            <InternalNavLink key="pricing" to="/recurring-invoices" icon={<IconDocumentCheck />}>
-              {t('common.sidebar.recurringInvoices')}
-            </InternalNavLink>,
+            <ExpandableNavItem
+              key="recurringInvoices"
+              label={t('common.sidebar.recurringInvoices')}
+              icon={<IconDocumentCheck />}
+              openOn={['/recurring-invoices']}
+            >
+              <InternalNavLink key="recurringBerthInvoices" to="/recurring-invoices">
+                {t('common.sidebar.harbors')}
+              </InternalNavLink>
+            </ExpandableNavItem>,
           ]}
         </Sidebar>
       }
