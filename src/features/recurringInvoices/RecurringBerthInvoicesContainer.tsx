@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
-import { RECURRING_INVOICES_QUERY } from './queries';
-import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
+import { RECURRING_BERTH_INVOICES_QUERY } from './queries';
+import { RECURRING_BERTH_INVOICES } from './__generated__/RECURRING_BERTH_INVOICES';
 import { SEND_EXISTING_BERTH_INVOICES_MUTATION } from './mutations';
 import {
   SEND_EXISTING_BERTH_INVOICES,
@@ -18,7 +18,7 @@ import { getFailedBerthInvoicesData, getSummaryData } from './utils';
 const RecurringBerthInvoicesContainer = () => {
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
-  const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY, {
+  const { loading, data } = useQuery<RECURRING_BERTH_INVOICES>(RECURRING_BERTH_INVOICES_QUERY, {
     variables: {
       seasonYear: new Date().getFullYear(),
     },

@@ -8,3 +8,7 @@ export type FailedInvoices = {
 export type FailedBerthInvoices = FailedInvoices & {
   harbor: string;
 };
+
+export type FailedWinterStorageInvoices = FailedInvoices & {
+  winterStorageArea: string;
+};

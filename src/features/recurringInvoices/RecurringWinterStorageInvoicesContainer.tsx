@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
-import { RECURRING_INVOICES_QUERY } from './queries';
-import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
-import { SEND_EXISTING_BERTH_INVOICES_MUTATION } from './mutations';
+import { RECURRING_WINTER_STORAGE_INVOICES_QUERY } from './queries';
+import { RECURRING_WINTER_STORAGE_INVOICES } from './__generated__/RECURRING_WINTER_STORAGE_INVOICES';
+import { SEND_EXISTING_WINTER_STORAGE_INVOICES_MUTATION } from './mutations';
 import {
-  SEND_EXISTING_BERTH_INVOICES,
-  SEND_EXISTING_BERTH_INVOICESVariables as SEND_EXISTING_BERTH_INVOICES_VARS,
-} from './__generated__/SEND_EXISTING_BERTH_INVOICES';
+  SEND_EXISTING_WINTER_STORAGE_INVOICES,
+  SEND_EXISTING_WINTER_STORAGE_INVOICESVariables as SEND_EXISTING_WINTER_STORAGE_INVOICES_VARS,
+} from './__generated__/SEND_EXISTING_WINTER_STORAGE_INVOICES';
 import hdsToast from '../../common/toast/hdsToast';
 import RecurringInvoices from './RecurringInvoices';
 import Modal from '../../common/modal/Modal';
 import RecurringInvoicesForm from './recurringInvoicesForm/RecurringInvoicesForm';
 import { getProfileToken } from '../../common/utils/auth';
-import { getFailedBerthInvoicesData, getSummaryData } from './utils';
+import { getFailedWinterStorageInvoicesData, getSummaryData } from './utils';
 
 const RecurringWinterStorageInvoicesContainer = () => {
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
-  const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY, {
+  const { loading, data } = useQuery<RECURRING_WINTER_STORAGE_INVOICES>(RECURRING_WINTER_STORAGE_INVOICES_QUERY, {
     variables: {
       seasonYear: new Date().getFullYear(),
     },
   });
   const [sendExistingBerthInvoices, { loading: isSubmitting }] = useMutation<
-    SEND_EXISTING_BERTH_INVOICES,
-    SEND_EXISTING_BERTH_INVOICES_VARS
-  >(SEND_EXISTING_BERTH_INVOICES_MUTATION);
+    SEND_EXISTING_WINTER_STORAGE_INVOICES,
+    SEND_EXISTING_WINTER_STORAGE_INVOICES_VARS
+  >(SEND_EXISTING_WINTER_STORAGE_INVOICES_MUTATION);
 
   const handleSubmit = async (values: { dueDate: string }) => {
     await sendExistingBerthInvoices({
@@ -53,10 +53,10 @@ const RecurringWinterStorageInvoicesContainer = () => {
     <>
       <RecurringInvoices
         dataSummary={getSummaryData(data, loading)}
-        failedInvoicesData={getFailedBerthInvoicesData(data)}
+        failedInvoicesData={getFailedWinterStorageInvoicesData(data)}
         handleSend={() => setSendInvoiceModalOpen(true)}
         loading={loading}
-        placeAccessor="harbor"
+        placeAccessor="winterStorageArea"
         placeLabelKey={'common.terminology.winterStorageArea'}
         sendButtonLabelKey={'recurringInvoices.sendWinterStorageInvoices'}
         titleKey={'recurringInvoices.winterStorageInvoicesTitle'}
