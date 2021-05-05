@@ -13,9 +13,9 @@ import RecurringInvoices from './RecurringInvoices';
 import Modal from '../../common/modal/Modal';
 import RecurringInvoicesForm from './recurringInvoicesForm/RecurringInvoicesForm';
 import { getProfileToken } from '../../common/utils/auth';
-import { getFailedInvoicesData, getSummaryData } from './utils';
+import { getFailedBerthInvoicesData, getSummaryData } from './utils';
 
-const RecurringInvoicesContainer = () => {
+const RecurringWinterStorageInvoicesContainer = () => {
   const [sendInvoiceModalOpen, setSendInvoiceModalOpen] = useState(false);
 
   const { loading, data } = useQuery<RECURRING_INVOICES>(RECURRING_INVOICES_QUERY, {
@@ -52,13 +52,18 @@ const RecurringInvoicesContainer = () => {
   return (
     <>
       <RecurringInvoices
-        loading={loading}
         dataSummary={getSummaryData(data, loading)}
-        failedInvoicesData={getFailedInvoicesData(data)}
+        failedInvoicesData={getFailedBerthInvoicesData(data)}
         handleSend={() => setSendInvoiceModalOpen(true)}
+        loading={loading}
+        placeAccessor="harbor"
+        placeLabelKey={'common.terminology.winterStorageArea'}
+        sendButtonLabelKey={'recurringInvoices.sendWinterStorageInvoices'}
+        titleKey={'recurringInvoices.winterStorageInvoicesTitle'}
       />
       <Modal isOpen={sendInvoiceModalOpen} toggleModal={() => setSendInvoiceModalOpen(false)}>
         <RecurringInvoicesForm
+          descriptionKey={'recurringInvoices.form.descriptionWinterStorage'}
           onSubmit={handleSubmit}
           onCancel={() => setSendInvoiceModalOpen(false)}
           isSubmitting={isSubmitting}
@@ -68,4 +73,4 @@ const RecurringInvoicesContainer = () => {
   );
 };
 
-export default RecurringInvoicesContainer;
+export default RecurringWinterStorageInvoicesContainer;

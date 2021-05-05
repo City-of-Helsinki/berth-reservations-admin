@@ -415,12 +415,22 @@ exports[`Page renders normally 1`] = `
             >
               <a
                 class="internalNavLink standard"
-                href="#/recurring-invoices"
+                href="#/recurring-berth-invoices"
               >
                 <div
                   class="label"
                 >
                   Venepaikat
+                </div>
+              </a>
+              <a
+                class="internalNavLink standard"
+                href="#/recurring-winter-storage-invoices"
+              >
+                <div
+                  class="label"
+                >
+                  Talvisäilytys
                 </div>
               </a>
             </div>

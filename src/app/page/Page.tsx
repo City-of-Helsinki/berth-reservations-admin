@@ -55,10 +55,13 @@ const Page = ({ children }: PageProps) => {
               key="recurringInvoices"
               label={t('common.sidebar.recurringInvoices')}
               icon={<IconDocumentCheck />}
-              openOn={['/recurring-invoices']}
+              openOn={['/recurring-berth-invoices', '/recurring-winter-storage-invoices']}
             >
-              <InternalNavLink key="recurringBerthInvoices" to="/recurring-invoices">
+              <InternalNavLink key="recurringBerthInvoices" to="/recurring-berth-invoices">
                 {t('common.sidebar.harbors')}
+              </InternalNavLink>
+              <InternalNavLink key="recurringWinterStorageInvoices" to="/recurring-winter-storage-invoices">
+                {t('common.sidebar.winterStorageAreas')}
               </InternalNavLink>
             </ExpandableNavItem>,
           ]}

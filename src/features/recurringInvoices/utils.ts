@@ -1,11 +1,11 @@
 import i18next from 'i18next';
 
 import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
-import { FailedInvoices } from './RecurringInvoices';
+import { FailedBerthInvoices } from './types';
 
-export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
+export const getFailedBerthInvoicesData = (data: RECURRING_INVOICES | undefined): FailedBerthInvoices[] => {
   if (!data?.berthLeases) return [];
-  return data.berthLeases.edges.reduce<FailedInvoices[]>((acc, edge) => {
+  return data.berthLeases.edges.reduce<FailedBerthInvoices[]>((acc, edge) => {
     if (!edge?.node) return acc;
 
     const failedInvoice = {

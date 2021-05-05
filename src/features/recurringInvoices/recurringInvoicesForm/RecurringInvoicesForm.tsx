@@ -14,12 +14,13 @@ type FormValues = {
 };
 
 export type RecurringInvoicesFormProps = {
+  descriptionKey: string;
   isSubmitting: boolean;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const RecurringInvoicesForm = ({ onSubmit, onCancel, isSubmitting }: RecurringInvoicesFormProps) => {
+const RecurringInvoicesForm = ({ descriptionKey, onSubmit, onCancel, isSubmitting }: RecurringInvoicesFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(() => {
@@ -44,7 +45,7 @@ const RecurringInvoicesForm = ({ onSubmit, onCancel, isSubmitting }: RecurringIn
         <Form className={styles.form}>
           <FormHeader title={t('recurringInvoices.form.title')} upperCase />
 
-          <p className={styles.paragraph}>{t('recurringInvoices.form.description')}</p>
+          <p className={styles.paragraph}>{t(descriptionKey)}</p>
 
           <div className={styles.centered}>
             <TextInput
