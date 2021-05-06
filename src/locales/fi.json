@@ -32,6 +32,7 @@
     "firstName": "Etunimi",
     "imageAltText": "Kuva kohteesta",
     "lastName": "Sukunimi",
+    "loading": "Ladataan",
     "name": "Nimi",
     "next": "Seuraava",
     "no": "Ei",
@@ -189,6 +190,10 @@
       "paidManually": "Maksettu muualla",
       "refunded": "Maksu palautettu",
       "rejected": "Hylätty"
+    },
+    "orderType": {
+      "lease": "Lasku",
+      "additionalService": "Lisäpalvelulasku"
     },
     "offerStatus": {
       "accepted": "Hyväksytty",
@@ -594,6 +599,17 @@
       "dueDate": "Eräpäivä",
       "amount": "Summa",
       "status": "Tila"
+    },
+    "invoiceCard": {
+      "tableHeaders" : {
+        "type": "Tyyppi",
+        "place": "Satama / Alue",
+        "season": "Kausi",
+        "dueDate": "Eräpäivä",
+        "totalPrice": "Summa",
+        "orderNumber": "Tilaustunnus",
+        "status": "Tila"
+      }
     },
     "customerBoats": {
       "title": "ASIAKKAAN VENEET",

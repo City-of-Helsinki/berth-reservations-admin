@@ -127,7 +127,7 @@ const WinterStorageApplicationList = ({
           />
         )}
         renderTableToolsBottom={() => (
-          <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
+          <Pagination pageIndex={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
         renderTableToolsTop={() => (
           <ApplicationTableTools

@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 import CustomerView, { CustomerViewProps } from '../CustomerView';
 import { privateCustomerProfile } from '../../../common/privateCustomerDetails/__fixtures__/mockData';
@@ -29,10 +30,12 @@ const mockProps: CustomerViewProps = {
 
 describe('CustomerView', () => {
   const getWrapper = (props?: Partial<CustomerViewProps>) =>
-    shallow(
-      <HashRouter>
-        <CustomerView {...mockProps} {...props} />
-      </HashRouter>
+    mount(
+      <RecoilRoot>
+        <HashRouter>
+          <CustomerView {...mockProps} {...props} />
+        </HashRouter>
+      </RecoilRoot>
     );
 
   it('renders normally', () => {

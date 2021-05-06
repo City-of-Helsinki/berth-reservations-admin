@@ -17,8 +17,7 @@ import {
 import { RESEND_ORDER_MUTATION } from '../../../common/mutations/resendOrder';
 
 export type SendInvoiceFormContainerProps = {
-  orderId: string;
-  email: string | null;
+  orders: Array<{ orderId: string; email: string | null }>;
   refetchQueries: PureQueryOptions[] | string[];
   isResend?: boolean;
   onCancel: () => void;
@@ -26,21 +25,20 @@ export type SendInvoiceFormContainerProps = {
 };
 
 const SendInvoiceFormContainer = ({
-  orderId,
-  email,
+  orders,
   refetchQueries,
   isResend,
   onSubmit,
   onCancel,
 }: SendInvoiceFormContainerProps) => {
-  const [approveOrder, { loading: isApproveOrderSubmitting }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
+  const [approveOrders, { loading: isApproveOrderSubmitting }] = useMutation<APPROVE_ORDERS, APPROVE_ORDERS_VARS>(
     APPROVE_ORDERS_MUTATION,
     {
       refetchQueries,
     }
   );
 
-  const [resendOrder, { loading: isResendOrderSubmitting }] = useMutation<RESEND_ORDER, RESEND_ORDER_VARS>(
+  const [resendOrders, { loading: isResendOrderSubmitting }] = useMutation<RESEND_ORDER, RESEND_ORDER_VARS>(
     RESEND_ORDER_MUTATION,
     { refetchQueries }
   );
@@ -48,15 +46,20 @@ const SendInvoiceFormContainer = ({
   const isSubmitting = isApproveOrderSubmitting || isResendOrderSubmitting;
 
   const handleSubmit = async (values: { dueDate: string }) => {
-    if (email === null) return false;
+    interface ValidOrder {
+      orderId: string;
+      email: string;
+    }
+    const orderIsValid = (order: { orderId: string; email: string | null }): order is ValidOrder => !!order.email;
+    const validOrders = orders.filter(orderIsValid);
 
     if (isResend) {
-      await resendOrder({
+      await resendOrders({
         variables: {
           input: {
             dueDate: values.dueDate,
             profileToken: getProfileToken(),
-            orders: [orderId],
+            orders: orders.map((order) => order.orderId),
           },
         },
       }).then((res) => {
@@ -73,16 +76,11 @@ const SendInvoiceFormContainer = ({
       return;
     }
 
-    await approveOrder({
+    await approveOrders({
       variables: {
         input: {
           dueDate: values.dueDate,
-          orders: [
-            {
-              email,
-              orderId,
-            },
-          ],
+          orders: validOrders,
           profileToken: getProfileToken(),
         },
       },
@@ -100,13 +98,7 @@ const SendInvoiceFormContainer = ({
   };
 
   return (
-    <SendInvoiceForm
-      email={email}
-      onSubmit={handleSubmit}
-      onCancel={onCancel}
-      isSubmitting={isSubmitting}
-      isResend={isResend}
-    />
+    <SendInvoiceForm onSubmit={handleSubmit} onCancel={onCancel} isSubmitting={isSubmitting} isResend={isResend} />
   );
 };
 

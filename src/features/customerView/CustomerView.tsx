@@ -7,12 +7,11 @@ import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import CustomerProfileCard, { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import ApplicationsCard from './applicationsCard/ApplicationsCard';
-import OpenInvoicesCard from './openInvoicesCard/OpenInvoicesCard';
-import InvoicingHistoryCard from './invoicingHistoryCard/InvoicingHistoryCard';
 import BoatsCard from './boatsCard/BoatsCard';
 import { Application, Invoice, Boat, Lease } from './types';
 import BerthLeasesCard from './leasesCard/BerthLeasesCard';
 import WinterStorageLeasesCard from './leasesCard/WinterStorageLeasesCard';
+import InvoiceCard from './invoiceCard/InvoiceCard';
 import { isBerthLease, isWinterStorageLease } from './utils';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 import BerthOfferCard, { BerthOfferCardProps } from '../applicationView/berthOfferCard/BerthOfferCard';
@@ -62,6 +61,7 @@ const CustomerView = ({
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   const customerName = `${customerProfile.firstName} ${customerProfile.lastName}`;
+  const berthLeases = leases.filter(isBerthLease);
 
   return (
     <PageContent>
@@ -86,7 +86,24 @@ const CustomerView = ({
             />
           ))}
 
-        <OpenInvoicesCard
+        <InvoiceCard
+          berthLeases={berthLeases}
+          className={styles.fullWidth}
+          customer={{
+            id: customerProfile.customerId as string,
+            email: customerProfile.primaryEmail,
+          }}
+          invoiceData={invoices}
+          refetchQueries={refetchQueries}
+        />
+
+        {/* TODO: 
+          remove these two cards once ensured that all their functionalities are implemented 
+          in the new invoice card above (once https://helsinkisolutionoffice.atlassian.net/browse/VEN-1172 
+          is tested and approved)
+        */}
+
+        {/* <OpenInvoicesCard
           invoices={openInvoices}
           handleShowInvoice={setOpenInvoice}
           handleResendInvoice={setOpenResendInvoice}
@@ -96,13 +113,13 @@ const CustomerView = ({
           invoices={invoices}
           onClick={(invoice) => setOpenInvoice(invoice)}
           onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
-        />
+        /> */}
 
         <BerthLeasesCard
           customerName={customerName}
           cancelLease={cancelLease}
           createLease={createLease}
-          leases={leases.filter(isBerthLease)}
+          leases={berthLeases}
         />
         <WinterStorageLeasesCard
           customerName={customerName}

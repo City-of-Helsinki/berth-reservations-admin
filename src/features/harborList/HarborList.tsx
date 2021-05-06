@@ -139,7 +139,7 @@ const HarborList = ({ data, loading }: HarborListProps) => {
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderPaginator={({ pageIndex, pageCount, goToPage }) => (
           <Pagination
-            forcePage={pageIndex}
+            pageIndex={pageIndex}
             pageCount={pageCount || 1}
             onPageChange={({ selected }) => goToPage(selected)}
           />

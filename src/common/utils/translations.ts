@@ -2,6 +2,7 @@ import {
   AdditionalProductTaxEnum,
   BerthMooringType,
   CustomerGroup,
+  OrderOrderType,
   OrderStatus,
   PeriodType,
   PriceTier,
@@ -157,5 +158,17 @@ export const getInvoiceTypeKey = (invoice: Invoice): string => {
     return 'common.terminology.berthRent';
   } else {
     return 'common.terminology.winterStoragePlaceRent';
+  }
+};
+
+export const getOrderTypeTKey = (orderType: OrderOrderType): string => {
+  switch (orderType) {
+    case OrderOrderType.LEASE_ORDER:
+      return 'common.orderType.lease';
+    case OrderOrderType.ADDITIONAL_PRODUCT_ORDER:
+      return 'common.orderType.additionalService';
+
+    default:
+      return orderType;
   }
 };

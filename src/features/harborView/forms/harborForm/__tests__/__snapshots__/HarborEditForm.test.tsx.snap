@@ -1,5 +1,199 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HarborEditForm initially renders loading spinner 1`] = `"<div class=\\"spinnerWrapper\\"><div class=\\"spinner\\"></div></div>"`;
+exports[`HarborEditForm initially renders loading spinner 1`] = `"<div class=\\"spinnerWrapper\\"><div class=\\"LoadingSpinner-module_loadingSpinner__2xHT_\\"><div></div><div></div><div></div></div></div>"`;
 
-exports[`HarborEditForm renders content after loading 1`] = `"<form action=\\"#\\" class=\\"harborEditForm\\"><h4 class=\\"text brand h4\\">SATAMA</h4><article class=\\"section\\"><section class=\\"body\\"><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq\\"><label for=\\"name\\" class=\\"FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W \\">Nimi<span aria-hidden=\\"true\\" class=\\"RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs\\">*</span></label><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"name\\" required=\\"\\" type=\\"text\\" name=\\"name\\" value=\\"Pajalahden venesatama (Meripuistotie) / Venesatama\\"></div></div></section></article><article class=\\"section\\"><section class=\\"body\\"><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq\\"><label for=\\"streetAddress\\" class=\\"FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W \\">Osoite<span aria-hidden=\\"true\\" class=\\"RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs\\">*</span></label><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"streetAddress\\" required=\\"\\" type=\\"text\\" name=\\"streetAddress\\" value=\\"Meripuistotie 1a\\"></div></div><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq\\"><label for=\\"zipCode\\" class=\\"FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W \\">Postinumero<span aria-hidden=\\"true\\" class=\\"RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs\\">*</span></label><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"zipCode\\" required=\\"\\" type=\\"text\\" name=\\"zipCode\\" value=\\"00210\\"></div></div><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq\\"><label for=\\"municipality\\" class=\\"FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W \\">Postitoimipaikka<span aria-hidden=\\"true\\" class=\\"RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs\\">*</span></label><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"municipality\\" required=\\"\\" type=\\"text\\" name=\\"municipality\\" value=\\"Helsinki\\"></div></div></section></article><article class=\\"section\\"><section class=\\"body\\"><div class=\\"TextInput-module_root__2CMNr text-input_hds-text-input__2LODq\\"><label for=\\"wwwUrl\\" class=\\"FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W \\">WWW-osoite<span aria-hidden=\\"true\\" class=\\"RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs\\">*</span></label><div class=\\"TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG\\"><input class=\\"TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C\\" id=\\"wwwUrl\\" required=\\"\\" type=\\"text\\" name=\\"wwwUrl\\" value=\\"https://hel.fi\\"></div></div></section></article><div class=\\"formActionButtons\\"><button type=\\"button\\" class=\\"Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0\\"><span class=\\"Button-module_label__2zMLC button_hds-button__label__2EQa-\\">Peruuta</span></button><button type=\\"submit\\" class=\\"Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0\\"><span class=\\"Button-module_label__2zMLC button_hds-button__label__2EQa-\\">Tallenna</span></button></div></form>"`;
+exports[`HarborEditForm renders content after loading 1`] = `
+<form
+  action="#"
+  class="harborEditForm"
+>
+  <h4
+    class="text brand h4"
+  >
+    SATAMA
+  </h4>
+  <article
+    class="section"
+  >
+    <section
+      class="body"
+    >
+      <div
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+      >
+        <label
+          class="FieldLabel-module_label__1zrXK "
+          for="name"
+        >
+          Nimi
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+          >
+             *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+        >
+          <input
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+            id="name"
+            name="name"
+            required=""
+            type="text"
+            value="Pajalahden venesatama (Meripuistotie) / Venesatama"
+          />
+        </div>
+      </div>
+    </section>
+  </article>
+  <article
+    class="section"
+  >
+    <section
+      class="body"
+    >
+      <div
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+      >
+        <label
+          class="FieldLabel-module_label__1zrXK "
+          for="streetAddress"
+        >
+          Osoite
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+          >
+             *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+        >
+          <input
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+            id="streetAddress"
+            name="streetAddress"
+            required=""
+            type="text"
+            value="Meripuistotie 1a"
+          />
+        </div>
+      </div>
+      <div
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+      >
+        <label
+          class="FieldLabel-module_label__1zrXK "
+          for="zipCode"
+        >
+          Postinumero
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+          >
+             *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+        >
+          <input
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+            id="zipCode"
+            name="zipCode"
+            required=""
+            type="text"
+            value="00210"
+          />
+        </div>
+      </div>
+      <div
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+      >
+        <label
+          class="FieldLabel-module_label__1zrXK "
+          for="municipality"
+        >
+          Postitoimipaikka
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+          >
+             *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+        >
+          <input
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+            id="municipality"
+            name="municipality"
+            required=""
+            type="text"
+            value="Helsinki"
+          />
+        </div>
+      </div>
+    </section>
+  </article>
+  <article
+    class="section"
+  >
+    <section
+      class="body"
+    >
+      <div
+        class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+      >
+        <label
+          class="FieldLabel-module_label__1zrXK "
+          for="wwwUrl"
+        >
+          WWW-osoite
+          <span
+            class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+          >
+             *
+          </span>
+        </label>
+        <div
+          class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+        >
+          <input
+            class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+            id="wwwUrl"
+            name="wwwUrl"
+            required=""
+            type="text"
+            value="https://hel.fi"
+          />
+        </div>
+      </div>
+    </section>
+  </article>
+  <div
+    class="formActionButtons"
+  >
+    <button
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+      type="button"
+    >
+      <span
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+      >
+        Peruuta
+      </span>
+    </button>
+    <button
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+      type="submit"
+    >
+      <span
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+      >
+        Tallenna
+      </span>
+    </button>
+  </div>
+</form>
+`;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import Button from '../button/Button';
@@ -7,26 +8,29 @@ import Select from '../select/Select';
 import styles from './listActions.module.scss';
 
 type ListActionItem<T> = {
-  id: string;
+  id: string | number;
   label: string;
   buttonText?: string;
+  buttonDisabled?: boolean;
   onClick?(selectedRows: T[]): void;
-  renderComponent?(): React.ReactNode;
+  renderComponent?(resetSelection: () => void): React.ReactNode;
 };
 
 interface ListActionsProps<T> {
+  className?: string;
   selectedRows: T[];
   listActions: ListActionItem<T>[];
   resetSelectedRows(): void;
 }
 
 const ListActions = <T extends object | string | number | boolean | bigint | symbol>({
+  className,
   selectedRows,
   resetSelectedRows,
   listActions,
 }: ListActionsProps<T>) => {
   const { t } = useTranslation();
-  const [selectedActionId, setSelectedActionId] = useState<string>();
+  const [selectedActionId, setSelectedActionId] = useState<string | number>();
   const hasSelectedRows = !!selectedRows.length;
 
   const options = [
@@ -37,22 +41,23 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
   ];
 
   const selectedAction = listActions.find((action) => action.id === selectedActionId);
+  const resetSelection = () => setSelectedActionId(undefined);
 
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, className)}>
       <Select
         onChange={(e) => setSelectedActionId(listActions.find((action) => action.id === e.target.value)?.id)}
         value={selectedActionId ?? ''}
         options={options}
         className={styles.select}
       />
-      {selectedAction?.renderComponent?.()}
+      {selectedAction?.renderComponent?.(resetSelection)}
       {selectedAction?.onClick && (
         <div className={styles.buttonContainer}>
           <Button
             onClick={() => selectedAction.onClick?.(selectedRows)}
             variant="secondary"
-            disabled={!hasSelectedRows}
+            disabled={selectedAction.buttonDisabled || !hasSelectedRows}
           >
             {!hasSelectedRows ? t('buttonWithSelectedRows.noSelection') : selectedAction.buttonText}
           </Button>

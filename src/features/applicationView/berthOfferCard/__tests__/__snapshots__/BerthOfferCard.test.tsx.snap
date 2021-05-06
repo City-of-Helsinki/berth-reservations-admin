@@ -3,7 +3,7 @@
 exports[`BerthOfferCard renders normally 1`] = `
 Array [
   <div
-    class="Select-module_root__Ka5uO select invoiceActions"
+    class="Select-module_root__Ka5uO invoiceActions"
   >
     <div
       class="Select-module_wrapper__1WQXs"
@@ -17,7 +17,11 @@ Array [
         id="hds-select-1-toggle-button"
         type="button"
       >
-        Laskun muokkaus
+        <span
+          class="Select-module_buttonLabel__1fqu5"
+        >
+          Laskun muokkaus
+        </span>
         <svg
           aria-hidden="true"
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -370,36 +374,106 @@ Array [
       <div
         class="buttonRow"
       >
-        <div />
         <div>
           <button
-            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+            aria-disabled="true"
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
             disabled=""
             type="button"
           >
             <span
-              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+            >
+              Hyväksy ja lähetä tarjous
+            </span>
+          </button>
+        </div>
+        <div>
+          <button
+            aria-disabled="true"
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_supplementary__3YKiS button_hds-button--supplementary__GcHcV Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+            disabled=""
+            type="button"
+          >
+            <div
+              aria-hidden="true"
+              class="Button-module_icon__O-h7R button_hds-icon__17j8Z"
+            >
+              <svg
+                class="icon s"
+                height="100%"
+                viewBox="0 0 24 24"
+                width="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  icons/document/24
+                </title>
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  id="icons/document/24"
+                  stroke="none"
+                  stroke-width="1"
+                >
+                  <path
+                    d="M21,1 L21,23 L3,23 L3,9 L4.741,9 L4.7419366,21.3500004 L19.2580646,21.3500004 L19.2580646,2.65 L12,2.65 L12,1 L21,1 Z M17.6,18 L17.6,19.7 L6,19.7 L6,18 L17.6,18 Z M10,15 L10,16.7 L6,16.7 L6,15 L10,15 Z M4.26243563,3.08071012 L8.70639967,7.52507832 L11.7375646,4.49492357 L12.9497476,5.70710662 L9.9183807,8.73705934 L9.91928988,8.73756437 L8.70710678,9.94974747 L3.05025253,4.29289322 L4.26243563,3.08071012 Z"
+                    fill="currentColor"
+                    id="aggreements_icon"
+                    transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "
+                  />
+                </g>
+              </svg>
+            </div>
+            <span
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
             >
               Näytä lasku
             </span>
           </button>
           <button
-            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_supplementary__3Epn- button_hds-button--supplementary__GcHcV Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+            aria-disabled="true"
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_supplementary__3YKiS button_hds-button--supplementary__GcHcV Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
             disabled=""
             type="button"
           >
+            <div
+              aria-hidden="true"
+              class="Button-module_icon__O-h7R button_hds-icon__17j8Z"
+            >
+              <svg
+                class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    height="24"
+                    width="24"
+                  />
+                  <path
+                    d="M15,2 L20,7 L20,22 L4,22 L4,2 L15,2 Z M14,4 L14,8 L18,8 L14,4 Z M14.0082581,4 L18,8 L18,20 L6,20 L6,4 L14.0082581,4 Z M17,16 L7,16 L7,18 L17,18 L17,16 Z M17,12 L7,12 L7,14 L17,14 L17,12 Z M13,8 L7,8 L7,10 L13,10 L13,8 Z"
+                    fill="currentColor"
+                  />
+                </g>
+              </svg>
+            </div>
             <span
-              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
             >
               Näytä sopimus
             </span>
           </button>
           <button
-            class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
             type="button"
           >
             <span
-              class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
             >
               Poista tarjous
             </span>

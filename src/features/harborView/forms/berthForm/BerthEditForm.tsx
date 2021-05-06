@@ -34,7 +34,7 @@ const BerthEditForm = ({ berthId, onCancel, onSubmit, onDelete, refetchQueries, 
 
   const { t } = useTranslation();
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (error) return <div>{t('forms.common.error')}</div>;
 
   const initialValues = getBerth(data);

@@ -194,7 +194,7 @@ const UnmarkedWsNoticeList = ({
           </>
         )}
         renderTableToolsBottom={() => (
-          <Pagination forcePage={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
+          <Pagination pageIndex={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         onSortedColsChange={onSortedColsChange}

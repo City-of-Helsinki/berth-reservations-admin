@@ -42,6 +42,8 @@
   .sidebarToggle {
     width: units(2);
     height: units(2);
+    min-width: units(2);
+    min-height: units(2);
     overflow: hidden;
     border-radius: 50%;
     filter: grayscale(1) brightness(2);

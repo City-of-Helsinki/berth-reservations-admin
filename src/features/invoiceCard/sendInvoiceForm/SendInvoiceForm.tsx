@@ -7,7 +7,7 @@ import { Form, Formik } from 'formik';
 import styles from './sendInvoiceForm.module.scss';
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
-import Text from '../../../common/text/Text';
+// import Text from '../../../common/text/Text';
 import { getDefaultDueDate, getDueDateValidation } from '../../../common/utils/dates';
 import { InvoiceInstructions } from '../../../common/invoiceInstructions/InvoiceInstructions';
 
@@ -16,14 +16,20 @@ type FormValues = {
 };
 
 export type SendInvoiceFormProps = {
-  email: string | null;
+  // email: string | null;
   isSubmitting: boolean;
   isResend?: boolean;
   onCancel: () => void;
   onSubmit: (data: FormValues) => void;
 };
 
-const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting, isResend }: SendInvoiceFormProps) => {
+const SendInvoiceForm = ({
+  // email,
+  onSubmit,
+  onCancel,
+  isSubmitting,
+  isResend,
+}: SendInvoiceFormProps) => {
   const { t } = useTranslation();
 
   const validationSchema = useMemo(() => {
@@ -50,7 +56,10 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting, isResend }: 
             title={t(isResend ? 'invoiceCard.sendInvoice.resendTitle' : 'invoiceCard.sendInvoice.title').toUpperCase()}
           />
 
-          <InvoiceInstructions email={email} isResend={isResend} />
+          <InvoiceInstructions
+            email={null} // TODO: re-enable this warning once agreed on the design for sending multiple offers
+            isResend={isResend}
+          />
 
           <div className={styles.dueDate}>
             <TextInput
@@ -69,15 +78,21 @@ const SendInvoiceForm = ({ email, onSubmit, onCancel, isSubmitting, isResend }: 
             <Button variant="secondary" disabled={isSubmitting} onClick={onCancel}>
               {t('forms.common.cancel')}
             </Button>
-            <Button type="submit" disabled={!email || isSubmitting}>
+            <Button
+              type="submit"
+              disabled={
+                // !email ||
+                isSubmitting
+              }
+            >
               {t('forms.common.send')}
             </Button>
           </div>
-          {email === null && (
+          {/* {email === null && (
             <Text color="critical" className={styles.missingEmail}>
               {t('invoiceCard.sendInvoice.missingEmail')}
             </Text>
-          )}
+          )} */}
         </Form>
       )}
     </Formik>

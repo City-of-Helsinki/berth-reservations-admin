@@ -31,11 +31,11 @@ const CallbackPage = ({ history }: CallbackPageProps) => {
     <Layout
       header={
         <Header>
-          <HelsinkiLogo size="large" color="white" />
+          <HelsinkiLogo size="small" color="white" />
         </Header>
       }
     >
-      <LoadingSpinner isLoading />
+      <LoadingSpinner />
     </Layout>
   );
 };

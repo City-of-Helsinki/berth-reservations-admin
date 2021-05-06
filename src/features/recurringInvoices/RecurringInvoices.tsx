@@ -71,7 +71,7 @@ const RecurringInvoices = ({ loading, dataSummary, failedInvoicesData, handleSen
         renderEmptyStateRow={() => t('recurringInvoices.failedInvoicesTable.emptyState')}
         renderPaginator={({ pageIndex, pageCount, goToPage }) => (
           <Pagination
-            forcePage={pageIndex}
+            pageIndex={pageIndex}
             pageCount={pageCount || 1}
             onPageChange={({ selected }) => goToPage(selected)}
           />

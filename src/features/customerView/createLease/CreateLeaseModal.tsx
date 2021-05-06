@@ -45,7 +45,7 @@ const CreateLeaseModal = ({ customerId, isOpen, closeModal }: CreateLeaseModalPr
         <FormHeader title={t('customerView.createLease.title')} upperCase />
 
         {loading ? (
-          <LoadingSpinner isLoading />
+          <LoadingSpinner />
         ) : (
           <div className={styles.body}>
             <Select

@@ -2,7 +2,7 @@ import { AdditionalService } from '../pricing/additionalServicePricing/Additiona
 import { ADDITIONAL_SERVICES } from './__generated__/ADDITIONAL_SERVICES';
 import { PeriodType, ProductServiceType } from '../../@types/__generated__/globalTypes';
 import {
-  CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAddtionalInvoiceOrder,
+  CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order as CreateAdditionalInvoiceOrder,
   CREATE_ADDITIONAL_INVOICE_createAdditionalProductOrder_order_lease_BerthLeaseNode as BerthLeaseNode,
 } from './__generated__/CREATE_ADDITIONAL_INVOICE';
 import { CreateOrderBerthLease } from './types';
@@ -34,12 +34,12 @@ export const getBillableAdditionalProducts = (data?: ADDITIONAL_SERVICES): Addit
 };
 
 export const getAdditionalProductService = (
-  order?: CreateAddtionalInvoiceOrder | null
+  order?: CreateAdditionalInvoiceOrder | null
 ): ProductServiceType | undefined => {
   return order ? order.orderLines.edges[0]?.node?.product?.service : undefined;
 };
 
-export const getBerthLease = (order?: CreateAddtionalInvoiceOrder | null): CreateOrderBerthLease => {
+export const getBerthLease = (order?: CreateAdditionalInvoiceOrder | null): CreateOrderBerthLease => {
   const lease = order?.lease as BerthLeaseNode;
 
   return {

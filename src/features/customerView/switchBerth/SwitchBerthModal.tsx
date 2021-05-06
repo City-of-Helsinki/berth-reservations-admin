@@ -38,7 +38,7 @@ const SwitchBerthModal = ({ closeModal, leaseId }: SwitchBerthModalProps) => {
 
         {loading ? (
           <div className={styles.spinnerWrapper}>
-            <LoadingSpinner isLoading />
+            <LoadingSpinner />
           </div>
         ) : (
           <Select

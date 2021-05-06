@@ -24,7 +24,7 @@ const LoginPage = () => {
     <Layout
       header={
         <Header>
-          <HelsinkiLogo size="large" color="white" />
+          <HelsinkiLogo size="small" color="white" />
         </Header>
       }
     >

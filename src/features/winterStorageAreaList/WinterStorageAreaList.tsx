@@ -116,7 +116,7 @@ const WinterStorageAreaList = ({ data, loading }: WinterStorageAreaListProps) =>
         renderMainHeader={() => t('winterStorageAreaList.tableHeaders.mainHeader')}
         renderPaginator={({ pageIndex, pageCount, goToPage }) => (
           <Pagination
-            forcePage={pageIndex}
+            pageIndex={pageIndex}
             pageCount={pageCount || 1}
             onPageChange={({ selected }) => goToPage(selected)}
           />

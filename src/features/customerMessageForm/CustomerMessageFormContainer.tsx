@@ -22,7 +22,7 @@ const CustomerMessageFormContainer = ({
   const { data, loading } = useQuery<NOTIFICATION_TEMPLATES>(NOTIFICATION_TEMPLATES_QUERY);
   const [previewHtml, setPreviewHtml] = useState<string | undefined>(undefined);
 
-  if (loading || !data?.notificationTemplates) return <LoadingSpinner isLoading={true} />;
+  if (loading || !data?.notificationTemplates) return <LoadingSpinner />;
 
   const notificationTemplates = getNotificationTemplates(data);
 

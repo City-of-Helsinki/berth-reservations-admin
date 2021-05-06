@@ -42,7 +42,7 @@ describe('HarborEditForm', () => {
     await act(async () => {
       await waitForExpect(() => {
         wrapper.update();
-        expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeFalsy();
+        expect(wrapper.contains(<LoadingSpinner />)).toBeFalsy();
       });
     });
   };
@@ -53,7 +53,7 @@ describe('HarborEditForm', () => {
         <HarborEditForm onCancel={jest.fn()} onSubmit={jest.fn()} harborId="a" />
       </MockedProvider>
     );
-    expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeTruthy();
+    expect(wrapper.contains(<LoadingSpinner />)).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -64,7 +64,7 @@ describe('HarborEditForm', () => {
       </MockedProvider>
     );
     await waitForContent(wrapper);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.render()).toMatchSnapshot();
   });
 
   it('calls update mutation on save', async () => {

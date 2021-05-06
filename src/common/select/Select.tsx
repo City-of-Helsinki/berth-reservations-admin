@@ -1,8 +1,5 @@
 import React from 'react';
 import { Select as HDSSelect } from 'hds-react';
-import classNames from 'classnames';
-
-import styles from './select.module.scss';
 
 type OptionValue = string | number;
 
@@ -60,7 +57,7 @@ const Select = <T extends OptionValue = string>({
 
   return (
     <HDSSelect
-      className={classNames(styles.select, className)}
+      className={className}
       disabled={disabled}
       id={id}
       label={label}

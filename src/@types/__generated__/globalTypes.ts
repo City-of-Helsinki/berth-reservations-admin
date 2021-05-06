@@ -604,6 +604,14 @@ export interface UpdateHarborMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateOrderInput {
+  leaseId?: string | null;
+  status?: OrderStatus | null;
+  comment?: string | null;
+  dueDate?: any | null;
+  id: string;
+}
+
 export interface UpdatePhoneInput {
   primary?: boolean | null;
   id: string;

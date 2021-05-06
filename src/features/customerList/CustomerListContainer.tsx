@@ -86,7 +86,7 @@ const CustomerListContainer = () => {
       onSortedColsChange={handleSortedColsChange}
       sortBy={sortBy}
       pagination={{
-        forcePage: pageIndex,
+        pageIndex: pageIndex,
         pageCount: getPageCount(data?.profiles?.count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}

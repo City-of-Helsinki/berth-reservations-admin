@@ -30,6 +30,10 @@ export const emptyMockProfile: CUSTOMER_PROFILE = {
 
 export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
   {
+    customer: {
+      email: 'test@example.com',
+    },
+    id: 'MOCK-ORDER-ID',
     leaseId: 'MOCK-LEASE-ID',
     leaseStatus: LeaseStatus.OFFERED,
     orderId: 'MOCK-ORDER-ID',

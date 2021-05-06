@@ -5,7 +5,7 @@ exports[`CustomersTableTools renders normally 1`] = `
   class="customersTableTools"
 >
   <div
-    class="Select-module_root__Ka5uO select select"
+    class="Select-module_root__Ka5uO select"
   >
     <div
       class="Select-module_wrapper__1WQXs"
@@ -66,21 +66,21 @@ exports[`CustomersTableTools renders normally 1`] = `
     </div>
   </div>
   <button
-    class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+    class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
     type="button"
   >
     <span
-      class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
     >
       Liitä valittuun
     </span>
   </button>
   <button
-    class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+    class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
     type="button"
   >
     <span
-      class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+      class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
     >
       Luo uusi asiakas
     </span>

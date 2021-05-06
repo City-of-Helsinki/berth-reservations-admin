@@ -5,8 +5,12 @@ exports[`features/harborView/BerthEditForm initially renders loading spinner 1`]
   class="spinnerWrapper"
 >
   <div
-    class="spinner"
-  />
+    class="LoadingSpinner-module_loadingSpinner__2xHT_"
+  >
+    <div />
+    <div />
+    <div />
+  </div>
 </div>
 `;
 
@@ -36,19 +40,18 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
     class="grid cols3 grid"
   >
     <div
-      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP select"
+      class="Select-module_root__Ka5uO Select-module_disabled__3MKDP"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="pierId-toggle-button"
         id="pierId-label"
       >
         Laituri
         <span
-          aria-hidden="true"
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
-          *
+           *
         </span>
       </label>
       <div
@@ -64,7 +67,11 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
           id="pierId-toggle-button"
           type="button"
         >
-          A
+          <span
+            class="Select-module_buttonLabel__1fqu5"
+          >
+            A
+          </span>
           <svg
             aria-hidden="true"
             class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -101,7 +108,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="number"
       >
         Paikka
@@ -123,7 +130,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="width"
       >
         Leveys (m)
@@ -143,7 +150,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="length"
       >
         Pituus (m)
@@ -163,7 +170,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
       class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
     >
       <label
-        class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+        class="FieldLabel-module_label__1zrXK "
         for="depth"
       >
         Syvyys (m)
@@ -182,19 +189,18 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
   </div>
   <hr />
   <div
-    class="Select-module_root__Ka5uO select"
+    class="Select-module_root__Ka5uO"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="mooringType-toggle-button"
       id="mooringType-label"
     >
       Kiinnitystapa
       <span
-        aria-hidden="true"
         class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
       >
-        *
+         *
       </span>
     </label>
     <div
@@ -209,7 +215,11 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
         id="mooringType-toggle-button"
         type="button"
       >
-        Aisapaikka
+        <span
+          class="Select-module_buttonLabel__1fqu5"
+        >
+          Aisapaikka
+        </span>
         <svg
           aria-hidden="true"
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
@@ -246,7 +256,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
     class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
   >
     <label
-      class="FieldLabel-module_label__2tl-4 text-input_hds-text-input__label__pDw_W "
+      class="FieldLabel-module_label__1zrXK "
       for="comment"
     >
       Huomiot
@@ -283,22 +293,22 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
     class="formActionButtons"
   >
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       color="supplementary"
       type="button"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Peruuta
       </span>
     </button>
     <button
-      class="Button-module_button__3wgee button_hds-button__2A0je Button-module_primary__3bo_T button_hds-button--primary__2NVvO Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0"
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
       type="submit"
     >
       <span
-        class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
       >
         Tallenna
       </span>

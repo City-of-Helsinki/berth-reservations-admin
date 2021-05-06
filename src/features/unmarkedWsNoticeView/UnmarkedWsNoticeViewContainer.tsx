@@ -85,7 +85,7 @@ const UnmarkedWsNoticeViewContainer = () => {
     refetchQueries,
   });
 
-  if (loading || !data?.winterStorageNotice) return <LoadingSpinner isLoading={true} />;
+  if (loading || !data?.winterStorageNotice) return <LoadingSpinner />;
 
   const customer = data?.winterStorageNotice?.customer;
   const customerProfile = customer ? getCustomerProfile(customer) : null;

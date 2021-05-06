@@ -63,7 +63,7 @@ const EditForm: React.FC<EditFormProps> = ({
   if (loading)
     return (
       <div className={styles.editForm}>
-        <LoadingSpinner isLoading={loading} />
+        <LoadingSpinner />
       </div>
     );
   if (!data?.additionalProducts)
