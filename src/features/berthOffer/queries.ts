@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { BERTH_OFFER_HARBOR_FRAGMENT, BERTH_OFFER_PIERS_FRAGMENT } from './fragments';
 
 export const BERTH_OFFER_QUERY = gql`
-  query BERTH_OFFER($applicationId: ID!, $servicemapId: String!) {
+  query BERTH_OFFER($applicationId: ID!, $harborId: ID!) {
     berthApplication(id: $applicationId) {
       id
       createdAt
@@ -27,7 +27,7 @@ export const BERTH_OFFER_QUERY = gql`
       id
       name
     }
-    harborByServicemapId(servicemapId: $servicemapId) {
+    harbor(id: $harborId) {
       ...BerthOfferHarbor
       properties {
         piers(forApplication: $applicationId) {

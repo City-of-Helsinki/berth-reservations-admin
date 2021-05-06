@@ -86,8 +86,22 @@ export const FILTERED_CUSTOMERS_QUERY = gql`
           berthApplications {
             edges {
               node {
+                id
                 berthSwitch {
-                  harborName
+                  berth {
+                    id
+                    pier {
+                      id
+                      properties {
+                        harbor {
+                          id
+                          properties {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

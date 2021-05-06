@@ -200,10 +200,21 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             applicationCode
             berthSwitch {
               id
-              berthNumber
-              harbor
-              harborName
-              pier
+              berth {
+                id
+                number
+                pier {
+                  id
+                  properties {
+                    harbor {
+                      id
+                      properties {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
               reason {
                 id
                 title
@@ -248,9 +259,13 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
             boatName
             boatModel
             harborChoices {
-              harbor
+              harbor {
+                id
+                properties {
+                  name
+                }
+              }
               priority
-              harborName
             }
             accessibilityRequired
           }

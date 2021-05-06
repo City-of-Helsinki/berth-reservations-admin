@@ -38,8 +38,12 @@ export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
           boatModel
           winterStorageAreaChoices {
             priority
-            winterStorageAreaName
-            winterStorageArea
+            winterStorageArea {
+              id
+              properties {
+                name
+              }
+            }
           }
         }
       }
