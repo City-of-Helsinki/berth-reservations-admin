@@ -1,10 +1,10 @@
 import React from 'react';
-import { IconTrash } from 'hds-react';
+import { IconDocument, IconTrash } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
 
 import InternalLink from '../../../common/internalLink/InternalLink';
-import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
+import { IconDocumentCheck, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import Button from '../../../common/button/Button';
 import InvoiceCardContainer from '../../invoiceCard/InvoiceCardContainer';
 import { PlaceProperty } from '../../invoiceCard/types';
@@ -60,10 +60,10 @@ const BerthOfferCard = ({
     <InvoiceCardContainer
       buttonsRight={
         <>
-          <Button variant="supplementary" disabled>
+          <Button variant="supplementary" iconLeft={<IconDocumentCheck />} disabled>
             {t('offer.invoicing.showInvoice')}
           </Button>
-          <Button variant="supplementary" disabled>
+          <Button variant="supplementary" iconLeft={<IconDocument />} disabled>
             {t('offer.invoicing.showContract')}
           </Button>
           {canDeleteLease(status) && (

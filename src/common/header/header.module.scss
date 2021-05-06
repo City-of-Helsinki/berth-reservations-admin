@@ -4,6 +4,7 @@
 .header {
   background-color: $blue;
   padding: units(0.5) units(2);
+  min-height: units(4);
   color: $white;
   fill: $white;
   display: flex;

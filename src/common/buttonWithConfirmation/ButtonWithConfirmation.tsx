@@ -10,8 +10,8 @@ export interface ButtonWithConfirmationProps extends Omit<ConfirmationModalProps
   buttonSize?: ButtonProps['size'];
   buttonStyle?: 'flat' | 'default';
   buttonText: string;
-  buttonVariant?: ButtonProps['variant'];
-  confirmButtonVariant?: ButtonProps['variant'];
+  buttonVariant?: Exclude<ButtonProps['variant'], 'supplementary'>;
+  confirmButtonVariant?: Exclude<ButtonProps['variant'], 'supplementary'>;
   disabled?: boolean;
   modalClassName?: string;
   modalTitle: string;

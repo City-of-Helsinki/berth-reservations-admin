@@ -123,7 +123,7 @@ const CustomerViewContainer = () => {
     }
   };
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (!data?.profile || !data?.boatTypes)
     return (
       <Notification

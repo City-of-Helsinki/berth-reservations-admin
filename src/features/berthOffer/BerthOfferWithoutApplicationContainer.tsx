@@ -65,7 +65,7 @@ const BerthOfferWithoutApplicationContainer = () => {
     }
   );
 
-  if (customerLoading || harborLoading) return <LoadingSpinner isLoading />;
+  if (customerLoading || harborLoading) return <LoadingSpinner />;
 
   const data = harborData?.harbor;
 

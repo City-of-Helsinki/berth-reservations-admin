@@ -17,12 +17,13 @@ exports[`Pagination renders normally 1`] = `
         fill="none"
         fill-rule="evenodd"
       >
-        <path
-          d="M0 0h24v24H0z"
+        <rect
+          height="24"
+          width="24"
         />
-        <path
-          d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+        <polygon
           fill="currentColor"
+          points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
         />
       </g>
     </svg>
@@ -119,12 +120,14 @@ exports[`Pagination renders normally 1`] = `
         fill="none"
         fill-rule="evenodd"
       >
-        <path
-          d="M0 0h24v24H0z"
+        <rect
+          height="24"
+          width="24"
         />
-        <path
-          d="M12.586 7.05L14 5.636 20.364 12 14 18.364l-1.414-1.414 3.95-3.95H4v-2h12.535z"
+        <polygon
           fill="currentColor"
+          points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12"
+          transform="matrix(-1 0 0 1 24.5 0)"
         />
       </g>
     </svg>

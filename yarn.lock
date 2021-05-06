@@ -1299,9 +1299,9 @@
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.11.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.6.2":
-  version "7.12.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.0.tgz#98bd7666186969c04be893d747cf4a6c6c8fa6b0"
-  integrity sha512-lS4QLXQ2Vbw2ubfQjeQcn+BZgZ5+ROHW9f+DWjEp5Y+NHYmkRGKqHSJ1tuhbUauKu2nhZNTBIvsIQ8dXfY5Gjw==
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
+  integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1714,6 +1714,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@juggle/resize-observer@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.2.0.tgz#5e0b448d27fe3091bae6216456512c5904d05661"
+  integrity sha512-fsLxt0CHx2HCV9EL8lDoVkwHffsA0snUpddYjdLyXcG5E41xaamn9ZyQqOE9TUJdrRlH8/hjIf+UdOdDeKCUgg==
+
 "@mdx-js/loader@^1.5.1":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.8.tgz#3d1c4031b934c03309cabbbfe01628f3960e3221"
@@ -1961,6 +1966,11 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
 
+"@popperjs/core@2.5.3":
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.5.3.tgz#4982b0b66b7a4cf949b86f5d25a8cf757d3cfd9d"
+  integrity sha512-RFwCobxsvZ6j7twS7dHIZQZituMIDJJNHS/qY6iuthVebxS3zhRY+jaC2roEKiAYaVuTcGmX6Luc6YBcf6zJVg==
+
 "@reach/observe-rect@^1.1.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@reach/observe-rect/-/observe-rect-1.2.0.tgz#d7a6013b8aafcc64c778a0ccb83355a11204d3b2"
@@ -1977,13 +1987,13 @@
     react-lifecycles-compat "^3.0.4"
 
 "@react-aria/interactions@^3.2.0":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.2.1.tgz#ac009d553af37399b335980b390ccb727a778367"
-  integrity sha512-ht78rUBzSZNYfBaEK3SzxbnP7YjZFmMJ31tUO8CqVKyl3/87qk5obmuJCUW3LsB2lgHciTYxwYZ1NjlaGRVxzg==
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.3.4.tgz#a5b3a87f886cf0f4e28cbd13fbe02c7efb4f1e2e"
+  integrity sha512-WzT9aIRWvLZvZvuwNKKUkZzeomZgIrquAtwgRYGWbjSbrYPOT9B3w/GBEWZDYUG0c1K8NkIEAxTX0e+QI+tqAA==
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@react-aria/utils" "^3.3.0"
-    "@react-types/shared" "^3.2.1"
+    "@react-aria/utils" "^3.7.0"
+    "@react-types/shared" "^3.5.0"
 
 "@react-aria/ssr@^3.0.1":
   version "3.0.1"
@@ -1992,14 +2002,15 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
 
-"@react-aria/utils@^3.2.0", "@react-aria/utils@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.3.0.tgz#8d5d026ce93e25839b4bc61d40839afaf15fd04d"
-  integrity sha512-PPsOVr0bT3ErMrP5gDa/MDK5zUC7eWWZc+Tcxqrbluh6AFgiq2YLSnDwit+KMPDvj0R+Fx6G7Akt9XQG9r+COQ==
+"@react-aria/utils@^3.2.0", "@react-aria/utils@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.7.0.tgz#0aab1f682e9f1781cfadd2dd1ef9494bfaca0cbf"
+  integrity sha512-sMCdX0eF+4B05I+SX9V/NzI1/fD45vabi0dNyJhbSu2xNI82VIYgPcMBDjGU83NJSnjY969R3/JbbLjBrtKUgA==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@react-aria/ssr" "^3.0.1"
-    "@react-types/shared" "^3.2.1"
+    "@react-stately/utils" "^3.2.0"
+    "@react-types/shared" "^3.5.0"
     clsx "^1.1.1"
 
 "@react-aria/visually-hidden@3.2.0":
@@ -2092,10 +2103,17 @@
     "@react-spring/core" "9.0.0-rc.3"
     "@react-spring/shared" "9.0.0-rc.3"
 
-"@react-types/shared@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.2.1.tgz#cbcffec02a7592f019916e4bd0807950a1376bcf"
-  integrity sha512-Yi+zB+wvIGrxomjG7JZWsOPm8/tKPBtEsJI4cS2QbSho/bQWsw6xufJ6YlXxmx4BiBcktkp5VeP43E5nWqMQ5w==
+"@react-stately/utils@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.2.0.tgz#0b90a70fee3236025ad8bed1f0e3555d5fc10296"
+  integrity sha512-vVBJvHVLnQySgqZ7OfP3ngDdwfGscJDsSD3WcN5ntHiT3JlZ5bksQReDkJEs20SFu2ST4w/0K7O4m97SbuMl2Q==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+
+"@react-types/shared@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.5.0.tgz#dbc90e8fe711967e66d6f3ce0e17d34b24bd6283"
+  integrity sha512-997Me7AegwJOI10ye/Q5ds6fT+VBc6XcsXYzPqOD+HIbyL1kUQNDF/VoO37ib7KEH8jXH9aceoX9blz3Q1QcpA==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -6915,9 +6933,9 @@ compression@^1.7.4:
     vary "~1.1.2"
 
 compute-scroll-into-view@^1.0.14:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/compute-scroll-into-view/-/compute-scroll-into-view-1.0.16.tgz#5b7bf4f7127ea2c19b750353d7ce6776a90ee088"
-  integrity sha512-a85LHKY81oQnikatZYA90pufpZ6sQx++BoCxOEMsjpZx+ZnaKGQnCyCehTRr/1p9GBIAHTjcU9k71kSYWloLiQ==
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/compute-scroll-into-view/-/compute-scroll-into-view-1.0.17.tgz#6a88f18acd9d42e9cf4baa6bec7e0522607ab7ab"
+  integrity sha512-j4dx+Fb0URmzbwwMUrhqWM2BEWHdFGx+qZ9qqASHRPqvTYdqvWnHg0H1hIbcyLnvgnoNAVMlwkepyqM3DaIFUg==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -7513,6 +7531,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
+date-fns@2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
+
 date-fns@^1.27.2:
   version "1.30.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
@@ -7524,9 +7547,9 @@ de-indent@^1.0.2:
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
 
 debounce@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.0.tgz#44a540abc0ea9943018dc0eaa95cce87f65cd131"
-  integrity sha512-mYtLl1xfZLi1m4RtQYlZgJUNQjl4ZxVnHzIR8nLLgi4q1YT8o/WM+MK/f8yfcc9s5Ir5zRaPZyZU6xs1Syoocg==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -9918,23 +9941,28 @@ hastscript@^5.0.0:
     property-information "^5.0.0"
     space-separated-tokens "^1.0.0"
 
-hds-core@0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/hds-core/-/hds-core-0.14.0.tgz#e89e193d5d7a8f7c47d62afa334f724f48f88211"
-  integrity sha512-WGKQcMGf8J3zNszafOvmvTM1QMZpVmiaUfxhq60cw+QXMObf7ePoG0EBhLYP+/d7086ctHm1sf0nlYY7T+3JZg==
+hds-core@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hds-core/-/hds-core-1.0.0.tgz#314751120b169391d91313c6bd60bc215386b883"
+  integrity sha512-7lEb8exIJ1uqczlrL3Ubr70B4L+90gTbiMj3mMyP1x5zafUBLK98LLT7N7+p5m+2JU6L7yfqBV2JkmCA5C+vAw==
 
-hds-react@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/hds-react/-/hds-react-0.14.0.tgz#ae901fe85a24de2b651723ce9360806d2cc0eb8f"
-  integrity sha512-DTq5Zxcsxa2dADDG0+V3PNkuLP91QDeA0Rw+XH+34ETm+Aw0Crb7yFesvoQqRnjxflOoEtNqkxs55zK9TQ786Q==
+hds-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hds-react/-/hds-react-1.0.0.tgz#464dc2a9471d629729635e18173a7e4f5f6671bf"
+  integrity sha512-Ckc0TWUJJIE7ezOVFyDyZ/Gszn+LPQi7zjEeAaFOjs7zjx4I+vDMV9W+k8r6/MWAOpf2nCq3YOMqKcRqDaxv+w==
   dependencies:
     "@babel/runtime" "7.11.2"
+    "@juggle/resize-observer" "3.2.0"
+    "@popperjs/core" "2.5.3"
     "@react-aria/visually-hidden" "3.2.0"
+    date-fns "2.16.1"
     downshift "6.0.6"
-    hds-core "0.14.0"
+    hds-core "1.0.0"
     lodash.isequal "4.5.0"
+    lodash.isfunction "3.0.9"
     lodash.uniqueid "4.0.1"
     react-merge-refs "1.1.0"
+    react-popper "2.2.3"
     react-spring "9.0.0-rc.3"
     react-use-measure "2.0.1"
     react-virtual "2.2.7"
@@ -12199,6 +12227,11 @@ lodash.isequal@4.5.0, lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+
+lodash.isfunction@3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
+  integrity sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -15618,6 +15651,14 @@ react-popper-tooltip@^2.8.3:
     "@babel/runtime" "^7.9.2"
     react-popper "^1.3.7"
 
+react-popper@2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.3.tgz#33d425fa6975d4bd54d9acd64897a89d904b9d97"
+  integrity sha512-mOEiMNT1249js0jJvkrOjyHsGvqcJd3aGW/agkiMoZk3bZ1fXN1wQszIQSjHIai48fE67+zwF8Cs+C4fWqlfjw==
+  dependencies:
+    react-fast-compare "^3.0.1"
+    warning "^4.0.2"
+
 react-popper@^1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.7.tgz#f6a3471362ef1f0d10a4963673789de1baca2324"
@@ -18897,9 +18938,9 @@ use-debounce@^3.4.2:
   integrity sha512-rW44wZaFPh3XiwUzGBA0JRuklpbfKO/szU/5CYD2Q/erLmCem63lJ650p3a+NJE6S+g0rulKtBOfa/3rw/GN+Q==
 
 use-memo-one@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.1.tgz#39e6f08fe27e422a7d7b234b5f9056af313bd22c"
-  integrity sha512-oFfsyun+bP7RX8X2AskHNTxu+R3QdE/RC5IefMbqptmACAA/gfol1KDD5KRzPsGMa62sWxGZw+Ui43u6x4ddoQ==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.2.tgz#0c8203a329f76e040047a35a1197defe342fab20"
+  integrity sha512-u2qFKtxLsia/r8qG0ZKkbytbztzRb317XCkT7yP8wxL0tZ/CzK2G+WWie5vWvpyeP7+YoPIwbJoIHJ4Ba4k0oQ==
 
 use-sidecar@^1.0.1:
   version "1.0.2"

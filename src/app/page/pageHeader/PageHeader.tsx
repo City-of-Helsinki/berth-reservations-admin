@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { IconShare, IconAngleRight, IconUser } from 'hds-react';
+import { IconAngleRight, IconUser } from 'hds-react';
 
 import Header from '../../../common/header/Header';
 import HelsinkiLogo from '../../../common/helsinkiLogo/HelsinkiLogo';
@@ -22,26 +22,21 @@ const PageHeader = () => {
   return (
     <Header>
       <Link to="/" className={styles.mainLink}>
-        <HelsinkiLogo size="large" color="white" />
+        <HelsinkiLogo size="small" color="white" />
         <Text as="h1" size="m" className={styles.serviceName}>
           {t('common.header.serviceName')}
         </Text>
       </Link>
       <Dropdown
         label={
-          <Button variant="primary" iconLeft={<IconUser />}>
+          <Button variant="primary" iconLeft={<IconUser />} size="small">
             {fullName}
           </Button>
         }
       >
         <List noBullets>
           <ListItem>
-            <Button
-              onClick={authService.logout}
-              variant="secondary"
-              iconLeft={<IconShare />}
-              iconRight={<IconAngleRight />}
-            >
+            <Button onClick={authService.logout} variant="secondary" size="small" iconRight={<IconAngleRight />}>
               {t('common.header.logout')}
             </Button>
           </ListItem>

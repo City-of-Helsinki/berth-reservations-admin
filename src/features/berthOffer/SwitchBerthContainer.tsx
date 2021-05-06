@@ -47,7 +47,7 @@ const SwitchBerthContainer = () => {
 
   const [switchBerth, { loading: isSubmitting }] = useMutation<SWITCH_BERTH, SWITCH_BERTH_VARS>(SWITCH_BERTH_MUTATION);
 
-  if (leaseLoading || harborLoading) return <LoadingSpinner isLoading />;
+  if (leaseLoading || harborLoading) return <LoadingSpinner />;
   if (!leaseData) return <NoDataNotification />;
   if (leaseError || harborError) return <ErrorNotification />;
 

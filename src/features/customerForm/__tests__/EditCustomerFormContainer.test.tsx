@@ -25,7 +25,7 @@ describe('EditCustomerForm', () => {
     await act(async () => {
       await waitForExpect(() => {
         wrapper.update();
-        expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBeFalsy();
+        expect(wrapper.contains(<LoadingSpinner />)).toBeFalsy();
       });
     });
   };
@@ -36,7 +36,7 @@ describe('EditCustomerForm', () => {
         <EditCustomerFormContainer customerId={'MOCK-PROFILE'} />
       </MockedProvider>
     );
-    expect(wrapper.contains(<LoadingSpinner isLoading={true} />)).toBe(true);
+    expect(wrapper.contains(<LoadingSpinner />)).toBe(true);
     expect(wrapper.render()).toMatchSnapshot();
   });
 

@@ -33,7 +33,7 @@ const HarborViewContainer = () => {
 
   const harbor = getIndividualHarborData(data);
 
-  if (loading || !harbor) return <LoadingSpinner isLoading={true} />;
+  if (loading || !harbor) return <LoadingSpinner />;
 
   const piers = getPiers(data);
   const berths = getBerths(data);

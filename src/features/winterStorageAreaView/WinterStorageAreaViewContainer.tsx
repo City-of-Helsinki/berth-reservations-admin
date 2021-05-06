@@ -18,7 +18,7 @@ const WinterStorageAreaViewContainer = () => {
   const markedWinterStorage = getMarkedWinterStorage(data);
   const unmarkedWinterStorage = getUnmarkedWinterStorage(data);
 
-  if (loading || !winterStorageArea) return <LoadingSpinner isLoading={true} />;
+  if (loading || !winterStorageArea) return <LoadingSpinner />;
 
   return (
     <WinterStorageAreaView

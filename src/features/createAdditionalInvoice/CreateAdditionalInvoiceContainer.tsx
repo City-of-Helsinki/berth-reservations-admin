@@ -66,7 +66,7 @@ const CreateAdditionalInvoiceContainer = ({
   const orderId = createdOrder ? (createdOrder?.createAdditionalProductOrder?.order?.id as string) : null;
 
   if (loadingAdditionalProducts || isCreatingInvoice || isDeletingInvoice || isSendingInvoice) {
-    return <LoadingSpinner isLoading={true} />;
+    return <LoadingSpinner />;
   }
 
   const handleCreateInvoice = (values: AdditionalInvoiceFormValues) => {

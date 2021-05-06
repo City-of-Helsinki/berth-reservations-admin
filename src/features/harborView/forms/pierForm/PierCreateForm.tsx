@@ -26,7 +26,7 @@ const PierCreateForm = ({ harborId, onCancel, onSubmit, refetchQueries }: Props)
   );
   const { t } = useTranslation();
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (error || createError) return <div>{t('forms.common.error')}</div>;
 
   const suitableBoatTypeOptions = getBoatTypes(data);

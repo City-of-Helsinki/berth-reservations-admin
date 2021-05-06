@@ -96,12 +96,12 @@ exports[`HarborView renders normally 1`] = `
                         fill="none"
                         fill-rule="evenodd"
                       >
-                        <path
-                          d="M0 24V0h24v24z"
+                        <polygon
+                          points="0 24 0 0 24 0 24 24"
                         />
-                        <path
-                          d="M13 12.5l-5-5L9.5 6l6.5 6.5L9.5 19 8 17.5z"
+                        <polygon
                           fill="currentColor"
+                          points="13.5 12 8.5 7 10 5.5 16.5 12 10 18.5 8.5 17"
                         />
                       </g>
                     </svg>
@@ -427,21 +427,21 @@ exports[`HarborView renders normally 1`] = `
         class="buttons"
       >
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+          class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 button"
           type="button"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
           >
             Lisää laituri
           </span>
         </button>
         <button
-          class="Button-module_button__3wgee button_hds-button__2A0je Button-module_secondary__399Vd button_hds-button--secondary__1NOWS Button-module_theme-coat__2xA5D button_hds-button--theme-coat__12cO0 button"
+          class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 button"
           type="button"
         >
           <span
-            class="Button-module_label__2zMLC button_hds-button__label__2EQa-"
+            class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
           >
             Lisää venepaikka
           </span>
@@ -578,12 +578,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -610,12 +611,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -650,12 +652,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -682,12 +685,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -714,12 +718,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -746,12 +751,13 @@ exports[`HarborView renders normally 1`] = `
                     fill="none"
                     fill-rule="evenodd"
                   >
-                    <path
-                      d="M0 0h24v24H0z"
+                    <rect
+                      height="24"
+                      width="24"
                     />
-                    <path
-                      d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+                    <polygon
                       fill="currentColor"
+                      points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
                     />
                   </g>
                 </svg>
@@ -1862,12 +1868,13 @@ exports[`HarborView renders normally 1`] = `
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M10 5.636l1.414 1.414L7.465 11H20v2H7.464l3.95 3.95L10 18.364 3.636 12z"
+            <polygon
               fill="currentColor"
+              points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
             />
           </g>
         </svg>
@@ -2009,12 +2016,14 @@ exports[`HarborView renders normally 1`] = `
             fill="none"
             fill-rule="evenodd"
           >
-            <path
-              d="M0 0h24v24H0z"
+            <rect
+              height="24"
+              width="24"
             />
-            <path
-              d="M12.586 7.05L14 5.636 20.364 12 14 18.364l-1.414-1.414 3.95-3.95H4v-2h12.535z"
+            <polygon
               fill="currentColor"
+              points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12"
+              transform="matrix(-1 0 0 1 24.5 0)"
             />
           </g>
         </svg>

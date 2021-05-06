@@ -40,7 +40,7 @@ const EditCustomerFormContainer = ({ customerId, onCancel, onSubmit, refetchQuer
     refetchQueries: refetchQueries ?? [],
   });
 
-  if (loading) return <LoadingSpinner isLoading={loading} />;
+  if (loading) return <LoadingSpinner />;
   if (!data?.profile) return <div>{t('forms.common.error')}</div>;
 
   const initialValues = getCustomerFormValues(data.profile);
