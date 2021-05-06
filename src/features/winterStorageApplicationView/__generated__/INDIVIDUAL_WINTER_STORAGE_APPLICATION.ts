@@ -55,11 +55,21 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_
   language: Language | null;
 }
 
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices_winterStorageArea_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices_winterStorageArea {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices_winterStorageArea_properties | null;
+}
+
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices {
   __typename: "WinterStorageAreaChoiceType";
-  winterStorageArea: string | null;
   priority: number;
-  winterStorageAreaName: string;
+  winterStorageArea: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices_winterStorageArea;
 }
 
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication {

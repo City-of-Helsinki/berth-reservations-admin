@@ -414,6 +414,35 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders {
   edges: (INDIVIDUAL_CUSTOMER_profile_orders_edges | null)[];
 }
 
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties {
+  __typename: "PierProperties";
+  harbor: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier {
+  __typename: "PierNode";
+  id: string;
+  properties: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth {
+  __typename: "BerthNode";
+  id: string;
+  number: string;
+  pier: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier;
+}
+
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_reason {
   __typename: "BerthSwitchReasonType";
   id: string;
@@ -423,10 +452,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthS
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch {
   __typename: "BerthSwitchType";
   id: string;
-  berthNumber: string;
-  harbor: string;
-  harborName: string;
-  pier: string;
+  berth: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth;
   reason: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_reason | null;
 }
 
@@ -483,11 +509,21 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease 
   berth: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease_berth;
 }
 
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices_harbor_properties | null;
+}
+
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices {
   __typename: "HarborChoiceType";
-  harbor: string;
+  harbor: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices_harbor;
   priority: number;
-  harborName: string;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node {

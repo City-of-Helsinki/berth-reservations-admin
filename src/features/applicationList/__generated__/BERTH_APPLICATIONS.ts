@@ -14,6 +14,35 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_customer {
   id: string;
 }
 
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties {
+  __typename: "PierProperties";
+  harbor: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier {
+  __typename: "PierNode";
+  id: string;
+  properties: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth {
+  __typename: "BerthNode";
+  id: string;
+  number: string;
+  pier: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier;
+}
+
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason {
   __typename: "BerthSwitchReasonType";
   title: string | null;
@@ -21,11 +50,8 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_rea
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch {
   __typename: "BerthSwitchType";
-  berthNumber: string;
-  harbor: string;
-  harborName: string;
   id: string;
-  pier: string;
+  berth: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth;
   reason: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_reason | null;
 }
 
@@ -86,11 +112,21 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_lease {
   berth: BERTH_APPLICATIONS_berthApplications_edges_node_lease_berth;
 }
 
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices_harbor_properties | null;
+}
+
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices {
   __typename: "HarborChoiceType";
-  harbor: string;
+  harbor: BERTH_APPLICATIONS_berthApplications_edges_node_harborChoices_harbor;
   priority: number;
-  harborName: string;
 }
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node {
