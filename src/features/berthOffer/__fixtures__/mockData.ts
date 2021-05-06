@@ -29,7 +29,7 @@ export const berthOfferQueryData: BERTH_OFFER = {
       name: 'rowboat',
     },
   ],
-  harborByServicemapId: {
+  harbor: {
     __typename: 'HarborNode',
     id: 'SGFyYm9yTm9kZTpmN2M2YTQwZjAtOWViMi0zZjgyMTI0YjY0OGI=',
     properties: {

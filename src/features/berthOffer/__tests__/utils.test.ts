@@ -5,7 +5,7 @@ import { SWITCH_BERTH_LEASE } from '../__generated__/SWITCH_BERTH_LEASE';
 describe('utils', () => {
   describe('getOfferData', () => {
     it('should return offer data', () => {
-      const berthData = getBerthData(berthOfferQueryData['harborByServicemapId']);
+      const berthData = getBerthData(berthOfferQueryData['harbor']);
 
       expect(berthData).toMatchSnapshot();
     });
@@ -13,7 +13,7 @@ describe('utils', () => {
 
   describe('getAllPiersIdentifiers', () => {
     it('should return pier tabs', () => {
-      const harbor = getAllPiersIdentifiers(berthOfferQueryData['harborByServicemapId']?.properties?.piers);
+      const harbor = getAllPiersIdentifiers(berthOfferQueryData['harbor']?.properties?.piers);
 
       expect(harbor).toMatchSnapshot();
     });
@@ -25,7 +25,7 @@ describe('utils', () => {
     });
 
     it('should return harbor', () => {
-      const harbor = getHarbor(berthOfferQueryData.harborByServicemapId);
+      const harbor = getHarbor(berthOfferQueryData.harbor);
 
       expect(harbor).toMatchSnapshot();
     });

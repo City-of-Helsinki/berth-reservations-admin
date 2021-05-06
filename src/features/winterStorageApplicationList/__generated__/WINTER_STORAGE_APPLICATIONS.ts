@@ -14,11 +14,21 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   id: string;
 }
 
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices_winterStorageArea_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices_winterStorageArea {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices_winterStorageArea_properties | null;
+}
+
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices {
   __typename: "WinterStorageAreaChoiceType";
   priority: number;
-  winterStorageAreaName: string;
-  winterStorageArea: string | null;
+  winterStorageArea: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices_winterStorageArea;
 }
 
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node {

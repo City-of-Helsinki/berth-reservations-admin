@@ -41,7 +41,7 @@ const BerthSwitchOfferContainer = () => {
     BERTH_OFFER,
     BERTH_OFFER_VARS
   >(BERTH_OFFER_QUERY, {
-    variables: { applicationId, servicemapId: harborId },
+    variables: { applicationId, harborId },
   });
 
   const [createBerthSwitchOfferMutation, { loading: isSubmitting }] = useMutation<
@@ -63,7 +63,7 @@ const BerthSwitchOfferContainer = () => {
 
   if (applicationLoading) return <LoadingSpinner />;
 
-  const data = applicationData?.harborByServicemapId;
+  const data = applicationData?.harbor;
   const boat = getApplicationBoat(applicationData?.berthApplication, applicationData?.boatTypes);
   const customerId = applicationData?.berthApplication?.customer?.id;
 

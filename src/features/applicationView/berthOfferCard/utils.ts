@@ -20,6 +20,7 @@ export const getOfferDetailsData = (lease: BerthLease | null | undefined): Lease
     customerEmail: lease.customer.primaryEmail?.email ?? null,
     electricity: lease.berth?.pier.properties?.electricity ?? false,
     gate: lease.berth?.pier.properties?.gate ?? false,
+    harborId: lease.berth?.pier.properties?.harbor.id ?? '',
     harborName: lease.berth?.pier.properties?.harbor.properties?.name ?? '',
     lighting: lease.berth?.pier.properties?.lighting ?? false,
     pierIdentifier: lease.berth?.pier.properties?.identifier ?? '',

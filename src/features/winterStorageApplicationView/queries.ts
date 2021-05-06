@@ -60,9 +60,13 @@ export const INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY = gql`
       acceptOtherCultureNews
       status
       winterStorageAreaChoices {
-        winterStorageArea
         priority
-        winterStorageAreaName
+        winterStorageArea {
+          id
+          properties {
+            name
+          }
+        }
       }
       applicationCode
     }

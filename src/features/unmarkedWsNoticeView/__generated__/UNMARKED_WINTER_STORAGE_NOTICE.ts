@@ -55,11 +55,21 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer {
   language: Language | null;
 }
 
+export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices_winterStorageArea_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices_winterStorageArea {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices_winterStorageArea_properties | null;
+}
+
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices {
   __typename: "WinterStorageAreaChoiceType";
   priority: number;
-  winterStorageArea: string | null;
-  winterStorageAreaName: string;
+  winterStorageArea: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices_winterStorageArea;
   winterStorageSectionIds: (string | null)[] | null;
 }
 

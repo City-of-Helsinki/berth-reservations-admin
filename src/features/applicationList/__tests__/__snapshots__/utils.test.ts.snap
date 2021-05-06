@@ -55,7 +55,7 @@ Array [
       "berthNum": "2",
       "harborId": "MOCK-HARBOR-0",
       "harborName": "Testisatama",
-      "pierIdentifier": "A",
+      "pierIdentifier": "B",
       "reason": null,
     },
     "berthSwitchOffered": false,

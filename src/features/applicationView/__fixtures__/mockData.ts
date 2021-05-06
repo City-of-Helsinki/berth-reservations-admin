@@ -44,11 +44,23 @@ export const mockCustomer: CUSTOMER = {
 
 export const mockBerthSwitch: BERTH_SWITCH = {
   __typename: 'BerthSwitchType',
-  berthNumber: '1',
-  harbor: 'MOCK-HARBOR',
-  harborName: 'Test Harbor',
-  id: 'MOCK-BERTH-SWITCH',
-  pier: 'A',
+  berth: {
+    __typename: 'BerthNode',
+    id: 'MOCK-BERTH',
+    number: '1',
+    pier: {
+      __typename: 'PierNode',
+      id: 'A',
+      properties: {
+        __typename: 'PierProperties',
+        harbor: {
+          __typename: 'HarborNode',
+          id: 'MOCK-HARBOR',
+          properties: { __typename: 'HarborProperties', name: 'Test Harbor' },
+        },
+      },
+    },
+  },
   reason: { __typename: 'BerthSwitchReasonType', title: 'Reason' },
 };
 
@@ -141,7 +153,15 @@ const berthApplication: BERTH_APPLICATION = {
   email: 'test@example.com',
   firstName: 'Testi',
   harborChoices: [
-    { harbor: 'MOCK-HARBOR-B', priority: 1, harborName: 'Saukonpaaden venesatama', __typename: 'HarborChoiceType' },
+    {
+      harbor: {
+        __typename: 'HarborNode',
+        id: 'MOCK-HARBOR-B',
+        properties: { __typename: 'HarborProperties', name: 'Saukonpaaden venesatama' },
+      },
+      priority: 1,
+      __typename: 'HarborChoiceType',
+    },
   ],
   id: 'MOCK-APPLICATION',
   language: BerthApplicationLanguage.FI,

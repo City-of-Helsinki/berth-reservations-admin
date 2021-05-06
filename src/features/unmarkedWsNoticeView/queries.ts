@@ -62,8 +62,12 @@ export const UNMARKED_WINTER_STORAGE_NOTICE_QUERY = gql`
       status
       winterStorageAreaChoices {
         priority
-        winterStorageArea
-        winterStorageAreaName
+        winterStorageArea {
+          id
+          properties {
+            name
+          }
+        }
         winterStorageSectionIds
       }
       lease {

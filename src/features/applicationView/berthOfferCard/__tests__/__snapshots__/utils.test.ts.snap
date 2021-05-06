@@ -12,6 +12,7 @@ Object {
   "customerEmail": "test@example.com",
   "electricity": true,
   "gate": true,
+  "harborId": "b55da996-cf00-4b52-9aa0-6b13fd8d806b",
   "harborName": "Aurinkolahden venesatama (Aurinkoranta)",
   "id": "165023f5-5b74-4656-9315-d4e1a22f111d",
   "lighting": true,

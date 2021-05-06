@@ -136,10 +136,37 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases {
   edges: (FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges | null)[];
 }
 
+export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor_properties | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties {
+  __typename: "PierProperties";
+  harbor: FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier {
+  __typename: "PierNode";
+  id: string;
+  properties: FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier_properties | null;
+}
+
+export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth {
+  __typename: "BerthNode";
+  id: string;
+  pier: FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth_pier;
+}
+
 export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch {
   __typename: "BerthSwitchType";
-  id: string;
-  harborName: string;
+  berth: FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node_berthSwitch_berth;
 }
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications_edges_node {

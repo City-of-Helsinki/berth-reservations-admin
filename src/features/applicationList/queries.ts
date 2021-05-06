@@ -29,11 +29,23 @@ export const BERTH_APPLICATIONS_QUERY = gql`
             id
           }
           berthSwitch {
-            berthNumber
-            harbor
-            harborName
             id
-            pier
+            berth {
+              id
+              number
+              pier {
+                id
+                properties {
+                  identifier
+                  harbor {
+                    id
+                    properties {
+                      name
+                    }
+                  }
+                }
+              }
+            }
             reason {
               title
             }
@@ -82,9 +94,13 @@ export const BERTH_APPLICATIONS_QUERY = gql`
             }
           }
           harborChoices {
-            harbor
+            harbor {
+              id
+              properties {
+                name
+              }
+            }
             priority
-            harborName
           }
         }
       }
