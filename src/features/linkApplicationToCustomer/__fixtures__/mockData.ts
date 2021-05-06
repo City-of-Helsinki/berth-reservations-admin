@@ -13,10 +13,29 @@ const berthApplications: BERTH_APPLICATIONS = {
     {
       __typename: 'BerthApplicationNodeEdge',
       node: {
+        id: 'MOCK-BERTH-APPLICATION',
         __typename: 'BerthApplicationNode',
         berthSwitch: {
           __typename: 'BerthSwitchType',
-          harborName: 'Test Harbor',
+          berth: {
+            __typename: 'BerthNode',
+            id: 'MOCK-BERTH-0',
+            pier: {
+              __typename: 'PierNode',
+              id: 'MOCK-PIER-0',
+              properties: {
+                __typename: 'PierProperties',
+                harbor: {
+                  id: 'MOCK-HARBOR-0',
+                  __typename: 'HarborNode',
+                  properties: {
+                    __typename: 'HarborProperties',
+                    name: 'Test Harbor',
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },

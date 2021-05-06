@@ -36,15 +36,27 @@ export const mockData: INDIVIDUAL_WINTER_STORAGE_APPLICATION & {
     status: ApplicationStatus.PENDING,
     winterStorageAreaChoices: [
       {
-        winterStorageArea: null,
+        winterStorageArea: {
+          __typename: 'WinterStorageAreaNode',
+          id: 'MOCK-WINTER-STORAGE-AREA-0',
+          properties: {
+            __typename: 'WinterStorageAreaProperties',
+            name: 'Iso-Sarvasto',
+          },
+        },
         priority: 1,
-        winterStorageAreaName: 'Iso-Sarvasto',
         __typename: 'WinterStorageAreaChoiceType',
       },
       {
-        winterStorageArea: null,
+        winterStorageArea: {
+          __typename: 'WinterStorageAreaNode',
+          id: 'MOCK-WINTER-STORAGE-AREA-1',
+          properties: {
+            __typename: 'WinterStorageAreaProperties',
+            name: 'Rajasaari',
+          },
+        },
         priority: 2,
-        winterStorageAreaName: 'Rajasaari',
         __typename: 'WinterStorageAreaChoiceType',
       },
     ],

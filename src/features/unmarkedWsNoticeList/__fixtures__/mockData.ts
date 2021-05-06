@@ -26,8 +26,14 @@ export const singleNode: UNMARKED_WINTER_STORAGE_NOTICES_NODE = {
   winterStorageAreaChoices: [
     {
       priority: 1,
-      winterStorageAreaName: 'Iso-Sarvasto',
-      winterStorageArea: null,
+      winterStorageArea: {
+        __typename: 'WinterStorageAreaNode',
+        id: 'MOCK-WINTER-STORAGE-AREA-0',
+        properties: {
+          __typename: 'WinterStorageAreaProperties',
+          name: 'Iso-Sarvasto',
+        },
+      },
       winterStorageSectionIds: ['MOCK-SECTION'],
       __typename: 'WinterStorageAreaChoiceType',
     },
@@ -66,8 +72,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-1',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -99,8 +111,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-2',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -132,8 +150,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-3',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -165,8 +189,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-4',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -198,8 +228,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-5',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -231,8 +267,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-6',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -264,8 +306,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-7',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -297,8 +345,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-8',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },
@@ -330,8 +384,14 @@ export const unmarkedWinterStorageNoticeMockData: UNMARKED_WINTER_STORAGE_NOTICE
           winterStorageAreaChoices: [
             {
               priority: 1,
-              winterStorageAreaName: 'Iso-Sarvasto',
-              winterStorageArea: null,
+              winterStorageArea: {
+                __typename: 'WinterStorageAreaNode',
+                id: 'MOCK-WINTER-STORAGE-AREA-9',
+                properties: {
+                  __typename: 'WinterStorageAreaProperties',
+                  name: 'Iso-Sarvasto',
+                },
+              },
               winterStorageSectionIds: ['MOCK-SECTION'],
               __typename: 'WinterStorageAreaChoiceType',
             },

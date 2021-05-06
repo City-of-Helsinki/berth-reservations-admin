@@ -46,16 +46,28 @@ export const mockData: UNMARKED_WINTER_STORAGE_NOTICE & {
     status: ApplicationStatus.OFFER_GENERATED,
     winterStorageAreaChoices: [
       {
-        winterStorageArea: null,
+        winterStorageArea: {
+          __typename: 'WinterStorageAreaNode',
+          id: 'MOCK-WINTER-STORAGE-AREA-0',
+          properties: {
+            __typename: 'WinterStorageAreaProperties',
+            name: 'Iso-Sarvasto',
+          },
+        },
         priority: 1,
-        winterStorageAreaName: 'Iso-Sarvasto',
         winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
       {
-        winterStorageArea: null,
+        winterStorageArea: {
+          __typename: 'WinterStorageAreaNode',
+          id: 'MOCK-WINTER-STORAGE-AREA-1',
+          properties: {
+            __typename: 'WinterStorageAreaProperties',
+            name: 'Rajasaari',
+          },
+        },
         priority: 2,
-        winterStorageAreaName: 'Rajasaari',
         winterStorageSectionIds: ['MOCK-SECTION'],
         __typename: 'WinterStorageAreaChoiceType',
       },
