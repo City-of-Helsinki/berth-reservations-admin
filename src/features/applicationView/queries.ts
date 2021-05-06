@@ -48,11 +48,21 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
         language
       }
       berthSwitch {
-        berthNumber
-        harbor
-        harborName
-        id
-        pier
+        berth {
+          id
+          number
+          pier {
+            id
+            properties {
+              harbor {
+                id
+                properties {
+                  name
+                }
+              }
+            }
+          }
+        }
         reason {
           title
         }
@@ -110,9 +120,13 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
       accessibilityRequired
       status
       harborChoices {
-        harbor
+        harbor {
+          id
+          properties {
+            name
+          }
+        }
         priority
-        harborName
       }
       acceptBoatingNewsletter
       acceptFitnessNews

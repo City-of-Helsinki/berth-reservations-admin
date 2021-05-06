@@ -83,7 +83,7 @@ export const getAllPiersIdentifiers = (data: PiersData | null | undefined): Pier
   }, []);
 };
 
-export const getHarbor = (data: BERTH_OFFER['harborByServicemapId'] | undefined): HarborCardProps['harbor'] | null => {
+export const getHarbor = (data: BERTH_OFFER['harbor'] | undefined): HarborCardProps['harbor'] | null => {
   if (!data || !data || !data.properties || !data.properties.piers) {
     return null;
   }

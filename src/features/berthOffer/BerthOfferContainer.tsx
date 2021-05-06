@@ -37,7 +37,7 @@ const BerthOfferContainer = () => {
     BERTH_OFFER,
     BERTH_OFFER_VARS
   >(BERTH_OFFER_QUERY, {
-    variables: { applicationId, servicemapId: harborId },
+    variables: { applicationId, harborId },
   });
 
   const [createBerthLease, { loading: isSubmitting }] = useMutation<CREATE_BERTH_LEASE, CREATE_BERTH_LEASE_VARS>(
@@ -49,7 +49,7 @@ const BerthOfferContainer = () => {
 
   if (applicationLoading) return <LoadingSpinner />;
 
-  const data = applicationData?.harborByServicemapId;
+  const data = applicationData?.harbor;
   const boat = getApplicationBoat(applicationData?.berthApplication, applicationData?.boatTypes);
 
   if (!data) return <NoDataNotification />;

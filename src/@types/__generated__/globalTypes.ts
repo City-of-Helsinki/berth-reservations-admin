@@ -515,8 +515,8 @@ export interface UpdateAddressInput {
 }
 
 export interface UpdateBerthApplicationInput {
-  customerId?: string | null;
   id: string;
+  customerId?: string | null;
   clientMutationId?: string | null;
 }
 
@@ -664,8 +664,8 @@ export interface UpdateProfileMutationInput {
 }
 
 export interface UpdateWinterStorageApplicationInput {
-  customerId?: string | null;
   id: string;
+  customerId?: string | null;
   clientMutationId?: string | null;
 }
 

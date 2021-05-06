@@ -35,6 +35,7 @@ const BerthOfferCard = ({
     customerEmail,
     electricity,
     gate,
+    harborId,
     harborName,
     lighting,
     pierIdentifier,
@@ -90,7 +91,7 @@ const BerthOfferCard = ({
         />
       }
       placeName={
-        <InternalLink to="/" underlined>
+        <InternalLink to={`/harbors/${harborId}`} underlined>
           {[harborName, pierIdentifier, berthNum].filter(Boolean).join(' ')}
         </InternalLink>
       }

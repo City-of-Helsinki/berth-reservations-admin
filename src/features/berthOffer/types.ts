@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 export type {
-  BERTH_OFFER_harborByServicemapId as HarborData,
-  BERTH_OFFER_harborByServicemapId_properties_piers as PiersData,
+  BERTH_OFFER_harbor as HarborData,
+  BERTH_OFFER_harbor_properties_piers as PiersData,
 } from './__generated__/BERTH_OFFER';
 export type { BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats_edges_node as BoatData } from './__generated__/BERTH_OFFER_WITHOUT_APPLICATION_PROFILE';
 /* eslint-enable @typescript-eslint/camelcase */

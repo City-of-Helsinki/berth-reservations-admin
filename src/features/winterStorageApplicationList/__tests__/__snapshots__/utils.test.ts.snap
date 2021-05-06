@@ -13,12 +13,12 @@ Array [
     "choices": Array [
       Object {
         "priority": 1,
-        "winterStorageArea": "Iso-Sarvasto",
+        "winterStorageArea": "MOCK-WINTER-STORAGE-AREA-0",
         "winterStorageAreaName": "Iso-Sarvasto",
       },
       Object {
         "priority": 2,
-        "winterStorageArea": "Rajasaari",
+        "winterStorageArea": "MOCK-WINTER-STORAGE-AREA-1",
         "winterStorageAreaName": "Rajasaari",
       },
     ],
@@ -42,7 +42,7 @@ Array [
     "choices": Array [
       Object {
         "priority": 1,
-        "winterStorageArea": "Iso-Sarvasto",
+        "winterStorageArea": "MOCK-WINTER-STORAGE-AREA-0",
         "winterStorageAreaName": "Iso-Sarvasto",
       },
     ],
@@ -66,7 +66,7 @@ Array [
     "choices": Array [
       Object {
         "priority": 1,
-        "winterStorageArea": "Iso-Sarvasto",
+        "winterStorageArea": "MOCK-WINTER-STORAGE-AREA-0",
         "winterStorageAreaName": "Iso-Sarvasto",
       },
     ],

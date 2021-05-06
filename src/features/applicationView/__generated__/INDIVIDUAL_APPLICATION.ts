@@ -54,6 +54,35 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer {
   language: Language | null;
 }
 
+export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties_harbor_properties | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties {
+  __typename: "PierProperties";
+  harbor: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties_harbor;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier {
+  __typename: "PierNode";
+  id: string;
+  properties: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth {
+  __typename: "BerthNode";
+  id: string;
+  number: string;
+  pier: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier;
+}
+
 export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason {
   __typename: "BerthSwitchReasonType";
   title: string | null;
@@ -61,11 +90,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason {
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch {
   __typename: "BerthSwitchType";
-  berthNumber: string;
-  harbor: string;
-  harborName: string;
-  id: string;
-  pier: string;
+  berth: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth;
   reason: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason | null;
 }
 
@@ -135,11 +160,21 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_switchOffers {
   edges: (INDIVIDUAL_APPLICATION_berthApplication_switchOffers_edges | null)[];
 }
 
+export interface INDIVIDUAL_APPLICATION_berthApplication_harborChoices_harbor_properties {
+  __typename: "HarborProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_APPLICATION_berthApplication_harborChoices_harbor {
+  __typename: "HarborNode";
+  id: string;
+  properties: INDIVIDUAL_APPLICATION_berthApplication_harborChoices_harbor_properties | null;
+}
+
 export interface INDIVIDUAL_APPLICATION_berthApplication_harborChoices {
   __typename: "HarborChoiceType";
-  harbor: string;
+  harbor: INDIVIDUAL_APPLICATION_berthApplication_harborChoices_harbor;
   priority: number;
-  harborName: string;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth_pier_properties_harbor_properties {

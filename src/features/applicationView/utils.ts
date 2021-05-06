@@ -88,8 +88,8 @@ export const getApplicationDetailsData = (
     berthApplication.harborChoices?.map((choice) => {
       return {
         priority: choice?.priority ?? Number.MAX_VALUE,
-        harborName: choice?.harborName ?? '',
-        harbor: choice?.harbor ?? '',
+        harborName: choice?.harbor.properties?.name ?? '',
+        harbor: choice?.harbor.id ?? '',
       };
     }) ?? [];
 
@@ -121,10 +121,10 @@ export const getApplicationDetailsData = (
     : null;
   const berthSwitch: BerthSwitch | null = berthApplication.berthSwitch
     ? {
-        harborId: berthApplication.berthSwitch.harbor,
-        harborName: berthApplication.berthSwitch.harborName,
-        berthNum: berthApplication.berthSwitch.berthNumber,
-        pierIdentifier: berthApplication.berthSwitch.pier,
+        harborId: berthApplication.berthSwitch.berth.pier.properties?.harbor.id ?? '',
+        harborName: berthApplication.berthSwitch.berth.pier.properties?.harbor.properties?.name ?? '',
+        berthNum: berthApplication.berthSwitch.berth.number,
+        pierIdentifier: berthApplication.berthSwitch.berth.pier.id,
         reason: berthApplication.berthSwitch.reason?.title || null,
       }
     : null;

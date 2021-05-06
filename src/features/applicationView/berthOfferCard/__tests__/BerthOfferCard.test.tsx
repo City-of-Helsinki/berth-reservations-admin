@@ -20,6 +20,7 @@ describe('BerthOfferCard', () => {
         customerEmail: 'test@example.com',
         electricity: true,
         gate: true,
+        harborId: '123',
         harborName: 'Testisatama',
         lighting: true,
         pierIdentifier: 'Testilaituri',

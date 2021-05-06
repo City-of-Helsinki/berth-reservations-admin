@@ -16,11 +16,28 @@ export const mockData: BERTH_APPLICATIONS = {
           applicationCode: 'test',
           berthSwitch: {
             __typename: 'BerthSwitchType',
-            berthNumber: '1',
-            harbor: 'MOCK-HARBOR-0',
-            harborName: 'Testisatama',
+            berth: {
+              __typename: 'BerthNode',
+              id: 'MOCK-BERTH-0',
+              number: '1',
+              pier: {
+                __typename: 'PierNode',
+                id: 'MOCK-PIER-0',
+                properties: {
+                  __typename: 'PierProperties',
+                  identifier: 'A',
+                  harbor: {
+                    __typename: 'HarborNode',
+                    id: 'MOCK-HARBOR-0',
+                    properties: {
+                      __typename: 'HarborProperties',
+                      name: 'Testisatama',
+                    },
+                  },
+                },
+              },
+            },
             id: 'MOCK-BERTH-SWITCH-0',
-            pier: 'A',
             reason: { __typename: 'BerthSwitchReasonType', title: 'Reason' },
           },
           boatLength: 6,
@@ -38,7 +55,20 @@ export const mockData: BERTH_APPLICATIONS = {
           },
           email: 'test@example.com',
           firstName: 'Matti',
-          harborChoices: [{ __typename: 'HarborChoiceType', harbor: '1', harborName: '1', priority: 0 }],
+          harborChoices: [
+            {
+              __typename: 'HarborChoiceType',
+              harbor: {
+                __typename: 'HarborNode',
+                id: '1',
+                properties: {
+                  __typename: 'HarborProperties',
+                  name: '1',
+                },
+              },
+              priority: 0,
+            },
+          ],
           id: 'MOCK-APPLICATION-0',
           lastName: 'Meikäläinen',
           lease: {
@@ -83,11 +113,28 @@ export const mockData: BERTH_APPLICATIONS = {
           applicationCode: '',
           berthSwitch: {
             __typename: 'BerthSwitchType',
-            berthNumber: '2',
-            harbor: 'MOCK-HARBOR-0',
-            harborName: 'Testisatama',
+            berth: {
+              __typename: 'BerthNode',
+              id: 'MOCK-BERTH-1',
+              number: '2',
+              pier: {
+                __typename: 'PierNode',
+                id: 'MOCK-PIER-1',
+                properties: {
+                  __typename: 'PierProperties',
+                  identifier: 'B',
+                  harbor: {
+                    __typename: 'HarborNode',
+                    id: 'MOCK-HARBOR-0',
+                    properties: {
+                      __typename: 'HarborProperties',
+                      name: 'Testisatama',
+                    },
+                  },
+                },
+              },
+            },
             id: 'MOCK-BERTH-SWITCH-1',
-            pier: 'A',
             reason: null,
           },
           boatLength: 6,
@@ -168,7 +215,19 @@ export const mockData: BERTH_APPLICATIONS = {
           email: 'test-2@example.com',
           firstName: 'Matti',
           harborChoices: [
-            { __typename: 'HarborChoiceType', harbor: 'MOCK-HARBOR-0', harborName: 'Testisatama', priority: 0 },
+            {
+              __typename: 'HarborChoiceType',
+              harbor: {
+                __typename: 'HarborNode',
+                id: 'MOCK-HARBOR-0',
+
+                properties: {
+                  __typename: 'HarborProperties',
+                  name: 'Testisatama',
+                },
+              },
+              priority: 0,
+            },
           ],
           id: 'MOCK-APPLICATION-2',
           lastName: 'Möttönen',

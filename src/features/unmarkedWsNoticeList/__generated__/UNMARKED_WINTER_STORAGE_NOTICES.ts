@@ -9,11 +9,21 @@ import { ApplicationStatus, WinterStorageApplicationAreaType, LeaseStatus } from
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICES
 // ====================================================
 
+export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices_winterStorageArea_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices_winterStorageArea {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices_winterStorageArea_properties | null;
+}
+
 export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices {
   __typename: "WinterStorageAreaChoiceType";
   priority: number;
-  winterStorageArea: string | null;
-  winterStorageAreaName: string;
+  winterStorageArea: UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node_winterStorageAreaChoices_winterStorageArea;
   winterStorageSectionIds: (string | null)[] | null;
 }
 
