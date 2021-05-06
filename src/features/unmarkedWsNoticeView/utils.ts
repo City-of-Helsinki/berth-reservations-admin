@@ -18,13 +18,13 @@ export const getChoiceFromWinterStorageAreaChoices = (choices: Choices): Unmarke
     Array.isArray(choices) &&
     choices[0] !== null &&
     choices[0] !== undefined &&
-    choices[0].winterStorageAreaName !== null &&
+    choices[0].winterStorageArea.properties?.name !== null &&
     choices[0].winterStorageSectionIds !== null &&
     choices[0].winterStorageSectionIds[0] !== null
   ) {
     return {
       winterStorageArea: choices[0].winterStorageSectionIds[0],
-      winterStorageAreaName: choices[0].winterStorageAreaName,
+      winterStorageAreaName: choices[0].winterStorageArea.properties?.name ?? '',
     };
   }
   return {

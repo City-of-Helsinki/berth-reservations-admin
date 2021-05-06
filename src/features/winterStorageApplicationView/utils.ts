@@ -13,8 +13,8 @@ export const getWinterStorageApplicationDetailsData = (
     winterStorageApplication.winterStorageAreaChoices?.map((choice) => {
       return {
         priority: choice?.priority ?? Number.MAX_VALUE,
-        winterStorageAreaName: choice?.winterStorageAreaName ?? '',
-        winterStorageArea: choice?.winterStorageArea ?? '',
+        winterStorageAreaName: choice?.winterStorageArea.properties?.name ?? '',
+        winterStorageArea: choice?.winterStorageArea.id ?? '',
       };
     }) ?? [];
 
