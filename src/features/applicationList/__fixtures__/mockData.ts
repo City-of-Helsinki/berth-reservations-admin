@@ -25,6 +25,7 @@ export const mockData: BERTH_APPLICATIONS = {
                 id: 'MOCK-PIER-0',
                 properties: {
                   __typename: 'PierProperties',
+                  identifier: 'A',
                   harbor: {
                     __typename: 'HarborNode',
                     id: 'MOCK-HARBOR-0',
@@ -118,9 +119,10 @@ export const mockData: BERTH_APPLICATIONS = {
               number: '2',
               pier: {
                 __typename: 'PierNode',
-                id: 'A',
+                id: 'MOCK-PIER-1',
                 properties: {
                   __typename: 'PierProperties',
+                  identifier: 'B',
                   harbor: {
                     __typename: 'HarborNode',
                     id: 'MOCK-HARBOR-0',

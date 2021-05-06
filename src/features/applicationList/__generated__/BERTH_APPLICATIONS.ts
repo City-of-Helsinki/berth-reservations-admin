@@ -27,6 +27,7 @@ export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_ber
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties {
   __typename: "PierProperties";
+  identifier: string;
   harbor: BERTH_APPLICATIONS_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor;
 }
 

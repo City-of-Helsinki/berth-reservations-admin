@@ -36,6 +36,7 @@ export const BERTH_APPLICATIONS_QUERY = gql`
               pier {
                 id
                 properties {
+                  identifier
                   harbor {
                     id
                     properties {

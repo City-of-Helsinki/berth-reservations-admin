@@ -427,6 +427,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthS
 
 export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties {
   __typename: "PierProperties";
+  identifier: string;
   harbor: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_berthSwitch_berth_pier_properties_harbor;
 }
 

@@ -206,6 +206,7 @@ export const INDIVIDUAL_CUSTOMER_QUERY = gql`
                 pier {
                   id
                   properties {
+                    identifier
                     harbor {
                       id
                       properties {
