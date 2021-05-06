@@ -16,6 +16,7 @@ export interface LeaseDetails {
   customerEmail: string | null;
   electricity: boolean;
   gate: boolean;
+  harborId: string;
   harborName: string;
   lighting: boolean;
   pierIdentifier: string;
