@@ -18,6 +18,7 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_primaryAddress {
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_organization {
   __typename: "OrganizationNode";
+  id: string;
   businessId: string;
 }
 
@@ -40,17 +41,20 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_b
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth_pier {
   __typename: "PierNode";
+  id: string;
   properties: FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth_pier_properties | null;
 }
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth {
   __typename: "BerthNode";
+  id: string;
   number: string;
   pier: FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth_pier;
 }
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node {
   __typename: "BerthLeaseNode";
+  id: string;
   berth: FILTERED_CUSTOMERS_profiles_edges_node_berthLeases_edges_node_berth;
 }
 
@@ -71,6 +75,7 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edge
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area {
   __typename: "WinterStorageAreaNode";
+  id: string;
   properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties_area_properties | null;
 }
 
@@ -81,11 +86,13 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edge
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection_properties | null;
 }
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place {
   __typename: "WinterStoragePlaceNode";
+  id: string;
   winterStorageSection: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_place_winterStorageSection;
 }
 
@@ -96,6 +103,7 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edge
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area {
   __typename: "WinterStorageAreaNode";
+  id: string;
   properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties_area_properties | null;
 }
 
@@ -106,6 +114,7 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edge
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: FILTERED_CUSTOMERS_profiles_edges_node_winterStorageLeases_edges_node_section_properties | null;
 }
 
