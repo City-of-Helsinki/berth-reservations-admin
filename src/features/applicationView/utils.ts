@@ -124,7 +124,7 @@ export const getApplicationDetailsData = (
         harborId: berthApplication.berthSwitch.berth.pier.properties?.harbor.id ?? '',
         harborName: berthApplication.berthSwitch.berth.pier.properties?.harbor.properties?.name ?? '',
         berthNum: berthApplication.berthSwitch.berth.number,
-        pierIdentifier: berthApplication.berthSwitch.berth.pier.id,
+        pierIdentifier: berthApplication.berthSwitch.berth.pier.properties?.identifier ?? '',
         reason: berthApplication.berthSwitch.reason?.title || null,
       }
     : null;

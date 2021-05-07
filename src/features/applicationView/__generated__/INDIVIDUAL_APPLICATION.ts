@@ -67,6 +67,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties {
   __typename: "PierProperties";
+  identifier: string;
   harbor: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth_pier_properties_harbor;
 }
 
