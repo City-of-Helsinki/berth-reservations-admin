@@ -54,6 +54,7 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
           pier {
             id
             properties {
+              identifier
               harbor {
                 id
                 properties {

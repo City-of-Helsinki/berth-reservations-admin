@@ -50,9 +50,10 @@ export const mockBerthSwitch: BERTH_SWITCH = {
     number: '1',
     pier: {
       __typename: 'PierNode',
-      id: 'A',
+      id: 'MOCK-PIER-0',
       properties: {
         __typename: 'PierProperties',
+        identifier: 'A',
         harbor: {
           __typename: 'HarborNode',
           id: 'MOCK-HARBOR',
