@@ -12,13 +12,6 @@ export const mockData: WINTER_STORAGE_AREAS = {
           properties: {
             __typename: 'WinterStorageAreaProperties',
             imageFile: null,
-            maps: [
-              {
-                __typename: 'WinterStorageAreaMapType',
-                id: 'testmap',
-                url: 'testmap',
-              },
-            ],
             maxWidth: null,
             municipality: null,
             name: null,
@@ -60,13 +53,6 @@ export const mockData: WINTER_STORAGE_AREAS = {
           properties: {
             __typename: 'WinterStorageAreaProperties',
             imageFile: null,
-            maps: [
-              {
-                __typename: 'WinterStorageAreaMapType',
-                id: 'testmap',
-                url: 'testmap',
-              },
-            ],
             maxWidth: 5,
             municipality: 'Helsinki',
             name: 'Pursilahdenranta',

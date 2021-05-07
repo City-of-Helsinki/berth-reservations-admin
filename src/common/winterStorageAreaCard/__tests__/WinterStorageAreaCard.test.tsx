@@ -10,7 +10,6 @@ describe('WinterStorageAreaCard', () => {
         electricity={false}
         gate={false}
         imageFile={null}
-        maps={[]}
         municipality={null}
         name={'name'}
         numberOfCustomers={0}
@@ -33,12 +32,6 @@ describe('WinterStorageAreaCard', () => {
         electricity={true}
         gate={true}
         imageFile={'https://www.hel.fi'}
-        maps={[
-          {
-            id: 'test',
-            url: 'https://www.hel.fi',
-          },
-        ]}
         municipality={'municipality'}
         name={'name'}
         numberOfCustomers={0}

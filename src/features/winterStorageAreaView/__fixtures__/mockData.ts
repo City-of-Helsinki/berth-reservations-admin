@@ -10,7 +10,6 @@ export const mockData: INDIVIDUAL_WINTER_STORAGE_AREA = {
       streetAddress: '',
       wwwUrl: '',
       imageFile: null,
-      maps: [],
       sections: {
         edges: [
           {

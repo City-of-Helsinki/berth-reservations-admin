@@ -16,10 +16,6 @@ export const HARBORS_QUERY = gql`
             municipality
             wwwUrl
             imageFile
-            maps {
-              id
-              url
-            }
             servicemapId
             maxWidth
             piers {

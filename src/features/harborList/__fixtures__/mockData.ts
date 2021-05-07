@@ -18,7 +18,6 @@ export const mockData: HARBORS = {
             wwwUrl: 'https://www.hel.fi/',
             imageFile:
               'https://venepaikka-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg',
-            maps: [],
             maxWidth: 4,
             servicemapId: '41359',
             numberOfPlaces: 4,
@@ -61,7 +60,6 @@ export const mockData: HARBORS = {
             wwwUrl: 'https://www.hel.fi/',
             imageFile:
               'https://venepaikka-api.test.hel.ninja/media/harbors/97c033ad-5470-4225-a49b-03958ce910e1/42225.jpg',
-            maps: [],
             maxWidth: 4,
             servicemapId: '42225',
             numberOfPlaces: 4,

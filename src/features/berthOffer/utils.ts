@@ -110,25 +110,9 @@ export const getHarbor = (data: BERTH_OFFER['harbor'] | undefined): HarborCardPr
     }
   );
 
-  type Map = {
-    id: string;
-    url: string;
-  };
-
-  const maps = data.properties.maps.reduce<Map[]>((acc, map) => {
-    if (map !== null) {
-      return acc.concat({
-        id: map.id,
-        url: map.url,
-      });
-    }
-    return acc;
-  }, []);
-
   const { properties } = data;
   return {
     imageUrl: properties.imageFile,
-    maps,
     name: properties.name || '',
     streetAddress: properties.streetAddress,
     municipality: properties.municipality,

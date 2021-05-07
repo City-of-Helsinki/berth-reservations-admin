@@ -52,6 +52,4 @@ export interface Harbor {
   wwwUrl?: string;
   existingImageFile?: PersistedFile;
   addedImageFile?: File;
-  existingMaps?: PersistedFile[];
-  addedMaps?: File[];
 }

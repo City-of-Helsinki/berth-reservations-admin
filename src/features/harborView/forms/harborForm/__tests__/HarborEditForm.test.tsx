@@ -24,13 +24,6 @@ const queryMock = {
           municipality: 'Helsinki',
           wwwUrl: 'https://hel.fi',
           imageFile: 'https://hel.fi',
-          maps: [
-            {
-              __typename: 'HarborMapType',
-              id: 'aaa',
-              url: 'https://hel.ninja',
-            },
-          ],
         },
       },
     },

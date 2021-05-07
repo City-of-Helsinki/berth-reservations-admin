@@ -30,44 +30,6 @@ exports[`WinterStorageAreaDetails renders normally 1`] = `
         Pursilahdenranta 1, 00990 Helsinki
       </section>
     </article>
-    <article
-      class="section"
-    >
-      <section
-        class="body"
-      >
-        <div>
-          <a
-            class="link withArrow"
-            href="testmap"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Satamakartta (PDF)
-            <svg
-              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv arrow"
-              color="brand"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                fill="none"
-                fill-rule="evenodd"
-              >
-                <polygon
-                  points="0 24 0 0 24 0 24 24"
-                />
-                <polygon
-                  fill="currentColor"
-                  points="13.5 12 8.5 7 10 5.5 16.5 12 10 18.5 8.5 17"
-                />
-              </g>
-            </svg>
-          </a>
-        </div>
-      </section>
-    </article>
   </div>
   <div
     class="column"

@@ -7,7 +7,7 @@ import {
   INDIVIDUAL_HARBOR,
   INDIVIDUAL_HARBORVariables as INDIVIDUAL_HARBOR_VARS,
 } from './__generated__/INDIVIDUAL_HARBOR';
-import { getIndividualHarborData, getBerths, getPiers, getMaps } from './utils';
+import { getIndividualHarborData, getBerths, getPiers } from './utils';
 import HarborView from './HarborView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import Modal from '../../common/modal/Modal';
@@ -37,14 +37,12 @@ const HarborViewContainer = () => {
 
   const piers = getPiers(data);
   const berths = getBerths(data);
-  const maps = getMaps(data);
 
   return (
     <>
       <HarborView
         berths={berths}
         harbor={harbor}
-        maps={maps}
         piers={piers}
         setBerthToEdit={setBerthToEdit}
         setCreatingBerth={setCreatingBerth}

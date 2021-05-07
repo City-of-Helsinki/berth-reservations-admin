@@ -8,7 +8,6 @@ import { WinterStorageAreaData } from '../types';
 const mockArea: WinterStorageAreaData = getWinterStorageAreasData(mockData)[1];
 const mockProps: WinterStorageAreaDetailsProps = {
   imageFile: mockArea.imageFile,
-  maps: mockArea.maps,
   maxWidth: mockArea.maxWidth,
   municipality: mockArea.municipality,
   streetAddress: mockArea.streetAddress,

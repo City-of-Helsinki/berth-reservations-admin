@@ -9,12 +9,6 @@ import { LeaseStatus, BerthMooringType } from "./../../../@types/__generated__/g
 // GraphQL query operation: BERTH_OFFER_WITHOUT_APPLICATION_HARBOR
 // ====================================================
 
-export interface BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_maps {
-  __typename: "HarborMapType";
-  id: any;
-  url: string;
-}
-
 export interface BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
   id: string;
@@ -95,7 +89,6 @@ export interface BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties {
   name: string | null;
   servicemapId: string | null;
   imageFile: string | null;
-  maps: (BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_maps | null)[];
   streetAddress: string | null;
   municipality: string | null;
   zipCode: string;

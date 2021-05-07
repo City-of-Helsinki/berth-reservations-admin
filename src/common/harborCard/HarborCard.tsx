@@ -13,7 +13,6 @@ import Property from '../property/Property';
 import styles from './harborCard.module.scss';
 import Section from '../section/Section';
 import placeholderImage from '../placeholderImage.svg';
-import MapLinks from '../mapLinks/MapLinks';
 import { IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../icons';
 import { formatAddress } from '../utils/format';
 import { queueFeatureFlag } from '../utils/featureFlags';
@@ -22,10 +21,6 @@ export interface HarborCardProps {
   className?: string;
   harbor: {
     imageUrl: string | null;
-    maps: {
-      id: string;
-      url: string;
-    }[];
     name: string;
     streetAddress: string | null;
     zipCode: string;
@@ -49,7 +44,7 @@ export interface HarborCardProps {
 const HarborCard = ({ className, harbor, editHarbor }: HarborCardProps) => {
   const { t } = useTranslation();
 
-  const { name, streetAddress, zipCode, municipality, imageUrl, maps, servicemapId, properties } = harbor;
+  const { name, streetAddress, zipCode, municipality, imageUrl, servicemapId, properties } = harbor;
   const serviceMapUrl = `${process.env.REACT_APP_SERVICE_MAP_URL}${servicemapId}`;
 
   return (
@@ -83,7 +78,6 @@ const HarborCard = ({ className, harbor, editHarbor }: HarborCardProps) => {
                   {t('common.terminology.serviceMap')}
                 </ExternalLink>
               </Section>
-              <MapLinks maps={maps} />
             </div>
           </div>
           <Grid colsCount={5} className={styles.propsGrid}>

@@ -7,10 +7,6 @@ export const BERTH_OFFER_HARBOR_FRAGMENT = gql`
       name
       servicemapId
       imageFile
-      maps {
-        id
-        url
-      }
       streetAddress
       municipality
       zipCode

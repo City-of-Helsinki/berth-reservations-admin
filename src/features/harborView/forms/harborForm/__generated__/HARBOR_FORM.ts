@@ -7,12 +7,6 @@
 // GraphQL query operation: HARBOR_FORM
 // ====================================================
 
-export interface HARBOR_FORM_harbor_properties_maps {
-  __typename: "HarborMapType";
-  id: any;
-  url: string;
-}
-
 export interface HARBOR_FORM_harbor_properties {
   __typename: "HarborProperties";
   name: string | null;
@@ -21,7 +15,6 @@ export interface HARBOR_FORM_harbor_properties {
   municipality: string | null;
   wwwUrl: string;
   imageFile: string | null;
-  maps: (HARBOR_FORM_harbor_properties_maps | null)[];
 }
 
 export interface HARBOR_FORM_harbor {

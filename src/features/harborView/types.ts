@@ -62,8 +62,3 @@ export type Pier = {
   priceTier: PriceTier | null;
   suitableBoatTypes: string[];
 };
-
-export type Map = {
-  id: string;
-  url: string;
-};

@@ -1,8 +1,3 @@
-export type Map = {
-  id: string;
-  url: string;
-};
-
 export interface HarborData {
   id: string;
   electricity: number;
@@ -18,7 +13,6 @@ export interface HarborData {
   zipCode: string | null;
   municipality: string | null;
   wwwUrl: string | null;
-  maps: Map[];
   imageFile: string | null;
   servicemapId: string | null;
   maxWidth: number | null;

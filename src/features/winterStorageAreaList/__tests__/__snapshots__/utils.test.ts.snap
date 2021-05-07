@@ -6,12 +6,6 @@ Object {
   "gate": 0,
   "id": "0",
   "imageFile": null,
-  "maps": Array [
-    Object {
-      "id": "testmap",
-      "url": "testmap",
-    },
-  ],
   "maxWidth": null,
   "municipality": null,
   "name": "-",
@@ -33,12 +27,6 @@ Object {
   "gate": 1,
   "id": "1",
   "imageFile": null,
-  "maps": Array [
-    Object {
-      "id": "testmap",
-      "url": "testmap",
-    },
-  ],
   "maxWidth": 5,
   "municipality": "Helsinki",
   "name": "Pursilahdenranta",

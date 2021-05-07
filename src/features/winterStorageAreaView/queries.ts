@@ -10,10 +10,6 @@ export const INDIVIDUAL_WINTER_STORAGE_AREA_QUERY = gql`
         streetAddress
         wwwUrl
         imageFile
-        maps {
-          id
-          url
-        }
         sections {
           edges {
             node {

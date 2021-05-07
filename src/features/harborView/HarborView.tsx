@@ -8,12 +8,11 @@ import HarborCard from '../../common/harborCard/HarborCard';
 import ContactInformationCard from '../../common/contactInformationCard/ContactInformationCard';
 import ActionHistoryCard from '../../common/actionHistoryCard/ActionHistoryCard';
 import HarborViewTable from './HarborViewTable';
-import { Berth, IndividualHarborData, Map, Pier } from './types';
+import { Berth, IndividualHarborData, Pier } from './types';
 
 export type HarborViewProps = {
   berths: Berth[];
   harbor: IndividualHarborData;
-  maps: Map[];
   piers: Pier[];
   setBerthToEdit: (berthToEdit: string | null) => void;
   setCreatingBerth: (creatingBerth: boolean) => void;
@@ -25,7 +24,6 @@ export type HarborViewProps = {
 const HarborView = ({
   berths,
   harbor,
-  maps,
   piers,
   setBerthToEdit,
   setCreatingBerth,
@@ -44,7 +42,6 @@ const HarborView = ({
           harbor={{
             name: harbor.name || '',
             imageUrl: harbor.imageFile,
-            maps: maps,
             servicemapId: harbor.servicemapId || '',
             streetAddress: harbor.streetAddress,
             zipCode: harbor.zipCode,

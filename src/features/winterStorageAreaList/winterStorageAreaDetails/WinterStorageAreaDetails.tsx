@@ -5,7 +5,6 @@ import { WinterStorageAreaData } from '../types';
 import Grid from '../../../common/grid/Grid';
 import styles from '../../harborList/harborDetails/harborDetails.module.scss';
 import Section from '../../../common/section/Section';
-import MapLinks from '../../../common/mapLinks/MapLinks';
 import Text from '../../../common/text/Text';
 import { formatAddress, formatDimension } from '../../../common/utils/format';
 import placeholderImage from '../../../common/placeholderImage.svg';
@@ -13,11 +12,10 @@ import ContactInformationDetails from '../../../common/contactInformationCard/Co
 
 export type WinterStorageAreaDetailsProps = Pick<
   WinterStorageAreaData,
-  'imageFile' | 'maps' | 'maxWidth' | 'municipality' | 'streetAddress' | 'zipCode'
+  'imageFile' | 'maxWidth' | 'municipality' | 'streetAddress' | 'zipCode'
 >;
 
 const WinterStorageAreaDetails = ({
-  maps,
   maxWidth,
   municipality,
   streetAddress,
@@ -36,7 +34,6 @@ const WinterStorageAreaDetails = ({
         <Section className={styles.address} title={t('common.address').toUpperCase()}>
           {formatAddress(streetAddress, zipCode, municipality)}
         </Section>
-        <MapLinks maps={maps} />
       </div>
       <div className={styles.column}>
         <Section title={t('common.terminology.maxWidth').toUpperCase()}>
