@@ -35,7 +35,7 @@ test('Pagination', async (t) => {
   // Stay on the same page after reloading the browser
   await t.click(navigation.customers).click(customers.customerList.paginationNextButton);
   await t.eval(() => window.location.reload());
-  await t.expect(customers.customerList.selectedPage.textContent).contains('2');
+  await t.expect(customers.customerList.selectedPage.value).eql('1'); // Pages indexed from 0
 });
 
 test('Editing customers', async (t) => {
