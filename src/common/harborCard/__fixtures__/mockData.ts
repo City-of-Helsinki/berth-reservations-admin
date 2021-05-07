@@ -6,12 +6,6 @@ export const mockProps: HarborCardProps = {
     municipality: 'Helsinki',
     zipCode: '00210',
     imageUrl: 'https://venepaikka-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg',
-    maps: [
-      {
-        id: 'testmap',
-        url: 'testmap',
-      },
-    ],
     name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
     properties: {
       electricity: true,

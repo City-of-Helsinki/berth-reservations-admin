@@ -1,5 +1,5 @@
 import { INDIVIDUAL_HARBOR } from './__generated__/INDIVIDUAL_HARBOR';
-import { Berth, IndividualHarborData, Lease, Map, Pier } from './types';
+import { Berth, IndividualHarborData, Lease, Pier } from './types';
 import { PriceTier } from '../../@types/__generated__/globalTypes';
 
 export const getIndividualHarborData = (data: INDIVIDUAL_HARBOR | undefined): IndividualHarborData | null => {
@@ -104,20 +104,6 @@ export const getPiers = (data: INDIVIDUAL_HARBOR | undefined): Pier[] => {
         suitableBoatTypes,
       },
     ];
-  }, []);
-};
-
-export const getMaps = (data: INDIVIDUAL_HARBOR | undefined): Map[] => {
-  if (!data?.harbor?.properties?.maps) return [];
-
-  return data.harbor.properties.maps.reduce<Map[]>((acc, map) => {
-    if (map !== null) {
-      return acc.concat({
-        id: map.id,
-        url: map.url,
-      });
-    }
-    return acc;
   }, []);
 };
 

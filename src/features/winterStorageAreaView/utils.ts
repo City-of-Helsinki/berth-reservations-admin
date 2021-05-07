@@ -10,7 +10,6 @@ import {
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_AREA';
 import {
   WinterStorageArea,
-  Map,
   WinterStoragePlace,
   WinterStorageSection,
   Lease,
@@ -49,16 +48,6 @@ export const getIndividualWinterStorageArea = (
   }
   const { name, zipCode, municipality, streetAddress, wwwUrl, imageFile, sections } = data.winterStorageArea.properties;
 
-  const maps = data.winterStorageArea.properties.maps.reduce<Map[]>((acc, map) => {
-    if (map !== null) {
-      return acc.concat({
-        id: map.id,
-        url: map.url,
-      });
-    }
-    return acc;
-  }, []);
-
   const hasService = (service: keyof SECTION_PROPERTIES): boolean => {
     return (
       data.winterStorageArea?.properties?.sections.edges.some((edge) => edge?.node?.properties?.[service]) ?? false
@@ -72,7 +61,6 @@ export const getIndividualWinterStorageArea = (
     streetAddress,
     wwwUrl,
     imageFile,
-    maps,
     electricity: hasService('electricity'),
     water: hasService('water'),
     gate: hasService('gate'),

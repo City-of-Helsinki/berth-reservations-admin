@@ -1,5 +1,5 @@
 import { HARBORS } from './__generated__/HARBORS';
-import { HarborData, Map } from './types';
+import { HarborData } from './types';
 
 export const getHarborsData = (data: HARBORS | undefined) => {
   if (data?.harbors?.edges) {
@@ -33,22 +33,11 @@ export const getHarborsData = (data: HARBORS | undefined) => {
           }
         );
 
-        const maps: Map[] = harbor.node.properties.maps.reduce<Map[]>((acc, map) => {
-          if (map !== null) {
-            return acc.concat({
-              id: map.id,
-              url: map.url,
-            });
-          }
-          return acc;
-        }, []);
-
         return [
           ...acc,
           {
             id: harbor.node.id,
             imageFile: harbor.node.properties.imageFile,
-            maps,
             maxWidth: harbor.node.properties.maxWidth,
             municipality: harbor.node.properties.municipality,
             name: harbor.node.properties.name || '-',

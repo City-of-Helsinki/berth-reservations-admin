@@ -8,7 +8,6 @@ import Text from '../text/Text';
 import CardBody from '../cardBody/CardBody';
 import placeholder from '../placeholderImage.svg';
 import Section from '../section/Section';
-import MapLinks from '../mapLinks/MapLinks';
 import Grid from '../grid/Grid';
 import Property from '../property/Property';
 import { IconDollyEmpty, IconFence, IconPlug, IconTrestle, IconWaterTap, IconBoat } from '../icons';
@@ -36,7 +35,6 @@ const WinterStorageAreaCard = ({
   summerStorageForBoats,
   summerStorageForDockingEquipment,
   summerStorageForTrailers,
-  maps,
 }: WinterStorageAreaCardProps) => {
   const { t } = useTranslation();
 
@@ -60,7 +58,6 @@ const WinterStorageAreaCard = ({
                 </Text>
                 <Text>{formatAddress(streetAddress, zipCode, municipality)}</Text>
               </Section>
-              <MapLinks maps={maps} />
             </div>
           </div>
           <Grid colsCount={6} className={styles.propsGrid}>

@@ -126,7 +126,6 @@
       "gate": "Portti",
       "harbor": "Satama",
       "harborChief": "Satamapäällikkö",
-      "harborMap": "Satamakartta",
       "id": "Tunniste",
       "inQueue": "Jonossa",
       "invoice": "Lasku",
@@ -260,8 +259,7 @@
       "zipCode": "Postinumero",
       "municipality": "Postitoimipaikka",
       "wwwUrl": "WWW-osoite",
-      "imageFile": "Sataman kuva",
-      "maps": "Satamakartat"
+      "imageFile": "Sataman kuva"
     },
     "pier": {
       "delete": "Poista laituri",

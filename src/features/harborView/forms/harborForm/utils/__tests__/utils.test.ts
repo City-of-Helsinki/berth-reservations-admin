@@ -25,7 +25,6 @@ describe('HarborForm utils', () => {
             properties: {
               __typename: 'HarborProperties',
               imageFile: null,
-              maps: [null],
               municipality: null,
               name: null,
               streetAddress: null,
@@ -37,8 +36,6 @@ describe('HarborForm utils', () => {
       ).toEqual({
         existingImageFile: undefined,
         addedImageFile: undefined,
-        addedMaps: [],
-        existingMaps: [],
         municipality: '',
         name: '',
         streetAddress: '',
@@ -47,7 +44,7 @@ describe('HarborForm utils', () => {
       });
     });
 
-    it('should map filled "imageFile" and "maps" fields correctly', () => {
+    it('should map filled "imageFile" fields correctly', () => {
       expect(
         getHarbor({
           harbor: {
@@ -56,13 +53,6 @@ describe('HarborForm utils', () => {
             properties: {
               __typename: 'HarborProperties',
               imageFile: 'https://hel.fi',
-              maps: [
-                {
-                  __typename: 'HarborMapType',
-                  id: 'testMap',
-                  url: 'testMap.pdf',
-                },
-              ],
               municipality: 'Helsinki',
               name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
               streetAddress: 'Meripuistotie 1a',
@@ -78,14 +68,6 @@ describe('HarborForm utils', () => {
           name: 'https://hel.fi',
         },
         addedImageFile: undefined,
-        existingMaps: [
-          {
-            id: 'testMap',
-            markedForDeletion: false,
-            name: 'testMap.pdf',
-          },
-        ],
-        addedMaps: [],
         municipality: 'Helsinki',
         name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
         streetAddress: 'Meripuistotie 1a',
@@ -96,13 +78,11 @@ describe('HarborForm utils', () => {
   });
 
   describe('mapValuesToMutation', () => {
-    it('should map empty "imageFile" and "maps" fields correctly', () => {
+    it('should map empty "imageFile" fields correctly', () => {
       expect(
         mapValuesToMutation('test', {
           existingImageFile: { id: 'test', name: 'test' },
           addedImageFile: undefined,
-          existingMaps: [],
-          addedMaps: [],
           municipality: 'Helsinki',
           name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
           streetAddress: 'Meripuistotie 1a',
@@ -119,27 +99,13 @@ describe('HarborForm utils', () => {
       });
     });
 
-    it('should map filled "imageFile" and "maps" fields correctly', () => {
+    it('should map filled "imageFile" fields correctly', () => {
       const testImage = new File([], 'testImage.jpg');
-      const testMap = new File([], 'testMap.pdf');
 
       expect(
         mapValuesToMutation('test', {
           existingImageFile: undefined,
           addedImageFile: testImage,
-          existingMaps: [
-            {
-              name: 'untouchedMap.pdf',
-              id: 'untouchedMap',
-              markedForDeletion: false,
-            },
-            {
-              name: 'deletedMap.pdf',
-              id: 'deletedMap',
-              markedForDeletion: true,
-            },
-          ],
-          addedMaps: [testMap],
           municipality: 'Helsinki',
           name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
           streetAddress: 'Meripuistotie 1a',
@@ -147,12 +113,10 @@ describe('HarborForm utils', () => {
           zipCode: '00210',
         })
       ).toEqual({
-        addMapFiles: [testMap],
         id: 'test',
         imageFile: testImage,
         municipalityId: 'helsinki',
         name: 'Pajalahden venesatama (Meripuistotie) / Venesatama',
-        removeMapFiles: ['deletedMap'],
         streetAddress: 'Meripuistotie 1a',
         wwwUrl: 'https://hel.fi',
         zipCode: '00210',

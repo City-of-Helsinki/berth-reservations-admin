@@ -11,10 +11,6 @@ export const HARBOR_FORM_QUERY = gql`
         municipality
         wwwUrl
         imageFile
-        maps {
-          id
-          url
-        }
       }
     }
   }

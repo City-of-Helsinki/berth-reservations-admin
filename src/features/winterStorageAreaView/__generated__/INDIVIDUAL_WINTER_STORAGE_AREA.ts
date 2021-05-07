@@ -9,12 +9,6 @@ import { LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 // GraphQL query operation: INDIVIDUAL_WINTER_STORAGE_AREA
 // ====================================================
 
-export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_maps {
-  __typename: "WinterStorageAreaMapType";
-  id: any;
-  url: string;
-}
-
 export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_leases_edges_node_application_customer {
   __typename: "ProfileNode";
   id: string;
@@ -140,7 +134,6 @@ export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties {
   streetAddress: string | null;
   wwwUrl: string;
   imageFile: string | null;
-  maps: (INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_maps | null)[];
   sections: INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections;
 }
 

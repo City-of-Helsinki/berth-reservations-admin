@@ -1,8 +1,3 @@
-export type Map = {
-  id: string;
-  url: string;
-};
-
 export type WinterStorageArea = {
   electricity: boolean;
   water: boolean;
@@ -16,7 +11,6 @@ export type WinterStorageArea = {
   streetAddress: string | null;
   wwwUrl: string;
   imageFile: string | null;
-  maps: Map[];
   numberOfCustomers: number;
 };
 

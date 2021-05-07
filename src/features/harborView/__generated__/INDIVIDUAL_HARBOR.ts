@@ -9,12 +9,6 @@ import { PriceTier, BerthMooringType, LeaseStatus } from "./../../../@types/__ge
 // GraphQL query operation: INDIVIDUAL_HARBOR
 // ====================================================
 
-export interface INDIVIDUAL_HARBOR_harbor_properties_maps {
-  __typename: "HarborMapType";
-  id: any;
-  url: string;
-}
-
 export interface INDIVIDUAL_HARBOR_harbor_properties {
   __typename: "HarborProperties";
   name: string | null;
@@ -25,7 +19,6 @@ export interface INDIVIDUAL_HARBOR_harbor_properties {
   municipality: string | null;
   wwwUrl: string;
   imageFile: string | null;
-  maps: (INDIVIDUAL_HARBOR_harbor_properties_maps | null)[];
   servicemapId: string | null;
   maxWidth: number | null;
 }

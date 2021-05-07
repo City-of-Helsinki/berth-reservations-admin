@@ -8,10 +8,6 @@ export const WINTER_STORAGE_AREAS_QUERY = gql`
           id
           properties {
             imageFile
-            maps {
-              id
-              url
-            }
             maxWidth
             municipality
             name

@@ -45,16 +45,6 @@ export const Harbor1 = () => (
           Toimipisteen nettisivut
         </Text>
       </Section>
-      <Section>
-        <Text color="brand" size="s">
-          Satamakartta (PDF)
-        </Text>
-      </Section>
-      <Section>
-        <Text color="brand" size="s">
-          Google maps
-        </Text>
-      </Section>
     </CardBody>
   </Card>
 );

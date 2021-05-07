@@ -8,18 +8,16 @@ import Section from '../../../common/section/Section';
 import Text from '../../../common/text/Text';
 import { formatAddress, formatDimension } from '../../../common/utils/format';
 import { HarborData } from '../types';
-import MapLinks from '../../../common/mapLinks/MapLinks';
 import placeholderImage from '../../../common/placeholderImage.svg';
 import ContactInformationDetails from '../../../common/contactInformationCard/ContactInformationDetails';
 import { harborMooringFeatureFlag } from '../../../common/utils/featureFlags';
 
 export type HarborDetailsProps = Pick<
   HarborData,
-  'imageFile' | 'maps' | 'maxWidth' | 'municipality' | 'servicemapId' | 'streetAddress' | 'zipCode'
+  'imageFile' | 'maxWidth' | 'municipality' | 'servicemapId' | 'streetAddress' | 'zipCode'
 >;
 
 const HarborDetails = ({
-  maps,
   imageFile,
   streetAddress,
   zipCode,
@@ -45,7 +43,6 @@ const HarborDetails = ({
             {t('common.terminology.serviceMap')}
           </ExternalLink>
         </Section>
-        <MapLinks maps={maps} />
       </div>
       <div className={styles.column}>
         <Section title={t('common.terminology.maxWidth').toUpperCase()}>
