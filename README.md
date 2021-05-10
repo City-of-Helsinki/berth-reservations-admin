@@ -11,7 +11,6 @@ Staff interface for Venepaikka.
 
 Environments:
 
-- [Storybook](https://city-of-helsinki.github.io/berth-reservations-admin/?path=/story/*)
 - [Staging](https://venepaikka-admin.test.kuva.hel.ninja)
 - [GraphQL API URL](https://venepaikka-federation.test.kuva.hel.ninja/)
 - [GraphQL API overview](https://venepaikka-federation.test.kuva.hel.ninja/voyager)
@@ -44,16 +43,6 @@ cp .env.example .env.development.local
 ```
 
 ## Development environment setup
-
-### Storybook development
-
-To start the Storybook development server, run the following:
-
-```bash
-yarn storybook
-```
-
-Open [http://localhost:6006](http://localhost:6006) and take a look around.
 
 ### React development environment
 
@@ -141,16 +130,6 @@ yarn test
   - Encounter `node-sass` issue ? Try going inside the Docker container environment and running `npm rebuild node-sass`
 
 ## Deployment
-
-### Storybook deployment
-
-Storybook is used for development and there's no CI/CD pipeline set up. To deploy a new version of Storybook, run the following:
-
-```bash
-yarn deploy-storybook
-```
-
-To verify deployment, open [https://city-of-helsinki.github.io/berth-reservations-admin/](https://city-of-helsinki.github.io/berth-reservations-admin/) and check that everything is looking ok.
 
 ### Staging deployment
 
