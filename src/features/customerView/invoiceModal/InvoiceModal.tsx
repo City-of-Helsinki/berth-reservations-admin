@@ -19,7 +19,7 @@ import { ORDER_STATUS } from '../../../common/utils/constants';
 import BerthContractDetails from '../../contractDetails/BerthContractDetailsContainer';
 import WinterStorageContractDetails from '../../contractDetails/WinterStorageContractDetailsContainer';
 
-interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
+export interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
   invoice: Invoice | null;
   actions: InvoiceActionsInterface['actions'];
   selectedAction: InvoiceActionsInterface['selectedAction'];

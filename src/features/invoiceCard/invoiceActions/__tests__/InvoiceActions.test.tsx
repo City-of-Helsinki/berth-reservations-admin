@@ -8,11 +8,13 @@ describe('InvoiceActions', () => {
     {
       value: 0,
       label: 'First action',
+      disabled: false,
       onClick: jest.fn(),
     },
     {
       value: 1,
       label: 'Second action',
+      disabled: false,
       onClick: jest.fn(),
     },
   ];

@@ -5,15 +5,75 @@ exports[`InvoiceModal renders correctly 1`] = `
   class="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
 >
   <div
-    class="ReactModal__Content ReactModal__Content--after-open modal"
+    class="ReactModal__Content ReactModal__Content--after-open modal invoiceModal"
     role="dialog"
     tabindex="-1"
   >
-    <h4
-      class="text brand h4 heading"
+    <span
+      class="StatusLabel-module_statusLabel__3R2J2 status-label_hds-status-label__1L8YI StatusLabel-module_alert__2VR8r status-label_hds-status-label--alert__1ecsX warning statusLabel"
     >
-      LASKU
-    </h4>
+      Tarjottu
+    </span>
+    <div
+      class="heading"
+    >
+      <h4
+        class="text brand h4"
+      >
+        LASKU
+      </h4>
+      <div
+        class="Select-module_root__Ka5uO invoiceActions select"
+      >
+        <div
+          class="Select-module_wrapper__1WQXs"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
+            aria-owns="hds-select-1-menu"
+            class="Select-module_button__1aIsm"
+            id="hds-select-1-toggle-button"
+            type="button"
+          >
+            <span
+              class="Select-module_buttonLabel__1fqu5"
+            >
+              send offer
+            </span>
+            <svg
+              aria-hidden="true"
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+          </button>
+          <ul
+            aria-labelledby="hds-select-1-label"
+            class="Select-module_menu__1H2aU"
+            id="hds-select-1-menu"
+            role="listbox"
+            style="max-height: 260px;"
+            tabindex="-1"
+          />
+        </div>
+      </div>
+    </div>
     <article
       class="section"
     >
@@ -34,6 +94,42 @@ exports[`InvoiceModal renders correctly 1`] = `
             MOCK-INVOICE
           </span>
         </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Eräpäivä:
+          </span>
+          <span
+            class="value left"
+          >
+            10.07.2020
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Sopimuskausi:
+          </span>
+          <span
+            class="value left"
+          >
+            26.06.2020 - 14.09.2020
+          </span>
+        </div>
+      </section>
+    </article>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
         <div
           class="labelValuePair"
         >
@@ -62,18 +158,26 @@ exports[`InvoiceModal renders correctly 1`] = `
             Aurinkolahden venesatama (Aurinkoranta) C 1
           </span>
         </div>
+      </section>
+    </article>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
         <div
           class="labelValuePair"
         >
           <span
             class="label standard"
           >
-            Sopimuskausi:
+            Kiinnitystapa:
           </span>
           <span
             class="value left"
           >
-            26.06.2020 - 14.09.2020
+            Jollapaikka
           </span>
         </div>
         <div
@@ -82,12 +186,12 @@ exports[`InvoiceModal renders correctly 1`] = `
           <span
             class="label standard"
           >
-            Eräpäivä:
+            Leveys:
           </span>
           <span
             class="value left"
           >
-            10.07.2020
+            3
           </span>
         </div>
         <div
@@ -96,12 +200,26 @@ exports[`InvoiceModal renders correctly 1`] = `
           <span
             class="label standard"
           >
-            Laskun tila:
+            Pituus:
           </span>
           <span
             class="value left"
           >
-            Tarjottu
+            6
+          </span>
+        </div>
+        <div
+          class="labelValuePair"
+        >
+          <span
+            class="label standard"
+          >
+            Syvyys:
+          </span>
+          <span
+            class="value left"
+          >
+            -
           </span>
         </div>
       </section>
@@ -124,7 +242,7 @@ exports[`InvoiceModal renders correctly 1`] = `
             Perushinta:
           </span>
           <span
-            class="value left"
+            class="value right"
           >
             96,67 €
           </span>
@@ -138,7 +256,7 @@ exports[`InvoiceModal renders correctly 1`] = `
             Sähkö:
           </span>
           <span
-            class="value left"
+            class="value right"
           >
             9%  20,50 €
           </span>
@@ -163,7 +281,7 @@ exports[`InvoiceModal renders correctly 1`] = `
             YHTEENSÄ:
           </span>
           <span
-            class="value left"
+            class="value right"
           >
             191,70 €
           </span>
