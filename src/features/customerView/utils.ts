@@ -257,8 +257,10 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
             email: profile.primaryEmail?.email ?? null,
           },
           id: orderNode.id,
-          leaseId: lease.id,
-          leaseStatus: lease.status,
+          lease: {
+            id: lease.id,
+            status: lease.status,
+          },
           orderId: orderNode.id,
           orderNumber: orderNode.orderNumber,
           orderType: orderNode.orderType,
@@ -282,6 +284,10 @@ export const getInvoices = (profile: CUSTOMER_PROFILE): (BerthInvoice | WinterSt
                 number: lease.berth.number,
                 pierIdentifier: lease.berth.pier.properties?.identifier ?? '',
                 harborName: lease.berth.pier.properties?.harbor?.properties?.name ?? '',
+                width: lease.berth.width,
+                length: lease.berth.length,
+                depth: lease.berth.depth,
+                mooringType: lease.berth.mooringType,
               },
             },
           ];

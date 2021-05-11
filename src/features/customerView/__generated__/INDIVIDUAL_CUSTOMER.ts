@@ -316,6 +316,10 @@ export interface INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseN
   __typename: "BerthNode";
   id: string;
   number: string;
+  mooringType: BerthMooringType;
+  width: number;
+  length: number;
+  depth: number | null;
   pier: INDIVIDUAL_CUSTOMER_profile_orders_edges_node_lease_BerthLeaseNode_berth_pier;
 }
 

@@ -143,7 +143,7 @@ const CustomerViewContainer = () => {
   const berthLeases = getBerthLeases(data.profile);
   const leases = [...berthLeases, ...getWinterStorageLeases(data.profile)];
   const openInvoices = invoices.filter(
-    (invoice) => invoice.status === OrderStatus.DRAFTED && invoice.leaseStatus !== LeaseStatus.DRAFTED
+    (invoice) => invoice.status === OrderStatus.DRAFTED && invoice.lease.status !== LeaseStatus.DRAFTED
   );
   const offersData = data.profile.berthLeases?.edges.filter((edge) => edge?.node?.status === LeaseStatus.DRAFTED) ?? [];
   const offers = offersData.map((offerData) => getOfferDetailsData(offerData?.node));

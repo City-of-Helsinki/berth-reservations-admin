@@ -1,4 +1,5 @@
 import {
+  BerthMooringType,
   LeaseStatus,
   OrderOrderType,
   OrderStatus,
@@ -34,8 +35,10 @@ export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
       email: 'test@example.com',
     },
     id: 'MOCK-ORDER-ID',
-    leaseId: 'MOCK-LEASE-ID',
-    leaseStatus: LeaseStatus.OFFERED,
+    lease: {
+      id: 'MOCK-LEASE-ID',
+      status: LeaseStatus.OFFERED,
+    },
     orderId: 'MOCK-ORDER-ID',
     orderNumber: 'MOCK-INVOICE',
     orderType: OrderOrderType.LEASE_ORDER,
@@ -44,6 +47,10 @@ export const mockInvoices: (BerthInvoice | WinterStorageInvoice)[] = [
       number: '1',
       pierIdentifier: 'C',
       harborName: 'Aurinkolahden venesatama (Aurinkoranta)',
+      width: 3,
+      length: 6,
+      depth: null,
+      mooringType: BerthMooringType.DINGHY_PLACE,
     },
     contractPeriod: {
       startDate: '2020-06-26',
