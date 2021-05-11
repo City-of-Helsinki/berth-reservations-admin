@@ -27,13 +27,9 @@ export interface CustomerViewProps {
   invoices: Invoice[];
   leases: Lease[];
   offers: Array<BerthOfferCardProps['leaseDetails'] | null>;
-  onClickCreateAdditionalInvoice: () => void;
   onClickCreateBoat: () => void;
-  openInvoices: Invoice[];
   refetchQueries: PureQueryOptions[] | string[];
   setBoatToEdit: (boat: Boat | null) => void;
-  setOpenInvoice: (invoice: Invoice | undefined) => void;
-  setOpenResendInvoice: (invoice: Invoice | undefined) => void;
   cancelLease(id: string, type: 'berth' | 'winterStorage'): void;
   createLease(): void;
 }
@@ -51,13 +47,9 @@ const CustomerView = ({
   invoices,
   leases,
   offers,
-  onClickCreateAdditionalInvoice,
   onClickCreateBoat,
-  openInvoices,
   refetchQueries,
   setBoatToEdit,
-  setOpenInvoice,
-  setOpenResendInvoice,
 }: CustomerViewProps) => {
   const { t } = useTranslation();
   const customerName = `${customerProfile.firstName} ${customerProfile.lastName}`;
@@ -96,24 +88,6 @@ const CustomerView = ({
           invoiceData={invoices}
           refetchQueries={refetchQueries}
         />
-
-        {/* TODO: 
-          remove these two cards once ensured that all their functionalities are implemented 
-          in the new invoice card above (once https://helsinkisolutionoffice.atlassian.net/browse/VEN-1172 
-          is tested and approved)
-        */}
-
-        {/* <OpenInvoicesCard
-          invoices={openInvoices}
-          handleShowInvoice={setOpenInvoice}
-          handleResendInvoice={setOpenResendInvoice}
-        />
-
-        <InvoicingHistoryCard
-          invoices={invoices}
-          onClick={(invoice) => setOpenInvoice(invoice)}
-          onClickCreateAdditionalInvoice={onClickCreateAdditionalInvoice}
-        /> */}
 
         <BerthLeasesCard
           customerName={customerName}
