@@ -6,105 +6,167 @@ import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
 import Section from '../../../common/section/Section';
 import LabelValuePair from '../../../common/labelValuePair/LabelValuePair';
 import { formatDate, formatPrice } from '../../../common/utils/format';
-import { getOrderStatusTKey, getProductServiceTKey } from '../../../common/utils/translations';
+import { getInvoiceTypeKey, getMooringTypeTKey, getProductServiceTKey } from '../../../common/utils/translations';
 import Text from '../../../common/text/Text';
 import styles from './invoiceModal.module.scss';
 import { Invoice } from '../types';
 import { OrderStatus, PriceUnits } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
+import InvoiceActions from '../../invoiceCard/invoiceActions/InvoiceActions';
+import { InvoiceActions as InvoiceActionsInterface } from '../../invoiceCard/utils/useInvoiceActions';
+import StatusLabel from '../../../common/statusLabel/StatusLabel';
+import { ORDER_STATUS } from '../../../common/utils/constants';
+import BerthContractDetails from '../../contractDetails/BerthContractDetailsContainer';
+import WinterStorageContractDetails from '../../contractDetails/WinterStorageContractDetailsContainer';
 
 interface InvoiceModalProps extends Omit<ModalProps, 'children'> {
-  invoice: Invoice;
+  invoice: Invoice | null;
+  actions: InvoiceActionsInterface['actions'];
+  selectedAction: InvoiceActionsInterface['selectedAction'];
 }
 
-const InvoiceModal = ({ invoice, toggleModal, ...modalProps }: InvoiceModalProps) => {
+const InvoiceModal = ({ invoice, toggleModal, actions, selectedAction, ...modalProps }: InvoiceModalProps) => {
   const { t, i18n } = useTranslation();
 
-  const { contractPeriod } = invoice;
   return (
-    <Modal toggleModal={() => toggleModal?.(false)} {...modalProps}>
-      <Text as="h4" color="brand" className={styles.heading}>
-        {t('common.terminology.invoice').toUpperCase()}
-      </Text>
-
-      <Section>
-        <LabelValuePair label={t('common.terminology.orderNumber')} value={invoice.orderNumber} />
-        <LabelValuePair
-          label={t('customerView.customerInvoice.invoiceType')}
-          value={
-            isBerthInvoice(invoice) ? t('common.terminology.berthRent') : t('common.terminology.winterStoragePlaceRent')
-          }
-        />
-        {isBerthInvoice(invoice) && (
-          <LabelValuePair
-            label={t('common.terminology.berth')}
-            value={
-              invoice.berthInformation.harborName +
-              ' ' +
-              invoice.berthInformation.pierIdentifier +
-              ' ' +
-              invoice.berthInformation.number
-            }
+    <Modal className={styles.invoiceModal} toggleModal={() => toggleModal?.(false)} {...modalProps}>
+      {invoice && (
+        <>
+          <StatusLabel
+            className={styles.statusLabel}
+            type={ORDER_STATUS[invoice.status].type}
+            label={t(ORDER_STATUS[invoice.status].label)}
           />
-        )}
-        {isWinterStorageInvoice(invoice) && (
-          <LabelValuePair
-            label={t('common.terminology.winterStorageArea')}
-            value={invoice.winterStorageInformation.winterStorageAreaName}
-          />
-        )}
-        <LabelValuePair
-          label={t('customerView.customerInvoice.contractPeriod')}
-          value={`${formatDate(contractPeriod.startDate, i18n.language)} - ${formatDate(
-            contractPeriod.endDate,
-            i18n.language
-          )}`}
-        />
-        <LabelValuePair
-          label={t('customerView.customerInvoice.dueDate')}
-          value={formatDate(invoice.dueDate, i18n.language)}
-        />
-        {invoice.status === OrderStatus.PAID && (
-          <LabelValuePair
-            label={t('customerView.customerInvoice.paidAt')}
-            value={formatDate(invoice.paidAt, i18n.language)}
-          />
-        )}
-        <LabelValuePair
-          label={t('customerView.customerInvoice.status')}
-          value={t(getOrderStatusTKey(invoice.status))}
-        />
-      </Section>
 
-      <hr className={styles.divider} />
+          <div className={styles.heading}>
+            <Text as="h4" color="brand">
+              {t('common.terminology.invoice').toUpperCase()}
+            </Text>
 
-      <Section>
-        <LabelValuePair
-          label={t('common.terminology.basePrice')}
-          value={formatPrice(invoice.basePrice, i18n.language)}
-        />
-        {invoice.orderLines.map((orderLine, id) => (
-          <LabelValuePair
-            label={t(getProductServiceTKey(orderLine.product))}
-            value={
-              orderLine.priceUnit === PriceUnits.PERCENTAGE
-                ? formatPrice(orderLine.price, i18n.language, orderLine.priceValue)
-                : formatPrice(orderLine.price, i18n.language)
-            }
-            key={id}
-          />
-        ))}
-      </Section>
+            <InvoiceActions
+              className={styles.select}
+              selectedAction={selectedAction}
+              actions={[
+                {
+                  value: actions.sendOffer.value,
+                  label: actions.sendOffer.label,
+                  disabled: actions.sendOffer.disabled,
+                  onClick: actions.sendOffer.onSelect,
+                },
+                {
+                  value: actions.markAsPaid.value,
+                  label: actions.markAsPaid.label,
+                  disabled: actions.markAsPaid.disabled,
+                  onClick: actions.markAsPaid.onSelect,
+                },
+                {
+                  value: actions.cancelInvoice.value,
+                  label: actions.cancelInvoice.label,
+                  disabled: actions.cancelInvoice.disabled,
+                  onClick: actions.cancelInvoice.onSelect,
+                },
+                {
+                  value: actions.refund.value,
+                  label: actions.refund.label,
+                  disabled: actions.refund.disabled,
+                  onClick: actions.refund.onSelect,
+                },
+              ]}
+            />
+          </div>
 
-      <hr className={styles.divider} />
+          <Section>
+            <LabelValuePair label={t('common.terminology.orderNumber')} value={invoice.orderNumber} />
+            <LabelValuePair
+              label={t('customerView.customerInvoice.dueDate')}
+              value={formatDate(invoice.dueDate, i18n.language)}
+            />
+            <LabelValuePair
+              label={t('customerView.customerInvoice.contractPeriod')}
+              value={`${formatDate(invoice.contractPeriod.startDate, i18n.language)} - ${formatDate(
+                invoice.contractPeriod.endDate,
+                i18n.language
+              )}`}
+            />
+          </Section>
 
-      <Section>
-        <LabelValuePair
-          label={t('common.total').toUpperCase()}
-          value={formatPrice(invoice.totalPrice, i18n.language)}
-        />
-      </Section>
+          <Section>
+            <LabelValuePair
+              label={t('customerView.customerInvoice.invoiceType')}
+              value={t(getInvoiceTypeKey(invoice))}
+            />
+            {isBerthInvoice(invoice) && (
+              <LabelValuePair
+                label={t('common.terminology.berth')}
+                value={[
+                  invoice.berthInformation.harborName,
+                  invoice.berthInformation.pierIdentifier,
+                  invoice.berthInformation.number,
+                ].join(' ')}
+              />
+            )}
+            {isWinterStorageInvoice(invoice) && (
+              <LabelValuePair
+                label={t('common.terminology.winterStorageArea')}
+                value={invoice.winterStorageInformation.winterStorageAreaName}
+              />
+            )}
+            {invoice.status === OrderStatus.PAID && (
+              <LabelValuePair
+                label={t('customerView.customerInvoice.paidAt')}
+                value={formatDate(invoice.paidAt, i18n.language)}
+              />
+            )}
+          </Section>
 
+          {isBerthInvoice(invoice) && (
+            <Section>
+              <LabelValuePair
+                label={t('common.terminology.mooringType')}
+                value={t(getMooringTypeTKey(invoice.berthInformation.mooringType))}
+              />
+              <LabelValuePair label={t('common.terminology.width')} value={invoice.berthInformation.width} />
+              <LabelValuePair label={t('common.terminology.length')} value={invoice.berthInformation.length} />
+              <LabelValuePair label={t('common.terminology.depth')} value={invoice.berthInformation.depth} />
+            </Section>
+          )}
+
+          {isBerthInvoice(invoice) && <BerthContractDetails leaseId={invoice.lease.id} />}
+          {isWinterStorageInvoice(invoice) && <WinterStorageContractDetails leaseId={invoice.lease.id} />}
+
+          <hr className={styles.divider} />
+
+          <Section>
+            <LabelValuePair
+              label={t('common.terminology.basePrice')}
+              value={formatPrice(invoice.basePrice, i18n.language)}
+              align="right"
+            />
+            {invoice.orderLines.map((orderLine, id) => (
+              <LabelValuePair
+                label={t(getProductServiceTKey(orderLine.product))}
+                value={
+                  orderLine.priceUnit === PriceUnits.PERCENTAGE
+                    ? formatPrice(orderLine.price, i18n.language, orderLine.priceValue)
+                    : formatPrice(orderLine.price, i18n.language)
+                }
+                key={id}
+                align="right"
+              />
+            ))}
+          </Section>
+
+          <hr className={styles.divider} />
+
+          <Section>
+            <LabelValuePair
+              label={t('common.total').toUpperCase()}
+              value={formatPrice(invoice.totalPrice, i18n.language)}
+              align="right"
+            />
+          </Section>
+        </>
+      )}
       <div className={styles.closeButtonContainer}>
         <Button onClick={() => toggleModal?.(false)}>{t('common.close')}</Button>
       </div>

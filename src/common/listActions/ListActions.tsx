@@ -18,6 +18,7 @@ type ListActionItem<T> = {
 
 interface ListActionsProps<T> {
   className?: string;
+  selectClassName?: string;
   selectedRows: T[];
   listActions: ListActionItem<T>[];
   resetSelectedRows(): void;
@@ -25,6 +26,7 @@ interface ListActionsProps<T> {
 
 const ListActions = <T extends object | string | number | boolean | bigint | symbol>({
   className,
+  selectClassName,
   selectedRows,
   resetSelectedRows,
   listActions,
@@ -49,7 +51,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
         onChange={(e) => setSelectedActionId(listActions.find((action) => action.id === e.target.value)?.id)}
         value={selectedActionId ?? ''}
         options={options}
-        className={styles.select}
+        className={classNames(styles.select, selectClassName)}
       />
       {selectedAction?.renderComponent?.(resetSelection)}
       {selectedAction?.onClick && (

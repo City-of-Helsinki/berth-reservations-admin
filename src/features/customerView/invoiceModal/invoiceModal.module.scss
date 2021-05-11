@@ -1,15 +1,33 @@
 @import 'spacings';
+@import 'containers';
 
-.heading {
-  margin-bottom: units(2);
-}
+.invoiceModal {
+  width: container(m);
 
-.divider {
-  width: 100%;
-}
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: units(3);
+  }
 
-.closeButtonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: units(2);
+  .select {
+    width: 24em;
+  }
+
+  .divider {
+    width: 100%;
+  }
+
+  .closeButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: units(2);
+  }
+
+  .statusLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
