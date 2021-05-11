@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import Select from '../../../common/select/Select';
@@ -12,12 +13,13 @@ interface Action {
 }
 
 export interface InvoiceActionsProps {
+  className?: string;
   actions: Array<Action>;
   selectedAction: Action['value'] | null;
   disabled?: boolean;
 }
 
-const InvoiceActions = ({ actions, disabled, selectedAction }: InvoiceActionsProps) => {
+const InvoiceActions = ({ actions, className, disabled, selectedAction }: InvoiceActionsProps) => {
   const { t } = useTranslation();
 
   const activeActions = actions.filter((action) => !action.disabled);
@@ -25,7 +27,7 @@ const InvoiceActions = ({ actions, disabled, selectedAction }: InvoiceActionsPro
   return (
     <Select
       placeholder={t('invoiceCard.edit')}
-      className={styles.invoiceActions}
+      className={classNames(styles.invoiceActions, className)}
       disabled={disabled}
       options={activeActions}
       value={selectedAction}

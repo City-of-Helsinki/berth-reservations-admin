@@ -10,7 +10,7 @@ enum SupportedActions {
   REFUND = 'refund',
 }
 
-interface InvoiceActions {
+export interface InvoiceActions {
   selectedAction: number | null;
   actions: {
     [action in SupportedActions]: {
