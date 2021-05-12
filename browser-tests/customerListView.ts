@@ -8,10 +8,10 @@ fixture('Customer list view').page(envUrl());
 
 test('Selection of customers', async (t) => {
   await login(t);
-  await t.click(navigation.customers);
 
   // Select all customers from first page
   await t
+    .click(navigation.customers)
     .expect(customers.customerList.firstCustomerLink.exists)
     .ok()
     .click(customers.customerList.selectAllToggle)
@@ -31,24 +31,18 @@ test('Selection of customers', async (t) => {
 
 test('Pagination', async (t) => {
   await login(t);
-  await t.click(navigation.customers);
 
   // Stay on the same page after reloading the browser
-  await t
-    .expect(customers.customerList.paginationNextButton.exists)
-    .ok()
-    .click(customers.customerList.paginationNextButton);
+  await t.click(navigation.customers).click(customers.customerList.paginationNextButton);
   await t.eval(() => window.location.reload());
   await t.expect(customers.customerList.selectedPage.value).eql('1'); // Pages indexed from 0
 });
 
 test('Editing customers', async (t) => {
   await login(t);
-  await t.click(navigation.customers);
 
   await t
-    .expect(customers.customerList.firstCustomerLink.exists)
-    .ok()
+    .click(navigation.customers)
     .click(customers.customerList.firstCustomerLink)
     .click(customers.customerView.editButton)
     .expect(customers.customerView.editForm.firstNameField.filter(inputHasLength).exists)

@@ -10,60 +10,48 @@ import { winterStorageAreas } from './pages/winterStorageAreas';
 
 fixture('Navigate and view').page(envUrl());
 
-test('Berth applications', async (t) => {
+test('Navigate and view basic data', async (t) => {
   await login(t);
-  await t.click(navigation.applicationsExpandable).click(navigation.applications);
+
+  // Applications
   await t
+    .click(navigation.applicationsExpandable)
+    .click(navigation.applications)
     .expect(applications.applicationList.firstApplicationLink.exists)
     .ok()
     .click(applications.applicationList.firstApplicationLink)
     .expect(applications.applicationView.firstName.filter(hasLength).exists)
     .ok();
-});
 
-test('Winter storage applications', async (t) => {
-  await login(t);
-  await t.click(navigation.winterStorageApplications);
+  // Winter storage applications
   await t
-    .expect(applications.applicationList.firstApplicationLink.exists)
-    .ok()
+    .click(navigation.winterStorageApplications)
     .click(applications.applicationList.firstApplicationLink)
     .expect(applications.applicationView.firstName.filter(hasLength).exists)
     .ok();
-});
 
-test('Harbors', async (t) => {
-  await login(t);
-  await t.click(navigation.harbors);
+  // Harbors
   await t
-    .expect(harbors.harborList.firstHarborLink.exists)
-    .ok()
+    .click(navigation.harbors)
     .click(harbors.harborList.firstHarborLink)
     .expect(harbors.harborView.address.filter(hasLength).exists)
     .ok();
-});
 
-test('Winter storage areas', async (t) => {
-  await login(t);
-  await t.click(navigation.winterStorageAreas);
-  await t.expect(winterStorageAreas.winterStorageAreaList.firstWinterStorageArea.filter(hasLength).exists).ok();
-});
-
-test('Customers', async (t) => {
-  await login(t);
-  await t.click(navigation.customers);
+  // Winter storage areas
   await t
-    .expect(customers.customerList.firstCustomerLink.exists)
-    .ok()
+    .click(navigation.winterStorageAreas)
+    .expect(winterStorageAreas.winterStorageAreaList.firstWinterStorageArea.filter(hasLength).exists)
+    .ok();
+
+  // Customers
+  await t
+    .click(navigation.customers)
     .click(customers.customerList.firstCustomerLink)
     .expect(customers.customerView.firstDataLabel.filter(hasLength).exists)
     .ok();
-});
 
-test('Pricing', async (t) => {
-  await login(t);
-  await t.click(navigation.pricing);
-  await t.expect(pricing.berthPrices.tier1Price.filter(hasPrice).exists).ok();
+  // Pricing
+  await t.click(navigation.pricing).expect(pricing.berthPrices.tier1Price.filter(hasPrice).exists).ok();
 
   // Pricing modal
   await t
