@@ -546,34 +546,9 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
                 class="headerCell"
                 colspan="1"
                 role="columnheader"
-                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px; cursor: pointer;"
-                title="Toggle SortBy"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 0px; width: 150px;"
               >
                 Asiakas
-                <div
-                  class="sortArrowWrapper"
-                >
-                  <svg
-                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <rect
-                        height="24"
-                        width="24"
-                      />
-                      <polygon
-                        fill="currentColor"
-                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
-                      />
-                    </g>
-                  </svg>
-                </div>
               </div>
               <div
                 class="headerCell"
