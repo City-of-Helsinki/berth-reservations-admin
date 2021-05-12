@@ -18,8 +18,6 @@ export type Lease = {
   id: string;
   customer: {
     id: string;
-    firstName: string;
-    lastName: string;
   };
   status: string;
   startDate: string;
