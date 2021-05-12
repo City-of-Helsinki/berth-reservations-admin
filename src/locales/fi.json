@@ -698,12 +698,13 @@
     }
   },
   "recurringInvoices": {
-    "title": "Laskutus",
-    "sendInvoices": "Lähetä venepaikkojen laskut",
+    "berthInvoicesTitle": "Kausilaskut / Venepaikat",
+    "winterStorageInvoicesTitle": "Kausilaskut / Talvisäilytys",
+    "sendBerthInvoices": "Lähetä venepaikkojen laskut",
+    "sendWinterStorageInvoices": "Lähetä talvisäilytyspaikkojen laskut",
     "failedInvoicesTable": {
       "header": "Kausilasku ei lähetetty",
       "name": "Nimi",
-      "harbor": "Satama",
       "failureReason": "Virheen syy",
       "emptyState": "Ei laskuja"
     },
@@ -716,7 +717,8 @@
     "failureInstructions": "Pääset korjaamaan asiakkaan tietoja klikkaamalla nimeä allaolevasta taulukosta.\nKun olet korjannut virheitä, voit lähettää uuden erän laskuja tai vaihtoehtoisesti yksittäisiä laskuja asiakasnäkymästä.\nKorjatut virheet poistuvat taulukosta vasta uuden erän tai yksittäisen laskun uudelleenlähettämisen jälkeen.",
     "form": {
       "title": "Lähetä lasku",
-      "description": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
+      "descriptionBerths": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
+      "descriptionWinterStorage": "Seuraavan kauden laskut lähetetään asiakkaille joilla on voimassaoleva venepaikkasopimus edelliseltä kaudelta.",
       "dueDate": "Laskun eräpäivä"
     }
   },

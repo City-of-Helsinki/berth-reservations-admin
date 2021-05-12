@@ -458,6 +458,12 @@ export interface SendExistingBerthInvoicesMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface SendExistingWinterStorageInvoicesMutationInput {
+  dueDate?: any | null;
+  profileToken: string;
+  clientMutationId?: string | null;
+}
+
 export interface SensitiveDataFields {
   ssn?: string | null;
 }

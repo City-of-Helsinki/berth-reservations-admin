@@ -1,11 +1,12 @@
 import i18next from 'i18next';
 
-import { RECURRING_INVOICES } from './__generated__/RECURRING_INVOICES';
-import { FailedInvoices } from './RecurringInvoices';
+import { RECURRING_BERTH_INVOICES } from './__generated__/RECURRING_BERTH_INVOICES';
+import { FailedBerthInvoices, FailedWinterStorageInvoices } from './types';
+import { RECURRING_WINTER_STORAGE_INVOICES } from './__generated__/RECURRING_WINTER_STORAGE_INVOICES';
 
-export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
+export const getFailedBerthInvoicesData = (data: RECURRING_BERTH_INVOICES | undefined): FailedBerthInvoices[] => {
   if (!data?.berthLeases) return [];
-  return data.berthLeases.edges.reduce<FailedInvoices[]>((acc, edge) => {
+  return data.berthLeases.edges.reduce<FailedBerthInvoices[]>((acc, edge) => {
     if (!edge?.node) return acc;
 
     const failedInvoice = {
@@ -20,7 +21,29 @@ export const getFailedInvoicesData = (data: RECURRING_INVOICES | undefined) => {
   }, []);
 };
 
-export const getSummaryData = (recurringInvoicesData: RECURRING_INVOICES | undefined, loading: boolean) => {
+export const getFailedWinterStorageInvoicesData = (
+  data: RECURRING_WINTER_STORAGE_INVOICES | undefined
+): FailedWinterStorageInvoices[] => {
+  if (!data?.winterStorageLeases) return [];
+  return data.winterStorageLeases.edges.reduce<FailedWinterStorageInvoices[]>((acc, edge) => {
+    if (!edge?.node?.place) return acc;
+
+    const failedInvoice = {
+      id: edge.node.id,
+      customerId: edge.node.customer.id,
+      customerName: `${edge.node.customer.firstName} ${edge.node.customer.lastName}`,
+      winterStorageArea: edge.node.place.winterStorageSection.properties?.area.properties?.name ?? '',
+      failureReason: edge.node.comment,
+    };
+
+    return [...acc, failedInvoice];
+  }, []);
+};
+
+export const getSummaryData = (
+  recurringInvoicesData: RECURRING_BERTH_INVOICES | RECURRING_WINTER_STORAGE_INVOICES | undefined,
+  loading: boolean
+) => {
   return [
     {
       label: i18next.t('recurringInvoices.summary.sent'),
