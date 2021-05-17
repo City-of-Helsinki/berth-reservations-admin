@@ -249,8 +249,6 @@ const CustomerViewContainer = () => {
       {creatingLease && (
         <CreateLeaseModal customerId={id} isOpen={creatingLease} closeModal={() => setCreatingLease(false)} />
       )}
-
-      {/* {openInvoice && <InvoiceModal isOpen invoice={openInvoice} toggleModal={() => setOpenInvoice(undefined)} />} */}
     </>
   );
 };
