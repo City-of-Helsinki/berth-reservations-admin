@@ -26,16 +26,11 @@ const WinterStoragePlaceTable = ({ leases, className }: WinterStorageAreaViewTab
   const columns: ColumnType[] = [
     {
       Cell: ({ cell }: { cell: Cell<Lease> }) => {
-        const isBerthActive = cell.row.original.isActive;
-        if (!isBerthActive) return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
+        const isPlaceActive = cell.row.original.isActive;
+        if (!isPlaceActive) return <StatusLabel type="error" label={t('winterStorageAreaView.place.inactive')} />;
 
         if (cell.value)
-          return (
-            <CustomerName
-              customInternalLink={`/unmarked-ws-notices/${cell.row.original.applicationId}`}
-              id={cell.value}
-            />
-          );
+          return <CustomerName linkTo={`/unmarked-ws-notices/${cell.row.original.applicationId}`} id={cell.value} />;
 
         return '';
       },

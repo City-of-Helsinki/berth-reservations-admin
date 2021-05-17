@@ -9,10 +9,10 @@ import LoadingCell from '../../../common/table/loadingCell/LoadingCell';
 
 export interface CustomerNameProps {
   id: string;
-  customInternalLink?: string;
+  linkTo?: string;
 }
 
-const CustomerName = ({ id, customInternalLink }: CustomerNameProps) => {
+const CustomerName = ({ id, linkTo }: CustomerNameProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<CUSTOMER_NAME>(CUSTOMER_NAME_QUERY, {
     variables: {
@@ -25,7 +25,7 @@ const CustomerName = ({ id, customInternalLink }: CustomerNameProps) => {
 
   return (
     <InternalLink
-      to={customInternalLink || `/customers/${id}`}
+      to={linkTo || `/customers/${id}`}
     >{`${data.profile.lastName} ${data.profile.firstName}`}</InternalLink>
   );
 };

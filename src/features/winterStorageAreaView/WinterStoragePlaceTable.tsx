@@ -34,9 +34,8 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
     },
     {
       Cell: ({ cell }: { cell: Cell<WinterStoragePlace> }) => {
-        const isBerthActive = cell.row.original.isActive;
-        if (!isBerthActive)
-          return <StatusLabel type="error" label={t('winterStorageAreaView.berthProperties.inactive')} />;
+        const isPlaceActive = cell.row.original.isActive;
+        if (!isPlaceActive) return <StatusLabel type="error" label={t('winterStorageAreaView.place.inactive')} />;
 
         if (cell.value) return <CustomerName id={cell.value} />;
 
