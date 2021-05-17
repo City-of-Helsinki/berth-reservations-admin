@@ -48,27 +48,19 @@ const InvoiceModal = ({ invoice, toggleModal, actions, selectedAction, ...modalP
               selectedAction={selectedAction}
               actions={[
                 {
-                  value: actions.sendOffer.value,
-                  label: actions.sendOffer.label,
-                  disabled: actions.sendOffer.disabled,
+                  ...actions.sendOffer,
                   onClick: actions.sendOffer.onSelect,
                 },
                 {
-                  value: actions.markAsPaid.value,
-                  label: actions.markAsPaid.label,
-                  disabled: actions.markAsPaid.disabled,
+                  ...actions.markAsPaid,
                   onClick: actions.markAsPaid.onSelect,
                 },
                 {
-                  value: actions.cancelInvoice.value,
-                  label: actions.cancelInvoice.label,
-                  disabled: actions.cancelInvoice.disabled,
+                  ...actions.cancelInvoice,
                   onClick: actions.cancelInvoice.onSelect,
                 },
                 {
-                  value: actions.refund.value,
-                  label: actions.refund.label,
-                  disabled: actions.refund.disabled,
+                  ...actions.refund,
                   onClick: actions.refund.onSelect,
                 },
               ]}
