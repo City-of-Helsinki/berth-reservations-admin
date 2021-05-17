@@ -18,10 +18,9 @@ import {
   getWinterStorageLeases,
 } from './utils';
 import { Invoice, Boat, BerthLease } from './types';
-import { LeaseStatus, OrderStatus } from '../../@types/__generated__/globalTypes';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import Modal from '../../common/modal/Modal';
 import BoatEditForm from './forms/boatForm/BoatEditForm';
-import InvoiceModal from './invoiceModal/InvoiceModal';
 import BoatCreateForm from './forms/boatForm/BoatCreateForm';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 import {
@@ -54,7 +53,6 @@ const CustomerViewContainer = () => {
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
   const [creatingBoat, setCreatingBoat] = useState<boolean>(false);
   const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
-  const [openInvoice, setOpenInvoice] = useState<Invoice>();
   const [openResendInvoice, setOpenResendInvoice] = useState<Invoice>();
   const [creatingLease, setCreatingLease] = useState<boolean>(false);
 
@@ -142,9 +140,6 @@ const CustomerViewContainer = () => {
   const customerProfile = getCustomerProfile(data.profile);
   const berthLeases = getBerthLeases(data.profile);
   const leases = [...berthLeases, ...getWinterStorageLeases(data.profile)];
-  const openInvoices = invoices.filter(
-    (invoice) => invoice.status === OrderStatus.DRAFTED && invoice.leaseStatus !== LeaseStatus.DRAFTED
-  );
   const offersData = data.profile.berthLeases?.edges.filter((edge) => edge?.node?.status === LeaseStatus.DRAFTED) ?? [];
   const offers = offersData.map((offerData) => getOfferDetailsData(offerData?.node));
 
@@ -173,12 +168,8 @@ const CustomerViewContainer = () => {
         leases={leases}
         offers={offers}
         onClickCreateBoat={() => setCreatingBoat(true)}
-        onClickCreateAdditionalInvoice={() => setCreatingAdditionalInvoice(true)}
-        openInvoices={openInvoices}
         refetchQueries={[getOperationName(INDIVIDUAL_CUSTOMER_QUERY) || 'INDIVIDUAL_CUSTOMER_QUERY']}
         setBoatToEdit={setBoatToEdit}
-        setOpenInvoice={setOpenInvoice}
-        setOpenResendInvoice={setOpenResendInvoice}
       />
 
       <Modal isOpen={editCustomer} toggleModal={() => setEditCustomer(false)}>
@@ -258,8 +249,6 @@ const CustomerViewContainer = () => {
       {creatingLease && (
         <CreateLeaseModal customerId={id} isOpen={creatingLease} closeModal={() => setCreatingLease(false)} />
       )}
-
-      {openInvoice && <InvoiceModal isOpen invoice={openInvoice} toggleModal={() => setOpenInvoice(undefined)} />}
     </>
   );
 };

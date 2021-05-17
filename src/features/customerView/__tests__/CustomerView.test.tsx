@@ -19,13 +19,9 @@ const mockProps: CustomerViewProps = {
   isDeletingOffer: false,
   leases: [],
   offers: [],
-  onClickCreateAdditionalInvoice: jest.fn(),
   onClickCreateBoat: jest.fn(),
-  openInvoices: [],
   refetchQueries: [],
-  setOpenResendInvoice: jest.fn(),
   setBoatToEdit: jest.fn(),
-  setOpenInvoice: jest.fn(),
 };
 
 describe('CustomerView', () => {

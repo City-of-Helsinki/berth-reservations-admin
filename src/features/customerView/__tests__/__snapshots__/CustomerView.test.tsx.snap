@@ -293,14 +293,69 @@ exports[`CustomerView renders normally 1`] = `
       </div>
     </div>
     <div
-      class="fullWidth"
+      class="invoiceCard fullWidth"
     >
       <div
         class="fullWidth"
       >
         <div
-          class="container"
+          class="tableTools"
         >
+          <div
+            class="container"
+          >
+            <div
+              class="Select-module_root__Ka5uO select select"
+            >
+              <div
+                class="Select-module_wrapper__1WQXs"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
+                  aria-owns="hds-select-1-menu"
+                  class="Select-module_button__1aIsm"
+                  id="hds-select-1-toggle-button"
+                  type="button"
+                >
+                  <span
+                    class="Select-module_buttonLabel__1fqu5"
+                  >
+                    Toiminnot
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                      />
+                      <path
+                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </button>
+                <ul
+                  aria-labelledby="hds-select-1-label"
+                  class="Select-module_menu__1H2aU Select-module_overflow__EZdsW"
+                  id="hds-select-1-menu"
+                  role="listbox"
+                  style="max-height: 260px;"
+                  tabindex="-1"
+                />
+              </div>
+            </div>
+          </div>
           <div
             class="Select-module_root__Ka5uO select"
           >
@@ -310,16 +365,16 @@ exports[`CustomerView renders normally 1`] = `
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
-                aria-labelledby="hds-select-1-label hds-select-1-toggle-button"
-                aria-owns="hds-select-1-menu"
+                aria-labelledby="hds-select-2-label hds-select-2-toggle-button"
+                aria-owns="hds-select-2-menu"
                 class="Select-module_button__1aIsm"
-                id="hds-select-1-toggle-button"
+                id="hds-select-2-toggle-button"
                 type="button"
               >
                 <span
                   class="Select-module_buttonLabel__1fqu5"
                 >
-                  Toiminnot
+                  Kaikki
                 </span>
                 <svg
                   aria-hidden="true"
@@ -343,11 +398,11 @@ exports[`CustomerView renders normally 1`] = `
                 </svg>
               </button>
               <ul
-                aria-labelledby="hds-select-1-label"
-                class="Select-module_menu__1H2aU Select-module_overflow__EZdsW"
-                id="hds-select-1-menu"
+                aria-labelledby="hds-select-2-label"
+                class="Select-module_menu__1H2aU"
+                id="hds-select-2-menu"
                 role="listbox"
-                style="max-height: 260px;"
+                style="max-height: 572px;"
                 tabindex="-1"
               />
             </div>
@@ -359,7 +414,7 @@ exports[`CustomerView renders normally 1`] = `
           <div
             class="table primary"
             role="table"
-            style="min-width: 862.5px;"
+            style="min-width: 900px;"
           >
             <div
               class="stickyHeaders"
@@ -367,13 +422,13 @@ exports[`CustomerView renders normally 1`] = `
               <div
                 class="header mainHeader"
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 862.5px;"
+                style="display: flex; flex: 1 0 auto; min-width: 900px;"
               >
                 <div
                   class="headerCell"
                   colspan="8"
                   role="columnheader"
-                  style="box-sizing: border-box; flex: 862.5 0 auto; min-width: 862.5px; width: 862.5px;"
+                  style="box-sizing: border-box; flex: 900 0 auto; min-width: 900px; width: 900px;"
                 >
                   Laskut
                 </div>
@@ -381,7 +436,7 @@ exports[`CustomerView renders normally 1`] = `
               <div
                 class="header"
                 role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 862.5px;"
+                style="display: flex; flex: 1 0 auto; min-width: 900px;"
               >
                 <div
                   class="headerCell selector"
@@ -410,7 +465,7 @@ exports[`CustomerView renders normally 1`] = `
                   class="headerCell"
                   colspan="1"
                   role="columnheader"
-                  style="box-sizing: border-box; flex: 75 0 auto; min-width: 75px; width: 75px; cursor: pointer;"
+                  style="box-sizing: border-box; flex: 112.5 0 auto; min-width: 112.5px; width: 112.5px; cursor: pointer;"
                   title="Toggle SortBy"
                 >
                   Tyyppi
@@ -654,6 +709,94 @@ exports[`CustomerView renders normally 1`] = `
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="pagination"
+        >
+          <button
+            class="prevBtn disabled"
+            disabled=""
+          >
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv icon"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <rect
+                  height="24"
+                  width="24"
+                />
+                <polygon
+                  fill="currentColor"
+                  points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                />
+              </g>
+            </svg>
+            <span
+              class="text standard span"
+            >
+              Edellinen
+            </span>
+          </button>
+          <div>
+            <div
+              class="selectContainer"
+            >
+              <select
+                class="select"
+              >
+                <option
+                  value="0"
+                >
+                  1
+                </option>
+              </select>
+            </div>
+            / 
+            <button>
+              <span
+                class="text standard span underlined"
+              >
+                1
+              </span>
+            </button>
+          </div>
+          <button
+            class="nextBtn disabled"
+            disabled=""
+          >
+            <span
+              class="text standard span"
+            >
+              Seuraava
+            </span>
+            <svg
+              class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv icon"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <rect
+                  height="24"
+                  width="24"
+                />
+                <polygon
+                  fill="currentColor"
+                  points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12"
+                  transform="matrix(-1 0 0 1 24.5 0)"
+                />
+              </g>
+            </svg>
+          </button>
         </div>
       </div>
     </div>

@@ -120,8 +120,10 @@ export type Invoice = {
     email: string | null;
   };
   id: string;
-  leaseId: string;
-  leaseStatus: LeaseStatus;
+  lease: {
+    id: string;
+    status: LeaseStatus;
+  };
   orderNumber?: string;
   orderId: string;
   orderType: OrderOrderType;
@@ -142,6 +144,10 @@ export type BerthInvoice = Invoice & {
     number: string;
     pierIdentifier: string;
     harborName: string;
+    width: number;
+    length: number;
+    depth: number | null;
+    mooringType: BerthMooringType;
   };
 };
 
