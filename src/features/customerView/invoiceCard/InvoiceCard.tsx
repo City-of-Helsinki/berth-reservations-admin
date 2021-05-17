@@ -53,12 +53,14 @@ const InvoiceCard = ({ berthLeases, className, customer, invoiceData, refetchQue
 
   const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<Invoice>(selectedInvoicesAtom);
 
-  const openInvoiceStatues = openInvoice ? [{ order: openInvoice.status, lease: openInvoice.lease.status }] : undefined;
-  const selectedInvoicesStatues = invoiceData
+  const openInvoiceStatuses = openInvoice
+    ? [{ order: openInvoice.status, lease: openInvoice.lease.status }]
+    : undefined;
+  const selectedInvoicesStatuses = invoiceData
     .filter((invoice) => selectedRowIdsDict[invoice.orderId])
     .map((invoice) => ({ order: invoice.status, lease: invoice.lease.status }));
 
-  const { actions, selectedAction, onDeselect } = useInvoiceActions(openInvoiceStatues || selectedInvoicesStatues);
+  const { actions, selectedAction, onDeselect } = useInvoiceActions(openInvoiceStatuses || selectedInvoicesStatuses);
 
   const columns: ColumnType[] = [
     {
