@@ -344,45 +344,96 @@ exports[`Page renders normally 1`] = `
           <div
             class="elementWrapper"
           >
-            <a
-              class="internalNavLink standard"
-              href="#/recurring-invoices"
+            <div
+              class="expandableNavItem"
             >
               <div
-                class="icon"
+                class="headerBtn label"
+                role="button"
+              >
+                <div
+                  class="icon"
+                >
+                  <svg
+                    class="icon s"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    width="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      icons/document/24
+                    </title>
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                      id="icons/document/24"
+                      stroke="none"
+                      stroke-width="1"
+                    >
+                      <path
+                        d="M21,1 L21,23 L3,23 L3,9 L4.741,9 L4.7419366,21.3500004 L19.2580646,21.3500004 L19.2580646,2.65 L12,2.65 L12,1 L21,1 Z M17.6,18 L17.6,19.7 L6,19.7 L6,18 L17.6,18 Z M10,15 L10,16.7 L6,16.7 L6,15 L10,15 Z M4.26243563,3.08071012 L8.70639967,7.52507832 L11.7375646,4.49492357 L12.9497476,5.70710662 L9.9183807,8.73705934 L9.91928988,8.73756437 L8.70710678,9.94974747 L3.05025253,4.29289322 L4.26243563,3.08071012 Z"
+                        fill="currentColor"
+                        id="aggreements_icon"
+                        transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="label"
+                >
+                  Kausilaskut
+                </div>
+              </div>
+              <div
+                class="headerBtn arrow"
               >
                 <svg
-                  class="icon s"
-                  height="100%"
+                  class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik"
+                  role="img"
                   viewBox="0 0 24 24"
-                  width="100%"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <title>
-                    icons/document/24
-                  </title>
                   <g
                     fill="none"
                     fill-rule="evenodd"
-                    id="icons/document/24"
-                    stroke="none"
-                    stroke-width="1"
                   >
                     <path
-                      d="M21,1 L21,23 L3,23 L3,9 L4.741,9 L4.7419366,21.3500004 L19.2580646,21.3500004 L19.2580646,2.65 L12,2.65 L12,1 L21,1 Z M17.6,18 L17.6,19.7 L6,19.7 L6,18 L17.6,18 Z M10,15 L10,16.7 L6,16.7 L6,15 L10,15 Z M4.26243563,3.08071012 L8.70639967,7.52507832 L11.7375646,4.49492357 L12.9497476,5.70710662 L9.9183807,8.73705934 L9.91928988,8.73756437 L8.70710678,9.94974747 L3.05025253,4.29289322 L4.26243563,3.08071012 Z"
+                      d="M0 0h24v24H0z"
+                    />
+                    <path
+                      d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
                       fill="currentColor"
-                      id="aggreements_icon"
-                      transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "
                     />
                   </g>
                 </svg>
               </div>
-              <div
-                class="label"
+            </div>
+            <div
+              class="children"
+            >
+              <a
+                class="internalNavLink standard"
+                href="#/recurring-berth-invoices"
               >
-                Kausilaskut
-              </div>
-            </a>
+                <div
+                  class="label"
+                >
+                  Venepaikat
+                </div>
+              </a>
+              <a
+                class="internalNavLink standard"
+                href="#/recurring-winter-storage-invoices"
+              >
+                <div
+                  class="label"
+                >
+                  Talvisäilytys
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

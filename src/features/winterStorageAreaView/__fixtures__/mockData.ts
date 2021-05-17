@@ -45,14 +45,12 @@ export const mockData: INDIVIDUAL_WINTER_STORAGE_AREA = {
                                 endDate: '2021-06-10',
                                 status: LeaseStatus.DRAFTED,
                                 isActive: false,
+                                customer: {
+                                  __typename: 'ProfileNode',
+                                  id: 'UHJvZmlsZU5vZGU6NWNjYzgyNDUtNmRiOS00YTRiLWI5NTEtNWYxNDQ5YTY5NzY2',
+                                },
                                 application: {
                                   createdAt: '2020-07-17T10:52:57.079036+00:00',
-                                  customer: {
-                                    id: 'UHJvZmlsZU5vZGU6NWNjYzgyNDUtNmRiOS00YTRiLWI5NTEtNWYxNDQ5YTY5NzY2',
-                                    firstName: 'Heikki',
-                                    lastName: 'Kinnunen',
-                                    __typename: 'ProfileNode',
-                                  },
                                   id: 'foo',
                                   __typename: 'WinterStorageApplicationNode',
                                 },
@@ -83,6 +81,10 @@ export const mockData: INDIVIDUAL_WINTER_STORAGE_AREA = {
                                 endDate: '2021-06-10',
                                 status: LeaseStatus.DRAFTED,
                                 isActive: false,
+                                customer: {
+                                  __typename: 'ProfileNode',
+                                  id: '0a43fd1d-420b-448c-be1a-7268d845c4dc',
+                                },
                                 application: null,
                                 __typename: 'WinterStorageLeaseNode',
                               },

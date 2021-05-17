@@ -17,7 +17,8 @@ import BerthOfferContainer from '../features/berthOffer/BerthOfferContainer';
 import Page from './page/Page';
 import Pricing from '../features/pricing/PricingContainer';
 import PrivateRoute from '../features/auth/privateRoute/PrivateRoute';
-import RecurringInvoices from '../features/recurringInvoices/RecurringInvoicesContainer';
+import RecurringBerthInvoicesContainer from '../features/recurringInvoices/RecurringBerthInvoicesContainer';
+import RecurringWinterStorageInvoicesContainer from '../features/recurringInvoices/RecurringWinterStorageInvoicesContainer';
 import UnmarkedWsNoticeList from '../features/unmarkedWsNoticeList/UnmarkedWsNoticeListContainer';
 import UnmarkedWsNoticeView from '../features/unmarkedWsNoticeView/UnmarkedWsNoticeViewContainer';
 import WinterStorageApplicationList from '../features/winterStorageApplicationList/WinterStorageApplicationListContainer';
@@ -70,7 +71,12 @@ const App = () => {
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />
                     <PrivateRoute exact path="/winter-storage-areas" component={WinterStorageAreaList} />
-                    <PrivateRoute exact path="/recurring-invoices" component={RecurringInvoices} />
+                    <PrivateRoute exact path="/recurring-berth-invoices" component={RecurringBerthInvoicesContainer} />
+                    <PrivateRoute
+                      exact
+                      path="/recurring-winter-storage-invoices"
+                      component={RecurringWinterStorageInvoicesContainer}
+                    />
                   </Switch>
                 </Page>
               </Switch>

@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Cell } from 'react-table';
 
 import { WinterStoragePlace, WinterStorageSection } from './types';
-import InternalLink from '../../common/internalLink/InternalLink';
 import Table, { Column } from '../../common/table/Table';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
 import SelectHeader from '../../common/selectHeader/SelectHeader';
 import Pagination from '../../common/pagination/Pagination';
 import GlobalSearchTableTools from '../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import { formatDimension } from '../../common/utils/format';
+import CustomerName from '../harborView/customerName/CustomerName';
 
 type ColumnType = Column<WinterStoragePlace>;
 
@@ -35,23 +35,21 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
     {
       Cell: ({ cell }: { cell: Cell<WinterStoragePlace> }) => {
         const isPlaceActive = cell.row.original.isActive;
-        if (!isPlaceActive) {
-          return <StatusLabel type="error" label={t('winterStorageAreaView.berthProperties.inactive')} />;
-        }
-        const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
-        if (!activeLease) {
-          return cell.value;
-        }
-        return <InternalLink to={`/customers/${activeLease.customer.id}`}>{cell.value}</InternalLink>;
+        if (!isPlaceActive) return <StatusLabel type="error" label={t('winterStorageAreaView.place.inactive')} />;
+
+        if (cell.value) return <CustomerName id={cell.value} />;
+
+        return '';
       },
       Header: t('winterStorageAreaView.tableHeaders.customer') || '',
       accessor: ({ leases }) => {
         const activeLease = leases?.find((lease) => lease.isActive);
         if (!activeLease) return '';
-        return `${activeLease.customer.firstName} ${activeLease.customer.lastName}`;
+        return activeLease.customer.id;
       },
       id: 'leases',
-      filter: 'text',
+      disableFilters: true,
+      disableSortBy: true,
     },
     {
       Header: t('winterStorageAreaView.tableHeaders.length') || '',

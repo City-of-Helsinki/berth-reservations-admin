@@ -5,6 +5,7 @@ import { act } from 'react-dom/test-utils';
 import RecurringInvoicesForm, { RecurringInvoicesFormProps } from '../RecurringInvoicesForm';
 
 const mockProps: RecurringInvoicesFormProps = {
+  descriptionKey: 'recurringInvoices.form.descriptionBerths',
   isSubmitting: false,
   onCancel: jest.fn(),
   onSubmit: jest.fn(),

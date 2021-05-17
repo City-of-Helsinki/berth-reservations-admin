@@ -3,7 +3,7 @@ import {
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections as SECTIONS,
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node as SECTION,
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties as SECTION_PROPERTIES,
-  INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_leases as LEASES,
+  INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases as LEASES,
   // eslint-disable-next-line max-len
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges as WINTER_STORAGE_PLACES,
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges_node as PLACE,
@@ -73,22 +73,18 @@ export const getIndividualWinterStorageArea = (
 
 const getLeases = (leases: LEASES): Lease[] => {
   return leases?.edges.reduce<Lease[]>((acc, leaseEdge) => {
-    if (!leaseEdge?.node?.application?.customer) {
-      return acc;
-    }
+    if (!leaseEdge?.node) return acc;
     const { id, status, startDate, endDate, isActive } = leaseEdge.node;
     return [
       ...acc,
       {
         id,
         customer: {
-          id: leaseEdge.node.application.customer.id,
-          firstName: leaseEdge.node.application.customer.firstName,
-          lastName: leaseEdge.node.application.customer.lastName,
+          id: leaseEdge.node.customer.id,
         },
         status,
-        applicationId: leaseEdge.node.application.id,
-        applicationDate: leaseEdge.node.application.createdAt,
+        applicationId: leaseEdge.node.application?.id ?? '',
+        applicationDate: leaseEdge.node.application?.createdAt,
         startDate,
         endDate,
         isActive,

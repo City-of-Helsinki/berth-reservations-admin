@@ -9,9 +9,10 @@ import LoadingCell from '../../../common/table/loadingCell/LoadingCell';
 
 export interface CustomerNameProps {
   id: string;
+  linkTo?: string;
 }
 
-const CustomerName = ({ id }: CustomerNameProps) => {
+const CustomerName = ({ id, linkTo }: CustomerNameProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<CUSTOMER_NAME>(CUSTOMER_NAME_QUERY, {
     variables: {
@@ -20,9 +21,13 @@ const CustomerName = ({ id }: CustomerNameProps) => {
   });
 
   if (loading) return <LoadingCell />;
-  if (!data?.profile) return <InternalLink to={`/customers/${id}}`}>{t('common.emptyName')}</InternalLink>;
+  if (!data?.profile) return <InternalLink to={`/customers/${id}`}>{t('common.emptyName')}</InternalLink>;
 
-  return <InternalLink to={`/customers/${id}}`}>{`${data.profile.lastName} ${data.profile.firstName}`}</InternalLink>;
+  return (
+    <InternalLink
+      to={linkTo || `/customers/${id}`}
+    >{`${data.profile.lastName} ${data.profile.firstName}`}</InternalLink>
+  );
 };
 
 export default CustomerName;

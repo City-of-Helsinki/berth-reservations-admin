@@ -40,14 +40,11 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
     {
       Cell: ({ cell }: { cell: Cell<Berth> }) => {
         const isBerthActive = cell.row.original.isActive;
-        if (!isBerthActive) {
-          return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
-        }
-        const activeLease = cell.row.original.leases?.find((lease) => lease.isActive);
-        if (!activeLease) {
-          return cell.value;
-        }
-        return <CustomerName id={cell.value} />;
+        if (!isBerthActive) return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
+
+        if (cell.value) return <CustomerName id={cell.value} />;
+
+        return '';
       },
       Header: t('harborView.tableHeaders.customer') || '',
       accessor: ({ leases }) => {

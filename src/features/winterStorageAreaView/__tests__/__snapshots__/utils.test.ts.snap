@@ -11,9 +11,7 @@ Array [
         "applicationDate": "2020-07-17T10:52:57.079036+00:00",
         "applicationId": "foo",
         "customer": Object {
-          "firstName": "Heikki",
           "id": "UHJvZmlsZU5vZGU6NWNjYzgyNDUtNmRiOS00YTRiLWI5NTEtNWYxNDQ5YTY5NzY2",
-          "lastName": "Kinnunen",
         },
         "endDate": "2021-06-10",
         "id": "V2ludGVyU3RvcmFnZUxlYXNlTm9kZTo3ZTU0NjdmMy1jZGJhLTQzMmEtODdiZi05ODBiZTI1ZGFjNzg=",
@@ -30,7 +28,20 @@ Array [
     "id": "V2ludGVyU3RvcmFnZVBsYWNlTm9kZTo3OTkzYzAxOC0zMTMwLTRjNTItYjA3Ni1mMGZlN2Q5YjRmYTE=",
     "identifier": "-",
     "isActive": true,
-    "leases": Array [],
+    "leases": Array [
+      Object {
+        "applicationDate": undefined,
+        "applicationId": "",
+        "customer": Object {
+          "id": "0a43fd1d-420b-448c-be1a-7268d845c4dc",
+        },
+        "endDate": "2021-06-10",
+        "id": "V2ludGVyU3RvcmFnZUxlYXNlTm9kZTpjOWNjODAyNi1hZTkzLTRjMTUtYmJiNy1kM2Q1ZjE4ZjViYjA=",
+        "isActive": false,
+        "startDate": "2020-09-15",
+        "status": "DRAFTED",
+      },
+    ],
     "length": 5,
     "number": 2,
     "width": 3,

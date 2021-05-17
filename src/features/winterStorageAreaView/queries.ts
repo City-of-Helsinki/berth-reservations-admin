@@ -30,14 +30,12 @@ export const INDIVIDUAL_WINTER_STORAGE_AREA_QUERY = gql`
                       endDate
                       status
                       isActive
+                      customer {
+                        id
+                      }
                       application {
                         id
                         createdAt
-                        customer {
-                          id
-                          firstName
-                          lastName
-                        }
                       }
                     }
                   }
@@ -58,14 +56,12 @@ export const INDIVIDUAL_WINTER_STORAGE_AREA_QUERY = gql`
                             endDate
                             status
                             isActive
+                            customer {
+                              id
+                            }
                             application {
                               id
                               createdAt
-                              customer {
-                                id
-                                firstName
-                                lastName
-                              }
                             }
                           }
                         }
