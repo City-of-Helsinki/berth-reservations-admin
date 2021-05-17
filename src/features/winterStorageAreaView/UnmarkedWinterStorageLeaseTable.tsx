@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Cell } from 'react-table';
 
 import { Lease, UnmarkedWinterStorage } from './types';
-import InternalLink from '../../common/internalLink/InternalLink';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import Pagination from '../../common/pagination/Pagination';
 import GlobalSearchTableTools from '../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import { formatDate } from '../../common/utils/format';
 import CardHeader from '../../common/cardHeader/CardHeader';
+import StatusLabel from '../../common/statusLabel/StatusLabel';
+import CustomerName from '../harborView/customerName/CustomerName';
 
 type ColumnType = Column<Lease>;
 
@@ -25,15 +26,19 @@ const WinterStoragePlaceTable = ({ leases, className }: WinterStorageAreaViewTab
   const columns: ColumnType[] = [
     {
       Cell: ({ cell }: { cell: Cell<Lease> }) => {
-        const lease = cell.row.original;
-        return <InternalLink to={`/unmarked-ws-notices/${lease.applicationId}`}>{cell.value}</InternalLink>;
+        const isPlaceActive = cell.row.original.isActive;
+        if (!isPlaceActive) return <StatusLabel type="error" label={t('winterStorageAreaView.place.inactive')} />;
+
+        if (cell.value)
+          return <CustomerName linkTo={`/unmarked-ws-notices/${cell.row.original.applicationId}`} id={cell.value} />;
+
+        return '';
       },
       Header: t('winterStorageAreaView.tableHeaders.customer') as string,
-      accessor: ({ customer }) => {
-        return `${customer.firstName} ${customer.lastName}`;
-      },
+      accessor: ({ customer }) => customer.id,
       id: 'leases',
-      filter: 'text',
+      disableFilters: true,
+      disableSortBy: true,
     },
     {
       Header: t('winterStorageAreaView.tableHeaders.notified') as string,
