@@ -90,7 +90,7 @@ const WinterStorageAreaCard = ({
             />
             <Property
               icon={IconBoat}
-              label={t('common.terminology.boatSummerStorage')}
+              label={t('common.terminology.summerStorageForBoats')}
               active={summerStorageForBoats}
               className={styles.wordBreak}
             />

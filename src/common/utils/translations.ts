@@ -70,9 +70,9 @@ export const getProductServiceTKey = (productService: ProductServiceType) => {
     case ProductServiceType.STORAGE_ON_ICE:
       return 'common.terminology.storageOnIce';
     case ProductServiceType.SUMMER_STORAGE_FOR_DOCKING_EQUIPMENT:
-      return 'common.terminology.dockingEquipmentSummerStorage';
+      return 'common.terminology.summerStorageForDockingEquipment';
     case ProductServiceType.SUMMER_STORAGE_FOR_TRAILERS:
-      return 'common.terminology.trawlerSummerStorage';
+      return 'common.terminology.summerStorageForTrailers';
     case ProductServiceType.WASTE_COLLECTION:
       return 'common.terminology.wasteCollection';
     case ProductServiceType.WATER:
