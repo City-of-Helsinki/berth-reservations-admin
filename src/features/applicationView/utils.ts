@@ -3,10 +3,9 @@ import {
   INDIVIDUAL_APPLICATION_berthApplication as BERTH_APPLICATION,
   INDIVIDUAL_APPLICATION_boatTypes as BOAT_TYPES,
 } from './__generated__/INDIVIDUAL_APPLICATION';
-import { INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION } from '../winterStorageApplicationView/__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
-import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
-import { BerthApplicationLanguage, CustomerGroup, Language, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { BerthApplicationLanguage, Language, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
+import { getApplicantDetails } from '../../common/utils/applicationUtils';
 
 interface Lease {
   berthNum: string | number;
@@ -38,47 +37,6 @@ export const mapBerthApplicationLanguageToLanguage = (
     default:
       return null;
   }
-};
-
-export const getApplicantDetails = (
-  berthApplication: BERTH_APPLICATION | WINTER_STORAGE_APPLICATION
-): CustomerProfileCardProps => {
-  const {
-    firstName,
-    lastName,
-    address,
-    zipCode,
-    municipality,
-    phoneNumber,
-    email,
-    businessId,
-    companyName,
-    language,
-  } = berthApplication;
-  const customerGroup = businessId ? CustomerGroup.COMPANY : CustomerGroup.PRIVATE;
-
-  return {
-    firstName: firstName,
-    lastName: lastName,
-    primaryAddress: {
-      address: address,
-      postalCode: zipCode,
-      city: municipality,
-    },
-    primaryPhone: phoneNumber,
-    primaryEmail: email,
-    language: mapBerthApplicationLanguageToLanguage(language),
-    customerGroup,
-    ...(businessId && {
-      organization: {
-        businessId,
-        name: companyName,
-        address,
-        city: municipality,
-        postalCode: zipCode,
-      },
-    }),
-  };
 };
 
 export const getApplicationDetailsData = (
