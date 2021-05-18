@@ -6,6 +6,7 @@ import {
 import { INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION } from '../winterStorageApplicationView/__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import { BerthApplicationLanguage, CustomerGroup, Language, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 interface Lease {
   berthNum: string | number;
@@ -133,6 +134,7 @@ export const getApplicationDetailsData = (
     accessibilityRequired,
     applicant: getApplicantDetails(berthApplication),
     applicationCode,
+    applicationType: berthSwitch ? ApplicationTypeEnum.BERTH_SWITCH : ApplicationTypeEnum.BERTH,
     berthSwitch,
     berthSwitchOffered: switchOffers.edges.length > 0,
     queue: 0, // TODO

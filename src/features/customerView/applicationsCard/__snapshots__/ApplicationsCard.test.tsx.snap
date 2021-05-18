@@ -338,6 +338,20 @@ exports[`ApplicationsCard renders normally 1`] = `
                 </a>
               </li>
             </ul>
+            <div
+              class="actions"
+            >
+              <button
+                class="Button-module_button__1msFE button_hds-button__2A0je Button-module_danger__2el15 button_hds-button--danger__dEREN Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 Button-module_size-small__3lizH button_hds-button--small__2NFef"
+                type="button"
+              >
+                <span
+                  class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+                >
+                  Jätä ilman paikkaa
+                </span>
+              </button>
+            </div>
           </section>
         </article>
       </div>

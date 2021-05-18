@@ -1,9 +1,10 @@
 import { ApplicationDetailsProps } from '../../common/applicationDetails/ApplicationDetails';
 import {
-  INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION,
   INDIVIDUAL_WINTER_STORAGE_APPLICATION_boatTypes as BOAT_TYPES,
+  INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION,
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { getApplicantDetails } from '../applicationView/utils';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 export const getWinterStorageApplicationDetailsData = (
   winterStorageApplication: WINTER_STORAGE_APPLICATION,
@@ -20,6 +21,7 @@ export const getWinterStorageApplicationDetailsData = (
 
   return {
     ...winterStorageApplication,
+    applicationType: ApplicationTypeEnum.WINTER_STORAGE,
     customerId: winterStorageApplication.customer?.id,
     applicant: getApplicantDetails(winterStorageApplication),
     queue: 0, // TODO

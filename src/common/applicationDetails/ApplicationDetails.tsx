@@ -22,6 +22,7 @@ import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featur
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 import BerthContractDetails from '../../features/contractDetails/BerthContractDetailsContainer';
+import { ApplicationTypeEnum } from './types';
 
 export interface Lease {
   berthNum: string | number;
@@ -52,6 +53,7 @@ export interface ApplicationDetailsProps {
   accessibilityRequired?: boolean;
   applicant?: PrivateCustomerDetailsProps | OrganizationCustomerDetailsProps;
   applicationCode: string;
+  applicationType: ApplicationTypeEnum;
   berthSwitch?: BerthSwitch | null;
   berthSwitchOffered?: boolean;
   boatDraught?: number | null;
@@ -79,6 +81,7 @@ const ApplicationDetails = ({
   accessibilityRequired,
   applicant,
   applicationCode,
+  applicationType,
   berthSwitch,
   berthSwitchOffered,
   boatDraught,
@@ -226,12 +229,12 @@ const ApplicationDetails = ({
           </>
         ) : (
           <ApplicationChoicesList
-            choices={choices}
             applicationId={id}
+            applicationType={applicationType}
+            choices={choices}
             customerId={customerId}
             disableChoices={berthSwitchOffered}
             handleNoPlacesAvailable={handleNoPlacesAvailable}
-            isSwitchApplication={!!berthSwitch}
           />
         )}
         {berthAccessibilityFeatureFlag() && (

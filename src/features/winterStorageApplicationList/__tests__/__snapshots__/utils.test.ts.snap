@@ -4,6 +4,7 @@ exports[`winterStorageApplicationList utils getWinterStorageApplicationData corr
 Array [
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -33,6 +34,7 @@ Array [
   },
   Object {
     "applicationCode": "code",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -57,6 +59,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -81,6 +84,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -99,6 +103,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -117,6 +122,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -135,6 +141,7 @@ Array [
   },
   Object {
     "applicationCode": "code",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -153,6 +160,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -171,6 +179,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",
@@ -189,6 +198,7 @@ Array [
   },
   Object {
     "applicationCode": "",
+    "applicationType": "WINTER_STORAGE",
     "boatLength": 1,
     "boatModel": "test",
     "boatName": "test",

@@ -22,6 +22,7 @@ Object {
     "primaryPhone": "555555",
   },
   "applicationCode": "1234",
+  "applicationType": "WINTER_STORAGE",
   "boatLength": 1,
   "boatModel": "test",
   "boatName": "test",

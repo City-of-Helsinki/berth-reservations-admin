@@ -1,5 +1,6 @@
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import { WINTER_STORAGE_APPLICATIONS } from './__generated__/WINTER_STORAGE_APPLICATIONS';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 interface WinterStorageAreaChoice {
   priority: number;
@@ -9,6 +10,7 @@ interface WinterStorageAreaChoice {
 
 export type WinterStorageApplication = {
   applicationCode: string;
+  applicationType: ApplicationTypeEnum;
   boatLength: number;
   boatModel: string;
   boatName: string;
@@ -66,6 +68,7 @@ export const getWinterStorageApplicationData = (
 
       const applicationData = {
         applicationCode,
+        applicationType: ApplicationTypeEnum.WINTER_STORAGE,
         boatLength,
         boatModel,
         boatName,
