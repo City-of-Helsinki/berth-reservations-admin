@@ -1,12 +1,11 @@
 import {
   INDIVIDUAL_WINTER_STORAGE_AREA,
-  INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections as SECTIONS,
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node as SECTION,
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties as SECTION_PROPERTIES,
+  // eslint-disable-next-line max-len
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases as LEASES,
   // eslint-disable-next-line max-len
   INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges as WINTER_STORAGE_PLACES,
-  INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges_node as PLACE,
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_AREA';
 import {
   WinterStorageArea,
@@ -16,29 +15,7 @@ import {
   MarkedWinterStorage,
   UnmarkedWinterStorage,
 } from './types';
-
-const getNumberOfCustomersForPlace = (place: PLACE): number => {
-  const isActive = place?.leases?.edges?.find((edge) => edge?.node?.isActive);
-  return isActive ? 1 : 0;
-};
-
-const getNumberOfCustomersForSection = (section: SECTION) => {
-  const countPerPlace =
-    section?.properties?.places.edges.map((edge) => (edge?.node ? getNumberOfCustomersForPlace(edge.node) : 0)) || [];
-
-  return countPerPlace.reduce((a, b) => {
-    return a + b;
-  }, 0);
-};
-
-const getNumberOfCustomers = (sections: SECTIONS) => {
-  const countPerSection =
-    sections.edges.map((edge) => (edge?.node ? getNumberOfCustomersForSection(edge.node) : 0)) || [];
-
-  return countPerSection.reduce((a, b) => {
-    return a + b;
-  }, 0);
-};
+import { getNumberOfCustomers, WinterStorageSectionNodeConnection } from '../../common/utils/wsCustomers';
 
 export const getIndividualWinterStorageArea = (
   data: INDIVIDUAL_WINTER_STORAGE_AREA | undefined
