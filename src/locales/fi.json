@@ -493,9 +493,12 @@
     "tableTools": {
       "return": "Palaa valitsematta"
     },
+    "previousLeases": "Edelliset vuokralaiset",
     "berthDetails": {
-      "previousLeases": "Edelliset vuokralaiset",
       "noSuitableBerths": "Ei sopivaa venepaikkaa"
+    },
+    "winterStoragePlaceDetails": {
+      "noSuitablePlaces": "Ei sopivaa talvisäilytyspaikkaa"
     },
     "invoicing": {
       "acceptAndSend": "Hyväksy ja lähetä tarjous",

@@ -1,0 +1,10 @@
+@import 'spacings';
+@import 'colours';
+
+.placeDetails {
+  padding: 0 units(0.25);
+}
+
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
