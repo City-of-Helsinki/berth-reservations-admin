@@ -273,7 +273,7 @@ exports[`InvoiceModal renders correctly 1`] = `
         class="body"
       >
         <div
-          class="labelValuePair"
+          class="labelValuePair bolded"
         >
           <span
             class="label standard"
