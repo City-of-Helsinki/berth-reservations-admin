@@ -10,6 +10,7 @@ import Pagination from '../../common/pagination/Pagination';
 import GlobalSearchTableTools from '../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import { formatDimension } from '../../common/utils/format';
 import CustomerName from '../harborView/customerName/CustomerName';
+import WinterStoragePlaceDetailsContainer from '../winterStoragePlaceDetails/WinterStoragePlaceDetailsContainer';
 
 type ColumnType = Column<WinterStoragePlace>;
 
@@ -94,6 +95,7 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
         );
       }}
       styleMainHeader={false}
+      renderSubComponent={(row) => <WinterStoragePlaceDetailsContainer id={row.original.id} />}
       renderPaginator={({ pageIndex, pageCount, goToPage }) => (
         <Pagination
           pageIndex={pageIndex}
