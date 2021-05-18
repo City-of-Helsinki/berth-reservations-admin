@@ -8,7 +8,7 @@ import styles from './applicationDetails.module.scss';
 import Text from '../text/Text';
 import { formatDate, formatDimension, formatWeight } from '../utils/format';
 import { APPLICATION_STATUS } from '../utils/constants';
-import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import PrivateCustomerDetails, { PrivateCustomerDetailsProps } from '../privateCustomerDetails/PrivateCustomerDetails';
 import OrganizationCustomerDetails, {
   OrganizationCustomerDetailsProps,
@@ -22,32 +22,8 @@ import { berthAccessibilityFeatureFlag, queueFeatureFlag } from '../utils/featur
 import DeleteButton from '../deleteButton/DeleteButton';
 import { canDeleteLease } from '../utils/leaseUtils';
 import BerthContractDetails from '../../features/contractDetails/BerthContractDetailsContainer';
-import { ApplicationTypeEnum } from './types';
-
-export interface Lease {
-  berthNum: string | number;
-  harborId: string;
-  harborName: string;
-  id: string;
-  pierIdentifier: string;
-  status: LeaseStatus;
-}
-
-interface BerthSwitch {
-  berthNum: string | number;
-  harborId: string;
-  harborName: string;
-  pierIdentifier: string;
-  reason: string | null;
-}
-
-interface SummaryInformation {
-  applicationCode: string;
-  acceptBoatingNewsletter: boolean;
-  acceptFitnessNews: boolean;
-  acceptLibraryNews: boolean;
-  acceptOtherCultureNews: boolean;
-}
+import { ApplicationTypeEnum, BerthLease, BerthSwitch, Lease, SummaryInformation, WinterStorageLease } from './types';
+import WinterStorageContractDetailsContainer from '../../features/contractDetails/WinterStorageContractDetailsContainer';
 
 export interface ApplicationDetailsProps {
   accessibilityRequired?: boolean;
@@ -105,6 +81,24 @@ const ApplicationDetails = ({
   summaryInformation,
 }: ApplicationDetailsProps) => {
   const { t, i18n } = useTranslation();
+
+  const renderPlaceTitle = () => {
+    switch (applicationType) {
+      case ApplicationTypeEnum.BERTH:
+      case ApplicationTypeEnum.BERTH_SWITCH:
+        return [(lease as BerthLease).harborName, (lease as BerthLease).pierIdentifier, (lease as BerthLease).berthNum]
+          .filter(Boolean)
+          .join(' ');
+      case ApplicationTypeEnum.WINTER_STORAGE:
+        return [
+          (lease as WinterStorageLease).areaName,
+          (lease as WinterStorageLease).sectionIdentifier,
+          (lease as WinterStorageLease).placeNum,
+        ]
+          .filter(Boolean)
+          .join(' ');
+    }
+  };
 
   return (
     <Grid colsCount={3}>
@@ -211,10 +205,10 @@ const ApplicationDetails = ({
         )}
       </div>
       <div>
-        {lease ? (
+        {!!lease ? (
           <>
             <Section title={t('applicationList.applicationDetails.connectedLease').toUpperCase()}>
-              {[lease.harborName, lease.pierIdentifier, lease.berthNum].filter(Boolean).join(' ')}
+              {renderPlaceTitle()}
               {handleDeleteLease && canDeleteLease(lease.status) && (
                 <DeleteButton
                   buttonText={t('applicationList.applicationDetails.deleteLease')}
@@ -225,7 +219,11 @@ const ApplicationDetails = ({
                 />
               )}
             </Section>
-            <BerthContractDetails leaseId={lease.id} />
+            {applicationType === ApplicationTypeEnum.BERTH || applicationType === ApplicationTypeEnum.BERTH_SWITCH ? (
+              <BerthContractDetails leaseId={lease.id} />
+            ) : (
+              <WinterStorageContractDetailsContainer leaseId={lease.id} />
+            )}
           </>
         ) : (
           <ApplicationChoicesList

@@ -1,8 +1,8 @@
-import { ApplicationDetailsProps, Lease } from '../ApplicationDetails';
+import { ApplicationDetailsProps } from '../ApplicationDetails';
 import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
-import { ApplicationTypeEnum } from '../types';
+import { ApplicationTypeEnum, Lease } from '../types';
 
 export const minimumProps: ApplicationDetailsProps = {
   applicationCode: 'TESTEST',
