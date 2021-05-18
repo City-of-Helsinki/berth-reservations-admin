@@ -142,8 +142,10 @@
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
+      "place": "Paikka",
       "priceTier": "Maksuluokka",
       "registrationNumber": "Rekisterinumero",
+      "section": "Osasto",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
@@ -516,6 +518,10 @@
       "berthLeaseCreated": {
         "label": "Hakemus käsitelty",
         "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+      },
+      "winterStorageLeaseCreated": {
+        "label": "Hakemus käsitelty",
+        "description": "{{area}} osasto {{section}} paikka {{place}} myönnetty asiakkaalle."
       },
       "berthSwitched": {
         "label": "Venepaikka vaihdettu",
