@@ -152,7 +152,7 @@ const InvoiceModal = ({ invoice, toggleModal, actions, selectedAction, ...modalP
 
           <Section>
             <LabelValuePair
-              className={styles.bolded}
+              className={styles.bold}
               label={t('common.total').toUpperCase()}
               value={formatPrice(invoice.totalPrice, i18n.language)}
               align="right"
