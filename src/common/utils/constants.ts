@@ -30,21 +30,10 @@ type OrderStatusType = {
 };
 
 export const ORDER_STATUS: OrderStatusType = {
-  CANCELLED: {
-    label: 'common.orderStatus.cancelled',
-    type: 'error',
-  },
+  // Note: Changing the order affects the status filters
   DRAFTED: {
     label: 'common.orderStatus.drafted',
     type: 'warning',
-  },
-  ERROR: {
-    label: 'common.orderStatus.error',
-    type: 'error',
-  },
-  EXPIRED: {
-    label: 'common.orderStatus.expired',
-    type: 'error',
   },
   OFFERED: {
     label: 'common.orderStatus.offered',
@@ -64,6 +53,18 @@ export const ORDER_STATUS: OrderStatusType = {
   },
   REJECTED: {
     label: 'common.orderStatus.rejected',
+    type: 'error',
+  },
+  EXPIRED: {
+    label: 'common.orderStatus.expired',
+    type: 'error',
+  },
+  CANCELLED: {
+    label: 'common.orderStatus.cancelled',
+    type: 'error',
+  },
+  ERROR: {
+    label: 'common.orderStatus.error',
     type: 'error',
   },
 };
