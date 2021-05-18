@@ -61,13 +61,15 @@ export const getIndividualWinterStorageArea = (
     streetAddress,
     wwwUrl,
     imageFile,
-    electricity: hasService('electricity'),
-    water: hasService('water'),
-    gate: hasService('gate'),
-    summerStorageForBoats: hasService('summerStorageForBoats'),
-    summerStorageForTrailers: hasService('summerStorageForTrailers'),
-    summerStorageForDockingEquipment: hasService('summerStorageForDockingEquipment'),
-    numberOfCustomers: getNumberOfCustomers(sections),
+    properties: {
+      electricity: hasService('electricity'),
+      gate: hasService('gate'),
+      numberOfCustomers: getNumberOfCustomers(sections as WinterStorageSectionNodeConnection),
+      summerStorageForBoats: hasService('summerStorageForBoats'),
+      summerStorageForDockingEquipment: hasService('summerStorageForDockingEquipment'),
+      summerStorageForTrailers: hasService('summerStorageForTrailers'),
+      water: hasService('water'),
+    },
   };
 };
 

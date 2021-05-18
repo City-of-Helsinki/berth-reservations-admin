@@ -1,17 +1,19 @@
 export type WinterStorageArea = {
-  electricity: boolean;
-  water: boolean;
-  gate: boolean;
-  summerStorageForBoats: boolean;
-  summerStorageForTrailers: boolean;
-  summerStorageForDockingEquipment: boolean;
-  name: string;
-  zipCode: string;
+  imageFile: string | null;
   municipality: string | null;
+  name: string;
   streetAddress: string | null;
   wwwUrl: string;
-  imageFile: string | null;
-  numberOfCustomers: number;
+  zipCode: string;
+  properties: {
+    electricity: boolean;
+    gate: boolean;
+    numberOfCustomers: number;
+    summerStorageForBoats: boolean;
+    summerStorageForDockingEquipment: boolean;
+    summerStorageForTrailers: boolean;
+    water: boolean;
+  };
 };
 
 export type Lease = {

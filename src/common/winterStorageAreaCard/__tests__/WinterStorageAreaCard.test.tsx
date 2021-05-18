@@ -7,17 +7,19 @@ describe('WinterStorageAreaCard', () => {
   it('renders correctly with minimum props', () => {
     const wrapper = shallow(
       <WinterStorageAreaCard
-        electricity={false}
-        gate={false}
+        properties={{
+          electricity: false,
+          gate: false,
+          numberOfCustomers: 0,
+          summerStorageForBoats: false,
+          summerStorageForDockingEquipment: false,
+          summerStorageForTrailers: false,
+          water: false,
+        }}
         imageFile={null}
         municipality={null}
         name={'name'}
-        numberOfCustomers={0}
         streetAddress={null}
-        summerStorageForBoats={false}
-        summerStorageForDockingEquipment={false}
-        summerStorageForTrailers={false}
-        water={false}
         wwwUrl={'https://www.hel.fi'}
         zipCode={'00000'}
       />
@@ -29,17 +31,19 @@ describe('WinterStorageAreaCard', () => {
     const wrapper = shallow(
       <WinterStorageAreaCard
         className={'test'}
-        electricity={true}
-        gate={true}
+        properties={{
+          electricity: true,
+          gate: true,
+          numberOfCustomers: 0,
+          summerStorageForBoats: true,
+          summerStorageForDockingEquipment: true,
+          summerStorageForTrailers: true,
+          water: true,
+        }}
         imageFile={'https://www.hel.fi'}
         municipality={'municipality'}
         name={'name'}
-        numberOfCustomers={0}
         streetAddress={'street'}
-        summerStorageForBoats={true}
-        summerStorageForDockingEquipment={true}
-        summerStorageForTrailers={true}
-        water={true}
         wwwUrl={'https://www.hel.fi'}
         zipCode={'00000'}
       />

@@ -28,13 +28,15 @@ const WinterStorageAreaCard = ({
   streetAddress,
   zipCode,
   municipality,
-  numberOfCustomers,
-  gate,
-  water,
-  electricity,
-  summerStorageForBoats,
-  summerStorageForDockingEquipment,
-  summerStorageForTrailers,
+  properties: {
+    electricity,
+    gate,
+    numberOfCustomers,
+    summerStorageForBoats,
+    summerStorageForDockingEquipment,
+    summerStorageForTrailers,
+    water,
+  },
 }: WinterStorageAreaCardProps) => {
   const { t } = useTranslation();
 
