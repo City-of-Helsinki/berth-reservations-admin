@@ -2,12 +2,6 @@
 
 exports[`winterStorageApplicationView utils getWinterStorageApplicationDetailsData parses data correctly 1`] = `
 Object {
-  "__typename": "WinterStorageApplicationNode",
-  "acceptBoatingNewsletter": true,
-  "acceptFitnessNews": true,
-  "acceptLibraryNews": true,
-  "acceptOtherCultureNews": true,
-  "address": "test",
   "applicant": Object {
     "customerGroup": "PRIVATE",
     "firstName": "test",
@@ -29,7 +23,6 @@ Object {
   "boatRegistrationNumber": "test",
   "boatType": "Perämoottorivene",
   "boatWidth": 1,
-  "businessId": "",
   "choices": Array [
     Object {
       "priority": 1,
@@ -42,17 +35,10 @@ Object {
       "winterStorageAreaName": "Rajasaari",
     },
   ],
-  "companyName": "",
   "createdAt": "2019-05-06T10:54:21.746387+00:00",
-  "customer": null,
   "customerId": undefined,
-  "email": "test@test.com",
-  "firstName": "test",
   "id": "V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox",
-  "language": "EN",
-  "lastName": "test",
-  "municipality": "helsinki",
-  "phoneNumber": "555555",
+  "lease": null,
   "queue": 0,
   "status": "PENDING",
   "summaryInformation": Object {
@@ -62,32 +48,5 @@ Object {
     "acceptOtherCultureNews": true,
     "applicationCode": "1234",
   },
-  "winterStorageAreaChoices": Array [
-    Object {
-      "__typename": "WinterStorageAreaChoiceType",
-      "priority": 1,
-      "winterStorageArea": Object {
-        "__typename": "WinterStorageAreaNode",
-        "id": "MOCK-WINTER-STORAGE-AREA-0",
-        "properties": Object {
-          "__typename": "WinterStorageAreaProperties",
-          "name": "Iso-Sarvasto",
-        },
-      },
-    },
-    Object {
-      "__typename": "WinterStorageAreaChoiceType",
-      "priority": 2,
-      "winterStorageArea": Object {
-        "__typename": "WinterStorageAreaNode",
-        "id": "MOCK-WINTER-STORAGE-AREA-1",
-        "properties": Object {
-          "__typename": "WinterStorageAreaProperties",
-          "name": "Rajasaari",
-        },
-      },
-    },
-  ],
-  "zipCode": "00100",
 }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { PureQueryOptions } from 'apollo-client';
 
 import styles from './winterStorageApplicationView.module.scss';
 import Card from '../../common/card/Card';
@@ -14,11 +15,15 @@ import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../linkApplicationToCustomer/LinkApplicationToCustomerContainer';
 import ApplicationHeader from '../../common/applicationHeader/ApplicationHeader';
+import WinterStorageOfferCard, { WinterStorageOfferCardProps } from './winterStorageOfferCard/WinterStorageOfferCard';
 
 export interface ApplicationViewProps {
   applicationDetails: ApplicationDetailsProps;
   customerProfile: CustomerProfileCardProps | null;
   isDeletingApplication: boolean;
+  isDeletingLease: boolean;
+  leaseDetails: WinterStorageOfferCardProps['leaseDetails'] | null;
+  refetchQueries: PureQueryOptions[] | string[];
   winterStorageApplication: LinkApplicationToCustomerContainerProps['application'];
   handleDeleteApplication(): void;
   handleDeleteLease(id: string): void;
@@ -36,6 +41,9 @@ const WinterStorageApplicationView = ({
   handleLinkCustomer,
   handleUnlinkCustomer,
   isDeletingApplication,
+  isDeletingLease,
+  leaseDetails,
+  refetchQueries,
   winterStorageApplication,
 }: ApplicationViewProps) => {
   const { t } = useTranslation();
@@ -51,7 +59,6 @@ const WinterStorageApplicationView = ({
         handleUnlinkCustomer={handleUnlinkCustomer}
         isDeletingApplication={isDeletingApplication}
         status={applicationDetails.status}
-        text={t('applicationList.applicationType.newApplication')}
       />
 
       {customerProfile ? (
@@ -73,7 +80,15 @@ const WinterStorageApplicationView = ({
         </CardBody>
       </Card>
 
-      {/*  TODO: Offer and invoicing */}
+      {leaseDetails && (
+        <WinterStorageOfferCard
+          className={styles.fullWidth}
+          leaseDetails={leaseDetails}
+          handleDeleteLease={handleDeleteLease}
+          isDeletingLease={isDeletingLease}
+          refetchQueries={refetchQueries}
+        />
+      )}
     </PageContent>
   );
 };

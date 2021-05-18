@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
+import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_WINTER_STORAGE_APPLICATION
@@ -72,6 +72,99 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_
   winterStorageArea: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices_winterStorageArea;
 }
 
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties_area_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties_area {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties_area_properties | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties {
+  __typename: "WinterStorageSectionProperties";
+  identifier: string;
+  electricity: boolean;
+  gate: boolean;
+  water: boolean;
+  summerStorageForBoats: boolean;
+  summerStorageForDockingEquipment: boolean;
+  summerStorageForTrailers: boolean;
+  area: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties_area;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection {
+  __typename: "WinterStorageSectionNode";
+  id: string;
+  properties: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection_properties | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place {
+  __typename: "WinterStoragePlaceNode";
+  id: string;
+  length: number;
+  width: number;
+  number: number;
+  winterStorageSection: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place_winterStorageSection;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_customer_primaryEmail {
+  __typename: "EmailNode";
+  id: string;
+  email: string;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_customer {
+  __typename: "ProfileNode";
+  id: string;
+  primaryEmail: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_customer_primaryEmail | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges_node_product {
+  __typename: "AdditionalProductNode";
+  id: string;
+  service: ProductServiceType;
+  productType: AdditionalProductType;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges_node {
+  __typename: "OrderLineNode";
+  id: string;
+  price: any;
+  product: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges_node_product | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges {
+  __typename: "OrderLineNodeEdge";
+  node: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges_node | null;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines {
+  __typename: "OrderLineNodeConnection";
+  edges: (INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines_edges | null)[];
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order {
+  __typename: "OrderNode";
+  id: string;
+  orderNumber: string;
+  price: any;
+  totalPrice: any;
+  status: OrderStatus;
+  orderLines: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order_orderLines;
+}
+
+export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease {
+  __typename: "WinterStorageLeaseNode";
+  id: string;
+  status: LeaseStatus;
+  place: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_place | null;
+  customer: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_customer;
+  order: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease_order | null;
+}
+
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication {
   __typename: "WinterStorageApplicationNode";
   id: string;
@@ -100,6 +193,7 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication 
   status: ApplicationStatus;
   winterStorageAreaChoices: (INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_winterStorageAreaChoices | null)[] | null;
   applicationCode: string;
+  lease: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_lease | null;
 }
 
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_boatTypes {

@@ -3,8 +3,18 @@ import {
   INDIVIDUAL_WINTER_STORAGE_APPLICATION_boatTypes as BOAT_TYPES,
   INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION,
 } from './__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
-import { getApplicantDetails } from '../applicationView/utils';
 import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
+import { getApplicantDetails } from '../../common/utils/applicationUtils';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
+
+interface Lease {
+  placeNum: string | number;
+  areaId: string;
+  areaName: string;
+  id: string;
+  sectionIdentifier: string;
+  status: LeaseStatus;
+}
 
 export const getWinterStorageApplicationDetailsData = (
   winterStorageApplication: WINTER_STORAGE_APPLICATION,
@@ -19,14 +29,46 @@ export const getWinterStorageApplicationDetailsData = (
       };
     }) ?? [];
 
+  const {
+    applicationCode,
+    boatLength,
+    boatModel,
+    boatName,
+    boatRegistrationNumber,
+    boatWidth,
+    createdAt,
+    id,
+    status,
+  } = winterStorageApplication;
+
+  const lease: Lease | null = winterStorageApplication.lease
+    ? {
+        areaId: winterStorageApplication.lease.place?.winterStorageSection.properties?.area.id || '',
+        areaName: winterStorageApplication.lease.place?.winterStorageSection.properties?.area.properties?.name || '',
+        id: winterStorageApplication.lease.id,
+        placeNum: winterStorageApplication.lease.place?.number || '',
+        sectionIdentifier: winterStorageApplication.lease.place?.winterStorageSection.properties?.identifier || '',
+        status: winterStorageApplication.lease.status,
+      }
+    : null;
+
   return {
-    ...winterStorageApplication,
-    applicationType: ApplicationTypeEnum.WINTER_STORAGE,
-    customerId: winterStorageApplication.customer?.id,
     applicant: getApplicantDetails(winterStorageApplication),
-    queue: 0, // TODO
-    choices,
+    applicationCode,
+    applicationType: ApplicationTypeEnum.WINTER_STORAGE,
+    boatLength,
+    boatModel,
+    boatName,
+    boatRegistrationNumber,
     boatType: boatTypes.find(({ id }) => id === winterStorageApplication.boatType)?.name,
+    boatWidth,
+    choices,
+    createdAt,
+    customerId: winterStorageApplication.customer?.id,
+    id,
+    lease,
+    queue: 0, // TODO
+    status,
     summaryInformation: {
       applicationCode: winterStorageApplication.applicationCode,
       acceptBoatingNewsletter: winterStorageApplication.acceptBoatingNewsletter,

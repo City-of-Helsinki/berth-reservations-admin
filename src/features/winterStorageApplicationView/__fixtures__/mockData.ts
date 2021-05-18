@@ -61,6 +61,7 @@ export const mockData: INDIVIDUAL_WINTER_STORAGE_APPLICATION & {
       },
     ],
     applicationCode: '1234',
+    lease: null,
     __typename: 'WinterStorageApplicationNode',
   },
   boatTypes: [

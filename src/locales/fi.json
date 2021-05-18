@@ -159,6 +159,7 @@
       "weight": "Paino",
       "width": "Leveys",
       "winterStorageArea": "Talvisäilytysalue",
+      "winterStoragePlace": "Talvisäilytyspaikka",
       "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra",
       "winterStoragePlaces": "Talvisäilytyspaikat"
     },
