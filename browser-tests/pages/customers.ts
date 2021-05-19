@@ -9,8 +9,8 @@ export const customers = {
     selectFirstCustomer: Selector('div[class^="table_rowWrapper"] div input[type^="checkbox"]').nth(0),
     selectedCount: Selector('div[class^="customerListTableTools_tableToolsLeft"] span[class^="text_gray"]'),
     deselectAll: Selector('div[class^="customerListTableTools_tableToolsLeft"] span[class^="text_brand"]'),
-    paginationNextButton: Selector('ul[class^="pagination"] li[class^="pagination_nextBtn"] a'),
-    selectedPage: Selector('ul[class^="pagination"] li[class^="selected"] a'),
+    paginationNextButton: Selector('button[class^="pagination_nextBtn"]'),
+    selectedPage: Selector('select[class^="pagination_select"]'),
   },
   customerView: {
     firstDataLabel: Selector(
