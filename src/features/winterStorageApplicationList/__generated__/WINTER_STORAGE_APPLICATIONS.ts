@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ApplicationStatus, WinterStorageApplicationAreaType } from "./../../../@types/__generated__/globalTypes";
+import { ApplicationStatus, WinterStorageApplicationAreaType, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: WINTER_STORAGE_APPLICATIONS
@@ -31,6 +31,48 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   winterStorageArea: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices_winterStorageArea;
 }
 
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_order {
+  __typename: "OrderNode";
+  id: string;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties_area_properties {
+  __typename: "WinterStorageAreaProperties";
+  name: string | null;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties_area {
+  __typename: "WinterStorageAreaNode";
+  id: string;
+  properties: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties_area_properties | null;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties {
+  __typename: "WinterStorageSectionProperties";
+  identifier: string;
+  area: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties_area;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection {
+  __typename: "WinterStorageSectionNode";
+  id: string;
+  properties: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection_properties | null;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place {
+  __typename: "WinterStoragePlaceNode";
+  number: number;
+  winterStorageSection: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection;
+}
+
+export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease {
+  __typename: "WinterStorageLeaseNode";
+  id: string;
+  status: LeaseStatus;
+  order: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_order | null;
+  place: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place | null;
+}
+
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node {
   __typename: "WinterStorageApplicationNode";
   areaType: WinterStorageApplicationAreaType | null;
@@ -49,6 +91,7 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   boatName: string;
   boatModel: string;
   winterStorageAreaChoices: (WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices | null)[] | null;
+  lease: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease | null;
 }
 
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges {

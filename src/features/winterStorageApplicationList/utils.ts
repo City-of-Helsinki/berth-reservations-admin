@@ -1,4 +1,4 @@
-import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { WINTER_STORAGE_APPLICATIONS } from './__generated__/WINTER_STORAGE_APPLICATIONS';
 import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
@@ -6,6 +6,16 @@ interface WinterStorageAreaChoice {
   priority: number;
   winterStorageArea: string;
   winterStorageAreaName: string;
+}
+
+interface Lease {
+  areaId: string;
+  areaName: string;
+  id: string;
+  orderId: string | undefined;
+  placeNum: number | string;
+  sectionIdentifier: string;
+  status: LeaseStatus;
 }
 
 export type WinterStorageApplication = {
@@ -50,6 +60,7 @@ export const getWinterStorageApplicationData = (
         firstName,
         id,
         lastName,
+        lease,
         municipality,
         status,
         winterStorageAreaChoices,
@@ -64,7 +75,18 @@ export const getWinterStorageApplicationData = (
           };
         }) ?? [];
 
-      // TODO: lease
+      let leaseProps: Lease | null = null;
+      if (lease?.place?.winterStorageSection.properties?.area) {
+        leaseProps = {
+          placeNum: lease.place.number || '',
+          areaId: lease.place.winterStorageSection.properties.area.id,
+          areaName: lease.place.winterStorageSection.properties.area.properties?.name || '',
+          id: lease.id,
+          sectionIdentifier: lease.place.winterStorageSection.properties?.identifier || '',
+          status: lease.status,
+          orderId: lease.order?.id,
+        };
+      }
 
       const applicationData = {
         applicationCode,
@@ -81,6 +103,7 @@ export const getWinterStorageApplicationData = (
         firstName,
         id,
         lastName,
+        lease: leaseProps,
         municipality,
         queue: 0, // TODO,
         status,
