@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { PriceUnits, PlaceProductTaxEnum, PriceTier, ProductServiceType, PeriodType, AdditionalProductType, AdditionalProductTaxEnum } from "./../../../@types/__generated__/globalTypes";
+import { PriceUnits, PlaceProductTaxEnum, PricingCategory, PriceTier, ProductServiceType, PeriodType, AdditionalProductType, AdditionalProductTaxEnum } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: PRICING
@@ -19,6 +19,7 @@ export interface PRICING_berthProducts_edges_node {
   tier3Price: any;
   priceUnit: PriceUnits;
   taxPercentage: PlaceProductTaxEnum;
+  pricingCategory: PricingCategory;
 }
 
 export interface PRICING_berthProducts_edges {

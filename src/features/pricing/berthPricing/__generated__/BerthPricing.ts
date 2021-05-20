@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { PriceUnits, PlaceProductTaxEnum } from "./../../../../@types/__generated__/globalTypes";
+import { PriceUnits, PlaceProductTaxEnum, PricingCategory } from "./../../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: BerthPricing
@@ -19,6 +19,7 @@ export interface BerthPricing_edges_node {
   tier3Price: any;
   priceUnit: PriceUnits;
   taxPercentage: PlaceProductTaxEnum;
+  pricingCategory: PricingCategory;
 }
 
 export interface BerthPricing_edges {

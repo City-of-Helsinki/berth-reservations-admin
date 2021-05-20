@@ -181,6 +181,13 @@ export enum PriceUnits {
   PERCENTAGE = "PERCENTAGE",
 }
 
+export enum PricingCategory {
+  DEFAULT = "DEFAULT",
+  DINGHY = "DINGHY",
+  TRAILER = "TRAILER",
+  VASIKKASAARI = "VASIKKASAARI",
+}
+
 export enum ProductServiceType {
   DINGHY_PLACE = "DINGHY_PLACE",
   ELECTRICITY = "ELECTRICITY",
@@ -612,9 +619,11 @@ export interface UpdateHarborMutationInput {
 
 export interface UpdateOrderInput {
   leaseId?: string | null;
+  customerId?: string | null;
   status?: OrderStatus | null;
   comment?: string | null;
   dueDate?: any | null;
+  productId?: string | null;
   id: string;
 }
 
