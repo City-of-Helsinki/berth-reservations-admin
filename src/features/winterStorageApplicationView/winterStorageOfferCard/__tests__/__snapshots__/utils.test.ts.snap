@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`winterStorageOfferCard utils getOfferDetailsData maps lease data to lease details correctly 1`] = `
+Object {
+  "areaId": "MOCK-AREA",
+  "areaName": "AREA",
+  "customerEmail": "test@example.com",
+  "electricity": false,
+  "gate": true,
+  "id": "MOCK-LEASE",
+  "order": Object {
+    "fixedProducts": Array [
+      Object {
+        "id": "MOCK-PRODUCT",
+        "name": "GATE",
+        "orderId": "",
+        "price": 50,
+      },
+    ],
+    "id": "MOCK-ORDER",
+    "optionalProducts": Array [],
+    "orderNumber": "ORDER-NUMBER",
+    "price": 100,
+    "status": "PAID",
+    "totalPrice": 150,
+  },
+  "placeLength": 3,
+  "placeNum": 1,
+  "placeWidth": 3,
+  "sectionIdentifier": "SECTION",
+  "status": "PAID",
+  "summerStorageForBoats": false,
+  "summerStorageForDockingEquipment": false,
+  "summerStorageForTrailers": false,
+  "water": false,
+}
+`;
