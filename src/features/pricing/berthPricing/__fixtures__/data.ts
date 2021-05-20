@@ -1,4 +1,4 @@
-import { PlaceProductTaxEnum, PriceUnits } from '../../../../@types/__generated__/globalTypes';
+import { PlaceProductTaxEnum, PriceUnits, PricingCategory } from '../../../../@types/__generated__/globalTypes';
 import { BerthPricingProps } from '../BerthPricing';
 
 export const data: BerthPricingProps['data'] = {
@@ -16,6 +16,7 @@ export const data: BerthPricingProps['data'] = {
         tier3Price: 100,
         priceUnit: PriceUnits.AMOUNT,
         taxPercentage: PlaceProductTaxEnum.TAX_24_00,
+        pricingCategory: PricingCategory.DEFAULT,
       },
     },
   ],

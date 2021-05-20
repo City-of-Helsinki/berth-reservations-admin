@@ -13,6 +13,7 @@ import { getBerthsData } from './utils';
 import { PriceTier } from '../../../@types/__generated__/globalTypes';
 import { getPriceTier } from '../../../common/utils/translations';
 import styles from './berthPricing.module.scss';
+import Text from '../../../common/text/Text';
 
 export interface BerthPrice {
   id: string;
@@ -65,15 +66,63 @@ const BerthPricing = ({ data, loading, refetchQueries }: BerthPricingProps) => {
     },
   ];
 
+  const pricingData = getBerthsData(data);
+
   return (
     <Card className={styles.berthPricing}>
       <CardHeader title={t('pricing.berths.title')} />
-      <CardBody>
+      <CardBody key="DEFAULT">
+        <Text as="h3">{t('pricing.berths.defaultProducts')}</Text>
         <Section>{t('pricing.berths.description')}</Section>
         <Table
           columns={berthPricesCols}
           initialState={{ sortBy: [{ id: 'name', desc: false }] }}
-          data={getBerthsData(data)}
+          data={pricingData.DEFAULT}
+          loading={loading}
+          theme="basic"
+          getCellProps={() => ({
+            className: styles.tableCell,
+          })}
+          renderEmptyStateRow={() => t('common.notification.noData.description')}
+        />
+      </CardBody>
+      <CardBody key="VASIKKASAARI">
+        <Text as="h3">{t('pricing.berths.vasikkasaari')}</Text>
+        <Section>{t('pricing.berths.description')}</Section>
+        <Table
+          columns={berthPricesCols}
+          initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+          data={pricingData.VASIKKASAARI}
+          loading={loading}
+          theme="basic"
+          getCellProps={() => ({
+            className: styles.tableCell,
+          })}
+          renderEmptyStateRow={() => t('common.notification.noData.description')}
+        />
+      </CardBody>
+      <CardBody key="DINGHY">
+        <Text as="h3">{t('pricing.berths.dinghy')}</Text>
+        <Section>{t('pricing.berths.description')}</Section>
+        <Table
+          columns={berthPricesCols}
+          initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+          data={pricingData.DINGHY}
+          loading={loading}
+          theme="basic"
+          getCellProps={() => ({
+            className: styles.tableCell,
+          })}
+          renderEmptyStateRow={() => t('common.notification.noData.description')}
+        />
+      </CardBody>
+      <CardBody key="TRAILER">
+        <Text as="h3">{t('pricing.berths.trailer')}</Text>
+        <Section>{t('pricing.berths.description')}</Section>
+        <Table
+          columns={berthPricesCols}
+          initialState={{ sortBy: [{ id: 'name', desc: false }] }}
+          data={pricingData.TRAILER}
           loading={loading}
           theme="basic"
           getCellProps={() => ({
