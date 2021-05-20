@@ -129,7 +129,7 @@ const additionalProducts: ADDITIONAL_PRODUCTS = {
   ],
 };
 
-const berthApplication: BERTH_APPLICATION = {
+export const berthApplication: BERTH_APPLICATION = {
   __typename: 'BerthApplicationNode',
   acceptBoatingNewsletter: true,
   acceptFitnessNews: false,

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`applicationUtils getApplicantDetails should return correct values for a berth application 1`] = `
+Object {
+  "customerGroup": "PRIVATE",
+  "firstName": "Testi",
+  "language": "FINNISH",
+  "lastName": "Testinen",
+  "primaryAddress": Object {
+    "address": "Testikatu 1",
+    "city": "Helsinki",
+    "postalCode": "00100",
+  },
+  "primaryEmail": "test@example.com",
+  "primaryPhone": "+358 00 000 0000",
+}
+`;
+
+exports[`applicationUtils getApplicantDetails should return correct values for a winter storage application 1`] = `
+Object {
+  "customerGroup": "PRIVATE",
+  "firstName": "test",
+  "language": "ENGLISH",
+  "lastName": "test",
+  "primaryAddress": Object {
+    "address": "test",
+    "city": "helsinki",
+    "postalCode": "00100",
+  },
+  "primaryEmail": "test@test.com",
+  "primaryPhone": "555555",
+}
+`;
+
+exports[`applicationUtils getApplicantDetails should return correct values for an unmarked winter storage notice 1`] = `
+Object {
+  "customerGroup": "PRIVATE",
+  "firstName": "test",
+  "language": "ENGLISH",
+  "lastName": "test",
+  "primaryAddress": Object {
+    "address": "test",
+    "city": "helsinki",
+    "postalCode": "00100",
+  },
+  "primaryEmail": "test@test.com",
+  "primaryPhone": "555555",
+}
+`;

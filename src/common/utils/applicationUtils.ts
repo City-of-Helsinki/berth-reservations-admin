@@ -14,7 +14,7 @@ export const canUnlinkCustomer = (status: ApplicationStatus) => {
 };
 
 export const getApplicantDetails = (
-  berthApplication: BERTH_APPLICATION | WINTER_STORAGE_APPLICATION | WINTER_STORAGE_NOTICE
+  application: BERTH_APPLICATION | WINTER_STORAGE_APPLICATION | WINTER_STORAGE_NOTICE
 ): CustomerProfileCardProps => {
   const {
     firstName,
@@ -27,7 +27,7 @@ export const getApplicantDetails = (
     businessId,
     companyName,
     language,
-  } = berthApplication;
+  } = application;
   const customerGroup = businessId ? CustomerGroup.COMPANY : CustomerGroup.PRIVATE;
 
   return {
