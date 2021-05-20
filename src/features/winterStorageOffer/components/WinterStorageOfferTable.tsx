@@ -10,7 +10,7 @@ import Button from '../../../common/button/Button';
 import { formatDimension } from '../../../common/utils/format';
 import styles from '../../berthOffer/components/berthOffer.module.scss';
 import TableFilters from '../../../common/tableFilters/TableFilters';
-import TableTools from '../../berthOffer/components/tableTools/TableTools';
+import OfferTableTools from '../../../common/offerTableTools/OfferTableTools';
 import { PlaceData, SectionTab } from '../types';
 import WinterStoragePlaceDetailsContainer from '../../winterStoragePlaceDetails/WinterStoragePlaceDetailsContainer';
 import { isPlaceSuitableForBoat } from '../utils';
@@ -119,7 +119,13 @@ const WinterStorageOfferTable = ({
           filterPrefix={t('common.terminology.section')}
         />
       )}
-      renderTableToolsTop={() => <TableTools application={application} handleReturn={handleReturn} />}
+      renderTableToolsTop={() => (
+        <OfferTableTools
+          application={application}
+          handleReturn={handleReturn}
+          title={t('common.terminology.winterStoragePlaces').toUpperCase()}
+        />
+      )}
       renderEmptyStateRow={() => <p>{t('offer.winterStoragePlaceDetails.noSuitablePlaces')}</p>}
       loading={isSubmitting}
     />
