@@ -80,9 +80,8 @@ export const getAllSectionsIdentifiers = (data: SectionsData | null | undefined)
   }, []);
 };
 
-export const getWinterStorageArea = (
-  data: WINTER_STORAGE_OFFER['winterStorageArea'] | undefined
-): WinterStorageArea | null => {
+// Used with WinterStorageAreaCard
+export const getWinterStorageArea = (data: AreaData | undefined): WinterStorageArea | null => {
   if (!data?.properties?.sections) return null;
 
   const sectionProps = data.properties.sections.edges.reduce(

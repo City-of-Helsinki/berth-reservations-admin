@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`winterStorageOffer utils getAllSectionsIdentifiers maps data correctly 1`] = `
+Array [
+  Object {
+    "disabled": false,
+    "label": "1",
+    "value": "1",
+  },
+  Object {
+    "disabled": true,
+    "label": "2",
+    "value": "2",
+  },
+]
+`;
+
+exports[`winterStorageOffer utils getWinterStorageArea maps data correctly 1`] = `
+Object {
+  "imageFile": "",
+  "municipality": "Helsinki",
+  "name": "AREA",
+  "properties": Object {
+    "electricity": true,
+    "gate": true,
+    "numberOfCustomers": 1,
+    "summerStorageForBoats": true,
+    "summerStorageForDockingEquipment": true,
+    "summerStorageForTrailers": true,
+    "water": true,
+  },
+  "streetAddress": "Testiosoite 1",
+  "wwwUrl": "",
+  "zipCode": "00100",
+}
+`;
+
+exports[`winterStorageOffer utils getWinterStoragePlaceData maps data correctly 1`] = `
+Array [
+  Object {
+    "area": "AREA",
+    "areaId": "MOCK-AREA",
+    "id": "MOCK-PLACE",
+    "isActive": true,
+    "isAvailable": false,
+    "leases": Array [
+      Object {
+        "customer": Object {
+          "id": "MOCK-PROFILE",
+        },
+        "endDate": undefined,
+        "isActive": true,
+        "startDate": undefined,
+        "status": "PAID",
+      },
+    ],
+    "length": 3,
+    "number": 1,
+    "properties": Object {
+      "electricity": true,
+      "gate": true,
+      "summerStorageForBoats": true,
+      "summerStorageForDockingEquipment": true,
+      "summerStorageForTrailers": true,
+      "water": true,
+    },
+    "section": "1",
+    "width": 3,
+  },
+]
+`;
