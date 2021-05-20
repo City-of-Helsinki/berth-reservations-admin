@@ -35,7 +35,6 @@ interface WinterStorageSectionProperties {
 
 interface WinterStorageSectionNode {
   __typename: 'WinterStorageSectionNode';
-  id: string;
   properties: WinterStorageSectionProperties | null;
 }
 
@@ -54,7 +53,7 @@ const getNumberOfCustomersForPlace = (place: WinterStoragePlaceNode): number => 
   return isActive ? 1 : 0;
 };
 
-const getNumberOfCustomersForSection = (section: WinterStorageSectionNode) => {
+const getNumberOfCustomersForSection = (section: WinterStorageSectionNode): number => {
   const countPerPlace =
     section.properties?.places.edges.map((edge) => (edge?.node ? getNumberOfCustomersForPlace(edge.node) : 0)) || [];
 
@@ -63,7 +62,7 @@ const getNumberOfCustomersForSection = (section: WinterStorageSectionNode) => {
   }, 0);
 };
 
-export const getNumberOfCustomers = (sections: WinterStorageSectionNodeConnection) => {
+export const getNumberOfCustomers = (sections: WinterStorageSectionNodeConnection): number => {
   const countPerSection =
     sections.edges.map((edge) => (edge?.node ? getNumberOfCustomersForSection(edge.node) : 0)) || [];
 
