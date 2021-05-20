@@ -2,13 +2,21 @@ import i18next from 'i18next';
 
 import { BerthPricing as BerthPricingData } from './__generated__/BerthPricing';
 import { BerthPrice } from './BerthPricing';
-import { PriceTier } from '../../../@types/__generated__/globalTypes';
+import { PriceTier, PricingCategory } from '../../../@types/__generated__/globalTypes';
 import { formatDimension } from '../../../common/utils/format';
 
-export const getBerthsData = (data: BerthPricingData | null | undefined): BerthPrice[] => {
-  if (!data) return [];
+type BerthPriceData = Record<PricingCategory, BerthPrice[]>;
 
-  return data.edges.reduce<BerthPrice[]>((acc, edge) => {
+export const getBerthsData = (data: BerthPricingData | null | undefined): BerthPriceData => {
+  const initialData: BerthPriceData = {
+    [PricingCategory.DEFAULT]: [],
+    [PricingCategory.DINGHY]: [],
+    [PricingCategory.TRAILER]: [],
+    [PricingCategory.VASIKKASAARI]: [],
+  };
+  if (!data) return initialData;
+
+  return data.edges.reduce<BerthPriceData>((acc, edge) => {
     if (!edge?.node) return acc;
 
     const berthPrice = {
@@ -23,6 +31,8 @@ export const getBerthsData = (data: BerthPricingData | null | undefined): BerthP
       [PriceTier.TIER_3]: edge.node.tier3Price,
     };
 
-    return [...acc, berthPrice];
-  }, []);
+    const pricingCategory = edge.node.pricingCategory;
+
+    return { ...acc, [pricingCategory]: [...acc[pricingCategory], berthPrice] };
+  }, initialData);
 };
