@@ -16,6 +16,569 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
   <div
     class="cardBody"
   >
+    <h3
+      class="text standard h3"
+    >
+      Venepaikat
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+              role="row"
+            >
+              <div
+                class="tableCell"
+              >
+                Ei tietoja
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Vasikkasaaren venesatama
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+              role="row"
+            >
+              <div
+                class="tableCell"
+              >
+                Ei tietoja
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Jollapaikat
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+              role="row"
+            >
+              <div
+                class="tableCell"
+              >
+                Ei tietoja
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Traileripaikat
+    </h3>
     <article
       class="section"
     >
@@ -213,6 +776,11 @@ exports[`BerthPricing renders normally 1`] = `
   <div
     class="cardBody"
   >
+    <h3
+      class="text standard h3"
+    >
+      Venepaikat
+    </h3>
     <article
       class="section"
     >
@@ -423,6 +991,652 @@ exports[`BerthPricing renders normally 1`] = `
                     100,00 €
                   </div>
                 </div>
+              </div>
+            </div>
+            <div
+              class="rowWrapper"
+            >
+              <div
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+              >
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
+                >
+                  6,0 m - 14,0 m
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    150,00 €
+                  </div>
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    175,00 €
+                  </div>
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    200,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Vasikkasaaren venesatama
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+            >
+              <div
+                role="row"
+                style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+              >
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px;"
+                >
+                  3,0 m - 7,0 m
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    40,00 €
+                  </div>
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    60,00 €
+                  </div>
+                </div>
+                <div
+                  class="tableCell tableCell"
+                  role="cell"
+                  style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px;"
+                >
+                  <div
+                    class="grayCell"
+                  >
+                    80,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Jollapaikat
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+              role="row"
+            >
+              <div
+                class="tableCell"
+              >
+                Ei tietoja
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cardBody"
+  >
+    <h3
+      class="text standard h3"
+    >
+      Traileripaikat
+    </h3>
+    <article
+      class="section"
+    >
+      <section
+        class="body"
+      >
+        Perushinta. Hinnat sisältävät alv 24 %.
+      </section>
+    </article>
+    <div>
+      <div
+        class="tableWrapper"
+      >
+        <div
+          class="table basic noMainHeader"
+          role="table"
+          style="min-width: 562.5px;"
+        >
+          <div
+            class="stickyHeaders"
+          >
+            <div
+              class="header"
+              role="row"
+              style="display: flex; flex: 1 0 auto; min-width: 562.5px;"
+            >
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 225 0 auto; min-width: 225px; width: 225px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                Leveys
+                <div
+                  class="sortArrowWrapper isSorted"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                1
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                2
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="headerCell"
+                colspan="1"
+                role="columnheader"
+                style="box-sizing: border-box; flex: 150 0 auto; min-width: 112.5px; width: 150px; cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                3
+                <div
+                  class="sortArrowWrapper"
+                >
+                  <svg
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv sortArrow sortArrowDown"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        height="24"
+                        width="24"
+                      />
+                      <polygon
+                        fill="currentColor"
+                        points="10 5.5 11.5 7 7.5 11 20 11 20 13 7.5 13 11.5 17 10 18.5 3.5 12"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            role="rowgroup"
+          >
+            <div
+              class="rowWrapper"
+              role="row"
+            >
+              <div
+                class="tableCell"
+              >
+                Ei tietoja
               </div>
             </div>
           </div>

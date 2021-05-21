@@ -675,6 +675,10 @@
     "berths": {
       "title": "Venepaikka",
       "description": "Perushinta. Hinnat sisältävät alv 24 %.",
+      "defaultProducts": "Venepaikat",
+      "vasikkasaari": "Vasikkasaaren venesatama",
+      "dinghy": "Jollapaikat",
+      "trailer": "Traileripaikat",
       "width": "Leveys"
     },
     "harborTiers": {

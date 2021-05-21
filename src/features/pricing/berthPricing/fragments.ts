@@ -12,6 +12,7 @@ export const BERTH_PRICING_FRAGMENT = gql`
         tier3Price
         priceUnit
         taxPercentage
+        pricingCategory
       }
     }
   }

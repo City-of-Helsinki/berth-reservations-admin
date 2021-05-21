@@ -181,6 +181,13 @@ export enum PriceUnits {
   PERCENTAGE = "PERCENTAGE",
 }
 
+export enum PricingCategory {
+  DEFAULT = "DEFAULT",
+  DINGHY = "DINGHY",
+  TRAILER = "TRAILER",
+  VASIKKASAARI = "VASIKKASAARI",
+}
+
 export enum ProductServiceType {
   DINGHY_PLACE = "DINGHY_PLACE",
   ELECTRICITY = "ELECTRICITY",

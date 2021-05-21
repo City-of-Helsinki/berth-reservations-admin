@@ -1,14 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`utils getBerthsData should return an array of BerthPrice objects 1`] = `
-Array [
-  Object {
-    "TIER_1": 50,
-    "TIER_2": 75,
-    "TIER_3": 100,
-    "id": "68ac7db5-b397-48f6-af19-99c35d645cb6",
-    "name": "3,0 m - 7,0 m",
-    "productId": "68ac7db5-b397-48f6-af19-99c35d645cb6",
-  },
-]
+Object {
+  "DEFAULT": Array [
+    Object {
+      "TIER_1": 50,
+      "TIER_2": 75,
+      "TIER_3": 100,
+      "id": "68ac7db5-b397-48f6-af19-99c35d645cb6",
+      "name": "3,0 m - 7,0 m",
+      "productId": "68ac7db5-b397-48f6-af19-99c35d645cb6",
+    },
+    Object {
+      "TIER_1": 150,
+      "TIER_2": 175,
+      "TIER_3": 200,
+      "id": "82c3ba8c-f409-4f54-ad8f-12ace3f5df50",
+      "name": "6,0 m - 14,0 m",
+      "productId": "82c3ba8c-f409-4f54-ad8f-12ace3f5df50",
+    },
+  ],
+  "DINGHY": Array [],
+  "TRAILER": Array [],
+  "VASIKKASAARI": Array [
+    Object {
+      "TIER_1": 40,
+      "TIER_2": 60,
+      "TIER_3": 80,
+      "id": "27a112bd-734c-461c-86d1-ba78d7351a3f",
+      "name": "3,0 m - 7,0 m",
+      "productId": "27a112bd-734c-461c-86d1-ba78d7351a3f",
+    },
+  ],
+}
 `;
