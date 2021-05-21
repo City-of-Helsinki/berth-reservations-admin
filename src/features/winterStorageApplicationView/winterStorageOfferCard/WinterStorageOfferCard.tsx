@@ -62,15 +62,13 @@ const WinterStorageOfferCard = ({
   return (
     <InvoiceCardContainer
       buttonsRight={
-        <>
-          {canDeleteLease(status) && (
-            <DeleteButton
-              buttonText={t('offer.invoicing.removeOffer')}
-              onConfirm={() => handleDeleteLease(id)}
-              disabled={isDeletingLease}
-            />
-          )}
-        </>
+        canDeleteLease(status) && (
+          <DeleteButton
+            buttonText={t('offer.invoicing.removeOffer')}
+            onConfirm={() => handleDeleteLease(id)}
+            disabled={isDeletingLease}
+          />
+        )
       }
       className={className}
       customerEmail={customerEmail}

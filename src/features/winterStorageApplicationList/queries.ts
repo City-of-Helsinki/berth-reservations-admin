@@ -52,6 +52,7 @@ export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
               id
             }
             place {
+              id
               number
               winterStorageSection {
                 id

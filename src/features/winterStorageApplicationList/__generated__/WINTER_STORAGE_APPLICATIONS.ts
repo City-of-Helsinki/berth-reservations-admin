@@ -61,6 +61,7 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
 
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place {
   __typename: "WinterStoragePlaceNode";
+  id: string;
   number: number;
   winterStorageSection: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease_place_winterStorageSection;
 }

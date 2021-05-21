@@ -612,9 +612,11 @@ export interface UpdateHarborMutationInput {
 
 export interface UpdateOrderInput {
   leaseId?: string | null;
+  customerId?: string | null;
   status?: OrderStatus | null;
   comment?: string | null;
   dueDate?: any | null;
+  productId?: string | null;
   id: string;
 }
 

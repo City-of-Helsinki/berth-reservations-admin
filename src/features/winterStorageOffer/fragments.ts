@@ -40,6 +40,7 @@ export const WINTER_STORAGE_OFFER_SECTIONS_FRAGMENT = gql`
                 leases {
                   edges {
                     node {
+                      id
                       status
                       startDate
                       endDate

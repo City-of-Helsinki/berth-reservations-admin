@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router-dom';
+import { Notification } from 'hds-react';
+import { useTranslation } from 'react-i18next';
 
 import WinterStorageApplicationView from './WinterStorageApplicationView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
@@ -27,6 +29,7 @@ import hdsToast from '../../common/toast/hdsToast';
 import { getOfferDetailsData } from './winterStorageOfferCard/utils';
 
 const WinterStorageApplicationViewContainer = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
@@ -97,7 +100,17 @@ const WinterStorageApplicationViewContainer = () => {
   };
   const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
 
-  if (loading || !data?.winterStorageApplication) return <LoadingSpinner />;
+  if (loading) return <LoadingSpinner />;
+  if (!data?.winterStorageApplication)
+    return (
+      <Notification
+        size="large"
+        closeButtonLabelText={t('toast.closeToast') ?? ''}
+        label={t('common.notification.noData.label')}
+      >
+        {t('common.notification.noData.description')}
+      </Notification>
+    );
 
   const { customer } = data.winterStorageApplication;
   const customerProfile = customer ? getCustomerProfile(customer) : null;

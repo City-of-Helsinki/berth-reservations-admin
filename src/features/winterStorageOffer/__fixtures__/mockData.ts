@@ -35,6 +35,7 @@ export const mockSectionsData: SectionsData = {
                           __typename: 'WinterStorageLeaseNode',
                           customer: { __typename: 'ProfileNode', id: 'MOCK-PROFILE' },
                           endDate: undefined,
+                          id: 'MOCK-LEASE',
                           isActive: true,
                           startDate: undefined,
                           status: LeaseStatus.PAID,

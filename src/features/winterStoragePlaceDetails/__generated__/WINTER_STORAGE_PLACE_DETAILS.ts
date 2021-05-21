@@ -43,6 +43,7 @@ export interface WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace_winterStorageSe
 
 export interface WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace_winterStorageSection {
   __typename: "WinterStorageSectionNode";
+  id: string;
   properties: WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace_winterStorageSection_properties | null;
 }
 

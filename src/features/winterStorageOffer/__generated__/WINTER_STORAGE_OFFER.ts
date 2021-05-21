@@ -41,6 +41,7 @@ export interface WINTER_STORAGE_OFFER_winterStorageArea_properties_sections_edge
 
 export interface WINTER_STORAGE_OFFER_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases_edges_node {
   __typename: "WinterStorageLeaseNode";
+  id: string;
   status: LeaseStatus;
   startDate: any;
   endDate: any;

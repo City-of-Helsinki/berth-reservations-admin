@@ -25,6 +25,7 @@ export const WINTER_STORAGE_PLACE_DETAILS_QUERY = gql`
         }
       }
       winterStorageSection {
+        id
         properties {
           identifier
         }
