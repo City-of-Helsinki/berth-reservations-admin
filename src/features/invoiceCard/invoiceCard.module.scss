@@ -10,7 +10,7 @@
   margin-right: units(0.5);
   grid-row-gap: units(0.5);
   grid-column-gap: units(0.5);
-  grid-template-columns: repeat(auto-fit, minmax(units(4), 1fr));
+  grid-template-columns: repeat(5, minmax(units(4), 1fr));
 }
 
 .property {

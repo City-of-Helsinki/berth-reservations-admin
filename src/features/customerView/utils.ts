@@ -17,6 +17,7 @@ import {
 } from './types';
 import { CustomerProfileCardProps } from '../../common/customerProfileCard/CustomerProfileCard';
 import { LeaseStatus, OrderOrderType } from '../../@types/__generated__/globalTypes';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 export const getCustomerProfile = (
   profile: Omit<CUSTOMER_PROFILE, 'berthLeases' | 'winterStorageLeases' | 'berthApplications' | 'boats' | 'orders'>
@@ -201,6 +202,7 @@ export const getApplications = (profile: CUSTOMER_PROFILE, boatTypes: BOAT_TYPES
         const applicationData = {
           id,
           applicationCode,
+          applicationType: berthSwitch ? ApplicationTypeEnum.BERTH_SWITCH : ApplicationTypeEnum.BERTH,
           customerId: profile.id,
           berthSwitch: berthSwitchProps,
           berthSwitchOffered: switchOffers.edges.length > 0,

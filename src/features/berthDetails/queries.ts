@@ -4,12 +4,6 @@ export const BERTH_DETAILS_QUERY = gql`
   query BERTH_DETAILS($berthId: ID!) {
     berth(id: $berthId) {
       id
-      isActive
-      number
-      width
-      length
-      depth
-      mooringType
       comment
       leases {
         edges {
@@ -25,11 +19,6 @@ export const BERTH_DETAILS_QUERY = gql`
             endDate
             isActive
           }
-        }
-      }
-      pier {
-        properties {
-          identifier
         }
       }
     }

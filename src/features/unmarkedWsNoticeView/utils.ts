@@ -3,8 +3,8 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice as WINTER_STORAGE_NOTICE,
   UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_winterStorageAreaChoices as WINTER_STORAGE_CHOICES,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
-import { getApplicantDetails } from '../applicationView/utils';
 import { UnmarkedWsNoticeDetailsProps } from '../unmarkedWsNoticeDetails/UnmarkedWsNoticeDetails';
+import { getApplicantDetails } from '../../common/utils/applicationUtils';
 
 interface UnmarkedWinterStorageChoice {
   winterStorageAreaName: string;

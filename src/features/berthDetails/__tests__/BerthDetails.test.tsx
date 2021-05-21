@@ -59,30 +59,11 @@ describe('BerthDetails', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
-  it('renders normally with null props', () => {
-    const wrapper = getWrapper({
-      electricity: null,
-      gate: null,
-      isAccessible: null,
-      lighting: null,
-      wasteCollection: null,
-      water: null,
-    });
-
-    expect(wrapper.render()).toMatchSnapshot();
-  });
-
   it('renders normally with all props', () => {
     const wrapper = getWrapper({
       comment: 'Comment',
-      electricity: false,
-      gate: true,
-      isAccessible: true,
       leases: testLeases,
-      lighting: false,
       onEdit: jest.fn(),
-      wasteCollection: false,
-      water: true,
     });
 
     expect(wrapper.render()).toMatchSnapshot();

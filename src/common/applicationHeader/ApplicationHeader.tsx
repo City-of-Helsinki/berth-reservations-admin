@@ -16,7 +16,7 @@ interface ApplicationHeaderProps {
   deleteApplicationLabel?: string;
   isDeletingApplication?: boolean;
   status: ApplicationStatus;
-  text: string;
+  text?: string;
   handleUnlinkCustomer?(): void;
   handleDeleteApplication?(): void;
 }
@@ -36,7 +36,7 @@ const ApplicationHeader = ({
     <div className={styles.actions}>
       <div className={styles.noticeStatus}>
         <Text as="h2" size="xl" weight="normalWeight">
-          {text} {formatDate(createdAt, i18n.language)}
+          {[text, formatDate(createdAt, i18n.language)].filter(Boolean).join(' ')}
         </Text>
         <StatusLabel type={APPLICATION_STATUS[status].type} label={t(APPLICATION_STATUS[status].label)} />
       </div>

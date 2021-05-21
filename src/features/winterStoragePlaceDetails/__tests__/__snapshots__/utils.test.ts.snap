@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`winterStoragePlaceDetails utils getPlaceLeases maps data correctly 1`] = `
+Array [
+  Object {
+    "__typename": "WinterStorageLeaseNode",
+    "customer": Object {
+      "__typename": "ProfileNode",
+      "firstName": "Testi",
+      "id": "MOCK-PROFILE",
+      "lastName": "Testinen",
+    },
+    "endDate": undefined,
+    "id": "",
+    "isActive": true,
+    "startDate": undefined,
+    "status": "PAID",
+  },
+  Object {
+    "__typename": "WinterStorageLeaseNode",
+    "customer": Object {
+      "__typename": "ProfileNode",
+      "firstName": "Testi",
+      "id": "MOCK-PROFILE",
+      "lastName": "Testinen",
+    },
+    "endDate": undefined,
+    "id": "",
+    "isActive": false,
+    "startDate": undefined,
+    "status": "DRAFTED",
+  },
+]
+`;

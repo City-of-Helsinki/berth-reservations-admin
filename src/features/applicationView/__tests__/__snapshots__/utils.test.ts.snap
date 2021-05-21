@@ -17,6 +17,7 @@ Object {
     "primaryPhone": "+358 00 000 0000",
   },
   "applicationCode": "1234",
+  "applicationType": "BERTH_SWITCH",
   "berthSwitch": Object {
     "berthNum": "1",
     "harborId": "MOCK-HARBOR",

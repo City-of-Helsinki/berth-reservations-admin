@@ -7,7 +7,7 @@ import BerthDetails from '../../berthDetails/BerthDetailsContainer';
 import styles from './berthOffer.module.scss';
 import { isSuitableBerthLength } from '../utils';
 import TableFilters from '../../../common/tableFilters/TableFilters';
-import TableTools from './tableTools/TableTools';
+import OfferTableTools from '../../../common/offerTableTools/OfferTableTools';
 import Button from '../../../common/button/Button';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import { formatDimension } from '../../../common/utils/format';
@@ -138,7 +138,7 @@ const BerthOfferTable = ({
           filterPrefix={t('common.terminology.pier')}
         />
       )}
-      renderTableToolsTop={() => <TableTools application={application} handleReturn={handleReturn} />}
+      renderTableToolsTop={() => <OfferTableTools application={application} handleReturn={handleReturn} />}
       renderEmptyStateRow={() => <p>{t('offer.berthDetails.noSuitableBerths')}</p>}
       loading={isSubmitting}
     />

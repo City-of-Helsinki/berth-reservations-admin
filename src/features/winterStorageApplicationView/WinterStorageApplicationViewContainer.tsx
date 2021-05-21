@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router-dom';
+import { Notification } from 'hds-react';
+import { useTranslation } from 'react-i18next';
 
 import WinterStorageApplicationView from './WinterStorageApplicationView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
@@ -24,8 +26,10 @@ import { getCustomerProfile } from '../customerView/utils';
 import Modal from '../../common/modal/Modal';
 import EditCustomerForm from '../customerForm/EditCustomerFormContainer';
 import hdsToast from '../../common/toast/hdsToast';
+import { getOfferDetailsData } from './winterStorageOfferCard/utils';
 
 const WinterStorageApplicationViewContainer = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
@@ -47,7 +51,7 @@ const WinterStorageApplicationViewContainer = () => {
     },
   ];
 
-  const [deleteDraftedApplication] = useDeleteWinterStorageApplication();
+  const [deleteDraftedApplication, { loading: isDeletingLease }] = useDeleteWinterStorageApplication();
   const handleDeleteLease = (id: string) => {
     deleteDraftedApplication({
       variables: {
@@ -64,13 +68,6 @@ const WinterStorageApplicationViewContainer = () => {
   >(DELETE_WINTER_STORAGE_APPLICATION_MUTATION, {
     refetchQueries,
   });
-  const [linkCustomer] = useMutation<UPDATE_WINTER_STORAGE_APPLICATION, UPDATE_WINTER_STORAGE_APPLICATION_VARS>(
-    UPDATE_WINTER_STORAGE_APPLICATION_MUTATION,
-    {
-      refetchQueries,
-    }
-  );
-
   const handleDeleteApplication = () =>
     deleteApplication({
       variables: {
@@ -87,6 +84,13 @@ const WinterStorageApplicationViewContainer = () => {
         translated: true,
       });
     });
+
+  const [linkCustomer] = useMutation<UPDATE_WINTER_STORAGE_APPLICATION, UPDATE_WINTER_STORAGE_APPLICATION_VARS>(
+    UPDATE_WINTER_STORAGE_APPLICATION_MUTATION,
+    {
+      refetchQueries,
+    }
+  );
   const handleLinkCustomer = (customerId: string) => {
     linkCustomer({
       variables: {
@@ -96,28 +100,41 @@ const WinterStorageApplicationViewContainer = () => {
   };
   const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
 
-  if (loading || !data?.winterStorageApplication) return <LoadingSpinner />;
+  if (loading) return <LoadingSpinner />;
+  if (!data?.winterStorageApplication)
+    return (
+      <Notification
+        size="large"
+        closeButtonLabelText={t('toast.closeToast') ?? ''}
+        label={t('common.notification.noData.label')}
+      >
+        {t('common.notification.noData.description')}
+      </Notification>
+    );
 
-  const customer = data?.winterStorageApplication?.customer;
+  const { customer } = data.winterStorageApplication;
   const customerProfile = customer ? getCustomerProfile(customer) : null;
-
   const applicationDetails = getWinterStorageApplicationDetailsData(
     data.winterStorageApplication,
     data.boatTypes || []
   );
+  const leaseDetails = getOfferDetailsData(data.winterStorageApplication.lease);
 
   return (
     <>
       <WinterStorageApplicationView
-        customerProfile={customerProfile}
         applicationDetails={applicationDetails}
-        winterStorageApplication={data.winterStorageApplication}
+        customerProfile={customerProfile}
+        handleDeleteApplication={handleDeleteApplication}
         handleDeleteLease={handleDeleteLease}
         handleEditCustomer={() => setEditCustomer(true)}
         handleLinkCustomer={handleLinkCustomer}
-        isDeletingApplication={isDeletingApplication}
         handleUnlinkCustomer={handleUnlinkCustomer}
-        handleDeleteApplication={handleDeleteApplication}
+        isDeletingApplication={isDeletingApplication}
+        isDeletingLease={isDeletingLease}
+        leaseDetails={leaseDetails}
+        refetchQueries={refetchQueries}
+        winterStorageApplication={data.winterStorageApplication}
       />
 
       {customerProfile && (
