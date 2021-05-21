@@ -5,64 +5,67 @@ import {
 } from '../__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { ApplicationStatus, BerthApplicationLanguage } from '../../../@types/__generated__/globalTypes';
 
+export const winterStorageApplication: WINTER_STORAGE_APPLICATION = {
+  id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox',
+  firstName: 'test',
+  lastName: 'test',
+  address: 'test',
+  municipality: 'helsinki',
+  zipCode: '00100',
+  phoneNumber: '555555',
+  email: 'test@test.com',
+  businessId: '',
+  companyName: '',
+  language: BerthApplicationLanguage.EN,
+  customer: null,
+  createdAt: '2019-05-06T10:54:21.746387+00:00',
+  boatType: '3',
+  boatRegistrationNumber: 'test',
+  boatWidth: 1,
+  boatLength: 1,
+  boatName: 'test',
+  boatModel: 'test',
+  acceptBoatingNewsletter: true,
+  acceptFitnessNews: true,
+  acceptLibraryNews: true,
+  acceptOtherCultureNews: true,
+  status: ApplicationStatus.PENDING,
+  winterStorageAreaChoices: [
+    {
+      winterStorageArea: {
+        __typename: 'WinterStorageAreaNode',
+        id: 'MOCK-WINTER-STORAGE-AREA-0',
+        properties: {
+          __typename: 'WinterStorageAreaProperties',
+          name: 'Iso-Sarvasto',
+        },
+      },
+      priority: 1,
+      __typename: 'WinterStorageAreaChoiceType',
+    },
+    {
+      winterStorageArea: {
+        __typename: 'WinterStorageAreaNode',
+        id: 'MOCK-WINTER-STORAGE-AREA-1',
+        properties: {
+          __typename: 'WinterStorageAreaProperties',
+          name: 'Rajasaari',
+        },
+      },
+      priority: 2,
+      __typename: 'WinterStorageAreaChoiceType',
+    },
+  ],
+  applicationCode: '1234',
+  lease: null,
+  __typename: 'WinterStorageApplicationNode',
+};
+
 export const mockData: INDIVIDUAL_WINTER_STORAGE_APPLICATION & {
   winterStorageApplication: WINTER_STORAGE_APPLICATION;
   boatTypes: BOAT_TYPES[];
 } = {
-  winterStorageApplication: {
-    id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox',
-    firstName: 'test',
-    lastName: 'test',
-    address: 'test',
-    municipality: 'helsinki',
-    zipCode: '00100',
-    phoneNumber: '555555',
-    email: 'test@test.com',
-    businessId: '',
-    companyName: '',
-    language: BerthApplicationLanguage.EN,
-    customer: null,
-    createdAt: '2019-05-06T10:54:21.746387+00:00',
-    boatType: '3',
-    boatRegistrationNumber: 'test',
-    boatWidth: 1,
-    boatLength: 1,
-    boatName: 'test',
-    boatModel: 'test',
-    acceptBoatingNewsletter: true,
-    acceptFitnessNews: true,
-    acceptLibraryNews: true,
-    acceptOtherCultureNews: true,
-    status: ApplicationStatus.PENDING,
-    winterStorageAreaChoices: [
-      {
-        winterStorageArea: {
-          __typename: 'WinterStorageAreaNode',
-          id: 'MOCK-WINTER-STORAGE-AREA-0',
-          properties: {
-            __typename: 'WinterStorageAreaProperties',
-            name: 'Iso-Sarvasto',
-          },
-        },
-        priority: 1,
-        __typename: 'WinterStorageAreaChoiceType',
-      },
-      {
-        winterStorageArea: {
-          __typename: 'WinterStorageAreaNode',
-          id: 'MOCK-WINTER-STORAGE-AREA-1',
-          properties: {
-            __typename: 'WinterStorageAreaProperties',
-            name: 'Rajasaari',
-          },
-        },
-        priority: 2,
-        __typename: 'WinterStorageAreaChoiceType',
-      },
-    ],
-    applicationCode: '1234',
-    __typename: 'WinterStorageApplicationNode',
-  },
+  winterStorageApplication: winterStorageApplication,
   boatTypes: [
     {
       id: '1',

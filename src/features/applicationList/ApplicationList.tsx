@@ -21,6 +21,7 @@ import SendOffersListTool from '../applicationListTools/SendOffersListTool';
 import ApplicationTableTools from '../../common/tableTools/applicationTableTools/ApplicationTableTools';
 import ListActions from '../../common/listActions/ListActions';
 import { usePreserveSelect } from '../../common/utils/usePreserveSelect';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 interface Order {
   orderId: string;
@@ -185,6 +186,7 @@ const ApplicationList = ({
         renderSubComponent={(row) => (
           <ApplicationDetails
             {...row.original}
+            applicationType={row.original.berthSwitch ? ApplicationTypeEnum.BERTH_SWITCH : ApplicationTypeEnum.BERTH}
             handleDeleteLease={handleDeleteLease}
             handleNoPlacesAvailable={handleNoPlacesAvailable}
           />

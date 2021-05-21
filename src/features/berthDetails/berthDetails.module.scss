@@ -5,17 +5,6 @@
   padding: 0 units(0.25);
 }
 
-.berthProperties {
-  display: flex;
-  padding-bottom: units(1);
-  margin-bottom: units(1);
-  border-bottom: solid units(0.125) $black-20;
-}
-
-.property {
-  margin-right: units(6);
-}
-
 .grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }

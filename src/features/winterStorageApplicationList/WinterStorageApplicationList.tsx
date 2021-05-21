@@ -118,14 +118,7 @@ const WinterStorageApplicationList = ({
         loading={loading}
         initialState={{ sortBy }}
         renderSubComponent={(row) => <ApplicationDetails {...row.original} />}
-        renderMainHeader={() => (
-          <TableFilters
-            filters={[]}
-            handleSetFilter={() => {
-              /* TODO: Add possibility to filter between new and transfer applications */
-            }}
-          />
-        )}
+        renderMainHeader={() => <TableFilters filters={[]} handleSetFilter={() => undefined} />}
         renderTableToolsBottom={() => (
           <Pagination pageIndex={pageIndex} pageCount={pageCount} onPageChange={({ selected }) => goToPage(selected)} />
         )}

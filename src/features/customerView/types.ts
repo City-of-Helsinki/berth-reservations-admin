@@ -9,6 +9,7 @@ import {
   ProductServiceType,
 } from '../../@types/__generated__/globalTypes';
 import { INDIVIDUAL_CUSTOMER_boatTypes as IndividualCustomerBoatType } from './__generated__/INDIVIDUAL_CUSTOMER';
+import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 
 export type Boat = {
   id: string;
@@ -61,25 +62,26 @@ export type BerthSwitch = {
 };
 
 export type Application = {
-  id: string;
-  customerId: string;
+  accessibilityRequired: boolean;
+  applicationCode: string;
+  applicationType: ApplicationTypeEnum;
   berthSwitch: BerthSwitch | null;
   berthSwitchOffered: boolean;
-  applicationCode: string;
+  boatDraught: number | null;
+  boatLength: number;
+  boatModel: string;
+  boatName: string;
+  boatRegistrationNumber: string;
+  boatType?: string | null;
+  boatWeight: number | null;
+  boatWidth: number;
+  choices: Array<HarborChoice>;
   createdAt: string;
+  customerId: string;
+  id: string;
+  lease: ApplicationLease | null;
   queue: number;
   status: ApplicationStatus;
-  lease: ApplicationLease | null;
-  boatType?: string | null;
-  boatRegistrationNumber: string;
-  boatWidth: number;
-  boatLength: number;
-  boatDraught: number | null;
-  boatWeight: number | null;
-  boatName: string;
-  boatModel: string;
-  choices: Array<HarborChoice>;
-  accessibilityRequired: boolean;
 };
 
 type LeaseBase = {

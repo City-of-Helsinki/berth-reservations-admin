@@ -1,5 +1,8 @@
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
-import { canDeleteApplication, canUnlinkCustomer } from '../applicationUtils';
+import { canDeleteApplication, canUnlinkCustomer, getApplicantDetails } from '../applicationUtils';
+import { berthApplication } from '../../../features/applicationView/__fixtures__/mockData';
+import { winterStorageApplication } from '../../../features/winterStorageApplicationView/__fixtures__/mockData';
+import { winterStorageNotice } from '../../../features/unmarkedWsNoticeView/__fixtures__/mockData';
 
 describe('applicationUtils', () => {
   describe('canDeleteApplication', () => {
@@ -25,6 +28,20 @@ describe('applicationUtils', () => {
       Object.values(ApplicationStatus)
         .filter((status) => status !== ApplicationStatus.PENDING)
         .forEach((status) => expect(canUnlinkCustomer(status)).toBe(false));
+    });
+  });
+
+  describe('getApplicantDetails', () => {
+    it('should return correct values for a berth application', () => {
+      expect(getApplicantDetails(berthApplication)).toMatchSnapshot();
+    });
+
+    it('should return correct values for a winter storage application', () => {
+      expect(getApplicantDetails(winterStorageApplication)).toMatchSnapshot();
+    });
+
+    it('should return correct values for an unmarked winter storage notice', () => {
+      expect(getApplicantDetails(winterStorageNotice)).toMatchSnapshot();
     });
   });
 });

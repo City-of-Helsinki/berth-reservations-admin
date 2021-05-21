@@ -1,14 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import ApplicationsCard from './ApplicationsCard';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
+import { ApplicationTypeEnum } from '../../../common/applicationDetails/types';
+import { Application } from '../types';
 
-const mockProps = {
+const mockProps: { applications: Application[] } = {
   applications: [
     {
       id: '54321',
+      applicationCode: '',
+      applicationType: ApplicationTypeEnum.BERTH_SWITCH,
       customerId: '47',
       berthSwitch: {
         harborId: '123',
@@ -17,6 +21,7 @@ const mockProps = {
         berthNum: 'berth',
         reason: 'reason',
       },
+      berthSwitchOffered: false,
       createdAt: 'Wed Oct 23 2019 15:15:05 GMT+0300 (Eastern European Summer Time)',
       queue: 245,
       status: ApplicationStatus.PENDING,
@@ -40,9 +45,9 @@ const mockProps = {
 
 describe('ApplicationsCard', () => {
   const getWrapper = (props = mockProps) =>
-    shallow(
+    mount(
       <HashRouter>
-        <ApplicationsCard {...props} />
+        <ApplicationsCard {...props} handleNoPlacesAvailable={jest.fn()} />
       </HashRouter>
     );
 

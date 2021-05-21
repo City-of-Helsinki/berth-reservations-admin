@@ -108,7 +108,6 @@
       "berth": "Venepaikka",
       "berthRent": "Venepaikan vuokra",
       "berths": "Venepaikat",
-      "boatSummerStorage": "Veneiden kesäsäilytys",
       "boatModel": "Merkki",
       "boatType": "Veneen tyyppi",
       "boats": "Veneet",
@@ -120,7 +119,6 @@
       "dataEntry": "Tietue",
       "depth": "Syvyys",
       "dinghyPlace": "Jollapaikka",
-      "dockingEquipmentSummerStorage": "Telakointi\u00ADtarvikkeiden kesäsäilytys",
       "draught": "Syväys",
       "electricity": "Sähkö",
       "gate": "Portti",
@@ -142,13 +140,17 @@
       "orderNumber": "Tilaustunnus",
       "parkingPermit": "Pysäköintilupa",
       "pier": "Laituri",
+      "place": "Paikka",
       "priceTier": "Maksuluokka",
       "registrationNumber": "Rekisterinumero",
+      "section": "Osasto",
       "selection": "Valinta",
       "serviceMap": "Palvelukartta",
       "storageOnIce": "Jäissä säilytys",
+      "summerStorageForBoats": "Veneiden kesäsäilytys",
+      "summerStorageForDockingEquipment": "Telakointi\u00ADtarvikkeiden kesäsäilytys",
+      "summerStorageForTrailers": "Trailerin kesäsäilytys",
       "switchOffer": "Vaihtotarjous",
-      "trawlerSummerStorage": "Trailerin kesäsäilytys",
       "unmarkedWinterStoragePlace": "Nostojärjestyspaikka",
       "unnamedBoat": "Nimetön vene",
       "waste": "Jäte",
@@ -157,6 +159,7 @@
       "weight": "Paino",
       "width": "Leveys",
       "winterStorageArea": "Talvisäilytysalue",
+      "winterStoragePlace": "Talvisäilytyspaikka",
       "winterStoragePlaceRent": "Talvisäilytyspaikan vuokra",
       "winterStoragePlaces": "Talvisäilytyspaikat"
     },
@@ -493,9 +496,12 @@
     "tableTools": {
       "return": "Palaa valitsematta"
     },
+    "previousLeases": "Edelliset vuokralaiset",
     "berthDetails": {
-      "previousLeases": "Edelliset vuokralaiset",
       "noSuitableBerths": "Ei sopivaa venepaikkaa"
+    },
+    "winterStoragePlaceDetails": {
+      "noSuitablePlaces": "Ei sopivaa talvisäilytyspaikkaa"
     },
     "invoicing": {
       "acceptAndSend": "Hyväksy ja lähetä tarjous",
@@ -513,6 +519,10 @@
       "berthLeaseCreated": {
         "label": "Hakemus käsitelty",
         "description": "{{harbor}} laituri {{pier}} venepaikka {{berth}} myönnetty asiakkaalle."
+      },
+      "winterStorageLeaseCreated": {
+        "label": "Hakemus käsitelty",
+        "description": "{{area}} osasto {{section}} paikka {{place}} myönnetty asiakkaalle."
       },
       "berthSwitched": {
         "label": "Venepaikka vaihdettu",

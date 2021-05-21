@@ -1,10 +1,12 @@
-import { ApplicationDetailsProps, Lease } from '../ApplicationDetails';
+import { ApplicationDetailsProps } from '../ApplicationDetails';
 import { ApplicationStatus, CustomerGroup, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../organizationCustomerDetails/OrganizationCustomerDetails';
+import { ApplicationTypeEnum, Lease } from '../types';
 
 export const minimumProps: ApplicationDetailsProps = {
   applicationCode: 'TESTEST',
+  applicationType: ApplicationTypeEnum.BERTH,
   accessibilityRequired: false,
   berthSwitch: null,
   boatDraught: null,
@@ -24,6 +26,7 @@ export const minimumProps: ApplicationDetailsProps = {
 
 export const moreProps: Partial<ApplicationDetailsProps> = {
   accessibilityRequired: true,
+  applicationType: ApplicationTypeEnum.BERTH_SWITCH,
   berthSwitch: {
     berthNum: 'berth',
     harborId: '123',

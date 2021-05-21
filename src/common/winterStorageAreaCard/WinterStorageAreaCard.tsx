@@ -28,13 +28,15 @@ const WinterStorageAreaCard = ({
   streetAddress,
   zipCode,
   municipality,
-  numberOfCustomers,
-  gate,
-  water,
-  electricity,
-  summerStorageForBoats,
-  summerStorageForDockingEquipment,
-  summerStorageForTrailers,
+  properties: {
+    electricity,
+    gate,
+    numberOfCustomers,
+    summerStorageForBoats,
+    summerStorageForDockingEquipment,
+    summerStorageForTrailers,
+    water,
+  },
 }: WinterStorageAreaCardProps) => {
   const { t } = useTranslation();
 
@@ -88,7 +90,7 @@ const WinterStorageAreaCard = ({
             />
             <Property
               icon={IconBoat}
-              label={t('common.terminology.boatSummerStorage')}
+              label={t('common.terminology.summerStorageForBoats')}
               active={summerStorageForBoats}
               className={styles.wordBreak}
             />

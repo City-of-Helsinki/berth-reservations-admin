@@ -45,6 +45,29 @@ export const WINTER_STORAGE_APPLICATIONS_QUERY = gql`
               }
             }
           }
+          lease {
+            id
+            status
+            order {
+              id
+            }
+            place {
+              id
+              number
+              winterStorageSection {
+                id
+                properties {
+                  identifier
+                  area {
+                    id
+                    properties {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

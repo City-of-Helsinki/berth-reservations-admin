@@ -131,6 +131,7 @@ describe('utils', () => {
                 ...mockLease.berth,
                 pier: {
                   __typename: 'PierNode',
+                  id: 'MOCK-PIER',
                   properties: null,
                 },
               },
@@ -160,6 +161,7 @@ describe('utils', () => {
                 ...mockLease.berth,
                 pier: {
                   __typename: 'PierNode',
+                  id: 'MOCK-PIER',
                   properties: {
                     __typename: 'PierProperties',
                     electricity: false,

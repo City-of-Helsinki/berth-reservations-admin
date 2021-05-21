@@ -1,5 +1,7 @@
 import gql from 'graphql-tag';
 
+import { WINTER_STORAGE_LEASE_FRAGMENT } from './winterStorageOfferCard/fragments';
+
 export const INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY = gql`
   query INDIVIDUAL_WINTER_STORAGE_APPLICATION($id: ID!) {
     winterStorageApplication(id: $id) {
@@ -69,10 +71,14 @@ export const INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY = gql`
         }
       }
       applicationCode
+      lease {
+        ...WinterStorageLease
+      }
     }
     boatTypes {
       id
       name
     }
   }
+  ${WINTER_STORAGE_LEASE_FRAGMENT}
 `;

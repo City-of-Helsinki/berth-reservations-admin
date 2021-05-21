@@ -29,6 +29,7 @@ import apolloClient from './apolloClient';
 import BerthOfferWithoutApplicationContainer from '../features/berthOffer/BerthOfferWithoutApplicationContainer';
 import SwitchBerthContainer from '../features/berthOffer/SwitchBerthContainer';
 import BerthSwitchOfferContainer from '../features/berthOffer/BerthSwitchOfferContainer';
+import WinterStorageOfferContainer from '../features/winterStorageOffer/WinterStorageOfferContainer';
 
 const App = () => {
   return (
@@ -67,6 +68,8 @@ const App = () => {
                       component={BerthOfferWithoutApplicationContainer}
                     />
                     <PrivateRoute exact path="/switch-berth" component={SwitchBerthContainer} />
+
+                    <PrivateRoute exact path="/winter-storage-offer" component={WinterStorageOfferContainer} />
 
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />

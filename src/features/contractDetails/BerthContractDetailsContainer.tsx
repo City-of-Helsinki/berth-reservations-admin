@@ -5,11 +5,11 @@ import ContractDetails from './ContractDetails';
 import { BERTH_CONTRACT_QUERY } from './queries';
 import { BERTH_CONTRACT, BERTH_CONTRACTVariables as BERTH_CONTRACT_VARS } from './__generated__/BERTH_CONTRACT';
 
-interface ContractDetailsContainerProps {
+interface Props {
   leaseId: string;
 }
 
-const BerthContractDetailsContainer = ({ leaseId }: ContractDetailsContainerProps) => {
+const BerthContractDetailsContainer = ({ leaseId }: Props) => {
   const { data, loading } = useQuery<BERTH_CONTRACT, BERTH_CONTRACT_VARS>(BERTH_CONTRACT_QUERY, {
     variables: { leaseId },
   });

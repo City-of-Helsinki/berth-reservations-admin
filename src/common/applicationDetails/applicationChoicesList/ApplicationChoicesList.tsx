@@ -9,6 +9,7 @@ import Text from '../../text/Text';
 import InternalLink from '../../internalLink/InternalLink';
 import ButtonWithConfirmation from '../../buttonWithConfirmation/ButtonWithConfirmation';
 import styles from './applicationChoicesList.module.scss';
+import { ApplicationTypeEnum } from '../types';
 
 interface Choice {
   priority: number;
@@ -26,26 +27,35 @@ export interface WinterStorageAreaChoice extends Choice {
 
 interface ApplicationChoicesListProps {
   applicationId: string;
+  applicationType: ApplicationTypeEnum;
   choices: Array<HarborChoice> | Array<WinterStorageAreaChoice>;
   customerId?: string;
   disableChoices?: boolean;
   handleNoPlacesAvailable?: (id: string) => void;
-  isSwitchApplication: boolean;
 }
 
 const isHarborChoice = (choice: Choice): choice is HarborChoice => (choice as HarborChoice).harbor !== undefined;
 
 const ApplicationChoicesList = ({
   applicationId,
+  applicationType,
   choices,
   customerId,
   disableChoices,
   handleNoPlacesAvailable,
-  isSwitchApplication,
 }: ApplicationChoicesListProps) => {
   const { t } = useTranslation();
   const routerQuery = new URLSearchParams(useLocation().search);
-  const offerPageUrl = isSwitchApplication ? '/berth-switch-offer' : '/berth-offer';
+  const getOfferPageUrl = () => {
+    switch (applicationType) {
+      case ApplicationTypeEnum.BERTH:
+        return '/berth-offer';
+      case ApplicationTypeEnum.BERTH_SWITCH:
+        return '/berth-switch-offer';
+      case ApplicationTypeEnum.WINTER_STORAGE:
+        return '/winter-storage-offer';
+    }
+  };
 
   if (choices.length === 0) {
     return null;
@@ -67,7 +77,7 @@ const ApplicationChoicesList = ({
             const targetName = isHarborChoice(choice) ? choice.harborName : choice.winterStorageAreaName;
 
             routerQuery.set('application', applicationId);
-            routerQuery.set(isHarborChoice(choice) ? 'harbor' : 'winter-storage-area', target);
+            routerQuery.set(isHarborChoice(choice) ? 'harbor' : 'winterStorageArea', target);
 
             return (
               <ListItem key={i} className={styles.listItem}>
@@ -76,7 +86,7 @@ const ApplicationChoicesList = ({
                       ${i + 1}: `}
                 </Text>
                 {!!customerId && !disableChoices ? (
-                  <InternalLink to={`${offerPageUrl}?${routerQuery}`}>{targetName}</InternalLink>
+                  <InternalLink to={`${getOfferPageUrl()}?${routerQuery}`}>{targetName}</InternalLink>
                 ) : (
                   <Text>{targetName}</Text>
                 )}
