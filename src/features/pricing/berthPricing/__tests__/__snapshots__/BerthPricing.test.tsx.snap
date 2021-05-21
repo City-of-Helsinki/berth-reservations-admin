@@ -577,7 +577,7 @@ exports[`BerthPricing renders noData message when there is no data 1`] = `
     <h3
       class="text standard h3"
     >
-      Traieripaikat
+      Traileripaikat
     </h3>
     <article
       class="section"
@@ -1464,7 +1464,7 @@ exports[`BerthPricing renders normally 1`] = `
     <h3
       class="text standard h3"
     >
-      Traieripaikat
+      Traileripaikat
     </h3>
     <article
       class="section"
