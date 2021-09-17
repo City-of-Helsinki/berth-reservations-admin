@@ -174,7 +174,7 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
 
       doc.setFont('times', 'bold');
       doc.setFontSize(16);
-      doc.text('Ohessa veneen talvisäilytyskauden 15.9.2020 - 10.6.2021 tarra.', leftMargin, 350);
+      doc.text('Ohessa veneen talvisäilytyskauden 15.9.2021 - 10.6.2022 tarra.', leftMargin, 350);
       doc.setFont('times', 'normal');
       doc.setFontSize(12);
 
@@ -194,13 +194,12 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
       );
 
       doc.setFont('times', 'bold');
-      doc.text('Toivotamme teille oikein mukavaa talvikautta!', leftMargin, 510);
+      doc.text('Ystävällisin terveisin venepaikkavaraukset', leftMargin, 510);
       doc.setFont('times', 'normal');
 
-      doc.text('Paula & Maarit', leftMargin, 524);
       doc.text('Venepaikkavaraukset', leftMargin, 536);
       doc.text('Sähköposti: venepaikkavaraukset@hel.fi', leftMargin, 548);
-      doc.text('Puh. 09 310 87900 (puhelinaika ma-to klo 9-12)', leftMargin, 560);
+      doc.text('Puh. 09 310 87900', leftMargin, 560);
 
       if (index < customers.length - 1) {
         doc.addPage();
