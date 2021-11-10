@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
+import { WinterStorageApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: INDIVIDUAL_WINTER_STORAGE_APPLICATION
@@ -37,7 +37,7 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_customer_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_customer {
@@ -177,7 +177,7 @@ export interface INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication 
   email: string;
   businessId: string;
   companyName: string;
-  language: BerthApplicationLanguage;
+  language: WinterStorageApplicationLanguage;
   customer: INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication_customer | null;
   createdAt: any;
   boatType: string | null;

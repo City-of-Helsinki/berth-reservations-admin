@@ -30,6 +30,7 @@ import BerthOfferWithoutApplicationContainer from '../features/berthOffer/BerthO
 import SwitchBerthContainer from '../features/berthOffer/SwitchBerthContainer';
 import BerthSwitchOfferContainer from '../features/berthOffer/BerthSwitchOfferContainer';
 import WinterStorageOfferContainer from '../features/winterStorageOffer/WinterStorageOfferContainer';
+import WinterStorageOfferWithoutApplicationContainer from '../features/winterStorageOffer/WinterStorageOfferWithoutApplicationContainer';
 
 const App = () => {
   return (
@@ -70,6 +71,11 @@ const App = () => {
                     <PrivateRoute exact path="/switch-berth" component={SwitchBerthContainer} />
 
                     <PrivateRoute exact path="/winter-storage-offer" component={WinterStorageOfferContainer} />
+                    <PrivateRoute
+                      exact
+                      path="/winter-storage-offer-without-application"
+                      component={WinterStorageOfferWithoutApplicationContainer}
+                    />
 
                     <PrivateRoute exact path="/pricing" component={Pricing} />
                     <PrivateRoute exact path="/winter-storage-areas/:id" component={WinterStorageAreaView} />

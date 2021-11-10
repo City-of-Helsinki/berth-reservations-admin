@@ -36,7 +36,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryEmail {
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer {

@@ -1,9 +1,4 @@
-export type HarborOption = {
-  label: string;
-  value: string;
-};
-
-export type BoatOption = {
+export type Option = {
   label: string;
   value: string;
 };

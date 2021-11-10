@@ -32,6 +32,7 @@ export interface CustomerViewProps {
   setBoatToEdit: (boat: Boat | null) => void;
   cancelLease(id: string, type: 'berth' | 'winterStorage'): void;
   createLease(): void;
+  createWinterStorageLease(): void;
 }
 
 const CustomerView = ({
@@ -39,6 +40,7 @@ const CustomerView = ({
   boats,
   cancelLease,
   createLease,
+  createWinterStorageLease,
   customerProfile,
   handleDeleteOffer,
   handleEditCustomer,
@@ -99,6 +101,7 @@ const CustomerView = ({
           customerName={customerName}
           cancelLease={cancelLease}
           leases={leases.filter(isWinterStorageLease)}
+          createLease={createWinterStorageLease}
         />
 
         <BoatsCard boats={boats} onEdit={(boat) => setBoatToEdit(boat)} onCreate={onClickCreateBoat} />

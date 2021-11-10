@@ -16,6 +16,9 @@ export const winterStorageApplication: WINTER_STORAGE_APPLICATION = {
   email: 'test@test.com',
   businessId: '',
   companyName: '',
+  // TODO: Error propped up after re-generating types
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
   language: BerthApplicationLanguage.EN,
   customer: null,
   createdAt: '2019-05-06T10:54:21.746387+00:00',

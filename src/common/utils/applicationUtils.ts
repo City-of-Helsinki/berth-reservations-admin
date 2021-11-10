@@ -40,6 +40,9 @@ export const getApplicantDetails = (
     },
     primaryPhone: phoneNumber,
     primaryEmail: email,
+    // TODO: Error propped up after re-generating types
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     language: mapBerthApplicationLanguageToLanguage(language),
     customerGroup,
     ...(businessId && {

@@ -4,6 +4,7 @@ import { WinterStorageArea } from '../winterStorageAreaView/types';
 import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { WINTER_STORAGE_OFFER } from './__generated__/WINTER_STORAGE_OFFER';
 import { getNumberOfCustomers, WinterStorageSectionNodeConnection } from '../../common/utils/wsCustomers';
+import { WINTER_STORAGE_WITHOUT_APPLICATION_profile_boats_edges_node as WinterStorageWithoutApplicationProfileBoat } from './__generated__/WINTER_STORAGE_WITHOUT_APPLICATION';
 
 export const getWinterStoragePlaceData = (data: AreaData | null | undefined): PlaceData[] => {
   if (!data?.properties?.sections) return [];
@@ -139,6 +140,21 @@ export const getApplicationBoat = (
     boatLength: application.boatLength,
     boatDraught: null,
     boatWeight: null,
+  };
+};
+
+export const getCustomerBoat = (boat?: WinterStorageWithoutApplicationProfileBoat | null): Boat | null => {
+  if (!boat) return null;
+
+  return {
+    boatRegistrationNumber: boat.registrationNumber,
+    boatType: boat.boatType.name,
+    boatName: boat.name,
+    boatWidth: boat.width ? Number(boat.width) : boat.width,
+    boatDraught: boat.draught ? Number(boat.draught) : boat.draught,
+    boatLength: boat.length ? Number(boat.length) : boat.length,
+    boatWeight: boat.weight ? Number(boat.weight) : boat.weight,
+    boatModel: boat.model,
   };
 };
 
