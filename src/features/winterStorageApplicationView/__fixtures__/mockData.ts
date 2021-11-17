@@ -3,7 +3,7 @@ import {
   INDIVIDUAL_WINTER_STORAGE_APPLICATION_boatTypes as BOAT_TYPES,
   INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION,
 } from '../__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
-import { ApplicationStatus, BerthApplicationLanguage } from '../../../@types/__generated__/globalTypes';
+import { ApplicationStatus, WinterStorageApplicationLanguage } from '../../../@types/__generated__/globalTypes';
 
 export const winterStorageApplication: WINTER_STORAGE_APPLICATION = {
   id: 'V2ludGVyU3RvcmFnZUFwcGxpY2F0aW9uTm9kZTox',
@@ -16,10 +16,7 @@ export const winterStorageApplication: WINTER_STORAGE_APPLICATION = {
   email: 'test@test.com',
   businessId: '',
   companyName: '',
-  // TODO: Error propped up after re-generating types
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
-  language: BerthApplicationLanguage.EN,
+  language: WinterStorageApplicationLanguage.EN,
   customer: null,
   createdAt: '2019-05-06T10:54:21.746387+00:00',
   boatType: '3',

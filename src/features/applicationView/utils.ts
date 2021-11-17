@@ -3,7 +3,12 @@ import {
   INDIVIDUAL_APPLICATION_berthApplication as BERTH_APPLICATION,
   INDIVIDUAL_APPLICATION_boatTypes as BOAT_TYPES,
 } from './__generated__/INDIVIDUAL_APPLICATION';
-import { BerthApplicationLanguage, Language, LeaseStatus } from '../../@types/__generated__/globalTypes';
+import {
+  BerthApplicationLanguage,
+  WinterStorageApplicationLanguage,
+  Language,
+  LeaseStatus,
+} from '../../@types/__generated__/globalTypes';
 import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
 import { getApplicantDetails } from '../../common/utils/applicationUtils';
 
@@ -33,6 +38,21 @@ export const mapBerthApplicationLanguageToLanguage = (
     case BerthApplicationLanguage.SV:
       return Language.SWEDISH;
     case BerthApplicationLanguage.EN:
+      return Language.ENGLISH;
+    default:
+      return null;
+  }
+};
+
+export const mapApplicationLanguageToLanguage = (
+  applicationLanguage: BerthApplicationLanguage | WinterStorageApplicationLanguage
+): Language | null => {
+  switch (applicationLanguage) {
+    case 'FI':
+      return Language.FINNISH;
+    case 'SV':
+      return Language.SWEDISH;
+    case 'EN':
       return Language.ENGLISH;
     default:
       return null;
