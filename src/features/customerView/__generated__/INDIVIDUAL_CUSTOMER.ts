@@ -36,7 +36,7 @@ export interface INDIVIDUAL_CUSTOMER_profile_primaryEmail {
 export interface INDIVIDUAL_CUSTOMER_profile_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface INDIVIDUAL_CUSTOMER_profile_boats_edges_node_boatType {

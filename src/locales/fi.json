@@ -174,13 +174,13 @@
       }
     },
     "leaseStatus": {
-      "drafted" : "Luotu",
-      "offered" : "Tarjous lähetetty",
-      "refused" : "Tarjous hylätty",
-      "expired" : "Vanhentunut",
-      "error" : "Virhe",
-      "paid" : "Maksettu",
-      "terminated" : "Irtisanottu"
+      "drafted": "Luotu",
+      "offered": "Tarjous lähetetty",
+      "refused": "Tarjous hylätty",
+      "expired": "Vanhentunut",
+      "error": "Virhe",
+      "paid": "Maksettu",
+      "terminated": "Irtisanottu"
     },
     "orderStatus": {
       "cancelled": "Peruutettu",
@@ -609,7 +609,7 @@
       "status": "Tila"
     },
     "invoiceCard": {
-      "tableHeaders" : {
+      "tableHeaders": {
         "type": "Tyyppi",
         "place": "Satama / Alue",
         "season": "Kausi",
@@ -657,10 +657,14 @@
         "addressLabel": "Talvisäilytysalue"
       }
     },
+    "selectHarbor": "Valitse satama",
+    "selectArea": "Valitse alue",
+    "selectBoat": "Valitse vene",
     "createLease": {
-      "title": "Lisää venepaikan vuokrasopimus",
-      "selectHarbor": "Valitse satama",
-      "selectBoat": "Valitse vene"
+      "title": "Lisää venepaikan vuokrasopimus"
+    },
+    "createWinterStorageLease": {
+      "title": "Lisää talvisäilytyspaikan vuokrasopimus"
     },
     "switchBerth": {
       "title": "Vaihda venepaikka",

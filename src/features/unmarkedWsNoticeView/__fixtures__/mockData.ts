@@ -6,11 +6,11 @@ import {
 } from '../__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
 import {
   ApplicationStatus,
-  BerthApplicationLanguage,
   CustomerGroup,
   InvoicingType,
   Language,
   OrderStatus,
+  WinterStorageApplicationLanguage,
 } from '../../../@types/__generated__/globalTypes';
 import { Order } from '../../invoiceCard/types';
 
@@ -26,7 +26,7 @@ export const winterStorageNotice: WINTER_STORAGE_NOTICE = {
   email: 'test@test.com',
   businessId: '',
   companyName: '',
-  language: BerthApplicationLanguage.EN,
+  language: WinterStorageApplicationLanguage.EN,
   customer: null,
   createdAt: '2019-05-06T10:54:21.746387+00:00',
   boatType: '3',

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { BerthApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
+import { WinterStorageApplicationLanguage, CustomerGroup, InvoicingType, OrganizationType, Language, ApplicationStatus, LeaseStatus, OrderStatus, ProductServiceType, AdditionalProductType } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: UNMARKED_WINTER_STORAGE_NOTICE
@@ -37,7 +37,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_pri
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer {
@@ -139,7 +139,7 @@ export interface UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice {
   email: string;
   businessId: string;
   companyName: string;
-  language: BerthApplicationLanguage;
+  language: WinterStorageApplicationLanguage;
   customer: UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice_customer | null;
   createdAt: any;
   applicationCode: string;

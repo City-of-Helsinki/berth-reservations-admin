@@ -24,6 +24,12 @@ export enum AddressType {
   WORK = "WORK",
 }
 
+export enum ApplicationPriority {
+  HIGH = "HIGH",
+  LOW = "LOW",
+  MEDIUM = "MEDIUM",
+}
+
 export enum ApplicationStatus {
   EXPIRED = "EXPIRED",
   HANDLED = "HANDLED",
@@ -214,6 +220,18 @@ export enum WinterStorageApplicationAreaType {
   UNMARKED = "UNMARKED",
 }
 
+export enum WinterStorageApplicationLanguage {
+  EN = "EN",
+  FI = "FI",
+  SV = "SV",
+}
+
+export enum WinterStorageMethod {
+  ON_TRAILER = "ON_TRAILER",
+  ON_TRESTLES = "ON_TRESTLES",
+  UNDER_TARP = "UNDER_TARP",
+}
+
 export interface AddBoatCertificateInput {
   file?: any | null;
   certificateType: BoatCertificateType;
@@ -358,7 +376,8 @@ export interface CreateWinterStorageLeaseMutationInput {
   startDate?: any | null;
   endDate?: any | null;
   comment?: string | null;
-  applicationId: string;
+  applicationId?: string | null;
+  customerId?: string | null;
   placeId?: string | null;
   sectionId?: string | null;
   clientMutationId?: string | null;
@@ -418,6 +437,11 @@ export interface DeleteWinterStorageApplicationMutationInput {
 export interface DeleteWinterStorageLeaseMutationInput {
   id: string;
   clientMutationId?: string | null;
+}
+
+export interface HarborChoiceInput {
+  harborId: string;
+  priority: number;
 }
 
 export interface OrderApprovalInput {
@@ -530,6 +554,40 @@ export interface UpdateAddressInput {
 export interface UpdateBerthApplicationInput {
   id: string;
   customerId?: string | null;
+  priority?: ApplicationPriority | null;
+  language?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  email?: string | null;
+  phoneNumber?: string | null;
+  address?: string | null;
+  zipCode?: string | null;
+  municipality?: string | null;
+  companyName?: string | null;
+  businessId?: string | null;
+  boatType?: string | null;
+  boatRegistrationNumber?: string | null;
+  boatName?: string | null;
+  boatModel?: string | null;
+  boatLength?: any | null;
+  boatWidth?: any | null;
+  applicationCode?: string | null;
+  acceptBoatingNewsletter?: boolean | null;
+  acceptFitnessNews?: boolean | null;
+  acceptLibraryNews?: boolean | null;
+  acceptOtherCultureNews?: boolean | null;
+  boatDraught?: any | null;
+  boatWeight?: any | null;
+  accessibilityRequired?: boolean | null;
+  boatPropulsion?: string | null;
+  boatHullMaterial?: string | null;
+  boatIntendedUse?: string | null;
+  rentFrom?: string | null;
+  rentTill?: string | null;
+  boatIsInspected?: boolean | null;
+  boatIsInsured?: boolean | null;
+  addChoices?: HarborChoiceInput[] | null;
+  removeChoices?: number[] | null;
   clientMutationId?: string | null;
 }
 
@@ -681,6 +739,34 @@ export interface UpdateProfileMutationInput {
 export interface UpdateWinterStorageApplicationInput {
   id: string;
   customerId?: string | null;
+  priority?: ApplicationPriority | null;
+  language?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  email?: string | null;
+  phoneNumber?: string | null;
+  address?: string | null;
+  zipCode?: string | null;
+  municipality?: string | null;
+  companyName?: string | null;
+  businessId?: string | null;
+  boatType?: string | null;
+  boatRegistrationNumber?: string | null;
+  boatName?: string | null;
+  boatModel?: string | null;
+  boatLength?: any | null;
+  boatWidth?: any | null;
+  applicationCode?: string | null;
+  acceptBoatingNewsletter?: boolean | null;
+  acceptFitnessNews?: boolean | null;
+  acceptLibraryNews?: boolean | null;
+  acceptOtherCultureNews?: boolean | null;
+  boatDraught?: any | null;
+  boatWeight?: any | null;
+  storageMethod?: WinterStorageMethod | null;
+  trailerRegistrationNumber?: string | null;
+  addChoices?: WinterStorageAreaChoiceInput[] | null;
+  removeChoices?: number[] | null;
   clientMutationId?: string | null;
 }
 
@@ -689,6 +775,11 @@ export interface UpdateWinterStorageProductMutationInput {
   priceValue?: any | null;
   winterStorageAreaId?: string | null;
   clientMutationId?: string | null;
+}
+
+export interface WinterStorageAreaChoiceInput {
+  winterAreaId: string;
+  priority: number;
 }
 
 //==============================================================

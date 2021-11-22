@@ -3,7 +3,7 @@ import { INDIVIDUAL_APPLICATION_berthApplication as BERTH_APPLICATION } from '..
 import { INDIVIDUAL_WINTER_STORAGE_APPLICATION_winterStorageApplication as WINTER_STORAGE_APPLICATION } from '../../features/winterStorageApplicationView/__generated__/INDIVIDUAL_WINTER_STORAGE_APPLICATION';
 import { UNMARKED_WINTER_STORAGE_NOTICE_winterStorageNotice as WINTER_STORAGE_NOTICE } from '../../features/unmarkedWsNoticeView/__generated__/UNMARKED_WINTER_STORAGE_NOTICE';
 import { CustomerProfileCardProps } from '../customerProfileCard/CustomerProfileCard';
-import { mapBerthApplicationLanguageToLanguage } from '../../features/applicationView/utils';
+import { mapApplicationLanguageToLanguage } from '../../features/applicationView/utils';
 
 export const canDeleteApplication = (status: ApplicationStatus) => {
   return ![ApplicationStatus.HANDLED, ApplicationStatus.OFFER_SENT, ApplicationStatus.EXPIRED].includes(status);
@@ -40,7 +40,7 @@ export const getApplicantDetails = (
     },
     primaryPhone: phoneNumber,
     primaryEmail: email,
-    language: mapBerthApplicationLanguageToLanguage(language),
+    language: mapApplicationLanguageToLanguage(language),
     customerGroup,
     ...(businessId && {
       organization: {

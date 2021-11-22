@@ -36,7 +36,7 @@ export interface CUSTOMER_FORM_profile_primaryEmail {
 export interface CUSTOMER_FORM_profile_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface CUSTOMER_FORM_profile {

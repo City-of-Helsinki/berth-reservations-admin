@@ -30,7 +30,7 @@ export interface CUSTOMERS_profiles_edges_node_primaryAddress {
 export interface CUSTOMERS_profiles_edges_node_primaryPhone {
   __typename: "PhoneNode";
   id: string;
-  phone: string | null;
+  phone: string;
 }
 
 export interface CUSTOMERS_profiles_edges_node_primaryEmail {

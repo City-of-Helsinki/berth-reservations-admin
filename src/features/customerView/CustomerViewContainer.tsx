@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
@@ -30,7 +30,6 @@ import {
 import { REJECT_BERTH_APPLICATION_MUTATION } from '../applicationView/mutations';
 import CreateAdditionalInvoiceContainer from '../createAdditionalInvoice/CreateAdditionalInvoiceContainer';
 import SendInvoiceFormContainer from '../invoiceCard/sendInvoiceForm/SendInvoiceFormContainer';
-import CreateLeaseModal from './createLease/CreateLeaseModal';
 import { CANCEL_BERTH_LEASE_MUTATION, CANCEL_WINTER_STORAGE_LEASE_MUTATION } from './mutations';
 import {
   CANCEL_BERTH_LEASE,
@@ -44,10 +43,13 @@ import { getProfileToken } from '../../common/utils/auth';
 import hdsToast from '../../common/toast/hdsToast';
 import { getOfferDetailsData } from '../applicationView/berthOfferCard/utils';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
+import CreateBerthLeaseModal from './createLease/CreateBerthLeaseModal';
+import CreateWinterStorageLeaseModal from './createLease/CreateWinterStorageLeaseModal';
 
 const CustomerViewContainer = () => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
+  const history = useHistory();
 
   const [boatToEdit, setBoatToEdit] = useState<Boat | null>();
   const [editCustomer, setEditCustomer] = useState<boolean>(false);
@@ -55,6 +57,7 @@ const CustomerViewContainer = () => {
   const [creatingAdditionalInvoice, setCreatingAdditionalInvoice] = useState<boolean>(false);
   const [openResendInvoice, setOpenResendInvoice] = useState<Invoice>();
   const [creatingLease, setCreatingLease] = useState<boolean>(false);
+  const [creatingWinterStorageLease, setCreatingWinterStorageLease] = useState<boolean>(false);
 
   const { loading, data, refetch } = useQuery<INDIVIDUAL_CUSTOMER>(INDIVIDUAL_CUSTOMER_QUERY, {
     variables: { id },
@@ -159,6 +162,7 @@ const CustomerViewContainer = () => {
         boats={boats}
         cancelLease={handleCancelLease}
         createLease={() => setCreatingLease(true)}
+        createWinterStorageLease={() => setCreatingWinterStorageLease(true)}
         customerProfile={customerProfile}
         handleDeleteOffer={handleDeleteOffer}
         handleEditCustomer={() => setEditCustomer(true)}
@@ -247,7 +251,27 @@ const CustomerViewContainer = () => {
       </Modal>
 
       {creatingLease && (
-        <CreateLeaseModal customerId={id} isOpen={creatingLease} closeModal={() => setCreatingLease(false)} />
+        <CreateBerthLeaseModal
+          customerId={id}
+          isOpen={creatingLease}
+          closeModal={() => setCreatingLease(false)}
+          title={t('customerView.createLease.title')}
+          onContinue={({ harborId, boatId }) => {
+            history.push(`/berth-offer-without-application?customer=${id}&harbor=${harborId}&boat=${boatId}`);
+          }}
+        />
+      )}
+
+      {creatingWinterStorageLease && (
+        <CreateWinterStorageLeaseModal
+          customerId={id}
+          isOpen={creatingWinterStorageLease}
+          closeModal={() => setCreatingWinterStorageLease(false)}
+          title={t('customerView.createWinterStorageLease.title')}
+          onContinue={({ areaId, boatId }) => {
+            history.push(`/winter-storage-offer-without-application?customer=${id}&area=${areaId}&boat=${boatId}`);
+          }}
+        />
       )}
     </>
   );

@@ -7,14 +7,18 @@ import { WinterStorageLease } from '../types';
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import LeaseDetails from './leaseDetails/LeaseDetails';
+import Text from '../../../common/text/Text';
+import CardBody from '../../../common/cardBody/CardBody';
+import styles from './berthLeasesCard.module.scss';
 
 export interface WinterStorageLeasesCardProps {
   cancelLease: (id: string, type: 'berth' | 'winterStorage') => void;
   customerName: string;
   leases: WinterStorageLease[];
+  createLease: () => void;
 }
 
-const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterStorageLeasesCardProps) => {
+const WinterStorageLeasesCard = ({ customerName, cancelLease, leases, createLease }: WinterStorageLeasesCardProps) => {
   const { t } = useTranslation();
   const mapLeaseDetails = (lease: WinterStorageLease): Lease => {
     return {
@@ -42,6 +46,11 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases }: WinterSt
           lease={mapLeaseDetails(lease)}
         />
       ))}
+      <CardBody className={styles.createLease}>
+        <button onClick={() => createLease()}>
+          <Text color="brand">{t('common.addNew')}</Text>
+        </button>
+      </CardBody>
     </Card>
   );
 };
