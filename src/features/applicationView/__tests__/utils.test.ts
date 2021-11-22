@@ -1,4 +1,4 @@
-import { getApplicationDetailsData, mapBerthApplicationLanguageToLanguage } from '../utils';
+import { getApplicationDetailsData, mapApplicationLanguageToLanguage } from '../utils';
 import { mockApplication, mockBerthSwitch, mockCustomer, mockLease } from '../__fixtures__/mockData';
 import {
   INDIVIDUAL_APPLICATION_berthApplication as BERTH_APPLICATION,
@@ -8,23 +8,23 @@ import { BerthApplicationLanguage, Language } from '../../../@types/__generated_
 import { getCustomerProfile } from '../../customerView/utils';
 
 describe('utils', () => {
-  describe('mapBerthApplicationLanguageToLanguage', () => {
+  describe('mapApplicationLanguageToLanguage', () => {
     it('should map FI to FINNISH', () => {
-      expect(mapBerthApplicationLanguageToLanguage(BerthApplicationLanguage.FI)).toEqual(Language.FINNISH);
+      expect(mapApplicationLanguageToLanguage(BerthApplicationLanguage.FI)).toEqual(Language.FINNISH);
     });
 
     it('should map SV to SWEDISH', () => {
-      expect(mapBerthApplicationLanguageToLanguage(BerthApplicationLanguage.SV)).toEqual(Language.SWEDISH);
+      expect(mapApplicationLanguageToLanguage(BerthApplicationLanguage.SV)).toEqual(Language.SWEDISH);
     });
 
     it('should map EN to ENGLISH', () => {
-      expect(mapBerthApplicationLanguageToLanguage(BerthApplicationLanguage.EN)).toEqual(Language.ENGLISH);
+      expect(mapApplicationLanguageToLanguage(BerthApplicationLanguage.EN)).toEqual(Language.ENGLISH);
     });
 
     it('should map other values to null', () => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
-      expect(mapBerthApplicationLanguageToLanguage('DE')).toEqual(null);
+      expect(mapApplicationLanguageToLanguage('DE')).toEqual(null);
     });
   });
 

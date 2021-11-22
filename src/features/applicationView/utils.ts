@@ -29,21 +29,6 @@ interface BerthSwitch {
   reason: string | null;
 }
 
-export const mapBerthApplicationLanguageToLanguage = (
-  berthApplicationLanguage: BerthApplicationLanguage
-): Language | null => {
-  switch (berthApplicationLanguage) {
-    case BerthApplicationLanguage.FI:
-      return Language.FINNISH;
-    case BerthApplicationLanguage.SV:
-      return Language.SWEDISH;
-    case BerthApplicationLanguage.EN:
-      return Language.ENGLISH;
-    default:
-      return null;
-  }
-};
-
 export const mapApplicationLanguageToLanguage = (
   applicationLanguage: BerthApplicationLanguage | WinterStorageApplicationLanguage
 ): Language | null => {
