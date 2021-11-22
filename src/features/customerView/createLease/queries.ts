@@ -28,6 +28,7 @@ export const CREATE_BERTH_LEASE_MODAL_QUERY = gql`
 export const CREATE_WINTER_STORAGE_LEASE_MODAL_QUERY = gql`
   query CREATE_WINTER_STORAGE_LEASE_MODAL($customerId: ID!) {
     profile(id: $customerId, serviceType: BERTH) {
+      id
       boats {
         edges {
           node {

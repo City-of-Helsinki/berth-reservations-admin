@@ -25,6 +25,7 @@ export interface CREATE_WINTER_STORAGE_LEASE_MODAL_profile_boats {
 
 export interface CREATE_WINTER_STORAGE_LEASE_MODAL_profile {
   __typename: "ProfileNode";
+  id: string;
   boats: CREATE_WINTER_STORAGE_LEASE_MODAL_profile_boats | null;
 }
 
