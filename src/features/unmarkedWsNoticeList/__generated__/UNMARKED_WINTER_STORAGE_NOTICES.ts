@@ -45,12 +45,12 @@ export interface UNMARKED_WINTER_STORAGE_NOTICES_winterStorageNotices_edges_node
   __typename: "WinterStorageApplicationNode";
   areaType: WinterStorageApplicationAreaType | null;
   applicationCode: string;
-  boatLength: any;
-  boatModel: string;
-  boatName: string;
-  boatRegistrationNumber: string;
+  boatLength: any | null;
+  boatModel: string | null;
+  boatName: string | null;
+  boatRegistrationNumber: string | null;
   boatType: string | null;
-  boatWidth: any;
+  boatWidth: any | null;
   createdAt: any;
   firstName: string;
   id: string;

@@ -34,9 +34,9 @@ export interface ApplicationDetailsProps {
   berthSwitchOffered?: boolean;
   boatDraught?: number | null;
   boatLength: number;
-  boatModel: string;
-  boatName: string;
-  boatRegistrationNumber: string;
+  boatModel: string | null;
+  boatName: string | null;
+  boatRegistrationNumber: string | null;
   boatType?: string | null;
   boatWeight?: number | null;
   boatWidth: number;

@@ -15,9 +15,9 @@ interface UnmarkedWinterStorageChoice {
 export type UnmarkedWinterStorageNotice = {
   applicationCode: string;
   boatLength: number;
-  boatModel: string;
-  boatName: string;
-  boatRegistrationNumber: string;
+  boatModel: string | null;
+  boatName: string | null;
+  boatRegistrationNumber: string | null;
   boatType?: string | null;
   boatWidth: number;
   choice: UnmarkedWinterStorageChoice;

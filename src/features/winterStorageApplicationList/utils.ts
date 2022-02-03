@@ -22,9 +22,9 @@ export type WinterStorageApplication = {
   applicationCode: string;
   applicationType: ApplicationTypeEnum;
   boatLength: number;
-  boatModel: string;
-  boatName: string;
-  boatRegistrationNumber: string;
+  boatModel: string | null;
+  boatName: string | null;
+  boatRegistrationNumber: string | null;
   boatType?: string | null;
   boatWidth: number;
   choices: WinterStorageAreaChoice[];

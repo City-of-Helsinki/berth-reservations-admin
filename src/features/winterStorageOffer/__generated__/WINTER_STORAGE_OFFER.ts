@@ -21,11 +21,11 @@ export interface WINTER_STORAGE_OFFER_winterStorageApplication {
   status: ApplicationStatus;
   customer: WINTER_STORAGE_OFFER_winterStorageApplication_customer | null;
   boatType: string | null;
-  boatRegistrationNumber: string;
-  boatName: string;
-  boatModel: string;
-  boatWidth: any;
-  boatLength: any;
+  boatRegistrationNumber: string | null;
+  boatName: string | null;
+  boatModel: string | null;
+  boatWidth: any | null;
+  boatLength: any | null;
 }
 
 export interface WINTER_STORAGE_OFFER_boatTypes {
