@@ -44,6 +44,7 @@ export const mockCustomer: CUSTOMER = {
 
 export const mockBerthSwitch: BERTH_SWITCH = {
   __typename: 'BerthSwitchType',
+  id: 'MOCK-BERTH_SWITCH',
   berth: {
     __typename: 'BerthNode',
     id: 'MOCK-BERTH',

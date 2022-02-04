@@ -48,6 +48,7 @@ export const INDIVIDUAL_APPLICATION_QUERY = gql`
         language
       }
       berthSwitch {
+        id
         berth {
           id
           number
