@@ -43,6 +43,7 @@ const ApplicationViewContainer = () => {
       variables: {
         id,
       },
+      fetchPolicy: 'no-cache',
     }
   );
   const refetchQuery = {
