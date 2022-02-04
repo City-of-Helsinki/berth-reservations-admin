@@ -91,6 +91,7 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason {
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_berthSwitch {
   __typename: "BerthSwitchType";
+  id: string;
   berth: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_berth;
   reason: INDIVIDUAL_APPLICATION_berthApplication_berthSwitch_reason | null;
 }
