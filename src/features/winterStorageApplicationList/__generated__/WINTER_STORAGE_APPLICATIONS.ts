@@ -86,11 +86,11 @@ export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_nod
   lastName: string;
   customer: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_customer | null;
   boatType: string | null;
-  boatRegistrationNumber: string;
-  boatWidth: any;
-  boatLength: any;
-  boatName: string;
-  boatModel: string;
+  boatRegistrationNumber: string | null;
+  boatWidth: any | null;
+  boatLength: any | null;
+  boatName: string | null;
+  boatModel: string | null;
   winterStorageAreaChoices: (WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_winterStorageAreaChoices | null)[] | null;
   lease: WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_lease | null;
 }

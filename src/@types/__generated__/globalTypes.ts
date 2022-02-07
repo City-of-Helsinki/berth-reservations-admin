@@ -565,6 +565,7 @@ export interface UpdateBerthApplicationInput {
   municipality?: string | null;
   companyName?: string | null;
   businessId?: string | null;
+  boatId?: string | null;
   boatType?: string | null;
   boatRegistrationNumber?: string | null;
   boatName?: string | null;
@@ -750,6 +751,7 @@ export interface UpdateWinterStorageApplicationInput {
   municipality?: string | null;
   companyName?: string | null;
   businessId?: string | null;
+  boatId?: string | null;
   boatType?: string | null;
   boatRegistrationNumber?: string | null;
   boatName?: string | null;

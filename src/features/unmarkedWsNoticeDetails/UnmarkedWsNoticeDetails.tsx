@@ -23,9 +23,9 @@ export interface UnmarkedWsNoticeDetailsProps {
   applicationCode: string;
   boatDraught?: number | null;
   boatLength: number;
-  boatModel: string;
-  boatName: string;
-  boatRegistrationNumber: string;
+  boatModel: string | null;
+  boatName: string | null;
+  boatRegistrationNumber: string | null;
   boatType?: string | null;
   boatWeight?: number | null;
   boatWidth: number;

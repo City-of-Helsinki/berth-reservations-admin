@@ -1,12 +1,25 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 
 import CustomerForm from '../CustomerForm';
 import { mockOrganizationCustomerFormValues, mockPrivateCustomerFormValues } from '../__fixtures__/mockData';
+import { CustomerGroup } from '../../../@types/__generated__/globalTypes';
 
 describe('CustomerForm', () => {
   const getWrapper = (props: {}) => mount(<CustomerForm {...props} />);
+  const requiredFields = {
+    [CustomerGroup.PRIVATE]: ['address', 'city', 'email', 'phone', 'firstName', 'lastName', 'postalCode'],
+  };
+
+  const checkRequiredFieldsValidationErrors = (
+    wrapper: ReactWrapper,
+    fields = requiredFields[CustomerGroup.PRIVATE]
+  ) => {
+    fields.forEach((field) => {
+      expect(wrapper.find(`#${field}-helper`).text()).toBe('Tämä kenttä on pakollinen.');
+    });
+  };
 
   it('renders correctly with private customer profile', () => {
     const wrapper = getWrapper({ initialValues: mockPrivateCustomerFormValues });
@@ -25,6 +38,8 @@ describe('CustomerForm', () => {
       wrapper.find('form').simulate('submit');
     });
     expect(onSubmit.mock.calls.length).toEqual(0);
+    wrapper.update();
+    checkRequiredFieldsValidationErrors(wrapper.find('form'));
   });
 
   it('private customer profile can be submitted', async () => {

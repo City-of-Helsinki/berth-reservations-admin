@@ -280,6 +280,11 @@ Array [
         for="phone"
       >
         Puhelinnumero
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+        >
+           *
+        </span>
       </label>
       <div
         class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
@@ -287,6 +292,7 @@ Array [
         <input
           class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="phone"
+          required=""
           type="text"
           value="+358 00 000 0000"
         />
@@ -588,6 +594,11 @@ Array [
         for="phone"
       >
         Puhelinnumero
+        <span
+          class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
+        >
+           *
+        </span>
       </label>
       <div
         class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
@@ -595,6 +606,7 @@ Array [
         <input
           class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="phone"
+          required=""
           type="text"
           value="+358 00 000 0000"
         />

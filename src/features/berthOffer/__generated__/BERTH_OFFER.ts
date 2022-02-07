@@ -27,13 +27,13 @@ export interface BERTH_OFFER_berthApplication {
   berthSwitch: BERTH_OFFER_berthApplication_berthSwitch | null;
   customer: BERTH_OFFER_berthApplication_customer | null;
   boatType: string | null;
-  boatRegistrationNumber: string;
-  boatName: string;
-  boatModel: string;
-  boatWidth: any;
-  boatLength: any;
+  boatRegistrationNumber: string | null;
+  boatName: string | null;
+  boatModel: string | null;
+  boatWidth: any | null;
+  boatLength: any | null;
   boatDraught: any | null;
-  boatWeight: any | null;
+  boatWeight: number | null;
 }
 
 export interface BERTH_OFFER_boatTypes {

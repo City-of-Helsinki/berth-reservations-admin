@@ -541,13 +541,13 @@ export interface INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node {
   status: ApplicationStatus;
   lease: INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_lease | null;
   boatType: string | null;
-  boatRegistrationNumber: string;
-  boatWidth: any;
-  boatLength: any;
+  boatRegistrationNumber: string | null;
+  boatWidth: any | null;
+  boatLength: any | null;
   boatDraught: any | null;
-  boatWeight: any | null;
-  boatName: string;
-  boatModel: string;
+  boatWeight: number | null;
+  boatName: string | null;
+  boatModel: string | null;
   harborChoices: (INDIVIDUAL_CUSTOMER_profile_berthApplications_edges_node_harborChoices | null)[] | null;
   accessibilityRequired: boolean;
 }
