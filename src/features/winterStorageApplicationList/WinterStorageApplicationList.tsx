@@ -30,6 +30,7 @@ interface WinterStorageApplicationListProps {
   onSortedColsChange(sortedCol: SortingRule<WinterStorageApplication>[]): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus): void;
   onNameFilterChange(nameFilter: string | undefined): void;
+  handleApplicationsExport(): Promise<void>;
 }
 
 type ColumnType = Column<WinterStorageApplication>;
@@ -47,6 +48,7 @@ const WinterStorageApplicationList = ({
   onStatusFilterChange,
   nameFilter,
   onNameFilterChange,
+  handleApplicationsExport,
 }: WinterStorageApplicationListProps) => {
   const { t, i18n } = useTranslation();
 
@@ -129,6 +131,7 @@ const WinterStorageApplicationList = ({
             onStatusFilterChange={onStatusFilterChange}
             nameFilter={nameFilter}
             onNameFilterChange={onNameFilterChange}
+            handleApplicationsExport={handleApplicationsExport}
           />
         )}
         renderEmptyStateRow={() => t('common.notification.noData.description')}

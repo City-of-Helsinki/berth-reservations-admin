@@ -13,9 +13,13 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
     <div
       class="container"
     >
-      <span>
-        Tuloksien lukumäärä: 0
-      </span>
+      <div
+        class="leftContainer"
+      >
+        <span>
+          Tuloksien lukumäärä: 0
+        </span>
+      </div>
       <div
         class="filtersContainer"
       >
@@ -153,6 +157,16 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
           />
         </div>
       </div>
+      <button
+        class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+        type="button"
+      >
+        <span
+          class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+        >
+          Vie...
+        </span>
+      </button>
     </div>
     <div
       class="tableWrapper"

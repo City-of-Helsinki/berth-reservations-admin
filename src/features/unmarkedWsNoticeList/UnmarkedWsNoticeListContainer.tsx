@@ -11,7 +11,7 @@ import {
   UNMARKED_WINTER_STORAGE_NOTICES,
   UNMARKED_WINTER_STORAGE_NOTICESVariables as UNMARKED_WINTER_STORAGE_NOTICES_VARS,
 } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
-import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
+import { UNMARKED_WINTER_STORAGE_NOTICES_IDS_QUERY, UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from './queries';
 import { generateAndSaveStickerPDF, getUnmarkedWinterStorageNotices } from './utils';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
@@ -34,6 +34,11 @@ import {
 } from '../../common/mutations/__generated__/RESEND_ORDER';
 import { RESEND_ORDER_MUTATION } from '../../common/mutations/resendOrder';
 import { BERTH_APPLICATIONS_QUERY } from '../applicationList/queries';
+import {
+  UNMARKED_WINTER_STORAGE_NOTICES_IDS,
+  UNMARKED_WINTER_STORAGE_NOTICES_IDSVariables as UNMARKED_WINTER_STORAGE_NOTICES_IDS_VARS,
+} from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES_IDS';
+import { useTableExport } from '../../common/utils/useTableExport';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'UnmarkedWsNoticeListContainer_sortByAtom',
@@ -56,6 +61,7 @@ const nameFilterAtom = atom<string | undefined>({
 });
 
 const UnmarkedWsNoticeListContainer = () => {
+  const { exportTable } = useTableExport();
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
@@ -97,6 +103,24 @@ const UnmarkedWsNoticeListContainer = () => {
 
   const [setStickersPosted] = useMutation<SET_STICKERS_POSTED, SET_STICKERS_POSTED_VARS>(SET_STICKERS_POSTED_MUTATION);
 
+  const handleApplicationsExport = async () => {
+    await exportTable({
+      exportType: 'unmarked-winter-storage-applications',
+      fileType: 'xlsx',
+      fetchCallback: async (apolloClient, paginationParams) => {
+        const { data } = await apolloClient.query<
+          UNMARKED_WINTER_STORAGE_NOTICES_IDS,
+          UNMARKED_WINTER_STORAGE_NOTICES_IDS_VARS
+        >({
+          query: UNMARKED_WINTER_STORAGE_NOTICES_IDS_QUERY,
+          variables: { ...queryVariables, ...paginationParams },
+          fetchPolicy: 'cache-first',
+        });
+        return data.winterStorageNoticesIds;
+      },
+    });
+  };
+
   const onSavePdf = (customers: CustomerInfo[]) => {
     if (customers.some((customer) => !customer.stickerNumber || !customer.leaseId)) {
       hdsToast({
@@ -130,7 +154,7 @@ const UnmarkedWsNoticeListContainer = () => {
     dueDate: string
   ) => {
     const approveOffers = new Promise((resolve, reject) => {
-      if (draftedOffers.length === 0) return resolve();
+      if (draftedOffers.length === 0) return resolve(null);
 
       return approveOrders({
         variables: {
@@ -146,7 +170,7 @@ const UnmarkedWsNoticeListContainer = () => {
     });
 
     const resendOffers = new Promise((resolve, reject) => {
-      if (sentOffers.length === 0) return resolve();
+      if (sentOffers.length === 0) return resolve(null);
 
       return resendOrders({
         variables: {
@@ -194,6 +218,7 @@ const UnmarkedWsNoticeListContainer = () => {
         goToPage(0);
       }}
       onSavePdf={onSavePdf}
+      handleApplicationsExport={handleApplicationsExport}
       onStickerChange={() => refetch(queryVariables)}
     />
   );

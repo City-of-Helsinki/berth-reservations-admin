@@ -111,3 +111,36 @@ export const BERTH_APPLICATIONS_QUERY = gql`
     }
   }
 `;
+
+export const BERTH_APPLICATIONS_IDS_QUERY = gql`
+  query BERTH_APPLICATIONS_IDS(
+    $first: Int!
+    $after: String
+    $applicationCode: Boolean
+    $switchApplications: Boolean
+    $orderBy: String
+    $statuses: [ApplicationStatus]
+    $nameFilter: String
+  ) {
+    berthApplications(
+      first: $first
+      after: $after
+      switchApplications: $switchApplications
+      applicationCode: $applicationCode
+      orderBy: $orderBy
+      statuses: $statuses
+      name: $nameFilter
+    ) {
+      count
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`;

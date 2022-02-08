@@ -6,6 +6,7 @@ import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Select from '../../select/Select';
 import { APPLICATION_STATUS } from '../../utils/constants';
 import styles from './applicationTableTools.module.scss';
+import Button from '../../button/Button';
 
 interface ApplicationTableToolsProps {
   count?: number;
@@ -13,6 +14,7 @@ interface ApplicationTableToolsProps {
   statusFilter?: ApplicationStatus;
   onNameFilterChange(nameFilter: string | undefined): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus | null): void;
+  handleApplicationsExport?(): Promise<void>;
 }
 
 const ApplicationTableTools = ({
@@ -21,6 +23,7 @@ const ApplicationTableTools = ({
   statusFilter,
   onNameFilterChange,
   onStatusFilterChange,
+  handleApplicationsExport,
 }: ApplicationTableToolsProps) => {
   const { t } = useTranslation();
   const options = [
@@ -31,7 +34,10 @@ const ApplicationTableTools = ({
   ];
   return (
     <div className={styles.container}>
-      <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
+      <div className={styles.leftContainer}>
+        <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
+        {handleApplicationsExport && <Button onClick={handleApplicationsExport}>{t('common.export')}</Button>}
+      </div>
       <div className={styles.filtersContainer}>
         <TextInput
           id="applicationStateTableTools_nameFilter"

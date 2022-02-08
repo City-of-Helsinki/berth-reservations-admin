@@ -274,3 +274,38 @@ export const FILTER_WINTER_STORAGE_PLACE_LABEL_QUERY = gql`
     }
   }
 `;
+
+export const ALL_CUSTOMERS_QUERY = gql`
+  query ALL_CUSTOMERS(
+    $first: Int!
+    $after: String
+    $firstName: String
+    $lastName: String
+    $email: String
+    $address: String
+    $orderBy: String
+    $apiToken: String
+  ) {
+    berthProfiles(
+      first: $first
+      after: $after
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      address: $address
+      sortBy: $orderBy
+      apiToken: $apiToken
+    ) {
+      count
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`;

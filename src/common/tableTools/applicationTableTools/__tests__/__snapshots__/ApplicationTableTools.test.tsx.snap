@@ -4,9 +4,13 @@ exports[`ApplicationTableTools renders correctly 1`] = `
 <div
   class="container"
 >
-  <span>
-    Tuloksien lukumäärä: 1
-  </span>
+  <div
+    class="leftContainer"
+  >
+    <span>
+      Tuloksien lukumäärä: 1
+    </span>
+  </div>
   <div
     class="filtersContainer"
   >
