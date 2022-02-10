@@ -14,6 +14,7 @@ import { getSelectedRowIds } from '../../common/utils/getSelectedRowIds';
 import PageContent from '../../common/pageContent/PageContent';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import WrappingTableCell from '../../common/wrappingTableCell/WrappingTableCell';
+import CustomerListTableFilters from './customerListTableFilters/CustomerListTableFilters';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -106,6 +107,11 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
       minWidth: COLUMN_WIDTH.XS,
     },
   ];
+
+  // Without memoization the CustomerListTableFilters component re-mounts
+  // unnecessarily which is visible to the user as flickering when data updates.
+  const renderTableFilters = React.useMemo(() => () => <CustomerListTableFilters />, []);
+
   return (
     <PageContent>
       <PageTitle title={t('customerList.title')} />
@@ -133,7 +139,6 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
             />
           );
         }}
-        renderMainHeader={() => t('customerList.tableHeaders.mainHeader')}
         renderTableToolsTop={({ selectedRowIds }, { resetSelectedRows }) => (
           <CustomerListTableTools
             {...tableTools}
@@ -141,6 +146,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
             clearSelectedRows={resetSelectedRows}
           />
         )}
+        renderTableFilters={renderTableFilters}
         renderEmptyStateRow={() => t('common.notification.noData.description')}
         renderTableToolsBottom={() => <Pagination {...pagination} />}
         onSortedColsChange={onSortedColsChange}

@@ -15,6 +15,7 @@ import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
+import useListTableFilters from './customerListTableFilters/useListTableFilters';
 
 const searchByAtom = atom<SearchBy>({
   key: 'CustomerListContainer_searchByAtom',
@@ -39,6 +40,8 @@ const orderBySelector = selector<string | undefined>({
 const CustomerListContainer = () => {
   const { t } = useTranslation();
 
+  const [customerListTableFilters] = useListTableFilters();
+
   const [searchBy, setSearchBy] = useRecoilState(searchByAtom);
   const [searchVal, setSearchVal] = useRecoilState(searchValAtom);
 
@@ -58,6 +61,7 @@ const CustomerListContainer = () => {
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
+    ...customerListTableFilters,
   };
 
   const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {

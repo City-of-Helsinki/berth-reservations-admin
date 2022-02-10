@@ -37,6 +37,7 @@ $transition-duration: 300ms;
 
     position: relative;
     white-space: normal;
+    overflow: visible;
   }
 
   .stickyHeaders {
@@ -71,6 +72,14 @@ $transition-duration: 300ms;
     & .tableCell {
       margin: 0;
       padding: units(1);
+    }
+  }
+
+  .tableFilterHeader {
+    @extend .mainHeaderReset;
+
+    & > div {
+      padding: 0;
     }
   }
 

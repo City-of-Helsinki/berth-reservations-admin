@@ -53,6 +53,7 @@ type TableProps<D extends object> = {
   theme?: 'basic' | 'primary';
   globalFilter?: UseGlobalFiltersOptions<D>['globalFilter'];
   getCellProps?: (cell: Cell<D>) => Partial<TableCellProps>;
+  renderTableFilters?: () => React.ReactNode;
   renderTableToolsTop?: TableToolsFn<D>;
   renderTableToolsBottom?: TableToolsFn<D>;
   renderSubComponent?: (row: Row<D>) => React.ReactNode;
@@ -73,6 +74,7 @@ const EXPANDER = 'EXPANDER';
 const MAIN_HEADER = 'MAIN_HEADER';
 const SELECTOR = 'SELECTOR';
 const RADIO_SELECTOR = 'RADIO_SELECTOR';
+const TABLE_FILTERS = 'TABLE_FILTERS';
 
 const BASE_COL_WIDTH = 150;
 
@@ -98,6 +100,7 @@ const Table = <D extends { id: string }>({
   globalFilter,
   initialState,
   getCellProps = () => ({}),
+  renderTableFilters,
   renderTableToolsTop,
   renderTableToolsBottom,
   renderSubComponent,
@@ -190,24 +193,65 @@ const Table = <D extends { id: string }>({
       ...(renderSubComponent ? [expanderCol] : []),
     ];
 
-    const withMainHeader = [
-      {
-        Header: renderMainHeader,
-        columns: headers,
-        id: MAIN_HEADER,
-      },
-    ];
+    if (!renderMainHeader && !renderTableFilters) {
+      return headers;
+    }
 
-    return renderMainHeader ? withMainHeader : headers;
+    if (renderMainHeader && renderTableFilters) {
+      return [
+        {
+          Header: renderMainHeader,
+          // Seems suspect that we should need to add header by grouping.
+          // however, I'm not keen on changing the rendering logic of the header
+          // in more detail as that could lead to regressions.
+          columns: renderTableFilters
+            ? [
+                {
+                  Header: renderTableFilters,
+                  columns: headers,
+                  id: TABLE_FILTERS,
+                },
+              ]
+            : headers,
+          id: MAIN_HEADER,
+        },
+      ];
+    }
+
+    if (renderMainHeader) {
+      return [
+        {
+          Header: renderMainHeader,
+          // Seems suspect that we should need to add header by grouping.
+          // however, I'm not keen on changing the rendering logic of the header
+          // in more detail as that could lead to regressions.
+          columns: headers,
+          id: MAIN_HEADER,
+        },
+      ];
+    }
+
+    if (renderTableFilters) {
+      return [
+        {
+          Header: renderTableFilters,
+          columns: headers,
+          id: TABLE_FILTERS,
+        },
+      ];
+    }
+
+    return headers;
   }, [
     canSelectRows,
+    selectorCol,
     canSelectOneRow,
+    radioSelectorCol,
     columns,
     renderSubComponent,
-    renderMainHeader,
-    selectorCol,
-    radioSelectorCol,
     expanderCol,
+    renderMainHeader,
+    renderTableFilters,
   ]);
 
   const data = React.useMemo(() => tableData, [tableData]);
@@ -299,6 +343,8 @@ const Table = <D extends { id: string }>({
       className={classNames(styles.header, {
         [styles.mainHeaderReset]: renderMainHeader && !styleMainHeader && index === 0,
         [styles.mainHeader]: renderMainHeader && styleMainHeader && index === 0,
+        [styles.tableFilterHeader]:
+          (renderTableFilters && index === 0) || (renderMainHeader && renderTableFilters && index === 1),
       })}
     >
       {headerGroup.headers.map((column) => (
@@ -309,6 +355,7 @@ const Table = <D extends { id: string }>({
             [styles.selector]: column.id === SELECTOR,
             [styles.radioSelector]: column.id === RADIO_SELECTOR,
             [styles.expander]: column.id === EXPANDER,
+            [styles.tableFilterCell]: column.id === TABLE_FILTERS,
           })}
         >
           {column.render('Header')}
