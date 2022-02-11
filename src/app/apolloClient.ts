@@ -5,6 +5,7 @@ import { createUploadLink } from 'apollo-upload-client';
 import { ErrorLink, onError } from 'apollo-link-error';
 import gql from 'graphql-tag';
 import { ApolloLink } from 'apollo-link';
+import { GraphQLError } from 'graphql';
 
 import i18n from '../locales/i18n';
 import authService from '../features/auth/authService';
@@ -43,9 +44,41 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+export const IGNORED_GRAPHQL_ERRORS = [
+  // Ignore profile query:
+  // extensions: {code: 'OBJECT_DOES_NOT_EXIST_ERROR',
+  // serviceName: 'https://api.hel.fi/auth/helsinkiprofile',
+  // query: 'query ($customerId: ID!) {\n  profile(id: $customer…d\n
+  // variables: {…},
+  // exception: {…}}
+  // message: "Profile matching query does not exist."
+  // path: ['profile']
+  {
+    serviceName: 'https://api.hel.fi/auth/helsinkiprofile',
+    path: 'profile',
+    code: 'OBJECT_DOES_NOT_EXIST_ERROR',
+  },
+];
+
+const excludeIgnoredGraphQLErrors = (graphQLErrors: readonly GraphQLError[] | undefined): readonly GraphQLError[] => {
+  if (!graphQLErrors) return [];
+  const taostableErrors = [...graphQLErrors].filter(
+    (error) =>
+      !IGNORED_GRAPHQL_ERRORS.find(
+        (ignorableEntry) =>
+          error?.extensions?.serviceName === ignorableEntry.serviceName &&
+          error?.extensions?.code === ignorableEntry.code &&
+          error?.path?.includes(ignorableEntry.path)
+      )
+  );
+  return taostableErrors;
+};
+
 export const errorHandler: ErrorLink.ErrorHandler = ({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    hdsToast.graphQLErrors(graphQLErrors);
+    // Ignore some errors being toasted...
+    const toastableErrors = excludeIgnoredGraphQLErrors(graphQLErrors);
+    hdsToast.graphQLErrors(toastableErrors);
   }
   if (networkError && networkError.name !== 'ServerError') {
     // An explicit id is passed here to the toast,
