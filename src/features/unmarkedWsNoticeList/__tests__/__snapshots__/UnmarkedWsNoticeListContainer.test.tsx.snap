@@ -167,17 +167,8 @@ exports[`UnmarkedWsNoticeListContainer renders normally 1`] = `
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 675px;"
           >
-            <div
-              class="headerCell"
-              colspan="6"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 675 0 auto; min-width: 675px; width: 675px;"
-            >
-              Nostojärjestysilmoitukset
-            </div>
+            Nostojärjestysilmoitukset
           </div>
           <div
             class="header"
