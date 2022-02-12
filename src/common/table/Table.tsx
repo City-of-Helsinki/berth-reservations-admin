@@ -112,6 +112,7 @@ const Table = <D extends { id: string }>({
   manualSortBy,
 }: TableProps<D>) => {
   const { t } = useTranslation();
+  let tableState: TableInstance<D>;
 
   const selectorCol: Column<D> = React.useMemo(
     () => ({
@@ -204,7 +205,20 @@ const Table = <D extends { id: string }>({
     skipPageResetRef.current = false;
   });
 
-  const tableState = useTable(
+  const {
+    headerGroups,
+    state,
+    page,
+    rows,
+    pageCount,
+    gotoPage,
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    setGlobalFilter,
+    setFilter,
+    dispatch,
+  } = (tableState = useTable(
     {
       columns: tableColumns,
       data: dataState,
@@ -226,21 +240,7 @@ const Table = <D extends { id: string }>({
     useExpanded,
     usePagination,
     useRowSelect
-  );
-  const {
-    headerGroups,
-    state,
-    page,
-    rows,
-    pageCount,
-    gotoPage,
-    getTableProps,
-    getTableBodyProps,
-    prepareRow,
-    setGlobalFilter,
-    setFilter,
-    dispatch,
-  } = tableState;
+  ));
 
   const resetSelectedRows = useCallback(() => {
     dispatch({ type: actions.resetSelectedRows });
