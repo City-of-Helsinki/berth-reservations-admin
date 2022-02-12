@@ -11,7 +11,6 @@ import {
   useGlobalFilter,
   usePagination,
   TableOptions,
-  HeaderProps,
   Row,
   HeaderGroup,
   Column as ColumnType,
@@ -24,6 +23,7 @@ import {
   UseGlobalFiltersOptions,
   actions,
   TableCellProps,
+  TableInstance,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 import equal from 'fast-deep-equal';
@@ -57,7 +57,7 @@ type TableProps<D extends object> = {
   renderTableToolsTop?: TableToolsFn<D>;
   renderTableToolsBottom?: TableToolsFn<D>;
   renderSubComponent?: (row: Row<D>) => React.ReactNode;
-  renderMainHeader?: (props: HeaderProps<D>) => React.ReactNode;
+  renderMainHeader?: (props: TableInstance<D>) => React.ReactNode;
   renderEmptyStateRow?: () => React.ReactNode;
   // Client-Side pagination
   renderPaginator?: (pagination: {
@@ -71,7 +71,6 @@ type TableProps<D extends object> = {
 } & TableOptions<D>;
 
 const EXPANDER = 'EXPANDER';
-const MAIN_HEADER = 'MAIN_HEADER';
 const SELECTOR = 'SELECTOR';
 const RADIO_SELECTOR = 'RADIO_SELECTOR';
 const TABLE_FILTERS = 'TABLE_FILTERS';
@@ -186,73 +185,13 @@ const Table = <D extends { id: string }>({
   );
 
   const tableColumns = React.useMemo(() => {
-    const headers = [
+    return [
       ...(canSelectRows ? [selectorCol] : []),
       ...(canSelectOneRow ? [radioSelectorCol] : []),
       ...columns,
       ...(renderSubComponent ? [expanderCol] : []),
     ];
-
-    if (!renderMainHeader && !renderTableFilters) {
-      return headers;
-    }
-
-    if (renderMainHeader && renderTableFilters) {
-      return [
-        {
-          Header: renderMainHeader,
-          // Seems suspect that we should need to add header by grouping.
-          // however, I'm not keen on changing the rendering logic of the header
-          // in more detail as that could lead to regressions.
-          columns: renderTableFilters
-            ? [
-                {
-                  Header: renderTableFilters,
-                  columns: headers,
-                  id: TABLE_FILTERS,
-                },
-              ]
-            : headers,
-          id: MAIN_HEADER,
-        },
-      ];
-    }
-
-    if (renderMainHeader) {
-      return [
-        {
-          Header: renderMainHeader,
-          // Seems suspect that we should need to add header by grouping.
-          // however, I'm not keen on changing the rendering logic of the header
-          // in more detail as that could lead to regressions.
-          columns: headers,
-          id: MAIN_HEADER,
-        },
-      ];
-    }
-
-    if (renderTableFilters) {
-      return [
-        {
-          Header: renderTableFilters,
-          columns: headers,
-          id: TABLE_FILTERS,
-        },
-      ];
-    }
-
-    return headers;
-  }, [
-    canSelectRows,
-    selectorCol,
-    canSelectOneRow,
-    radioSelectorCol,
-    columns,
-    renderSubComponent,
-    expanderCol,
-    renderMainHeader,
-    renderTableFilters,
-  ]);
+  }, [canSelectRows, selectorCol, canSelectOneRow, radioSelectorCol, columns, renderSubComponent, expanderCol]);
 
   const data = React.useMemo(() => tableData, [tableData]);
 
@@ -265,20 +204,7 @@ const Table = <D extends { id: string }>({
     skipPageResetRef.current = false;
   });
 
-  const {
-    headerGroups,
-    state,
-    page,
-    rows,
-    pageCount,
-    gotoPage,
-    getTableProps,
-    getTableBodyProps,
-    prepareRow,
-    setGlobalFilter,
-    setFilter,
-    dispatch,
-  } = useTable(
+  const tableState = useTable(
     {
       columns: tableColumns,
       data: dataState,
@@ -301,6 +227,20 @@ const Table = <D extends { id: string }>({
     usePagination,
     useRowSelect
   );
+  const {
+    headerGroups,
+    state,
+    page,
+    rows,
+    pageCount,
+    gotoPage,
+    getTableProps,
+    getTableBodyProps,
+    prepareRow,
+    setGlobalFilter,
+    setFilter,
+    dispatch,
+  } = tableState;
 
   const resetSelectedRows = useCallback(() => {
     dispatch({ type: actions.resetSelectedRows });
@@ -338,15 +278,7 @@ const Table = <D extends { id: string }>({
   }, [data]);
 
   const renderTableHead = (headerGroup: HeaderGroup<D>, index: number) => (
-    <div
-      {...headerGroup.getHeaderGroupProps()}
-      className={classNames(styles.header, {
-        [styles.mainHeaderReset]: renderMainHeader && !styleMainHeader && index === 0,
-        [styles.mainHeader]: renderMainHeader && styleMainHeader && index === 0,
-        [styles.tableFilterHeader]:
-          (renderTableFilters && index === 0) || (renderMainHeader && renderTableFilters && index === 1),
-      })}
-    >
+    <div {...headerGroup.getHeaderGroupProps()} className={classNames(styles.header)}>
       {headerGroup.headers.map((column) => (
         <div
           {...column.getHeaderProps(column.getSortByToggleProps())}
@@ -437,7 +369,15 @@ const Table = <D extends { id: string }>({
             [styles.noMainHeader]: !renderMainHeader,
           })}
         >
-          <div className={styles.stickyHeaders}>{headerGroups.map(renderTableHead)}</div>
+          <div className={styles.stickyHeaders}>
+            {renderMainHeader && (
+              <div className={classNames(styles.header, styles.mainHeader)}>{renderMainHeader(tableState)}</div>
+            )}
+            {renderTableFilters && (
+              <div className={classNames(styles.header, styles.tableFilterHeader)}>{renderTableFilters()}</div>
+            )}
+            {headerGroups.map(renderTableHead)}
+          </div>
           <div {...getTableBodyProps()}>
             {(renderPaginator ? page : rows).map(renderTableBody)}
             {rows.length === 0 && renderEmptyBody()}

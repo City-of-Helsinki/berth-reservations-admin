@@ -41,17 +41,8 @@ exports[`WinterStorageAreaList renders normally 1`] = `
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display:flex;flex:1 0 auto;min-width:862.5px"
           >
-            <div
-              class="headerCell"
-              colspan="10"
-              role="columnheader"
-              style="box-sizing:border-box;flex:862.5 0 auto;min-width:862.5px;width:862.5px"
-            >
-              Talvisäilytysalueet
-            </div>
+            Talvisäilytysalueet
           </div>
           <div
             class="header"

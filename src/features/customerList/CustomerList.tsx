@@ -139,6 +139,7 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
             />
           );
         }}
+        renderMainHeader={() => t('customerList.tableHeaders.mainHeader')}
         renderTableToolsTop={({ selectedRowIds }, { resetSelectedRows }) => (
           <CustomerListTableTools
             {...tableTools}

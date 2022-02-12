@@ -152,17 +152,8 @@ Array [
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
-            <div
-              class="headerCell"
-              colspan="7"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 975 0 auto; min-width: 75px; width: 975px;"
-            >
-              LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
-            </div>
+            LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
           </div>
           <div
             class="header"
@@ -657,17 +648,8 @@ Array [
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 75px;"
           >
-            <div
-              class="headerCell"
-              colspan="7"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 975 0 auto; min-width: 75px; width: 975px;"
-            >
-              LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
-            </div>
+            LIITÄ HAKEMUS OLEMASSA OLEVAAN ASIAKASPROFIILIIN
           </div>
           <div
             class="header"

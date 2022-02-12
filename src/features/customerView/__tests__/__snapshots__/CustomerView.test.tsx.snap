@@ -421,17 +421,8 @@ exports[`CustomerView renders normally 1`] = `
             >
               <div
                 class="header mainHeader"
-                role="row"
-                style="display: flex; flex: 1 0 auto; min-width: 900px;"
               >
-                <div
-                  class="headerCell"
-                  colspan="8"
-                  role="columnheader"
-                  style="box-sizing: border-box; flex: 900 0 auto; min-width: 900px; width: 900px;"
-                >
-                  Laskut
-                </div>
+                Laskut
               </div>
               <div
                 class="header"
