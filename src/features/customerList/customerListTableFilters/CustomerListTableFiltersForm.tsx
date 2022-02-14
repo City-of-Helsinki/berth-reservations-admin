@@ -137,6 +137,21 @@ const CustomerListTableFiltersForm = ({
     );
   };
 
+  const handleHarborIdsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onReset('pierId', 'berthId');
+    onFieldChange(e);
+  };
+
+  const handlePierIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onReset('berthId');
+    onFieldChange(e);
+  };
+
+  const handleWinterStorageGridAreaIdsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onReset('winterStoragePlaceId');
+    onFieldChange(e);
+  };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <MultiSelect
@@ -183,7 +198,7 @@ const CustomerListTableFiltersForm = ({
           options={harborOptions}
           placeholder={!isSectionEnabled.berthSection ? undefined : t('common.all')}
           value={harborOptions?.filter((option) => harborIds?.includes(option.value))}
-          onChange={onFieldChange}
+          onChange={handleHarborIdsChange}
         />
         <Select
           disabled={!isSectionEnabled.berthSection || harborIds?.length !== 1}
@@ -193,7 +208,7 @@ const CustomerListTableFiltersForm = ({
           options={pierOptions}
           placeholder={!isSectionEnabled.berthSection ? undefined : t('common.all')}
           value={pierOptions?.find((option) => pierId === option.value)}
-          onChange={onFieldChange}
+          onChange={handlePierIdChange}
         />
         <Select
           disabled={!isSectionEnabled.berthSection || !pierId}
@@ -223,7 +238,7 @@ const CustomerListTableFiltersForm = ({
           options={winterStorageGridAreaOptions}
           placeholder={!isSectionEnabled.winterStorageSection ? undefined : t('common.all')}
           value={winterStorageGridAreaOptions?.filter((option) => winterStorageGridAreaIds?.includes(option.value))}
-          onChange={onFieldChange}
+          onChange={handleWinterStorageGridAreaIdsChange}
         />
         <Select
           disabled={!isSectionEnabled.winterStorageSection || winterStorageGridAreaIds?.length !== 1}
