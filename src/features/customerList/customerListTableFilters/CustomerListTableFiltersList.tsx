@@ -135,7 +135,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
 
   const removeFilter = (entry: FilterEntry) => {
     const nextFilters = getEntriesAsFilters(
-      filtersAsEntries.filter(([key, value]) => key === entry[0] && value === entry[1])
+      filtersAsEntries.filter(([key, value]) => !(key === entry[0] && value === entry[1]))
     );
 
     setFilters(nextFilters);
