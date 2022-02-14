@@ -257,38 +257,42 @@ const CustomerListTableFiltersForm = ({
         />
       </div>
       <div className={styles.actionRow}>
-        <Checkbox
-          id="dateSection"
-          name="dateSection"
-          label={`${t('customerList.filters.dateInterval')}:`}
-          checked={isSectionEnabled.dateSection}
-          onChange={handleSectionChange}
-        />
-        <DateInput
-          disabled={!isSectionEnabled.dateSection}
-          id="startDate"
-          name="startDate"
-          value={startDate}
-          onChange={onFieldChange}
-        />
-        <DateInput
-          disabled={!isSectionEnabled.dateSection}
-          id="endDate"
-          name="endDate"
-          value={endDate}
-          onChange={onFieldChange}
-        />
-        <Checkbox
-          id="moreThanOneBerthOrWinterStorage"
-          name="moreThanOneBerthOrWinterStorage"
-          label={t('customerList.filters.moreThanOneBerthOrWinterStorage')}
-          checked={moreThanOneBerthOrWinterStorage}
-          onChange={onFieldChange}
-        />
-        <Button variant="secondary" onClick={handleReset}>
-          {t('customerList.message.resetFilters')}
-        </Button>
-        <Button type="submit">{t('customerList.message.useFilters')}</Button>
+        <div className={styles.controlsContainer}>
+          <Checkbox
+            id="dateSection"
+            name="dateSection"
+            label={`${t('customerList.filters.dateInterval')}:`}
+            checked={isSectionEnabled.dateSection}
+            onChange={handleSectionChange}
+          />
+          <DateInput
+            disabled={!isSectionEnabled.dateSection}
+            id="startDate"
+            name="startDate"
+            value={startDate}
+            onChange={onFieldChange}
+          />
+          <DateInput
+            disabled={!isSectionEnabled.dateSection}
+            id="endDate"
+            name="endDate"
+            value={endDate}
+            onChange={onFieldChange}
+          />
+          <Checkbox
+            id="moreThanOneBerthOrWinterStorage"
+            name="moreThanOneBerthOrWinterStorage"
+            label={t('customerList.filters.moreThanOneBerthOrWinterStorage')}
+            checked={moreThanOneBerthOrWinterStorage}
+            onChange={onFieldChange}
+          />
+        </div>
+        <div className={styles.buttonContainer}>
+          <Button variant="secondary" onClick={handleReset}>
+            {t('customerList.message.resetFilters')}
+          </Button>
+          <Button type="submit">{t('customerList.message.useFilters')}</Button>
+        </div>
       </div>
     </form>
   );
