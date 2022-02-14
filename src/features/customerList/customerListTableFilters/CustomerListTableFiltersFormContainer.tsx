@@ -135,14 +135,18 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       })
     )
     ?.sort(alphabeticalOptionSort);
-
   const winterStoragePlaceOptions = data?.winterStorageGridArea?.properties?.sections?.edges
     ?.flatMap((winterStorageSection) =>
       winterStorageSection?.node?.properties?.places?.edges?.map(
-        (placeEdge): Option => ({
-          value: placeEdge?.node?.id ?? '',
-          label: placeEdge?.node?.number?.toString() ?? '',
-        })
+        (placeEdge): Option => {
+          const sectionIdentifier = winterStorageSection?.node?.properties?.identifier;
+          const number = placeEdge?.node?.number?.toString();
+
+          return {
+            value: placeEdge?.node?.id ?? '',
+            label: number ? `${sectionIdentifier !== '-' ? `${sectionIdentifier} / ` : ''}${number}` : '',
+          };
+        }
       )
     )
     .filter((option): option is Option => Boolean(option))
