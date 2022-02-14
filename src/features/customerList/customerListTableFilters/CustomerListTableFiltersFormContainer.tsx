@@ -78,7 +78,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       label: t(`common.customerGroups.${key}`),
       value: CustomerGroup[key],
     }))
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const boatTypeOptions = data?.boatTypes
     ?.map(
       (boatType): Option => ({
@@ -86,13 +86,13 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: boatType.name as string,
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const leaseStatusOptions = (Object.keys(LeaseStatus) as Array<keyof typeof LeaseStatus>)
     .map((key) => ({
       label: t(`common.leaseStatus.${key.toLocaleLowerCase()}`),
       value: LeaseStatus[key],
     }))
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const harborOptions = data?.harbors?.edges
     ?.map(
       (harborEdge): Option => ({
@@ -100,7 +100,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: harborEdge?.node?.properties?.name ?? '',
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const pierOptions = data?.piers?.edges
     ?.map(
       (pierEdge): Option => ({
@@ -108,7 +108,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: pierEdge?.node?.properties?.identifier ?? '',
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const berthOptions = data?.berths?.edges
     ?.map(
       (berthEdge): Option => ({
@@ -116,7 +116,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: berthEdge?.node?.number ?? '',
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const winterStorageAreaOptions = data?.winterStorageAreas?.edges
     ?.map(
       (winterStorageArea): Option => ({
@@ -124,7 +124,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: winterStorageArea?.node?.properties?.name ?? '',
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const winterStorageGridAreaOptions = data?.winterStorageAreas?.edges
     // Grid areas are those winter storage areas that do not have unmarked spaces
     ?.filter((winterStorageAreaEdge) => !winterStorageAreaEdge?.node?.properties?.estimatedNumberOfUnmarkedSpaces)
@@ -134,7 +134,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
         label: winterStorageArea?.node?.properties?.name ?? '',
       })
     )
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
   const winterStoragePlaceOptions = data?.winterStorageGridArea?.properties?.sections?.edges
     ?.flatMap((winterStorageSection) =>
       winterStorageSection?.node?.properties?.places?.edges?.map(
@@ -150,7 +150,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       )
     )
     .filter((option): option is Option => Boolean(option))
-    ?.sort(alphabeticalOptionSort);
+    ?.sort(alphaNumericalOptionSort);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nextValue = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -210,6 +210,6 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
   );
 };
 
-const alphabeticalOptionSort = (a: Option, b: Option) => a.label.localeCompare(b.label);
+const alphaNumericalOptionSort = (a: Option, b: Option) => a.label.localeCompare(b.label, undefined, { numeric: true });
 
 export default CustomerListTableFiltersContainer;
