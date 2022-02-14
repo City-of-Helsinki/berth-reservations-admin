@@ -391,6 +391,10 @@ type DateInputProps = Omit<HDSDateInputProps, 'onChange'> & {
 };
 
 const DateInput = ({ name, onChange, ...delegated }: DateInputProps) => {
+  const {
+    i18n: { language },
+  } = useTranslation();
+
   const handleChange = (value: string) => {
     const fakeChangeEvent = ({
       target: {
@@ -402,7 +406,7 @@ const DateInput = ({ name, onChange, ...delegated }: DateInputProps) => {
     onChange(fakeChangeEvent);
   };
 
-  return <HDSDateInput {...delegated} onChange={handleChange} />;
+  return <HDSDateInput {...delegated} language={language as 'en' | 'fi' | 'sv'} onChange={handleChange} />;
 };
 
 export default CustomerListTableFiltersForm;
