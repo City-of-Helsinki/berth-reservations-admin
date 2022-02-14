@@ -48,6 +48,7 @@ const filtersAtomFamily = atomFamily<ControlledFilters, CustomerListTableFilters
       endDate: end,
     };
   },
+  dangerouslyAllowMutability: true,
 });
 
 interface Props {
