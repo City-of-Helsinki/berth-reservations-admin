@@ -586,7 +586,7 @@
       "harborIds": "Venesatama",
       "pierId": "Laituri ja paikka",
       "berthId": "Venepaikka",
-      "winterStorageGridAreaId": "Talvisäilytysruutualue",
+      "winterStorageGridAreaIds": "Talvisäilytysruutualue",
       "winterStoragePlaceId": "Talvisäilytyspaikka",
       "winterStorageAreaIds": "Nostojärjestysalue",
       "moreThanOneBerthOrWinterStorage": "Enemmän kuin yksi vene- tai talvisäilytyspaikka",

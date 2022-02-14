@@ -234,7 +234,7 @@ const CustomerListTableFiltersForm = ({
           disabled={!isSectionEnabled.winterStorageSection}
           id="winterStorageGridAreaIds"
           name="winterStorageGridAreaIds"
-          label={t('customerList.filters.winterStorageGridAreaId')}
+          label={t('customerList.filters.winterStorageGridAreaIds')}
           options={winterStorageGridAreaOptions}
           placeholder={!isSectionEnabled.winterStorageSection ? undefined : t('common.all')}
           value={winterStorageGridAreaOptions?.filter((option) => winterStorageGridAreaIds?.includes(option.value))}
