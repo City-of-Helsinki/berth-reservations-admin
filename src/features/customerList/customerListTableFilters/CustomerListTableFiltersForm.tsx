@@ -363,7 +363,7 @@ const Select = ({ name, onChange, value, options, disabled, placeholder, ...rest
     const fakeChangeEvent = ({
       target: {
         name,
-        value: option.value,
+        value: option?.value,
       },
     } as unknown) as React.ChangeEvent<HTMLInputElement>;
 
@@ -378,12 +378,7 @@ const Select = ({ name, onChange, value, options, disabled, placeholder, ...rest
       placeholder={!disabled && !options ? t('customerList.message.loadingOptions') : placeholder}
       options={options ?? []}
       toggleButtonAriaLabel={t('common.dropdown.genericToggleButtonAriaLabel')}
-      value={
-        value ?? {
-          value: '',
-          label: '',
-        }
-      }
+      value={value ?? null}
       onChange={handleChange}
     />
   );
