@@ -575,7 +575,7 @@
       "useFilters": "Käytä",
       "resetFilters": "Tyhjennä valinnat",
       "filter": "Rajaa",
-      "deleteButtonAriaLabel": "Poista suodatus: {{label}}",
+      "deleteButtonAriaLabel": "Poista suodatus",
       "resetAllFiltersAriaLabel": "Poista kaikki suodatukset",
       "loadingOptions": "Etsitään vaihtoehtoja..."
     },
