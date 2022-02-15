@@ -133,9 +133,24 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
     moreThanOneBerthOrWinterStorage: (_: FilterEntryValue) => '',
   };
 
-  const removeFilter = (entry: FilterEntry) => {
+  const removeFilter = ([key, value]: FilterEntry) => {
+    type OptionalResetConfig<T> = {
+      [K in keyof T]?: (keyof T)[];
+    };
+    const resetMap: OptionalResetConfig<CustomerListTableFilters> = {
+      harborIds: ['pierId', 'berthId'],
+      winterStorageGridAreaIds: ['winterStoragePlaceId'],
+      pierId: ['berthId'],
+    };
+    const otherFieldsToReset = resetMap[key] ?? [];
     const nextFilters = getEntriesAsFilters(
-      filtersAsEntries.filter(([key, value]) => !(key === entry[0] && value === entry[1]))
+      filtersAsEntries.filter((entry) => {
+        if (otherFieldsToReset.includes(entry[0])) {
+          return false;
+        }
+
+        return !(key === entry[0] && value === entry[1]);
+      })
     );
 
     setFilters(nextFilters);

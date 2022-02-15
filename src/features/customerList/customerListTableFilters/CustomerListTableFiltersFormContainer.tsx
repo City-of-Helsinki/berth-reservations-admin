@@ -48,7 +48,6 @@ const filtersAtomFamily = atomFamily<ControlledFilters, CustomerListTableFilters
       endDate: end,
     };
   },
-  dangerouslyAllowMutability: true,
 });
 
 interface Props {
@@ -73,6 +72,13 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       skipWinterStorageGridArea: !queryByWinterStorageGridAreaId,
     },
   });
+
+  React.useEffect(() => {
+    setFilters({
+      ...controlledFiltersEmptyValues,
+      ...listTableFilters,
+    });
+  }, [listTableFilters, setFilters]);
 
   const customerGroupOptions = (Object.keys(CustomerGroup) as Array<keyof typeof CustomerGroup>)
     .map((key) => ({
