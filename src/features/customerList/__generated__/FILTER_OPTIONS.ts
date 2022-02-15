@@ -71,22 +71,6 @@ export interface FILTER_OPTIONS_berths {
   edges: (FILTER_OPTIONS_berths_edges | null)[];
 }
 
-export interface FILTER_OPTIONS_winterStoragePlaces_edges_node {
-  __typename: "WinterStoragePlaceNode";
-  id: string;
-  number: number;
-}
-
-export interface FILTER_OPTIONS_winterStoragePlaces_edges {
-  __typename: "WinterStoragePlaceNodeEdge";
-  node: FILTER_OPTIONS_winterStoragePlaces_edges_node | null;
-}
-
-export interface FILTER_OPTIONS_winterStoragePlaces {
-  __typename: "WinterStoragePlaceNodeConnection";
-  edges: (FILTER_OPTIONS_winterStoragePlaces_edges | null)[];
-}
-
 export interface FILTER_OPTIONS_winterStorageAreas_edges_node_properties {
   __typename: "WinterStorageAreaProperties";
   name: string | null;
@@ -163,7 +147,6 @@ export interface FILTER_OPTIONS {
   harbors: FILTER_OPTIONS_harbors | null;
   piers: FILTER_OPTIONS_piers | null;
   berths: FILTER_OPTIONS_berths | null;
-  winterStoragePlaces: FILTER_OPTIONS_winterStoragePlaces | null;
   winterStorageAreas: FILTER_OPTIONS_winterStorageAreas | null;
   winterStorageGridArea: FILTER_OPTIONS_winterStorageGridArea | null;
 }

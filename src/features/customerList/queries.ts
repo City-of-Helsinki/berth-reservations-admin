@@ -149,14 +149,6 @@ export const FILTER_OPTIONS_QUERY = gql`
         }
       }
     }
-    winterStoragePlaces {
-      edges {
-        node {
-          id
-          number
-        }
-      }
-    }
     winterStorageAreas {
       edges {
         node {

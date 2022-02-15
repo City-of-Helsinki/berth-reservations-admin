@@ -271,6 +271,7 @@ const CustomerListTableFiltersForm = ({
           onChange={onFieldChange}
         />
       </div>
+
       <div className={styles.actionRow}>
         <div className={styles.controlsContainer}>
           <Checkbox
@@ -286,6 +287,8 @@ const CustomerListTableFiltersForm = ({
             name="startDate"
             value={startDate}
             onChange={onFieldChange}
+            className={styles.hideDateInputLabel}
+            label={t('customerList.filters.startDate')}
           />
           <DateInput
             disabled={!isSectionEnabled.dateSection}
@@ -293,6 +296,8 @@ const CustomerListTableFiltersForm = ({
             name="endDate"
             value={endDate}
             onChange={onFieldChange}
+            className={styles.hideDateInputLabel}
+            label={t('customerList.filters.endDate')}
           />
           <Checkbox
             id="moreThanOneBerthOrWinterStorage"

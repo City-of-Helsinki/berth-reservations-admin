@@ -591,6 +591,8 @@
       "winterStorageAreaIds": "Nostojärjestysalue",
       "moreThanOneBerthOrWinterStorage": "Enemmän kuin yksi vene- tai talvisäilytyspaikka",
       "dateInterval": "Aikaväli",
+      "startDate": "Alkupäivämäärä",
+      "endDate": "Loppupäivämäärä",
       "sections": {
         "berth": "Venepaikat",
         "winterStorage": "Talvisäilytysruutupaikat",

@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { atomFamily, useRecoilState } from 'recoil';
 import { useTranslation } from 'react-i18next';
 
-import { FILTER_OPTIONS } from '../__generated__/FILTER_OPTIONS';
+import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../__generated__/FILTER_OPTIONS';
 import { FILTER_OPTIONS_QUERY } from '../queries';
 import CustomerListTableFiltersForm from './CustomerListTableFiltersForm';
 import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
@@ -61,7 +61,7 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
   const queryByHarborId = filters.harborIds.length === 1 ? filters.harborIds[0] : null;
   const queryByWinterStorageGridAreaId =
     filters.winterStorageGridAreaIds.length === 1 ? filters.winterStorageGridAreaIds[0] : null;
-  const { data } = useQuery<FILTER_OPTIONS>(FILTER_OPTIONS_QUERY, {
+  const { data } = useQuery<FILTER_OPTIONS, FILTER_OPTIONS_VAR>(FILTER_OPTIONS_QUERY, {
     fetchPolicy: 'no-cache',
     variables: {
       harborId: queryByHarborId,
@@ -72,7 +72,6 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       skipWinterStorageGridArea: !queryByWinterStorageGridAreaId,
     },
   });
-
   React.useEffect(() => {
     setFilters({
       ...controlledFiltersEmptyValues,
