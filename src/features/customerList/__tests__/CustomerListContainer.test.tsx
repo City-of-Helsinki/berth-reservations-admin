@@ -116,6 +116,14 @@ const winterStorageGridAreaExpanded = {
   },
 };
 
+function toggleFilters() {
+  userEvent.click(screen.getByRole('button', { name: 'Rajaa' }));
+}
+
+function submitFilters() {
+  userEvent.click(screen.getByRole('button', { name: 'Käytä' }));
+}
+
 type InstructionBase = {
   name: string;
   label: string;
@@ -149,9 +157,6 @@ function setup(config?: SetupConfig) {
   });
 
   return {
-    toggleFilters() {
-      userEvent.click(screen.getByRole('button', { name: 'Rajaa' }));
-    },
     async fillControls(fieldInstructions: FieldInstruction[]) {
       for (const instruction of fieldInstructions) {
         const { label, type } = instruction;
@@ -183,9 +188,6 @@ function setup(config?: SetupConfig) {
           }
         }
       }
-    },
-    submitFilters() {
-      userEvent.click(screen.getByRole('button', { name: 'Käytä' }));
     },
     getSearchParams() {
       return window.location.search;
@@ -297,7 +299,7 @@ function winterStorageGridAreaSelectedEnhancer() {
 
 // For performance reasons, cover multiple test cases in this same test
 test(`customer list filter form allows user to give search conditions`, async () => {
-  const { toggleFilters, fillControls, submitFilters, getSearchParams } = setup({
+  const { fillControls, getSearchParams } = setup({
     mocks: [
       // Query with initial values
       createFilterOptionsMockedResponse(),
