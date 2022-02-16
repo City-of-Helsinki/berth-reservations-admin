@@ -74,6 +74,7 @@ const gridWinterStorageArea = {
     id: 'winterStorageArea-1',
     properties: {
       name: 'Laivalahti',
+      estimatedNumberOfUnmarkedSpaces: 0,
     },
   },
 };
@@ -82,6 +83,7 @@ const winterStorageArea2 = {
     id: 'winterStorageArea-2',
     properties: {
       name: 'Hernesaari',
+      estimatedNumberOfUnmarkedSpaces: 10,
     },
   },
 };
