@@ -55,9 +55,91 @@ interface Props {
 }
 
 const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
-  const { t } = useTranslation();
   const [listTableFilters, setListTableFilters] = useListTableFilters();
   const [filters, setFilters] = useRecoilState(filtersAtomFamily(listTableFilters));
+  const {
+    customerGroupOptions,
+    boatTypeOptions,
+    leaseStatusOptions,
+    harborOptions,
+    pierOptions,
+    berthOptions,
+    winterStorageAreaOptions,
+    winterStorageGridAreaOptions,
+    winterStoragePlaceOptions,
+  } = useCustomerListTableFilterOptions();
+
+  React.useEffect(() => {
+    setFilters({
+      ...controlledFiltersEmptyValues,
+      ...listTableFilters,
+    });
+  }, [listTableFilters, setFilters]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextValue = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    setFilters((prev) => ({
+      ...prev,
+      [e.target.name]: nextValue,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, filters: ControlledFilters) => {
+    e.preventDefault();
+
+    const { startDate, endDate, ...delegated } = filters;
+
+    setListTableFilters({
+      ...delegated,
+      dateInterval: createIntervalString({
+        start: startDate,
+        end: endDate,
+      }),
+    });
+    onFormClose();
+  };
+
+  const handleReset = (...fieldsToReset: (keyof ControlledFilters)[]) => {
+    const resetFields = fieldsToReset.reduce(
+      (acc, fieldName) => ({
+        ...acc,
+        [fieldName]: controlledFiltersEmptyValues[fieldName],
+      }),
+      {}
+    );
+
+    setFilters((prev) => ({
+      ...prev,
+      ...resetFields,
+    }));
+  };
+
+  return (
+    <CustomerListTableFiltersForm
+      customerGroupOptions={customerGroupOptions}
+      boatTypeOptions={boatTypeOptions}
+      leaseStatusOptions={leaseStatusOptions}
+      harborOptions={harborOptions}
+      pierOptions={pierOptions}
+      berthOptions={berthOptions}
+      winterStorageAreaOptions={winterStorageAreaOptions}
+      winterStoragePlaceOptions={winterStoragePlaceOptions}
+      winterStorageGridAreaOptions={winterStorageGridAreaOptions}
+      filters={filters}
+      onFieldChange={handleChange}
+      onSubmit={handleSubmit}
+      onReset={handleReset}
+    />
+  );
+};
+
+const alphaNumericalOptionSort = (a: Option, b: Option) => a.label.localeCompare(b.label, undefined, { numeric: true });
+
+function useCustomerListTableFilterOptions() {
+  const { t } = useTranslation();
+  const [listTableFilters] = useListTableFilters();
+  const [filters] = useRecoilState(filtersAtomFamily(listTableFilters));
   const queryByHarborId = filters.harborIds.length === 1 ? filters.harborIds[0] : null;
   const queryByWinterStorageGridAreaId =
     filters.winterStorageGridAreaIds.length === 1 ? filters.winterStorageGridAreaIds[0] : null;
@@ -72,12 +154,6 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
       skipWinterStorageGridArea: !queryByWinterStorageGridAreaId,
     },
   });
-  React.useEffect(() => {
-    setFilters({
-      ...controlledFiltersEmptyValues,
-      ...listTableFilters,
-    });
-  }, [listTableFilters, setFilters]);
 
   const customerGroupOptions = (Object.keys(CustomerGroup) as Array<keyof typeof CustomerGroup>)
     .map((key) => ({
@@ -158,64 +234,17 @@ const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
     .filter((option): option is Option => Boolean(option))
     ?.sort(alphaNumericalOptionSort);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const nextValue = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-
-    setFilters((prev) => ({
-      ...prev,
-      [e.target.name]: nextValue,
-    }));
+  return {
+    customerGroupOptions,
+    boatTypeOptions,
+    leaseStatusOptions,
+    harborOptions,
+    pierOptions,
+    berthOptions,
+    winterStorageAreaOptions,
+    winterStorageGridAreaOptions,
+    winterStoragePlaceOptions,
   };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, filters: ControlledFilters) => {
-    e.preventDefault();
-
-    const { startDate, endDate, ...delegated } = filters;
-
-    setListTableFilters({
-      ...delegated,
-      dateInterval: createIntervalString({
-        start: startDate,
-        end: endDate,
-      }),
-    });
-    onFormClose();
-  };
-
-  const handleReset = (...fieldsToReset: (keyof ControlledFilters)[]) => {
-    const resetFields = fieldsToReset.reduce(
-      (acc, fieldName) => ({
-        ...acc,
-        [fieldName]: controlledFiltersEmptyValues[fieldName],
-      }),
-      {}
-    );
-
-    setFilters((prev) => ({
-      ...prev,
-      ...resetFields,
-    }));
-  };
-
-  return (
-    <CustomerListTableFiltersForm
-      customerGroupOptions={customerGroupOptions}
-      boatTypeOptions={boatTypeOptions}
-      leaseStatusOptions={leaseStatusOptions}
-      harborOptions={harborOptions}
-      pierOptions={pierOptions}
-      berthOptions={berthOptions}
-      winterStorageAreaOptions={winterStorageAreaOptions}
-      winterStoragePlaceOptions={winterStoragePlaceOptions}
-      winterStorageGridAreaOptions={winterStorageGridAreaOptions}
-      filters={filters}
-      onFieldChange={handleChange}
-      onSubmit={handleSubmit}
-      onReset={handleReset}
-    />
-  );
-};
-
-const alphaNumericalOptionSort = (a: Option, b: Option) => a.label.localeCompare(b.label, undefined, { numeric: true });
+}
 
 export default CustomerListTableFiltersContainer;
