@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { atomFamily, useRecoilState } from 'recoil';
 import { useTranslation } from 'react-i18next';
 
 import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../__generated__/FILTER_OPTIONS';
@@ -36,19 +35,16 @@ export type ControlledFilters = Omit<CustomerListTableFilters, 'dateInterval'> &
   endDate?: string;
 };
 
-const filtersAtomFamily = atomFamily<ControlledFilters, CustomerListTableFilters>({
-  key: 'CustomerListTableFilters_filtersAtom',
-  default: ({ dateInterval, ...delegated }) => {
-    const { start, end } = createIntervalWithSilentError(dateInterval);
+const createInitialState = ({ dateInterval, ...delegated }: CustomerListTableFilters): ControlledFilters => {
+  const { start, end } = createIntervalWithSilentError(dateInterval);
 
-    return {
-      ...controlledFiltersEmptyValues,
-      ...delegated,
-      startDate: start,
-      endDate: end,
-    };
-  },
-});
+  return {
+    ...controlledFiltersEmptyValues,
+    ...delegated,
+    startDate: start,
+    endDate: end,
+  };
+};
 
 interface Props {
   onFormClose: () => void;
@@ -56,7 +52,7 @@ interface Props {
 
 const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
   const [listTableFilters, setListTableFilters] = useListTableFilters();
-  const [filters, setFilters] = useRecoilState(filtersAtomFamily(listTableFilters));
+  const [filters, setFilters] = React.useState(() => createInitialState(listTableFilters));
   const {
     customerGroupOptions,
     boatTypeOptions,
@@ -67,14 +63,9 @@ const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
     winterStorageAreaOptions,
     winterStorageGridAreaOptions,
     winterStoragePlaceOptions,
-  } = useCustomerListTableFilterOptions();
-
-  React.useEffect(() => {
-    setFilters({
-      ...controlledFiltersEmptyValues,
-      ...listTableFilters,
-    });
-  }, [listTableFilters, setFilters]);
+  } = useCustomerListTableFilterOptions({
+    filters,
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nextValue = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -141,10 +132,12 @@ const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
 
 const alphaNumericalOptionSort = (a: Option, b: Option) => a.label.localeCompare(b.label, undefined, { numeric: true });
 
-function useCustomerListTableFilterOptions() {
+type Config = {
+  filters: ControlledFilters;
+};
+
+function useCustomerListTableFilterOptions({ filters }: Config) {
   const { t } = useTranslation();
-  const [listTableFilters] = useListTableFilters();
-  const [filters] = useRecoilState(filtersAtomFamily(listTableFilters));
   const queryByHarborId = filters.harborIds.length === 1 ? filters.harborIds[0] : null;
   const queryByWinterStorageGridAreaId =
     filters.winterStorageGridAreaIds.length === 1 ? filters.winterStorageGridAreaIds[0] : null;
