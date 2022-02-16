@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-len */
+/* eslint-disable no-console */
 import React from 'react';
 import { MockedResponse } from '@apollo/react-testing';
 
@@ -298,6 +299,23 @@ function winterStorageGridAreaSelectedEnhancer() {
     },
   };
 }
+
+// Ignore act errors
+let error: (...args: any[]) => void;
+beforeAll(() => {
+  error = console.error;
+  console.error = (message, ...rest: any[]) => {
+    if (message.startsWith('Warning: An update to')) {
+      return;
+    }
+
+    return error(message, ...rest);
+  };
+});
+
+afterAll(() => {
+  console.error = error;
+});
 
 // For performance reasons, cover multiple test cases in this same test
 test(`customer list filter form allows user to give search conditions`, async () => {
