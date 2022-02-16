@@ -14,14 +14,8 @@ import { getSelectedRowIds } from '../../common/utils/getSelectedRowIds';
 import PageContent from '../../common/pageContent/PageContent';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import WrappingTableCell from '../../common/wrappingTableCell/WrappingTableCell';
+import { SearchBy } from './CustomerListContainer';
 import CustomerListTableFilters from './customerListTableFilters/CustomerListTableFilters';
-
-export enum SearchBy {
-  FIRST_NAME = 'firstName',
-  LAST_NAME = 'lastName',
-  EMAIL = 'email',
-  ADDRESS = 'address',
-}
 
 type ColumnType = Column<CustomerData>;
 

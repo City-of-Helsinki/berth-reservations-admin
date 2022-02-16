@@ -180,6 +180,8 @@ export interface CUSTOMERSVariables {
   lastName?: string | null;
   email?: string | null;
   address?: string | null;
+  stickerNumber?: string | null;
+  boatRegistrationNumber?: string | null;
   orderBy?: string | null;
   customerGroups?: (CustomerGroup | null)[] | null;
   boatTypeIds?: (string | null)[] | null;

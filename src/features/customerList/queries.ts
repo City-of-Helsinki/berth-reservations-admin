@@ -8,6 +8,8 @@ export const CUSTOMERS_QUERY = gql`
     $lastName: String
     $email: String
     $address: String
+    $stickerNumber: String
+    $boatRegistrationNumber: String
     $orderBy: String
     $customerGroups: [CustomerGroup]
     $boatTypeIds: [ID]
@@ -30,6 +32,8 @@ export const CUSTOMERS_QUERY = gql`
       lastName: $lastName
       email: $email
       address: $address
+      stickerNumber: $stickerNumber
+      boatRegistrationNumber: $boatRegistrationNumber
       sortBy: $orderBy
       customerGroups: $customerGroups
       boatTypes: $boatTypeIds
