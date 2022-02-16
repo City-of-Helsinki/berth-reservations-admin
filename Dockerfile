@@ -20,6 +20,10 @@ RUN yarn policies set-version $YARN_VERSION
 # Use non-root user
 USER appuser
 
+# Replace tsconfig with production tsconfig that ignores test files
+RUN rm -rf ./tsconfig.json
+COPY .prod/tsconfig.json ./
+
 # Copy package.json and package-lock.json/yarn.lock files
 COPY package*.json *yarn* ./
 
