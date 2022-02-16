@@ -83,11 +83,9 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
     winterStorageGridAreaIds: resolveWinterStorageAreaId,
     winterStoragePlaceId: (_: FilterEntryValue) => winterStoragePlaceQuery.data?.winterStoragePlace?.number?.toString(),
     winterStorageAreaIds: resolveWinterStorageAreaId,
-    dateInterval: (_value: FilterEntryValue) => {
-      const value = _value as string;
-
+    dateInterval: (value: FilterEntryValue) => {
       try {
-        const { start, end } = createInterval(value);
+        const { start, end } = createInterval(value as string);
         const startDate = start ? createDate(start) : null;
         const endDate = end ? createDate(end) : null;
 
