@@ -54,7 +54,7 @@ interface Props {
   onFormClose: () => void;
 }
 
-const CustomerListTableFiltersContainer = ({ onFormClose }: Props) => {
+const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
   const [listTableFilters, setListTableFilters] = useListTableFilters();
   const [filters, setFilters] = useRecoilState(filtersAtomFamily(listTableFilters));
   const {
@@ -247,4 +247,4 @@ function useCustomerListTableFilterOptions() {
   };
 }
 
-export default CustomerListTableFiltersContainer;
+export default CustomerListTableFiltersFormContainer;
