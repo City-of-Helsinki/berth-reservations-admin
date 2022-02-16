@@ -4,10 +4,10 @@
 import React from 'react';
 import { MockedResponse } from '@apollo/react-testing';
 
-import { render, screen, userEvent, waitFor, configure } from '../../../common/testUtils/testingLibrary';
-import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../__generated__/FILTER_OPTIONS';
-import { FILTER_OPTIONS_QUERY } from '../queries';
-import CustomerListContainer from '../CustomerListContainer';
+import { render, screen, userEvent, waitFor, configure } from '../../../../common/testUtils/testingLibrary';
+import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../../__generated__/FILTER_OPTIONS';
+import { FILTER_OPTIONS_QUERY } from '../../queries';
+import CustomerListTableFilters from '../CustomerListTableFilters';
 
 configure({ defaultHidden: true });
 
@@ -157,7 +157,7 @@ type SetupConfig = {
 function setup(config?: SetupConfig) {
   const mocks = config?.mocks ?? [];
 
-  render(<CustomerListContainer />, {
+  render(<CustomerListTableFilters />, {
     mocks,
   });
 
@@ -320,7 +320,7 @@ afterAll(() => {
 });
 
 // For performance reasons, cover multiple test cases in this same test
-test(`customer list filter form allows user to give search conditions`, async () => {
+test(`allows user to give search conditions`, async () => {
   const { fillControls, getSearchParams } = setup({
     mocks: [
       // Query with initial values
