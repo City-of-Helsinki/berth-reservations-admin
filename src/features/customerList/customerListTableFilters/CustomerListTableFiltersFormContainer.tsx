@@ -144,7 +144,7 @@ function useCustomerListTableFilterOptions() {
   const queryByWinterStorageGridAreaId =
     filters.winterStorageGridAreaIds.length === 1 ? filters.winterStorageGridAreaIds[0] : null;
   const { data } = useQuery<FILTER_OPTIONS, FILTER_OPTIONS_VAR>(FILTER_OPTIONS_QUERY, {
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'cache-first',
     variables: {
       harborId: queryByHarborId,
       pierId: filters.pierId,
