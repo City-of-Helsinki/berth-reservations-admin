@@ -132,7 +132,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
     setFilters(nextFilters);
   };
 
-  const clearFilters = () => {
+  const clearFilters = (_: React.MouseEvent<HTMLButtonElement>) => {
     setFilters({});
   };
 
@@ -172,13 +172,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
           );
         })}
       </ul>
-      <button
-        type="button"
-        className={styles.resetFiltersButton}
-        onClick={() => {
-          clearFilters();
-        }}
-      >
+      <button type="button" className={styles.resetFiltersButton} onClick={clearFilters}>
         <IconCrossCircle aria-label={t('customerList.resetAllFiltersAriaLabel')} />
       </button>
     </div>
