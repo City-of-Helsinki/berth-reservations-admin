@@ -15,7 +15,7 @@ import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
-import { orderByGetter } from '../../common/utils/recoil';
+import { orderByToString } from '../../common/utils/recoil';
 import authService from '../auth/authService';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
@@ -37,7 +37,20 @@ const sortByAtom = atom<SortingRule<ApplicationData>[]>({
 
 const orderBySelector = selector<string | undefined>({
   key: 'CustomerListContainer_orderBySelector',
-  get: orderByGetter(sortByAtom),
+  get: ({ get }) => {
+    const modifiedOrderByAtom = get(sortByAtom).map((sort) => {
+      if (sort.id === 'name') {
+        return {
+          ...sort,
+          id: 'lastName',
+        };
+      }
+
+      return sort;
+    });
+
+    return orderByToString(modifiedOrderByAtom);
+  },
 });
 
 const CustomerListContainer = () => {
