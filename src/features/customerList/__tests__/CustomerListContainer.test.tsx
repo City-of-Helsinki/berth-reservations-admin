@@ -4,10 +4,12 @@
 import React from 'react';
 import { MockedResponse } from '@apollo/react-testing';
 
-import { render, screen, userEvent, waitFor } from '../../../common/testUtils/testingLibrary';
+import { render, screen, userEvent, waitFor, configure } from '../../../common/testUtils/testingLibrary';
 import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../__generated__/FILTER_OPTIONS';
 import { FILTER_OPTIONS_QUERY } from '../queries';
 import CustomerListContainer from '../CustomerListContainer';
+
+configure({ defaultHidden: true });
 
 const boatType1 = { id: '1', name: 'Jollavene' };
 const boatTypes = [boatType1, { id: '2', name: 'Keskimoottorivene' }];
@@ -171,11 +173,11 @@ function setup(config?: SetupConfig) {
 
           if (value) {
             await waitFor(() => expect(screen.queryByRole('combobox', { name: label })).not.toBeDisabled(), {
-              timeout: 2000,
+              timeout: 3000,
             });
 
             userEvent.type(screen.getByRole('combobox', { name: label }), value.toLowerCase().substring(0, 3));
-            userEvent.click(screen.getByRole('option', { name: value, hidden: true, selected: false }));
+            userEvent.click(screen.getByRole('option', { name: value, selected: false }));
           }
         } else if (type === 'checkbox') {
           expect(screen.getByRole('checkbox', { name: label })).toBeInTheDocument();
