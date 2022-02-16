@@ -36,6 +36,7 @@ export interface Props {
   onFieldChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>, filters: ControlledFilters) => void;
   onReset: (...fieldsToReset: (keyof ControlledFilters)[]) => void;
+  onResetAll: () => void;
 }
 
 const CustomerListTableFiltersForm = ({
@@ -65,6 +66,7 @@ const CustomerListTableFiltersForm = ({
   onFieldChange,
   onSubmit,
   onReset,
+  onResetAll,
 }: Props) => {
   const { t } = useTranslation();
 
@@ -122,20 +124,7 @@ const CustomerListTableFiltersForm = ({
       unmarkedWinterStorageSection: false,
       dateSection: false,
     });
-    onReset(
-      'customerGroups',
-      'boatTypeIds',
-      'leaseStatuses',
-      'harborIds',
-      'pierId',
-      'berthId',
-      'winterStorageGridAreaIds',
-      'winterStoragePlaceId',
-      'winterStorageAreaIds',
-      'startDate',
-      'endDate',
-      'moreThanOneBerthOrWinterStorage'
-    );
+    onResetAll();
   };
 
   const handleHarborIdsChange = (e: React.ChangeEvent<HTMLInputElement>) => {

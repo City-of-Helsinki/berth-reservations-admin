@@ -115,6 +115,10 @@ const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
     }));
   };
 
+  const handleResetAll = () => {
+    setFilters(controlledFiltersEmptyValues);
+  };
+
   return (
     <CustomerListTableFiltersForm
       customerGroupOptions={customerGroupOptions}
@@ -130,6 +134,7 @@ const CustomerListTableFiltersFormContainer = ({ onFormClose }: Props) => {
       onFieldChange={handleChange}
       onSubmit={handleSubmit}
       onReset={handleReset}
+      onResetAll={handleResetAll}
     />
   );
 };
