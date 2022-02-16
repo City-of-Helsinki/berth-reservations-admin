@@ -66,7 +66,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
     }
   );
 
-  const resolveWinterStoageAreaId = (value: FilterEntryValue) => (
+  const resolveWinterStorageAreaId = (value: FilterEntryValue) => (
     <CustomerListTableFiltersListWinterStorageAreaLabel id={value as string} />
   );
   const renderValueMap: Record<
@@ -80,9 +80,9 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
     harborIds: (value: FilterEntryValue) => <CustomerListTableFiltersListHarborLabel id={value as string} />,
     pierId: (_: FilterEntryValue) => pierQuery.data?.pier?.properties?.identifier,
     berthId: (_: FilterEntryValue) => berthQuery.data?.berth?.number,
-    winterStorageGridAreaIds: resolveWinterStoageAreaId,
+    winterStorageGridAreaIds: resolveWinterStorageAreaId,
     winterStoragePlaceId: (_: FilterEntryValue) => winterStoragePlaceQuery.data?.winterStoragePlace?.number?.toString(),
-    winterStorageAreaIds: resolveWinterStoageAreaId,
+    winterStorageAreaIds: resolveWinterStorageAreaId,
     dateInterval: (_value: FilterEntryValue) => {
       const value = _value as string;
 
