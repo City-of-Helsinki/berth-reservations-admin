@@ -2,7 +2,7 @@ import { CUSTOMERS } from '../__generated__/CUSTOMERS';
 import { ContactMethod, CustomerGroup, LeaseStatus, ServiceType } from '../../../@types/__generated__/globalTypes';
 
 export const customersResponse: CUSTOMERS = {
-  profiles: {
+  berthProfiles: {
     count: 1,
     edges: [
       {

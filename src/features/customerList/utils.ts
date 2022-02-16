@@ -1,8 +1,8 @@
 import {
   CUSTOMERS,
-  CUSTOMERS_profiles_edges_node as ProfileNode,
-  CUSTOMERS_profiles_edges_node_berthLeases_edges as BerthLeaseEdge,
-  CUSTOMERS_profiles_edges_node_berthLeases_edges_node as BerthLeaseNode,
+  CUSTOMERS_berthProfiles_edges_node as ProfileNode,
+  CUSTOMERS_berthProfiles_edges_node_berthLeases_edges as BerthLeaseEdge,
+  CUSTOMERS_berthProfiles_edges_node_berthLeases_edges_node as BerthLeaseNode,
 } from './__generated__/CUSTOMERS';
 import { CustomerData, CustomerListApplication, CustomerListBerthLeases, CustomerListBoat } from './types';
 
@@ -52,7 +52,7 @@ function getBerthLeases(profile: ProfileNode): CustomerListBerthLeases[] | undef
 
 export const getCustomersData = (data: CUSTOMERS | undefined): CustomerData[] => {
   return (
-    data?.profiles?.edges.reduce<CustomerData[]>((acc, profileEdge) => {
+    data?.berthProfiles?.edges.reduce<CustomerData[]>((acc, profileEdge) => {
       if (profileEdge?.node) {
         const profile = profileEdge.node;
         const boats = getBoats(profile) ?? [];

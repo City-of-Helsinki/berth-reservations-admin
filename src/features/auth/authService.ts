@@ -68,6 +68,19 @@ class AuthService {
     return localStorage.getItem(API_TOKENS);
   }
 
+  public getProfileToken(): string | null {
+    const tokens = this.getTokens();
+
+    if (tokens) {
+      const tokensObject = JSON.parse(tokens);
+      const { REACT_APP_TUNNISTAMO_SCOPE_PROFILE: profileScope } = process.env;
+
+      return profileScope ? tokensObject[profileScope] : null;
+    } else {
+      return null;
+    }
+  }
+
   public isAuthenticated() {
     const oidcStorage = sessionStorage.getItem(
       `oidc.user:${process.env.REACT_APP_TUNNISTAMO_URI}:${process.env.REACT_APP_TUNNISTAMO_CLIENT_ID}`

@@ -1,9 +1,11 @@
+import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
+
 export type ValueOf<T> = T[keyof T];
 
 export type CustomerListTableFilters = {
-  customerGroups: string[];
+  customerGroups: CustomerGroup[];
   boatTypeIds: string[];
-  leaseStatuses: string[];
+  leaseStatuses: LeaseStatus[];
   harborIds: string[];
   pierId?: string;
   berthId?: string;

@@ -2,7 +2,6 @@ import React from 'react';
 import { Tag, IconCrossCircle } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
-import parse from 'date-fns/parse';
 import format from 'date-fns/format';
 
 import { FILTER_BOAT_TYPE_LABELS } from '../__generated__/FILTER_BOAT_TYPE_LABELS';
@@ -25,7 +24,7 @@ import {
   FILTER_WINTER_STORAGE_PLACE_LABEL_QUERY,
 } from '../queries';
 import { CustomerListTableFilters, FilterEntry, FilterEntryValue, ValueOf } from './types';
-import { createInterval } from './utils';
+import { createInterval, createDate } from './utils';
 import useListTableFilters, { getFiltersAsEntries, getEntriesAsFilters } from './useListTableFilters';
 import CustomerListTableFiltersListHarborLabel from './labels/CustomerListTableFiltersListHarborLabel';
 import CustomerListTableFiltersListWinterStorageAreaLabel from './labels/CustomerListTableFiltersListWinterStorageAreaLabel';
@@ -89,8 +88,8 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
 
       try {
         const { start, end } = createInterval(value);
-        const startDate = start ? parse(start, 'd.L.yyyy', new Date()) : null;
-        const endDate = end ? parse(end, 'd.L.yyyy', new Date()) : null;
+        const startDate = start ? createDate(start) : null;
+        const endDate = end ? createDate(end) : null;
 
         if (startDate && !endDate) {
           return `${format(startDate, 'yyyy')}-`;

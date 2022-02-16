@@ -9,16 +9,41 @@ export const CUSTOMERS_QUERY = gql`
     $email: String
     $address: String
     $orderBy: String
+    $customerGroups: [CustomerGroup]
+    $boatTypeIds: [ID]
+    $leaseStatuses: [LeaseStatus]
+    $harborIds: [String]
+    $pierId: String
+    $berthId: String
+    $winterStorageGridAreaIds: [String]
+    $winterStoragePlaceId: String
+    $winterStorageAreaIds: [String]
+    $moreThanOneBerthOrWinterStorage: Boolean
+    $apiToken: String
+    $startDate: Date
+    $endDate: Date
   ) {
-    profiles(
+    berthProfiles(
       first: $first
       after: $after
-      serviceType: BERTH
       firstName: $firstName
       lastName: $lastName
-      emails_Email: $email
-      addresses_Address: $address
-      orderBy: $orderBy
+      email: $email
+      address: $address
+      sortBy: $orderBy
+      customerGroups: $customerGroups
+      boatTypes: $boatTypeIds
+      leaseStatuses: $leaseStatuses
+      harbors: $harborIds
+      piers: [$pierId]
+      berths: [$berthId]
+      markedWinterStorageAreas: $winterStorageGridAreaIds
+      markedWinterStoragePlaces: [$winterStoragePlaceId]
+      unmarkedWinterStorageAreas: $winterStorageAreaIds
+      leaseCount: $moreThanOneBerthOrWinterStorage
+      apiToken: $apiToken
+      leaseStart: $startDate
+      leaseEnd: $endDate
     ) {
       count
       edges {

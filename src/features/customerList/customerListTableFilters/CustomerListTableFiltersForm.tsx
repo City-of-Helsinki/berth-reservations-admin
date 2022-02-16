@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '../../../common/button/Button';
 import { Option, ControlledFilters } from './CustomerListTableFiltersFormContainer';
 import styles from './customerListTableFilters.module.scss';
+import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 type Section = {
   berthSection: boolean;
@@ -160,7 +161,7 @@ const CustomerListTableFiltersForm = ({
         label={t('customerList.filters.customerGroups')}
         options={customerGroupOptions}
         placeholder={t('common.all')}
-        value={customerGroupOptions?.filter((option) => customerGroups?.includes(option.value))}
+        value={customerGroupOptions?.filter((option) => customerGroups?.includes(option.value as CustomerGroup))}
         onChange={onFieldChange}
       />
       <MultiSelect
@@ -178,7 +179,7 @@ const CustomerListTableFiltersForm = ({
         label={t('customerList.filters.leaseStatuses')}
         options={leaseStatusOptions}
         placeholder={t('common.all')}
-        value={leaseStatusOptions?.filter((option) => leaseStatuses?.includes(option.value))}
+        value={leaseStatusOptions?.filter((option) => leaseStatuses?.includes(option.value as LeaseStatus))}
         onChange={onFieldChange}
       />
       <div className={styles.filterStack}>

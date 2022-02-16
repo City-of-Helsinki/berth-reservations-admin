@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { CustomerListTableFilters, ValueOf, FilterEntryValue, FilterEntry } from './types';
 
 export default function useListTableFilters(): [
@@ -15,9 +16,9 @@ export default function useListTableFilters(): [
     const moreThanOneBerthOrWinterStorageSearchValue = urlSearchParams.get('moreThanOneBerthOrWinterStorage');
 
     return dropEmptyFields({
-      customerGroups: urlSearchParams.getAll('customerGroups'),
+      customerGroups: urlSearchParams.getAll('customerGroups') as CustomerGroup[],
       boatTypeIds: urlSearchParams.getAll('boatTypeIds'),
-      leaseStatuses: urlSearchParams.getAll('leaseStatuses'),
+      leaseStatuses: urlSearchParams.getAll('leaseStatuses') as LeaseStatus[],
       harborIds: urlSearchParams.getAll('harborIds'),
       pierId: urlSearchParams.get('pierId') ?? undefined,
       berthId: urlSearchParams.get('berthId') ?? undefined,

@@ -1,3 +1,5 @@
+import parse from 'date-fns/parse';
+
 type Interval = {
   end?: string;
   start?: string;
@@ -66,4 +68,8 @@ export function createIntervalWithSilentError(intervalString?: string): Interval
   } catch {
     return {};
   }
+}
+
+export function createDate(date: string) {
+  return parse(date, 'd.M.yyyy', new Date());
 }

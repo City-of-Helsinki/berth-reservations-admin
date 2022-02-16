@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
+import format from 'date-fns/format';
 
 import { CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
@@ -15,7 +16,9 @@ import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
+import authService from '../auth/authService';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
+import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 
 const searchByAtom = atom<SearchBy>({
   key: 'CustomerListContainer_searchByAtom',
@@ -56,12 +59,18 @@ const CustomerListContainer = () => {
 
   const prevSearchBy = usePrevious(searchBy);
 
+  const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
+  const { start, end } = createIntervalWithSilentError(dateInterval);
+  const profileToken = authService.getProfileToken() as string;
   const customersVars: CUSTOMERS_VARS = {
     first: pageSize,
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
-    ...customerListTableFilters,
+    ...delegatedCustomerListTableFilters,
+    startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
+    endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
+    apiToken: profileToken,
   };
 
   const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
@@ -91,7 +100,7 @@ const CustomerListContainer = () => {
       sortBy={sortBy}
       pagination={{
         pageIndex: pageIndex,
-        pageCount: getPageCount(data?.profiles?.count),
+        pageCount: getPageCount(data?.berthProfiles?.count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}
       tableTools={{
