@@ -161,6 +161,7 @@ const CustomerListTableFiltersForm = ({
         placeholder={t('common.all')}
         value={boatTypeOptions?.filter((option) => boatTypeIds?.includes(option.value))}
         onChange={onFieldChange}
+        isLoading={!boatTypeOptions}
       />
       <MultiSelect
         id="leaseStatuses"
@@ -189,6 +190,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.berthSection ? undefined : t('common.all')}
           value={harborOptions?.filter((option) => harborIds?.includes(option.value))}
           onChange={handleHarborIdsChange}
+          isLoading={!harborOptions}
         />
         <Select
           disabled={!isSectionEnabled.berthSection || harborIds?.length !== 1}
@@ -199,6 +201,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.berthSection ? undefined : t('common.all')}
           value={pierOptions?.find((option) => pierId === option.value)}
           onChange={handlePierIdChange}
+          isLoading={!pierOptions}
         />
         <Select
           disabled={!isSectionEnabled.berthSection || !pierId}
@@ -209,6 +212,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.berthSection ? undefined : t('common.all')}
           value={berthOptions?.find((option) => berthId === option.value)}
           onChange={onFieldChange}
+          isLoading={!berthOptions}
         />
       </div>
       <div className={styles.filterStack}>
@@ -229,6 +233,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.winterStorageSection ? undefined : t('common.all')}
           value={winterStorageGridAreaOptions?.filter((option) => winterStorageGridAreaIds?.includes(option.value))}
           onChange={handleWinterStorageGridAreaIdsChange}
+          isLoading={!winterStorageGridAreaOptions}
         />
         <Select
           disabled={!isSectionEnabled.winterStorageSection || winterStorageGridAreaIds?.length !== 1}
@@ -240,6 +245,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.winterStorageSection ? undefined : t('common.all')}
           value={winterStoragePlaceOptions?.find((option) => winterStoragePlaceId === option.value)}
           onChange={onFieldChange}
+          isLoading={!winterStoragePlaceOptions}
         />
       </div>
       <div className={styles.filterStack}>
@@ -259,6 +265,7 @@ const CustomerListTableFiltersForm = ({
           placeholder={!isSectionEnabled.unmarkedWinterStorageSection ? undefined : t('common.all')}
           value={winterStorageAreaOptions?.filter((option) => winterStorageAreaIds?.includes(option.value))}
           onChange={onFieldChange}
+          isLoading={!winterStorageAreaOptions}
         />
       </div>
 
@@ -323,9 +330,19 @@ type MultiSelectProps = Omit<
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: Option[];
   options?: Option[];
+  isLoading?: boolean;
 };
 
-const MultiSelect = ({ name, onChange, value, options, disabled, placeholder, ...rest }: MultiSelectProps) => {
+const MultiSelect = ({
+  name,
+  onChange,
+  value,
+  options,
+  disabled,
+  placeholder,
+  isLoading = false,
+  ...rest
+}: MultiSelectProps) => {
   const { t } = useTranslation();
 
   const handleChange = (options: Option[]) => {
@@ -343,8 +360,8 @@ const MultiSelect = ({ name, onChange, value, options, disabled, placeholder, ..
     <Combobox<Option>
       {...rest}
       multiselect={true}
-      disabled={disabled || !options}
-      placeholder={!disabled && !options ? t('customerList.message.loadingOptions') : placeholder}
+      disabled={disabled || isLoading}
+      placeholder={!disabled && isLoading ? t('customerList.message.loadingOptions') : placeholder}
       options={options ?? []}
       toggleButtonAriaLabel={t('common.dropdown.genericToggleButtonAriaLabel')}
       clearButtonAriaLabel={t('common.dropdown.genericClearButtonAriaLabel')}
@@ -364,9 +381,10 @@ type SelectProps = Omit<
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: Option;
   options?: Option[];
+  isLoading?: boolean;
 };
 
-const Select = ({ name, onChange, value, options, disabled, placeholder, ...rest }: SelectProps) => {
+const Select = ({ name, onChange, value, options, disabled, placeholder, isLoading = false, ...rest }: SelectProps) => {
   const { t } = useTranslation();
 
   const handleChange = (option: Option) => {
@@ -384,8 +402,8 @@ const Select = ({ name, onChange, value, options, disabled, placeholder, ...rest
     <Combobox<Option>
       {...rest}
       multiselect={false}
-      disabled={disabled || !options}
-      placeholder={!disabled && !options ? t('customerList.message.loadingOptions') : placeholder}
+      disabled={disabled || isLoading}
+      placeholder={!disabled && isLoading ? t('customerList.message.loadingOptions') : placeholder}
       options={options ?? []}
       toggleButtonAriaLabel={t('common.dropdown.genericToggleButtonAriaLabel')}
       value={value ?? null}
