@@ -1,0 +1,79 @@
+@import 'colours';
+@import 'spacings';
+@import 'z-index';
+
+.titleRow {
+  width: 100%;
+  padding: units(1);
+
+  display: flex;
+  justify-content: flex-end;
+
+  background-color: $blue;
+}
+
+.expandButton {
+  display: flex;
+  align-items: center;
+
+  color: $white;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  & > svg {
+    margin-left: units(0.5);
+  }
+}
+
+.tableFilters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  padding: units(2) 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: units(1);
+  row-gap: units(2);
+
+  .filterStack {
+    display: flex;
+    flex-direction: column;
+    gap: units(1);
+  }
+
+  .actionRow {
+    grid-column: 1 / -1;
+
+    margin-top: units(1);
+
+    display: flex;
+    justify-content: space-between;
+
+    .controlsContainer,
+    .buttonContainer {
+      display: flex;
+      align-items: center;
+
+      & > *:not(:last-child) {
+        margin-right: units(1);
+      }
+    }
+  }
+}
+
+.hideDateInputLabel {
+  & label {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
+}

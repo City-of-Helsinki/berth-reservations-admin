@@ -11,7 +11,6 @@ import {
   useGlobalFilter,
   usePagination,
   TableOptions,
-  HeaderProps,
   Row,
   HeaderGroup,
   Column as ColumnType,
@@ -24,6 +23,7 @@ import {
   UseGlobalFiltersOptions,
   actions,
   TableCellProps,
+  TableInstance,
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 import equal from 'fast-deep-equal';
@@ -53,10 +53,11 @@ type TableProps<D extends object> = {
   theme?: 'basic' | 'primary';
   globalFilter?: UseGlobalFiltersOptions<D>['globalFilter'];
   getCellProps?: (cell: Cell<D>) => Partial<TableCellProps>;
+  renderTableFilters?: () => React.ReactNode;
   renderTableToolsTop?: TableToolsFn<D>;
   renderTableToolsBottom?: TableToolsFn<D>;
   renderSubComponent?: (row: Row<D>) => React.ReactNode;
-  renderMainHeader?: (props: HeaderProps<D>) => React.ReactNode;
+  renderMainHeader?: (props: TableInstance<D>) => React.ReactNode;
   renderEmptyStateRow?: () => React.ReactNode;
   // Client-Side pagination
   renderPaginator?: (pagination: {
@@ -70,9 +71,9 @@ type TableProps<D extends object> = {
 } & TableOptions<D>;
 
 const EXPANDER = 'EXPANDER';
-const MAIN_HEADER = 'MAIN_HEADER';
 const SELECTOR = 'SELECTOR';
 const RADIO_SELECTOR = 'RADIO_SELECTOR';
+const TABLE_FILTERS = 'TABLE_FILTERS';
 
 const BASE_COL_WIDTH = 150;
 
@@ -98,6 +99,7 @@ const Table = <D extends { id: string }>({
   globalFilter,
   initialState,
   getCellProps = () => ({}),
+  renderTableFilters,
   renderTableToolsTop,
   renderTableToolsBottom,
   renderSubComponent,
@@ -110,6 +112,7 @@ const Table = <D extends { id: string }>({
   manualSortBy,
 }: TableProps<D>) => {
   const { t } = useTranslation();
+  let tableState: TableInstance<D>;
 
   const selectorCol: Column<D> = React.useMemo(
     () => ({
@@ -183,32 +186,13 @@ const Table = <D extends { id: string }>({
   );
 
   const tableColumns = React.useMemo(() => {
-    const headers = [
+    return [
       ...(canSelectRows ? [selectorCol] : []),
       ...(canSelectOneRow ? [radioSelectorCol] : []),
       ...columns,
       ...(renderSubComponent ? [expanderCol] : []),
     ];
-
-    const withMainHeader = [
-      {
-        Header: renderMainHeader,
-        columns: headers,
-        id: MAIN_HEADER,
-      },
-    ];
-
-    return renderMainHeader ? withMainHeader : headers;
-  }, [
-    canSelectRows,
-    canSelectOneRow,
-    columns,
-    renderSubComponent,
-    renderMainHeader,
-    selectorCol,
-    radioSelectorCol,
-    expanderCol,
-  ]);
+  }, [canSelectRows, selectorCol, canSelectOneRow, radioSelectorCol, columns, renderSubComponent, expanderCol]);
 
   const data = React.useMemo(() => tableData, [tableData]);
 
@@ -234,7 +218,7 @@ const Table = <D extends { id: string }>({
     setGlobalFilter,
     setFilter,
     dispatch,
-  } = useTable(
+  } = (tableState = useTable(
     {
       columns: tableColumns,
       data: dataState,
@@ -256,7 +240,7 @@ const Table = <D extends { id: string }>({
     useExpanded,
     usePagination,
     useRowSelect
-  );
+  ));
 
   const resetSelectedRows = useCallback(() => {
     dispatch({ type: actions.resetSelectedRows });
@@ -294,13 +278,7 @@ const Table = <D extends { id: string }>({
   }, [data]);
 
   const renderTableHead = (headerGroup: HeaderGroup<D>, index: number) => (
-    <div
-      {...headerGroup.getHeaderGroupProps()}
-      className={classNames(styles.header, {
-        [styles.mainHeaderReset]: renderMainHeader && !styleMainHeader && index === 0,
-        [styles.mainHeader]: renderMainHeader && styleMainHeader && index === 0,
-      })}
-    >
+    <div {...headerGroup.getHeaderGroupProps()} className={classNames(styles.header)}>
       {headerGroup.headers.map((column) => (
         <div
           {...column.getHeaderProps(column.getSortByToggleProps())}
@@ -309,6 +287,7 @@ const Table = <D extends { id: string }>({
             [styles.selector]: column.id === SELECTOR,
             [styles.radioSelector]: column.id === RADIO_SELECTOR,
             [styles.expander]: column.id === EXPANDER,
+            [styles.tableFilterCell]: column.id === TABLE_FILTERS,
           })}
         >
           {column.render('Header')}
@@ -390,7 +369,15 @@ const Table = <D extends { id: string }>({
             [styles.noMainHeader]: !renderMainHeader,
           })}
         >
-          <div className={styles.stickyHeaders}>{headerGroups.map(renderTableHead)}</div>
+          <div className={styles.stickyHeaders}>
+            {renderMainHeader && (
+              <div className={classNames(styles.header, styles.mainHeader)}>{renderMainHeader(tableState)}</div>
+            )}
+            {renderTableFilters && (
+              <div className={classNames(styles.header, styles.tableFilterHeader)}>{renderTableFilters()}</div>
+            )}
+            {headerGroups.map(renderTableHead)}
+          </div>
           <div {...getTableBodyProps()}>
             {(renderPaginator ? page : rows).map(renderTableBody)}
             {rows.length === 0 && renderEmptyBody()}

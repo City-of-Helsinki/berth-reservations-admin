@@ -167,36 +167,27 @@ exports[`ApplicationList renders normally with all props 1`] = `
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 1125px;"
           >
-            <div
-              class="headerCell"
-              colspan="9"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 1125 0 auto; min-width: 1125px; width: 1125px;"
+            <button
+              class="filterBtn"
             >
-              <button
-                class="filterBtn"
-              >
-                Kaikki
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Vaihtohakemukset
-              </button>
-              <button
-                class="filterBtn active"
-              >
-                 Uudet hakemukset
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Hakukoodi
-              </button>
-            </div>
+              Kaikki
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Vaihtohakemukset
+            </button>
+            <button
+              class="filterBtn active"
+            >
+               Uudet hakemukset
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Hakukoodi
+            </button>
           </div>
           <div
             class="header"
@@ -947,36 +938,27 @@ exports[`ApplicationList renders normally with minimum props 1`] = `
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 1125px;"
           >
-            <div
-              class="headerCell"
-              colspan="9"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 1125 0 auto; min-width: 1125px; width: 1125px;"
+            <button
+              class="filterBtn"
             >
-              <button
-                class="filterBtn"
-              >
-                Kaikki
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Vaihtohakemukset
-              </button>
-              <button
-                class="filterBtn active"
-              >
-                 Uudet hakemukset
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Hakukoodi
-              </button>
-            </div>
+              Kaikki
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Vaihtohakemukset
+            </button>
+            <button
+              class="filterBtn active"
+            >
+               Uudet hakemukset
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Hakukoodi
+            </button>
           </div>
           <div
             class="header"

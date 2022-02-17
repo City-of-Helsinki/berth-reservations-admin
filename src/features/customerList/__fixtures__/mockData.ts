@@ -2,7 +2,7 @@ import { CUSTOMERS } from '../__generated__/CUSTOMERS';
 import { ContactMethod, CustomerGroup } from '../../../@types/__generated__/globalTypes';
 
 export const dummyCustomers: CUSTOMERS = {
-  profiles: {
+  berthProfiles: {
     __typename: 'ProfileNodeConnection',
     count: 2,
     edges: [

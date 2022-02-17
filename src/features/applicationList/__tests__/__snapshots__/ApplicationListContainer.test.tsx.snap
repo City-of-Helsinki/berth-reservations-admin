@@ -167,36 +167,27 @@ exports[`ApplicationListContainer renders normally 1`] = `
         >
           <div
             class="header mainHeader"
-            role="row"
-            style="display: flex; flex: 1 0 auto; min-width: 1125px;"
           >
-            <div
-              class="headerCell"
-              colspan="9"
-              role="columnheader"
-              style="box-sizing: border-box; flex: 1125 0 auto; min-width: 1125px; width: 1125px;"
+            <button
+              class="filterBtn active"
             >
-              <button
-                class="filterBtn active"
-              >
-                Kaikki
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Vaihtohakemukset
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Uudet hakemukset
-              </button>
-              <button
-                class="filterBtn"
-              >
-                 Hakukoodi
-              </button>
-            </div>
+              Kaikki
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Vaihtohakemukset
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Uudet hakemukset
+            </button>
+            <button
+              class="filterBtn"
+            >
+               Hakukoodi
+            </button>
           </div>
           <div
             class="header"

@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
+import format from 'date-fns/format';
 
 import { CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
@@ -11,10 +12,13 @@ import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__
 import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
+import { getProfileToken } from '../../common/utils/auth';
 import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
-import { orderByGetter } from '../../common/utils/recoil';
+import { orderByToString } from '../../common/utils/recoil';
+import useListTableFilters from './customerListTableFilters/useListTableFilters';
+import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 
 const searchByAtom = atom<SearchBy>({
   key: 'CustomerListContainer_searchByAtom',
@@ -33,11 +37,26 @@ const sortByAtom = atom<SortingRule<ApplicationData>[]>({
 
 const orderBySelector = selector<string | undefined>({
   key: 'CustomerListContainer_orderBySelector',
-  get: orderByGetter(sortByAtom),
+  get: ({ get }) => {
+    const modifiedOrderByAtom = get(sortByAtom).map((sort) => {
+      if (sort.id === 'name') {
+        return {
+          ...sort,
+          id: 'lastName',
+        };
+      }
+
+      return sort;
+    });
+
+    return orderByToString(modifiedOrderByAtom);
+  },
 });
 
 const CustomerListContainer = () => {
   const { t } = useTranslation();
+
+  const [customerListTableFilters] = useListTableFilters();
 
   const [searchBy, setSearchBy] = useRecoilState(searchByAtom);
   const [searchVal, setSearchVal] = useRecoilState(searchValAtom);
@@ -53,11 +72,18 @@ const CustomerListContainer = () => {
 
   const prevSearchBy = usePrevious(searchBy);
 
+  const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
+  const { start, end } = createIntervalWithSilentError(dateInterval);
+  const profileToken = getProfileToken();
   const customersVars: CUSTOMERS_VARS = {
     first: pageSize,
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
+    ...delegatedCustomerListTableFilters,
+    startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
+    endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
+    apiToken: profileToken,
   };
 
   const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
@@ -87,7 +113,7 @@ const CustomerListContainer = () => {
       sortBy={sortBy}
       pagination={{
         pageIndex: pageIndex,
-        pageCount: getPageCount(data?.profiles?.count),
+        pageCount: getPageCount(data?.berthProfiles?.count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}
       tableTools={{

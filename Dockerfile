@@ -71,6 +71,11 @@ ARG REACT_APP_TUNNISTAMO_URI
 ARG SASS_PATH="node_modules:src/assets/styles"
 
 COPY . /app
+
+# Replace tsconfig with production tsconfig that ignores test files
+RUN rm -rf ./tsconfig.json
+COPY .prod/tsconfig.json ./
+
 RUN yarn build
 
 # =============================

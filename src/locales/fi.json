@@ -209,7 +209,12 @@
       "buttonText": "Poista asiakasliitos",
       "infoText": "Haluatko varmasti poistaa asiakasliitoksen?"
     },
-    "all": "Kaikki"
+    "all": "Kaikki",
+    "dropdown": {
+      "genericToggleButtonAriaLabel": "Avaa tai piilota valikko",
+      "genericClearButtonAriaLabel": "Tyhjennä valinnat",
+      "genericSelectedItemRemoveButtonAriaLabel": "Poista vlainta"
+    }
   },
   "login": {
     "heading": "Helsingin kaupungin venepaikkapalvelut",
@@ -566,7 +571,33 @@
       "clearSelectedRows": "Tyhjennä valinnat",
       "selectRows": "Valitse listasta asiakkaita lähettääksesi viesti",
       "recipient": "{{count}} vastaanottaja",
-      "recipient_plural": "{{count}} vastaanottajaa"
+      "recipient_plural": "{{count}} vastaanottajaa",
+      "useFilters": "Käytä",
+      "resetFilters": "Tyhjennä valinnat",
+      "filter": "Rajaa",
+      "deleteButtonAriaLabel": "Poista suodatus",
+      "resetAllFiltersAriaLabel": "Poista kaikki suodatukset",
+      "loadingOptions": "Etsitään vaihtoehtoja..."
+    },
+    "filters": {
+      "customerGroups": "Asiakasryhmä",
+      "boatTypeIds": "Veneen tyyppi",
+      "leaseStatuses": "Sopimuksen tila",
+      "harborIds": "Venesatama",
+      "pierId": "Laituri ja paikka",
+      "berthId": "Venepaikka",
+      "winterStorageGridAreaIds": "Talvisäilytysruutualue",
+      "winterStoragePlaceId": "Talvisäilytyspaikka",
+      "winterStorageAreaIds": "Nostojärjestysalue",
+      "moreThanOneBerthOrWinterStorage": "Enemmän kuin yksi vene- tai talvisäilytyspaikka",
+      "dateInterval": "Aikaväli",
+      "startDate": "Alkupäivämäärä",
+      "endDate": "Loppupäivämäärä",
+      "sections": {
+        "berth": "Venepaikat",
+        "winterStorage": "Talvisäilytysruutupaikat",
+        "unmarkedWinterStorage": "Nostojärjestysalue"
+      }
     }
   },
   "customerView": {
