@@ -12,11 +12,11 @@ import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__
 import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
+import { getProfileToken } from '../../common/utils/auth';
 import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByToString } from '../../common/utils/recoil';
-import authService from '../auth/authService';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 
@@ -74,7 +74,7 @@ const CustomerListContainer = () => {
 
   const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
   const { start, end } = createIntervalWithSilentError(dateInterval);
-  const profileToken = authService.getProfileToken() as string;
+  const profileToken = getProfileToken();
   const customersVars: CUSTOMERS_VARS = {
     first: pageSize,
     after: cursor,
