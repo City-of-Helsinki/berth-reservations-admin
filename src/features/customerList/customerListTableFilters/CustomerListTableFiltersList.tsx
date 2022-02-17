@@ -42,15 +42,18 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
   const filtersAsEntries = React.useMemo(() => getFiltersAsEntries(filters), [filters]);
 
   const boatTypesQuery = useQuery<FILTER_BOAT_TYPE_LABELS>(FILTER_BOAT_TYPE_LABELS_QUERY, {
+    fetchPolicy: 'cache-first',
     skip: arrayFilterIsEmpty(filters.boatTypeIds),
   });
   const pierQuery = useQuery<FILTER_PIER_LABEL, FILTER_PIER_LABEL_VAR>(FILTER_PIER_LABEL_QUERY, {
+    fetchPolicy: 'cache-first',
     skip: !filters.pierId,
     variables: {
       pierId: filters.pierId ?? '',
     },
   });
   const berthQuery = useQuery<FILTER_BERTH_LABEL, FILTER_BERTH_LABEL_VAR>(FILTER_BERTH_LABEL_QUERY, {
+    fetchPolicy: 'cache-first',
     skip: !filters.berthId,
     variables: {
       berthId: filters.berthId ?? '',
@@ -59,6 +62,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
   const winterStoragePlaceQuery = useQuery<FILTER_WINTER_STORAGE_PLACE_LABEL, FILTER_WINTER_STORAGE_PLACE_LABEL_VAR>(
     FILTER_WINTER_STORAGE_PLACE_LABEL_QUERY,
     {
+      fetchPolicy: 'cache-first',
       skip: !filters.winterStoragePlaceId,
       variables: {
         winterStoragePlaceId: filters.winterStoragePlaceId ?? '',
