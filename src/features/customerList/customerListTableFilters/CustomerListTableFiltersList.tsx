@@ -110,26 +110,23 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
   };
 
   const removeFilter = ([removeKey, removeValue]: FilterEntry) => {
-    type OptionalResetConfig<T> = {
-      [K in keyof T]?: (keyof T)[];
-    };
-    const resetMap: OptionalResetConfig<CustomerListTableFilters> = {
+    // Some filters depend on each other. If they are reset, their dependent
+    // filters should be reset as well.
+    const resetMap: ResetConfig<CustomerListTableFilters> = {
       harborIds: ['pierId', 'berthId'],
       winterStorageGridAreaIds: ['winterStoragePlaceId'],
       pierId: ['berthId'],
     };
     const otherFieldsToReset = resetMap[removeKey] ?? [];
-    const nextFilters = getEntriesAsFilters(
-      filtersAsEntries.filter(([key, value]) => {
-        if (otherFieldsToReset.includes(key)) {
-          return false;
-        }
+    const nextEntries = filtersAsEntries.filter(([key, value]) => {
+      if (otherFieldsToReset.includes(key)) {
+        return false;
+      }
 
-        return !(removeKey === key && removeValue === value);
-      })
-    );
+      return !(removeKey === key && removeValue === value);
+    });
 
-    setFilters(nextFilters);
+    setFilters(getEntriesAsFilters(nextEntries));
   };
 
   const clearFilters = (_: React.MouseEvent<HTMLButtonElement>) => {
@@ -181,5 +178,9 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
 
 const arrayFilterIsEmpty = (filterValue: ValueOf<CustomerListTableFilters>) =>
   !(Array.isArray(filterValue) && filterValue.length > 0);
+
+type ResetConfig<T> = {
+  [K in keyof T]?: (keyof T)[];
+};
 
 export default CustomerListTableFiltersList;
