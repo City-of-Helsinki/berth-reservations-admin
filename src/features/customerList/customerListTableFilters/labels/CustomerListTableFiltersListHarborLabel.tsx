@@ -14,6 +14,7 @@ interface Props {
 
 const CustomerListTableFiltersListHarborKeyword = ({ id }: Props) => {
   const { data } = useQuery<FILTER_HARBOR_LABEL, FILTER_HARBOR_LABEL_VAR>(FILTER_HARBOR_LABEL_QUERY, {
+    fetchPolicy: 'cache-first',
     variables: {
       harborId: id,
     },

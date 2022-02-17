@@ -16,6 +16,7 @@ const CustomerListTableFiltersListHarborKeyword = ({ id }: Props) => {
   const { data } = useQuery<FILTER_WINTER_STORAGE_AREA_LABEL, FILTER_WINTER_STORAGE_AREA_LABEL_VAR>(
     FILTER_WINTER_STORAGE_AREA_LABEL_QUERY,
     {
+      fetchPolicy: 'cache-first',
       variables: {
         winterStorageAreaId: id,
       },
