@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import CustomerListTableTools from '../CustomerListTableTools';
-import { SearchBy } from '../../CustomerList';
+import { SearchBy } from '../../CustomerListContainer';
 
 // CustomerMessageFormContainer is mocked to limit the test scope
 jest.mock('../../../customerMessageForm/CustomerMessageFormContainer', () => {

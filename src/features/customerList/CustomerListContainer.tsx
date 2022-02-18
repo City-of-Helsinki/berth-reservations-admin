@@ -13,12 +13,20 @@ import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { getProfileToken } from '../../common/utils/auth';
-import { SearchBy } from '../applicationView/ApplicationView';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByToString } from '../../common/utils/recoil';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
+
+export enum SearchBy {
+  FIRST_NAME = 'firstName',
+  LAST_NAME = 'lastName',
+  EMAIL = 'email',
+  ADDRESS = 'address',
+  STICKER_NUMBER = 'stickerNumber',
+  BOAT_REGISTRATION_NUMBER = 'boatRegistrationNumber',
+}
 
 const searchByAtom = atom<SearchBy>({
   key: 'CustomerListContainer_searchByAtom',
@@ -127,6 +135,8 @@ const CustomerListContainer = () => {
           { value: SearchBy.LAST_NAME, label: t('common.lastName') },
           { value: SearchBy.EMAIL, label: t('common.email') },
           { value: SearchBy.ADDRESS, label: t('common.address') },
+          { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
+          { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
         ],
       }}
     />
