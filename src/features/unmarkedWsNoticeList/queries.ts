@@ -64,3 +64,33 @@ export const UNMARKED_WINTER_STORAGE_NOTICES_QUERY = gql`
     }
   }
 `;
+
+export const UNMARKED_WINTER_STORAGE_NOTICES_IDS_QUERY = gql`
+  query UNMARKED_WINTER_STORAGE_NOTICES_IDS(
+    $first: Int!
+    $after: String
+    $orderBy: String
+    $statuses: [ApplicationStatus]
+    $nameFilter: String
+  ) {
+    winterStorageNoticesIds: winterStorageApplications(
+      first: $first
+      after: $after
+      orderBy: $orderBy
+      areaTypes: [UNMARKED]
+      statuses: $statuses
+      name: $nameFilter
+    ) {
+      count
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`;

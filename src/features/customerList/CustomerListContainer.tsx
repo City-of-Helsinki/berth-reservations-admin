@@ -6,7 +6,7 @@ import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 import format from 'date-fns/format';
 
-import { CUSTOMERS_QUERY } from './queries';
+import { ALL_CUSTOMERS_QUERY, CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
 import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import CustomerList from './CustomerList';
@@ -18,6 +18,8 @@ import { ApplicationData } from '../applicationList/utils';
 import { orderByToString } from '../../common/utils/recoil';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
+import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
+import { useTableExport } from '../../common/utils/useTableExport';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -99,6 +101,27 @@ const CustomerListContainer = () => {
     fetchPolicy: 'no-cache',
   });
 
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'customers',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<ALL_CUSTOMERS, ALL_CUSTOMERS_VARS>({
+        query: ALL_CUSTOMERS_QUERY,
+        variables: {
+          apiToken: getProfileToken(),
+          ...customersVars,
+          ...paginationParams,
+        },
+        fetchPolicy: 'cache-first',
+      });
+      return data.berthProfiles ?? {};
+    },
+  });
+
+  const handleCustomersExport = async () => {
+    await exportTable();
+  };
+
   const isInitialMount = useRef(true);
   useEffect(() => {
     // Prevent hook running on initial mount because it would force to first page on landing with direct url
@@ -130,6 +153,8 @@ const CustomerListContainer = () => {
         searchBy,
         setSearchVal,
         setSearchBy,
+        handleCustomersExport,
+        isExporting,
         searchByOptions: [
           { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
           { value: SearchBy.LAST_NAME, label: t('common.lastName') },

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { RecoilState, useRecoilState } from 'recoil';
 import { SortingRule } from 'react-table';
 import equal from 'fast-deep-equal';
@@ -8,11 +8,14 @@ import { usePrevious } from './usePrevious';
 export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, onSortByChange?: Function) => {
   const [sortBy, setSortBy] = useRecoilState<SortingRule<T>[]>(atom);
 
-  const handleSortedColsChange = (sortedColumns: SortingRule<T>[]) => {
-    if (!equal(sortBy, sortedColumns)) {
-      setSortBy(sortedColumns);
-    }
-  };
+  const handleSortedColsChange = useCallback(
+    () => (sortedColumns: SortingRule<T>[]) => {
+      if (!equal(sortBy, sortedColumns)) {
+        setSortBy(sortedColumns);
+      }
+    },
+    [setSortBy, sortBy]
+  );
 
   const prevSortBy = usePrevious(sortBy);
 

@@ -10,7 +10,7 @@ import {
   BERTH_APPLICATIONSVariables as BERTH_APPLICATIONS_VARS,
 } from './__generated__/BERTH_APPLICATIONS';
 import { ApplicationData, getBerthApplicationData } from './utils';
-import { BERTH_APPLICATIONS_QUERY } from './queries';
+import { BERTH_APPLICATIONS_IDS_QUERY, BERTH_APPLICATIONS_QUERY } from './queries';
 import { useDeleteBerthApplication } from '../../common/mutations/deleteBerthApplication';
 import { usePagination } from '../../common/utils/usePagination';
 import hdsToast from '../../common/toast/hdsToast';
@@ -33,6 +33,11 @@ import {
   RESEND_ORDERVariables as RESEND_ORDER_VARS,
 } from '../../common/mutations/__generated__/RESEND_ORDER';
 import { RESEND_ORDER_MUTATION } from '../../common/mutations/resendOrder';
+import {
+  BERTH_APPLICATIONS_IDS,
+  BERTH_APPLICATIONS_IDSVariables as BERTH_APPLICATIONS_IDS_VARS,
+} from './__generated__/BERTH_APPLICATIONS_IDS';
+import { useTableExport } from '../../common/utils/useTableExport';
 
 const onlySwitchAppsAtom = atom<boolean | undefined>({
   key: 'ApplicationListContainer_onlySwitchAppsAtom',
@@ -105,6 +110,22 @@ const ApplicationListContainer = () => {
       refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
     }
   );
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'berth-applications',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<BERTH_APPLICATIONS_IDS, BERTH_APPLICATIONS_IDS_VARS>({
+        query: BERTH_APPLICATIONS_IDS_QUERY,
+        variables: { ...berthApplicationsVars, ...paginationParams },
+        fetchPolicy: 'cache-first',
+      });
+      return data.berthApplications;
+    },
+  });
+
+  const handleApplicationsExport = async () => {
+    await exportTable();
+  };
 
   const handleDeleteLease = async (id: string) => {
     await deleteDraftedApplication({
@@ -130,7 +151,7 @@ const ApplicationListContainer = () => {
     dueDate: string
   ) => {
     const approveOffers = new Promise((resolve, reject) => {
-      if (draftedOffers.length === 0) return resolve();
+      if (draftedOffers.length === 0) return resolve(null);
 
       return approveOrders({
         variables: {
@@ -146,7 +167,7 @@ const ApplicationListContainer = () => {
     });
 
     const resendOffers = new Promise((resolve, reject) => {
-      if (sentOffers.length === 0) return resolve();
+      if (sentOffers.length === 0) return resolve(null);
 
       return resendOrders({
         variables: {
@@ -182,6 +203,8 @@ const ApplicationListContainer = () => {
       handleSendOffers={handleSendOffers}
       handleDeleteLease={handleDeleteLease}
       handleNoPlacesAvailable={handleNoPlacesAvailable}
+      handleApplicationsExport={handleApplicationsExport}
+      isExporting={isExporting}
       isDeleting={isDeleting}
       isSubmittingApproveOrders={isSubmittingApproveOrders || isSubmittingResendOrders}
       loading={loading}

@@ -22,6 +22,7 @@ import ApplicationTableTools from '../../common/tableTools/applicationTableTools
 import ListActions from '../../common/listActions/ListActions';
 import { usePreserveSelect } from '../../common/utils/usePreserveSelect';
 import { ApplicationTypeEnum } from '../../common/applicationDetails/types';
+import Button from '../../common/button/Button';
 
 interface Order {
   orderId: string;
@@ -35,6 +36,8 @@ export interface ApplicationListProps {
   goToPage: (pageIndex: number) => void;
   handleDeleteLease: (id: string) => Promise<void>;
   handleNoPlacesAvailable: (id: string) => void;
+  handleApplicationsExport: () => Promise<void>;
+  isExporting: boolean;
   isDeleting: boolean;
   isSubmittingApproveOrders: boolean;
   loading: boolean;
@@ -68,6 +71,8 @@ const ApplicationList = ({
   handleSendOffers,
   handleDeleteLease,
   handleNoPlacesAvailable,
+  handleApplicationsExport,
+  isExporting,
   isDeleting,
   isSubmittingApproveOrders,
   loading,
@@ -256,6 +261,7 @@ const ApplicationList = ({
               nameFilter={nameFilter}
               onNameFilterChange={onNameFilterChange}
             />
+
             <ListActions
               selectedRows={selectedRows}
               resetSelectedRows={resetSelectedRows}
@@ -276,6 +282,17 @@ const ApplicationList = ({
                   ),
                 },
               ]}
+              otherActions={
+                <>
+                  <Button
+                    isLoading={isExporting}
+                    loadingText={t('common.exporting')}
+                    onClick={handleApplicationsExport}
+                  >
+                    {t('common.export')}
+                  </Button>
+                </>
+              }
             />
           </>
         )}

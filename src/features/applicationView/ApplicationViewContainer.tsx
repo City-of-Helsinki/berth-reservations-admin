@@ -43,6 +43,7 @@ const ApplicationViewContainer = () => {
       variables: {
         id,
       },
+      fetchPolicy: 'no-cache',
     }
   );
   const refetchQuery = {
@@ -87,12 +88,14 @@ const ApplicationViewContainer = () => {
         translated: true,
       });
     });
-  const handleLinkCustomer = (customerId: string) =>
+  const handleLinkCustomer = (customerId: string) => {
     linkCustomer({
       variables: {
         input: { id, customerId },
       },
-    });
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+    }).catch(() => {});
+  };
   const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
   const handleDeleteLease = (id: string) =>
     deleteDraftedApplication({

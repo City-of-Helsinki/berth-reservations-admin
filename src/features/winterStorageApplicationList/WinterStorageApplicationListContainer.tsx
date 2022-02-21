@@ -11,10 +11,15 @@ import {
   WINTER_STORAGE_APPLICATIONS,
   WINTER_STORAGE_APPLICATIONSVariables as WINTER_STORAGE_APPLICATIONS_VARS,
 } from './__generated__/WINTER_STORAGE_APPLICATIONS';
-import { WINTER_STORAGE_APPLICATIONS_QUERY } from './queries';
+import { WINTER_STORAGE_APPLICATIONS_IDS_QUERY, WINTER_STORAGE_APPLICATIONS_QUERY } from './queries';
 import { ApplicationData } from '../applicationList/utils';
 import { orderByGetter } from '../../common/utils/recoil';
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
+import {
+  WINTER_STORAGE_APPLICATIONS_IDS,
+  WINTER_STORAGE_APPLICATIONS_IDSVariables as WINTER_STORAGE_APPLICATIONS_IDS_VARS,
+} from './__generated__/WINTER_STORAGE_APPLICATIONS_IDS';
+import { useTableExport } from '../../common/utils/useTableExport';
 
 const sortByAtom = atom<SortingRule<ApplicationData>[]>({
   key: 'WinterStorageApplicationListContainer_sortByAtom',
@@ -44,21 +49,40 @@ const WinterStorageApplicationListContainer = () => {
   const [statusFilter, setStatusFilter] = useRecoilState(statusFilterAtom);
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterAtom);
 
+  const winterStorageVars = {
+    first: pageSize,
+    after: cursor,
+    orderBy,
+    statuses: statusFilter ? [statusFilter] : undefined,
+    nameFilter,
+  };
+
   const { loading, data } = useQuery<WINTER_STORAGE_APPLICATIONS, WINTER_STORAGE_APPLICATIONS_VARS>(
     WINTER_STORAGE_APPLICATIONS_QUERY,
     {
       fetchPolicy: 'no-cache',
-      variables: {
-        first: pageSize,
-        after: cursor,
-        orderBy,
-        statuses: statusFilter ? [statusFilter] : undefined,
-        nameFilter,
-      },
+      variables: winterStorageVars,
     }
   );
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'winter-storage-applications',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<WINTER_STORAGE_APPLICATIONS_IDS, WINTER_STORAGE_APPLICATIONS_IDS_VARS>({
+        query: WINTER_STORAGE_APPLICATIONS_IDS_QUERY,
+        variables: { ...winterStorageVars, ...paginationParams },
+        fetchPolicy: 'cache-first',
+      });
+      return data.winterStorageApplications;
+    },
+  });
+
   const applications = getWinterStorageApplicationData(data);
   const pageCount = getPageCount(data?.winterStorageApplications?.count);
+
+  const handleApplicationsExport = async () => {
+    await exportTable();
+  };
 
   return (
     <WinterStorageApplicationList
@@ -68,6 +92,8 @@ const WinterStorageApplicationListContainer = () => {
       pageIndex={pageIndex}
       goToPage={goToPage}
       onSortedColsChange={handleSortedColsChange}
+      handleApplicationsExport={handleApplicationsExport}
+      isExporting={isExporting}
       sortBy={sortBy}
       count={data?.winterStorageApplications?.count}
       statusFilter={statusFilter}

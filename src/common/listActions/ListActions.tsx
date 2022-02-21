@@ -21,6 +21,7 @@ interface ListActionsProps<T> {
   selectClassName?: string;
   selectedRows: T[];
   listActions: ListActionItem<T>[];
+  otherActions?: JSX.Element;
   resetSelectedRows(): void;
 }
 
@@ -28,6 +29,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
   className,
   selectClassName,
   selectedRows,
+  otherActions,
   resetSelectedRows,
   listActions,
 }: ListActionsProps<T>) => {
@@ -73,6 +75,7 @@ const ListActions = <T extends object | string | number | boolean | bigint | sym
           )}
         </div>
       )}
+      {otherActions}
     </div>
   );
 };

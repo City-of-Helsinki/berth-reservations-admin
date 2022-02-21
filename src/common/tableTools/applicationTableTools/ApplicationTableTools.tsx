@@ -6,21 +6,26 @@ import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Select from '../../select/Select';
 import { APPLICATION_STATUS } from '../../utils/constants';
 import styles from './applicationTableTools.module.scss';
+import Button from '../../button/Button';
 
 interface ApplicationTableToolsProps {
   count?: number;
   nameFilter?: string;
   statusFilter?: ApplicationStatus;
+  isExporting?: boolean;
   onNameFilterChange(nameFilter: string | undefined): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus | null): void;
+  handleApplicationsExport?(): Promise<void>;
 }
 
 const ApplicationTableTools = ({
   count,
   nameFilter,
   statusFilter,
+  isExporting,
   onNameFilterChange,
   onStatusFilterChange,
+  handleApplicationsExport,
 }: ApplicationTableToolsProps) => {
   const { t } = useTranslation();
   const options = [
@@ -31,7 +36,14 @@ const ApplicationTableTools = ({
   ];
   return (
     <div className={styles.container}>
-      <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
+      <div className={styles.leftContainer}>
+        <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
+        {handleApplicationsExport && (
+          <Button isLoading={isExporting} loadingText={t('common.exporting')} onClick={handleApplicationsExport}>
+            {t('common.export')}
+          </Button>
+        )}
+      </div>
       <div className={styles.filtersContainer}>
         <TextInput
           id="applicationStateTableTools_nameFilter"

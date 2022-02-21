@@ -20,6 +20,7 @@ import ApplicationTableTools from '../../common/tableTools/applicationTableTools
 import ListActions from '../../common/listActions/ListActions';
 import PrintAllStickersButton from './printAllStickersButton/PrintAllStickersButton';
 import { usePreserveSelect } from '../../common/utils/usePreserveSelect';
+import Button from '../../common/button/Button';
 
 export type CustomerInfo = {
   firstName: string;
@@ -46,6 +47,8 @@ export interface UnmarkedWsNoticeListProps {
   sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
   statusFilter?: ApplicationStatus;
   nameFilter?: string;
+  isExporting: boolean;
+  handleApplicationsExport(): Promise<void>;
   goToPage(page: number): void;
   handleSendOffers(draftedOffers: Order[], sentOffers: Order[], dueDate: string): Promise<void>;
   onSortedColsChange(sortedCol: SortingRule<UnmarkedWinterStorageNotice>[]): void;
@@ -79,6 +82,8 @@ const UnmarkedWsNoticeList = ({
   onNameFilterChange,
   onSavePdf,
   onStickerChange,
+  handleApplicationsExport,
+  isExporting,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<UnmarkedWinterStorageNotice>(
@@ -190,6 +195,11 @@ const UnmarkedWsNoticeList = ({
                   ),
                 },
               ]}
+              otherActions={
+                <Button isLoading={isExporting} loadingText={t('common.exporting')} onClick={handleApplicationsExport}>
+                  {t('common.export')}
+                </Button>
+              }
             />
           </>
         )}
