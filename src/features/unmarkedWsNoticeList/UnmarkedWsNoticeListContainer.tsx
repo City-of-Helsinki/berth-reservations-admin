@@ -61,7 +61,6 @@ const nameFilterAtom = atom<string | undefined>({
 });
 
 const UnmarkedWsNoticeListContainer = () => {
-  const { exportTable } = useTableExport();
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
@@ -103,22 +102,24 @@ const UnmarkedWsNoticeListContainer = () => {
 
   const [setStickersPosted] = useMutation<SET_STICKERS_POSTED, SET_STICKERS_POSTED_VARS>(SET_STICKERS_POSTED_MUTATION);
 
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'unmarked-winter-storage-applications',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<
+        UNMARKED_WINTER_STORAGE_NOTICES_IDS,
+        UNMARKED_WINTER_STORAGE_NOTICES_IDS_VARS
+      >({
+        query: UNMARKED_WINTER_STORAGE_NOTICES_IDS_QUERY,
+        variables: { ...queryVariables, ...paginationParams },
+        fetchPolicy: 'cache-first',
+      });
+      return data.winterStorageNoticesIds;
+    },
+  });
+
   const handleApplicationsExport = async () => {
-    await exportTable({
-      exportType: 'unmarked-winter-storage-applications',
-      fileType: 'xlsx',
-      fetchCallback: async (apolloClient, paginationParams) => {
-        const { data } = await apolloClient.query<
-          UNMARKED_WINTER_STORAGE_NOTICES_IDS,
-          UNMARKED_WINTER_STORAGE_NOTICES_IDS_VARS
-        >({
-          query: UNMARKED_WINTER_STORAGE_NOTICES_IDS_QUERY,
-          variables: { ...queryVariables, ...paginationParams },
-          fetchPolicy: 'cache-first',
-        });
-        return data.winterStorageNoticesIds;
-      },
-    });
+    await exportTable();
   };
 
   const onSavePdf = (customers: CustomerInfo[]) => {
@@ -219,6 +220,7 @@ const UnmarkedWsNoticeListContainer = () => {
       }}
       onSavePdf={onSavePdf}
       handleApplicationsExport={handleApplicationsExport}
+      isExporting={isExporting}
       onStickerChange={() => refetch(queryVariables)}
     />
   );

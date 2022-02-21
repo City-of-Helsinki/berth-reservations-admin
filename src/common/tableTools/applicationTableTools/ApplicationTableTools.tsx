@@ -12,6 +12,7 @@ interface ApplicationTableToolsProps {
   count?: number;
   nameFilter?: string;
   statusFilter?: ApplicationStatus;
+  isExporting?: boolean;
   onNameFilterChange(nameFilter: string | undefined): void;
   onStatusFilterChange(statusFilter?: ApplicationStatus | null): void;
   handleApplicationsExport?(): Promise<void>;
@@ -21,6 +22,7 @@ const ApplicationTableTools = ({
   count,
   nameFilter,
   statusFilter,
+  isExporting,
   onNameFilterChange,
   onStatusFilterChange,
   handleApplicationsExport,
@@ -36,7 +38,11 @@ const ApplicationTableTools = ({
     <div className={styles.container}>
       <div className={styles.leftContainer}>
         <span>{t('applicationStateTableTools.count', { count: count ?? 0 })}</span>
-        {handleApplicationsExport && <Button onClick={handleApplicationsExport}>{t('common.export')}</Button>}
+        {handleApplicationsExport && (
+          <Button isLoading={isExporting} loadingText={t('common.exporting')} onClick={handleApplicationsExport}>
+            {t('common.export')}
+          </Button>
+        )}
       </div>
       <div className={styles.filtersContainer}>
         <TextInput

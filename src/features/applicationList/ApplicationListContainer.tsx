@@ -70,7 +70,6 @@ const nameFilterAtom = atom<string | undefined>({
 });
 
 const ApplicationListContainer = () => {
-  const { exportTable } = useTableExport();
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const [onlySwitchApps, setOnlySwitchApps] = useRecoilState(onlySwitchAppsAtom);
   const [onlyAppsWithCode, setOnlyAppsWithCode] = useRecoilState(onlyAppsWithCodeAtom);
@@ -111,20 +110,21 @@ const ApplicationListContainer = () => {
       refetchQueries: [getOperationName(BERTH_APPLICATIONS_QUERY) || 'BERTH_APPLICATIONS_QUERY'],
     }
   );
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'berth-applications',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<BERTH_APPLICATIONS_IDS, BERTH_APPLICATIONS_IDS_VARS>({
+        query: BERTH_APPLICATIONS_IDS_QUERY,
+        variables: { ...berthApplicationsVars, ...paginationParams },
+        fetchPolicy: 'cache-first',
+      });
+      return data.berthApplications;
+    },
+  });
 
   const handleApplicationsExport = async () => {
-    await exportTable({
-      exportType: 'berth-applications',
-      fileType: 'xlsx',
-      fetchCallback: async (apolloClient, paginationParams) => {
-        const { data } = await apolloClient.query<BERTH_APPLICATIONS_IDS, BERTH_APPLICATIONS_IDS_VARS>({
-          query: BERTH_APPLICATIONS_IDS_QUERY,
-          variables: { ...berthApplicationsVars, ...paginationParams },
-          fetchPolicy: 'cache-first',
-        });
-        return data.berthApplications;
-      },
-    });
+    await exportTable();
   };
 
   const handleDeleteLease = async (id: string) => {
@@ -204,6 +204,7 @@ const ApplicationListContainer = () => {
       handleDeleteLease={handleDeleteLease}
       handleNoPlacesAvailable={handleNoPlacesAvailable}
       handleApplicationsExport={handleApplicationsExport}
+      isExporting={isExporting}
       isDeleting={isDeleting}
       isSubmittingApproveOrders={isSubmittingApproveOrders || isSubmittingResendOrders}
       loading={loading}

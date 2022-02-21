@@ -42,7 +42,6 @@ const nameFilterAtom = atom<string | undefined>({
 });
 
 const WinterStorageApplicationListContainer = () => {
-  const { exportTable } = useTableExport();
   const { cursor, pageSize, pageIndex, getPageCount, goToPage } = usePagination();
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
@@ -65,25 +64,24 @@ const WinterStorageApplicationListContainer = () => {
       variables: winterStorageVars,
     }
   );
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'winter-storage-applications',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<WINTER_STORAGE_APPLICATIONS_IDS, WINTER_STORAGE_APPLICATIONS_IDS_VARS>({
+        query: WINTER_STORAGE_APPLICATIONS_IDS_QUERY,
+        variables: { ...winterStorageVars, ...paginationParams },
+        fetchPolicy: 'cache-first',
+      });
+      return data.winterStorageApplications;
+    },
+  });
+
   const applications = getWinterStorageApplicationData(data);
   const pageCount = getPageCount(data?.winterStorageApplications?.count);
 
   const handleApplicationsExport = async () => {
-    await exportTable({
-      exportType: 'winter-storage-applications',
-      fileType: 'xlsx',
-      fetchCallback: async (apolloClient, paginationParams) => {
-        const { data } = await apolloClient.query<
-          WINTER_STORAGE_APPLICATIONS_IDS,
-          WINTER_STORAGE_APPLICATIONS_IDS_VARS
-        >({
-          query: WINTER_STORAGE_APPLICATIONS_IDS_QUERY,
-          variables: { ...winterStorageVars, ...paginationParams },
-          fetchPolicy: 'cache-first',
-        });
-        return data.winterStorageApplications;
-      },
-    });
+    await exportTable();
   };
 
   return (
@@ -95,6 +93,7 @@ const WinterStorageApplicationListContainer = () => {
       goToPage={goToPage}
       onSortedColsChange={handleSortedColsChange}
       handleApplicationsExport={handleApplicationsExport}
+      isExporting={isExporting}
       sortBy={sortBy}
       count={data?.winterStorageApplications?.count}
       statusFilter={statusFilter}

@@ -17,6 +17,7 @@ export interface CustomerListTableToolsProps<T> {
   searchBy: T;
   searchByOptions: Array<{ value: T; label: string }>;
   selectedCustomerIds: string[];
+  isExporting: boolean;
   handleCustomersExport: () => Promise<void>;
   refetch(): void;
   setSearchVal(val: string): void;
@@ -35,6 +36,7 @@ const CustomerListTableTools = <T extends string>({
   selectedCustomerIds,
   clearSelectedRows,
   handleCustomersExport,
+  isExporting,
 }: CustomerListTableToolsProps<T>) => {
   const { t } = useTranslation();
   const [messageModalOpen, setMessageModalOpen] = useState<boolean>(false);
@@ -57,7 +59,9 @@ const CustomerListTableTools = <T extends string>({
             </>
           )}
           <Button onClick={() => setAddCustomerModalOpen(true)}>{t('customerList.addNewCustomer')}</Button>
-          <Button onClick={handleCustomersExport}>{t('common.export')}</Button>
+          <Button isLoading={isExporting} loadingText={t('common.exporting')} onClick={handleCustomersExport}>
+            {t('common.export')}
+          </Button>
         </div>
         <div className={styles.tableToolsRight}>
           <Select

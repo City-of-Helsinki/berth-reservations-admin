@@ -47,6 +47,7 @@ export interface UnmarkedWsNoticeListProps {
   sortBy: SortingRule<UnmarkedWinterStorageNotice>[];
   statusFilter?: ApplicationStatus;
   nameFilter?: string;
+  isExporting: boolean;
   handleApplicationsExport(): Promise<void>;
   goToPage(page: number): void;
   handleSendOffers(draftedOffers: Order[], sentOffers: Order[], dueDate: string): Promise<void>;
@@ -82,6 +83,7 @@ const UnmarkedWsNoticeList = ({
   onSavePdf,
   onStickerChange,
   handleApplicationsExport,
+  isExporting,
 }: UnmarkedWsNoticeListProps) => {
   const { t, i18n } = useTranslation();
   const { selectedRows, selectedRowIdsDict, onSelectionChange } = usePreserveSelect<UnmarkedWinterStorageNotice>(
@@ -193,7 +195,11 @@ const UnmarkedWsNoticeList = ({
                   ),
                 },
               ]}
-              otherActions={<Button onClick={handleApplicationsExport}>{t('common.export')}</Button>}
+              otherActions={
+                <Button isLoading={isExporting} loadingText={t('common.exporting')} onClick={handleApplicationsExport}>
+                  {t('common.export')}
+                </Button>
+              }
             />
           </>
         )}

@@ -1,5 +1,6 @@
 import { useApolloClient } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-client';
+import { useState } from 'react';
 
 import { exportClient } from '../../app/exportClient';
 import hdsToast from '../toast/hdsToast';
@@ -7,11 +8,20 @@ import { getProfileToken } from './auth';
 import { downloadFile } from './downloadFile';
 import { assertUnreachable, typedBoolean } from './tsUtils';
 
-export const useTableExport = () => {
+type Config = {
+  exportType: ExportType;
+  fileType: FileType;
+  fetchCallback: FetchCallback;
+};
+
+export const useTableExport = ({ exportType, fileType, fetchCallback }: Config) => {
   const apolloClient = useApolloClient();
+  const [isExporting, setExporting] = useState(false);
 
   // Used to paginate through all pages to get all list ids for export
-  const exportTable: ExportTable = async ({ exportType, fileType, fetchCallback }) => {
+  const exportTable: ExportTable = async () => {
+    setExporting(true);
+
     const entityIds = [];
     const pageSize = 100;
     let _hasNextPage = true;
@@ -40,11 +50,14 @@ export const useTableExport = () => {
       });
     }
 
+    setExporting(false);
+
     return null;
   };
 
   return {
     exportTable,
+    isExporting,
   };
 };
 
@@ -116,8 +129,4 @@ type ExportType =
   | 'unmarked-winter-storage-applications';
 type FileType = 'xlsx';
 
-type ExportTable = (params: {
-  exportType: ExportType;
-  fileType: FileType;
-  fetchCallback: FetchCallback;
-}) => Promise<string[] | null>;
+type ExportTable = () => Promise<string[] | null>;

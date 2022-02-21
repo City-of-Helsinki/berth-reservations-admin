@@ -37,6 +37,7 @@ export interface ApplicationListProps {
   handleDeleteLease: (id: string) => Promise<void>;
   handleNoPlacesAvailable: (id: string) => void;
   handleApplicationsExport: () => Promise<void>;
+  isExporting: boolean;
   isDeleting: boolean;
   isSubmittingApproveOrders: boolean;
   loading: boolean;
@@ -71,6 +72,7 @@ const ApplicationList = ({
   handleDeleteLease,
   handleNoPlacesAvailable,
   handleApplicationsExport,
+  isExporting,
   isDeleting,
   isSubmittingApproveOrders,
   loading,
@@ -282,7 +284,13 @@ const ApplicationList = ({
               ]}
               otherActions={
                 <>
-                  <Button onClick={handleApplicationsExport}>{t('common.export')}</Button>
+                  <Button
+                    isLoading={isExporting}
+                    loadingText={t('common.exporting')}
+                    onClick={handleApplicationsExport}
+                  >
+                    {t('common.export')}
+                  </Button>
                 </>
               }
             />

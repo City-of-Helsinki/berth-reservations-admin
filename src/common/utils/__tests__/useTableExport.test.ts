@@ -38,7 +38,6 @@ const mockUseApolloClient = () => {
 
 it('callback is called correctly based on return values', async () => {
   const apolloClientMock = mockUseApolloClient();
-  const { result } = renderHook(() => useTableExport());
 
   // mock and spy axios post and spy downloadFile that useTableExport uses
   const exportClientPostSpy = jest.spyOn(exportClient, 'post').mockResolvedValue({
@@ -75,12 +74,15 @@ it('callback is called correctly based on return values', async () => {
 
   const exportType = 'customers';
   const fileType = 'xlsx';
+  const { result } = renderHook(() =>
+    useTableExport({
+      exportType,
+      fileType,
+      fetchCallback: mockCb,
+    })
+  );
 
-  await result.current.exportTable({
-    exportType,
-    fileType,
-    fetchCallback: mockCb,
-  });
+  await result.current.exportTable();
 
   expect(exportClientPostSpy).toHaveBeenCalledWith(
     '/customers/xlsx/',

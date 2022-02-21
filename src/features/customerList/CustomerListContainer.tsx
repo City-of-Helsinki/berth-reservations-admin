@@ -65,7 +65,6 @@ const orderBySelector = selector<string | undefined>({
 
 const CustomerListContainer = () => {
   const { t } = useTranslation();
-  const { exportTable } = useTableExport();
 
   const [customerListTableFilters] = useListTableFilters();
 
@@ -102,23 +101,25 @@ const CustomerListContainer = () => {
     fetchPolicy: 'no-cache',
   });
 
+  const { exportTable, isExporting } = useTableExport({
+    exportType: 'customers',
+    fileType: 'xlsx',
+    fetchCallback: async (apolloClient, paginationParams) => {
+      const { data } = await apolloClient.query<ALL_CUSTOMERS, ALL_CUSTOMERS_VARS>({
+        query: ALL_CUSTOMERS_QUERY,
+        variables: {
+          apiToken: getProfileToken(),
+          ...customersVars,
+          ...paginationParams,
+        },
+        fetchPolicy: 'cache-first',
+      });
+      return data.berthProfiles ?? {};
+    },
+  });
+
   const handleCustomersExport = async () => {
-    await exportTable({
-      exportType: 'customers',
-      fileType: 'xlsx',
-      fetchCallback: async (apolloClient, paginationParams) => {
-        const { data } = await apolloClient.query<ALL_CUSTOMERS, ALL_CUSTOMERS_VARS>({
-          query: ALL_CUSTOMERS_QUERY,
-          variables: {
-            apiToken: getProfileToken(),
-            ...customersVars,
-            ...paginationParams,
-          },
-          fetchPolicy: 'cache-first',
-        });
-        return data.berthProfiles ?? {};
-      },
-    });
+    await exportTable();
   };
 
   const isInitialMount = useRef(true);
@@ -153,6 +154,7 @@ const CustomerListContainer = () => {
         setSearchVal,
         setSearchBy,
         handleCustomersExport,
+        isExporting,
         searchByOptions: [
           { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
           { value: SearchBy.LAST_NAME, label: t('common.lastName') },
