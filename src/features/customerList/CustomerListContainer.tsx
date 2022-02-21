@@ -5,6 +5,7 @@ import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 import format from 'date-fns/format';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { ALL_CUSTOMERS_QUERY, CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
@@ -64,6 +65,8 @@ const orderBySelector = selector<string | undefined>({
 });
 
 const CustomerListContainer = () => {
+  usePersistedSearch();
+
   const { t } = useTranslation();
 
   const [customerListTableFilters] = useListTableFilters();
@@ -167,5 +170,27 @@ const CustomerListContainer = () => {
     />
   );
 };
+
+const PERSISTED_SEARCH_SESSION_STORAGE_KEY = 'berth-reservations-admin/persistedCustomerListContainer';
+
+function usePersistedSearch() {
+  const { search, pathname } = useLocation();
+  const history = useHistory();
+
+  useEffect(() => {
+    // Whenever search changes, persist it for the duration of the session
+    sessionStorage.setItem(PERSISTED_SEARCH_SESSION_STORAGE_KEY, search);
+  }, [search]);
+
+  useEffect(() => {
+    const persistedSearch = sessionStorage.getItem(PERSISTED_SEARCH_SESSION_STORAGE_KEY);
+
+    // If search is empty and we have a persisted search, apply the persisted
+    // search
+    if (!search && persistedSearch) {
+      history.replace(`${pathname}${persistedSearch}`);
+    }
+  }, [history, pathname, search]);
+}
 
 export default CustomerListContainer;
