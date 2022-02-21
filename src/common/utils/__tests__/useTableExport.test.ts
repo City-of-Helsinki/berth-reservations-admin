@@ -5,7 +5,6 @@ import * as Apollo from '@apollo/react-hooks';
 import { useTableExport } from '../useTableExport';
 import { exportClient } from '../../../app/exportClient';
 import * as downloadFile from '../downloadFile';
-// import { getBerthToken } from '../auth';
 
 jest.mock('../auth');
 
