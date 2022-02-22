@@ -283,7 +283,21 @@ export const ALL_CUSTOMERS_QUERY = gql`
     $lastName: String
     $email: String
     $address: String
+    $stickerNumber: String
+    $boatRegistrationNumber: String
     $orderBy: String
+    $customerGroups: [CustomerGroup]
+    $boatTypeIds: [ID]
+    $leaseStatuses: [LeaseStatus]
+    $harborIds: [String]
+    $pierId: String
+    $berthId: String
+    $winterStorageGridAreaIds: [String]
+    $winterStoragePlaceId: String
+    $winterStorageAreaIds: [String]
+    $moreThanOneBerthOrWinterStorage: Boolean
+    $startDate: Date
+    $endDate: Date
     $apiToken: String
   ) {
     berthProfiles(
@@ -293,7 +307,21 @@ export const ALL_CUSTOMERS_QUERY = gql`
       lastName: $lastName
       email: $email
       address: $address
+      stickerNumber: $stickerNumber
+      boatRegistrationNumber: $boatRegistrationNumber
       sortBy: $orderBy
+      customerGroups: $customerGroups
+      boatTypes: $boatTypeIds
+      leaseStatuses: $leaseStatuses
+      harbors: $harborIds
+      piers: [$pierId]
+      berths: [$berthId]
+      markedWinterStorageAreas: $winterStorageGridAreaIds
+      markedWinterStoragePlaces: [$winterStoragePlaceId]
+      unmarkedWinterStorageAreas: $winterStorageAreaIds
+      leaseCount: $moreThanOneBerthOrWinterStorage
+      leaseStart: $startDate
+      leaseEnd: $endDate
       apiToken: $apiToken
     ) {
       count
