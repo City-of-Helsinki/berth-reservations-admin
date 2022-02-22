@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { CustomerGroup, LeaseStatus } from "./../../../@types/__generated__/globalTypes";
+
 // ====================================================
 // GraphQL query operation: ALL_CUSTOMERS
 // ====================================================
@@ -41,6 +43,20 @@ export interface ALL_CUSTOMERSVariables {
   lastName?: string | null;
   email?: string | null;
   address?: string | null;
+  stickerNumber?: string | null;
+  boatRegistrationNumber?: string | null;
   orderBy?: string | null;
+  customerGroups?: (CustomerGroup | null)[] | null;
+  boatTypeIds?: (string | null)[] | null;
+  leaseStatuses?: (LeaseStatus | null)[] | null;
+  harborIds?: (string | null)[] | null;
+  pierId?: string | null;
+  berthId?: string | null;
+  winterStorageGridAreaIds?: (string | null)[] | null;
+  winterStoragePlaceId?: string | null;
+  winterStorageAreaIds?: (string | null)[] | null;
+  moreThanOneBerthOrWinterStorage?: boolean | null;
+  startDate?: any | null;
+  endDate?: any | null;
   apiToken?: string | null;
 }
