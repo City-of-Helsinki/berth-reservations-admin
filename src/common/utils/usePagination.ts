@@ -18,9 +18,13 @@ export const usePagination = (pageSize = PAGE_SIZE) => {
     (pageIndex: number) => {
       const newPageNumber = pageIndex + 1;
       const currentPageNumber = getCurrentPageParam(history);
+      const search = history.location.search;
 
       if (currentPageNumber !== newPageNumber) {
-        history.push({ search: `?page=${newPageNumber}` });
+        const params = new URLSearchParams(search);
+
+        params.set('page', newPageNumber?.toString());
+        history.push({ search: `?${params}` });
       }
     },
     [history]

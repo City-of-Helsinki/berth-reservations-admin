@@ -8,10 +8,10 @@ import {
 } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 
+import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 import { Option, ControlledFilters } from './CustomerListTableFiltersFormContainer';
 import styles from './customerListTableFilters.module.scss';
-import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 type Section = {
   berthSection: boolean;
