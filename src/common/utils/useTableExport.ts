@@ -75,8 +75,7 @@ export const fetchExportFile = async ({
       `/${exportType}/${fileType}/`,
       {
         ids,
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        profile_token: getProfileToken(),
+        profileToken: getProfileToken(),
       },
       {
         responseType: 'blob',
