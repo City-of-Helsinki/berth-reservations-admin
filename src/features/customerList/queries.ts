@@ -20,6 +20,7 @@ export const CUSTOMERS_QUERY = gql`
     $winterStorageGridAreaIds: [String]
     $winterStoragePlaceId: String
     $winterStorageAreaIds: [String]
+    $nonHelsinkiCitizen: Boolean
     $moreThanOneBerthOrWinterStorage: Boolean
     $apiToken: String
     $startDate: Date
@@ -44,6 +45,7 @@ export const CUSTOMERS_QUERY = gql`
       markedWinterStorageAreas: $winterStorageGridAreaIds
       markedWinterStoragePlaces: [$winterStoragePlaceId]
       unmarkedWinterStorageAreas: $winterStorageAreaIds
+      nonHelsinkiCitizen: $nonHelsinkiCitizen
       leaseCount: $moreThanOneBerthOrWinterStorage
       apiToken: $apiToken
       leaseStart: $startDate
@@ -295,6 +297,7 @@ export const ALL_CUSTOMERS_QUERY = gql`
     $winterStorageGridAreaIds: [String]
     $winterStoragePlaceId: String
     $winterStorageAreaIds: [String]
+    $nonHelsinkiCitizen: Boolean
     $moreThanOneBerthOrWinterStorage: Boolean
     $startDate: Date
     $endDate: Date
@@ -319,6 +322,7 @@ export const ALL_CUSTOMERS_QUERY = gql`
       markedWinterStorageAreas: $winterStorageGridAreaIds
       markedWinterStoragePlaces: [$winterStoragePlaceId]
       unmarkedWinterStorageAreas: $winterStorageAreaIds
+      nonHelsinkiCitizen: $nonHelsinkiCitizen
       leaseCount: $moreThanOneBerthOrWinterStorage
       leaseStart: $startDate
       leaseEnd: $endDate

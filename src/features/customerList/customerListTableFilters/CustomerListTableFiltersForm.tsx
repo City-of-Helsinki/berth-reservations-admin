@@ -49,6 +49,7 @@ const CustomerListTableFiltersForm = ({
   winterStoragePlaceOptions,
   winterStorageAreaOptions,
   winterStorageGridAreaOptions,
+  filters: allFilters,
   filters: {
     customerGroups,
     boatTypeIds,
@@ -62,6 +63,7 @@ const CustomerListTableFiltersForm = ({
     startDate,
     endDate,
     moreThanOneBerthOrWinterStorage,
+    nonHelsinkiCitizen,
   },
   onFieldChange,
   onSubmit,
@@ -77,21 +79,7 @@ const CustomerListTableFiltersForm = ({
     dateSection: Boolean(startDate || endDate),
   }));
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>
-    onSubmit(e, {
-      customerGroups,
-      boatTypeIds,
-      leaseStatuses,
-      harborIds,
-      pierId,
-      berthId,
-      winterStorageGridAreaIds,
-      winterStoragePlaceId,
-      winterStorageAreaIds,
-      startDate,
-      endDate,
-      moreThanOneBerthOrWinterStorage,
-    });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => onSubmit(e, allFilters);
 
   const handleSectionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const sectionName = e.target.name as keyof Section;
@@ -296,13 +284,22 @@ const CustomerListTableFiltersForm = ({
             className={styles.hideDateInputLabel}
             label={t('customerList.filters.endDate')}
           />
-          <Checkbox
-            id="moreThanOneBerthOrWinterStorage"
-            name="moreThanOneBerthOrWinterStorage"
-            label={t('customerList.filters.moreThanOneBerthOrWinterStorage')}
-            checked={moreThanOneBerthOrWinterStorage}
-            onChange={onFieldChange}
-          />
+          <div>
+            <Checkbox
+              id="nonHelsinkiCitizen"
+              name="nonHelsinkiCitizen"
+              label={t('customerList.filters.nonHelsinkiCitizen')}
+              checked={nonHelsinkiCitizen}
+              onChange={onFieldChange}
+            />
+            <Checkbox
+              id="moreThanOneBerthOrWinterStorage"
+              name="moreThanOneBerthOrWinterStorage"
+              label={t('customerList.filters.moreThanOneBerthOrWinterStorage')}
+              checked={moreThanOneBerthOrWinterStorage}
+              onChange={onFieldChange}
+            />
+          </div>
         </div>
         <div className={styles.buttonContainer}>
           <Button variant="secondary" onClick={handleReset}>
