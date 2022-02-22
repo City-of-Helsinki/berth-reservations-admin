@@ -9,7 +9,7 @@ export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, 
   const [sortBy, setSortBy] = useRecoilState<SortingRule<T>[]>(atom);
 
   const handleSortedColsChange = useCallback(
-    () => (sortedColumns: SortingRule<T>[]) => {
+    (sortedColumns: SortingRule<T>[]) => {
       if (!equal(sortBy, sortedColumns)) {
         setSortBy(sortedColumns);
       }
