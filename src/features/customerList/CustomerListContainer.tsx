@@ -14,13 +14,14 @@ import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { getProfileToken } from '../../common/utils/auth';
-import { usePrevious } from '../../common/utils/usePrevious';
-import { ApplicationData } from '../applicationList/utils';
+import { useTableExport } from '../../common/utils/useTableExport';
 import { orderByToString } from '../../common/utils/recoil';
+import { usePrevious } from '../../common/utils/usePrevious';
+import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
+import { ApplicationData } from '../applicationList/utils';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
-import { useTableExport } from '../../common/utils/useTableExport';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -105,7 +106,7 @@ const CustomerListContainer = () => {
     fetchPolicy: 'no-cache',
     // TODO: Remove when berthProfiles query can be requested with empty filters
     // Skip sending query until some harbor ids have been selected.
-    skip: !harborIds,
+    skip: limitedCustomerSearchFeatureFlag() ? !harborIds : false,
   });
 
   const { exportTable, isExporting } = useTableExport({
@@ -171,6 +172,7 @@ const CustomerListContainer = () => {
           { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
         ],
       }}
+      isLimitedCustomerSearch={limitedCustomerSearchFeatureFlag()}
     />
   );
 };

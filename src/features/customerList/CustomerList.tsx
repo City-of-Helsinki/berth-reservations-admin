@@ -5,7 +5,6 @@ import { Notification } from 'hds-react';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { CustomerData } from './types';
 import Pagination, { PaginationProps } from '../../common/pagination/Pagination';
 import CustomerListTableTools, { CustomerListTableToolsProps } from './tableTools/CustomerListTableTools';
 import InternalLink from '../../common/internalLink/InternalLink';
@@ -15,6 +14,7 @@ import { getSelectedRowIds } from '../../common/utils/getSelectedRowIds';
 import PageContent from '../../common/pageContent/PageContent';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import WrappingTableCell from '../../common/wrappingTableCell/WrappingTableCell';
+import { CustomerData } from './types';
 import { SearchBy } from './CustomerListContainer';
 import CustomerListTableFilters from './customerListTableFilters/CustomerListTableFilters';
 
@@ -26,10 +26,19 @@ export interface CustomerListProps {
   pagination: PaginationProps;
   sortBy: SortingRule<CustomerData>[];
   tableTools: Omit<CustomerListTableToolsProps<SearchBy>, 'selectedCustomerIds' | 'clearSelectedRows'>;
+  isLimitedCustomerSearch?: boolean;
   onSortedColsChange: (sortedCol: SortingRule<CustomerData>[]) => void;
 }
 
-const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChange, sortBy }: CustomerListProps) => {
+const CustomerList = ({
+  loading,
+  data,
+  pagination,
+  tableTools,
+  isLimitedCustomerSearch,
+  onSortedColsChange,
+  sortBy,
+}: CustomerListProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -110,9 +119,15 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
   return (
     <PageContent>
       <PageTitle title={t('customerList.title')} />
-      <Notification label={t('customerList.message.limitedSearchLabel')} type="alert" style={{ marginBottom: '1rem' }}>
-        {t('customerList.message.limitedSearchMessage')}
-      </Notification>
+      {isLimitedCustomerSearch && (
+        <Notification
+          label={t('customerList.message.limitedSearchLabel')}
+          type="alert"
+          style={{ marginBottom: '1rem' }}
+        >
+          {t('customerList.message.limitedSearchMessage')}
+        </Notification>
+      )}
       <Table
         data={data}
         loading={loading}
