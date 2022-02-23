@@ -580,7 +580,9 @@
       "filter": "Rajaa",
       "deleteButtonAriaLabel": "Poista suodatus",
       "resetAllFiltersAriaLabel": "Poista kaikki suodatukset",
-      "loadingOptions": "Etsitään vaihtoehtoja..."
+      "loadingOptions": "Etsitään vaihtoehtoja...",
+      "limitedSearchLabel": "Käyttäjähakua on rajoitettu tilapäisesti",
+      "limitedSearchMessage": "Hakujen tekeminen ilman valittua venesatamaa tai -satamia on tilapäisesti estetty. Rajoite pyritään poistamaan. Rajoite on asetettu voimaan palvelun suorituskyvyn takaamiseksi."
     },
     "filters": {
       "customerGroups": "Asiakasryhmä",

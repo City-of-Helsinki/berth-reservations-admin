@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cell, SortingRule } from 'react-table';
+import { Notification } from 'hds-react';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
@@ -109,6 +110,9 @@ const CustomerList = ({ loading, data, pagination, tableTools, onSortedColsChang
   return (
     <PageContent>
       <PageTitle title={t('customerList.title')} />
+      <Notification label={t('customerList.message.limitedSearchLabel')} type="alert" style={{ marginBottom: '1rem' }}>
+        {t('customerList.message.limitedSearchMessage')}
+      </Notification>
       <Table
         data={data}
         loading={loading}
