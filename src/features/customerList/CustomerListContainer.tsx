@@ -85,7 +85,7 @@ const CustomerListContainer = () => {
 
   const prevSearchBy = usePrevious(searchBy);
 
-  const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
+  const { dateInterval, harborIds, ...delegatedCustomerListTableFilters } = customerListTableFilters;
   const { start, end } = createIntervalWithSilentError(dateInterval);
   const profileToken = getProfileToken();
   const customersVars: CUSTOMERS_VARS = {
@@ -93,6 +93,7 @@ const CustomerListContainer = () => {
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
+    harborIds,
     ...delegatedCustomerListTableFilters,
     startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
     endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
@@ -102,6 +103,9 @@ const CustomerListContainer = () => {
   const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
     variables: customersVars,
     fetchPolicy: 'no-cache',
+    // TODO: Remove when berthProfiles query can be requested with empty filters
+    // Skip sending query until some harbor ids have been selected.
+    skip: !harborIds,
   });
 
   const { exportTable, isExporting } = useTableExport({
