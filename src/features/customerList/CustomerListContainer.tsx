@@ -1,15 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
-import format from 'date-fns/format';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { ALL_CUSTOMERS_QUERY, CUSTOMERS_QUERY } from './queries';
+import { ALL_CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
-import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
@@ -17,11 +14,10 @@ import { getProfileToken } from '../../common/utils/auth';
 import { useTableExport } from '../../common/utils/useTableExport';
 import { orderByToString } from '../../common/utils/recoil';
 import { usePrevious } from '../../common/utils/usePrevious';
-import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
 import { ApplicationData } from '../applicationList/utils';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
-import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
+import useCustomersQuery from './useCustomersQuery';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -86,28 +82,15 @@ const CustomerListContainer = () => {
 
   const prevSearchBy = usePrevious(searchBy);
 
-  const { dateInterval, harborIds, ...delegatedCustomerListTableFilters } = customerListTableFilters;
-  const { start, end } = createIntervalWithSilentError(dateInterval);
-  const profileToken = getProfileToken();
-  const customersVars: CUSTOMERS_VARS = {
+  const customersVars = {
     first: pageSize,
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
-    harborIds,
-    ...delegatedCustomerListTableFilters,
-    startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
-    endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
-    apiToken: profileToken,
+    ...customerListTableFilters,
   };
 
-  const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
-    variables: customersVars,
-    fetchPolicy: 'no-cache',
-    // TODO: Remove when berthProfiles query can be requested with empty filters
-    // Skip sending query until some harbor ids have been selected.
-    skip: limitedCustomerSearchFeatureFlag() ? !harborIds : false,
-  });
+  const { loading, refetch, profiles, count } = useCustomersQuery(customersVars);
 
   const { exportTable, isExporting } = useTableExport({
     exportType: 'customers',
@@ -142,7 +125,7 @@ const CustomerListContainer = () => {
     }
   }, [searchVal, searchBy, goToPage]);
 
-  const tableData = getCustomersData(data);
+  const tableData = getCustomersData(profiles);
 
   return (
     <CustomerList
@@ -152,7 +135,7 @@ const CustomerListContainer = () => {
       sortBy={sortBy}
       pagination={{
         pageIndex: pageIndex,
-        pageCount: getPageCount(data?.berthProfiles?.count),
+        pageCount: getPageCount(count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}
       tableTools={{
@@ -172,7 +155,6 @@ const CustomerListContainer = () => {
           { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
         ],
       }}
-      isLimitedCustomerSearch={limitedCustomerSearchFeatureFlag()}
     />
   );
 };

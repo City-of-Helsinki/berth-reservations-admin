@@ -1,5 +1,89 @@
 import gql from 'graphql-tag';
 
+const PROFILE_FRAGMENT = gql`
+  fragment ProfileFragment on ProfileNode {
+    id
+    firstName
+    lastName
+    nickname
+    comment
+    customerGroup
+    organization {
+      id
+      name
+      address
+      postalCode
+      city
+      businessId
+    }
+    primaryAddress {
+      id
+      address
+      city
+      postalCode
+    }
+    primaryPhone {
+      id
+      phone
+    }
+    primaryEmail {
+      id
+      email
+    }
+    serviceConnections {
+      edges {
+        node {
+          id
+          service {
+            id
+            type
+          }
+        }
+      }
+    }
+    contactMethod
+    image
+    boats {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    berthApplications {
+      edges {
+        node {
+          id
+          createdAt
+        }
+      }
+    }
+    berthLeases {
+      edges {
+        node {
+          id
+          isActive
+          status
+          berth {
+            number
+            pier {
+              properties {
+                identifier
+                harbor {
+                  properties {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const CUSTOMERS_QUERY = gql`
   query CUSTOMERS(
     $first: Int!
@@ -52,89 +136,44 @@ export const CUSTOMERS_QUERY = gql`
       count
       edges {
         node {
-          id
-          firstName
-          lastName
-          nickname
-          comment
-          customerGroup
-          organization {
-            id
-            name
-            address
-            postalCode
-            city
-            businessId
-          }
-          primaryAddress {
-            id
-            address
-            city
-            postalCode
-          }
-          primaryPhone {
-            id
-            phone
-          }
-          primaryEmail {
-            id
-            email
-          }
-          serviceConnections {
-            edges {
-              node {
-                id
-                service {
-                  id
-                  type
-                }
-              }
-            }
-          }
-          contactMethod
-          image
-          boats {
-            edges {
-              node {
-                id
-                name
-              }
-            }
-          }
-          berthApplications {
-            edges {
-              node {
-                id
-                createdAt
-              }
-            }
-          }
-          berthLeases {
-            edges {
-              node {
-                id
-                isActive
-                status
-                berth {
-                  number
-                  pier {
-                    properties {
-                      identifier
-                      harbor {
-                        properties {
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+          ...ProfileFragment
         }
       }
     }
   }
+
+  ${PROFILE_FRAGMENT}
+`;
+
+export const PROFILE_CUSTOMERS_QUERY = gql`
+  query PROFILE_CUSTOMERS(
+    $first: Int!
+    $after: String
+    $firstName: String
+    $lastName: String
+    $email: String
+    $address: String
+    $orderBy: String
+  ) {
+    profiles(
+      first: $first
+      after: $after
+      firstName: $firstName
+      lastName: $lastName
+      emails_Email: $email
+      addresses_Address: $address
+      orderBy: $orderBy
+    ) {
+      count
+      edges {
+        node {
+          ...ProfileFragment
+        }
+      }
+    }
+  }
+
+  ${PROFILE_FRAGMENT}
 `;
 
 export const FILTER_OPTIONS_QUERY = gql`
