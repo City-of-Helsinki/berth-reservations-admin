@@ -1,26 +1,25 @@
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
-import format from 'date-fns/format';
 import { useHistory, useLocation } from 'react-router-dom';
+import format from 'date-fns/format';
 
-import { ALL_CUSTOMERS_QUERY, CUSTOMERS_QUERY } from './queries';
+import { ALL_CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
-import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import CustomerList from './CustomerList';
 import { usePagination } from '../../common/utils/usePagination';
 import { useRecoilBackendSorting } from '../../common/utils/useBackendSorting';
 import { getProfileToken } from '../../common/utils/auth';
+import { useTableExport } from '../../common/utils/useTableExport';
+import { orderByToString } from '../../common/utils/recoil';
 import { usePrevious } from '../../common/utils/usePrevious';
 import { ApplicationData } from '../applicationList/utils';
-import { orderByToString } from '../../common/utils/recoil';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
-import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
-import { useTableExport } from '../../common/utils/useTableExport';
+import useCustomersQuery from './useCustomersQuery';
+import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -87,8 +86,7 @@ const CustomerListContainer = () => {
 
   const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
   const { start, end } = createIntervalWithSilentError(dateInterval);
-  const profileToken = getProfileToken();
-  const customersVars: CUSTOMERS_VARS = {
+  const customersVars = {
     first: pageSize,
     after: cursor,
     orderBy,
@@ -96,13 +94,10 @@ const CustomerListContainer = () => {
     ...delegatedCustomerListTableFilters,
     startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
     endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
-    apiToken: profileToken,
+    apiToken: getProfileToken(),
   };
 
-  const { data, loading, refetch } = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
-    variables: customersVars,
-    fetchPolicy: 'no-cache',
-  });
+  const { loading, refetch, profiles, count } = useCustomersQuery(customersVars);
 
   const { exportTable, isExporting } = useTableExport({
     exportType: 'customers',
@@ -111,7 +106,6 @@ const CustomerListContainer = () => {
       const { data } = await apolloClient.query<ALL_CUSTOMERS, ALL_CUSTOMERS_VARS>({
         query: ALL_CUSTOMERS_QUERY,
         variables: {
-          apiToken: getProfileToken(),
           ...customersVars,
           ...paginationParams,
         },
@@ -137,7 +131,7 @@ const CustomerListContainer = () => {
     }
   }, [searchVal, searchBy, goToPage]);
 
-  const tableData = getCustomersData(data);
+  const tableData = getCustomersData(profiles);
 
   return (
     <CustomerList
@@ -147,7 +141,7 @@ const CustomerListContainer = () => {
       sortBy={sortBy}
       pagination={{
         pageIndex: pageIndex,
-        pageCount: getPageCount(data?.berthProfiles?.count),
+        pageCount: getPageCount(count),
         onPageChange: ({ selected }) => goToPage(selected),
       }}
       tableTools={{

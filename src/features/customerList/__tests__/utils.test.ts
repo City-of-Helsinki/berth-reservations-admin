@@ -1,10 +1,12 @@
 import { getCustomersData } from '../utils';
 import { customersResponse } from '../__mocks__/customersMockResponse';
 
+const profiles = customersResponse.berthProfiles?.edges?.map((edge) => edge?.node);
+
 describe('utils', () => {
   describe('getCustomersData', () => {
     it('should get profile', () => {
-      const customersData = getCustomersData(customersResponse);
+      const customersData = getCustomersData(profiles);
 
       expect(customersData.length).toEqual(1);
 
@@ -19,7 +21,7 @@ describe('utils', () => {
     });
 
     it('should get boats', () => {
-      const profile = getCustomersData(customersResponse)[0];
+      const profile = getCustomersData(profiles)[0];
 
       expect(profile.boats.length).toEqual(1);
       const boat = profile.boats[0];
@@ -28,7 +30,7 @@ describe('utils', () => {
     });
 
     it('should get applications', () => {
-      const profile = getCustomersData(customersResponse)[0];
+      const profile = getCustomersData(profiles)[0];
 
       expect(profile.applications.length).toEqual(1);
       const application = profile.applications[0];
@@ -37,7 +39,7 @@ describe('utils', () => {
     });
 
     it('should get berthLeases', () => {
-      const profile = getCustomersData(customersResponse)[0];
+      const profile = getCustomersData(profiles)[0];
 
       expect(profile.berthLeases.length).toEqual(2);
       const berthLease = profile.berthLeases[0];

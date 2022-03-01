@@ -5,11 +5,13 @@ import {
   DateInput as HDSDateInput,
   DateInputProps as HDSDateInputProps,
   ComboboxProps,
+  Notification,
 } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 
 import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
+import { limitedCustomerSearchFeatureFlag } from '../../../common/utils/featureFlags';
 import { Option, ControlledFilters } from './CustomerListTableFiltersFormContainer';
 import styles from './customerListTableFilters.module.scss';
 
@@ -144,6 +146,15 @@ const CustomerListTableFiltersForm = ({
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      {limitedCustomerSearchFeatureFlag() && (
+        <Notification
+          label={t('customerList.message.limitedSearchLabel')}
+          type="alert"
+          style={{ gridColumn: '1 / -1' }}
+        >
+          {t('customerList.message.limitedSearchMessage')}
+        </Notification>
+      )}
       <MultiSelect
         id="customerGroups"
         name="customerGroups"

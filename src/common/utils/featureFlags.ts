@@ -21,3 +21,7 @@ export const queueFeatureFlag = () => {
 export const berthAccessibilityFeatureFlag = () => {
   return false;
 };
+
+export const limitedCustomerSearchFeatureFlag = () => {
+  return true;
+};

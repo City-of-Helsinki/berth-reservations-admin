@@ -4,7 +4,6 @@ import { Cell, SortingRule } from 'react-table';
 
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
-import { CustomerData } from './types';
 import Pagination, { PaginationProps } from '../../common/pagination/Pagination';
 import CustomerListTableTools, { CustomerListTableToolsProps } from './tableTools/CustomerListTableTools';
 import InternalLink from '../../common/internalLink/InternalLink';
@@ -14,6 +13,7 @@ import { getSelectedRowIds } from '../../common/utils/getSelectedRowIds';
 import PageContent from '../../common/pageContent/PageContent';
 import { getCustomerGroupKey } from '../../common/utils/translations';
 import WrappingTableCell from '../../common/wrappingTableCell/WrappingTableCell';
+import { CustomerData } from './types';
 import { SearchBy } from './CustomerListContainer';
 import CustomerListTableFilters from './customerListTableFilters/CustomerListTableFilters';
 
