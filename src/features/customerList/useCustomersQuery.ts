@@ -10,9 +10,7 @@
 // filters, this hook should be simplified to only use the berthProfiles query.
 
 import { useQuery } from '@apollo/react-hooks';
-import format from 'date-fns/format';
 
-import { getProfileToken } from '../../common/utils/auth';
 import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
 import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import {
@@ -21,7 +19,6 @@ import {
 } from './__generated__/PROFILE_CUSTOMERS';
 import { ProfileFragment } from './__generated__/ProfileFragment';
 import { CUSTOMERS_QUERY, PROFILE_CUSTOMERS_QUERY } from './queries';
-import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 import { CustomerListTableFilters } from './customerListTableFilters/types';
 
 enum Query {
@@ -29,7 +26,11 @@ enum Query {
   BERTH_PROFILE = 'berthProfile',
 }
 
-type Config = CustomerListTableFilters & {
+type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
+  startDate?: string;
+  endDate?: string;
+  apiToken: string;
+} & {
   first: number;
   after?: string;
   orderBy?: string;
@@ -49,6 +50,7 @@ export default function useCustomersQuery({
   lastName,
   email,
   address,
+  apiToken,
   ...tableFilters
 }: Config) {
   const sharedFilters = {
@@ -60,7 +62,8 @@ export default function useCustomersQuery({
     email,
     address,
   };
-  const preferredQuery = Object.keys(tableFilters).length > 0 ? Query.BERTH_PROFILE : Query.PROFILE;
+  const preferredQuery =
+    Object.values(tableFilters).filter((value) => value).length > 0 ? Query.BERTH_PROFILE : Query.PROFILE;
 
   const profilesQuery = useQuery<PROFILE_CUSTOMERS, PROFILE_CUSTOMERS_VARS>(PROFILE_CUSTOMERS_QUERY, {
     variables: sharedFilters,
@@ -68,17 +71,13 @@ export default function useCustomersQuery({
     skip: preferredQuery !== Query.PROFILE,
   });
 
-  const { dateInterval, harborIds, ...delegatedFilters } = tableFilters;
-  const { start, end } = createIntervalWithSilentError(dateInterval);
-  const profileToken = getProfileToken();
+  const { harborIds, ...delegatedFilters } = tableFilters;
   const berthProfilesQuery = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMERS_QUERY, {
     variables: {
       ...sharedFilters,
       ...delegatedFilters,
       harborIds,
-      startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
-      endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
-      apiToken: profileToken,
+      apiToken,
     },
     fetchPolicy: 'no-cache',
     skip:

@@ -4,6 +4,7 @@ import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 import { useHistory, useLocation } from 'react-router-dom';
+import format from 'date-fns/format';
 
 import { ALL_CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
@@ -18,6 +19,7 @@ import { ApplicationData } from '../applicationList/utils';
 import useListTableFilters from './customerListTableFilters/useListTableFilters';
 import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
 import useCustomersQuery from './useCustomersQuery';
+import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -82,12 +84,17 @@ const CustomerListContainer = () => {
 
   const prevSearchBy = usePrevious(searchBy);
 
+  const { dateInterval, ...delegatedCustomerListTableFilters } = customerListTableFilters;
+  const { start, end } = createIntervalWithSilentError(dateInterval);
   const customersVars = {
     first: pageSize,
     after: cursor,
     orderBy,
     [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
-    ...customerListTableFilters,
+    ...delegatedCustomerListTableFilters,
+    startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
+    endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
+    apiToken: getProfileToken(),
   };
 
   const { loading, refetch, profiles, count } = useCustomersQuery(customersVars);
@@ -99,7 +106,6 @@ const CustomerListContainer = () => {
       const { data } = await apolloClient.query<ALL_CUSTOMERS, ALL_CUSTOMERS_VARS>({
         query: ALL_CUSTOMERS_QUERY,
         variables: {
-          apiToken: getProfileToken(),
           ...customersVars,
           ...paginationParams,
         },
