@@ -95,7 +95,7 @@ const ApplicationViewContainer = () => {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
     }).catch(() => {});
   };
-  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id, customerId: null } } });
   const handleDeleteLease = (id: string) =>
     deleteDraftedApplication({
       variables: {
