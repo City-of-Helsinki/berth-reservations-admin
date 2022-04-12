@@ -116,7 +116,7 @@ const UnmarkedWsNoticeViewContainer = () => {
         input: { id, customerId },
       },
     });
-  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id, customerId: null } } });
   const handleCreateLease = () => {
     const options = {
       variables: {
