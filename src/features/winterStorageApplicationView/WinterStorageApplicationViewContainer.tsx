@@ -98,7 +98,7 @@ const WinterStorageApplicationViewContainer = () => {
       },
     });
   };
-  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id } } });
+  const handleUnlinkCustomer = () => linkCustomer({ variables: { input: { id, customerId: null } } });
 
   if (loading) return <LoadingSpinner />;
   if (!data?.winterStorageApplication)
