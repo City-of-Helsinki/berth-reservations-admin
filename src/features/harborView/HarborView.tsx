@@ -19,6 +19,8 @@ export type HarborViewProps = {
   setCreatingPier: (creatingPier: boolean) => void;
   setEditingHarbor: (editingHarbor: boolean) => void;
   setPierToEdit: (pierToEdit: string | null) => void;
+  setFilterByActiveBerths: (filterByActiveBerths: boolean | null) => void;
+  filterByActiveBerths: boolean | null;
 };
 
 const HarborView = ({
@@ -30,6 +32,8 @@ const HarborView = ({
   setCreatingPier,
   setEditingHarbor,
   setPierToEdit,
+  setFilterByActiveBerths,
+  filterByActiveBerths,
 }: HarborViewProps) => {
   const { t } = useTranslation();
 
@@ -71,6 +75,8 @@ const HarborView = ({
         onAddBerth={() => setCreatingBerth(true)}
         onEditBerth={(berth) => setBerthToEdit(berth.id)}
         onEditPier={(pier) => setPierToEdit(pier.id)}
+        setFilterByActiveBerths={setFilterByActiveBerths}
+        filterByActiveBerths={filterByActiveBerths}
       />
     </PageContent>
   );

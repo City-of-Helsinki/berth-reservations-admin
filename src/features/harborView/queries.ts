@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const INDIVIDUAL_HARBOR_QUERY = gql`
-  query INDIVIDUAL_HARBOR($harborId: ID!) {
+  query INDIVIDUAL_HARBOR($harborId: ID!, $isBerthActive: Boolean) {
     harbor(id: $harborId) {
       id
       properties {
@@ -36,7 +36,7 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
         }
       }
     }
-    berths(harbor: $harborId) {
+    berths(harbor: $harborId, isActive: $isBerthActive) {
       count
       edges {
         node {

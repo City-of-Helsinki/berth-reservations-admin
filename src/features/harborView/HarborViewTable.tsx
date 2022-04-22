@@ -11,17 +11,29 @@ import StatusLabel from '../../common/statusLabel/StatusLabel';
 import { formatDimension } from '../../common/utils/format';
 import Pagination from '../../common/pagination/Pagination';
 import CustomerName from './customerName/CustomerName';
+import HarborViewTableFilters from './harborViewTableFilters/HarborViewTableFilters';
 
 interface Props {
   berths: Berth[];
   piers: Pier[];
+  filterByActiveBerths: boolean | null;
   onAddBerth(): void;
   onAddPier(): void;
   onEditBerth(berth: Berth): void;
   onEditPier(pier: Pier): void;
+  setFilterByActiveBerths(isActive: boolean | null): void;
 }
 
-const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, onEditPier }: Props) => {
+const HarborViewTable = ({
+  berths,
+  piers,
+  onAddBerth,
+  onAddPier,
+  onEditBerth,
+  onEditPier,
+  setFilterByActiveBerths,
+  filterByActiveBerths,
+}: Props) => {
   const { t, i18n } = useTranslation();
   const [tablePageIndex, setTablePageIndex] = useState(0);
 
@@ -81,6 +93,16 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
     },
   ];
 
+  const renderTableFilters = React.useMemo(
+    () => () => (
+      <HarborViewTableFilters
+        setFilterByActiveBerths={setFilterByActiveBerths}
+        filterByActiveBerths={filterByActiveBerths}
+      />
+    ),
+    [setFilterByActiveBerths, filterByActiveBerths]
+  );
+
   return (
     <Table
       data={berths}
@@ -96,6 +118,7 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
         />
       )}
       styleMainHeader={false}
+      renderTableFilters={renderTableFilters}
       renderMainHeader={(props) => {
         const piersFilters = props.state.filters.filter((filter) => filter.id === 'identifier');
         const selectedPier = piers.find(({ identifier }) => piersFilters.find(({ value }) => value === identifier));

@@ -145,4 +145,5 @@ export interface INDIVIDUAL_HARBOR {
 
 export interface INDIVIDUAL_HARBORVariables {
   harborId: string;
+  isBerthActive?: boolean | null;
 }
