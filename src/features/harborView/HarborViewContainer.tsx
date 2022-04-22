@@ -23,10 +23,12 @@ const HarborViewContainer = () => {
   const [creatingBerth, setCreatingBerth] = useState<boolean>(false);
   const [pierToEdit, setPierToEdit] = useState<string | null>(null);
   const [creatingPier, setCreatingPier] = useState<boolean>(false);
+  const [filterByActiveBerths, setFilterByActiveBerths] = useState<boolean | null>(true);
   const { id: harborId } = useParams<{ id: string }>();
   const { loading, data } = useQuery<INDIVIDUAL_HARBOR, INDIVIDUAL_HARBOR_VARS>(INDIVIDUAL_HARBOR_QUERY, {
     variables: {
       harborId,
+      isBerthActive: filterByActiveBerths,
     },
   });
 
@@ -48,6 +50,8 @@ const HarborViewContainer = () => {
         setCreatingPier={setCreatingPier}
         setEditingHarbor={setEditingHarbor}
         setPierToEdit={setPierToEdit}
+        setFilterByActiveBerths={setFilterByActiveBerths}
+        filterByActiveBerths={filterByActiveBerths}
       />
 
       {berthToEdit && (

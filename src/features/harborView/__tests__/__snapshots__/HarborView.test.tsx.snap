@@ -522,6 +522,96 @@ exports[`HarborView renders normally 1`] = `
             </div>
           </div>
           <div
+            class="header tableFilterHeader"
+          >
+            <div
+              class="tableFilters"
+            >
+              <div
+                class="titleRow"
+              >
+                <button
+                  class="expandButton"
+                >
+                  Rajaa 
+                  <svg
+                    aria-hidden="true"
+                    class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                      />
+                      <path
+                        d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
+                        fill="currentColor"
+                      />
+                    </g>
+                  </svg>
+                </button>
+              </div>
+              <form
+                class="form"
+              >
+                <div
+                  class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz"
+                >
+                  <input
+                    checked=""
+                    class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+                    id="showInactiveBerths"
+                    name="showInactiveBerths"
+                    type="checkbox"
+                    value="true"
+                  />
+                  <label
+                    class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+                    for="showInactiveBerths"
+                  >
+                    Näytä myös käytöstä poistetut venepaikat
+                  </label>
+                </div>
+                <div
+                  class="actionRow"
+                >
+                  <div
+                    class="controlsContainer"
+                  />
+                  <div
+                    class="buttonContainer"
+                  >
+                    <button
+                      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+                      type="button"
+                    >
+                      <span
+                        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+                      >
+                        Tyhjennä valinnat
+                      </span>
+                    </button>
+                    <button
+                      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+                      type="submit"
+                    >
+                      <span
+                        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+                      >
+                        Käytä
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div
             class="header"
             role="row"
             style="display:flex;flex:1 0 auto;min-width:150px"

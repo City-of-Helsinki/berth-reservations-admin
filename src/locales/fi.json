@@ -421,6 +421,12 @@
     "tableTools": {
       "addPier": "Lisää laituri",
       "addBerth": "Lisää venepaikka"
+    },
+    "message": {
+      "filter": "Rajaa"
+    },
+    "filters": {
+      "showInactiveBerths": "Näytä myös käytöstä poistetut venepaikat"
     }
   },
   "applicationList": {
