@@ -23,7 +23,6 @@ interface Props {
 
 const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, onEditPier }: Props) => {
   const { t, i18n } = useTranslation();
-
   const [tablePageIndex, setTablePageIndex] = useState(0);
 
   const columns: Column<Berth>[] = [
@@ -41,16 +40,16 @@ const HarborViewTable = ({ berths, piers, onAddBerth, onAddPier, onEditBerth, on
       Cell: ({ cell }: { cell: Cell<Berth> }) => {
         const isBerthActive = cell.row.original.isActive;
         if (!isBerthActive) return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
-
-        if (cell.value) return <CustomerName id={cell.value} />;
-
+        if (cell.value) return <CustomerName disabled={!cell.value.isActiveLease} id={cell.value.customerId} />;
         return '';
       },
       Header: t('harborView.tableHeaders.customer') || '',
-      accessor: ({ leases }) => {
+      accessor: ({ leases, prevSeasonLease }) => {
         const activeLease = leases?.find((lease) => lease.isActive);
-        if (!activeLease) return '';
-        return activeLease.customer.id;
+        return {
+          customerId: activeLease?.customer.id || prevSeasonLease?.customer.id || '',
+          isActiveLease: activeLease,
+        };
       },
       id: 'leases',
       disableFilters: true,

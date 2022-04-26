@@ -61,6 +61,15 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
               }
             }
           }
+          prevSeasonLease {
+            customer {
+              id
+            }
+            status
+            startDate
+            endDate
+            isActive
+          }
           pier {
             id
             properties {

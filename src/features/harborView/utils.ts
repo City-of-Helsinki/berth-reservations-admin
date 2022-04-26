@@ -52,7 +52,6 @@ export const getBerths = (data: INDIVIDUAL_HARBOR | undefined): Berth[] => {
 
   return data.berths.edges.reduce<Berth[]>((acc, berthEdge) => {
     if (!berthEdge || !berthEdge.node || !berthEdge.node.pier?.properties?.identifier) return acc;
-
     const leases =
       berthEdge?.node?.leases?.edges.reduce<Lease[]>((acc, leaseEdge) => {
         if (!leaseEdge?.node) return acc;
@@ -72,6 +71,7 @@ export const getBerths = (data: INDIVIDUAL_HARBOR | undefined): Berth[] => {
         depth: berthEdge.node.depth,
         comment: berthEdge.node.comment,
         leases,
+        prevSeasonLease: berthEdge.node.prevSeasonLease || null,
       },
     ];
   }, []);
