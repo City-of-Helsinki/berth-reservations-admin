@@ -6,13 +6,15 @@ import { CUSTOMER_NAME_QUERY } from './queries';
 import { CUSTOMER_NAME } from './__generated__/CUSTOMER_NAME';
 import InternalLink from '../../../common/internalLink/InternalLink';
 import LoadingCell from '../../../common/table/loadingCell/LoadingCell';
+import Text from '../../../common/text/Text';
 
 export interface CustomerNameProps {
   id: string;
   linkTo?: string;
+  disabled?: boolean;
 }
 
-const CustomerName = ({ id, linkTo }: CustomerNameProps) => {
+const CustomerName = ({ id, linkTo, disabled }: CustomerNameProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<CUSTOMER_NAME>(CUSTOMER_NAME_QUERY, {
     variables: {
@@ -21,6 +23,8 @@ const CustomerName = ({ id, linkTo }: CustomerNameProps) => {
   });
 
   if (loading) return <LoadingCell />;
+  if (disabled && data?.profile)
+    return <Text color="secondary">{`${data.profile.lastName} ${data.profile.firstName}`}</Text>;
   if (!data?.profile) return <InternalLink to={`/customers/${id}`}>{t('common.emptyName')}</InternalLink>;
 
   return (

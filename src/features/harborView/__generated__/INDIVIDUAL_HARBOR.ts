@@ -86,6 +86,20 @@ export interface INDIVIDUAL_HARBOR_berths_edges_node_leases {
   edges: (INDIVIDUAL_HARBOR_berths_edges_node_leases_edges | null)[];
 }
 
+export interface INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease_customer {
+  __typename: "ProfileNode";
+  id: string;
+}
+
+export interface INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease {
+  __typename: "BerthLeaseNode";
+  customer: INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease_customer;
+  status: LeaseStatus;
+  startDate: any;
+  endDate: any;
+  isActive: boolean;
+}
+
 export interface INDIVIDUAL_HARBOR_berths_edges_node_pier_properties {
   __typename: "PierProperties";
   identifier: string;
@@ -108,6 +122,7 @@ export interface INDIVIDUAL_HARBOR_berths_edges_node {
   mooringType: BerthMooringType;
   comment: string;
   leases: INDIVIDUAL_HARBOR_berths_edges_node_leases | null;
+  prevSeasonLease: INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease | null;
   pier: INDIVIDUAL_HARBOR_berths_edges_node_pier;
 }
 

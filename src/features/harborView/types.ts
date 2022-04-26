@@ -49,6 +49,7 @@ export type Berth = {
   mooringType: string;
   comment: string;
   leases?: Lease[];
+  prevSeasonLease?: Lease | null;
 };
 
 export type Pier = {

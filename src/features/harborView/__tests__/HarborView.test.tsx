@@ -1,11 +1,12 @@
-import React from 'react';
+import { MockedProvider } from '@apollo/react-testing';
 import { shallow } from 'enzyme';
+import React from 'react';
 import { HashRouter } from 'react-router-dom';
 
 import HarborView, { HarborViewProps } from '../HarborView';
+import { IndividualHarborData } from '../types';
 import { getBerths, getIndividualHarborData, getPiers } from '../utils';
 import { IndividualHarborQueryData as mockData } from '../__fixtures__/mockData';
-import { IndividualHarborData } from '../types';
 
 const berths = getBerths(mockData);
 const harbor = getIndividualHarborData(mockData) as IndividualHarborData;
@@ -25,9 +26,11 @@ const mockProps: HarborViewProps = {
 describe('HarborView', () => {
   const getWrapper = (props?: Partial<HarborViewProps>) =>
     shallow(
-      <HashRouter>
-        <HarborView {...mockProps} {...props} />
-      </HashRouter>
+      <MockedProvider>
+        <HashRouter>
+          <HarborView {...mockProps} {...props} />
+        </HashRouter>
+      </MockedProvider>
     );
 
   it('renders normally', () => {

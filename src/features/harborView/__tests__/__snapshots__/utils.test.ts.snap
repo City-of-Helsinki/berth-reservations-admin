@@ -46,6 +46,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "1",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -81,6 +82,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "1",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -116,6 +118,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "1",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -151,6 +154,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "1",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -186,6 +190,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "1",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -221,6 +226,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "2",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -256,6 +262,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "2",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -291,6 +298,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "2",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -326,6 +334,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "2",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -361,6 +370,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "2",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -396,6 +406,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "3",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -431,6 +442,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "3",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -466,6 +478,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "3",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -478,6 +491,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "3",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -513,6 +527,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "3",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -548,6 +563,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "4",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -583,6 +599,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "4",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -618,6 +635,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "4",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -653,6 +671,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "4",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -688,6 +707,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "4",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -723,6 +743,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "5",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -735,6 +756,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "5",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -770,6 +792,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "5",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -805,6 +828,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "5",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -840,6 +864,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "5",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -875,6 +900,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "6",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -910,6 +936,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "6",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -945,6 +972,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "6",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -980,6 +1008,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "6",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1015,6 +1044,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "6",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1050,6 +1080,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "7",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1085,6 +1116,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "7",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1120,6 +1152,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "7",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1155,6 +1188,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "7",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1190,6 +1224,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "7",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1225,6 +1260,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "8",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -1260,6 +1296,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "8",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1295,6 +1332,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "8",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1330,6 +1368,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "8",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1365,6 +1404,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "8",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1400,6 +1440,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "9",
+    "prevSeasonLease": null,
     "width": 2.75,
   },
   Object {
@@ -1435,6 +1476,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "9",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1470,6 +1512,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "9",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1505,6 +1548,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "9",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1540,6 +1584,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "9",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1575,6 +1620,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "10",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1610,6 +1656,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "10",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1645,6 +1692,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "10",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -1680,6 +1728,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "10",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1692,6 +1741,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "10",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1727,6 +1777,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "11",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1762,6 +1813,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "11",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1797,6 +1849,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "11",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1832,6 +1885,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "11",
+    "prevSeasonLease": null,
     "width": 2.75,
   },
   Object {
@@ -1867,6 +1921,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "11",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1902,6 +1957,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "12",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -1937,6 +1993,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "12",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -1972,6 +2029,7 @@ Array [
     "length": 6,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "12",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2007,6 +2065,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "12",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -2042,6 +2101,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "12",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2077,6 +2137,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "13",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2089,6 +2150,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "13",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2113,6 +2175,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "13",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2148,6 +2211,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "13",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2183,6 +2247,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "13",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2218,6 +2283,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "14",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2253,6 +2319,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "14",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2288,6 +2355,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "14",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -2323,6 +2391,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "14",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2358,6 +2427,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "14",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2393,6 +2463,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "15",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2428,6 +2499,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "15",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2463,6 +2535,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "15",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2498,6 +2571,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "15",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2533,6 +2607,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "15",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2545,6 +2620,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "16",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -2580,6 +2656,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "16",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2615,6 +2692,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "16",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2650,6 +2728,7 @@ Array [
     "length": 9,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "16",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2685,6 +2764,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "16",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2720,6 +2800,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "17",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2755,6 +2836,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "17",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -2790,6 +2872,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "17",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2825,6 +2908,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "17",
+    "prevSeasonLease": null,
     "width": 2.75,
   },
   Object {
@@ -2860,6 +2944,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "18",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2895,6 +2980,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "18",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -2930,6 +3016,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "18",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -2965,6 +3052,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "18",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3000,6 +3088,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "19",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3035,6 +3124,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "19",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3070,6 +3160,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "19",
+    "prevSeasonLease": null,
     "width": 2.75,
   },
   Object {
@@ -3105,6 +3196,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "19",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3140,6 +3232,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "20",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3175,6 +3268,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "20",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3210,6 +3304,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "20",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3245,6 +3340,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "20",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3280,6 +3376,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "21",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3315,6 +3412,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "21",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3350,6 +3448,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "21",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3385,6 +3484,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "21",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3420,6 +3520,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "22",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3455,6 +3556,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "22",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3490,6 +3592,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "22",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3525,6 +3628,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "22",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3560,6 +3664,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "23",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3595,6 +3700,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "23",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3630,6 +3736,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "23",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3665,6 +3772,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "23",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3700,6 +3808,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "24",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3735,6 +3844,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "24",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3770,6 +3880,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "24",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3805,6 +3916,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "24",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3840,6 +3952,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "25",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3875,6 +3988,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "25",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -3910,6 +4024,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "25",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3922,6 +4037,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "25",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -3957,6 +4073,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "26",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -3992,6 +4109,7 @@ Array [
     "length": 17,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "26",
+    "prevSeasonLease": null,
     "width": 4,
   },
   Object {
@@ -4027,6 +4145,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "26",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4062,6 +4181,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "26",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -4097,6 +4217,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "27",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4132,6 +4253,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "27",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -4167,6 +4289,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "27",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4202,6 +4325,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "27",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4237,6 +4361,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "28",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4272,6 +4397,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "28",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4307,6 +4433,7 @@ Array [
     "length": 17,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "28",
+    "prevSeasonLease": null,
     "width": 4,
   },
   Object {
@@ -4342,6 +4469,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "28",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -4377,6 +4505,7 @@ Array [
     "length": 12,
     "mooringType": "STERN_BUOY_PLACE",
     "number": "29",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -4412,6 +4541,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "29",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4447,6 +4577,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "29",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4482,6 +4613,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "30",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4517,6 +4649,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "30",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4552,6 +4685,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "31",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4587,6 +4721,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "31",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4622,6 +4757,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "32",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4657,6 +4793,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "32",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4692,6 +4829,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "33",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4727,6 +4865,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "33",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4762,6 +4901,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "34",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4797,6 +4937,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "34",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4832,6 +4973,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "35",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4867,6 +5009,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "35",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4902,6 +5045,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "36",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4937,6 +5081,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "36",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4972,6 +5117,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "37",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -4984,6 +5130,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "38",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -4996,6 +5143,7 @@ Array [
     "length": 5,
     "mooringType": "SINGLE_SLIP_PLACE",
     "number": "39",
+    "prevSeasonLease": null,
     "width": 2.5,
   },
   Object {
@@ -5031,6 +5179,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "40",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5043,6 +5192,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "41",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5078,6 +5228,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "42",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5113,6 +5264,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "43",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5148,6 +5300,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "44",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5183,6 +5336,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "45",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5218,6 +5372,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "46",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5253,6 +5408,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "47",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5288,6 +5444,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "48",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5323,6 +5480,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "49",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5358,6 +5516,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "50",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5393,6 +5552,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "51",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5428,6 +5588,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "52",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5463,6 +5624,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "53",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5498,6 +5660,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "54",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5533,6 +5696,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "55",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5568,6 +5732,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "56",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5603,6 +5768,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "57",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5638,6 +5804,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "58",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5673,6 +5840,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "59",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5708,6 +5876,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "60",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5743,6 +5912,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "61",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5778,6 +5948,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "62",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5813,6 +5984,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "63",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -5848,6 +6020,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "64",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -5883,6 +6056,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "65",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -5918,6 +6092,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "66",
+    "prevSeasonLease": null,
     "width": 4,
   },
   Object {
@@ -5942,6 +6117,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "67",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -5977,6 +6153,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "68",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6012,6 +6189,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "69",
+    "prevSeasonLease": null,
     "width": 3.5,
   },
   Object {
@@ -6024,6 +6202,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "70",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6059,6 +6238,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "71",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6094,6 +6274,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "72",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6129,6 +6310,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "73",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6141,6 +6323,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "74",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6176,6 +6359,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "75",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6211,6 +6395,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "76",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6246,6 +6431,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "77",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6281,6 +6467,7 @@ Array [
     "length": 8,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "78",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6316,6 +6503,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "79",
+    "prevSeasonLease": null,
     "width": 3,
   },
   Object {
@@ -6351,6 +6539,7 @@ Array [
     "length": 9,
     "mooringType": "SIDE_SLIP_PLACE",
     "number": "81",
+    "prevSeasonLease": null,
     "width": 3,
   },
 ]

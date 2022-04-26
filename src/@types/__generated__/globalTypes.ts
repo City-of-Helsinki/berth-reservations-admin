@@ -505,11 +505,6 @@ export interface SetStickersPostedMutationInput {
   clientMutationId?: string | null;
 }
 
-export interface SubscriptionInputType {
-  subscriptionTypeId: string;
-  enabled: boolean;
-}
-
 export interface SwitchBerthMutationInput {
   oldLeaseId: string;
   newBerthId: string;
@@ -720,7 +715,6 @@ export interface UpdateProfileInput {
   addEmails?: (CreateEmailInput | null)[] | null;
   addPhones?: (CreatePhoneInput | null)[] | null;
   addAddresses?: (CreateAddressInput | null)[] | null;
-  subscriptions?: (SubscriptionInputType | null)[] | null;
   sensitivedata?: SensitiveDataFields | null;
   id: string;
   updateEmails?: (UpdateEmailInput | null)[] | null;
