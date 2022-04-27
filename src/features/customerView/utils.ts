@@ -34,6 +34,7 @@ export const getCustomerProfile = (
       language: profile.language,
       customerGroup: profile.customerGroup,
       comment: profile.comment,
+      invoicingType: profile.invoicingType || undefined,
     },
     ...(profile.organization && {
       organization: profile.organization,

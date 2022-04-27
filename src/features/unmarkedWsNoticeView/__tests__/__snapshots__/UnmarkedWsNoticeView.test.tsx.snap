@@ -759,6 +759,18 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
               Suomi
             </span>
           </div>
+          <div
+            class="labelValuePair"
+          >
+            <span
+              class="label standard"
+            />
+            <span
+              class="value left"
+            >
+              Laskutus sähköisenä
+            </span>
+          </div>
         </section>
       </article>
       <article
