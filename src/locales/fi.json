@@ -318,7 +318,8 @@
       "city": "Toimipaikka",
       "phone": "Puhelinnumero",
       "email": "Sähköpostiosoite",
-      "comment": "Huomiot"
+      "comment": "Huomiot",
+      "selectInvoicingTypePaperInvoice": "Laskutus paperisena"
     },
     "additionalServices": {
       "title": "Lisäpalvelu",

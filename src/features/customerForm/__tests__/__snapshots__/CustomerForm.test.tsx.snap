@@ -343,6 +343,23 @@ Array [
       </div>
     </div>
     <div
+      class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz"
+    >
+      <input
+        class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+        id="invoicingType"
+        name="invoicingType"
+        type="checkbox"
+        value="PAPER_INVOICE"
+      />
+      <label
+        class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+        for="invoicingType"
+      >
+        Laskutus paperisena
+      </label>
+    </div>
+    <div
       class="formActionButtons"
     >
       <button
@@ -655,6 +672,23 @@ Array [
           id="comment"
         />
       </div>
+    </div>
+    <div
+      class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz"
+    >
+      <input
+        class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+        id="invoicingType"
+        name="invoicingType"
+        type="checkbox"
+        value="PAPER_INVOICE"
+      />
+      <label
+        class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+        for="invoicingType"
+      >
+        Laskutus paperisena
+      </label>
     </div>
     <div
       class="formActionButtons"
