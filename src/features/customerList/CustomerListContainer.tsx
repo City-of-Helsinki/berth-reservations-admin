@@ -20,6 +20,7 @@ import useListTableFilters from './customerListTableFilters/useListTableFilters'
 import { ALL_CUSTOMERS, ALL_CUSTOMERSVariables as ALL_CUSTOMERS_VARS } from './__generated__/ALL_CUSTOMERS';
 import useCustomersQuery from './useCustomersQuery';
 import { createIntervalWithSilentError, createDate } from './customerListTableFilters/utils';
+import { InvoicingType } from '../../@types/__generated__/globalTypes';
 
 export enum SearchBy {
   FIRST_NAME = 'firstName',
@@ -28,6 +29,7 @@ export enum SearchBy {
   ADDRESS = 'address',
   STICKER_NUMBER = 'stickerNumber',
   BOAT_REGISTRATION_NUMBER = 'boatRegistrationNumber',
+  INVOICING_TYPE = 'invoicingType',
 }
 
 const searchByAtom = atom<SearchBy>({
@@ -159,6 +161,14 @@ const CustomerListContainer = () => {
           { value: SearchBy.ADDRESS, label: t('common.address') },
           { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
           { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
+          {
+            value: SearchBy.INVOICING_TYPE,
+            label: t('common.terminology.invoicingType'),
+            options: [InvoicingType.ONLINE_PAYMENT, InvoicingType.PAPER_INVOICE].map((type) => ({
+              label: t(`common.invoicingTypes.${type}`),
+              value: type,
+            })),
+          },
         ],
       }}
     />

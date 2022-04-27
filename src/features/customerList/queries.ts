@@ -108,6 +108,7 @@ export const CUSTOMERS_QUERY = gql`
     $apiToken: String
     $startDate: Date
     $endDate: Date
+    $invoicingType: InvoicingType
   ) {
     berthProfiles(
       first: $first
@@ -132,6 +133,7 @@ export const CUSTOMERS_QUERY = gql`
       apiToken: $apiToken
       leaseStart: $startDate
       leaseEnd: $endDate
+      invoicingTypes: [$invoicingType]
     ) {
       count
       edges {
