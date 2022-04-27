@@ -1,6 +1,6 @@
 import { PureQueryOptions } from 'apollo-client';
 
-import { CustomerGroup } from '../../@types/__generated__/globalTypes';
+import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 
 export interface FormProps<T> {
   initialValues?: T;
@@ -33,4 +33,5 @@ export type CustomerFormValues = {
   businessId: string;
   phone: string;
   postalCode: string;
+  invoicingType?: InvoicingType | null;
 };

@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { TFunction } from 'i18next';
-import { TextArea, TextInput } from 'hds-react';
+import { TextArea, TextInput, Checkbox } from 'hds-react';
 
 import { CustomerFormValues, FormProps } from './types';
-import { CustomerGroup } from '../../@types/__generated__/globalTypes';
+import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 import Select from '../../common/select/Select';
 import styles from './customerForm.module.scss';
 import Button from '../../common/button/Button';
@@ -72,7 +72,7 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
         validationSchema={validationSchema}
         validateOnChange={false}
       >
-        {({ errors, handleChange, values, validateForm }) => (
+        {({ errors, handleChange, values, validateForm, setFieldValue }) => (
           <Form className={styles.form}>
             <Select
               id="customerGroup"
@@ -114,6 +114,18 @@ const CustomerForm = ({ initialValues, isSubmitting, onSubmit, onCancel }: Custo
               onChange={handleChange}
               invalid={!!errors.comment}
               helperText={errors.comment}
+            />
+            <Checkbox
+              id="invoicingType"
+              name="invoicingType"
+              label={t('forms.customer.selectInvoicingTypePaperInvoice')}
+              value={InvoicingType.PAPER_INVOICE}
+              onChange={(e) => {
+                const nextFieldValue = e.target.checked ? InvoicingType.PAPER_INVOICE : InvoicingType.ONLINE_PAYMENT;
+
+                setFieldValue(e.target.name, nextFieldValue);
+              }}
+              checked={values.invoicingType === InvoicingType.PAPER_INVOICE}
             />
 
             <div className={styles.formActionButtons}>

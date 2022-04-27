@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomerGroup, Language } from "./../../../@types/__generated__/globalTypes";
+import { CustomerGroup, InvoicingType, Language } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: CUSTOMER_FORM
@@ -46,6 +46,7 @@ export interface CUSTOMER_FORM_profile {
   firstName: string;
   lastName: string;
   customerGroup: CustomerGroup | null;
+  invoicingType: InvoicingType | null;
   organization: CUSTOMER_FORM_profile_organization | null;
   primaryAddress: CUSTOMER_FORM_profile_primaryAddress | null;
   primaryEmail: CUSTOMER_FORM_profile_primaryEmail | null;

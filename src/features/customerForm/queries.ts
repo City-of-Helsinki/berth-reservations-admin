@@ -8,6 +8,7 @@ export const CUSTOMER_FORM_QUERY = gql`
       firstName
       lastName
       customerGroup
+      invoicingType
       organization {
         id
         address

@@ -29,6 +29,7 @@ export const getCustomerFormValues = (profile: PROFILE): CustomerFormValues => {
     primaryAddress,
     primaryEmail,
     primaryPhone,
+    invoicingType,
   } = profile;
 
   const common = {
@@ -37,6 +38,7 @@ export const getCustomerFormValues = (profile: PROFILE): CustomerFormValues => {
     firstName,
     lastName,
     phone: primaryPhone?.phone || '',
+    invoicingType,
   };
 
   if (customerGroup === null || customerGroup === CustomerGroup.PRIVATE) {
@@ -266,7 +268,7 @@ export const createUpdateInputs = (
   values: CustomerFormValues,
   identifiers: CustomerFormIdentifiers
 ): [UpdateProfileMutationInput, UpdateBerthServicesProfileMutationInput] => {
-  const { comment, email, firstName, lastName, phone } = values;
+  const { comment, email, firstName, lastName, phone, invoicingType } = values;
   const { id, primaryEmailId, primaryPhoneId } = identifiers;
 
   const emailProperties = createEmailProperties(email, primaryEmailId);
@@ -288,6 +290,7 @@ export const createUpdateInputs = (
     {
       comment,
       id,
+      invoicingType,
       ...organizationProperties,
     },
   ];

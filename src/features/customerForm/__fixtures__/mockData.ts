@@ -1,5 +1,5 @@
 import { CUSTOMER_FORM_profile as PROFILE } from '../__generated__/CUSTOMER_FORM';
-import { CustomerGroup, Language } from '../../../@types/__generated__/globalTypes';
+import { CustomerGroup, InvoicingType, Language } from '../../../@types/__generated__/globalTypes';
 import { CustomerFormIdentifiers, CustomerFormValues } from '../types';
 
 export const mockPrivateCustomerProfile: PROFILE = {
@@ -11,6 +11,7 @@ export const mockPrivateCustomerProfile: PROFILE = {
   language: Language.FINNISH,
   lastName: 'Ryti',
   organization: null,
+  invoicingType: InvoicingType.ONLINE_PAYMENT,
   primaryAddress: {
     __typename: 'AddressNode',
     address: 'Mariankatu 2',
@@ -38,6 +39,7 @@ export const mockOrganizationCustomerProfile: PROFILE = {
   id: 'MOCK-PROFILE',
   language: Language.FINNISH,
   lastName: 'Kallio',
+  invoicingType: InvoicingType.ONLINE_PAYMENT,
   organization: {
     __typename: 'OrganizationNode',
     address: 'Mariankatu 2',
