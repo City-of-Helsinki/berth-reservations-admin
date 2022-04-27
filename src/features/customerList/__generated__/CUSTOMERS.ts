@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CustomerGroup, LeaseStatus, ServiceType, ContactMethod } from "./../../../@types/__generated__/globalTypes";
+import { CustomerGroup, LeaseStatus, InvoicingType, ServiceType, ContactMethod } from "./../../../@types/__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: CUSTOMERS
@@ -196,4 +196,5 @@ export interface CUSTOMERSVariables {
   apiToken?: string | null;
   startDate?: any | null;
   endDate?: any | null;
+  invoicingType?: InvoicingType | null;
 }

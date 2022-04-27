@@ -11,6 +11,7 @@
 
 import { useQuery } from '@apollo/react-hooks';
 
+import { InvoicingType } from '../../@types/__generated__/globalTypes';
 import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
 import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
 import {
@@ -40,6 +41,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   address?: string;
   stickerNumber?: string;
   boatRegistrationNumber?: string;
+  invoicingType?: InvoicingType;
 };
 
 export default function useCustomersQuery({

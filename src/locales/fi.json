@@ -130,6 +130,7 @@
       "inQueue": "Jonossa",
       "invoice": "Lasku",
       "invoices": "Laskut",
+      "invoicingType": "Laskutustyyppi",
       "length": "Pituus",
       "lighting": "Valaistus",
       "maintenanceDetails": "Huoltotiedot",

@@ -11,11 +11,16 @@ import Button from '../../../common/button/Button';
 import CustomerMessageFormContainer from '../../customerMessageForm/CustomerMessageFormContainer';
 import AddCustomerFormContainer from '../../customerForm/AddCustomerFormContainer';
 
+type CustomerListTableToolsSearchByOptionOption = {
+  label: string;
+  value: string;
+};
+
 export interface CustomerListTableToolsProps<T> {
   className?: string;
   searchVal: string | undefined;
   searchBy: T;
-  searchByOptions: Array<{ value: T; label: string }>;
+  searchByOptions: Array<{ value: T; label: string; options?: CustomerListTableToolsSearchByOptionOption[] }>;
   selectedCustomerIds: string[];
   isExporting: boolean;
   handleCustomersExport: () => Promise<void>;
@@ -42,6 +47,7 @@ const CustomerListTableTools = <T extends string>({
   const [messageModalOpen, setMessageModalOpen] = useState<boolean>(false);
   const [addCustomerModalOpen, setAddCustomerModalOpen] = useState<boolean>(false);
   const selectedRowsCount = selectedCustomerIds.length;
+  const selectedSearchByOption = searchByOptions.find((option) => option.value === searchBy);
 
   return (
     <>
@@ -66,17 +72,39 @@ const CustomerListTableTools = <T extends string>({
         <div className={styles.tableToolsRight}>
           <Select
             className={styles.select}
-            onChange={(e) => setSearchBy(e.target.value as T)}
+            onChange={(e) => {
+              const nextSearchBy = e.target.value as T;
+              const option = searchByOptions.find((option) => option.value === nextSearchBy);
+              const firstOptionValue = option?.options?.[0]?.value;
+
+              if (firstOptionValue) {
+                // If the next search by options has options, select the value
+                // of the first option by default.
+                setSearchVal(firstOptionValue);
+              }
+
+              setSearchBy(nextSearchBy);
+            }}
             value={searchBy}
             options={searchByOptions}
             required
           />
-          <TextInput
-            className={styles.searchInput}
-            id="searchSimilarCustomers"
-            value={searchVal}
-            onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
-          />
+          {selectedSearchByOption?.options ? (
+            <Select
+              className={styles.select}
+              id="searchSimilarCustomers"
+              options={selectedSearchByOption?.options}
+              value={searchVal}
+              onChange={(e) => setSearchVal((e.target as HTMLSelectElement).value)}
+            />
+          ) : (
+            <TextInput
+              className={styles.searchInput}
+              id="searchSimilarCustomers"
+              value={searchVal}
+              onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
+            />
+          )}
         </div>
       </div>
 
