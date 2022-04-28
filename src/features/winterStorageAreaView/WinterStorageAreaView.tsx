@@ -15,12 +15,14 @@ interface WinterStorageAreaViewPageProps {
   winterStorageArea: WinterStorageArea;
   markedWinterStorage?: MarkedWinterStorage;
   unmarkedWinterStorage?: UnmarkedWinterStorage;
+  setEditingWinterStorageArea: (editingWinterStorageArea: boolean) => void;
 }
 
 const WinterStorageAreaView = ({
   winterStorageArea,
   markedWinterStorage,
   unmarkedWinterStorage,
+  setEditingWinterStorageArea,
 }: WinterStorageAreaViewPageProps) => {
   const { t } = useTranslation();
 
@@ -28,7 +30,11 @@ const WinterStorageAreaView = ({
     <PageContent>
       <PageTitle title={t('winterStorageAreaView.title')} />
       <div className={styles.grid}>
-        <WinterStorageAreaCard {...winterStorageArea} className={styles.fullWidth} />
+        <WinterStorageAreaCard
+          {...winterStorageArea}
+          className={styles.fullWidth}
+          editWinterStorageArea={() => setEditingWinterStorageArea(true)}
+        />
         <ContactInformationCard />
         <ActionHistoryCard />
         {markedWinterStorage && <WinterStoragePlaceTable {...markedWinterStorage} className={styles.fullWidth} />}

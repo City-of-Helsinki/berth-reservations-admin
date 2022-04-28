@@ -135,6 +135,7 @@ export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties {
 
 export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea {
   __typename: "WinterStorageAreaNode";
+  id: string;
   properties: INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties | null;
 }
 

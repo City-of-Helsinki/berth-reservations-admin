@@ -3,6 +3,7 @@ import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 export const mockData: INDIVIDUAL_WINTER_STORAGE_AREA = {
   winterStorageArea: {
+    id: 'V2ludGVyU3RvcmFnZUFyZWFOb2RlOjlkNTc3Yzk5LTYzZjMtNDIzNC04MTM4LWY3MGE0Zjg2ODRmMg',
     properties: {
       name: 'WS Area 1',
       zipCode: '00100',

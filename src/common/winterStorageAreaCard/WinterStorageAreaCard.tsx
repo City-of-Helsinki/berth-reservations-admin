@@ -19,6 +19,7 @@ import { formatAddress } from '../utils/format';
 
 interface WinterStorageAreaCardProps extends WinterStorageArea {
   className?: string;
+  editWinterStorageArea?: () => void;
 }
 
 const WinterStorageAreaCard = ({
@@ -37,12 +38,19 @@ const WinterStorageAreaCard = ({
     summerStorageForTrailers,
     water,
   },
+  editWinterStorageArea,
 }: WinterStorageAreaCardProps) => {
   const { t } = useTranslation();
 
   return (
     <Card className={classNames(className, styles.card)}>
-      <CardHeader title={t('winterStorageAreaCard.title')} />
+      <CardHeader title={t('winterStorageAreaCard.title')}>
+        {editWinterStorageArea && (
+          <button onClick={editWinterStorageArea}>
+            <Text weight="normalWeight">{t('common.edit')}</Text>
+          </button>
+        )}
+      </CardHeader>
       <CardBody>
         <div className={styles.cardBody}>
           <div className={styles.details}>
