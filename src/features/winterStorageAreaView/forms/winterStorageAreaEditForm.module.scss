@@ -1,0 +1,12 @@
+@import 'containers';
+@import 'spacings';
+
+.winterStorageAreaEditForm {
+  width: container(s);
+}
+
+.formActionButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: units(4);
+}

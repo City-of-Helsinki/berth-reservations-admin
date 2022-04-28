@@ -337,6 +337,15 @@
         "paragraph2": "Lähetetyn tarjouksen voi lähettää uudelleen ja perua.",
         "paragraph3": "Jos hakemukseen ei ole tarjottu venepaikkaa, asiakkaalle lähetetään ilmoitus paikatta jäämisestä."
       }
+    },
+    "winterStorage": {
+      "title": "Talvisäilytyspaikka",
+      "name": "Nimi",
+      "streetAddress": "Osoite",
+      "zipCode": "Postinumero",
+      "municipality": "Postitoimipaikka",
+      "wwwUrl": "WWW-osoite",
+      "imageFile": "Talvisäilytyspaikan kuva"
     }
   },
   "harborList": {

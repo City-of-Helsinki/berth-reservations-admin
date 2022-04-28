@@ -766,6 +766,27 @@ export interface UpdateWinterStorageApplicationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateWinterStorageAreaMutationInput {
+  servicemapId?: string | null;
+  zipCode?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  wwwUrl?: string | null;
+  location?: any | null;
+  imageLink?: string | null;
+  municipalityId?: string | null;
+  addMapFiles?: (any | null)[] | null;
+  availabilityLevelId?: string | null;
+  name?: string | null;
+  streetAddress?: string | null;
+  estimatedNumberOfSectionSpaces?: number | null;
+  maxLengthOfSectionSpaces?: any | null;
+  estimatedNumberOfUnmarkedSpaces?: number | null;
+  id: string;
+  removeMapFiles?: (string | null)[] | null;
+  clientMutationId?: string | null;
+}
+
 export interface UpdateWinterStorageProductMutationInput {
   id: string;
   priceValue?: any | null;
