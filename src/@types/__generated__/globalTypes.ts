@@ -92,7 +92,6 @@ export enum EmailType {
 }
 
 export enum InvoicingType {
-  DIGITAL_INVOICE = "DIGITAL_INVOICE",
   ONLINE_PAYMENT = "ONLINE_PAYMENT",
   PAPER_INVOICE = "PAPER_INVOICE",
 }
@@ -295,9 +294,9 @@ export interface CreateBerthMutationInput {
   comment?: string | null;
   isAccessible?: boolean | null;
   isInvoiceable?: boolean | null;
-  width: number;
-  length: number;
-  depth?: number | null;
+  width: any;
+  length: any;
+  depth?: any | null;
   mooringType: BerthMooringType;
   clientMutationId?: string | null;
 }
@@ -383,9 +382,32 @@ export interface CreateWinterStorageLeaseMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface CreateWinterStoragePlaceMutationInput {
+  isActive?: boolean | null;
+  number: string;
+  winterStorageSectionId: string;
+  comment?: string | null;
+  width: any;
+  length?: any | null;
+  clientMutationId?: string | null;
+}
+
 export interface CreateWinterStorageProductMutationInput {
   priceValue: any;
   winterStorageAreaId?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface CreateWinterStorageSectionMutationInput {
+  identifier?: string | null;
+  location?: any | null;
+  electricity?: boolean | null;
+  water?: boolean | null;
+  gate?: boolean | null;
+  areaId: string;
+  summerStorageForDockingEquipment?: boolean | null;
+  summerStorageForTrailers?: boolean | null;
+  summerStorageForBoats?: boolean | null;
   clientMutationId?: string | null;
 }
 
@@ -435,6 +457,16 @@ export interface DeleteWinterStorageApplicationMutationInput {
 }
 
 export interface DeleteWinterStorageLeaseMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
+export interface DeleteWinterStoragePlaceMutationInput {
+  id: string;
+  clientMutationId?: string | null;
+}
+
+export interface DeleteWinterStorageSectionMutationInput {
   id: string;
   clientMutationId?: string | null;
 }
@@ -594,9 +626,9 @@ export interface UpdateBerthMutationInput {
   comment?: string | null;
   isAccessible?: boolean | null;
   isInvoiceable?: boolean | null;
-  width?: number | null;
-  length?: number | null;
-  depth?: number | null;
+  width?: any | null;
+  length?: any | null;
+  depth?: any | null;
   mooringType?: BerthMooringType | null;
   id: string;
   clientMutationId?: string | null;
@@ -787,10 +819,35 @@ export interface UpdateWinterStorageAreaMutationInput {
   clientMutationId?: string | null;
 }
 
+export interface UpdateWinterStoragePlaceMutationInput {
+  isActive?: boolean | null;
+  number?: string | null;
+  winterStorageSectionId?: string | null;
+  comment?: string | null;
+  width?: any | null;
+  length?: any | null;
+  id: string;
+  clientMutationId?: string | null;
+}
+
 export interface UpdateWinterStorageProductMutationInput {
   id: string;
   priceValue?: any | null;
   winterStorageAreaId?: string | null;
+  clientMutationId?: string | null;
+}
+
+export interface UpdateWinterStorageSectionMutationInput {
+  identifier?: string | null;
+  location?: any | null;
+  electricity?: boolean | null;
+  water?: boolean | null;
+  gate?: boolean | null;
+  areaId?: string | null;
+  summerStorageForDockingEquipment?: boolean | null;
+  summerStorageForTrailers?: boolean | null;
+  summerStorageForBoats?: boolean | null;
+  id: string;
   clientMutationId?: string | null;
 }
 

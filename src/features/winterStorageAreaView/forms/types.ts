@@ -9,6 +9,25 @@ export type WinterStorageAreaForm = {
   zipCode: string;
 };
 
+export type Section = {
+  identifier?: string;
+  electricity?: boolean;
+  gate?: boolean;
+  water?: boolean;
+  summerStorageForBoats?: boolean;
+  summerStorageForDockingEquipment?: boolean;
+  summerStorageForTrailers?: boolean;
+};
+
+export type Place = {
+  number?: string;
+  isActive?: boolean;
+  width?: number;
+  length?: number;
+  winterStorageSection?: string;
+  winterStorageSectionId?: string;
+};
+
 export interface FormProps<T> {
   initialValues?: T;
   // Queries to refetch when mutations are run

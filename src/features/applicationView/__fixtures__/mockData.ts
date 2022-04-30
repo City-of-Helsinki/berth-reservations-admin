@@ -26,7 +26,7 @@ export const mockCustomer: CUSTOMER = {
   comment: 'Comment',
   firstName: 'Testi',
   id: 'MOCK-CUSTOMER',
-  invoicingType: InvoicingType.DIGITAL_INVOICE,
+  invoicingType: InvoicingType.ONLINE_PAYMENT,
   language: Language.FINNISH,
   lastName: 'Testinen',
   organization: null,

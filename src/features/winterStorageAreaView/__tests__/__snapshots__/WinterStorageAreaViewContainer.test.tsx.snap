@@ -392,21 +392,49 @@ exports[`WinterStorageAreaViewContainer renders correctly 1`] = `
       class="fullWidth"
     >
       <div
-        class="globalSearchTableTools"
+        class="container"
       >
         <div
-          class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField"
+          class="buttons"
+        >
+          <button
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 button"
+            type="button"
+          >
+            <span
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+            >
+              Lisää osasto
+            </span>
+          </button>
+          <button
+            class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0 button"
+            type="button"
+          >
+            <span
+              class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+            >
+              Lisää paikka
+            </span>
+          </button>
+        </div>
+        <div
+          class="globalSearchTableTools"
         >
           <div
-            class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+            class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq filterField"
           >
-            <input
-              class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
-              id="textSearchGlobalFilter"
-              placeholder="Haku"
-              type="text"
-              value=""
-            />
+            <div
+              class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+            >
+              <input
+                class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+                id="textSearchGlobalFilter"
+                placeholder="Haku"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </div>
       </div>

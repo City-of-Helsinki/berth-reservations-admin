@@ -127,7 +127,7 @@ export const mockCustomer: CUSTOMER = {
   customerGroup: CustomerGroup.PRIVATE,
   firstName: 'Hessu',
   id: '1',
-  invoicingType: InvoicingType.DIGITAL_INVOICE,
+  invoicingType: InvoicingType.ONLINE_PAYMENT,
   language: Language.FINNISH,
   lastName: 'Hopo',
   organization: null,

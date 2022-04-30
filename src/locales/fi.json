@@ -346,6 +346,36 @@
       "municipality": "Postitoimipaikka",
       "wwwUrl": "WWW-osoite",
       "imageFile": "Talvisäilytyspaikan kuva"
+    },
+    "winterStorageSection": {
+      "delete": "Poista osasto",
+      "title": "Osasto",
+      "identifier": "Osasto",
+      "services": "Palvelut",
+      "gate": "Portti",
+      "electricity": "Sähkö",
+      "water": "Vesi",
+      "summerStorageForBoats": "Veneiden kesäsäilytys",
+      "summerStorageForDockingEquipment": "Telakointi\u00ADtarvikkeiden kesäsäilytys",
+      "summerStorageForTrailers": "Trailerin kesäsäilytys",
+      "deleteConfirmation": {
+        "infoText": "Oletko varma että haluat poistaa osaston {{sectionIdentifier}}?",
+        "warningText": "Tämä poistaa koko osaston ja kaikki siinä olevat talvisäilytyspaikat. Tätä toimenpidettä ei voi perua."
+      }
+    },
+    "winterStoragePlace": {
+      "delete": "Poista talvisäilytypaikka",
+      "title": "Paikka",
+      "section": "Osasto",
+      "number": "Numero",
+      "width": "Leveys (m)",
+      "length": "Pituus (m)",
+      "comment": "Huomiot",
+      "isActive": "Paikka on käytössä",
+      "deleteConfirmation": {
+        "infoText": "Oletko varma että haluat poistaa talvisäilytyspaikan {{placeNumber}} osastosta {{section}}?",
+        "warningText": "Tätä toimenpidettä ei voi perua."
+      }
     }
   },
   "harborList": {
@@ -894,6 +924,10 @@
     },
     "place": {
       "inactive": "Ei käytössä"
+    },
+    "tableTools": {
+      "addSection": "Lisää osasto",
+      "addPlace": "Lisää paikka"
     }
   },
   "actionHistoryCard": {
