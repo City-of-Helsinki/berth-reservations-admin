@@ -13,9 +13,10 @@ import {
 
 export interface WinterStoragePlaceDetailsContainerProps {
   id: string;
+  onEdit?(): void;
 }
 
-const WinterStoragePlaceDetailsContainer = ({ id }: WinterStoragePlaceDetailsContainerProps) => {
+const WinterStoragePlaceDetailsContainer = ({ id, onEdit }: WinterStoragePlaceDetailsContainerProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<WINTER_STORAGE_PLACE_DETAILS, WINTER_STORAGE_PLACE_DETAILS_VARS>(
     WINTER_STORAGE_PLACE_DETAILS_QUERY,
@@ -31,7 +32,7 @@ const WinterStoragePlaceDetailsContainer = ({ id }: WinterStoragePlaceDetailsCon
 
   const leases = getPlaceLeases(data.winterStoragePlace.leases);
 
-  return <WinterStoragePlaceDetails leases={leases} />;
+  return <WinterStoragePlaceDetails leases={leases} onEdit={onEdit} />;
 };
 
 export default WinterStoragePlaceDetailsContainer;

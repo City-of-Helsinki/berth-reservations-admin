@@ -7,10 +7,10 @@ import Table, { Column } from '../../common/table/Table';
 import StatusLabel from '../../common/statusLabel/StatusLabel';
 import SelectHeader from '../../common/selectHeader/SelectHeader';
 import Pagination from '../../common/pagination/Pagination';
-import GlobalSearchTableTools from '../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import { formatDimension } from '../../common/utils/format';
 import CustomerName from '../harborView/customerName/CustomerName';
 import WinterStoragePlaceDetailsContainer from '../winterStoragePlaceDetails/WinterStoragePlaceDetailsContainer';
+import WinterStoragePlaceTableTools from './winterStoragePlaceTableTools/WinterStoragePlaceTableTools';
 
 type ColumnType = Column<WinterStoragePlace>;
 
@@ -18,9 +18,21 @@ interface WinterStorageAreaViewTableProps {
   places: WinterStoragePlace[];
   sections: WinterStorageSection[];
   className?: string;
+  onAddSection(): void;
+  onAddPlace(): void;
+  onEditSection(section: WinterStorageSection): void;
+  onEditPlace(place: WinterStoragePlace): void;
 }
 
-const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageAreaViewTableProps) => {
+const WinterStoragePlaceTable = ({
+  places,
+  sections,
+  className,
+  onAddSection,
+  onAddPlace,
+  onEditSection,
+  onEditPlace,
+}: WinterStorageAreaViewTableProps) => {
   const { t, i18n } = useTranslation();
   const columns: ColumnType[] = [
     {
@@ -72,7 +84,14 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
       data={places}
       columns={columns}
       canSelectRows
-      renderTableToolsTop={(_, setters) => <GlobalSearchTableTools handleGlobalFilter={setters.setGlobalFilter} />}
+      renderTableToolsTop={(_, setters) => (
+        <WinterStoragePlaceTableTools
+          onAddSection={onAddSection}
+          onAddPlace={onAddPlace}
+          handleGlobalFilter={setters.setGlobalFilter}
+          canAddPlace={sections.length > 0}
+        />
+      )}
       renderMainHeader={(props) => {
         const sectionFilters = props.state.filters.filter((filter) => filter.id === 'identifier');
         const selectedSection = sections.find(({ identifier }) =>
@@ -80,7 +99,6 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
         );
 
         if (sectionFilters.length && selectedSection === undefined) props.setFilter('identifier', undefined);
-
         return (
           <SelectHeader
             title={t('winterStorageAreaView.markedPlaces').toUpperCase()}
@@ -91,11 +109,14 @@ const WinterStoragePlaceTable = ({ places, sections, className }: WinterStorageA
             formatter={(section) => `${t('winterStorageAreaView.tableHeaders.identifier')} ${section.identifier}`}
             equals={(a, b) => a.identifier === b.identifier}
             onSelect={(section) => props.setFilter('identifier', section?.identifier)}
+            onEdit={onEditSection}
           />
         );
       }}
       styleMainHeader={false}
-      renderSubComponent={(row) => <WinterStoragePlaceDetailsContainer id={row.original.id} />}
+      renderSubComponent={(row) => (
+        <WinterStoragePlaceDetailsContainer id={row.original.id} onEdit={() => onEditPlace(row.original)} />
+      )}
       renderPaginator={({ pageIndex, pageCount, goToPage }) => (
         <Pagination
           pageIndex={pageIndex}

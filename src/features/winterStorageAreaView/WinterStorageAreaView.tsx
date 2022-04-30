@@ -16,6 +16,10 @@ interface WinterStorageAreaViewPageProps {
   markedWinterStorage?: MarkedWinterStorage;
   unmarkedWinterStorage?: UnmarkedWinterStorage;
   setEditingWinterStorageArea: (editingWinterStorageArea: boolean) => void;
+  setSectionToEdit: (sectionToEdit: string | null) => void;
+  setCreatingSection: (creatingSection: boolean) => void;
+  setCreatingPlace: (creatingPlace: boolean) => void;
+  setPlaceToEdit: (placeToEdit: string | null) => void;
 }
 
 const WinterStorageAreaView = ({
@@ -23,6 +27,10 @@ const WinterStorageAreaView = ({
   markedWinterStorage,
   unmarkedWinterStorage,
   setEditingWinterStorageArea,
+  setCreatingSection,
+  setSectionToEdit,
+  setCreatingPlace,
+  setPlaceToEdit,
 }: WinterStorageAreaViewPageProps) => {
   const { t } = useTranslation();
 
@@ -37,7 +45,16 @@ const WinterStorageAreaView = ({
         />
         <ContactInformationCard />
         <ActionHistoryCard />
-        {markedWinterStorage && <WinterStoragePlaceTable {...markedWinterStorage} className={styles.fullWidth} />}
+        {markedWinterStorage && (
+          <WinterStoragePlaceTable
+            {...markedWinterStorage}
+            className={styles.fullWidth}
+            onAddSection={() => setCreatingSection(true)}
+            onAddPlace={() => setCreatingPlace(true)}
+            onEditSection={(section) => setSectionToEdit(section.id)}
+            onEditPlace={(place) => setPlaceToEdit(place.id)}
+          />
+        )}
         {unmarkedWinterStorage && (
           <UnmarkedWinterStorageLeaseTable {...unmarkedWinterStorage} className={styles.fullWidth} />
         )}

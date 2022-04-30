@@ -152,7 +152,7 @@ export const getWinterStorageSections = (
     if (unmarked ? !isUnmarkedSection(sectionEdge.node) : isUnmarkedSection(sectionEdge.node)) {
       return acc;
     }
-    return [...acc, { identifier: sectionEdge.node.properties.identifier }];
+    return [...acc, { id: sectionEdge.node.id, identifier: sectionEdge.node.properties.identifier }];
   }, []);
 };
 

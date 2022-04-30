@@ -1,5 +1,6 @@
-import { WinterStorageAreaForm } from '../types';
+import { Place, WinterStorageAreaForm } from '../types';
 import { WINTER_STORAGE_AREA_FORM } from '../__generated__/WINTER_STORAGE_AREA_FORM';
+import { INDIVIDUAL_PLACE } from '../placeForm/__generated__/INDIVIDUAL_PLACE';
 
 export const getWinterStorageAreaForm = (
   winterStorageAreaData: WINTER_STORAGE_AREA_FORM | undefined
@@ -24,6 +25,19 @@ export const getWinterStorageAreaForm = (
     municipality: municipality || '',
     wwwUrl,
     imageFile: imageFile || '',
+  };
+};
+
+export const getWinterStoragePlace = (placeData: INDIVIDUAL_PLACE | undefined): Place | undefined => {
+  if (!placeData || !placeData.winterStoragePlace) return undefined;
+  const { number, isActive, width, length } = placeData.winterStoragePlace;
+  return {
+    number: String(number),
+    isActive,
+    width,
+    length,
+    winterStorageSectionId: placeData.winterStoragePlace.winterStorageSection.id,
+    winterStorageSection: placeData.winterStoragePlace.winterStorageSection.properties?.identifier,
   };
 };
 

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`features/winterStorageAreaView/SectionForm renders correctly 1`] = `
+<form
+  class="form"
+>
+  <div
+    class="heading"
+  >
+    <h4
+      class="text brand h4"
+    >
+      Osasto
+    </h4>
+  </div>
+  <div
+    class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+  >
+    <label
+      class="FieldLabel-module_label__1zrXK "
+      for="identifier"
+    >
+      Osasto
+    </label>
+    <div
+      class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+    >
+      <input
+        class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+        id="identifier"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="grid cols2"
+  >
+    <div
+      class="checkboxes"
+    >
+      <span
+        class="text standard span s bold"
+      >
+        Palvelut
+      </span>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="gate"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="gate"
+        >
+          Portti
+        </label>
+      </div>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="electricity"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="electricity"
+        >
+          Sähkö
+        </label>
+      </div>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="water"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="water"
+        >
+          Vesi
+        </label>
+      </div>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="summerStorageForBoats"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="summerStorageForBoats"
+        >
+          Veneiden kesäsäilytys
+        </label>
+      </div>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="summerStorageForDockingEquipment"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="summerStorageForDockingEquipment"
+        >
+          Telakointi­tarvikkeiden kesäsäilytys
+        </label>
+      </div>
+      <div
+        class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
+      >
+        <input
+          class="Checkbox-module_input__3VZvy checkbox_hds-checkbox__input__1w0pu"
+          id="summerStorageForTrailers"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox-module_label__L5AN1 checkbox_hds-checkbox__label__3HoD3"
+          for="summerStorageForTrailers"
+        >
+          Trailerin kesäsäilytys
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="formActionButtons"
+  >
+    <button
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_secondary__1nABp button_hds-button--secondary__1NOWS Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+      type="button"
+    >
+      <span
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+      >
+        Peruuta
+      </span>
+    </button>
+    <button
+      class="Button-module_button__1msFE button_hds-button__2A0je Button-module_primary__2LfKB button_hds-button--primary__2NVvO Button-module_theme-coat__2_3U7 button_hds-button--theme-coat__12cO0"
+      type="submit"
+    >
+      <span
+        class="Button-module_label__a4np1 button_hds-button__label__2EQa-"
+      >
+        Luo
+      </span>
+    </button>
+  </div>
+</form>
+`;

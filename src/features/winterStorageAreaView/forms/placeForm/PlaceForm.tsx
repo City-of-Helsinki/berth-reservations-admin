@@ -6,63 +6,57 @@ import { TFunction } from 'i18next';
 import { TextInput } from 'hds-react';
 import { ObjectSchema } from 'yup';
 
-import { Berth, FormProps } from '../types';
-import { BerthMooringType } from '../../../../@types/__generated__/globalTypes';
+import { Place, FormProps } from '../types';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';
-import styles from './berthForm.module.scss';
-import { Pier } from '../../types';
+import styles from './placeForm.module.scss';
+import { WinterStorageSection } from '../../types';
 import FormHeader from '../../../../common/formHeader/FormHeader';
 import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
 import { isNumber, isPositive, replaceCommaWithDot, replaceDotWithComma } from '../../../../common/utils/forms';
 import Checkbox from '../../../../common/checkbox/Checkbox';
 import Button from '../../../../common/button/Button';
 
-interface BerthFormProps extends FormProps<Berth> {
+interface PlaceFormProps extends FormProps<Place> {
   isEditing?: boolean;
   onSubmitText?: string;
-  pierOptions: Pier[];
+  sectionOptions: WinterStorageSection[];
 }
 
-interface BerthFormValues extends Omit<Berth, 'width' | 'length' | 'depth'> {
+interface PlaceFormValues extends Omit<Place, 'width' | 'length'> {
   width?: string;
   length?: string;
-  depth?: string;
 }
 
-const getBerthValidationSchema = (t: TFunction, pierOptions: Pier[]): ObjectSchema => {
+const getPlaceValidationSchema = (t: TFunction, sectionOptions: WinterStorageSection[]): ObjectSchema => {
   return Yup.object().shape({
-    pierId: Yup.string()
-      .oneOf(pierOptions.map((pier) => pier.id))
+    winterStorageSectionId: Yup.string()
+      .oneOf(sectionOptions.map((section) => section.id))
       .required(t('forms.common.errors.required')),
-    number: Yup.string().required(t('forms.common.errors.required')),
-    width: Yup.string()
-      .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
-      .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val))
-      .required(t('forms.common.errors.required')),
-    length: Yup.string()
-      .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
-      .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val))
-      .required(t('forms.common.errors.required')),
-    depth: Yup.string()
+    number: Yup.string()
+      .required(t('forms.common.errors.required'))
       .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
       .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val)),
-    mooringType: Yup.string().oneOf(Object.keys(BerthMooringType)).required(t('forms.common.errors.required')),
+    width: Yup.string()
+      .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
+      .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val)),
+    length: Yup.string()
+      .test('isNumber', t('forms.common.errors.numberType'), (val) => isNumber(val))
+      .test('isPositive', t('forms.common.errors.positive'), (val) => isPositive(val)),
   });
 };
 
-const transformValues = (values: BerthFormValues): Berth => {
-  const { number, width, length, depth } = values;
+const transformValues = (values: PlaceFormValues): Place => {
+  const { winterStorageSectionId, number, width, length } = values;
   return {
-    ...values,
     number: number,
     width: width ? parseFloat(replaceCommaWithDot(width)) : undefined,
     length: length ? parseFloat(replaceCommaWithDot(length)) : undefined,
-    depth: depth ? parseFloat(replaceCommaWithDot(depth)) : undefined,
+    winterStorageSectionId: winterStorageSectionId,
   };
 };
 
-const BerthForm = ({
+const PlaceForm = ({
   isEditing = false,
   initialValues,
   isSubmitting,
@@ -70,23 +64,20 @@ const BerthForm = ({
   onCancel,
   onDelete,
   onSubmitText,
-  pierOptions,
-}: BerthFormProps) => {
+  sectionOptions,
+}: PlaceFormProps) => {
   const { t } = useTranslation();
-  const validationSchema = getBerthValidationSchema(t, pierOptions);
+  const validationSchema = getPlaceValidationSchema(t, sectionOptions);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-  const initial: BerthFormValues = initialValues
+  const initial: PlaceFormValues = initialValues
     ? {
         ...initialValues,
         width: initialValues.width ? replaceDotWithComma(String(initialValues.width)) : '',
         length: initialValues.length ? replaceDotWithComma(String(initialValues.length)) : '',
-        depth: initialValues.depth ? replaceDotWithComma(String(initialValues.depth)) : '',
       }
     : {
-        pierId: pierOptions[0].id,
-        mooringType: BerthMooringType.DINGHY_PLACE,
-        comment: '',
+        winterStorageSectionId: sectionOptions[0].id,
         isActive: true,
       };
 
@@ -101,23 +92,23 @@ const BerthForm = ({
       {({ values, errors, handleChange, handleSubmit }) => (
         <form onSubmit={handleSubmit} className={styles.form}>
           <FormHeader
-            title={t('forms.berth.title')}
+            title={t('forms.winterStoragePlace.title')}
             isSubmitting={isSubmitting}
             onDelete={onDelete ? () => setIsDeleteModalOpen(true) : undefined}
-            onDeleteText={t('forms.berth.delete')}
+            onDeleteText={t('forms.winterStoragePlace.delete')}
           />
           <Grid colsCount={3} className={styles.grid}>
             <Select
-              id="pierId"
-              value={values.pierId}
-              options={pierOptions.map((pier) => {
+              id="winterStorageSectionId"
+              value={values.winterStorageSectionId}
+              options={sectionOptions.map((section) => {
                 return {
-                  label: pier.identifier,
-                  value: pier.id,
+                  label: section.identifier,
+                  value: section.id,
                 };
               })}
               onChange={handleChange}
-              label={t('forms.berth.pier')}
+              label={t('forms.winterStoragePlace.section')}
               required
               disabled={isEditing}
             />
@@ -125,7 +116,7 @@ const BerthForm = ({
               id="number"
               value={values.number ? String(values.number) : ''}
               onChange={handleChange}
-              label={t('forms.berth.number')}
+              label={t('forms.winterStoragePlace.number')}
               invalid={!!errors.number}
               helperText={errors.number}
               disabled={isEditing}
@@ -135,7 +126,7 @@ const BerthForm = ({
               id="width"
               value={values.width ? String(values.width) : ''}
               onChange={handleChange}
-              label={t('forms.berth.width')}
+              label={t('forms.winterStoragePlace.width')}
               invalid={!!errors.width}
               helperText={errors.width}
             />
@@ -143,37 +134,18 @@ const BerthForm = ({
               id="length"
               value={values.length ? String(values.length) : ''}
               onChange={handleChange}
-              label={t('forms.berth.length')}
+              label={t('forms.winterStoragePlace.length')}
               invalid={!!errors.length}
               helperText={errors.length}
             />
-            <TextInput
-              id="depth"
-              onChange={handleChange}
-              value={values.depth ? String(values.number) : ''}
-              label={t('forms.berth.depth')}
-              invalid={!!errors.depth}
-              helperText={errors.depth}
-            />
           </Grid>
-
           <hr />
-
-          <Select
-            id="mooringType"
-            value={values.mooringType}
-            label={t('forms.berth.mooringType')}
-            options={Object.keys(BerthMooringType).map((mooringType) => {
-              return {
-                label: t([`common.mooringTypes.${mooringType}`, mooringType]),
-                value: mooringType,
-              };
-            })}
+          <Checkbox
+            id="isActive"
             onChange={handleChange}
-            required
+            checked={values.isActive}
+            label={t('forms.winterStoragePlace.isActive')}
           />
-          <TextInput id="comment" onChange={handleChange} value={values.comment} label={t('forms.berth.comment')} />
-          <Checkbox id="isActive" onChange={handleChange} checked={values.isActive} label={t('forms.berth.isActive')} />
           <div className={styles.formActionButtons}>
             <Button variant="secondary" disabled={isSubmitting} color={'supplementary'} onClick={onCancel}>
               {t('forms.common.cancel')}
@@ -185,14 +157,14 @@ const BerthForm = ({
 
           <ConfirmationModal
             isOpen={isDeleteModalOpen}
-            title={t('forms.berth.title')}
-            infoText={t('forms.berth.deleteConfirmation.infoText', {
-              pier: values.pier,
-              berthNumber: values.number,
+            title={t('forms.winterStoragePlace.title')}
+            infoText={t('forms.winterStoragePlace.deleteConfirmation.infoText', {
+              section: values.winterStorageSection,
+              placeNumber: values.number,
             })}
             onCancelText={t('forms.common.cancel')}
-            onConfirmText={t('forms.berth.delete')}
-            warningText={t('forms.berth.deleteConfirmation.warningText')}
+            onConfirmText={t('forms.winterStoragePlace.delete')}
+            warningText={t('forms.winterStoragePlace.deleteConfirmation.warningText')}
             onCancel={() => setIsDeleteModalOpen(false)}
             onConfirm={() => onDelete?.(transformValues(values))}
             className={styles.confirmationModal}
@@ -203,4 +175,4 @@ const BerthForm = ({
   );
 };
 
-export default BerthForm;
+export default PlaceForm;

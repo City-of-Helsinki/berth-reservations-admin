@@ -182,7 +182,7 @@ exports[`features/harborView/BerthEditForm renders content after loading 1`] = `
           class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
           id="depth"
           type="text"
-          value="1"
+          value="2"
         />
       </div>
     </div>

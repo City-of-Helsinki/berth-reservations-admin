@@ -40,6 +40,7 @@ export type WinterStoragePlace = {
 };
 
 export type WinterStorageSection = {
+  id: string;
   identifier: string;
 };
 

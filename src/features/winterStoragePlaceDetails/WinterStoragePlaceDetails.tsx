@@ -7,6 +7,7 @@ import InternalLink from '../../common/internalLink/InternalLink';
 import styles from './winterStoragePlaceDetails.module.scss';
 import Grid from '../../common/grid/Grid';
 import Section from '../../common/section/Section';
+import MaintenanceServicesPlaceholder from '../../common/maintenancePlaceholders/MaintenanceServicesPlaceholder';
 
 export interface Lease {
   customer: {
@@ -22,9 +23,10 @@ export interface Lease {
 
 export interface WinterStoragePlaceDetailsProps {
   leases: Lease[];
+  onEdit?(): void;
 }
 
-const WinterStoragePlaceDetails = ({ leases }: WinterStoragePlaceDetailsProps) => {
+const WinterStoragePlaceDetails = ({ leases, onEdit }: WinterStoragePlaceDetailsProps) => {
   const { t, i18n } = useTranslation();
 
   const expiredLeasesElements = leases
@@ -48,6 +50,7 @@ const WinterStoragePlaceDetails = ({ leases }: WinterStoragePlaceDetailsProps) =
         <Section title={t('offer.previousLeases').toUpperCase()}>
           {expiredLeasesElements.length ? expiredLeasesElements : '-'}
         </Section>
+        <MaintenanceServicesPlaceholder onClick={onEdit} buttonText={t('common.edit')} />
       </Grid>
     </div>
   );

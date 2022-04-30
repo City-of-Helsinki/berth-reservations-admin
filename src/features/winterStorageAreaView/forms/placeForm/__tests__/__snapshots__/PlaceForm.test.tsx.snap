@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`features/harborView/BerthForm renders correctly 1`] = `
+exports[`features/winterStorageAreaView/PlaceForm renders correctly 1`] = `
 <form
   class="form"
 >
@@ -10,7 +10,7 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
     <h4
       class="text brand h4"
     >
-      Venepaikka
+      Paikka
     </h4>
   </div>
   <div
@@ -21,10 +21,10 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
     >
       <label
         class="FieldLabel-module_label__1zrXK "
-        for="pierId-toggle-button"
-        id="pierId-label"
+        for="winterStorageSectionId-toggle-button"
+        id="winterStorageSectionId-label"
       >
-        Laituri
+        Osasto
         <span
           class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
         >
@@ -37,10 +37,10 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="pierId-label pierId-toggle-button"
-          aria-owns="pierId-menu"
+          aria-labelledby="winterStorageSectionId-label winterStorageSectionId-toggle-button"
+          aria-owns="winterStorageSectionId-menu"
           class="Select-module_button__1aIsm"
-          id="pierId-toggle-button"
+          id="winterStorageSectionId-toggle-button"
           type="button"
         >
           <span
@@ -70,10 +70,10 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
           </svg>
         </button>
         <ul
-          aria-labelledby="pierId-label"
+          aria-labelledby="winterStorageSectionId-label"
           aria-required="true"
           class="Select-module_menu__1H2aU"
-          id="pierId-menu"
+          id="winterStorageSectionId-menu"
           role="listbox"
           style="max-height: 260px;"
           tabindex="-1"
@@ -87,7 +87,7 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
         class="FieldLabel-module_label__1zrXK "
         for="number"
       >
-        Paikka
+        Numero
       </label>
       <div
         class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
@@ -141,112 +141,8 @@ exports[`features/harborView/BerthForm renders correctly 1`] = `
         />
       </div>
     </div>
-    <div
-      class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
-    >
-      <label
-        class="FieldLabel-module_label__1zrXK "
-        for="depth"
-      >
-        Syvyys (m)
-      </label>
-      <div
-        class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
-      >
-        <input
-          class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
-          id="depth"
-          type="text"
-          value="undefined"
-        />
-      </div>
-    </div>
   </div>
   <hr />
-  <div
-    class="Select-module_root__Ka5uO"
-  >
-    <label
-      class="FieldLabel-module_label__1zrXK "
-      for="mooringType-toggle-button"
-      id="mooringType-label"
-    >
-      Kiinnitystapa
-      <span
-        class="RequiredIndicator-module_indicator__Pt7GX text-input_hds-text-input__required__2K-Bs"
-      >
-         *
-      </span>
-    </label>
-    <div
-      class="Select-module_wrapper__1WQXs"
-    >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-labelledby="mooringType-label mooringType-toggle-button"
-        aria-owns="mooringType-menu"
-        class="Select-module_button__1aIsm"
-        id="mooringType-toggle-button"
-        type="button"
-      >
-        <span
-          class="Select-module_buttonLabel__1fqu5"
-        >
-          Jollapaikka
-        </span>
-        <svg
-          aria-hidden="true"
-          class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_s__2WGWe icon_hds-icon--size-s__2Lkik Select-module_angleIcon__2-9AD"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <path
-              d="M0 0h24v24H0z"
-            />
-            <path
-              d="M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z"
-              fill="currentColor"
-            />
-          </g>
-        </svg>
-      </button>
-      <ul
-        aria-labelledby="mooringType-label"
-        aria-required="true"
-        class="Select-module_menu__1H2aU Select-module_overflow__EZdsW"
-        id="mooringType-menu"
-        role="listbox"
-        style="max-height: 260px;"
-        tabindex="-1"
-      />
-    </div>
-  </div>
-  <div
-    class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
-  >
-    <label
-      class="FieldLabel-module_label__1zrXK "
-      for="comment"
-    >
-      Huomiot
-    </label>
-    <div
-      class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
-    >
-      <input
-        class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
-        id="comment"
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
   <div
     class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
   >
