@@ -70,7 +70,7 @@ Object {
   "customerGroup": "PRIVATE",
   "customerId": "MOCK-CUSTOMER",
   "firstName": "Testi",
-  "invoicingType": "DIGITAL_INVOICE",
+  "invoicingType": "ONLINE_PAYMENT",
   "language": "FINNISH",
   "lastName": "Testinen",
   "organization": null,
