@@ -768,7 +768,7 @@ exports[`UnmarkedWsNoticeView renders normally with customer 1`] = `
             <span
               class="value left"
             >
-              Laskutus sähköisenä
+              Verkkomaksu
             </span>
           </div>
         </section>
