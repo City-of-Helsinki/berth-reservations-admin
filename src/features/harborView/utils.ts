@@ -72,6 +72,7 @@ export const getBerths = (data: INDIVIDUAL_HARBOR | undefined): Berth[] => {
         comment: berthEdge.node.comment,
         leases,
         prevSeasonLease: berthEdge.node.prevSeasonLease || null,
+        pendingSwitchOffer: berthEdge.node.pendingSwitchOffer || null,
       },
     ];
   }, []);

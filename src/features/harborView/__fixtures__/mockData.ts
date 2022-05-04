@@ -281,6 +281,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -337,6 +338,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -393,6 +395,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -449,6 +452,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -505,6 +509,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -561,6 +566,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -617,6 +623,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -673,6 +680,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -729,6 +737,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -785,6 +794,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -841,6 +851,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -897,6 +908,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -953,6 +965,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -980,6 +993,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -1036,6 +1050,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -1092,6 +1107,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -1148,6 +1164,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -1204,6 +1221,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -1260,6 +1278,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -1316,6 +1335,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -1372,6 +1392,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -1399,6 +1420,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -1455,6 +1477,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -1511,6 +1534,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -1567,6 +1591,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -1623,6 +1648,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -1679,6 +1705,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -1735,6 +1762,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -1791,6 +1819,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -1847,6 +1876,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -1903,6 +1933,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -1959,6 +1990,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -2015,6 +2047,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -2071,6 +2104,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -2127,6 +2161,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -2183,6 +2218,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -2239,6 +2275,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -2295,6 +2332,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -2351,6 +2389,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -2407,6 +2446,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -2463,6 +2503,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -2519,6 +2560,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -2575,6 +2617,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -2631,6 +2674,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -2687,6 +2731,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -2743,6 +2788,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -2799,6 +2845,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -2855,6 +2902,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -2911,6 +2959,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -2938,6 +2987,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -2994,6 +3044,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -3050,6 +3101,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -3106,6 +3158,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -3162,6 +3215,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -3218,6 +3272,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -3274,6 +3329,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -3330,6 +3386,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -3386,6 +3443,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -3442,6 +3500,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -3498,6 +3557,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -3554,6 +3614,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -3581,6 +3642,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -3623,6 +3685,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -3679,6 +3742,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -3735,6 +3799,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -3791,6 +3856,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -3847,6 +3913,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -3903,6 +3970,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -3959,6 +4027,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -4015,6 +4084,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -4071,6 +4141,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -4127,6 +4198,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -4183,6 +4255,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -4239,6 +4312,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -4295,6 +4369,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -4322,6 +4397,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -4378,6 +4454,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -4434,6 +4511,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -4490,6 +4568,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6NzU4MmU1NzctZmFlZi00OWRhLWI0YmMtZWZmNGRiZDAwNDNh',
             properties: {
@@ -4546,6 +4625,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -4602,6 +4682,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -4658,6 +4739,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -4714,6 +4796,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -4770,6 +4853,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -4826,6 +4910,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -4882,6 +4967,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -4938,6 +5024,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -4994,6 +5081,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -5050,6 +5138,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -5106,6 +5195,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -5162,6 +5252,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -5218,6 +5309,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -5274,6 +5366,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -5330,6 +5423,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -5386,6 +5480,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -5442,6 +5537,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -5498,6 +5594,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -5554,6 +5651,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -5610,6 +5708,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -5666,6 +5765,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -5722,6 +5822,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -5778,6 +5879,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -5834,6 +5936,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -5890,6 +5993,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -5946,6 +6050,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -6002,6 +6107,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -6058,6 +6164,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -6114,6 +6221,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -6170,6 +6278,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -6226,6 +6335,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -6282,6 +6392,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -6338,6 +6449,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -6394,6 +6506,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -6450,6 +6563,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -6506,6 +6620,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -6533,6 +6648,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -6589,6 +6705,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -6645,6 +6762,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -6701,6 +6819,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -6757,6 +6876,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -6813,6 +6933,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -6869,6 +6990,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -6925,6 +7047,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -6981,6 +7104,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7037,6 +7161,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7093,6 +7218,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7149,6 +7275,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6MjYwM2QwYjgtNTUzZi00MDk0LTgyNGEtN2VhOWEzYzM5MTI3',
             properties: {
@@ -7205,6 +7332,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -7261,6 +7389,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6YzQ3MzZhYTgtZGY2OC00Y2RmLWJmN2ItOTMyZmM0MjlkZjRi',
             properties: {
@@ -7317,6 +7446,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7373,6 +7503,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7429,6 +7560,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7485,6 +7617,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7541,6 +7674,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7597,6 +7731,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7653,6 +7788,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7709,6 +7845,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7765,6 +7902,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7821,6 +7959,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7877,6 +8016,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -7933,6 +8073,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -7989,6 +8130,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8045,6 +8187,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -8101,6 +8244,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8157,6 +8301,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2IxNmYyYmMtYjBjNi00N2RmLWFkNjItYTdlYTc1NWVmOTI1',
             properties: {
@@ -8213,6 +8358,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8240,6 +8386,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8267,6 +8414,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8323,6 +8471,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8350,6 +8499,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8406,6 +8556,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8462,6 +8613,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8518,6 +8670,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8574,6 +8727,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8630,6 +8784,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8686,6 +8841,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8742,6 +8898,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8798,6 +8955,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8854,6 +9012,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8910,6 +9069,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -8966,6 +9126,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9022,6 +9183,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9078,6 +9240,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9134,6 +9297,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9190,6 +9354,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9246,6 +9411,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9302,6 +9468,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9358,6 +9525,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9414,6 +9582,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9470,6 +9639,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9526,6 +9696,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9582,6 +9753,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9638,6 +9810,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9694,6 +9867,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9750,6 +9924,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9792,6 +9967,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9848,6 +10024,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9904,6 +10081,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9931,6 +10109,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -9987,6 +10166,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10043,6 +10223,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10099,6 +10280,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10126,6 +10308,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10182,6 +10365,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10238,6 +10422,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10294,6 +10479,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10350,6 +10536,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10406,6 +10593,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {
@@ -10462,6 +10650,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
             __typename: 'BerthLeaseNodeConnection',
           },
           prevSeasonLease: null,
+          pendingSwitchOffer: null,
           pier: {
             id: 'UGllck5vZGU6N2U0ZDM0ZGYtZmRhZC00ZTg4LTgyMjEtYTU2ODhkNWJhNDUy',
             properties: {

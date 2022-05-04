@@ -56,11 +56,16 @@ const HarborViewTable = ({
         return '';
       },
       Header: t('harborView.tableHeaders.customer') || '',
-      accessor: ({ leases, prevSeasonLease }) => {
+      accessor: ({ leases, prevSeasonLease, pendingSwitchOffer }) => {
+        // Show the customer of the active lease,
+        // or if it's not active, show the pending berth switch offer customer
+        // or the customer from previous season.
         const activeLease = leases?.find((lease) => lease.isActive);
+        const customerId =
+          activeLease?.customer.id || pendingSwitchOffer?.customer.id || prevSeasonLease?.customer.id || '';
         return {
-          customerId: activeLease?.customer.id || prevSeasonLease?.customer.id || '',
-          isActiveLease: activeLease,
+          customerId,
+          isActiveLease: !!activeLease,
         };
       },
       id: 'leases',
