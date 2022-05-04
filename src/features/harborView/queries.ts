@@ -70,6 +70,11 @@ export const INDIVIDUAL_HARBOR_QUERY = gql`
             endDate
             isActive
           }
+          pendingSwitchOffer {
+            customer {
+              id
+            }
+          }
           pier {
             id
             properties {

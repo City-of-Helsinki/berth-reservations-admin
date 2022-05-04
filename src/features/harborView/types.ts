@@ -38,6 +38,12 @@ export type Lease = {
   isActive: boolean;
 };
 
+export type PendingSwitchOffer = {
+  customer: {
+    id: string;
+  };
+};
+
 export type Berth = {
   id: string;
   isActive: boolean;
@@ -50,6 +56,7 @@ export type Berth = {
   comment: string;
   leases?: Lease[];
   prevSeasonLease?: Lease | null;
+  pendingSwitchOffer?: PendingSwitchOffer | null;
 };
 
 export type Pier = {
