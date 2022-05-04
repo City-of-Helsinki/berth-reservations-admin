@@ -17,6 +17,7 @@ export interface CustomerNameProps {
 const CustomerName = ({ id, linkTo, disabled }: CustomerNameProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<CUSTOMER_NAME>(CUSTOMER_NAME_QUERY, {
+    skip: !id,
     variables: {
       customerId: id,
     },
