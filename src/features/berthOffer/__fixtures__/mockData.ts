@@ -90,6 +90,7 @@ export const berthOfferQueryData: BERTH_OFFER = {
                             },
                           ],
                         },
+                        pendingSwitchOffer: null,
                         length: 10,
                         mooringType: BerthMooringType.DINGHY_PLACE,
                         number: '1',

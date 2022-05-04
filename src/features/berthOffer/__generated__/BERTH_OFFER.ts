@@ -66,6 +66,16 @@ export interface BERTH_OFFER_harbor_properties_piers_edges_node_properties_berth
   edges: (BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges | null)[];
 }
 
+export interface BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_pendingSwitchOffer_customer {
+  __typename: "ProfileNode";
+  id: string;
+}
+
+export interface BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_pendingSwitchOffer {
+  __typename: "BerthSwitchOfferNode";
+  customer: BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_pendingSwitchOffer_customer;
+}
+
 export interface BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node {
   __typename: "BerthNode";
   comment: string;
@@ -74,6 +84,7 @@ export interface BERTH_OFFER_harbor_properties_piers_edges_node_properties_berth
   isAccessible: boolean | null;
   isActive: boolean;
   leases: BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_leases | null;
+  pendingSwitchOffer: BERTH_OFFER_harbor_properties_piers_edges_node_properties_berths_edges_node_pendingSwitchOffer | null;
   length: number;
   mooringType: BerthMooringType;
   number: string;

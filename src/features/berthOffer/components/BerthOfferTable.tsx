@@ -56,7 +56,7 @@ const BerthOfferTable = ({
 
             return setIsBerthChosen(row.original);
           }, [row])}
-          disabled={!row.original.isActive || isSubmitting}
+          disabled={!row.original.isActive || !!row.original.pendingSwitchOffer || isSubmitting}
         >
           {t('common.select')}
         </Button>

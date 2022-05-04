@@ -59,6 +59,7 @@ export const getBerthData = (data: HarborData | null | undefined): BerthData[] =
             isAccessible: berth.node.isAccessible,
           },
           width: berth.node.width,
+          pendingSwitchOffer: berth.node.pendingSwitchOffer,
         },
       ];
     }, []);

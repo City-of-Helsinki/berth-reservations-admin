@@ -50,6 +50,11 @@ export const BERTH_OFFER_PIERS_FRAGMENT = gql`
                     }
                   }
                 }
+                pendingSwitchOffer {
+                  customer {
+                    id
+                  }
+                }
                 length
                 mooringType
                 number
