@@ -23,6 +23,7 @@ export interface INDIVIDUAL_PLACE_winterStoragePlace {
   id: string;
   number: number;
   isActive: boolean;
+  comment: string;
   winterStorageSection: INDIVIDUAL_PLACE_winterStoragePlace_winterStorageSection;
   width: number;
   length: number;

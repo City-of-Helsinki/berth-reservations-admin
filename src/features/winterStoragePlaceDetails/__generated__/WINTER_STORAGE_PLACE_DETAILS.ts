@@ -54,6 +54,7 @@ export interface WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace {
   number: number;
   width: number;
   length: number;
+  comment: string;
   leases: WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace_leases | null;
   winterStorageSection: WINTER_STORAGE_PLACE_DETAILS_winterStoragePlace_winterStorageSection;
 }

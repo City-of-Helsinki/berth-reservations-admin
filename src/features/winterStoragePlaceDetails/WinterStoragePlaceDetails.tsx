@@ -23,10 +23,11 @@ export interface Lease {
 
 export interface WinterStoragePlaceDetailsProps {
   leases: Lease[];
+  comment?: string;
   onEdit?(): void;
 }
 
-const WinterStoragePlaceDetails = ({ leases, onEdit }: WinterStoragePlaceDetailsProps) => {
+const WinterStoragePlaceDetails = ({ leases, comment, onEdit }: WinterStoragePlaceDetailsProps) => {
   const { t, i18n } = useTranslation();
 
   const expiredLeasesElements = leases
@@ -49,6 +50,9 @@ const WinterStoragePlaceDetails = ({ leases, onEdit }: WinterStoragePlaceDetails
       <Grid colsCount={3} className={styles.grid}>
         <Section title={t('offer.previousLeases').toUpperCase()}>
           {expiredLeasesElements.length ? expiredLeasesElements : '-'}
+        </Section>
+        <Section title={t('common.terminology.comments').toUpperCase()} className={styles.comment}>
+          <Text>{comment || '-'}</Text>
         </Section>
         <MaintenanceServicesPlaceholder onClick={onEdit} buttonText={t('common.edit')} />
       </Grid>

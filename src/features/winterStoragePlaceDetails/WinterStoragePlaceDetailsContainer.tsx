@@ -32,7 +32,7 @@ const WinterStoragePlaceDetailsContainer = ({ id, onEdit }: WinterStoragePlaceDe
 
   const leases = getPlaceLeases(data.winterStoragePlace.leases);
 
-  return <WinterStoragePlaceDetails leases={leases} onEdit={onEdit} />;
+  return <WinterStoragePlaceDetails leases={leases} onEdit={onEdit} comment={data.winterStoragePlace.comment} />;
 };
 
 export default WinterStoragePlaceDetailsContainer;

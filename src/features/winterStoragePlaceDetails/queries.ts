@@ -8,6 +8,7 @@ export const WINTER_STORAGE_PLACE_DETAILS_QUERY = gql`
       number
       width
       length
+      comment
       leases {
         edges {
           node {

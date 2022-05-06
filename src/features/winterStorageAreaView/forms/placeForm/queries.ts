@@ -6,6 +6,7 @@ export const INDIVIDUAL_PLACE_QUERY = gql`
       id
       number
       isActive
+      comment
       winterStorageSection {
         id
         properties {

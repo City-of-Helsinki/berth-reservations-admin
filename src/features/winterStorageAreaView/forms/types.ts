@@ -26,6 +26,7 @@ export type Place = {
   length?: number;
   winterStorageSection?: string;
   winterStorageSectionId?: string;
+  comment?: string;
 };
 
 export interface FormProps<T> {

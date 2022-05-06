@@ -27,7 +27,7 @@ const PlaceCreateForm = ({ onCancel, onSubmit, refetchQueries, sectionOptions }:
       onCancel={onCancel}
       onSubmitText={t('forms.common.create')}
       onSubmit={(values) => {
-        const { winterStorageSectionId, number, width, length, isActive } = values;
+        const { winterStorageSectionId, number, width, length, isActive, comment } = values;
         createWinterStoragePlace({
           variables: {
             input: {
@@ -36,6 +36,7 @@ const PlaceCreateForm = ({ onCancel, onSubmit, refetchQueries, sectionOptions }:
               width,
               length,
               isActive,
+              comment,
             } as CreateWinterStoragePlaceMutationInput,
           },
         }).then(() => onSubmit?.(values));
