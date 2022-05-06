@@ -30,12 +30,13 @@ export const getWinterStorageAreaForm = (
 
 export const getWinterStoragePlace = (placeData: INDIVIDUAL_PLACE | undefined): Place | undefined => {
   if (!placeData || !placeData.winterStoragePlace) return undefined;
-  const { number, isActive, width, length } = placeData.winterStoragePlace;
+  const { number, isActive, width, length, comment } = placeData.winterStoragePlace;
   return {
     number: String(number),
     isActive,
     width,
     length,
+    comment,
     winterStorageSectionId: placeData.winterStoragePlace.winterStorageSection.id,
     winterStorageSection: placeData.winterStoragePlace.winterStorageSection.properties?.identifier,
   };

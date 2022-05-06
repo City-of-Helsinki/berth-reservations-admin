@@ -47,12 +47,13 @@ const getPlaceValidationSchema = (t: TFunction, sectionOptions: WinterStorageSec
 };
 
 const transformValues = (values: PlaceFormValues): Place => {
-  const { winterStorageSectionId, number, width, length } = values;
+  const { winterStorageSectionId, number, width, length, comment } = values;
   return {
     number: number,
     width: width ? parseFloat(replaceCommaWithDot(width)) : undefined,
     length: length ? parseFloat(replaceCommaWithDot(length)) : undefined,
     winterStorageSectionId: winterStorageSectionId,
+    comment,
   };
 };
 
@@ -140,6 +141,12 @@ const PlaceForm = ({
             />
           </Grid>
           <hr />
+          <TextInput
+            id="comment"
+            onChange={handleChange}
+            value={values.comment}
+            label={t('forms.winterStoragePlace.comment')}
+          />
           <Checkbox
             id="isActive"
             onChange={handleChange}

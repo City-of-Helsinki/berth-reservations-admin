@@ -144,6 +144,26 @@ exports[`features/winterStorageAreaView/PlaceForm renders correctly 1`] = `
   </div>
   <hr />
   <div
+    class="TextInput-module_root__2CMNr text-input_hds-text-input__2LODq"
+  >
+    <label
+      class="FieldLabel-module_label__1zrXK "
+      for="comment"
+    >
+      Huomiot
+    </label>
+    <div
+      class="TextInput-module_inputWrapper__3Rvel text-input_hds-text-input__input-wrapper__1OqYG"
+    >
+      <input
+        class="TextInput-module_input__1BlHi text-input_hds-text-input__input__GJm5C"
+        id="comment"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
     class="Checkbox-module_checkbox__3L0GR checkbox_hds-checkbox__9HMCz checkbox"
   >
     <input
