@@ -19,7 +19,7 @@ env:
   DOCKER_BUILD_ARG_SASS_PATH: 'node_modules:src/assets/styles'
   K8S_REQUEST_CPU: 1m
   K8S_REQUEST_RAM: 20Mi
-  K8S_LIMIT_CPU: 5m
+  K8S_LIMIT_CPU: 15m
   K8S_LIMIT_RAM: 30Mi
   K8S_REPLICACOUNT: 2
 
