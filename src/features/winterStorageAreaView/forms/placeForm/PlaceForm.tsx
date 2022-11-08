@@ -1,21 +1,21 @@
-import { Formik } from 'formik';
-import { TextInput } from 'hds-react';
-import { TFunction } from 'i18next';
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
+import { TextInput } from 'hds-react';
 import { ObjectSchema } from 'yup';
 
-import Button from '../../../../common/button/Button';
-import Checkbox from '../../../../common/checkbox/Checkbox';
-import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
-import FormHeader from '../../../../common/formHeader/FormHeader';
+import { Place, FormProps } from '../types';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';
-import { isNumber, isPositive, replaceCommaWithDot, replaceDotWithComma } from '../../../../common/utils/forms';
-import { WinterStorageSection } from '../../types';
-import { FormProps, Place } from '../types';
 import styles from './placeForm.module.scss';
+import { WinterStorageSection } from '../../types';
+import FormHeader from '../../../../common/formHeader/FormHeader';
+import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
+import { isNumber, isPositive, replaceCommaWithDot, replaceDotWithComma } from '../../../../common/utils/forms';
+import Checkbox from '../../../../common/checkbox/Checkbox';
+import Button from '../../../../common/button/Button';
 
 interface PlaceFormProps extends FormProps<Place> {
   isEditing?: boolean;
