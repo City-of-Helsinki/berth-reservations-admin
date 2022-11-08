@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { useTranslation } from 'react-i18next';
-import { TFunction } from 'i18next';
 import { TextInput } from 'hds-react';
+import { TFunction } from 'i18next';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import * as Yup from 'yup';
 import { ObjectSchema } from 'yup';
 
-import { Place, FormProps } from '../types';
+import Button from '../../../../common/button/Button';
+import Checkbox from '../../../../common/checkbox/Checkbox';
+import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
+import FormHeader from '../../../../common/formHeader/FormHeader';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';
-import styles from './placeForm.module.scss';
-import { WinterStorageSection } from '../../types';
-import FormHeader from '../../../../common/formHeader/FormHeader';
-import ConfirmationModal from '../../../../common/confirmationModal/ConfirmationModal';
 import { isNumber, isPositive, replaceCommaWithDot, replaceDotWithComma } from '../../../../common/utils/forms';
-import Checkbox from '../../../../common/checkbox/Checkbox';
-import Button from '../../../../common/button/Button';
+import { WinterStorageSection } from '../../types';
+import { FormProps, Place } from '../types';
+import styles from './placeForm.module.scss';
 
 interface PlaceFormProps extends FormProps<Place> {
   isEditing?: boolean;
@@ -47,13 +47,14 @@ const getPlaceValidationSchema = (t: TFunction, sectionOptions: WinterStorageSec
 };
 
 const transformValues = (values: PlaceFormValues): Place => {
-  const { winterStorageSectionId, number, width, length, comment } = values;
+  const { winterStorageSectionId, number, width, length, comment, isActive } = values;
   return {
     number: number,
     width: width ? parseFloat(replaceCommaWithDot(width)) : undefined,
     length: length ? parseFloat(replaceCommaWithDot(length)) : undefined,
     winterStorageSectionId: winterStorageSectionId,
     comment,
+    isActive,
   };
 };
 
