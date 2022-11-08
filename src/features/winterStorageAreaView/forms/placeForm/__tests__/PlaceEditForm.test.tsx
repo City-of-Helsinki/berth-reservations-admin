@@ -81,6 +81,7 @@ describe('features/winterStorageAreaView/PlaceEditForm', () => {
             id: 'a',
             width: 2.25,
             length: 5,
+            isActive: true,
           },
         },
       },
