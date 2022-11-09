@@ -25,6 +25,7 @@ import { InvoicingType } from '../../@types/__generated__/globalTypes';
 export enum SearchBy {
   FIRST_NAME = 'firstName',
   LAST_NAME = 'lastName',
+  NAME = 'name',
   EMAIL = 'email',
   ADDRESS = 'address',
   STICKER_NUMBER = 'stickerNumber',
@@ -34,7 +35,7 @@ export enum SearchBy {
 
 const searchByAtom = atom<SearchBy>({
   key: 'CustomerListContainer_searchByAtom',
-  default: SearchBy.LAST_NAME,
+  default: SearchBy.NAME,
 });
 
 const searchValAtom = atom<string>({
@@ -155,6 +156,7 @@ const CustomerListContainer = () => {
         handleCustomersExport,
         isExporting,
         searchByOptions: [
+          { value: SearchBy.NAME, label: t('common.name') },
           { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
           { value: SearchBy.LAST_NAME, label: t('common.lastName') },
           { value: SearchBy.EMAIL, label: t('common.email') },
