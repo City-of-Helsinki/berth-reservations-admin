@@ -153,6 +153,7 @@ export const PROFILE_CUSTOMERS_QUERY = gql`
     $after: String
     $firstName: String
     $lastName: String
+    $name: String
     $email: String
     $address: String
     $orderBy: String
@@ -162,6 +163,7 @@ export const PROFILE_CUSTOMERS_QUERY = gql`
       after: $after
       firstName: $firstName
       lastName: $lastName
+      name: $name
       emails_Email: $email
       addresses_Address: $address
       orderBy: $orderBy

@@ -178,6 +178,7 @@ export interface PROFILE_CUSTOMERSVariables {
   after?: string | null;
   firstName?: string | null;
   lastName?: string | null;
+  name?: string | null;
   email?: string | null;
   address?: string | null;
   orderBy?: string | null;
