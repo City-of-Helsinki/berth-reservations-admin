@@ -102,6 +102,7 @@ const CustomerListTableTools = <T extends string>({
               className={styles.searchInput}
               id="searchSimilarCustomers"
               value={searchVal}
+              placeholder={searchBy === 'name' ? `${t('common.lastName')} ${t('common.firstName')}` : undefined}
               onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
             />
           )}
