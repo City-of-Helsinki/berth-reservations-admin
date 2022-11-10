@@ -70,6 +70,14 @@ export default function useCustomersQuery({
   const preferredQuery =
     Object.values(tableFilters).filter((value) => value).length > 0 ? Query.BERTH_PROFILE : Query.PROFILE;
 
+  if (sharedFilters.name && sharedFilters.name?.length > 0) {
+    sharedFilters.lastName = sharedFilters.name.split(' ')[0];
+    if (sharedFilters.name.split(' ').length > 1) {
+      sharedFilters.firstName = sharedFilters.name.split(' ')[1];
+    }
+    sharedFilters.name = undefined;
+  }
+
   const profilesQuery = useQuery<PROFILE_CUSTOMERS, PROFILE_CUSTOMERS_VARS>(PROFILE_CUSTOMERS_QUERY, {
     variables: sharedFilters,
     fetchPolicy: 'no-cache',
