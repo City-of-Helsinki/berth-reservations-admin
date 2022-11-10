@@ -47,13 +47,14 @@ const getPlaceValidationSchema = (t: TFunction, sectionOptions: WinterStorageSec
 };
 
 const transformValues = (values: PlaceFormValues): Place => {
-  const { winterStorageSectionId, number, width, length, comment } = values;
+  const { winterStorageSectionId, number, width, length, comment, isActive } = values;
   return {
     number: number,
     width: width ? parseFloat(replaceCommaWithDot(width)) : undefined,
     length: length ? parseFloat(replaceCommaWithDot(length)) : undefined,
     winterStorageSectionId: winterStorageSectionId,
     comment,
+    isActive,
   };
 };
 

@@ -59,7 +59,7 @@ const PlaceEditForm = ({
       }
       onSubmitText={t('forms.common.update')}
       onSubmit={(values) => {
-        const { width, length, comment } = values;
+        const { width, length, comment, isActive } = values;
         updateWinterStoragePlace({
           variables: {
             input: {
@@ -67,6 +67,7 @@ const PlaceEditForm = ({
               width,
               length,
               comment,
+              isActive,
             },
           },
         }).then(() => onSubmit?.(values));
