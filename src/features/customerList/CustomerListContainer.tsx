@@ -64,6 +64,20 @@ const orderBySelector = selector<string | undefined>({
   },
 });
 
+// Backend supports queries for names in the form of firstName, lastName only so
+// this transforms SearchBy.NAME to firstName, lastName.
+const transformSearchByName = (searchBy: SearchBy, value: string) => {
+  const res = { [searchBy]: value };
+  if (searchBy === SearchBy.NAME) {
+    res.lastName = value.split(' ')[0];
+    if (value.split(' ').length > 1) {
+      res.firstName = value.split(' ')[1];
+    }
+    delete res[searchBy];
+  }
+  return res;
+};
+
 const CustomerListContainer = () => {
   usePersistedSearch();
 
@@ -91,7 +105,7 @@ const CustomerListContainer = () => {
     first: pageSize,
     after: cursor,
     orderBy,
-    [searchBy]: prevSearchBy === searchBy ? debouncedSearchVal : searchVal,
+    ...transformSearchByName(searchBy, prevSearchBy === searchBy ? debouncedSearchVal : searchVal),
     ...delegatedCustomerListTableFilters,
     startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
     endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
