@@ -24,6 +24,8 @@ import { InvoicingType } from '../../@types/__generated__/globalTypes';
 
 export enum SearchBy {
   NAME = 'name',
+  FIRST_NAME = 'firstName',
+  LAST_NAME = 'lastName',
   EMAIL = 'email',
   ADDRESS = 'address',
   STICKER_NUMBER = 'stickerNumber',
@@ -169,6 +171,8 @@ const CustomerListContainer = () => {
         isExporting,
         searchByOptions: [
           { value: SearchBy.NAME, label: t('common.name') },
+          { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
+          { value: SearchBy.LAST_NAME, label: t('common.lastName') },
           { value: SearchBy.EMAIL, label: t('common.email') },
           { value: SearchBy.ADDRESS, label: t('common.address') },
           { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
