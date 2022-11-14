@@ -22,7 +22,7 @@ const WinterStorageLeasesCard = ({ customerName, cancelLease, leases, createLeas
   const { t } = useTranslation();
   const mapLeaseDetails = (lease: WinterStorageLease): Lease => {
     return {
-      address: lease.winterStorageArea?.name || '',
+      address: [lease.winterStorageArea?.name || '', lease.sectionIdentifier, lease.placeNum].join(' '),
       endDate: lease.endDate,
       id: lease.id,
       link: lease?.winterStorageArea?.id ? `/winter-storage-areas/${lease?.winterStorageArea?.id}` : undefined,
