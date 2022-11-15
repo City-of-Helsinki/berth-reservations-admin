@@ -37,6 +37,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   orderBy?: string;
   firstName?: string;
   lastName?: string;
+  organizationName?: string;
   email?: string;
   address?: string;
   stickerNumber?: string;
@@ -50,6 +51,7 @@ export default function useCustomersQuery({
   orderBy,
   firstName,
   lastName,
+  organizationName,
   email,
   address,
   apiToken,
