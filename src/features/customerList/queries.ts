@@ -378,3 +378,21 @@ export const ALL_CUSTOMERS_QUERY = gql`
     }
   }
 `;
+
+export const CUSTOMER_GROUPS_QUERY = gql`
+  query CUSTOMER_GROUPS($first: Int!, $after: String, $customerGroups: [CustomerGroup], $apiToken: String) {
+    berthProfiles(first: $first, after: $after, customerGroups: $customerGroups, apiToken: $apiToken) {
+      count
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          ...ProfileFragment
+        }
+      }
+    }
+  }
+  ${PROFILE_FRAGMENT}
+`;
