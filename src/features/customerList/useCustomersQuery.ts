@@ -111,6 +111,8 @@ export default function useCustomersQuery({
   const organizationsQuery = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMER_GROUPS_QUERY, {
     variables: {
       first,
+      ...delegatedFilters,
+      harborIds,
       customerGroups: [CustomerGroup.COMPANY],
       apiToken,
     },

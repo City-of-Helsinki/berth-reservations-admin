@@ -380,8 +380,40 @@ export const ALL_CUSTOMERS_QUERY = gql`
 `;
 
 export const CUSTOMER_GROUPS_QUERY = gql`
-  query CUSTOMER_GROUPS($first: Int!, $after: String, $customerGroups: [CustomerGroup], $apiToken: String) {
-    berthProfiles(first: $first, after: $after, customerGroups: $customerGroups, apiToken: $apiToken) {
+  query CUSTOMER_GROUPS(
+    $first: Int!
+    $after: String
+    $customerGroups: [CustomerGroup]
+    $apiToken: String
+    $boatTypeIds: [ID]
+    $leaseStatuses: [LeaseStatus]
+    $harborIds: [String]
+    $pierId: String
+    $berthId: String
+    $winterStorageGridAreaIds: [String]
+    $winterStoragePlaceId: String
+    $winterStorageAreaIds: [String]
+    $moreThanOneBerthOrWinterStorage: Boolean
+    $startDate: Date
+    $endDate: Date
+  ) {
+    berthProfiles(
+      first: $first
+      after: $after
+      customerGroups: $customerGroups
+      apiToken: $apiToken
+      boatTypes: $boatTypeIds
+      leaseStatuses: $leaseStatuses
+      harbors: $harborIds
+      piers: [$pierId]
+      berths: [$berthId]
+      markedWinterStorageAreas: $winterStorageGridAreaIds
+      markedWinterStoragePlaces: [$winterStoragePlaceId]
+      unmarkedWinterStorageAreas: $winterStorageAreaIds
+      leaseCount: $moreThanOneBerthOrWinterStorage
+      leaseStart: $startDate
+      leaseEnd: $endDate
+    ) {
       count
       pageInfo {
         hasNextPage
