@@ -16,14 +16,12 @@ import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlag
 import {
   CUSTOMERS,
   CUSTOMERSVariables as CUSTOMERS_VARS,
-  // eslint-disable-next-line @typescript-eslint/camelcase
-  CUSTOMERS_berthProfiles_edges,
+  CUSTOMERS_berthProfiles_edges as CUSTOMERS_BERTH_PROFILES_EDGES,
 } from './__generated__/CUSTOMERS';
 import {
   PROFILE_CUSTOMERS,
   PROFILE_CUSTOMERSVariables as PROFILE_CUSTOMERS_VARS,
-  // eslint-disable-next-line @typescript-eslint/camelcase
-  PROFILE_CUSTOMERS_profiles_edges,
+  PROFILE_CUSTOMERS_profiles_edges as PROFILE_CUSTOMERS_PROFILES_EDGES,
 } from './__generated__/PROFILE_CUSTOMERS';
 import { ProfileFragment } from './__generated__/ProfileFragment';
 import { CUSTOMERS_QUERY, CUSTOMER_GROUPS_QUERY, PROFILE_CUSTOMERS_QUERY } from './queries';
@@ -122,8 +120,7 @@ export default function useCustomersQuery({
 
   const queryResult = (query: Query) => {
     const mapProfiles = (
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      profiles: (PROFILE_CUSTOMERS_profiles_edges | CUSTOMERS_berthProfiles_edges | null)[] | undefined
+      profiles: (PROFILE_CUSTOMERS_PROFILES_EDGES | CUSTOMERS_BERTH_PROFILES_EDGES | null)[] | undefined
     ) => {
       return profiles?.map((profileEdge) => profileEdge?.node) as (ProfileFragment | undefined | null)[];
     };
