@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDebounce } from 'use-debounce';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
 import { useHistory, useLocation } from 'react-router-dom';
 import format from 'date-fns/format';
+import { Notification } from 'hds-react';
 
 import { ALL_CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
@@ -26,6 +27,7 @@ export enum SearchBy {
   NAME = 'name',
   FIRST_NAME = 'firstName',
   LAST_NAME = 'lastName',
+  ORGANIZATION_NAME = 'organizationName',
   EMAIL = 'email',
   ADDRESS = 'address',
   STICKER_NUMBER = 'stickerNumber',
@@ -94,6 +96,8 @@ const CustomerListContainer = () => {
   const { sortBy, handleSortedColsChange } = useRecoilBackendSorting(sortByAtom, () => goToPage(0));
   const orderBy = useRecoilValue(orderBySelector);
 
+  const [displayNotification, setDisplayNotification] = useState(false);
+
   const [debouncedSearchVal] = useDebounce(searchVal, 500, {
     equalityFn: (prev, next) => prev === next,
     leading: true,
@@ -148,46 +152,77 @@ const CustomerListContainer = () => {
     }
   }, [searchVal, searchBy, goToPage]);
 
+  // There would be a collision between customerGroup set by the table filters
+  // and the customerGroup set by the searchBy, since organizations are also
+  // searched first by customerGroup. This will notify the user, reset searchBy and disallow
+  // organization name search when customerGroup is set by the tableFilters.
+  useEffect(() => {
+    if (
+      customerListTableFilters.customerGroups &&
+      customerListTableFilters.customerGroups.length > 0 &&
+      searchBy === SearchBy.ORGANIZATION_NAME
+    ) {
+      setSearchBy(SearchBy.NAME);
+      setDisplayNotification(true);
+    }
+  }, [customerListTableFilters, searchBy, setSearchBy]);
+
   const tableData = getCustomersData(profiles);
 
   return (
-    <CustomerList
-      loading={loading}
-      data={tableData}
-      onSortedColsChange={handleSortedColsChange}
-      sortBy={sortBy}
-      pagination={{
-        pageIndex: pageIndex,
-        pageCount: getPageCount(count),
-        onPageChange: ({ selected }) => goToPage(selected),
-      }}
-      tableTools={{
-        refetch,
-        searchVal,
-        searchBy,
-        setSearchVal,
-        setSearchBy,
-        handleCustomersExport,
-        isExporting,
-        searchByOptions: [
-          { value: SearchBy.NAME, label: t('common.name') },
-          { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
-          { value: SearchBy.LAST_NAME, label: t('common.lastName') },
-          { value: SearchBy.EMAIL, label: t('common.email') },
-          { value: SearchBy.ADDRESS, label: t('common.address') },
-          { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
-          { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
-          {
-            value: SearchBy.INVOICING_TYPE,
-            label: t('common.terminology.invoicingType'),
-            options: [InvoicingType.ONLINE_PAYMENT, InvoicingType.PAPER_INVOICE].map((type) => ({
-              label: t(`common.invoicingTypes.${type}`),
-              value: type,
-            })),
-          },
-        ],
-      }}
-    />
+    <>
+      {displayNotification && (
+        <Notification
+          label={t('customerList.message.customerGroupOverlapLabel')}
+          type="alert"
+          position="top-right"
+          autoClose={true}
+          onClose={() => {
+            setDisplayNotification(false);
+          }}
+        >
+          {t('customerList.message.customerGroupOverlapMessage')}
+        </Notification>
+      )}
+      <CustomerList
+        loading={loading}
+        data={tableData}
+        onSortedColsChange={handleSortedColsChange}
+        sortBy={sortBy}
+        pagination={{
+          pageIndex: pageIndex,
+          pageCount: getPageCount(count),
+          onPageChange: ({ selected }) => goToPage(selected),
+        }}
+        tableTools={{
+          refetch,
+          searchVal,
+          searchBy,
+          setSearchVal,
+          setSearchBy,
+          handleCustomersExport,
+          isExporting,
+          searchByOptions: [
+            { value: SearchBy.NAME, label: t('common.name') },
+            { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
+            { value: SearchBy.LAST_NAME, label: t('common.lastName') },
+            { value: SearchBy.ORGANIZATION_NAME, label: t('common.customerGroups.COMPANY') },
+            { value: SearchBy.EMAIL, label: t('common.email') },
+            { value: SearchBy.ADDRESS, label: t('common.address') },
+            { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
+            { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
+            {
+              value: SearchBy.INVOICING_TYPE,
+              label: t('common.terminology.invoicingType'),
+              options: [InvoicingType.ONLINE_PAYMENT, InvoicingType.PAPER_INVOICE].map((type) => ({
+                label: t(`common.invoicingTypes.${type}`),
+                value: type,
+              })),
+            },
+          ],
+        }}
+      />
+    </>
   );
 };
 

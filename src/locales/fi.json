@@ -629,7 +629,9 @@
       "resetAllFiltersAriaLabel": "Poista kaikki suodatukset",
       "loadingOptions": "Etsitään vaihtoehtoja...",
       "limitedSearchLabel": "Käyttäjähakua on rajoitettu tilapäisesti",
-      "limitedSearchMessage": "Hakujen tekeminen ilman valittua venesatamaa tai -satamia on tilapäisesti estetty. Rajoite pyritään poistamaan. Rajoite on asetettu voimaan palvelun suorituskyvyn takaamiseksi."
+      "limitedSearchMessage": "Hakujen tekeminen ilman valittua venesatamaa tai -satamia on tilapäisesti estetty. Rajoite pyritään poistamaan. Rajoite on asetettu voimaan palvelun suorituskyvyn takaamiseksi.",
+      "customerGroupOverlapLabel": "Rajaus asiakasryhmällä käytössä",
+      "customerGroupOverlapMessage": "Asiakasryhmällä rajaaminen kumoaa haun yrityksen nimellä. Jos haluat etsiä yrityksen nimellä, poista asiakasryhmän rajaus."
     },
     "filters": {
       "customerGroups": "Asiakasryhmä",

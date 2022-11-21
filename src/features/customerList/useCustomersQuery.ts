@@ -11,20 +11,26 @@
 
 import { useQuery } from '@apollo/react-hooks';
 
-import { InvoicingType } from '../../@types/__generated__/globalTypes';
+import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
-import { CUSTOMERS, CUSTOMERSVariables as CUSTOMERS_VARS } from './__generated__/CUSTOMERS';
+import {
+  CUSTOMERS,
+  CUSTOMERSVariables as CUSTOMERS_VARS,
+  CUSTOMERS_berthProfiles_edges as CUSTOMERS_BERTH_PROFILES_EDGES,
+} from './__generated__/CUSTOMERS';
 import {
   PROFILE_CUSTOMERS,
   PROFILE_CUSTOMERSVariables as PROFILE_CUSTOMERS_VARS,
+  PROFILE_CUSTOMERS_profiles_edges as PROFILE_CUSTOMERS_PROFILES_EDGES,
 } from './__generated__/PROFILE_CUSTOMERS';
 import { ProfileFragment } from './__generated__/ProfileFragment';
-import { CUSTOMERS_QUERY, PROFILE_CUSTOMERS_QUERY } from './queries';
+import { CUSTOMERS_QUERY, CUSTOMER_GROUPS_QUERY, PROFILE_CUSTOMERS_QUERY } from './queries';
 import { CustomerListTableFilters } from './customerListTableFilters/types';
 
 enum Query {
-  PROFILE = 'profile',
-  BERTH_PROFILE = 'berthProfile',
+  PROFILE,
+  BERTH_PROFILE,
+  ORGANIZATION,
 }
 
 type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
@@ -37,6 +43,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   orderBy?: string;
   firstName?: string;
   lastName?: string;
+  organizationName?: string;
   email?: string;
   address?: string;
   stickerNumber?: string;
@@ -50,6 +57,7 @@ export default function useCustomersQuery({
   orderBy,
   firstName,
   lastName,
+  organizationName,
   email,
   address,
   apiToken,
@@ -64,13 +72,23 @@ export default function useCustomersQuery({
     email,
     address,
   };
-  const preferredQuery =
-    Object.values(tableFilters).filter((value) => value).length > 0 ? Query.BERTH_PROFILE : Query.PROFILE;
+
+  const getActiveQuery = () => {
+    if (Object.values(tableFilters).filter((value) => value).length > 0 && !organizationName) {
+      return Query.BERTH_PROFILE;
+    }
+    if (organizationName) {
+      return Query.ORGANIZATION;
+    }
+    return Query.PROFILE;
+  };
+
+  const activeQuery = getActiveQuery();
 
   const profilesQuery = useQuery<PROFILE_CUSTOMERS, PROFILE_CUSTOMERS_VARS>(PROFILE_CUSTOMERS_QUERY, {
     variables: sharedFilters,
     fetchPolicy: 'no-cache',
-    skip: preferredQuery !== Query.PROFILE,
+    skip: activeQuery !== Query.PROFILE,
   });
 
   const { harborIds, ...delegatedFilters } = tableFilters;
@@ -83,24 +101,59 @@ export default function useCustomersQuery({
     },
     fetchPolicy: 'no-cache',
     skip:
-      preferredQuery !== Query.BERTH_PROFILE ||
+      activeQuery !== Query.BERTH_PROFILE ||
       // If enabled, stop queries from being fired when a harbor hasn't been
       // selected. Filtering by harbor limits the result group enough so that
       // the query does not fail.
       (limitedCustomerSearchFeatureFlag() ? (harborIds?.length ?? 0) === 0 : false),
   });
 
-  const queryResult = preferredQuery === Query.PROFILE ? profilesQuery : berthProfilesQuery;
+  const organizationsQuery = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMER_GROUPS_QUERY, {
+    variables: {
+      first,
+      ...delegatedFilters,
+      harborIds,
+      customerGroups: [CustomerGroup.COMPANY],
+      apiToken,
+    },
+    fetchPolicy: 'no-cache',
+    skip: activeQuery !== Query.ORGANIZATION,
+  });
 
-  return {
-    ...queryResult,
-    count:
-      preferredQuery === Query.PROFILE
-        ? profilesQuery?.data?.profiles?.count
-        : berthProfilesQuery?.data?.berthProfiles?.count,
-    profiles: (preferredQuery === Query.PROFILE
-      ? profilesQuery?.data?.profiles?.edges
-      : berthProfilesQuery?.data?.berthProfiles?.edges
-    )?.map((profileEdge) => profileEdge?.node) as (ProfileFragment | undefined | null)[],
+  const queryResult = (query: Query) => {
+    const mapProfiles = (
+      profiles: (PROFILE_CUSTOMERS_PROFILES_EDGES | CUSTOMERS_BERTH_PROFILES_EDGES | null)[] | undefined
+    ) => {
+      return profiles?.map((profileEdge) => profileEdge?.node) as (ProfileFragment | undefined | null)[];
+    };
+
+    switch (query) {
+      case Query.PROFILE:
+        return {
+          ...profilesQuery,
+          count: profilesQuery.data?.profiles?.count,
+          profiles: mapProfiles(profilesQuery.data?.profiles?.edges),
+        };
+      case Query.ORGANIZATION:
+        return {
+          ...organizationsQuery,
+          count: organizationsQuery.data?.berthProfiles?.count,
+          // There's no direct endpoint to search organizations by name, so we'll just fetch them all
+          // and filter them here.
+          // For now this works well enough, since there are not too many results,
+          // but if this changes, we should consider implementing own search endpoint for organizations.
+          profiles: (mapProfiles(organizationsQuery.data?.berthProfiles?.edges) || []).filter((p) =>
+            p?.organization?.name?.toLowerCase().includes(organizationName?.toLowerCase() || '')
+          ),
+        };
+      case Query.BERTH_PROFILE:
+        return {
+          ...berthProfilesQuery,
+          count: berthProfilesQuery.data?.berthProfiles?.count,
+          profiles: mapProfiles(berthProfilesQuery.data?.berthProfiles?.edges),
+        };
+    }
   };
+
+  return queryResult(activeQuery);
 }
