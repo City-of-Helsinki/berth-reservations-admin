@@ -48,7 +48,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   address?: string;
   stickerNumber?: string;
   boatRegistrationNumber?: string;
-  invoicingType?: InvoicingType;
+  invoicingTypes?: InvoicingType[];
 };
 
 export default function useCustomersQuery({

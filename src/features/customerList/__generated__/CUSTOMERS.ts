@@ -196,5 +196,5 @@ export interface CUSTOMERSVariables {
   apiToken?: string | null;
   startDate?: any | null;
   endDate?: any | null;
-  invoicingType?: InvoicingType | null;
+  invoicingTypes?: (InvoicingType | null)[] | null;
 }
