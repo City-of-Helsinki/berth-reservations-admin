@@ -320,7 +320,9 @@
       "phone": "Puhelinnumero",
       "email": "Sähköpostiosoite",
       "comment": "Huomiot",
-      "selectInvoicingTypePaperInvoice": "Laskutus paperisena"
+      "selectInvoicingTypePaperInvoice": "Laskutus paperisena",
+      "stickerNumberAndSeason": "Tarra ja kausi",
+      "stickerNumberAndSeasonPlaceholder": "Numero vuosi/vuosi"
     },
     "additionalServices": {
       "title": "Lisäpalvelu",

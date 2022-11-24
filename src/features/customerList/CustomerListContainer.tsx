@@ -31,6 +31,7 @@ export enum SearchBy {
   EMAIL = 'email',
   ADDRESS = 'address',
   STICKER_NUMBER = 'stickerNumber',
+  STICKER_NUMBER_SEASON = 'stickerNumberSeason',
   BOAT_REGISTRATION_NUMBER = 'boatRegistrationNumber',
   INVOICING_TYPE = 'invoicingType',
 }
@@ -85,6 +86,18 @@ const transformSearchBy = (searchBy: SearchBy, value: string): SearchByTransform
   if (searchBy === SearchBy.INVOICING_TYPE) {
     return {
       invoicingTypes: [value],
+    };
+  }
+  if (searchBy === SearchBy.STICKER_NUMBER_SEASON) {
+    if (value.indexOf(' ') === -1) {
+      return {
+        stickerNumber: value,
+      };
+    }
+    const [stickerNumber, season] = value.split(' ');
+    return {
+      stickerNumber,
+      stickerSeason: season,
     };
   }
   return {
@@ -213,13 +226,22 @@ const CustomerListContainer = () => {
           handleCustomersExport,
           isExporting,
           searchByOptions: [
-            { value: SearchBy.NAME, label: t('common.name') },
+            {
+              value: SearchBy.NAME,
+              label: t('common.name'),
+              placeholder: `${t('common.lastName')} ${t('common.firstName')}`,
+            },
             { value: SearchBy.FIRST_NAME, label: t('common.firstName') },
             { value: SearchBy.LAST_NAME, label: t('common.lastName') },
             { value: SearchBy.ORGANIZATION_NAME, label: t('common.customerGroups.COMPANY') },
             { value: SearchBy.EMAIL, label: t('common.email') },
             { value: SearchBy.ADDRESS, label: t('common.address') },
             { value: SearchBy.STICKER_NUMBER, label: t('common.terminology.stickerNumber') },
+            {
+              value: SearchBy.STICKER_NUMBER_SEASON,
+              label: t('forms.customer.stickerNumberAndSeason'),
+              placeholder: t('forms.customer.stickerNumberAndSeasonPlaceholder'),
+            },
             { value: SearchBy.BOAT_REGISTRATION_NUMBER, label: t('common.terminology.registrationNumber') },
             {
               value: SearchBy.INVOICING_TYPE,

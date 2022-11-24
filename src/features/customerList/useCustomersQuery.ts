@@ -46,6 +46,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   email?: string;
   address?: string;
   stickerNumber?: string;
+  stickerSeason?: string;
   boatRegistrationNumber?: string;
   invoicingTypes?: InvoicingType[];
 };
