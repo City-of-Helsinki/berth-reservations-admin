@@ -12,7 +12,6 @@
 import { useQuery } from '@apollo/react-hooks';
 
 import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
-import { limitedCustomerSearchFeatureFlag } from '../../common/utils/featureFlags';
 import {
   CUSTOMERS,
   CUSTOMERSVariables as CUSTOMERS_VARS,
@@ -48,7 +47,7 @@ type Config = Omit<CustomerListTableFilters, 'dateInterval'> & {
   address?: string;
   stickerNumber?: string;
   boatRegistrationNumber?: string;
-  invoicingType?: InvoicingType;
+  invoicingTypes?: InvoicingType[];
 };
 
 export default function useCustomersQuery({
@@ -100,12 +99,7 @@ export default function useCustomersQuery({
       apiToken,
     },
     fetchPolicy: 'no-cache',
-    skip:
-      activeQuery !== Query.BERTH_PROFILE ||
-      // If enabled, stop queries from being fired when a harbor hasn't been
-      // selected. Filtering by harbor limits the result group enough so that
-      // the query does not fail.
-      (limitedCustomerSearchFeatureFlag() ? (harborIds?.length ?? 0) === 0 : false),
+    skip: activeQuery !== Query.BERTH_PROFILE,
   });
 
   const organizationsQuery = useQuery<CUSTOMERS, CUSTOMERS_VARS>(CUSTOMER_GROUPS_QUERY, {

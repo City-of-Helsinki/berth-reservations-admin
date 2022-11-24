@@ -68,18 +68,28 @@ const orderBySelector = selector<string | undefined>({
   },
 });
 
-// Backend supports queries for names in the form of firstName, lastName only so
-// this transforms SearchBy.NAME to firstName, lastName.
-const transformSearchByName = (searchBy: SearchBy, value: string) => {
-  const res = { [searchBy]: value };
+interface SearchByTransformResult<T = string | string[]> {
+  [key: string]: T;
+}
+
+const transformSearchBy = (searchBy: SearchBy, value: string): SearchByTransformResult => {
+  // Backend supports queries for names in the form of firstName, lastName only so
+  // this transforms SearchBy.NAME to firstName, lastName.
   if (searchBy === SearchBy.NAME) {
-    res.lastName = value.split(' ')[0];
-    if (value.split(' ').length > 1) {
-      res.firstName = value.split(' ')[1];
-    }
-    delete res[searchBy];
+    const [lastName, firstName] = value.split(' ');
+    return {
+      firstName,
+      lastName,
+    };
   }
-  return res;
+  if (searchBy === SearchBy.INVOICING_TYPE) {
+    return {
+      invoicingTypes: [value],
+    };
+  }
+  return {
+    [searchBy]: value,
+  };
 };
 
 const CustomerListContainer = () => {
@@ -111,7 +121,7 @@ const CustomerListContainer = () => {
     first: pageSize,
     after: cursor,
     orderBy,
-    ...transformSearchByName(searchBy, prevSearchBy === searchBy ? debouncedSearchVal : searchVal),
+    ...transformSearchBy(searchBy, prevSearchBy === searchBy ? debouncedSearchVal : searchVal),
     ...delegatedCustomerListTableFilters,
     startDate: start ? format(createDate(start), 'yyyy-MM-dd') : start,
     endDate: end ? format(createDate(end), 'yyyy-MM-dd') : end,
