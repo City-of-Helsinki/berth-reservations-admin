@@ -121,7 +121,15 @@ const CustomerListContainer = () => {
 
   const [displayNotification, setDisplayNotification] = useState(false);
 
-  const [debouncedSearchVal] = useDebounce(searchVal, 500, {
+  const debounceWait = [
+    SearchBy.STICKER_NUMBER,
+    SearchBy.STICKER_NUMBER_SEASON,
+    SearchBy.BOAT_REGISTRATION_NUMBER,
+  ].includes(searchBy)
+    ? 1200
+    : 500;
+
+  const [debouncedSearchVal] = useDebounce(searchVal, debounceWait, {
     equalityFn: (prev, next) => prev === next,
     leading: true,
   });
