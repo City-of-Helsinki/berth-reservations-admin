@@ -89,7 +89,7 @@ const transformSearchBy = (searchBy: SearchBy, value: string): SearchByTransform
     };
   }
   if (searchBy === SearchBy.STICKER_NUMBER_SEASON) {
-    if (value.indexOf(' ') === -1) {
+    if (!value.includes(' ')) {
       return {
         stickerNumber: value,
       };
