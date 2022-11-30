@@ -28,6 +28,7 @@ const controlledFiltersEmptyValues = {
   startDate: undefined,
   endDate: undefined,
   moreThanOneBerthOrWinterStorage: undefined,
+  nonHelsinkiCitizen: undefined,
 };
 
 export type ControlledFilters = Omit<CustomerListTableFilters, 'dateInterval'> & {
