@@ -52,7 +52,10 @@ const HarborViewTable = ({
       Cell: ({ cell }: { cell: Cell<Berth> }) => {
         const isBerthActive = cell.row.original.isActive;
         if (!isBerthActive) return <StatusLabel type="error" label={t('harborView.berthProperties.inactive')} />;
-        if (cell.value) return <CustomerName disabled={!cell.value.isActiveLease} id={cell.value.customerId} />;
+        if (cell.value)
+          return (
+            <CustomerName disabled={!cell.value.isActiveLease} id={cell.value.customerId} displayPlaceholder={false} />
+          );
         return '';
       },
       Header: t('harborView.tableHeaders.customer') || '',
