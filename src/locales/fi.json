@@ -322,7 +322,7 @@
       "comment": "Huomiot",
       "selectInvoicingTypePaperInvoice": "Laskutus paperisena",
       "stickerNumberAndSeason": "Tarra ja kausi",
-      "stickerNumberAndSeasonPlaceholder": "Numero vuosi/vuosi"
+      "stickerNumberAndSeasonPlaceholder": "Nro alkuvuosi/loppuvuosi"
     },
     "additionalServices": {
       "title": "Lisäpalvelu",

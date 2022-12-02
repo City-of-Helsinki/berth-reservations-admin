@@ -121,13 +121,15 @@ const CustomerListContainer = () => {
 
   const [displayNotification, setDisplayNotification] = useState(false);
 
+  const debounceSlowProfileQueryDelay = 1200;
+  const debounceDefaultDelay = 500;
   const debounceWait = [
     SearchBy.STICKER_NUMBER,
     SearchBy.STICKER_NUMBER_SEASON,
     SearchBy.BOAT_REGISTRATION_NUMBER,
   ].includes(searchBy)
-    ? 1200
-    : 500;
+    ? debounceSlowProfileQueryDelay
+    : debounceDefaultDelay;
 
   const [debouncedSearchVal] = useDebounce(searchVal, debounceWait, {
     equalityFn: (prev, next) => prev === next,
