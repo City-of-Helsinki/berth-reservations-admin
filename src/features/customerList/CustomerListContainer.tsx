@@ -175,7 +175,16 @@ const CustomerListContainer = () => {
       setSearchBy(SearchBy.NAME);
       setDisplayNotification(true);
     }
-  }, [customerListTableFilters, searchBy, setSearchBy]);
+  }, [customerListTableFilters, prevSearchBy, searchBy, setSearchBy]);
+
+  // Clear the search value if changed from invoicing type, so the
+  // value from the select box doesn't stay in the search field
+  useEffect(() => {
+    if (prevSearchBy === SearchBy.INVOICING_TYPE) {
+      setSearchVal('');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchBy]);
 
   const tableData = getCustomersData(profiles);
 
