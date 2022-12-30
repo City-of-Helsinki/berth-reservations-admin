@@ -63,9 +63,24 @@ const HarborViewTable = ({
         // Show the customer of the active lease,
         // or if it's not active, show the pending berth switch offer customer
         // or the customer from previous season.
+        // The previous season is defined as either the last summer if it's autumn,
+        // or the previous year if it's not autumn, ie. next year. So if it's autumn 2022,
+        // the previous season is 2022 summer, and if it's spring 2023, the previous season is 2022.
         const activeLease = leases?.find((lease) => lease.isActive);
+        const leaseFromLastSummer = leases?.find(
+          (lease) => lease.endDate.includes(new Date().getFullYear().toString()) && lease.status === 'PAID'
+        );
+        let previousLease = leaseFromLastSummer;
+        const autumnStart = new Date(new Date().getFullYear(), 8, 15);
+        const autumnEnd = new Date(new Date().getFullYear(), 11, 31);
+        const isAutumn = new Date() >= autumnStart && new Date() <= autumnEnd;
+
+        if (prevSeasonLease && !isAutumn) {
+          previousLease = prevSeasonLease;
+        }
+
         const customerId =
-          activeLease?.customer.id || pendingSwitchOffer?.customer.id || prevSeasonLease?.customer.id || '';
+          activeLease?.customer.id || pendingSwitchOffer?.customer.id || previousLease?.customer.id || '';
         return {
           customerId,
           isActiveLease: !!activeLease,
