@@ -12,9 +12,10 @@ export interface CustomerNameProps {
   id: string;
   linkTo?: string;
   disabled?: boolean;
+  displayPlaceholder?: boolean;
 }
 
-const CustomerName = ({ id, linkTo, disabled }: CustomerNameProps) => {
+const CustomerName = ({ id, linkTo, disabled, displayPlaceholder }: CustomerNameProps) => {
   const { t } = useTranslation();
   const { loading, data } = useQuery<CUSTOMER_NAME>(CUSTOMER_NAME_QUERY, {
     skip: !id,
@@ -23,6 +24,9 @@ const CustomerName = ({ id, linkTo, disabled }: CustomerNameProps) => {
     },
   });
 
+  if (!displayPlaceholder && !data) {
+    return null;
+  }
   if (loading) return <LoadingCell />;
   if (disabled && data?.profile)
     return <Text color="secondary">{`${data.profile.lastName} ${data.profile.firstName}`}</Text>;

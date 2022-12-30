@@ -8,6 +8,7 @@ import Section from '../../common/section/Section';
 import { formatDate } from '../../common/utils/format';
 import styles from './berthDetails.module.scss';
 import MaintenanceServicesPlaceholder from '../../common/maintenancePlaceholders/MaintenanceServicesPlaceholder';
+import { LeaseStatus } from '../../@types/__generated__/globalTypes';
 
 export interface Lease {
   customer: {
@@ -17,7 +18,7 @@ export interface Lease {
   };
   startDate: string;
   endDate: string;
-  status: string;
+  status: LeaseStatus;
   isActive: boolean;
 }
 
@@ -31,7 +32,7 @@ const BerthDetails = ({ leases, comment, onEdit }: BerthDetailsProps) => {
   const { t, i18n } = useTranslation();
 
   const expiredLeasesElements = leases
-    .filter((lease) => !lease.isActive)
+    .filter((lease) => !lease.isActive && lease.status === LeaseStatus.PAID)
     .map(({ startDate, endDate, customer }, i) => {
       return (
         <div key={i}>

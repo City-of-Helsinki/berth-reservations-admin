@@ -905,15 +905,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1020,15 +1012,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1135,15 +1119,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1250,15 +1226,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1365,15 +1333,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1480,15 +1440,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1595,15 +1547,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1710,15 +1654,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1825,15 +1761,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
@@ -1940,15 +1868,7 @@ exports[`HarborView renders normally 1`] = `
                 class="tableCell"
                 role="cell"
                 style="box-sizing:border-box;flex:150 0 auto;min-width:0px;width:150px"
-              >
-                <a
-                  class="internalLink brand"
-                  href="#/customers/"
-                  title="Nimi puuttuu"
-                >
-                  Nimi puuttuu
-                </a>
-              </div>
+              />
               <div
                 class="tableCell"
                 role="cell"
