@@ -181,6 +181,7 @@ export interface CUSTOMERSVariables {
   email?: string | null;
   address?: string | null;
   stickerNumber?: string | null;
+  stickerSeason?: string | null;
   boatRegistrationNumber?: string | null;
   orderBy?: string | null;
   customerGroups?: (CustomerGroup | null)[] | null;

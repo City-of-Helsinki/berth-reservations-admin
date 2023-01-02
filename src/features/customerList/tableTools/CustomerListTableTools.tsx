@@ -20,7 +20,12 @@ export interface CustomerListTableToolsProps<T> {
   className?: string;
   searchVal: string | undefined;
   searchBy: T;
-  searchByOptions: Array<{ value: T; label: string; options?: CustomerListTableToolsSearchByOptionOption[] }>;
+  searchByOptions: Array<{
+    value: T;
+    label: string;
+    options?: CustomerListTableToolsSearchByOptionOption[];
+    placeholder?: string;
+  }>;
   selectedCustomerIds: string[];
   isExporting: boolean;
   handleCustomersExport: () => Promise<void>;
@@ -102,7 +107,7 @@ const CustomerListTableTools = <T extends string>({
               className={styles.searchInput}
               id="searchSimilarCustomers"
               value={searchVal}
-              placeholder={searchBy === 'name' ? `${t('common.lastName')} ${t('common.firstName')}` : undefined}
+              placeholder={selectedSearchByOption?.placeholder}
               onChange={(e) => setSearchVal((e.target as HTMLInputElement).value)}
             />
           )}
