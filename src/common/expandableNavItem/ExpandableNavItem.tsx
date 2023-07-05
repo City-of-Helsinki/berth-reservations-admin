@@ -9,7 +9,7 @@ export interface ExpandableProps {
   children: React.ReactNode;
   icon?: JSX.Element;
   label: React.ReactNode;
-  onClick?: Function;
+  onClick?: () => void;
   openOn?: string[];
 }
 

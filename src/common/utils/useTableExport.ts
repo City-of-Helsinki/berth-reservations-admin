@@ -117,7 +117,7 @@ type FetchReturnValue = {
 };
 
 type FetchCallback = (
-  apolloClient: ApolloClient<object>,
+  apolloClient: ApolloClient<Record<string, unknown>>,
   params: { after: string | null; first: number }
 ) => Promise<Maybe<FetchReturnValue>>;
 

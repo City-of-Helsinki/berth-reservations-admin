@@ -25,7 +25,7 @@ interface ListActionsProps<T> {
   resetSelectedRows(): void;
 }
 
-const ListActions = <T extends object | string | number | boolean | bigint | symbol>({
+const ListActions = <T extends Record<string, unknown>>({
   className,
   selectClassName,
   selectedRows,

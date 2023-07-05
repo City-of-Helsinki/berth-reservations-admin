@@ -5,7 +5,7 @@ import equal from 'fast-deep-equal';
 
 import { usePrevious } from './usePrevious';
 
-export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, onSortByChange?: Function) => {
+export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, onSortByChange?: () => void) => {
   const [sortBy, setSortBy] = useRecoilState<SortingRule<T>[]>(atom);
 
   const handleSortedColsChange = useCallback(
@@ -36,7 +36,7 @@ export interface SortedCol {
   desc?: boolean;
 }
 
-export const useBackendSorting = (onOrderByChange?: Function) => {
+export const useBackendSorting = (onOrderByChange?: () => void) => {
   const [orderBy, setOrderBy] = useState<string>();
 
   // colId: the id of the column to be sorted in the table

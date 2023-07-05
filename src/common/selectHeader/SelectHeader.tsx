@@ -17,7 +17,7 @@ export interface SelectHeaderProps<T> {
   renderer?(item: T): React.ReactNode;
 }
 
-const SelectHeader = <T extends {}>({
+const SelectHeader = <T extends Record<string, unknown>>({
   allLabel,
   className,
   editLabel,

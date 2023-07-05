@@ -19,7 +19,7 @@ Environments:
 
 ## Requirements
 
-- Node 14.x
+- Node 16.x
 - Yarn
 - Git
 - Docker and docker-compose
