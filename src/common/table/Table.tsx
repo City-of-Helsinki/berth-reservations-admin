@@ -33,17 +33,22 @@ import Checkbox from '../checkbox/Checkbox';
 import RadioButton from '../radioButton/RadioButton';
 import LoadingCell from './loadingCell/LoadingCell';
 
-export type Column<D extends object> = ColumnType<D> & UseFiltersColumnOptions<D> & UseSortByColumnOptions<D>;
+export type Column<D extends Record<string, unknown>> = ColumnType<D> &
+  UseFiltersColumnOptions<D> &
+  UseSortByColumnOptions<D>;
 
-interface Setters<D extends object> {
+interface Setters<D extends Record<string, unknown>> {
   setGlobalFilter: UseGlobalFiltersInstanceProps<D>['setGlobalFilter'];
   setFilter: UseFiltersInstanceProps<D>['setFilter'];
   resetSelectedRows: () => void;
 }
 
-type TableToolsFn<D extends object> = (tableState: TableState<D>, setters: Setters<D>) => React.ReactNode;
+type TableToolsFn<D extends Record<string, unknown>> = (
+  tableState: TableState<D>,
+  setters: Setters<D>
+) => React.ReactNode;
 
-type TableProps<D extends object> = {
+type TableProps<D extends Record<string, unknown>> = {
   className?: string;
   data: D[];
   loading?: boolean;

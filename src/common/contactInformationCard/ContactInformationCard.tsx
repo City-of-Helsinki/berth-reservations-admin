@@ -8,7 +8,7 @@ import styles from './contactInformation.module.scss';
 import ContactInformationDetails from './ContactInformationDetails';
 import { contactInformationFeatureFlag } from '../utils/featureFlags';
 
-export type ContactInformationCardProps = {};
+export type ContactInformationCardProps = Record<string, unknown>;
 
 // TODO
 const ContactInformationCard = (props: ContactInformationCardProps) => {

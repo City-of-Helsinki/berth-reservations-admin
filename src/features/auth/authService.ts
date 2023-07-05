@@ -13,7 +13,6 @@ class AuthService {
       REACT_APP_TUNNISTAMO_SCOPE_PROFILE: profileScope,
     } = process.env;
     const settings: UserManagerSettings = {
-      /* eslint-disable @typescript-eslint/camelcase */
       authority: process.env.REACT_APP_TUNNISTAMO_URI,
       automaticSilentRenew: true,
       client_id: process.env.REACT_APP_TUNNISTAMO_CLIENT_ID,
@@ -22,7 +21,6 @@ class AuthService {
       response_type: 'id_token token',
       silent_redirect_uri: `${origin}/silent-callback.html`,
       scope: `openid ${berthScope} ${profileScope}`,
-      /* eslint-enable @typescript-eslint/camelcase */
     };
 
     // Logger
