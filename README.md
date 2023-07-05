@@ -19,7 +19,7 @@ Environments:
 
 ## Requirements
 
-- Node 12.x
+- Node 14.x
 - Yarn
 - Git
 - Docker and docker-compose
@@ -184,6 +184,7 @@ Also add http://localhost:3000/ to Post Logout Redirect URIs of berths-admin-ui 
 Clone https://github.com/City-of-Helsinki/open-city-profile/ and follow the instructions in the repository for setting up the project locally.
 
 Client ID's of services using the open-city-profile should be configured in the Django Admin (http://localhost:8080/admin/):
+
 - Navigate: Django admin -> Services -> Venepaikka -> Client ids
 - Add the following client ID's for the Venepaikka service:
   - https://api.hel.fi/auth/berths-admin-ui
@@ -192,18 +193,18 @@ Client ID's of services using the open-city-profile should be configured in the 
 ### Set up berth-reservations backends
 
 Clone and set the following services as instructed:
+
 - https://github.com/City-of-Helsinki/berth-reservations
 - https://github.com/City-of-Helsinki/berth-federation-gateway
-
 
 ### Set up admin permissions
 
 Before you can access the berth-reservations-admin site, your Tunnistamo user needs to be set up with permissions.
 
 Permissions that need to be added:
+
 - Add user to `berth` group in open-city-profile http://localhost:8080/admin/
 - Add user to all groups in berth-reservations http://localhost:8081/admin/
-
 
 ## Deployment
 
