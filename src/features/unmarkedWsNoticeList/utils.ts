@@ -174,32 +174,44 @@ export const generateAndSaveStickerPDF = (customers: CustomerInfo[]) => {
 
       doc.setFont('times', 'bold');
       doc.setFontSize(16);
-      doc.text('Ohessa veneen talvisäilytyskauden 15.9.2021 - 10.6.2022 tarra.', leftMargin, 350);
+      doc.text('VENEIDEN NOSTOJÄRJESTYSALUEIDEN TARRA\n', leftMargin, 260);
+      doc.text('Ohessa tarra kuluvalle talvisäilytyskaudelle 15.9. - 10.6. ', leftMargin, 280);
+
       doc.setFont('times', 'normal');
       doc.setFontSize(12);
-
       doc.text(
-        'Kiinnitäthän tarran näkyvälle paikalle veneeseen, sen peitteeseen tai \n' +
-          'telakointitarvikkeeseen. Tarran on oltava kiinnitettynä koko talvisäilytyskauden ajan \n' +
-          'tarkastuksia varten.  Mikäli tarra katoaa, saat uuden ottamalla yhteyttä \n' +
-          'venepaikkavarauksiin.\n\n' +
-          'Muistutamme vielä, että mastot tulee olla kaadettuina talvisäilytysalueilla ja \n' +
-          'ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. \n' +
-          'Talvisäilytysalueet eivät ole vartioituja.\n\n' +
-          'Sähkö on suljettu talvisäilytysalueilla 1.12. - 15.3. /sääolosuhteet. Vedet suljetaan \n' +
-          'talvisäilytysalueilla aikaisintaan viikolla 42/sääolosuhteet ja avataan keväällä \n' +
-          'sääolosuhteiden mukaan.',
+        'Kiinnitäthän tarran näkyvälle paikalle veneeseen, sen peitteeseen tai telakointitarvikkeeseen. \n' +
+          'Tarran on oltava kiinnitettynä koko talvisäilytyskauden ajan tarkastuksia varten. \n' +
+          'Mikäli tarra katoaa, saat uuden ottamalla yhteyttä venepaikkavarauksiin.',
         leftMargin,
-        370
+        300
       );
 
       doc.setFont('times', 'bold');
-      doc.text('Ystävällisin terveisin venepaikkavaraukset', leftMargin, 510);
+      doc.text('Talvisäilytyksen muistilista:', leftMargin, 340);
+
+      doc.setFont('times', 'normal');
+      doc.text(
+        '· Mastot on kaadettava talvehtimisen ajaksi. \n\n' +
+          '· Talvisäilytysalueet eivät ole vartioituja. \n\n' +
+          '· Veneitä ei saa telakoida pelastuskäytäville eikä viheralueille. Pelastus- ja auraustöiden \n' +
+          '  sujuvuuden ja alueiden yleisen turvallisuuden vuoksi tämä on kiellettyä. \n\n' +
+          '· Rekisteröimättömät trailerit eli ns. satamatrailerit ovat kiellettyjä talvisäilytysalueilla. \n' +
+          '  Ainoastaan rekisteröidyt trailerit ja kokoon taittuvat pukit sallitaan. \n\n' +
+          '· Ongelmajätteiden jättäminen talvisäilytysalueille on ehdottomasti kielletty. \n\n' +
+          '· Talvisäilytysalueelle luvattomasti nostetut tai ilman tarraa olevat veneet \n' +
+          '  poistetaan alueelta omistajan vastuulla ja kustannuksella. \n',
+        leftMargin,
+        355
+      );
+
+      doc.setFont('times', 'bold');
+      doc.text('Ystävällisin terveisin', leftMargin, 520);
       doc.setFont('times', 'normal');
 
-      doc.text('Venepaikkavaraukset', leftMargin, 536);
-      doc.text('Sähköposti: venepaikkavaraukset@hel.fi', leftMargin, 548);
-      doc.text('Puh. 09 310 87900', leftMargin, 560);
+      doc.text('Venepaikkavaraukset', leftMargin, 546);
+      doc.text('Sähköposti: venepaikkavaraukset@hel.fi', leftMargin, 558);
+      doc.text('Puh. 09 310 87900', leftMargin, 570);
 
       if (index < customers.length - 1) {
         doc.addPage();
