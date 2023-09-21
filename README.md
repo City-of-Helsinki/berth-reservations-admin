@@ -54,6 +54,13 @@ yarn start
 
 Open [http://localhost:3000](http://localhost:3000) and take a look around.
 
+### Problems starting development environment
+
+#### Windows specific
+
+- `SassError: File to import not found or unreadable`, e.g. `@import 'colours';`
+  - Change all `:` characters to `;` in SASS_PATH, see [sass documentation](https://github.com/sass/sass/blob/embedded-protocol-2.1.0/js-api-doc/legacy/options.d.ts#L32-L35)
+
 ### Testing
 
 To run tests, run:
