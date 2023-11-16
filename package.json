@@ -48,7 +48,7 @@
     "react-table": "^7.6.0",
     "react-toastify": "^6.0.5",
     "recoil": "^0.0.13",
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.10",
     "use-debounce": "^3.4.2",
     "uuid": "^8.1.0",
     "yup": "^0.28.5"
