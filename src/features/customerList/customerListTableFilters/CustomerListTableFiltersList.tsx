@@ -110,6 +110,7 @@ const CustomerListTableFiltersList = ({ filters }: Props) => {
         return;
       }
     },
+    nonHelsinkiCitizen: (_: FilterEntryValue) => '',
     moreThanOneBerthOrWinterStorage: (_: FilterEntryValue) => '',
   };
 

@@ -432,6 +432,11 @@ test(`allows user to give search conditions`, async () => {
       value: '3.4.2013',
     },
     {
+      name: 'nonHelsinkiCitizen',
+      label: 'Kotikunta muu kuin Helsinki',
+      type: 'checkbox',
+    },
+    {
       name: 'moreThanOneBerthOrWinterStorage',
       label: 'Enemmän kuin yksi vene- tai talvisäilytyspaikka',
       type: 'checkbox',
@@ -443,7 +448,7 @@ test(`allows user to give search conditions`, async () => {
   submitFilters();
 
   expect(getSearchParams()).toMatchInlineSnapshot(
-    `"?customerGroups=COMPANY&boatTypeIds=1&leaseStatuses=PAID&harborIds=2&pierId=pier-1&berthId=berth-1&winterStorageGridAreaIds=winterStorageArea-1&winterStoragePlaceId=place-1&winterStorageAreaIds=winterStorageArea-2&moreThanOneBerthOrWinterStorage=true&dateInterval=3.4.2011-3.4.2013"`
+    `"?customerGroups=COMPANY&boatTypeIds=1&leaseStatuses=PAID&harborIds=2&pierId=pier-1&berthId=berth-1&winterStorageGridAreaIds=winterStorageArea-1&winterStoragePlaceId=place-1&winterStorageAreaIds=winterStorageArea-2&moreThanOneBerthOrWinterStorage=true&nonHelsinkiCitizen=true&dateInterval=3.4.2011-3.4.2013"`
   );
 
   // Verify that disabling sections resets values
@@ -454,7 +459,7 @@ test(`allows user to give search conditions`, async () => {
 
   const searchParams = getSearchParams();
   expect(searchParams).toMatchInlineSnapshot(
-    `"?customerGroups=COMPANY&boatTypeIds=1&leaseStatuses=PAID&moreThanOneBerthOrWinterStorage=true"`
+    `"?customerGroups=COMPANY&boatTypeIds=1&leaseStatuses=PAID&moreThanOneBerthOrWinterStorage=true&nonHelsinkiCitizen=true"`
   );
   const activeKeys = new URLSearchParams(searchParams).keys();
   expect(activeKeys).not.toContain([
