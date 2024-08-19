@@ -56,11 +56,19 @@ export interface SELECT_BERTH_LEASE_profile_berthLeases {
 
 export interface SELECT_BERTH_LEASE_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   berthLeases: SELECT_BERTH_LEASE_profile_berthLeases | null;
 }
 
 export interface SELECT_BERTH_LEASE {
+  /**
+   * Get profile by profile ID.
+   * 
+   * Requires `staff` credentials for the requester's service.The profile must have an active connection to the requester's service, otherwise it will not be returned.
+   */
   profile: SELECT_BERTH_LEASE_profile | null;
 }
 

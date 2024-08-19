@@ -49,13 +49,22 @@ export interface WinterStorageLease_place {
 
 export interface WinterStorageLease_customer_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface WinterStorageLease_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: WinterStorageLease_customer_primaryEmail | null;
 }
 

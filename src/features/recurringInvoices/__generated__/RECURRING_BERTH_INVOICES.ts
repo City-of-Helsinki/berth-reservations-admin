@@ -29,6 +29,9 @@ export interface RECURRING_BERTH_INVOICES_pending {
 
 export interface RECURRING_BERTH_INVOICES_berthLeases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   firstName: string;
   lastName: string;

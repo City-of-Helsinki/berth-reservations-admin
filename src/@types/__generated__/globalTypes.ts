@@ -63,6 +63,9 @@ export enum BoatCertificateType {
   INSURANCE = "INSURANCE",
 }
 
+/**
+ * An enumeration.
+ */
 export enum ContactMethod {
   EMAIL = "EMAIL",
   SMS = "SMS",
@@ -96,6 +99,9 @@ export enum InvoicingType {
   PAPER_INVOICE = "PAPER_INVOICE",
 }
 
+/**
+ * An enumeration.
+ */
 export enum Language {
   ENGLISH = "ENGLISH",
   FINNISH = "FINNISH",
@@ -737,6 +743,13 @@ export interface UpdatePierMutationInput {
   clientMutationId?: string | null;
 }
 
+/**
+ * The following fields are deprecated:
+ * 
+ * * `image`
+ * 
+ * There's no replacement for these.
+ */
 export interface UpdateProfileInput {
   firstName?: string | null;
   lastName?: string | null;

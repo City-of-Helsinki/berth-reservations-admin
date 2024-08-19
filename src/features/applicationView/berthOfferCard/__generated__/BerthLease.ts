@@ -53,13 +53,22 @@ export interface BerthLease_berth {
 
 export interface BerthLease_customer_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface BerthLease_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: BerthLease_customer_primaryEmail | null;
 }
 

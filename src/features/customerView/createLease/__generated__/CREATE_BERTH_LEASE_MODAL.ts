@@ -50,6 +50,11 @@ export interface CREATE_BERTH_LEASE_MODAL_harbors {
 }
 
 export interface CREATE_BERTH_LEASE_MODAL {
+  /**
+   * Get profile by profile ID.
+   * 
+   * Requires `staff` credentials for the requester's service.The profile must have an active connection to the requester's service, otherwise it will not be returned.
+   */
   profile: CREATE_BERTH_LEASE_MODAL_profile | null;
   harbors: CREATE_BERTH_LEASE_MODAL_harbors | null;
 }

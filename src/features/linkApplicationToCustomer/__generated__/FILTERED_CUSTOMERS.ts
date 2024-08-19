@@ -187,10 +187,16 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node_berthApplications {
 
 export interface FILTERED_CUSTOMERS_profiles_edges_node {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   firstName: string;
   lastName: string;
   customerGroup: CustomerGroup | null;
+  /**
+   * Convenience field for the address which is marked as primary.
+   */
   primaryAddress: FILTERED_CUSTOMERS_profiles_edges_node_primaryAddress | null;
   organization: FILTERED_CUSTOMERS_profiles_edges_node_organization | null;
   berthLeases: FILTERED_CUSTOMERS_profiles_edges_node_berthLeases | null;
@@ -200,16 +206,27 @@ export interface FILTERED_CUSTOMERS_profiles_edges_node {
 
 export interface FILTERED_CUSTOMERS_profiles_edges {
   __typename: "ProfileNodeEdge";
+  /**
+   * The item at the end of the edge
+   */
   node: FILTERED_CUSTOMERS_profiles_edges_node | null;
 }
 
 export interface FILTERED_CUSTOMERS_profiles {
   __typename: "ProfileNodeConnection";
   count: number;
+  /**
+   * Contains the nodes in this connection.
+   */
   edges: (FILTERED_CUSTOMERS_profiles_edges | null)[];
 }
 
 export interface FILTERED_CUSTOMERS {
+  /**
+   * Search for profiles. The results are filtered based on the given parameters. The results are paged using Relay.
+   * 
+   * Requires `staff` credentials for the requester's service.The profiles must have an active connection to the requester's service, otherwise they will not be returned.
+   */
   profiles: FILTERED_CUSTOMERS_profiles | null;
 }
 

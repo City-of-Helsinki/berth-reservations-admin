@@ -11,6 +11,9 @@ import { LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface WINTER_STORAGE_WITHOUT_APPLICATION_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
@@ -135,12 +138,20 @@ export interface WINTER_STORAGE_WITHOUT_APPLICATION_profile_boats {
 
 export interface WINTER_STORAGE_WITHOUT_APPLICATION_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   boats: WINTER_STORAGE_WITHOUT_APPLICATION_profile_boats | null;
 }
 
 export interface WINTER_STORAGE_WITHOUT_APPLICATION {
   winterStorageArea: WINTER_STORAGE_WITHOUT_APPLICATION_winterStorageArea | null;
+  /**
+   * Get profile by profile ID.
+   * 
+   * Requires `staff` credentials for the requester's service.The profile must have an active connection to the requester's service, otherwise it will not be returned.
+   */
   profile: WINTER_STORAGE_WITHOUT_APPLICATION_profile | null;
 }
 

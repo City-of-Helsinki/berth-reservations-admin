@@ -11,6 +11,9 @@ import { LeaseStatus, BerthMooringType } from "./../../../@types/__generated__/g
 
 export interface BERTH_OFFER_WITHOUT_APPLICATION_HARBOR_harbor_properties_piers_edges_node_properties_berths_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

@@ -11,6 +11,9 @@ import { ApplicationStatus, LeaseStatus } from "./../../../@types/__generated__/
 
 export interface WINTER_STORAGE_OFFER_winterStorageApplication_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
@@ -36,6 +39,9 @@ export interface WINTER_STORAGE_OFFER_boatTypes {
 
 export interface WINTER_STORAGE_OFFER_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

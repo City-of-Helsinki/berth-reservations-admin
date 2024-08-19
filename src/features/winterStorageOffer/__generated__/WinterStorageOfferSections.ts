@@ -11,6 +11,9 @@ import { LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface WinterStorageOfferSections_edges_node_properties_places_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
