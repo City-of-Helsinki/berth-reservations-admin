@@ -17,9 +17,15 @@ export interface CREATE_NEW_PROFILE_createProfile_profile_primaryAddress {
 
 export interface CREATE_NEW_PROFILE_createProfile_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   lastName: string;
   firstName: string;
+  /**
+   * Convenience field for the address which is marked as primary.
+   */
   primaryAddress: CREATE_NEW_PROFILE_createProfile_profile_primaryAddress | null;
 }
 

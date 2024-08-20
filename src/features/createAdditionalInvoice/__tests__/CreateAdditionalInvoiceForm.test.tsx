@@ -7,6 +7,8 @@ import { BerthLease } from '../../customerView/types';
 import { AdditionalService } from '../../pricing/additionalServicePricing/AdditionalServicePricing';
 import {
   AdditionalProductTaxEnum,
+  BerthMooringType,
+  LeaseStatus,
   PeriodType,
   PriceUnits,
   ProductServiceType,
@@ -21,6 +23,11 @@ describe('CreateAdditionalInvoiceForm', () => {
     id: '123',
     isActive: true,
     pierIdentifier: null,
+    status: LeaseStatus.OFFERED,
+    width: 3,
+    length: 5,
+    depth: null,
+    mooringType: BerthMooringType.SINGLE_SLIP_PLACE,
   };
 
   const product: AdditionalService = {

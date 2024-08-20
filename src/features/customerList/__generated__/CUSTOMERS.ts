@@ -21,6 +21,9 @@ export interface CUSTOMERS_berthProfiles_edges_node_organization {
 
 export interface CUSTOMERS_berthProfiles_edges_node_primaryAddress {
   __typename: "AddressNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   address: string;
   city: string;
@@ -29,35 +32,53 @@ export interface CUSTOMERS_berthProfiles_edges_node_primaryAddress {
 
 export interface CUSTOMERS_berthProfiles_edges_node_primaryPhone {
   __typename: "PhoneNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   phone: string;
 }
 
 export interface CUSTOMERS_berthProfiles_edges_node_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges_node_service {
   __typename: "ServiceNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   type: ServiceType | null;
 }
 
 export interface CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges_node {
   __typename: "ServiceConnectionType";
+  /**
+   * The ID of the object
+   */
   id: string;
   service: CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges_node_service;
 }
 
 export interface CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges {
   __typename: "ServiceConnectionTypeEdge";
+  /**
+   * The item at the end of the edge
+   */
   node: CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges_node | null;
 }
 
 export interface CUSTOMERS_berthProfiles_edges_node_serviceConnections {
   __typename: "ServiceConnectionTypeConnection";
+  /**
+   * Contains the nodes in this connection.
+   */
   edges: (CUSTOMERS_berthProfiles_edges_node_serviceConnections_edges | null)[];
 }
 
@@ -140,6 +161,9 @@ export interface CUSTOMERS_berthProfiles_edges_node_berthLeases {
 
 export interface CUSTOMERS_berthProfiles_edges_node {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   firstName: string;
   lastName: string;
@@ -147,9 +171,21 @@ export interface CUSTOMERS_berthProfiles_edges_node {
   comment: string | null;
   customerGroup: CustomerGroup | null;
   organization: CUSTOMERS_berthProfiles_edges_node_organization | null;
+  /**
+   * Convenience field for the address which is marked as primary.
+   */
   primaryAddress: CUSTOMERS_berthProfiles_edges_node_primaryAddress | null;
+  /**
+   * Convenience field for the phone which is marked as primary.
+   */
   primaryPhone: CUSTOMERS_berthProfiles_edges_node_primaryPhone | null;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: CUSTOMERS_berthProfiles_edges_node_primaryEmail | null;
+  /**
+   * List of the profile's connected services.
+   */
   serviceConnections: CUSTOMERS_berthProfiles_edges_node_serviceConnections | null;
   contactMethod: ContactMethod | null;
   image: string | null;
@@ -160,12 +196,18 @@ export interface CUSTOMERS_berthProfiles_edges_node {
 
 export interface CUSTOMERS_berthProfiles_edges {
   __typename: "ProfileNodeEdge";
+  /**
+   * The item at the end of the edge
+   */
   node: CUSTOMERS_berthProfiles_edges_node | null;
 }
 
 export interface CUSTOMERS_berthProfiles {
   __typename: "ProfileNodeConnection";
   count: number;
+  /**
+   * Contains the nodes in this connection.
+   */
   edges: (CUSTOMERS_berthProfiles_edges | null)[];
 }
 

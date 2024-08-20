@@ -22,6 +22,7 @@ const initialProps: PricingProps = {
     onAddServiceClick: jest.fn(),
     onEditRowClick: jest.fn(),
     onCloseModal: jest.fn(),
+    onDelete: jest.fn(),
     onSubmitForm: jest.fn(),
   },
   loading: false,

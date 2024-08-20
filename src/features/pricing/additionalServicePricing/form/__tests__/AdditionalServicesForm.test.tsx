@@ -13,6 +13,7 @@ import {
 describe('AdditionalServicesForm', () => {
   const initialProps: AdditionalServicesFormProps = {
     onCancel: jest.fn(),
+    onDelete: jest.fn(),
     onSubmit: jest.fn(),
     initialValues: {
       service: ProductServiceType.LIGHTING,

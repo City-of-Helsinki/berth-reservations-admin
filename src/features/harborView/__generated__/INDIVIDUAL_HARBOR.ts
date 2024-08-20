@@ -64,6 +64,9 @@ export interface INDIVIDUAL_HARBOR_piers {
 
 export interface INDIVIDUAL_HARBOR_berths_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
@@ -88,6 +91,9 @@ export interface INDIVIDUAL_HARBOR_berths_edges_node_leases {
 
 export interface INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
@@ -102,6 +108,9 @@ export interface INDIVIDUAL_HARBOR_berths_edges_node_prevSeasonLease {
 
 export interface INDIVIDUAL_HARBOR_berths_edges_node_pendingSwitchOffer_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

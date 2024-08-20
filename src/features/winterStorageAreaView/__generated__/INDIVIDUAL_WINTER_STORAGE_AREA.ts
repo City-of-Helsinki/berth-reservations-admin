@@ -11,6 +11,9 @@ import { LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
@@ -43,6 +46,9 @@ export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sec
 
 export interface INDIVIDUAL_WINTER_STORAGE_AREA_winterStorageArea_properties_sections_edges_node_properties_places_edges_node_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

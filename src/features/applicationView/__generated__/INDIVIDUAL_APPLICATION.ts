@@ -21,6 +21,9 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer_organization {
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryAddress {
   __typename: "AddressNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   address: string;
   postalCode: string;
@@ -29,12 +32,18 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryAddress
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_customer_primaryPhone {
   __typename: "PhoneNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   phone: string;
 }
@@ -45,11 +54,23 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_customer {
   firstName: string;
   invoicingType: InvoicingType | null;
   lastName: string;
+  /**
+   * The ID of the object
+   */
   id: string;
   customerGroup: CustomerGroup | null;
   organization: INDIVIDUAL_APPLICATION_berthApplication_customer_organization | null;
+  /**
+   * Convenience field for the address which is marked as primary.
+   */
   primaryAddress: INDIVIDUAL_APPLICATION_berthApplication_customer_primaryAddress | null;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: INDIVIDUAL_APPLICATION_berthApplication_customer_primaryEmail | null;
+  /**
+   * Convenience field for the phone which is marked as primary.
+   */
   primaryPhone: INDIVIDUAL_APPLICATION_berthApplication_customer_primaryPhone | null;
   language: Language | null;
 }
@@ -223,13 +244,22 @@ export interface INDIVIDUAL_APPLICATION_berthApplication_lease_berth {
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_customer_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface INDIVIDUAL_APPLICATION_berthApplication_lease_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: INDIVIDUAL_APPLICATION_berthApplication_lease_customer_primaryEmail | null;
 }
 

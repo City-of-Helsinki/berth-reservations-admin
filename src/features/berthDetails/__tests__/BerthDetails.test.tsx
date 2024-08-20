@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 
 import BerthDetails, { BerthDetailsProps } from '../BerthDetails';
+import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 const minimumProps: BerthDetailsProps = {
   leases: [],
@@ -18,7 +19,7 @@ const testLeases: BerthDetailsProps['leases'] = [
     },
     startDate: '2018-01-01',
     endDate: '2018-12-31',
-    status: 'PAID',
+    status: LeaseStatus.PAID,
     isActive: false,
   },
   {
@@ -29,7 +30,7 @@ const testLeases: BerthDetailsProps['leases'] = [
     },
     startDate: '2019-01-01',
     endDate: '2019-12-31',
-    status: 'PAID',
+    status: LeaseStatus.PAID,
     isActive: false,
   },
   {
@@ -40,7 +41,7 @@ const testLeases: BerthDetailsProps['leases'] = [
     },
     startDate: '2020-01-01',
     endDate: '2020-12-01',
-    status: 'PAID',
+    status: LeaseStatus.PAID,
     isActive: true,
   },
 ];

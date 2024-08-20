@@ -18,6 +18,12 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
       startDate: '2019-05-06',
       endDate: '2019-09-14',
       isActive: true,
+      customer: {
+        __typename: 'ProfileNode',
+        id: 'fc05adfd-bc1e-4c39-ac6e-776d387b2bf1',
+        primaryEmail: null,
+      },
+      order: null,
       berth: {
         id: 'd04e1414-f959-47df-968b-ab37a7c920b7',
         __typename: 'BerthNode',
@@ -26,10 +32,18 @@ const mockBerthLeases: BERTH_LEASE_EDGE[] = [
         width: 2.5,
         depth: 1,
         mooringType: BerthMooringType.NO_STERN_TO_MOORING,
+        comment: '',
+        isAccessible: null,
         pier: {
           id: 'a1c1831c-5eb8-48ba-8460-c9730662aa52',
           __typename: 'PierNode',
           properties: {
+            electricity: false,
+            gate: false,
+            lighting: false,
+            mooring: false,
+            wasteCollection: false,
+            water: false,
             __typename: 'PierProperties',
             identifier: 'A',
             harbor: {

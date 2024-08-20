@@ -25,6 +25,9 @@ export interface CREATE_WINTER_STORAGE_LEASE_MODAL_profile_boats {
 
 export interface CREATE_WINTER_STORAGE_LEASE_MODAL_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   boats: CREATE_WINTER_STORAGE_LEASE_MODAL_profile_boats | null;
 }
@@ -51,6 +54,11 @@ export interface CREATE_WINTER_STORAGE_LEASE_MODAL_winterStorageAreas {
 }
 
 export interface CREATE_WINTER_STORAGE_LEASE_MODAL {
+  /**
+   * Get profile by profile ID.
+   * 
+   * Requires `staff` credentials for the requester's service.The profile must have an active connection to the requester's service, otherwise it will not be returned.
+   */
   profile: CREATE_WINTER_STORAGE_LEASE_MODAL_profile | null;
   winterStorageAreas: CREATE_WINTER_STORAGE_LEASE_MODAL_winterStorageAreas | null;
 }

@@ -11,6 +11,9 @@ import { ApplicationStatus, WinterStorageApplicationAreaType, LeaseStatus } from
 
 export interface WINTER_STORAGE_APPLICATIONS_winterStorageApplications_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

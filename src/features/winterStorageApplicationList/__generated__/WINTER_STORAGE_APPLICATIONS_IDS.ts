@@ -11,7 +11,13 @@ import { ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface WINTER_STORAGE_APPLICATIONS_IDS_winterStorageApplications_pageInfo {
   __typename: "PageInfo";
+  /**
+   * When paginating forwards, are there more items?
+   */
   hasNextPage: boolean;
+  /**
+   * When paginating forwards, the cursor to continue.
+   */
   endCursor: string | null;
 }
 

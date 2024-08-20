@@ -20,7 +20,10 @@ const mockProps: UnmarkedWsNoticeListProps = {
   pageCount: 1,
   pageIndex: 0,
   isSubmittingApproveOrders: false,
-  handleApproveOrders: jest.fn(),
+  isExporting: false,
+  handleApplicationsExport: jest.fn(),
+  handleSendOffers: jest.fn(),
+  onStickerChange: jest.fn(),
   onNameFilterChange: jest.fn(),
   onSavePdf: jest.fn(),
   goToPage: jest.fn(),
@@ -55,7 +58,10 @@ describe('UnmarkedWsNoticeList', () => {
       await wrapper.find('div.expander div').at(0).simulate('click');
     });
     wrapper.update();
-
-    expect(wrapper.find(UnmarkedWsNoticeDetails).props()).toEqual(notices[0]);
+    const expectedProps = {
+      onStickerChange: mockProps.onStickerChange,
+      ...notices[0],
+    };
+    expect(wrapper.find(UnmarkedWsNoticeDetails).props()).toEqual(expectedProps);
   });
 });

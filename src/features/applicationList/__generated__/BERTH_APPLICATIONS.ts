@@ -11,6 +11,9 @@ import { ApplicationStatus, OfferStatus, LeaseStatus } from "./../../../@types/_
 
 export interface BERTH_APPLICATIONS_berthApplications_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 

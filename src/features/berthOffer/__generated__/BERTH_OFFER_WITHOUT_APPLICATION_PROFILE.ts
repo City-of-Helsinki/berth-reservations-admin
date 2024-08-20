@@ -38,11 +38,19 @@ export interface BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats {
 
 export interface BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   boats: BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_profile_boats | null;
 }
 
 export interface BERTH_OFFER_WITHOUT_APPLICATION_PROFILE {
+  /**
+   * Get profile by profile ID.
+   * 
+   * Requires `staff` credentials for the requester's service.The profile must have an active connection to the requester's service, otherwise it will not be returned.
+   */
   profile: BERTH_OFFER_WITHOUT_APPLICATION_PROFILE_profile | null;
 }
 

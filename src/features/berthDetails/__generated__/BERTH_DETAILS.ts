@@ -11,6 +11,9 @@ import { LeaseStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface BERTH_DETAILS_berth_leases_edges_node_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   firstName: string;
   lastName: string;

@@ -23,7 +23,7 @@ const mockProps: LinkApplicationToCustomerProps = {
   handleLinkCustomer: jest.fn(),
   loadingCustomers: false,
   onSortedColChange: jest.fn(),
-  pagination: { pageCount: 1 },
+  pagination: { pageCount: 1, pageIndex: 0, onPageChange: jest.fn() },
 };
 
 const mockData: LinkApplicationToCustomerProps['data'] = [
