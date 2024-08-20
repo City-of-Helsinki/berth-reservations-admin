@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import BerthDetails, { BerthDetailsProps } from '../BerthDetails';
 
 const minimumProps: BerthDetailsProps = {

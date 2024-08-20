@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styles from './dropdown.module.scss';
 
 export interface DropdownProps {

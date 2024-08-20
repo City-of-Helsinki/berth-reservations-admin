@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { IconAngleLeft, IconAngleRight } from 'hds-react';
-
 import styles from './layout.module.scss';
 import Button from '../button/Button';
 

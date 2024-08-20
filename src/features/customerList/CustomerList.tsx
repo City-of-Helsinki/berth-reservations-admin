@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cell, SortingRule } from 'react-table';
-
 import PageTitle from '../../common/pageTitle/PageTitle';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import Pagination, { PaginationProps } from '../../common/pagination/Pagination';

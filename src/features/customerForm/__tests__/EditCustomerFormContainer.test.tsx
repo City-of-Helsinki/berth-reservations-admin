@@ -3,7 +3,6 @@ import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
-
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import { CUSTOMER_FORM_QUERY } from '../queries';
 import { mockPrivateCustomerProfile } from '../__fixtures__/mockData';

@@ -1,5 +1,4 @@
 import { PureQueryOptions } from 'apollo-client';
-
 import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 
 export interface FormProps<T> {

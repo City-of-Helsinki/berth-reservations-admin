@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-
 import Card from '../card/Card';
 import CardHeader from '../cardHeader/CardHeader';
 import Text from '../text/Text';

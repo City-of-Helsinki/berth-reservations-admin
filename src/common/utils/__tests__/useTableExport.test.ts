@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { renderHook } from '@testing-library/react-hooks';
 import * as Apollo from '@apollo/react-hooks';
-
 import { useTableExport } from '../useTableExport';
 import { exportClient } from '../../../app/exportClient';
 import * as downloadFile from '../downloadFile';

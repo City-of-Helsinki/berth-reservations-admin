@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Section from '../section/Section';
 import ExternalLink from '../externalLink/ExternalLink';
 

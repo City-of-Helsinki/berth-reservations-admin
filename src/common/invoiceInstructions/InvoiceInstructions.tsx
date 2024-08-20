@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import styles from '../../features/invoiceCard/sendInvoiceForm/sendInvoiceForm.module.scss';
 
 interface Props {

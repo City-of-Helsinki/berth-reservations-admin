@@ -27,7 +27,6 @@ import {
 } from 'react-table';
 import { IconAngleDown, IconArrowLeft } from 'hds-react';
 import equal from 'fast-deep-equal';
-
 import styles from './table.module.scss';
 import Checkbox from '../checkbox/Checkbox';
 import RadioButton from '../radioButton/RadioButton';

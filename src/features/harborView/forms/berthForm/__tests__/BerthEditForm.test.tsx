@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import waitForExpect from 'wait-for-expect';
 import { act } from 'react-dom/test-utils';
-
 import BerthEditForm from '../BerthEditForm';
 import { INDIVIDUAL_BERTH_QUERY } from '../queries';
 import { UPDATE_BERTH_MUTATION } from '../mutations';

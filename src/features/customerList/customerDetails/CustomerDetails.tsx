@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Grid from '../../../common/grid/Grid';
 import Section from '../../../common/section/Section';
 import Text from '../../../common/text/Text';

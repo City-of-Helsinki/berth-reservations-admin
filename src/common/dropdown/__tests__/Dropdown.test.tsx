@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import Dropdown, { DropdownProps } from '../Dropdown';
 
 describe('Dropdown', () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import BerthDetails from './BerthDetails';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { BERTH_DETAILS_QUERY } from './queries';

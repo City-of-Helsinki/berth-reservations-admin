@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import CancelInvoice from './CancelInvoice';
 import { CANCEL_INVOICES_MUTATION } from './mutations';
 import { CANCEL_INVOICES, CANCEL_INVOICESVariables as CANCEL_INVOICES_VARS } from './__generated__/CANCEL_INVOICES';

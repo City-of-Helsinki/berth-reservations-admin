@@ -1,7 +1,6 @@
 import React, { ChangeEvent, ChangeEventHandler } from 'react';
 import { shallow } from 'enzyme';
 import { TextInput } from 'hds-react';
-
 import GlobalSearchTableTools from '../GlobalSearchTableTools';
 
 describe('GlobalSearchTableTools', () => {

@@ -1,7 +1,6 @@
 import { Button, Checkbox } from 'hds-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { HarborViewTableFiltersType } from './types';
 import styles from './harborViewTableFilters.module.scss';
 

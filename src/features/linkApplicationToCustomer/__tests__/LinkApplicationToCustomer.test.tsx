@@ -1,7 +1,6 @@
 import React, { ChangeEvent, ChangeEventHandler } from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-
 import LinkApplicationToCustomer, { LinkApplicationToCustomerProps } from '../LinkApplicationToCustomer';
 import { SearchBy } from '../../applicationView/ApplicationView';
 import { CustomerGroup } from '../../../@types/__generated__/globalTypes';

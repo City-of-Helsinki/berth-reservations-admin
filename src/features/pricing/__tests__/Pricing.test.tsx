@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import { HashRouter } from 'react-router-dom';
-
 import Pricing, { PricingProps } from '../Pricing';
 import { data as berthsData } from '../berthPricing/__fixtures__/data';
 import { data as harborTiersData } from '../harborTiers/__fixtures__/data';

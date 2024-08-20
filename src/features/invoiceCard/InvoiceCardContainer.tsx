@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PureQueryOptions } from 'apollo-client';
 import { useTranslation } from 'react-i18next';
-
 import Modal from '../../common/modal/Modal';
 import SendInvoiceForm from './sendInvoiceForm/SendInvoiceFormContainer';
 import MarkAsPaidForm from './markAsPaidForm/MarkAsPaidFormContainer';

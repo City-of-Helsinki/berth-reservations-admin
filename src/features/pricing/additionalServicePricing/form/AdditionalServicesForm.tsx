@@ -4,7 +4,6 @@ import { TextInput } from 'hds-react';
 import { Field, Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
-
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';
 import FormTypeTitle from '../../editModal/FormTypeTitle';

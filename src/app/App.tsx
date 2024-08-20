@@ -2,7 +2,6 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-
 import ApplicationList from '../features/applicationList/ApplicationListContainer';
 import ApplicationView from '../features/applicationView/ApplicationViewContainer';
 import CallbackPage from '../features/auth/callbackPage/CallbackPage';

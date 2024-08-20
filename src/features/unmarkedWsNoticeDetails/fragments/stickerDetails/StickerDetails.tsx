@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
-
 import LabelValuePair from '../../../../common/labelValuePair/LabelValuePair';
 import Section from '../../../../common/section/Section';
 import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/ButtonWithConfirmation';

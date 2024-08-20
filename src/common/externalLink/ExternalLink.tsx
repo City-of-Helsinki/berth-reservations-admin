@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { IconAngleRight } from 'hds-react';
-
 import styles from './externalLink.module.scss';
 
 export type ExternalLinkProps = {

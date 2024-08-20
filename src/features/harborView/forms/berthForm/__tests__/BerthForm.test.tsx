@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import BerthForm from '../BerthForm';
 import { BerthMooringType } from '../../../../../@types/__generated__/globalTypes';
 import { Pier } from '../../../types';

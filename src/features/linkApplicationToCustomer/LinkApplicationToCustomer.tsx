@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Notification } from 'hds-react';
-
 import Table, { Column } from '../../common/table/Table';
 import styles from '../applicationView/applicationView.module.scss';
 import CustomersTableTools, { CustomersTableToolsProps } from './tableTools/CustomersTableTools';

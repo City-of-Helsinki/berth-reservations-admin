@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { WINTER_STORAGE_LEASE_FRAGMENT } from './winterStorageOfferCard/fragments';
 
 export const INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY = gql`

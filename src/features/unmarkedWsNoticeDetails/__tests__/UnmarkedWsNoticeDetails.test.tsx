@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import UnmarkedWsNoticeDetails, { UnmarkedWsNoticeDetailsProps } from '../UnmarkedWsNoticeDetails';
 import { ApplicationStatus, CustomerGroup, InvoicingType, Language } from '../../../@types/__generated__/globalTypes';
 

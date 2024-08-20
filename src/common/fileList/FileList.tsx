@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { IconCross } from 'hds-react';
-
 import List from '../list/List';
 import styles from './fileList.module.scss';
 import Text from '../text/Text';

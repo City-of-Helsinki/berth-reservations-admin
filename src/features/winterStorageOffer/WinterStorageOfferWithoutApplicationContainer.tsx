@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import useRouterQuery from '../../common/hooks/useRouterQuery';
 import { WINTER_STORAGE_APPLICATIONS_QUERY } from '../winterStorageApplicationList/queries';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';

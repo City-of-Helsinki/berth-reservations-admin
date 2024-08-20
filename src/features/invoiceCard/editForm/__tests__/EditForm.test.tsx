@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider, MockedResponse } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
-
 import EditForm, { EditFormProps } from '../EditForm';
 import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
 import { ORDER_OPTIONAL_PRODUCTS_QUERY } from '../queries';

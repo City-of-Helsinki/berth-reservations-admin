@@ -3,7 +3,6 @@ import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import { MockedProvider, wait } from '@apollo/react-testing';
 import { Route, MemoryRouter } from 'react-router-dom';
-
 import WinterStorageAreaViewContainer from '../WinterStorageAreaViewContainer';
 import { INDIVIDUAL_WINTER_STORAGE_AREA_QUERY } from '../queries';
 import { mockData } from '../__fixtures__/mockData';

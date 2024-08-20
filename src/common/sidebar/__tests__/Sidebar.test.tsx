@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Sidebar, { SidebarProps } from '../Sidebar';
 
 describe('Sidebar', () => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import Text from '../text/Text';
 import styles from './section.module.scss';
 

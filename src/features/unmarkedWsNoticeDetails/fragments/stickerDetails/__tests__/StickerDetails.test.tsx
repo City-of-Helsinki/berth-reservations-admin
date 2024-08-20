@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
-
 import StickerDetails from '../StickerDetails';
 import LabelValuePair from '../../../../../common/labelValuePair/LabelValuePair';
 import ButtonWithConfirmation from '../../../../../common/buttonWithConfirmation/ButtonWithConfirmation';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import { CustomerMessageForm, CustomerMessageFormProps } from '../CustomerMessageForm';
 import { mockHtml } from '../__fixtures__/mockData';
 

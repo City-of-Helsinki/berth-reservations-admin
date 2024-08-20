@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import { LoadingSpinner as HDSLoadingSpinner, LoadingSpinnerProps as HDSLoadingSpinnerProps } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import styles from './loadingSpinner.module.scss';
 
 export interface LoadingSpinnerProps {

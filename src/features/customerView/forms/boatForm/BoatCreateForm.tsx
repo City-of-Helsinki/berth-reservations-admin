@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-
 import BoatForm, { BoatFormProps } from './BoatForm';
 import { CREATE_CUSTOMER_BOAT_MUTATION } from './mutations';
 import {

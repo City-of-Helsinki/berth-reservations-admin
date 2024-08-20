@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import { MockedProvider, MockedResponse } from '@apollo/react-testing';
 import waitForExpect from 'wait-for-expect';
 import { act } from 'react-dom/test-utils';
-
 import RefundOrderContainer, { RefundOrderContainerProps } from '../RefundOrderContainer';
 import RefundOrder from '../RefundOrder';
 import { REFUND_ORDER_MUTATION } from '../mutations';

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router-dom';
-
 import UnmarkedWsNoticeView from './UnmarkedWsNoticeView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { UNMARKED_WINTER_STORAGE_NOTICE_QUERY } from './queries';

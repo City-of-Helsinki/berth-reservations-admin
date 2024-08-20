@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { OrderStatus, ProductServiceType } from '../../@types/__generated__/globalTypes';
 import { IconProps } from '../../common/icons';
 

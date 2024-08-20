@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import { RECURRING_WINTER_STORAGE_INVOICES_QUERY } from './queries';
 import { RECURRING_WINTER_STORAGE_INVOICES } from './__generated__/RECURRING_WINTER_STORAGE_INVOICES';
 import { SEND_EXISTING_WINTER_STORAGE_INVOICES_MUTATION } from './mutations';

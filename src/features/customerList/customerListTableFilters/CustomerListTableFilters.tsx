@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconAngleDown } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import useListTableFilters from './useListTableFilters';
 import CustomerListTableFiltersFormContainer from './CustomerListTableFiltersFormContainer';
 import CustomerListTableFiltersList from './CustomerListTableFiltersList';

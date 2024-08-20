@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './formTypeTitle.module.scss';
 
 export interface FormTypeFieldProps {

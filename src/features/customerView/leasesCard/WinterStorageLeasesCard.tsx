@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import WinterStorageContractDetailsContainer from '../../contractDetails/WinterStorageContractDetailsContainer';
 import { Lease } from './types';
 import { WinterStorageLease } from '../types';

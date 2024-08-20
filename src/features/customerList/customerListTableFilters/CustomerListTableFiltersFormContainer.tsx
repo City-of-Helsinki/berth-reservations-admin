@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../__generated__/FILTER_OPTIONS';
 import { FILTER_OPTIONS_QUERY } from '../queries';
 import CustomerListTableFiltersForm from './CustomerListTableFiltersForm';

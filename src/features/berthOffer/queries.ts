@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { BERTH_OFFER_HARBOR_FRAGMENT, BERTH_OFFER_PIERS_FRAGMENT } from './fragments';
 
 export const BERTH_OFFER_QUERY = gql`

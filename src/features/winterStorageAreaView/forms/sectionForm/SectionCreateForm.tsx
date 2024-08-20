@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/react-hooks';
-
 import { FormProps, Section } from '../types';
 import SectionForm from './SectionForm';
 import { CREATE_SECTION_MUTATION } from './mutations';

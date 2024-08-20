@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cell, Row } from 'react-table';
-
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import DataSummary, { DataSummaryProps } from '../../common/dataSummary/DataSummary';

@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconArrowLeft, IconArrowRight } from 'hds-react';
-
 import Text from '../text/Text';
 import styles from './pagination.module.scss';
 

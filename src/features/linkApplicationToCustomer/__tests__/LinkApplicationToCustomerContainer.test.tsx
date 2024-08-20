@@ -4,7 +4,6 @@ import { MockedProvider } from '@apollo/react-testing';
 import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
-
 import LinkApplicationToCustomerContainer, {
   LinkApplicationToCustomerContainerProps,
 } from '../LinkApplicationToCustomerContainer';

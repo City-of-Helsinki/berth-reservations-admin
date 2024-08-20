@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-
 import { BerthPricing as BerthPricingData } from './__generated__/BerthPricing';
 import { BerthPrice } from './BerthPricing';
 import { PriceTier, PricingCategory } from '../../../@types/__generated__/globalTypes';

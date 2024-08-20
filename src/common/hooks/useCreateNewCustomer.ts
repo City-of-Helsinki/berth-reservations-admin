@@ -1,7 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
 import { RefetchQueriesFunction } from '@apollo/react-common';
-
 import {
   CREATE_NEW_PROFILE,
   CREATE_NEW_PROFILEVariables as CREATE_NEW_PROFILE_VARS,

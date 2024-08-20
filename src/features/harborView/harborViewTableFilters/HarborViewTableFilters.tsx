@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconAngleDown } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import styles from './harborViewTableFilters.module.scss';
 import HarborViewTableFiltersForm from './HarborViewTableFiltersForm';
 import { HarborViewTableFiltersType } from './types';

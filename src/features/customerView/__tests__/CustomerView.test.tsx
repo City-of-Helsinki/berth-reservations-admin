@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-
 import CustomerView, { CustomerViewProps } from '../CustomerView';
 import { privateCustomerProfile } from '../../../common/privateCustomerDetails/__fixtures__/mockData';
 

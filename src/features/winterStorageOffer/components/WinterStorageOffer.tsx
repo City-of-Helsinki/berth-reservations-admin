@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import PageTitle from '../../../common/pageTitle/PageTitle';
 import WinterStorageAreaCard from '../../../common/winterStorageAreaCard/WinterStorageAreaCard';
 import styles from '../../berthOffer/components/berthOffer.module.scss';

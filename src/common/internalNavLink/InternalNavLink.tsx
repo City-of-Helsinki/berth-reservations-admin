@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import classNames from 'classnames';
-
 import styles from './internalNavLink.module.scss';
 
 export type InternalNavLinkProps = {

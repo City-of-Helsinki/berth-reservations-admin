@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Pier } from '../types';
 import PierProperties from './pierProperties/PierProperties';
 import SelectHeader from '../../../common/selectHeader/SelectHeader';

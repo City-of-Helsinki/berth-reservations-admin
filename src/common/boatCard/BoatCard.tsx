@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Card from '../card/Card';
 import Grid from '../grid/Grid';
 import Section from '../section/Section';

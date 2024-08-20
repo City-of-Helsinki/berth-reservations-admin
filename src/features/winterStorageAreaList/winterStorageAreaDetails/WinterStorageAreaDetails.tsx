@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { WinterStorageAreaData } from '../types';
 import Grid from '../../../common/grid/Grid';
 import styles from '../../harborList/harborDetails/harborDetails.module.scss';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Property, { PropertyProps } from '../Property';
 import { IconFence } from '../../icons';
 

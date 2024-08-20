@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
-
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import InternalLink from '../../common/internalLink/InternalLink';

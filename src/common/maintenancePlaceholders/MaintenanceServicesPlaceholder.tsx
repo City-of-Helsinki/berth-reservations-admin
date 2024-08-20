@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Section from '../section/Section';
 import InternalLink from '../internalLink/InternalLink';
 import SectionWithButton, { SectionWithButtonProps } from '../section/SectionWithButton';

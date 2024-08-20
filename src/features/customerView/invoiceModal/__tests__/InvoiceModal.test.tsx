@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
 import { MockedProvider } from '@apollo/react-testing';
-
 import InvoiceModal, { InvoiceModalProps } from '../InvoiceModal';
 import BerthContractDetails from '../../../contractDetails/BerthContractDetailsContainer';
 import { mockInvoices } from '../../__fixtures__/mockData';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-
 import BoatForm from '../BoatForm';
 import { mockBoatTypes, mockInvalidValues, mockValidValues } from '../__fixtures__/mockData';
 

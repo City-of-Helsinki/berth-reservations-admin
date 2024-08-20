@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import WinterStoragePlaceTableTools from '../WinterStoragePlaceTableTools';
 
 describe('WinterStorageAreaTableTools', () => {

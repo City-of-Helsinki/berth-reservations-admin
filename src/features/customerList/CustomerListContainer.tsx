@@ -6,7 +6,6 @@ import { SortingRule } from 'react-table';
 import { useHistory, useLocation } from 'react-router-dom';
 import format from 'date-fns/format';
 import { Notification } from 'hds-react';
-
 import { ALL_CUSTOMERS_QUERY } from './queries';
 import { getCustomersData } from './utils';
 import CustomerList from './CustomerList';

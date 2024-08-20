@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { IconCross } from 'hds-react';
-
 import styles from './fileUpload.module.scss';
 import Text from '../text/Text';
 import List from '../list/List';

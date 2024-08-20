@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-
 import Card, { CardProps } from '../Card';
 
 describe('common/Card', () => {

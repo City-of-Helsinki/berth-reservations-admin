@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Pagination, { PaginationProps } from '../Pagination';
 
 describe('Pagination', () => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { IconDocument, IconTrash } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
-
 import InternalLink from '../../../common/internalLink/InternalLink';
 import { IconDocumentCheck, IconFence, IconPlug, IconStreetLight, IconWaterTap } from '../../../common/icons';
 import Button from '../../../common/button/Button';

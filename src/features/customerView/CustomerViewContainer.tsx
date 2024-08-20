@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Notification } from 'hds-react';
 import { getOperationName } from 'apollo-link';
-
 import CustomerView from './CustomerView';
 import { INDIVIDUAL_CUSTOMER_QUERY } from './queries';
 import { INDIVIDUAL_CUSTOMER } from './__generated__/INDIVIDUAL_CUSTOMER';

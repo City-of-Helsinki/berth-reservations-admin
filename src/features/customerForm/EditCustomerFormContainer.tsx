@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import CustomerForm from './CustomerForm';
 import { CustomerFormValues, FormProps } from './types';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';

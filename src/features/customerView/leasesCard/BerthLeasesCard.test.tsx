@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import BerthLeasesCard, { BerthLeasesCardProps } from './BerthLeasesCard';
 import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 

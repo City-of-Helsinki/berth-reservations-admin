@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 import styles from './cancelInvoice.module.scss';

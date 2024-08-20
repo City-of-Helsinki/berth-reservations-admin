@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
 import { TextInput } from 'hds-react';
-
 import { getDefaultDueDate, getDueDateValidation } from '../../../../common/utils/dates';
 import styles from '../../../invoiceCard/sendInvoiceForm/sendInvoiceForm.module.scss';
 import FormHeader from '../../../../common/formHeader/FormHeader';

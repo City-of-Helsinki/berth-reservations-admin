@@ -3,7 +3,6 @@ import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
-
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Button from '../../../common/button/Button';
 import { getDefaultDueDate, getDueDateValidation } from '../../../common/utils/dates';

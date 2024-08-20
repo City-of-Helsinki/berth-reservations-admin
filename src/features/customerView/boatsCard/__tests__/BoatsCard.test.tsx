@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import BoatsCard from '../BoatsCard';
 import { boat, largeBoat } from '../__fixtures__/mockData';
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
-
 import ApplicationView from './ApplicationView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { INDIVIDUAL_APPLICATION_QUERY } from './queries';

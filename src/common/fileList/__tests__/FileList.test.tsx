@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import FileList, { FileListProps } from '../FileList';
 
 const createMockFile = (id: string, markedForDeletion?: boolean) => ({

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import HarborCard from '../HarborCard';
 import { mockProps } from '../__fixtures__/mockData';
 

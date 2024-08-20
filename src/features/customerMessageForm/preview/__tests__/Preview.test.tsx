@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Preview, { PreviewProps } from '../Preview';
 import { mockHtml } from '../../__fixtures__/mockData';
 

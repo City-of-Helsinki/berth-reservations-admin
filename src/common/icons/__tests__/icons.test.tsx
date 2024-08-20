@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import * as Icons from '../index';
 
 const icons = Object.entries(Icons);

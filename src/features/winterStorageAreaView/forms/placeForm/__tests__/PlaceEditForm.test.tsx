@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import waitForExpect from 'wait-for-expect';
 import { act } from 'react-dom/test-utils';
-
 import PlaceEditForm from '../PlaceEditForm';
 import { INDIVIDUAL_PLACE_QUERY } from '../queries';
 import { UPDATE_PLACE_MUTATION } from '../mutations';

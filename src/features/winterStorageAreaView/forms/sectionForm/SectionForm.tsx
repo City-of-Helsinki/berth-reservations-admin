@@ -5,7 +5,6 @@ import { TFunction } from 'i18next';
 import { ObjectSchema } from 'yup';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
-
 import Text from '../../../../common/text/Text';
 import styles from './sectionForm.module.scss';
 import { FormProps, Section } from '../types';

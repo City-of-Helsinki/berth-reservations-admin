@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
-
 import Modal from '../../../common/modal/Modal';
 import Select from '../../../common/select/Select';
 import { SELECT_BERTH_LEASE_QUERY } from './queries';

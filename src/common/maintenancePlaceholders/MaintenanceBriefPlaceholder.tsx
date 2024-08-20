@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import InternalLink from '../internalLink/InternalLink';
 import LabelValuePair from '../labelValuePair/LabelValuePair';
 import { maintenanceFeatureFlag } from '../utils/featureFlags';

@@ -2,7 +2,6 @@ import React, { ChangeEvent, ChangeEventHandler } from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import { TextInput } from 'hds-react';
-
 import CustomersTableTools, { CustomersTableToolsProps } from '../CustomersTableTools';
 import Select from '../../../../common/select/Select';
 

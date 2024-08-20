@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import SectionForm from '../SectionForm';
 
 describe('features/winterStorageAreaView/SectionForm', () => {

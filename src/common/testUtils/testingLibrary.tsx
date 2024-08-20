@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 import { MockedProvider, MockedResponse } from '@apollo/react-testing';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-
 import i18n from '../../locales/i18n';
 
 type AllTheProvidersProps = {

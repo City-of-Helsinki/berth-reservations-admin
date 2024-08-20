@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
-
 import { WINTER_STORAGE_PLACE_DETAILS_QUERY } from './queries';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { getPlaceLeases } from './utils';

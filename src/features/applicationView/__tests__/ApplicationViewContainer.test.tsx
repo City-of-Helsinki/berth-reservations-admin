@@ -4,7 +4,6 @@ import { MockedProvider } from '@apollo/react-testing';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
-
 import ApplicationViewContainer from '../ApplicationViewContainer';
 import { INDIVIDUAL_APPLICATION_QUERY } from '../queries';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';

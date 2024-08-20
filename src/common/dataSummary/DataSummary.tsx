@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import styles from './dataSummary.module.scss';
 
 interface LabelValuePair {

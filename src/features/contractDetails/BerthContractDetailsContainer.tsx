@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import ContractDetails from './ContractDetails';
 import { BERTH_CONTRACT_QUERY } from './queries';
 import { BERTH_CONTRACT, BERTH_CONTRACTVariables as BERTH_CONTRACT_VARS } from './__generated__/BERTH_CONTRACT';

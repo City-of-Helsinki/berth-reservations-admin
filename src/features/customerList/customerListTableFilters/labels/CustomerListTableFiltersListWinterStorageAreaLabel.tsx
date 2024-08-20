@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import {
   FILTER_WINTER_STORAGE_AREA_LABEL,
   FILTER_WINTER_STORAGE_AREA_LABELVariables as FILTER_WINTER_STORAGE_AREA_LABEL_VAR,

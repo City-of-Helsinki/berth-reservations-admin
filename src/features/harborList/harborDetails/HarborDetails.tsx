@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Grid from '../../../common/grid/Grid';
 import ExternalLink from '../../../common/externalLink/ExternalLink';
 import styles from './harborDetails.module.scss';

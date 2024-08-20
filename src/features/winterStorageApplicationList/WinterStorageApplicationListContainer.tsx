@@ -2,7 +2,6 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
-
 import WinterStorageApplicationList from './WinterStorageApplicationList';
 import { getWinterStorageApplicationData } from './utils';
 import { usePagination } from '../../common/utils/usePagination';

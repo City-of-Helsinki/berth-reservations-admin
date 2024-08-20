@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import BerthOffer from '../berthOffer/components/BerthOffer';
 import {
   BERTH_OFFER_WITHOUT_APPLICATION_HARBOR,

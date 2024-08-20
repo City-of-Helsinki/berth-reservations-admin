@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 import { MockedProvider } from '@apollo/react-testing';
-
 import LoadingSpinner from '../../../../../common/spinner/LoadingSpinner';
 import HarborEditForm from '../HarborEditForm';
 import { HARBOR_FORM_QUERY } from '../queries';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
-
 import WinterStoragePricing, { WinterStoragePricingProps } from '../WinterStoragePricing';
 import { data } from '../__fixtures__/data';
 

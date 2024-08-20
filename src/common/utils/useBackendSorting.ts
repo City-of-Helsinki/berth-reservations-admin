@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from 'react';
 import { RecoilState, useRecoilState } from 'recoil';
 import { SortingRule } from 'react-table';
 import equal from 'fast-deep-equal';
-
 import { usePrevious } from './usePrevious';
 
 export const useRecoilBackendSorting = <T>(atom: RecoilState<SortingRule<T>[]>, onSortByChange?: Function) => {

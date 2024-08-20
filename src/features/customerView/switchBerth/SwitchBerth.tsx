@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import SwitchBerthModal from './SwitchBerthModal';
 import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { Lease } from '../leasesCard/types';

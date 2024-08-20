@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
-
 import ApplicationHeader from '../ApplicationHeader';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-
 import Select from '../../../common/select/Select';
 import styles from './invoiceActions.module.scss';
 

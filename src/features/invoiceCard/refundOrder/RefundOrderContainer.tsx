@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import RefundOrder from './RefundOrder';
 import { REFUND_ORDER_MUTATION } from './mutations';
 import { REFUND_ORDER, REFUND_ORDERVariables as REFUND_ORDER_VARS } from './__generated__/REFUND_ORDER';

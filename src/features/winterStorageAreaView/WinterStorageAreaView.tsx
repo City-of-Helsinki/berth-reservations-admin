@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import PageContent from '../../common/pageContent/PageContent';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import styles from './winterStorageAreaView.module.scss';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { ApplicationStatus } from '../../@types/__generated__/globalTypes';
 import Text from '../text/Text';
 import { formatDate } from '../utils/format';

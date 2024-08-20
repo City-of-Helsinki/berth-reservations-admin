@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { atom } from 'recoil';
 import { PureQueryOptions } from 'apollo-client';
 import { Cell, Row } from 'react-table';
-
 import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
 import { ORDER_STATUS } from '../../../common/utils/constants';
 import { formatDate, formatPrice } from '../../../common/utils/format';

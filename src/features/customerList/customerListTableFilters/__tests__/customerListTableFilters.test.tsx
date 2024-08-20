@@ -3,7 +3,6 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { MockedResponse } from '@apollo/react-testing';
-
 import { render, screen, userEvent, waitFor, configure } from '../../../../common/testUtils/testingLibrary';
 import { FILTER_OPTIONS, FILTER_OPTIONSVariables as FILTER_OPTIONS_VAR } from '../../__generated__/FILTER_OPTIONS';
 import { FILTER_OPTIONS_QUERY } from '../../queries';

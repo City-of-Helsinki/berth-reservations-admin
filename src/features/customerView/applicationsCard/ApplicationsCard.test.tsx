@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import ApplicationsCard from './ApplicationsCard';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import { ApplicationTypeEnum } from '../../../common/applicationDetails/types';

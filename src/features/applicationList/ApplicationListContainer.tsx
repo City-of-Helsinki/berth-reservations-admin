@@ -3,7 +3,6 @@ import { useMutation, useQuery } from '@apollo/react-hooks';
 import { getOperationName } from 'apollo-link';
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { SortingRule } from 'react-table';
-
 import ApplicationList from './ApplicationList';
 import {
   BERTH_APPLICATIONS,

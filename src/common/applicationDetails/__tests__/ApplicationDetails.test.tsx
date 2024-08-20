@@ -4,7 +4,6 @@ import { HashRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { MockedProvider } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
-
 import ApplicationDetails, { ApplicationDetailsProps } from '../ApplicationDetails';
 import { LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import DeleteButton from '../../deleteButton/DeleteButton';

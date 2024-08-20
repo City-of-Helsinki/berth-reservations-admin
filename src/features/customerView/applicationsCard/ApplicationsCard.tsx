@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Card from '../../../common/card/Card';
 import styles from './applicationsCard.module.scss';
 import CardHeader from '../../../common/cardHeader/CardHeader';

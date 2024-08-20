@@ -1,7 +1,6 @@
 import { useApolloClient } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-client';
 import { useState } from 'react';
-
 import { exportClient } from '../../app/exportClient';
 import hdsToast from '../toast/hdsToast';
 import { getProfileToken } from './auth';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { PureQueryOptions } from 'apollo-client';
-
 import CustomerForm from './CustomerForm';
 import { CustomerFormValues, FormProps } from './types';
 import useCreateNewCustomer from '../../common/hooks/useCreateNewCustomer';

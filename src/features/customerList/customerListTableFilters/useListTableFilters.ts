@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-
 import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import { CustomerListTableFilters, ValueOf, FilterEntryValue, FilterEntry } from './types';
 

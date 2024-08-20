@@ -4,7 +4,6 @@ import { MockedProvider } from '@apollo/react-testing';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
-
 import UnmarkedWsNoticeViewContainer from '../UnmarkedWsNoticeViewContainer';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import { UNMARKED_WINTER_STORAGE_NOTICE_QUERY } from '../queries';

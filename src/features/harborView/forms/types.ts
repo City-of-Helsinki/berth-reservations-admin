@@ -1,5 +1,4 @@
 import { PureQueryOptions } from 'apollo-client';
-
 import { BerthMooringType, PriceTier } from '../../../@types/__generated__/globalTypes';
 import { PersistedFile } from '../../../common/fileList/FileList';
 

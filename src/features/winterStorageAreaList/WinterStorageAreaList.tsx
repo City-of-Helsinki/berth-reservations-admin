@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { atom, useRecoilState } from 'recoil';
 import { SortingRule } from 'react-table';
-
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import { WinterStorageAreaData } from './types';
 import PageTitle from '../../common/pageTitle/PageTitle';

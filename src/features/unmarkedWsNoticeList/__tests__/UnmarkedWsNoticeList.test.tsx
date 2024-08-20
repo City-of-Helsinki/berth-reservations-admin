@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
 import { MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
-
 import UnmarkedWsNoticeList, { UnmarkedWsNoticeListProps } from '../UnmarkedWsNoticeList';
 import { getUnmarkedWinterStorageNotices } from '../utils';
 import { unmarkedWinterStorageNoticeMockData } from '../__fixtures__/mockData';

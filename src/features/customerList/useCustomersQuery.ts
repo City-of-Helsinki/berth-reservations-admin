@@ -10,7 +10,6 @@
 // filters, this hook should be simplified to only use the berthProfiles query.
 
 import { useQuery } from '@apollo/react-hooks';
-
 import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 import {
   CUSTOMERS,

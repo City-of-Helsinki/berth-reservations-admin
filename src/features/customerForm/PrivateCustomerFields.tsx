@@ -2,7 +2,6 @@ import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { FormikErrors, FormikValues } from 'formik';
-
 import styles from './customerForm.module.scss';
 import Grid from '../../common/grid/Grid';
 

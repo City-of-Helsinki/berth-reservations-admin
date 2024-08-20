@@ -5,7 +5,6 @@ import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 import { RecoilRoot } from 'recoil';
-
 import { unmarkedWinterStorageNoticeMockData } from '../__fixtures__/mockData';
 import { UNMARKED_WINTER_STORAGE_NOTICES_QUERY } from '../queries';
 import UnmarkedWsNoticeListContainer from '../UnmarkedWsNoticeListContainer';

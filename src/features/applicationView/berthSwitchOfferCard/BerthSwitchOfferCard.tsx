@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconTrash } from 'hds-react';
-
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import StatusLabel from '../../../common/statusLabel/StatusLabel';

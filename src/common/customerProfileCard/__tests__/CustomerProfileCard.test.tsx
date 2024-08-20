@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import CustomerProfileCard, { CustomerProfileCardProps } from '../CustomerProfileCard';
 import { privateCustomerProfile } from '../../privateCustomerDetails/__fixtures__/mockData';
 import { organizationCustomerProfile } from '../../organizationCustomerDetails/__fixtures__/mockData';

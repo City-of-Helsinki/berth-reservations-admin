@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import PierSelectHeader from '../PierSelectHeader';
 
 describe('PierSelectHeader', () => {

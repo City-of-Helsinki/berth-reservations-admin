@@ -5,7 +5,6 @@ import { HashRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 import { RecoilRoot } from 'recoil';
-
 import ApplicationListContainer from '../ApplicationListContainer';
 import { BERTH_APPLICATIONS_QUERY } from '../queries';
 import { mockData } from '../__fixtures__/mockData';

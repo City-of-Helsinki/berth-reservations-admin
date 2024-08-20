@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ButtonProps } from 'hds-react';
-
 import ConfirmationModal, { ConfirmationModalProps } from '../confirmationModal/ConfirmationModal';
 import Button from '../button/Button';
 import Text from '../text/Text';

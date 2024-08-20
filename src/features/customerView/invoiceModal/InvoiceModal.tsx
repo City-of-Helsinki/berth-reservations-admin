@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Modal, { ModalProps } from '../../../common/modal/Modal';
 import { isBerthInvoice, isWinterStorageInvoice } from '../utils';
 import Section from '../../../common/section/Section';

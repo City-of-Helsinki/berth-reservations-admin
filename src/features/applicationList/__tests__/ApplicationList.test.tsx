@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import { RecoilRoot } from 'recoil';
 import { HashRouter } from 'react-router-dom';
 import { IconAngleDown } from 'hds-react';
-
 import ApplicationList, { ApplicationListProps } from '../ApplicationList';
 import { mockData, mockTableData } from '../__fixtures__/mockData';
 import ApplicationDetails from '../../../common/applicationDetails/ApplicationDetails';

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-
 import Button from '../../common/button/Button';
 import Modal from '../../common/modal/Modal';
 import Text from '../../common/text/Text';

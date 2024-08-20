@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
-
 import ConfirmationModal from '../ConfirmationModal';
 
 describe('ConfirmationModal', () => {

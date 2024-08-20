@@ -1,5 +1,4 @@
 import jsPDF from 'jspdf';
-
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { UNMARKED_WINTER_STORAGE_NOTICES } from './__generated__/UNMARKED_WINTER_STORAGE_NOTICES';
 import { getChoiceFromWinterStorageAreaChoices } from '../unmarkedWsNoticeView/utils';

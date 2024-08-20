@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { StatusLabel as HDSStatusLabel, StatusLabelProps as HDSStatusLabelProps } from 'hds-react';
-
 import styles from './statusLabel.module.scss';
 
 export interface StatusLabelProps {

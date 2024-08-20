@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-
 import InvoiceCard, { InvoiceCardProps } from '../InvoiceCard';
 import { LeaseStatus, OrderStatus } from '../../../@types/__generated__/globalTypes';
 

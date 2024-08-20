@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
-
 import BoatForm, { BoatFormProps } from './BoatForm';
 import { DELETE_CUSTOMER_BOAT_MUTATION, UPDATE_CUSTOMER_BOAT_MUTATION } from './mutations';
 import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';

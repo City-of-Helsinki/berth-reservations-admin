@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import ButtonWithConfirmation from '../../../../common/buttonWithConfirmation/ButtonWithConfirmation';
 
 export interface CancelLeaseButtonProps {

@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { wait } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
 import { GraphQLError } from 'graphql';
-
 import hdsToast from '../hdsToast';
 import HDSToastContainer from '../HDSToastContainer';
 import i18n from '../../../locales/i18n';

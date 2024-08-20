@@ -3,7 +3,6 @@ import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 import React from 'react';
 import { MockedProvider, MockedResponse } from '@apollo/react-testing';
-
 import SendInvoiceFormContainer, { SendInvoiceFormContainerProps } from '../SendInvoiceFormContainer';
 import { APPROVE_ORDERS_MUTATION } from '../../../../common/mutations/approveOrders';
 

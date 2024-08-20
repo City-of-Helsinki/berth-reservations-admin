@@ -4,7 +4,6 @@ import { Notification } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { getOperationName } from 'apollo-link';
 import { NetworkStatus } from 'apollo-client';
-
 import Pricing from './Pricing';
 import { PRICING_QUERY } from './queries';
 import { PRICING } from './__generated__/PRICING';

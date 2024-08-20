@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import { CustomerMessageForm } from './CustomerMessageForm';
 import { NOTIFICATION_TEMPLATES_QUERY } from './queries';
 import { NOTIFICATION_TEMPLATES } from './__generated__/NOTIFICATION_TEMPLATES';

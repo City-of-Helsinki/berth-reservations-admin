@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
 import classNames from 'classnames';
-
 import styles from './additionalInvoice.module.scss';
 import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';

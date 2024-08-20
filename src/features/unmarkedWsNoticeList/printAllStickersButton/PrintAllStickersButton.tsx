@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import Button from '../../../common/button/Button';
 import { UNMARKED_WINTER_STORAGE_NOTICES_STICKERS_QUERY } from './queries';
 import { generateAndSaveStickerPDF, getCustomersWithUnsentStickers } from '../utils';

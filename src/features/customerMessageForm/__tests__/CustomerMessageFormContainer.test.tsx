@@ -3,7 +3,6 @@ import { mount, ReactWrapper } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
-
 import CustomerMessageFormContainer, { CustomerMessageFormContainerProps } from '../CustomerMessageFormContainer';
 import { mockData, mockHtml } from '../__fixtures__/mockData';
 import { NOTIFICATION_TEMPLATES_QUERY } from '../queries';

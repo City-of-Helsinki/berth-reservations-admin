@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-
 import styles from './editForm.module.scss';
 import WinterStorageFields, { getWinterStorageValidationSchema } from './fields/WinterStorageFields';
 import HarborServicesFields, { getHarborServicesValidationSchema } from './fields/HarborServicesFields';

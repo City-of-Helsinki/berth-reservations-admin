@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './preview.module.scss';
 
 export interface PreviewProps {

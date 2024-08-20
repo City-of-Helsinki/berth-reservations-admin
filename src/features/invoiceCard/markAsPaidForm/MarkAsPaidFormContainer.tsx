@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import MarkAsPaidForm from './MarkAsPaidForm';
 import { MARK_AS_PAID_MUTATION } from './mutations';
 import { MARK_AS_PAID, MARK_AS_PAIDVariables as MARK_AS_PAID_VARS } from './__generated__/MARK_AS_PAID';

@@ -5,7 +5,6 @@ import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { TFunction } from 'i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import styles from './winterStorageAreaEditForm.module.scss';
 import Section from '../../../common/section/Section';
 import Text from '../../../common/text/Text';

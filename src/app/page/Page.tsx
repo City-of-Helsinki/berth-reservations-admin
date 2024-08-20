@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconUser } from 'hds-react';
-
 import Layout from '../../common/layout/Layout';
 import Sidebar from '../../common/sidebar/Sidebar';
 import InternalNavLink from '../../common/internalNavLink/InternalNavLink';

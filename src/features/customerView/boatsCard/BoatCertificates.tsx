@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BoatCertificate as TBoatCertificate } from '../types';
 import BoatCertificate from './BoatCertificate';
 import { getCertificate } from './boatsCardUtils';

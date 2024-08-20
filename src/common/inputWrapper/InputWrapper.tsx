@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-
 import Text from '../text/Text';
 import styles from './inputWrapper.module.scss';
 

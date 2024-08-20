@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-
 import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import { Boat } from '../../../common/boatCard/types';

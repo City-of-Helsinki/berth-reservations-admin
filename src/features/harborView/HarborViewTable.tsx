@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Cell } from 'react-table';
 import { useTranslation } from 'react-i18next';
-
 import HarborViewTableTools from './harborViewTableTools/HarborViewTableTools';
 import PierSelectHeader from './pierSelectHeader/PierSelectHeader';
 import BerthDetails from '../berthDetails/BerthDetailsContainer';

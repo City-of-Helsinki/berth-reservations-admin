@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { useApolloClient } from '@apollo/react-hooks';
-
 import authService from '../authService';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import Layout from '../../../common/layout/Layout';

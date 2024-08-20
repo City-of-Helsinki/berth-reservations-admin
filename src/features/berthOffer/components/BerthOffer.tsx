@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import BerthOfferTable from './BerthOfferTable';
 import BoatCard from '../../../common/boatCard/BoatCard';
 import ConfirmationModal from '../../../common/confirmationModal/ConfirmationModal';

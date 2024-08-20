@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import SendOffersListTool, { SendOffersListToolProps } from '../SendOffersListTool';
 
 type TestApplication = {

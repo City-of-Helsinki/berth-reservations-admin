@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { HashRouter, Link } from 'react-router-dom';
-
 import InternalLink, { InternalLinkProps } from '../InternalLink';
 
 describe('InternalLink', () => {

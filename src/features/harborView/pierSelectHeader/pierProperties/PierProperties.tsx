@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconTrash } from 'hds-react';
-
 import Card from '../../../../common/card/Card';
 import CardBody from '../../../../common/cardBody/CardBody';
 import Grid from '../../../../common/grid/Grid';

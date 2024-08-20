@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
 import { useHistory } from 'react-router-dom';
-
 import Modal from '../../../common/modal/Modal';
 import LoadingSpinner from '../../../common/spinner/LoadingSpinner';
 import Select from '../../../common/select/Select';

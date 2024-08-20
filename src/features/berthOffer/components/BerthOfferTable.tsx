@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-
 import Table, { Column, COLUMN_WIDTH } from '../../../common/table/Table';
 import BerthDetails from '../../berthDetails/BerthDetailsContainer';
 import styles from './berthOffer.module.scss';

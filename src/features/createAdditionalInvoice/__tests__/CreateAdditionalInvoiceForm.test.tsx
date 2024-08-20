@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import CreateAdditionalInvoiceForm, { CreateAdditionalInvoiceProps } from '../CreateAdditionalInvoiceForm';
 import { BerthLease } from '../../customerView/types';
 import { AdditionalService } from '../../pricing/additionalServicePricing/AdditionalServicePricing';

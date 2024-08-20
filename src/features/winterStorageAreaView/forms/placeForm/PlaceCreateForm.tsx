@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import { CREATE_PLACE, CREATE_PLACEVariables as CREATE_PLACE_VARS } from './__generated__/CREATE_PLACE';
 import { CREATE_PLACE_MUTATION } from './mutations';
 import { Place, FormProps } from '../types';

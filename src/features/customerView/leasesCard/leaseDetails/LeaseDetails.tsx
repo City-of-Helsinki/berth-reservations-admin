@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import CancelLeaseButton from './CancelLeaseButton';
 import CardBody from '../../../../common/cardBody/CardBody';
 import InternalLink from '../../../../common/internalLink/InternalLink';

@@ -5,7 +5,6 @@ import { TFunction } from 'i18next';
 import * as Yup from 'yup';
 import { ObjectSchema } from 'yup';
 import { useTranslation } from 'react-i18next';
-
 import { MessageFormValues } from './types';
 import styles from './customerMessageForm.module.scss';
 import Select from '../../common/select/Select';

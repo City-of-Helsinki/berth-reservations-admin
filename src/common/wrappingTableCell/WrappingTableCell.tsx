@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './wrappingTableCell.module.scss';
 
 export interface WrappingTableCellProps {

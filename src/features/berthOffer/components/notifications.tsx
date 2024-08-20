@@ -2,7 +2,6 @@ import { Notification } from 'hds-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
-
 import hdsToast from '../../../common/toast/hdsToast';
 import { BerthData } from '../types';
 

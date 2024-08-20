@@ -3,7 +3,6 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { getOperationName } from 'apollo-link';
-
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { BERTH_OFFER_QUERY } from './queries';
 import BerthOffer from './components/BerthOffer';

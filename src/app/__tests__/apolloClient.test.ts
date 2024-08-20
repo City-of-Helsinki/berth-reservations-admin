@@ -1,6 +1,5 @@
 import { ErrorResponse } from 'apollo-link-error';
 import { GraphQLError } from 'graphql';
-
 import * as hdsToast from '../../common/toast/hdsToast';
 import { errorHandler } from '../apolloClient';
 

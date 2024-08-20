@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import IconWrapper from '../IconWrapper';
 import { IconBoat } from '../../icons';
 

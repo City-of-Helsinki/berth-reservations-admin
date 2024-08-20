@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import CustomerListTableTools from '../CustomerListTableTools';
 import { SearchBy } from '../../CustomerListContainer';
 

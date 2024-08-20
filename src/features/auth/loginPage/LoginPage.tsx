@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
 import HelsinkiLogo from '../../../common/helsinkiLogo/HelsinkiLogo';
 import Text from '../../../common/text/Text';
 import styles from './loginPage.module.scss';

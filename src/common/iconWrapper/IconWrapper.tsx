@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { IconProps } from 'hds-react';
-
 import styles from './iconWrapper.module.scss';
 
 export interface IconWrapperProps {

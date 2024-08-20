@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import BerthOfferCard from '../BerthOfferCard';
 import { ApplicationStatus, BerthMooringType, LeaseStatus } from '../../../../@types/__generated__/globalTypes';
 

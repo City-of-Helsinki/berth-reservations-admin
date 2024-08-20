@@ -1,7 +1,6 @@
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import { getOperationName } from 'apollo-link';
-
 import { BERTH_APPLICATIONS_QUERY } from '../../features/applicationList/queries';
 import {
   DELETE_DRAFTED_APPLICATION,

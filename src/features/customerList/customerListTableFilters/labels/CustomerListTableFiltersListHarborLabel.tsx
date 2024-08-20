@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import {
   FILTER_HARBOR_LABEL,
   FILTER_HARBOR_LABELVariables as FILTER_HARBOR_LABEL_VAR,

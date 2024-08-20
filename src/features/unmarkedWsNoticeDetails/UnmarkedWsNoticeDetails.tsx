@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ApplicationStatus, LeaseStatus } from '../../@types/__generated__/globalTypes';
 import { PrivateCustomerDetailsProps } from '../../common/privateCustomerDetails/PrivateCustomerDetails';
 import { OrganizationCustomerDetailsProps } from '../../common/organizationCustomerDetails/OrganizationCustomerDetails';

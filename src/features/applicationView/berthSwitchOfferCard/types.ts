@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BerthMooringType, OfferStatus } from '../../../@types/__generated__/globalTypes';
 import { IconProps } from '../../../common/icons';
 

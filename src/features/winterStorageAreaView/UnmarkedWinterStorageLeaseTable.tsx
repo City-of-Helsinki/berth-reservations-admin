@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cell } from 'react-table';
-
 import { Lease, UnmarkedWinterStorage } from './types';
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import Pagination from '../../common/pagination/Pagination';

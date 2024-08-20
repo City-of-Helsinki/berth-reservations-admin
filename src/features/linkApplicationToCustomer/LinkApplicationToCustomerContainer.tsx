@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLazyQuery, useQuery } from '@apollo/react-hooks';
 import { useDebounce } from 'use-debounce';
-
 import { getFilteredCustomersData } from './utils';
 import { FILTERED_CUSTOMERS_QUERY } from './queries';
 import {

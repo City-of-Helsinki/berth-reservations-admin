@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-
 import FileUpload, { FileUploadProps } from '../FileUpload';
 import Button from '../../button/Button';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-
 import styles from './offerTableTools.module.scss';
 import Text from '../text/Text';
 import StatusLabel from '../statusLabel/StatusLabel';

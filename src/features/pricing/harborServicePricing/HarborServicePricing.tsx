@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Row } from 'react-table';
 import { useMutation } from '@apollo/react-hooks';
-
 import Card from '../../../common/card/Card';
 import CardHeader from '../../../common/cardHeader/CardHeader';
 import CardBody from '../../../common/cardBody/CardBody';

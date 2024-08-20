@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
-
 import styles from './globalSearchTableTools.module.scss';
 
 export type GlobalSearchTableToolsProps = {

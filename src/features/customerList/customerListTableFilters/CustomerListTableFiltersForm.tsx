@@ -8,7 +8,6 @@ import {
   Notification,
 } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import { CustomerGroup, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import Button from '../../../common/button/Button';
 import { limitedCustomerSearchFeatureFlag } from '../../../common/utils/featureFlags';

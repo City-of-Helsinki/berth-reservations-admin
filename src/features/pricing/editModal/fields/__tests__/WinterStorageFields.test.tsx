@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Form, Formik } from 'formik';
-
 import WinterStorageFields from '../WinterStorageFields';
 import { WinterStoragePrice } from '../../../winterStoragePricing/WinterStoragePricing';
 import { PeriodType } from '../../../../../@types/__generated__/globalTypes';

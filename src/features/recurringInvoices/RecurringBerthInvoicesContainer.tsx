@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import { RECURRING_BERTH_INVOICES_QUERY } from './queries';
 import { RECURRING_BERTH_INVOICES } from './__generated__/RECURRING_BERTH_INVOICES';
 import { SEND_EXISTING_BERTH_INVOICES_MUTATION } from './mutations';

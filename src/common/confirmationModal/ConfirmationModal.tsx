@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { ButtonProps } from 'hds-react';
-
 import Modal from '../modal/Modal';
 import Text from '../text/Text';
 import styles from './confirmationModal.module.scss';

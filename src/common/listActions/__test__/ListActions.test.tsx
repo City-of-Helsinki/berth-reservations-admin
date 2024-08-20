@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-
 import ListActions from '../ListActions';
 import Button from '../../button/Button';
 

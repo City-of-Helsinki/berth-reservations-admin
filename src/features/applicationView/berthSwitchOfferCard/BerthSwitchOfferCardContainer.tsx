@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { PureQueryOptions } from 'apollo-client';
 import { useMutation } from '@apollo/react-hooks';
-
 import { BerthSwitchOfferDetails } from './types';
 import { SEND_BERTH_SWITCH_OFFER_MUTATION, UPDATE_BERTH_SWITCH_OFFER_MUTATION } from './mutations';
 import {

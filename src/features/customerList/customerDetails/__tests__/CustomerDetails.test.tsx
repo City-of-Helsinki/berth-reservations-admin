@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-
 import CustomerDetails, { CustomerDetailsProps } from '../CustomerDetails';
 import {
   customerListApplications,

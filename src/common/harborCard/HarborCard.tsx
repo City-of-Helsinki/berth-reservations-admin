@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { IconTrash } from 'hds-react';
-
 import Card from '../card/Card';
 import CardHeader from '../cardHeader/CardHeader';
 import CardBody from '../cardBody/CardBody';

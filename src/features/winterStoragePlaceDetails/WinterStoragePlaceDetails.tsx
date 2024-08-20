@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Text from '../../common/text/Text';
 import { formatDate } from '../../common/utils/format';
 import InternalLink from '../../common/internalLink/InternalLink';

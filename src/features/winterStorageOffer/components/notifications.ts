@@ -1,5 +1,4 @@
 import { TFunction } from 'i18next';
-
 import hdsToast from '../../../common/toast/hdsToast';
 import { PlaceData } from '../types';
 

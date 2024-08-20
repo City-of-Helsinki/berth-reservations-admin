@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import { HARBORS_QUERY } from './queries';
 import { getHarborsData } from './utils';
 import { HARBORS } from './__generated__/HARBORS';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
-
 import styles from './pricing.module.scss';
 import PageTitle from '../../common/pageTitle/PageTitle';
 import BerthPricing, { BerthPricingProps } from './berthPricing/BerthPricing';

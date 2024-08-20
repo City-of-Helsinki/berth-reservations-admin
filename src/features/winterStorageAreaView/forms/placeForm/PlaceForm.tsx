@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
 import { TextInput } from 'hds-react';
 import { ObjectSchema } from 'yup';
-
 import { Place, FormProps } from '../types';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';

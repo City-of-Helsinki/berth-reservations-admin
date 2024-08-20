@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import GlobalSearchTableTools from '../../../common/tableTools/globalSearchTableTools/GlobalSearchTableTools';
 import styles from './winterStoragePlaceTableTools.module.scss';
 import Button from '../../../common/button/Button';

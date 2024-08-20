@@ -3,7 +3,6 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router-dom';
 import { Notification } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import WinterStorageApplicationView from './WinterStorageApplicationView';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
 import { INDIVIDUAL_WINTER_STORAGE_APPLICATION_QUERY } from './queries';

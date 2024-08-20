@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import { CUSTOMER_NAME_QUERY } from './queries';
 import { CUSTOMER_NAME } from './__generated__/CUSTOMER_NAME';
 import InternalLink from '../../../common/internalLink/InternalLink';

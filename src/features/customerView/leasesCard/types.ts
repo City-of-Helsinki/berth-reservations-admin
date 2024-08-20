@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BerthMooringType, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 
 export type Lease = {

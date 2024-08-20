@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { IconAngleDown } from 'hds-react';
 import { useLocation } from 'react-router-dom';
-
 import styles from './expandableNavItem.module.scss';
 
 export interface ExpandableProps {

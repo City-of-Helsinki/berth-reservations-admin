@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { WINTER_STORAGE_OFFER_AREA_FRAGMENT, WINTER_STORAGE_OFFER_SECTIONS_FRAGMENT } from './fragments';
 
 export const WINTER_STORAGE_OFFER_QUERY = gql`

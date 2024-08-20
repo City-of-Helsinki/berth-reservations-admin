@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import Text from '../text/Text';
 import styles from './property.module.scss';
 import IconWrapper from '../iconWrapper/IconWrapper';

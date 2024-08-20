@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import SendInvoiceForm from './SendInvoiceForm';
 import hdsToast from '../../../common/toast/hdsToast';
 import { APPROVE_ORDERS_MUTATION } from '../../../common/mutations/approveOrders';

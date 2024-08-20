@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
-
 import styles from './unmarkedWsNoticeView.module.scss';
 import Card from '../../common/card/Card';
 import CardBody from '../../common/cardBody/CardBody';

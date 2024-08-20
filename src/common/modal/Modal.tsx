@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import classNames from 'classnames';
-
 import styles from './modal.module.scss';
 import Text from '../../common/text/Text';
 

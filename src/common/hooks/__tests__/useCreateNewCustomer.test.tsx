@@ -3,7 +3,6 @@ import { MockedProvider } from '@apollo/react-testing';
 import { mount } from 'enzyme';
 import waitForExpect from 'wait-for-expect';
 import { act } from 'react-dom/test-utils';
-
 import useCreateNewCustomer, { CustomerInfo } from '../useCreateNewCustomer';
 import { CREATE_BERTH_SERVICE_PROFILE_MUTATION } from '../../mutations/createProfile';
 import {

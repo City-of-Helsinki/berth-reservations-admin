@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cell } from 'react-table';
-
 import { WinterStoragePlace, WinterStorageSection } from './types';
 import Table, { Column } from '../../common/table/Table';
 import StatusLabel from '../../common/statusLabel/StatusLabel';

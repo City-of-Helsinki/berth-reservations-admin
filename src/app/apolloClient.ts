@@ -6,7 +6,6 @@ import { ErrorLink, onError } from 'apollo-link-error';
 import gql from 'graphql-tag';
 import { ApolloLink } from 'apollo-link';
 import { GraphQLError } from 'graphql';
-
 import i18n from '../locales/i18n';
 import authService from '../features/auth/authService';
 import hdsToast from '../common/toast/hdsToast';

@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
-
 import Section from '../../common/section/Section';
 import Button from '../../common/button/Button';
 import { BerthLease } from '../customerView/types';

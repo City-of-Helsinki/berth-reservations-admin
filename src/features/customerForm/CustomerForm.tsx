@@ -4,7 +4,6 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { TFunction } from 'i18next';
 import { TextArea, TextInput, Checkbox } from 'hds-react';
-
 import { CustomerFormValues, FormProps } from './types';
 import { CustomerGroup, InvoicingType } from '../../@types/__generated__/globalTypes';
 import Select from '../../common/select/Select';

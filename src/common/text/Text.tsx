@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import styles from './text.module.scss';
 
 export interface TextProps {

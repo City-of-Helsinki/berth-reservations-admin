@@ -1,7 +1,6 @@
 import React from 'react';
 import { RadioButton as HDSRadioButton, RadioButtonProps } from 'hds-react';
 import classNames from 'classnames';
-
 import styles from './radioButton.module.scss';
 
 // This function creates a HDS RadioButton with the coat theme and fixed line height

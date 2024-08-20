@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import { INDIVIDUAL_PLACE_QUERY } from './queries';
 import LoadingSpinner from '../../../../common/spinner/LoadingSpinner';
 import { INDIVIDUAL_PLACE } from './__generated__/INDIVIDUAL_PLACE';

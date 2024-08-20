@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TextInput } from 'hds-react';
-
 import ApplicationTableTools from '../ApplicationTableTools';
 
 describe('ApplicationTableTools', () => {

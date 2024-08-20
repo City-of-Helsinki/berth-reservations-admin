@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Select as HDSSelect } from 'hds-react';
-
 import Select, { SelectProps } from '../Select';
 
 const mockProps: SelectProps = {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import OrganizationCustomerDetails, { OrganizationCustomerDetailsProps } from '../OrganizationCustomerDetails';
 import { organizationCustomerProfile as mockData } from '../__fixtures__/mockData';
 import { CustomerGroup, Language } from '../../../@types/__generated__/globalTypes';

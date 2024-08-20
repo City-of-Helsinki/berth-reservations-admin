@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import WinterStorageAreaList from './WinterStorageAreaList';
 import { WINTER_STORAGE_AREAS } from './__generated__/WINTER_STORAGE_AREAS';
 import { WINTER_STORAGE_AREAS_QUERY } from './queries';

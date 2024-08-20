@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import { CREATE_BERTH, CREATE_BERTHVariables as CREATE_BERTH_VARS } from './__generated__/CREATE_BERTH';
 import { CREATE_BERTH_MUTATION } from './mutations';
 import { Berth, FormProps } from '../types';

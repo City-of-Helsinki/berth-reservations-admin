@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { TextInput } from 'hds-react';
 import { useTranslation } from 'react-i18next';
-
 import Select from '../../../common/select/Select';
 import styles from './customerListTableTools.module.scss';
 import Modal from '../../../common/modal/Modal';

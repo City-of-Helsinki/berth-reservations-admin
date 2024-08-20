@@ -4,7 +4,6 @@ import { Checkbox, Notification } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import styles from './editForm.module.scss';
 import { ORDER_OPTIONAL_PRODUCTS_QUERY } from './queries';
 import { ORDER_OPTIONAL_PRODUCTS } from './__generated__/ORDER_OPTIONAL_PRODUCTS';

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Button from '../../../common/button/Button';
 import FormHeader from '../../../common/formHeader/FormHeader';
 import Checkbox from '../../../common/checkbox/Checkbox';

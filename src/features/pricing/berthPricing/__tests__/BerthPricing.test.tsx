@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
-
 import BerthPricing, { BerthPricingProps } from '../BerthPricing';
 import { data } from '../__fixtures__/data';
 

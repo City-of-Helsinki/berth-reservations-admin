@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Grid, { GridProps } from '../Grid';
 
 describe('Grid', () => {

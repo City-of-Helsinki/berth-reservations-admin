@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import List, { ListProps } from '../List';
 
 describe('List', () => {

@@ -3,7 +3,6 @@ import { Tag, IconCrossCircle } from 'hds-react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@apollo/react-hooks';
 import format from 'date-fns/format';
-
 import { FILTER_BOAT_TYPE_LABELS } from '../__generated__/FILTER_BOAT_TYPE_LABELS';
 import {
   FILTER_PIER_LABEL,

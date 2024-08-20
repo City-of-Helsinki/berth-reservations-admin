@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
-
 import Section from '../../section/Section';
 import List from '../../list/List';
 import ListItem from '../../list/ListItem';

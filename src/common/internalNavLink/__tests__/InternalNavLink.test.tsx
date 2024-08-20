@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { HashRouter, NavLink } from 'react-router-dom';
-
 import InternalNavLink, { InternalNavLinkProps } from '../InternalNavLink';
 
 describe('InternalNavLink', () => {

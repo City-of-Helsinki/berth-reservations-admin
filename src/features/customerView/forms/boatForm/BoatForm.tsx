@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
 import { ObjectSchema } from 'yup';
 import { Button, TextInput } from 'hds-react';
-
 import { BoatType, FormProps } from '../../../harborView/forms/types';
 import { Boat } from '../../types';
 import FormHeader from '../../../../common/formHeader/FormHeader';

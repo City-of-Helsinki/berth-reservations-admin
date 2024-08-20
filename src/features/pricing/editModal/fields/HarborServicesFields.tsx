@@ -4,7 +4,6 @@ import { Field, useFormikContext } from 'formik';
 import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
 import * as Yup from 'yup';
-
 import styles from '../editForm.module.scss';
 import Grid from '../../../../common/grid/Grid';
 import Select from '../../../../common/select/Select';

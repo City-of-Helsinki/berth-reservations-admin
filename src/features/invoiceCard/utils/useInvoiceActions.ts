@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { LeaseStatus, OrderStatus } from '../../../@types/__generated__/globalTypes';
 
 enum SupportedActions {

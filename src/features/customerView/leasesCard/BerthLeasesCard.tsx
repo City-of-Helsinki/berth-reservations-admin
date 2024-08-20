@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import BerthContractDetailsContainer from '../../contractDetails/BerthContractDetailsContainer';
 import { BerthLease } from '../types';
 import { Lease } from './types';

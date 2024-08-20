@@ -1,7 +1,6 @@
 import React from 'react';
 import { atom, RecoilRoot } from 'recoil';
 import { renderHook, act } from '@testing-library/react-hooks';
-
 import { usePreserveSelect } from '../usePreserveSelect';
 
 const selectedRowsAtom = atom<{ [x: string]: { id: string } }>({

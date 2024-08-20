@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { BERTH_PRICING_FRAGMENT } from './berthPricing/fragments';
 import { HARBOR_TIERS_FRAGMENT } from './harborTiers/fragments';
 import { WINTER_STORAGE_PRICING_FRAGMENT } from './winterStoragePricing/fragments';

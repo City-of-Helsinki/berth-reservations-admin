@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useTranslation } from 'react-i18next';
-
 import {
   CREATE_BERTH_LEASE_MODAL,
   CREATE_BERTH_LEASE_MODALVariables as CREATE_BERTH_LEASE_MODAL_VARS,

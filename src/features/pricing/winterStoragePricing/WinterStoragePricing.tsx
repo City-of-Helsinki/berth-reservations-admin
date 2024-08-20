@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Row } from 'react-table';
 import { useMutation } from '@apollo/react-hooks';
 import { PureQueryOptions } from 'apollo-client';
-
 import Card from '../../../common/card/Card';
 import Section from '../../../common/section/Section';
 import CardHeader from '../../../common/cardHeader/CardHeader';

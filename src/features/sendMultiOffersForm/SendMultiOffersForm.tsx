@@ -3,7 +3,6 @@ import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
 import { Form, Formik } from 'formik';
-
 import styles from './sendMultiOffersForm.module.scss';
 import FormHeader from '../../common/formHeader/FormHeader';
 import Button from '../../common/button/Button';

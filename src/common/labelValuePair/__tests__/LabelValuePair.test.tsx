@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import LabelValuePair, { LabelValuePairProps } from '../LabelValuePair';
 
 describe('LabelValuePair', () => {

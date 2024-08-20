@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import ApplicationView, { ApplicationViewProps } from '../ApplicationView';
 import { ApplicationStatus, Language, LeaseStatus } from '../../../@types/__generated__/globalTypes';
 import ApplicationHeader from '../../../common/applicationHeader/ApplicationHeader';

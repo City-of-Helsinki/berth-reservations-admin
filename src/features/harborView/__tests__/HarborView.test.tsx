@@ -2,7 +2,6 @@ import { MockedProvider } from '@apollo/react-testing';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
-
 import HarborView, { HarborViewProps } from '../HarborView';
 import { IndividualHarborData } from '../types';
 import { getBerths, getIndividualHarborData, getPiers } from '../utils';

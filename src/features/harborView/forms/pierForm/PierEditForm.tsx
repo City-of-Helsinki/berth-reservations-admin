@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import { FormProps, Pier } from '../types';
 import PierForm from './PierForm';
 import { DELETE_PIER_MUTATION, UPDATE_PIER_MUTATION } from './mutations';

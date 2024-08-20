@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortingRule } from 'react-table';
 import { atom } from 'recoil';
-
 import PageTitle from '../../common/pageTitle/PageTitle';
 import PageContent from '../../common/pageContent/PageContent';
 import ApplicationDetails from '../../common/applicationDetails/ApplicationDetails';

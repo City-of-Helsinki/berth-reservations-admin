@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Section from '../../../common/section/Section';
 import { BoatCertificate as TBoatCertificate } from '../types';
 import styles from './boatsCard.module.scss';

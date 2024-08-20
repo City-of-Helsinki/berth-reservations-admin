@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import UnmarkedWsNoticeView, { UnmarkedWsNoticeViewProps } from '../UnmarkedWsNoticeView';
 import { mockData, mockCustomer, mockOrder } from '../__fixtures__/mockData';
 import { getNoticeDetailsData } from '../utils';

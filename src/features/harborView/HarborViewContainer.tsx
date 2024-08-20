@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
-
 import { INDIVIDUAL_HARBOR_QUERY } from './queries';
 import {
   INDIVIDUAL_HARBOR,

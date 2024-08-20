@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PureQueryOptions } from 'apollo-client';
-
 import { LeaseDetails } from './types';
 import { PlaceProperty } from '../../invoiceCard/types';
 import InvoiceCardContainer from '../../invoiceCard/InvoiceCardContainer';

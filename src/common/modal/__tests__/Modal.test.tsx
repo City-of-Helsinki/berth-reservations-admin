@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ReactModal from 'react-modal';
-
 import Modal, { ModalProps } from '../Modal';
 
 describe('Modal', () => {

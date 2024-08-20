@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { GraphQLError } from 'graphql';
-
 import i18n from '../../locales/i18n';
 import { HDSToastContainerId } from './HDSToastContainer';
 

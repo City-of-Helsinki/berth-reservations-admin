@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-
 import ContractDetails from './ContractDetails';
 import { WINTER_STORAGE_CONTRACT_QUERY } from './queries';
 import {

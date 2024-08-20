@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-
 import Button from '../button/Button';
 import Text from '../text/Text';
 import Select from '../select/Select';

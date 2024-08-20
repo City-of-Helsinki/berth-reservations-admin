@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HashRouter } from 'react-router-dom';
-
 import SendAdditionalInvoiceForm, { SendAdditionalInvoiceFormProps } from '../SendAdditionalInvoiceForm';
 import { createdOrderMock } from '../__fixtures__/mockData';
 import { InvoiceInstructions } from '../../../common/invoiceInstructions/InvoiceInstructions';

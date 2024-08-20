@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { BERTH_LEASE_FRAGMENT, ADDITIONAL_SERVICES_FRAGMENT } from './berthOfferCard/fragments';
 
 export const INDIVIDUAL_APPLICATION_QUERY = gql`

@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import WinterStorageAreaCard from '../WinterStorageAreaCard';
 
 describe('WinterStorageAreaCard', () => {

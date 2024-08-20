@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Modal from '../../../common/modal/Modal';
 import styles from './createLeaseModal.module.scss';
 import FormHeader from '../../../common/formHeader/FormHeader';

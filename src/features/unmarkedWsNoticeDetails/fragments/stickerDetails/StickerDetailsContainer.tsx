@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
-
 import { UNMARKED_WINTER_STORAGE_STICKER_QUERY } from './queries';
 import { ASSIGN_NEW_STICKER_NUMBER_MUTATION } from './mutations';
 import StickerDetails from './StickerDetails';

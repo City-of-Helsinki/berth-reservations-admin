@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'hds-react';
-
 import { ApplicationStatus } from '../../../@types/__generated__/globalTypes';
 import Select from '../../select/Select';
 import { APPLICATION_STATUS } from '../../utils/constants';

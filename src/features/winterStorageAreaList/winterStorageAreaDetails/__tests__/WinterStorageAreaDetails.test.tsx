@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import { WinterStorageAreaData } from '../../types';
 import { getWinterStorageAreasData } from '../../utils';
 import { mockData } from '../../__fixtures__/mockData';

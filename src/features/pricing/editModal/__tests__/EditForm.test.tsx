@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Form } from 'formik';
 import { act } from 'react-dom/test-utils';
-
 import EditForm, { EditPricingFormProps, EDIT_FORM_TYPE } from '../EditForm';
 import WinterStorageFields from '../fields/WinterStorageFields';
 import HarborServicesFields from '../fields/HarborServicesFields';

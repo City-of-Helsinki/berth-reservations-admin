@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-
 import styles from './labelValuePair.module.scss';
 
 export interface LabelValuePairProps {

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { IconTrash } from 'hds-react';
 import { atom, useRecoilState } from 'recoil';
 import { SortingRule } from 'react-table';
-
 import Table, { Column, COLUMN_WIDTH } from '../../common/table/Table';
 import HarborDetails from './harborDetails/HarborDetails';
 import InternalLink from '../../common/internalLink/InternalLink';

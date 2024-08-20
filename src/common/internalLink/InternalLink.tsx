@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames';
-
 import styles from './internalLink.module.scss';
 
 export type InternalLinkProps = {

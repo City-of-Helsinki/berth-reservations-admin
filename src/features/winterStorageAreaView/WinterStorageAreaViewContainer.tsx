@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { useQuery } from '@apollo/react-hooks';
-
 import { INDIVIDUAL_WINTER_STORAGE_AREA } from './__generated__/INDIVIDUAL_WINTER_STORAGE_AREA';
 import { getIndividualWinterStorageArea, getMarkedWinterStorage, getUnmarkedWinterStorage } from './utils';
 import LoadingSpinner from '../../common/spinner/LoadingSpinner';
