@@ -164,9 +164,9 @@ function setup(config?: SetupConfig) {
   return {
     async fillControls(fieldInstructions: FieldInstruction[]) {
       for (const instruction of fieldInstructions) {
-        const { label, type } = instruction;
+        const { label } = instruction;
 
-        if (type === 'multiselect' || type === 'select') {
+        if (instruction.type === 'multiselect' || instruction.type === 'select') {
           const { value } = instruction;
 
           expect(screen.getByRole('combobox', { name: label })).toBeInTheDocument();
@@ -179,11 +179,11 @@ function setup(config?: SetupConfig) {
             userEvent.type(screen.getByRole('combobox', { name: label }), value.toLowerCase().substring(0, 3));
             userEvent.click(screen.getByRole('option', { name: value, selected: false }));
           }
-        } else if (type === 'checkbox') {
+        } else if (instruction.type === 'checkbox') {
           expect(screen.getByRole('checkbox', { name: label })).toBeInTheDocument();
 
           userEvent.click(screen.getByRole('checkbox', { name: label }));
-        } else if (type === 'date') {
+        } else if (instruction.type === 'date') {
           const { value } = instruction;
 
           expect(screen.getByRole('textbox', { name: label })).toBeInTheDocument();
@@ -306,7 +306,7 @@ function winterStorageGridAreaSelectedEnhancer() {
 let error: (...args: any[]) => void;
 beforeAll(() => {
   error = console.error;
-  console.error = (message, ...rest: any[]) => {
+  console.error = (message?: any, ...rest: any[]) => {
     if (message.startsWith('Warning: An update to')) {
       return;
     }

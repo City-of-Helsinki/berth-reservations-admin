@@ -21,6 +21,9 @@ export interface ProfileFragment_organization {
 
 export interface ProfileFragment_primaryAddress {
   __typename: "AddressNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   address: string;
   city: string;
@@ -29,35 +32,53 @@ export interface ProfileFragment_primaryAddress {
 
 export interface ProfileFragment_primaryPhone {
   __typename: "PhoneNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   phone: string;
 }
 
 export interface ProfileFragment_primaryEmail {
   __typename: "EmailNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   email: string;
 }
 
 export interface ProfileFragment_serviceConnections_edges_node_service {
   __typename: "ServiceNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   type: ServiceType | null;
 }
 
 export interface ProfileFragment_serviceConnections_edges_node {
   __typename: "ServiceConnectionType";
+  /**
+   * The ID of the object
+   */
   id: string;
   service: ProfileFragment_serviceConnections_edges_node_service;
 }
 
 export interface ProfileFragment_serviceConnections_edges {
   __typename: "ServiceConnectionTypeEdge";
+  /**
+   * The item at the end of the edge
+   */
   node: ProfileFragment_serviceConnections_edges_node | null;
 }
 
 export interface ProfileFragment_serviceConnections {
   __typename: "ServiceConnectionTypeConnection";
+  /**
+   * Contains the nodes in this connection.
+   */
   edges: (ProfileFragment_serviceConnections_edges | null)[];
 }
 
@@ -140,6 +161,9 @@ export interface ProfileFragment_berthLeases {
 
 export interface ProfileFragment {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   firstName: string;
   lastName: string;
@@ -147,9 +171,21 @@ export interface ProfileFragment {
   comment: string | null;
   customerGroup: CustomerGroup | null;
   organization: ProfileFragment_organization | null;
+  /**
+   * Convenience field for the address which is marked as primary.
+   */
   primaryAddress: ProfileFragment_primaryAddress | null;
+  /**
+   * Convenience field for the phone which is marked as primary.
+   */
   primaryPhone: ProfileFragment_primaryPhone | null;
+  /**
+   * Convenience field for the email which is marked as primary.
+   */
   primaryEmail: ProfileFragment_primaryEmail | null;
+  /**
+   * List of the profile's connected services.
+   */
   serviceConnections: ProfileFragment_serviceConnections | null;
   contactMethod: ContactMethod | null;
   image: string | null;

@@ -5,6 +5,7 @@ import UnmarkedWsNoticeDetails, { UnmarkedWsNoticeDetailsProps } from '../Unmark
 import { ApplicationStatus, CustomerGroup, InvoicingType, Language } from '../../../@types/__generated__/globalTypes';
 
 const minimumProps: UnmarkedWsNoticeDetailsProps = {
+  applicationCode: '',
   boatLength: 0,
   boatModel: 'Terhi',
   boatName: 'The Boat',

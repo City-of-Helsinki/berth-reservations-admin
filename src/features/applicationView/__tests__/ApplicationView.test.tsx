@@ -7,9 +7,11 @@ import { ApplicationStatus, Language, LeaseStatus } from '../../../@types/__gene
 import ApplicationHeader from '../../../common/applicationHeader/ApplicationHeader';
 import { canDeleteApplication } from '../../../common/utils/applicationUtils';
 import DeleteButton from '../../../common/deleteButton/DeleteButton';
+import { ApplicationTypeEnum } from '../../../common/applicationDetails/types';
 
 const mockProps: ApplicationViewProps = {
   applicationDetails: {
+    applicationType: ApplicationTypeEnum.BERTH,
     accessibilityRequired: false,
     applicationCode: '',
     berthSwitch: null,
@@ -138,6 +140,7 @@ describe('ApplicationView', () => {
   it('renders OfferCard with "leaseDetails" prop', () => {
     const wrapper = getWrapper({
       leaseDetails: {
+        harborId: '15065c6f-5e8c-4be9-b24d-cb8a12f1be0c',
         berthComment: '',
         berthDepth: null,
         berthIsAccessible: false,

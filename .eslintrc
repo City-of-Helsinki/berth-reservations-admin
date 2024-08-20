@@ -49,7 +49,7 @@
             "index"
           ]
         ],
-        "newlines-between": "always"
+        "newlines-between": "ignore"
       }
     ],
     "max-len": [

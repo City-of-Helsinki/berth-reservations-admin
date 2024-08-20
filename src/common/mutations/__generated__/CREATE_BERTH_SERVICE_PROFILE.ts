@@ -19,6 +19,9 @@ export interface CREATE_BERTH_SERVICE_PROFILE_createBerthServicesProfile_profile
 
 export interface CREATE_BERTH_SERVICE_PROFILE_createBerthServicesProfile_profile {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
   invoicingType: InvoicingType | null;
   comment: string | null;

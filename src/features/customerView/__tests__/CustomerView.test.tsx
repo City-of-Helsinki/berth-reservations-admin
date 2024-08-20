@@ -11,6 +11,7 @@ const mockProps: CustomerViewProps = {
   boats: [],
   cancelLease: jest.fn(),
   createLease: jest.fn(),
+  createWinterStorageLease: jest.fn(),
   customerProfile: privateCustomerProfile,
   handleDeleteOffer: jest.fn(),
   handleEditCustomer: jest.fn(),

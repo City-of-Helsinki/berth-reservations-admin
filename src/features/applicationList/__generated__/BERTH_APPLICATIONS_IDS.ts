@@ -11,7 +11,13 @@ import { ApplicationStatus } from "./../../../@types/__generated__/globalTypes";
 
 export interface BERTH_APPLICATIONS_IDS_berthApplications_pageInfo {
   __typename: "PageInfo";
+  /**
+   * When paginating forwards, are there more items?
+   */
   hasNextPage: boolean;
+  /**
+   * When paginating forwards, the cursor to continue.
+   */
   endCursor: string | null;
 }
 

@@ -27,7 +27,7 @@ describe('SendInvoiceForm', () => {
   });
 
   it.skip('shows an error if email is missing', () => {
-    const wrapper = getWrapper({ email: null });
+    const wrapper = getWrapper();
     expect(wrapper.find('Text.missingEmail')).toBeDefined();
   });
 
@@ -41,7 +41,7 @@ describe('SendInvoiceForm', () => {
   });
 
   it.skip('disables submit button if email is missing', async () => {
-    const wrapper = getWrapper({ email: null });
+    const wrapper = getWrapper();
     expect(wrapper.find('.formActionButtons').find('Button').at(1).prop('disabled')).toEqual(true);
   });
 

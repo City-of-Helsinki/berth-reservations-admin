@@ -410,7 +410,8 @@ Array [
       class="pagination fullWidth"
     >
       <button
-        class="prevBtn"
+        class="prevBtn disabled"
+        disabled=""
       >
         <svg
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv icon"
@@ -462,7 +463,8 @@ Array [
         </button>
       </div>
       <button
-        class="nextBtn"
+        class="nextBtn disabled"
+        disabled=""
       >
         <span
           class="text standard span"
@@ -761,7 +763,8 @@ Array [
       class="pagination fullWidth"
     >
       <button
-        class="prevBtn"
+        class="prevBtn disabled"
+        disabled=""
       >
         <svg
           class="Icon-module_icon__1Jtzj icon_hds-icon__1YqNC Icon-module_m__3edUY icon_hds-icon--size-m__1mcHv icon"
@@ -813,7 +816,8 @@ Array [
         </button>
       </div>
       <button
-        class="nextBtn"
+        class="nextBtn disabled"
+        disabled=""
       >
         <span
           class="text standard span"

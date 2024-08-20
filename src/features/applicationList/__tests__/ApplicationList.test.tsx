@@ -18,6 +18,8 @@ const mockProps: ApplicationListProps = {
   pageIndex: 0,
   tableData: [],
   isSubmittingApproveOrders: false,
+  isExporting: false,
+  handleApplicationsExport: jest.fn(),
   handleNoPlacesAvailable: jest.fn(),
   handleSendOffers: jest.fn(),
   onNameFilterChange: jest.fn(),

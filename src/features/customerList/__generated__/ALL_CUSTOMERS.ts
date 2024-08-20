@@ -11,24 +11,42 @@ import { CustomerGroup, LeaseStatus } from "./../../../@types/__generated__/glob
 
 export interface ALL_CUSTOMERS_berthProfiles_pageInfo {
   __typename: "PageInfo";
+  /**
+   * When paginating forwards, are there more items?
+   */
   hasNextPage: boolean;
+  /**
+   * When paginating forwards, the cursor to continue.
+   */
   endCursor: string | null;
 }
 
 export interface ALL_CUSTOMERS_berthProfiles_edges_node {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
 export interface ALL_CUSTOMERS_berthProfiles_edges {
   __typename: "ProfileNodeEdge";
+  /**
+   * The item at the end of the edge
+   */
   node: ALL_CUSTOMERS_berthProfiles_edges_node | null;
 }
 
 export interface ALL_CUSTOMERS_berthProfiles {
   __typename: "ProfileNodeConnection";
   count: number;
+  /**
+   * Pagination data for this connection.
+   */
   pageInfo: ALL_CUSTOMERS_berthProfiles_pageInfo;
+  /**
+   * Contains the nodes in this connection.
+   */
   edges: (ALL_CUSTOMERS_berthProfiles_edges | null)[];
 }
 

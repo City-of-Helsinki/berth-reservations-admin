@@ -21,6 +21,8 @@ const mockProps: HarborViewProps = {
   setCreatingPier: jest.fn(),
   setEditingHarbor: jest.fn(),
   setPierToEdit: jest.fn(),
+  setFilterByActiveBerths: jest.fn(),
+  filterByActiveBerths: null,
 };
 
 describe('HarborView', () => {

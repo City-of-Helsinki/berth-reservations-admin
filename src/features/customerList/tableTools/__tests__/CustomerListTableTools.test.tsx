@@ -25,6 +25,9 @@ describe('CustomerListTableTools', () => {
         setSearchBy={jest.fn}
         selectedCustomerIds={[]}
         clearSelectedRows={jest.fn}
+        handleCustomersExport={jest.fn().mockResolvedValue(undefined)}
+        refetch={jest.fn}
+        isExporting={false}
       />
     );
 

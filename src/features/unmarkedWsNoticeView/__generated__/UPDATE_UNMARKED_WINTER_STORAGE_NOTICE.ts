@@ -11,6 +11,9 @@ import { UpdateWinterStorageApplicationInput } from "./../../../@types/__generat
 
 export interface UPDATE_UNMARKED_WINTER_STORAGE_NOTICE_updateWinterStorageApplication_winterStorageApplication_customer {
   __typename: "ProfileNode";
+  /**
+   * The ID of the object
+   */
   id: string;
 }
 
