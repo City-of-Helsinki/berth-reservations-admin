@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   app:
     container_name: berth-reservation-admin
@@ -10,3 +9,6 @@ services:
       - /app/node_modules
     ports:
       - 3000:3000
+    # So that the development container doesn't exit after "docker compose up":
+    tty: true
+    stdin_open: true
