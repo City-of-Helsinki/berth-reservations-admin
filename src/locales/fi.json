@@ -765,7 +765,7 @@
     "editModalHeading": "Hinnaston muokkaus",
     "berths": {
       "title": "Venepaikka",
-      "description": "Perushinta. Hinnat sisältävät alv 24 %.",
+      "description": "Perushinta. Hinnat sisältävät alv 25,5 %.",
       "defaultProducts": "Venepaikat",
       "vasikkasaari": "Vasikkasaaren venesatama",
       "dinghy": "Jollapaikat",
@@ -779,7 +779,7 @@
     },
     "winterStorage": {
       "title": "Talvisäilytyspaikka",
-      "description": "Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.",
+      "description": "Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 25,5 %.",
       "area": "Alue",
       "privateCustomer": "Yksityinen",
       "company": "Yritys",
@@ -787,7 +787,7 @@
     },
     "harborServices": {
       "title": "Satamapalvelut",
-      "description": "Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.",
+      "description": "Lisähinnat venepaikoille. Hinnat sisältävät alv 25,5 %.",
       "service": "Palvelu",
       "price": "Hinta",
       "unit": "Yksikkö",

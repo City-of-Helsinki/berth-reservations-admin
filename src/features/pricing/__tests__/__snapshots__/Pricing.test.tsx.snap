@@ -38,7 +38,7 @@ exports[`PricingPage renders normally 1`] = `
           <section
             class="body"
           >
-            Perushinta. Hinnat sisältävät alv 24 %.
+            Perushinta. Hinnat sisältävät alv 25,5 %.
           </section>
         </article>
         <div>
@@ -312,7 +312,7 @@ exports[`PricingPage renders normally 1`] = `
           <section
             class="body"
           >
-            Perushinta. Hinnat sisältävät alv 24 %.
+            Perushinta. Hinnat sisältävät alv 25,5 %.
           </section>
         </article>
         <div>
@@ -537,7 +537,7 @@ exports[`PricingPage renders normally 1`] = `
           <section
             class="body"
           >
-            Perushinta. Hinnat sisältävät alv 24 %.
+            Perushinta. Hinnat sisältävät alv 25,5 %.
           </section>
         </article>
         <div>
@@ -723,7 +723,7 @@ exports[`PricingPage renders normally 1`] = `
           <section
             class="body"
           >
-            Perushinta. Hinnat sisältävät alv 24 %.
+            Perushinta. Hinnat sisältävät alv 25,5 %.
           </section>
         </article>
         <div>
@@ -1056,7 +1056,7 @@ exports[`PricingPage renders normally 1`] = `
         <section
           class="body"
         >
-          Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.
+          Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 25,5 %.
         </section>
       </article>
       <div>
@@ -1298,7 +1298,7 @@ exports[`PricingPage renders normally 1`] = `
         <section
           class="body"
         >
-          Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.
+          Lisähinnat venepaikoille. Hinnat sisältävät alv 25,5 %.
         </section>
       </article>
       <div>
