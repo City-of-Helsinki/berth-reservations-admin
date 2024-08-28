@@ -9,7 +9,9 @@
 
 export enum AdditionalProductTaxEnum {
   TAX_10_00 = "TAX_10_00",
+  TAX_14_00 = "TAX_14_00",
   TAX_24_00 = "TAX_24_00",
+  TAX_25_50 = "TAX_25_50",
 }
 
 export enum AdditionalProductType {
@@ -179,6 +181,7 @@ export enum PhoneType {
 
 export enum PlaceProductTaxEnum {
   TAX_24_00 = "TAX_24_00",
+  TAX_25_50 = "TAX_25_50",
 }
 
 export enum PriceTier {

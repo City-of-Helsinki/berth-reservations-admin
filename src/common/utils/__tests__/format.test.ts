@@ -67,6 +67,37 @@ describe('format', () => {
     it('should return the right value', () => {
       expect(formatPercentage(10, 'fi')).toEqual('10 %');
     });
+
+    it.each([
+      // Finnish locale
+      [10, 'fi', '10 %'],
+      [14, 'fi', '14 %'],
+      [24, 'fi', '24 %'],
+      [25.5, 'fi', '25,5 %'],
+      // Swedish locale
+      [10, 'sv', '10 %'],
+      [14, 'sv', '14 %'],
+      [24, 'sv', '24 %'],
+      [25.5, 'sv', '25,5 %'],
+      // English locale
+      [10, 'en', '10%'],
+      [14, 'en', '14%'],
+      [24, 'en', '24%'],
+      [25.5, 'en', '25.5%'],
+    ])('formatPercentage(%s, "%s") == "%s"', (value, locale, expectedResult) => {
+      expect(formatPercentage(value, locale)).toBe(expectedResult);
+    });
+
+    it.each([
+      [25.555, 'fi', '25,56 %'],
+      [25.555, 'sv', '25,56 %'],
+      [25.555, 'en', '25.56%'],
+      [14.333333333, 'fi', '14,33 %'],
+      [16.654321, 'sv', '16,65 %'],
+      [27.499999999999999, 'en', '27.5%'],
+    ])('formatPercentage(%s, "%s") == "%s" with rounding to max. two decimals', (value, locale, expectedResult) => {
+      expect(formatPercentage(value, locale)).toBe(expectedResult);
+    });
   });
 
   describe('formatBytes', () => {
