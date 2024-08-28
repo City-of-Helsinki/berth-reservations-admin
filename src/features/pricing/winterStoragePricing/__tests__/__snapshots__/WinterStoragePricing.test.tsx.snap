@@ -22,7 +22,7 @@ exports[`WinterStoragePricing renders noData message when there is no data 1`] =
       <section
         class="body"
       >
-        Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.
+        Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 25,5 %.
       </section>
     </article>
     <div>
@@ -227,7 +227,7 @@ exports[`WinterStoragePricing renders normally 1`] = `
       <section
         class="body"
       >
-        Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 24 %.
+        Hinta €/m2 sisältäen palvelut. Hinnat sisältävät alv 25,5 %.
       </section>
     </article>
     <div>

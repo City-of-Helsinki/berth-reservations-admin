@@ -22,7 +22,7 @@ exports[`HarborServicePricing renders noData message when there is no data 1`] =
       <section
         class="body"
       >
-        Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.
+        Lisähinnat venepaikoille. Hinnat sisältävät alv 25,5 %.
       </section>
     </article>
     <div>
@@ -194,7 +194,7 @@ exports[`HarborServicePricing renders normally 1`] = `
       <section
         class="body"
       >
-        Lisähinnat venepaikoille. Hinnat sisältävät alv 24 %.
+        Lisähinnat venepaikoille. Hinnat sisältävät alv 25,5 %.
       </section>
     </article>
     <div>
