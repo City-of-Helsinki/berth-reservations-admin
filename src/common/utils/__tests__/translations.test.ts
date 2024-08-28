@@ -20,9 +20,6 @@ import {
   BerthMooringType,
   PriceTier,
 } from '../../../@types/__generated__/globalTypes';
-import { formatPercentage } from '../format';
-
-jest.mock('../format');
 
 describe('translations', () => {
   describe('getMooringTypeTKey', () => {
@@ -106,14 +103,41 @@ describe('translations', () => {
       jest.resetAllMocks();
     });
 
-    test('each provided value of type AdditionalProductTaxEnum should have a corresponding formatted value', () => {
+    test('each provided value of type AdditionalProductTaxEnum should be mapped to a unique different value', () => {
       const taxes = Object.values(AdditionalProductTaxEnum);
 
+      const results: string[] = [];
+
       taxes.forEach((tax) => {
-        getProductTax(tax, 'fi');
+        const result = getProductTax(tax, 'fi');
+        expect(result).not.toBe(tax); // Should change input value
+        expect(typeof result).toBe('string'); // Should be string
+        expect(result).not.toBe(''); // Should be non-empty string
+        results.push(result);
       });
 
-      expect(formatPercentage).toHaveBeenCalledTimes(taxes.length);
+      expect(results.length).toBe(taxes.length); // All input values should be mapped
+      expect(new Set(results).size).toBe(results.length); // All output values should be unique
+    });
+
+    test.each([
+      // Finnish locale
+      [AdditionalProductTaxEnum.TAX_10_00, 'fi', '10 %'],
+      [AdditionalProductTaxEnum.TAX_14_00, 'fi', '14 %'],
+      [AdditionalProductTaxEnum.TAX_24_00, 'fi', '24 %'],
+      [AdditionalProductTaxEnum.TAX_25_50, 'fi', '25,5 %'],
+      // Swedish locale
+      [AdditionalProductTaxEnum.TAX_10_00, 'sv', '10 %'],
+      [AdditionalProductTaxEnum.TAX_14_00, 'sv', '14 %'],
+      [AdditionalProductTaxEnum.TAX_24_00, 'sv', '24 %'],
+      [AdditionalProductTaxEnum.TAX_25_50, 'sv', '25,5 %'],
+      // English locale
+      [AdditionalProductTaxEnum.TAX_10_00, 'en', '10%'],
+      [AdditionalProductTaxEnum.TAX_14_00, 'en', '14%'],
+      [AdditionalProductTaxEnum.TAX_24_00, 'en', '24%'],
+      [AdditionalProductTaxEnum.TAX_25_50, 'en', '25.5%'],
+    ])('getProductTax(%s, "%s") == "%s"', (tax, locale, expectedResult) => {
+      expect(getProductTax(tax, locale)).toBe(expectedResult);
     });
 
     it('should fallback to the actual value from the backend if there is no match during the runtime', () => {

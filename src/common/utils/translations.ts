@@ -113,8 +113,12 @@ export const getProductTax = (tax: AdditionalProductTaxEnum, locale: string) => 
   switch (tax) {
     case AdditionalProductTaxEnum.TAX_10_00:
       return formatPercentage(10, locale);
+    case AdditionalProductTaxEnum.TAX_14_00:
+      return formatPercentage(14, locale);
     case AdditionalProductTaxEnum.TAX_24_00:
       return formatPercentage(24, locale);
+    case AdditionalProductTaxEnum.TAX_25_50:
+      return formatPercentage(25.5, locale);
 
     default:
       return tax;
