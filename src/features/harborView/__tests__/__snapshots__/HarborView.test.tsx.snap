@@ -80,7 +80,7 @@ exports[`HarborView renders normally 1`] = `
                 >
                   <a
                     class="link withArrow"
-                    href="https://palvelukartta.hel.fi/unit/41359"
+                    href="https://palvelukartta.hel.fi/fi/unit/41359"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
