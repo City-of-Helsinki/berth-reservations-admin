@@ -38,7 +38,7 @@ export const berthOfferQueryData: BERTH_OFFER = {
       streetAddress: 'Meripuistotie 1a',
       zipCode: '00210',
       municipality: 'Helsinki',
-      imageFile: 'https://venepaikka-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg',
+      imageFile: 'https://venepaikat-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg',
       maxWidth: 4,
       servicemapId: '41359',
       numberOfPlaces: 4,

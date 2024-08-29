@@ -50,7 +50,7 @@ exports[`HarborView renders normally 1`] = `
               <img
                 alt="Kuva kohteesta"
                 class="image"
-                src="https://venepaikka.test.kuva.hel.ninja/img/helsinki_harbors/41359.jpg"
+                src="https://venepaikat-federation-gateway.test.hel.ninja/img/helsinki_harbors/41359.jpg"
               />
             </div>
             <div>

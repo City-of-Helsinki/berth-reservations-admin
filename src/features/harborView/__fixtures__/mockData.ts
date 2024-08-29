@@ -13,7 +13,7 @@ export const IndividualHarborQueryData: INDIVIDUAL_HARBOR = {
       municipality: 'Helsinki',
       wwwUrl:
         'https://www.hel.fi/helsinki/fi/kulttuuri-ja-vapaa-aika/ulkoilu/veneily/kaupungin-venepaikat/kaupungin-venesatamat/pajalahden-venesatama',
-      imageFile: 'https://venepaikka.test.kuva.hel.ninja/img/helsinki_harbors/41359.jpg',
+      imageFile: 'https://venepaikat-federation-gateway.test.hel.ninja/img/helsinki_harbors/41359.jpg',
       servicemapId: '41359',
       maxWidth: 4,
       __typename: 'HarborProperties',
