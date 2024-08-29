@@ -11,9 +11,9 @@ Staff interface for Venepaikka.
 
 Environments:
 
-- [Staging](https://venepaikka-admin.test.kuva.hel.ninja)
-- [GraphQL API URL](https://venepaikka-federation.test.kuva.hel.ninja/)
-- [GraphQL API overview](https://venepaikka-federation.test.kuva.hel.ninja/voyager)
+- [Staging](https://venepaikat-admin-ui.test.hel.ninja)
+- [GraphQL API URL](https://venepaikat-federation-gateway.test.hel.ninja/)
+- [GraphQL API overview](https://venepaikat-federation-gateway.test.hel.ninja/voyager)
 
 ---
 
@@ -221,7 +221,7 @@ Staging deployment is handled by CI/CD pipeline for new commits on `develop` bra
 
 ## Browser tests
 
-Browser tests are written in TypeScript with [TestCafe](https://devexpress.github.io/testcafe/) framework and they are run against [test environment](https://venepaikka-admin.test.kuva.hel.ninja) in CI as GitHub Actions Cron Job (daily) with Chrome (headless mode).
+Browser tests are written in TypeScript with [TestCafe](https://devexpress.github.io/testcafe/) framework and they are run against [test environment](https://venepaikat-admin-ui.test.hel.ninja) in CI as GitHub Actions Cron Job (daily) with Chrome (headless mode).
 
 ### How to run locally
 

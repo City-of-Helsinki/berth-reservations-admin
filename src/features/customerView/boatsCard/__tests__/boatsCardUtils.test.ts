@@ -42,7 +42,7 @@ describe('boat card utils', () => {
   describe('getFilename', () => {
     it('should get filename', () => {
       const dummyFilename = '2c736de2-5659-46ea-ad3f-9c1364307d7d/dummy_pdf1.pdf';
-      expect(getFilename(`https://venepaikka-api.test.hel.ninja/media/boats/${dummyFilename}`)).toEqual(
+      expect(getFilename(`https://venepaikat-api.test.hel.ninja/media/boats/${dummyFilename}`)).toEqual(
         'dummy_pdf1.pdf'
       );
     });

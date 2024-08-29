@@ -28,7 +28,7 @@ exports[`HarborCard renders normally 1`] = `
           <img
             alt="Kuva kohteesta"
             class="image"
-            src="https://venepaikka-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg"
+            src="https://venepaikat-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg"
           />
         </div>
         <div>

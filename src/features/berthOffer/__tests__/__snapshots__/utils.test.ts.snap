@@ -12,7 +12,7 @@ Array [
 
 exports[`utils getHarbor should return harbor 1`] = `
 Object {
-  "imageUrl": "https://venepaikka-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg",
+  "imageUrl": "https://venepaikat-api.test.hel.ninja/media/harbors/9a8d8313-eaa2-47d2-8f2d-2bb9893f9bc7/41359.jpg",
   "municipality": "Helsinki",
   "name": "Pajalahden venesatama (Meripuistotie) / Venesatama",
   "properties": Object {
