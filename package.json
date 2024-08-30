@@ -49,7 +49,7 @@
     "hds-react": "^1.10.0",
     "i18next": "^17.0.18",
     "jspdf": "^2.1.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "oidc-client": "^1.9.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
