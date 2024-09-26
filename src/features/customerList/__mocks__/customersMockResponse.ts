@@ -37,7 +37,6 @@ export const customersResponse: CUSTOMERS = {
             __typename: 'ServiceConnectionTypeConnection',
           },
           contactMethod: ContactMethod.SMS,
-          image: '',
           boats: {
             edges: [
               {

@@ -42,7 +42,6 @@ const PROFILE_FRAGMENT = gql`
       }
     }
     contactMethod
-    image
     boats {
       edges {
         node {
