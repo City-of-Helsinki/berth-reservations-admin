@@ -30,7 +30,6 @@ export const dummyCustomers: CUSTOMERS = {
           },
           serviceConnections: null,
           contactMethod: ContactMethod.EMAIL,
-          image: '',
           comment: '',
           boats: {
             __typename: 'BoatNodeConnection',
@@ -79,7 +78,6 @@ export const dummyCustomers: CUSTOMERS = {
           },
           serviceConnections: null,
           contactMethod: ContactMethod.EMAIL,
-          image: '',
           comment: '',
           boats: {
             __typename: 'BoatNodeConnection',
