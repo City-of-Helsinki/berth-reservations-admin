@@ -188,7 +188,6 @@ export interface CUSTOMERS_berthProfiles_edges_node {
    */
   serviceConnections: CUSTOMERS_berthProfiles_edges_node_serviceConnections | null;
   contactMethod: ContactMethod | null;
-  image: string | null;
   boats: CUSTOMERS_berthProfiles_edges_node_boats | null;
   berthApplications: CUSTOMERS_berthProfiles_edges_node_berthApplications | null;
   berthLeases: CUSTOMERS_berthProfiles_edges_node_berthLeases | null;
