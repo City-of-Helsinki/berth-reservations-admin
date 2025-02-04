@@ -50,7 +50,7 @@
     "i18next": "^17.0.18",
     "jspdf": "^2.1.1",
     "node-sass": "^4.14.1",
-    "oidc-client": "^1.9.1",
+    "oidc-client-ts": "^2.4.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-i18next": "^10.13.1",
