@@ -1,13 +1,15 @@
+import AppConfig from '../../app/AppConfig';
 import authService from '../../features/auth/authService';
 
+/** Get token for the given client. */
+const getClientToken = (clientId: string) => {
+  return JSON.parse(authService.getTokens() ?? '{}')[clientId];
+};
+
 export const getProfileToken = () => {
-  const profileScope = process.env.REACT_APP_TUNNISTAMO_SCOPE_PROFILE;
-  const profileToken = JSON.parse(authService.getTokens() as string)[profileScope as string];
-  return profileToken;
+  return getClientToken(AppConfig.oidcProfileApiClientId);
 };
 
 export const getBerthToken = () => {
-  const berthScope = process.env.REACT_APP_TUNNISTAMO_SCOPE_BERTHS;
-  const berthToken = JSON.parse(authService.getTokens() as string)[berthScope as string];
-  return berthToken;
+  return getClientToken(AppConfig.oidcBerthApiClientId);
 };

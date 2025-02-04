@@ -1,20 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`authService fetchApiTokens should call axios.get with the right arguments 1`] = `
+exports[`authService fetchApiToken should call axios with the right arguments 1`] = `
 Array [
-  "api-tokens/",
+  "https://tunnistus.test.hel.ninja/auth/realms/helsinki-tunnistus/protocol/openid-connect/token",
   Object {
-    "baseURL": "https://tunnistamo.test.hel.ninja",
+    "baseURL": "https://tunnistus.test.hel.ninja/auth/realms/helsinki-tunnistus/",
+    "data": "audience=berths-api&permission=%23access&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Auma-ticket",
     "headers": Object {
+      "Accept": "application/json",
       "Authorization": "bearer db237bc3-e197-43de-8c86-3feea4c5f886",
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
     },
+    "method": "post",
   },
 ]
 `;
 
-exports[`authService fetchApiTokens should call localStorage.setItem with the right arguments 1`] = `
+exports[`authService fetchApiToken should call localStorage.setItem with the right arguments 1`] = `
 Array [
   "apiTokens",
-  "{\\"firstToken\\":\\"71ffd52c-5985-46d3-b445-490554f4012a\\",\\"secondToken\\":\\"de7c2a83-07f2-46bf-8417-8f648adbc7be\\"}",
+  "{\\"berths-api\\":\\"71ffd52c-5985-46d3-b445-490554f4012a\\"}",
 ]
 `;
