@@ -20,7 +20,7 @@ const CallbackPage = ({ history }: CallbackPageProps) => {
         client.writeData({
           data: { currentUser: { __typename: 'CurrentUser', ...user.profile } },
         });
-        history.replace(user.state.path);
+        history.replace(user.url_state || '/');
       })
       .catch(() => {
         history.replace('/error');

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import authService, { API_TOKENS } from './authService';
+import AppConfig from '../../app/AppConfig';
 
 jest.mock('axios');
 
@@ -38,17 +39,17 @@ describe('authService', () => {
     it('should get API_TOKENS from localStorage', () => {
       authService.getTokens();
 
-      expect(localStorage.getItem).toHaveBeenNthCalledWith(1, API_TOKENS);
+      expect(localStorage.getItem).toHaveBeenNthCalledWith(3, API_TOKENS);
     });
   });
 
   describe('isAuthenticated', () => {
-    it('should get oidc user from sessionStorage', () => {
+    it('should get oidc user from localStorage', () => {
       authService.isAuthenticated();
 
-      expect(sessionStorage.getItem).toHaveBeenNthCalledWith(
+      expect(localStorage.getItem).toHaveBeenNthCalledWith(
         1,
-        `oidc.user:${process.env.REACT_APP_TUNNISTAMO_URI}:${process.env.REACT_APP_TUNNISTAMO_CLIENT_ID}`
+        `oidc.user:${AppConfig.oidcAuthority}:${AppConfig.oidcClientId}`
       );
     });
 
@@ -65,23 +66,20 @@ describe('authService', () => {
       expect(authService.isAuthenticated()).toBe(false);
     });
 
-    it("should return false if oidc user from sessionStorage doesn't exist", () => {
+    it("should return false if oidc user from localStorage doesn't exist", () => {
       const apiTokens = '5ed3abc5-9b65-4879-8d09-3cd8499650ef';
       jest.spyOn(authService, 'getTokens').mockReturnValue(apiTokens);
-      sessionStorage.clear();
+      localStorage.clear();
 
       expect(authService.isAuthenticated()).toBe(false);
     });
 
-    it("should return false if oidc user from sessionStorage doesn't have an access_token property", () => {
+    it("should return false if oidc user from localStorage doesn't have an access_token property", () => {
       const apiTokens = '5ed3abc5-9b65-4879-8d09-3cd8499650ef';
       const invalidUser = JSON.stringify({});
 
       jest.spyOn(authService, 'getTokens').mockReturnValue(apiTokens);
-      sessionStorage.setItem(
-        `oidc.user:${process.env.REACT_APP_TUNNISTAMO_URI}:${process.env.REACT_APP_TUNNISTAMO_CLIENT_ID}`,
-        invalidUser
-      );
+      localStorage.setItem(`oidc.user:${AppConfig.oidcAuthority}:${AppConfig.oidcClientId}`, invalidUser);
 
       expect(authService.isAuthenticated()).toBe(false);
     });
@@ -95,10 +93,7 @@ describe('authService', () => {
       });
 
       jest.spyOn(authService, 'getTokens').mockReturnValue(apiTokens);
-      sessionStorage.setItem(
-        `oidc.user:${process.env.REACT_APP_TUNNISTAMO_URI}:${process.env.REACT_APP_TUNNISTAMO_CLIENT_ID}`,
-        validUser
-      );
+      localStorage.setItem(`oidc.user:${AppConfig.oidcAuthority}:${AppConfig.oidcClientId}`, validUser);
 
       expect(authService.isAuthenticated()).toBe(true);
     });
@@ -111,12 +106,13 @@ describe('authService', () => {
 
       authService.login(path);
 
-      expect(signinRedirect).toHaveBeenNthCalledWith(1, { data: { path } });
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      expect(signinRedirect).toHaveBeenNthCalledWith(1, { url_state: path });
     });
   });
 
   describe('endLogin', () => {
-    axios.get.mockResolvedValue({ data: {} });
+    axios.mockResolvedValue({ data: {} });
     /* eslint-disable-next-line @typescript-eslint/camelcase */
     const access_token = 'db237bc3-e197-43de-8c86-3feea4c5f886';
     const mockUser = {
@@ -144,32 +140,33 @@ describe('authService', () => {
       expect(user).toBe(mockUser);
     });
 
-    it('should call fetchApiTokens with the user object', async () => {
-      expect.assertions(1);
-      jest.spyOn(authService, 'fetchApiTokens');
+    it('should call fetchApiToken with the user object', async () => {
+      expect.assertions(2);
+      jest.spyOn(authService, 'fetchApiToken');
       jest.spyOn(userManager, 'signinRedirectCallback').mockResolvedValue(mockUser);
 
       await authService.endLogin();
 
-      expect(authService.fetchApiTokens).toHaveBeenNthCalledWith(1, mockUser);
+      expect(authService.fetchApiToken).toHaveBeenNthCalledWith(1, mockUser, expect.stringMatching(/^berths/));
+      expect(authService.fetchApiToken).toHaveBeenNthCalledWith(2, mockUser, expect.stringMatching(/^profile/));
     });
 
     it('should set the user in localStorage before the function returns', async () => {
       expect.assertions(1);
       jest.spyOn(userManager, 'signinRedirectCallback').mockResolvedValue(mockUser);
-      jest.spyOn(authService, 'fetchApiTokens');
+      jest.spyOn(authService, 'fetchApiToken');
 
       await authService.endLogin();
 
-      expect(localStorage.setItem).toHaveBeenCalledTimes(1);
+      expect(localStorage.setItem).toHaveBeenCalledTimes(2);
     });
   });
 
   describe('renewToken', () => {
-    it('should call signinSilent from oidc', () => {
-      const signinSilent = jest.spyOn(userManager, 'signinSilent');
+    it('should call signinSilent from oidc', async () => {
+      const signinSilent = jest.spyOn(userManager, 'signinSilent').mockResolvedValue(null);
 
-      authService.renewToken();
+      await authService.renewToken();
 
       expect(signinSilent).toHaveBeenCalledTimes(1);
     });
@@ -187,10 +184,10 @@ describe('authService', () => {
   });
 
   describe('logout', () => {
-    it('should call signoutRedirect from oidc', () => {
-      const signoutRedirect = jest.spyOn(userManager, 'signoutRedirect');
+    it('should call signoutRedirect from oidc', async () => {
+      const signoutRedirect = jest.spyOn(userManager, 'signoutRedirect').mockResolvedValue(undefined);
 
-      authService.logout();
+      await authService.logout();
 
       expect(signoutRedirect).toHaveBeenCalledTimes(1);
     });
@@ -217,7 +214,7 @@ describe('authService', () => {
     });
   });
 
-  describe('fetchApiTokens', () => {
+  describe('fetchApiToken', () => {
     /* eslint-disable-next-line @typescript-eslint/camelcase */
     const access_token = 'db237bc3-e197-43de-8c86-3feea4c5f886';
     const mockUser = {
@@ -227,28 +224,30 @@ describe('authService', () => {
     };
 
     beforeEach(() => {
-      axios.get.mockReset();
+      axios.mockReset();
 
-      axios.get.mockResolvedValue({
+      axios.mockResolvedValue({
         data: {
-          firstToken: '71ffd52c-5985-46d3-b445-490554f4012a',
-          secondToken: 'de7c2a83-07f2-46bf-8417-8f648adbc7be',
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          access_token: '71ffd52c-5985-46d3-b445-490554f4012a',
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          refresh_token: 'de7c2a83-07f2-46bf-8417-8f648adbc7be',
         },
       });
     });
-    it('should call axios.get with the right arguments', async () => {
+    it('should call axios with the right arguments', async () => {
       expect.assertions(2);
-      await authService.fetchApiTokens(mockUser);
+      await authService.fetchApiToken(mockUser, 'berths-api');
 
-      expect(axios.get).toHaveBeenCalledTimes(1);
-      expect(axios.get.mock.calls[0]).toMatchSnapshot();
+      expect(axios).toHaveBeenCalledTimes(1);
+      expect(axios.mock.calls[0]).toMatchSnapshot();
     });
 
     it('should call localStorage.setItem with the right arguments', async () => {
       expect.assertions(2);
-      await authService.fetchApiTokens(mockUser);
+      await authService.fetchApiToken(mockUser, 'berths-api');
 
-      expect(localStorage.setItem).toHaveBeenCalledTimes(1);
+      expect(localStorage.setItem).toHaveBeenCalledTimes(2);
       expect(localStorage.setItem.mock.calls[0]).toMatchSnapshot();
     });
   });
