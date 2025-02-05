@@ -76,7 +76,7 @@
     "ci": "cross-env CI=true yarn test --verbose --runInBand --coverage",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "types:generate": "apollo codegen:generate --globalTypesFile=./src/@types/__generated__/globalTypes.ts --target=typescript --includes=\"./src/**/*.ts\" --tagName=gql",
-    "pre-push": "yarn types:generate && yarn lint && yarn stylelint && yarn typecheck",
+    "pre-push": "yarn lint && yarn stylelint && yarn typecheck",
     "browser-test": "testcafe \"chrome --window-size='1920,1080'\" browser-tests/",
     "browser-test:ci": "testcafe \"chrome:headless --disable-gpu --window-size='1920,1080'\" browser-tests/ -s takeOnFails=true --skip-js-errors",
     "stylelint": "stylelint \"**/*.scss\"",
