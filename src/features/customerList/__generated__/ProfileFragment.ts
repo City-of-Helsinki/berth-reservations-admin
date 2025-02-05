@@ -188,7 +188,6 @@ export interface ProfileFragment {
    */
   serviceConnections: ProfileFragment_serviceConnections | null;
   contactMethod: ContactMethod | null;
-  image: string | null;
   boats: ProfileFragment_boats | null;
   berthApplications: ProfileFragment_berthApplications | null;
   berthLeases: ProfileFragment_berthLeases | null;

@@ -200,7 +200,6 @@ export interface CUSTOMER_GROUPS_berthProfiles_edges_node {
    */
   serviceConnections: CUSTOMER_GROUPS_berthProfiles_edges_node_serviceConnections | null;
   contactMethod: ContactMethod | null;
-  image: string | null;
   boats: CUSTOMER_GROUPS_berthProfiles_edges_node_boats | null;
   berthApplications: CUSTOMER_GROUPS_berthProfiles_edges_node_berthApplications | null;
   berthLeases: CUSTOMER_GROUPS_berthProfiles_edges_node_berthLeases | null;
