@@ -106,10 +106,10 @@ const apolloClient = new ApolloClient({
   link: ApolloLink.from([authLink, errorLink, uploadLink]),
   defaultOptions: {
     watchQuery: {
-      fetchPolicy: 'network-only',
+      fetchPolicy: 'cache-and-network',
     },
     query: {
-      fetchPolicy: 'network-only',
+      fetchPolicy: 'cache-first',
     },
   },
   cache,
