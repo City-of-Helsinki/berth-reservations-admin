@@ -13,7 +13,6 @@ export default function useListTableFilters(): [
 
   const filters = useMemo(() => {
     const urlSearchParams = new URLSearchParams(search);
-    const moreThanOneBerthOrWinterStorageSearchValue = urlSearchParams.get('moreThanOneBerthOrWinterStorage');
 
     return dropEmptyFields({
       customerGroups: urlSearchParams.getAll('customerGroups') as CustomerGroup[],
@@ -26,9 +25,8 @@ export default function useListTableFilters(): [
       winterStoragePlaceId: urlSearchParams.get('winterStoragePlaceId') ?? undefined,
       winterStorageAreaIds: urlSearchParams.getAll('winterStorageAreaIds'),
       dateInterval: urlSearchParams.get('dateInterval') ?? undefined,
-      moreThanOneBerthOrWinterStorage: moreThanOneBerthOrWinterStorageSearchValue
-        ? JSON.parse(moreThanOneBerthOrWinterStorageSearchValue)
-        : undefined,
+      moreThanOneBerthOrWinterStorage: getAsBoolean(urlSearchParams, 'moreThanOneBerthOrWinterStorage'),
+      nonHelsinkiCitizen: getAsBoolean(urlSearchParams, 'nonHelsinkiCitizen'),
     }) as CustomerListTableFilters;
   }, [search]);
 
@@ -103,6 +101,12 @@ function dropEmptyFields(filters: CustomerListTableFilters) {
       // Return an object
       .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
   );
+}
+
+function getAsBoolean(params: URLSearchParams, fieldName: string) {
+  const value = params.get(fieldName);
+
+  return value ? JSON.parse(value) : undefined;
 }
 
 // Returns true when value is empty (null, undefined, "", [])

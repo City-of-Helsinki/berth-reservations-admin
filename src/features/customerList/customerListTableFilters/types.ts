@@ -14,6 +14,7 @@ export type CustomerListTableFilters = {
   winterStorageAreaIds: string[];
   dateInterval?: string; // (D.MM.YYYY)-(D.MM.YYYY)
   moreThanOneBerthOrWinterStorage?: boolean;
+  nonHelsinkiCitizen?: boolean;
 };
 
 export type FilterEntryValue = Exclude<ValueOf<CustomerListTableFilters>, string[] | undefined>;
