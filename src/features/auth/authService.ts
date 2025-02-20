@@ -36,7 +36,7 @@ class AuthService {
       // eslint-disable-next-line @typescript-eslint/camelcase
       redirect_uri: `${origin}/callback`,
       // eslint-disable-next-line @typescript-eslint/camelcase
-      post_logout_redirect_uri: `${origin}/logout`,
+      post_logout_redirect_uri: `${origin}/`,
       automaticSilentRenew: AppConfig.oidcAutomaticSilentRenew,
       checkSessionIntervalInSeconds: AppConfig.oidcSessionPollerIntervalInMs / 1000,
       // eslint-disable-next-line @typescript-eslint/camelcase
