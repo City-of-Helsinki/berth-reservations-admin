@@ -9,6 +9,9 @@
 
 Staff interface for Venepaikka.
 
+> [!NOTE]
+> This repository was archived on 2026-04-28. Development has ceased because the project has been replaced by a SaaS-based solution.
+
 Environments:
 
 - [Staging](https://venepaikat-admin-ui.test.hel.ninja)
