@@ -87,7 +87,7 @@ export default function useCustomersQuery({
 
   const profilesQuery = useQuery<PROFILE_CUSTOMERS, PROFILE_CUSTOMERS_VARS>(PROFILE_CUSTOMERS_QUERY, {
     variables: sharedFilters,
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'cache-and-network',
     skip: activeQuery !== Query.PROFILE,
   });
 
@@ -99,7 +99,7 @@ export default function useCustomersQuery({
       harborIds,
       apiToken,
     },
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'cache-and-network',
     skip: activeQuery !== Query.BERTH_PROFILE,
   });
 
@@ -111,7 +111,7 @@ export default function useCustomersQuery({
       customerGroups: [CustomerGroup.COMPANY],
       apiToken,
     },
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'cache-and-network',
     skip: activeQuery !== Query.ORGANIZATION,
   });
 
