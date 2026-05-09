@@ -645,6 +645,7 @@
       "winterStorageGridAreaIds": "Talvisäilytysruutualue",
       "winterStoragePlaceId": "Talvisäilytyspaikka",
       "winterStorageAreaIds": "Nostojärjestysalue",
+      "nonHelsinkiCitizen": "Kotikunta muu kuin Helsinki",
       "moreThanOneBerthOrWinterStorage": "Enemmän kuin yksi vene- tai talvisäilytyspaikka",
       "dateInterval": "Aikaväli",
       "startDate": "Alkupäivämäärä",

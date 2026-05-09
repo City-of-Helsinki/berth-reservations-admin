@@ -234,6 +234,7 @@ export interface CUSTOMERSVariables {
   winterStorageGridAreaIds?: (string | null)[] | null;
   winterStoragePlaceId?: string | null;
   winterStorageAreaIds?: (string | null)[] | null;
+  nonHelsinkiCitizen?: boolean | null;
   moreThanOneBerthOrWinterStorage?: boolean | null;
   apiToken?: string | null;
   startDate?: any | null;
